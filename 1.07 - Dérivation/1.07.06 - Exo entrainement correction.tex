@@ -1,0 +1,382 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+%\usepackage{mathrsfs}
+
+\rhead{\textcolor{red}{Correction - Exercices d'entrainement - Dérivation}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{img_entrainement/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction - Exercices d'entrainement\\
+						Dérivation}
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\section*{Nombre dérivée}
+
+\exercice{} 
+
+Soit la fonction $f: x \mapsto(4-x)^2$ définie sur \R. Montrer que $f$ est dérivable en 1 et déterminer $f^{\prime}(1)$.
+
+\begin{corrBox}
+	On va utiliser $f'(a)=\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}$ avec $a=1$\\
+	$f(1)=3^2=9$\quad\quad et\quad\quad $f(1+h)=(4-1-h)^2=(3-h)^2=9-6h+h^2$\\
+	D'où : $f(1+h)-f(1)=9-6h+h^2-9=-6h+h^2$\\
+	Donc : $\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}=\lim \limits_{h \rightarrow 0} \dfrac{-6h+h^2}{h}=\lim \limits_{h \rightarrow 0} -6+h=-6$\\
+	La limite est un nombre réel donc la fonction f est dérivable en 1 et $f'(1)=-6$.
+\end{corrBox}
+
+\exercice{}
+
+Soit la fonction $f: x \mapsto\dfrac{-7}{3-x}$ définie sur $]-\infty;3[$.\\
+Montrer que $f$ est dérivable en 2 et déterminer $f^{\prime}(2)$.
+
+\begin{corrBox}
+	On va utiliser $f'(a)=\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}$ avec $a=2$\\
+	$f(2)=\dfrac{-7}{3-2}=-7$\quad\quad et\quad\quad  $f(2+h)=\dfrac{-7}{3-(2+h)}=\dfrac{-7}{1-h}$\\
+	D'où : $f(2+h)-f(2)=\dfrac{-7}{1-h}+7=\dfrac{-7}{1-h}+\dfrac{7(1-h)}{1-h}=\dfrac{-7h}{1-h}$\\
+	Donc : $\lim \limits_{h \rightarrow 0} \dfrac{f(2+h)-f(2)}{h}=\lim \limits_{h \rightarrow 0} \dfrac{\dfrac{-7h}{1-h}}{h}=\lim \limits_{h \rightarrow 0} \dfrac{-7h}{1-h}\times \dfrac{1}{h}=\lim \limits_{h \rightarrow 0} -\dfrac{7}{1-h}=-7$\\
+	La limite est un nombre réel donc la fonction f est dérivable en 2 et $f'(2)=-7$.
+\end{corrBox}
+
+\exercice{}
+
+Soit $f$ la fonction définie sur \R par $f: x \mapsto x^2+1$.
+\begin{enumMet}
+	\item Montrer que $f$  est dérivable en 3 et déterminer $f^{\prime}(3)$.\\
+	\begin{corrBox}
+		On va utiliser $f'(a)=\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}$ avec $a=3$\\
+		$f(3)=3^2+1=10$\quad \quad et\quad \quad $f(3+h)=(3+h)^2+1=9+6h+h^2+1=10+6h+h^2$\\
+		D'où : $f(3+h)-f(3)=10+6h+h^2-10=6h+h^2$\\
+		Donc : $\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}=\lim \limits_{h \rightarrow 0} \dfrac{6h+h^2}{h}=\lim \limits_{h \rightarrow 0} 6+h=6$\\
+		La limite est un nombre réel donc la fonction f est dérivable en 3 et $f'(3)=6$.
+	\end{corrBox}
+	\item Montrer que $f$ est dérivable en $-2$ et déterminer $f^{\prime}(-2)$.
+	\begin{corrBox}
+		On va utiliser $f'(a)=\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}$ avec $a=-2$\\
+		$f(-2)=(-2)^2+1=5$\quad \quad et\quad \quad $f(-2+h)=(-2+h)^2+1=4-4h+h^2+1=5-4h+h^2$\\
+		D'où : $f(-2+h)-f(-2)=5-4h+h^2-5=-4h+h^2$\\
+		Donc : $\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}=\lim \limits_{h \rightarrow 0} \dfrac{-4h+h^2}{h}=\lim \limits_{h \rightarrow 0} -4+h=-4$\\
+		La limite est un nombre réel donc la fonction f est dérivable en $-2$ et $f'(2)=-4$.
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{}
+
+Soit $f$ la fonction définie sur $\R^*$ par $f: x \mapsto \dfrac{3}{x}$.
+\begin{enumMet}
+	\item Montrer que $f$  est dérivable en -3 et déterminer $f^{\prime}(-3)$.
+	\begin{corrBox}
+		On va utiliser $f'(a)=\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}$ avec $a=-3$\\
+		$f(-3)=\dfrac{3}{-3}=-1$\quad\quad et\quad\quad  $f(-3+h)=\dfrac{3}{h-3}$\\
+		D'où : $f(-3+h)-f(-3)=\dfrac{3}{h-3}+1=\dfrac{3}{h-3}+\dfrac{h-3}{h-3}=\dfrac{h}{h-3}$\\
+		Donc : $\lim \limits_{h \rightarrow 0} \dfrac{f(-3+h)-f(-3)}{h}=\lim \limits_{h \rightarrow 0} \dfrac{\dfrac{h}{h-3}}{h}=\lim \limits_{h \rightarrow 0} \dfrac{h}{h-3}\times \dfrac{1}{h}=\lim \limits_{h \rightarrow 0} \dfrac{1}{h-3}=-\dfrac{1}{3}$\\
+		La limite est un nombre réel donc la fonction f est dérivable en $-3$ et $f'(-3)=-\dfrac{1}{3}$.
+	\end{corrBox}
+	\item Montrer que $f$ est dérivable en 1 et déterminer $f^{\prime}(1)$.
+	\begin{corrBox}
+		On va utiliser $f'(a)=\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}$ avec $a=1$\\
+		$f(1)=\dfrac{3}{1}=3$\quad\quad et\quad\quad  $f(1+h)=\dfrac{3}{1+h}$\\
+		D'où : $f(1+h)-f(1)=\dfrac{1}{1+h}-3=\dfrac{3}{1+h}-\dfrac{3(1+h)}{1+h}=\dfrac{-3h}{1+h}$\\
+		Donc : $\lim \limits_{h \rightarrow 0} \dfrac{f(1+h)-f(1)}{h}=\lim \limits_{h \rightarrow 0} \dfrac{\dfrac{-3h}{1+h}}{h}=\lim \limits_{h \rightarrow 0} \dfrac{-3h}{1+h}\times \dfrac{1}{h}=\lim \limits_{h \rightarrow 0} -\dfrac{3}{1+h}=-3$\\
+		La limite est un nombre réel donc la fonction f est dérivable en $1$ et $f'(1)=-3$.
+	\end{corrBox}
+\end{enumMet}
+
+\section*{Equation réduite d'une tangente}
+
+\exercice{}
+
+Soit une fonction $f$ définie et dérivable sur \R telle que $f(2)=5$ et $f^{\prime}(2)=-1$.
+Soit $C_f$ sa courbe représentative. Déterminer l'équation réduite de la tangente à $C_f$ au point d'abscisse 2 .
+
+\begin{corrBox}
+	On va utiliser la formule pour obtenir l'équation de droite de la tangente$y=f'(a)(x-a)+f(a)$ avec ici $a=2$\\
+	$y=-1(x-2)+5 \iff y=-x+7$
+\end{corrBox}
+
+\exercice{}
+
+Soit une fonction $g$ définie et dérivable sur \R telle que $g(4)=-1$ et $g^{\prime}(4)=2$. Soit $C_g$ sa courbe représentative. Déterminer l'équation réduite de la tangente à $C_g$ au point d'abscisse 4.
+
+\begin{corrBox}
+	On va utiliser la formule pour obtenir l'équation de droite de la tangente$y=g'(a)(x-a)+g(a)$ avec ici $a=4$\\
+	$y=2(x-4)+(-1) \iff y=2x-9$
+\end{corrBox}
+
+\exercice{}
+
+Soit $g$ la fonction définie sur \R par $g(x)=\left(2 x^2-5 x+4\right)^{10}$. On admet que $g$ est dérivable en 1 , et que $g^{\prime}(1)=-10$. Déterminer l'équation réduite de la tangente à la courbe représentative de $g$ au point d'abscisse 1.
+
+\begin{corrBox}
+	On va utiliser la formule pour obtenir l'équation de droite de la tangente $y=g'(a)(x-a)+g(a)$ avec ici $a=1$\\
+	On a besoin de calculer $g(1)$ : $g(1)=\left(2\times1^2-5\times1+4\right)^{10}=1^{10}=1$\\
+	$y=-10(x-1)+1 \iff y=-10x+11$
+\end{corrBox}
+
+\exercice{}
+
+Soit $f$ une fonction dérivable sur $\mathbb{R}$ et soit $C_f$ sa courbe représentative dans un repère du plan. Le point $A(3 ;-1)$ appartient à la courbe $C_f$.
+Sachant que la tangente $T$ à la courbe $C_f$ au point $A$ passe par le point $J(0 ; 1)$, déterminer $f^{\prime}(3)$, puis l'équation de $T$.
+
+\begin{corrBox}
+	On va utiliser la formule pour obtenir l'équation de droite de la tangente $y=f'(a)(x-a)+f(a)$ avec ici $a=3$\\
+	On a $f(3)=1$ et on a besoin de calculer $f'(3)$ : $f'(3)=\dfrac{y_J-y_A}{x_J-x_A}=\dfrac{1-(-1)}{0-3}=-\dfrac{2}{3}$\\
+	$y=-\dfrac{2}{3}(x-3)+(-1) \iff y=-\dfrac{2}{3}x+1$
+\end{corrBox}
+
+\section*{Détermination graphique du nombre dérivé}
+
+%\begin{multicols}{2}
+
+\exercice{}
+
+Sur le graphique suivant, on donne la courbe représentative $C_g$ d'une fonction $g$ sur l'intervalle $[-5 ; 8]$. Les droites $D_1, D_2$ et $D_3$ sont respectivement tangentes à $C_g$ aux points A d'abscisse -3, B d'abscisse 2, et C d'abscisse 6 .
+\begin{center}
+	\includegraphics[scale=0.6]{1.05.03-Img01}
+\end{center}
+Lire sur le graphique les valeurs de $g(-3), g(2), g(6)$ et $g^{\prime}(-3), g^{\prime}(2), g^{\prime}(6)$
+
+\begin{corrBox}
+	$g(-3)=3$\quad \quad $g(2)=2$ \quad \quad $g(6)=-4$\\
+	$g'(-3)=\dfrac{\Delta y}{\Delta x}=\dfrac{1}{2}$\quad \quad $g'(2)\dfrac{\Delta y}{\Delta x}=\dfrac{-2}{1}=-2$ \quad \quad $g'(6)=\dfrac{\Delta y}{\Delta x}=\dfrac{3}{2}$
+\end{corrBox}
+
+\exercice{}
+
+La courbe d'une fonction $g$ définie sur $[-3 ; 5]$ est représentée ci-contre. La tangente à cette courbe au point $A$ d'abscisse 3 passe par le point de coordonnées $(-3 ; 6)$. Que vaut $g(3)$ ? Que vaut $g^{\prime}(3)$ ?
+\begin{center}
+	\includegraphics[scale=0.8]{1.05.03-Img03}
+\end{center}
+\begin{corrBox}
+	$g(3)=3$. Il s'agit de l'ordonnée du point A.\\
+	$g'(3)=\dfrac{\Delta y}{\Delta x}=\dfrac{6-3}{-3-3}=-\dfrac{1}{2}$. Il s'agit de la pente de la tangente au point A (la droite bleue).
+\end{corrBox}
+
+\exercice{}
+
+Soit $C_f$ la courbe représentative d'une fonction $f$ définie sur $\mathbb{R}$. $T_A$ est la tangente à $C_f$ au point d'abscisse -2 . On sait que $f$ est dérivable sur $\mathbb{R}$ et que $f^{\prime}(4)=-4$.
+\begin{center}
+	\includegraphics[scale=0.8]{1.05.03-Img04}
+\end{center}
+\begin{enumMet}
+	\item Déterminer $f^{\prime}(-2)$ et donner l'équation de la tangente $T_{\mathrm{A}}$. 
+	
+	\begin{corrBox}
+		La droite $T_A$ est horizontale. Son coefficient directeur est donc nul. $f'(-2)=0$ et $T_A:y=4$
+	\end{corrBox}
+	\item B est le point de la courbe d'abscisse 4. Déterminer l'équation de la tangente à $C_f$ au point B.
+	
+	\begin{corrBox}
+		On va utiliser la formule pour obtenir l'équation de droite de la tangente$y=f'(a)(x-a)+f(a)$ avec ici $a=4$, $f(a)=4$ et $f'(a)=-4$\\
+		$y=-4(x-4)+4 \iff y=-4x+20$
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{}
+
+Dans le repère orthonormé $(0 ; \vv{i}, \vv{j})$ ci-contre, la courbe rouge $C_f$ représente une fonction $f$ définie et dérivable sur $\mathbb{R}$, les droites tracées en bleu représentent les tangentes à $C_f$ respectivement au point $\mathrm{O}$, au point $B$ d'abscisse 1 et au point C d'abscisse 3.
+\begin{center}
+	\includegraphics[scale=0.8]{1.05.03-Img05}
+\end{center}
+\begin{enumMet}
+	\item Déterminer graphiquement $f^{\prime}(0), f^{\prime}(1)$ et $f^{\prime}(3)$.
+	
+	\begin{corrBox}
+		$f'(0)=\dfrac{\Delta y}{\Delta x}=\dfrac{2}{1}=2$\quad \quad $f'(1)\dfrac{\Delta y}{\Delta x}=\dfrac{-3}{1}=-3$ \quad \quad $f'(3)=\dfrac{\Delta y}{\Delta x}=\dfrac{5}{1}=5$
+	\end{corrBox}
+	\item Déterminer l'équation réduite de la tangente à $\mathrm{C}_f$ au point $\mathrm{C}$.
+	
+	\begin{corrBox}
+		L'équation de la tangente est du type $y=mx+p$ avec $m=f'(3)=5$
+		De plus la droite passe par le point C de coordonnées $(3;-3)$, donc:
+		$y = mx+p \iff -3=5\times3+p \iff p=-18$
+		
+		donc l'équation de la tangente est $y=5x-18$
+	\end{corrBox}
+	\item La courbe $C_f$ est la représentation graphique de la fonction $f: x \mapsto x^3-4 x^2+2 x$
+	Retrouver par le calcul les résultats des questions 1. et 2.
+	\begin{corrBox}
+		On a 2 méthodes possibles pour la 1). Soit on calcule le nombre dérivé avec $f'(a)=\lim \limits_{h \rightarrow 0} \dfrac{f(a+h)-f(a)}{h}$ pour $a=0$, $a=1$ et $a=3$, soit on détermine la fonction dérivée et on calcule alors directement $f^{\prime}(0), f^{\prime}(1)$ et $f^{\prime}(3)$ à l'aide de la fonction $f'$. Je choisis ici la 2ème solution:
+		$f'(x)=3x^2-8x+2$.\\
+		$f'(0)=3\times 0^2-8\times 0+2=2$\\$f'(1)=3\times 1^2-8\times 1+2=-3$\\$f'(3)=3\times 3^2-8\times 3+2=5$\\
+		On va utiliser la formule pour obtenir l'équation de droite de la tangente$y=f'(a)(x-a)+f(a)$ avec ici $a=3$\\
+		On a $f(3)=3^3-4\times3^2+2\times3=-3$ et $f'(3)=5$\\
+		$y=5(x-3)+(-3) \iff y=5x-18$
+	\end{corrBox}
+\end{enumMet}
+
+%\end{multicols}
+
+\section*{Fonctions dérivées}
+
+\exercice{}
+
+Pour chacune des fonctions suivantes déterminer sur quel ensemble elle est dérivable puis déterminer sa dérivée.
+%\begin{multicols}{2}
+\begin{enumMet}
+	\item $f: x \mapsto 9 x^4$ définie sur $\mathbb{R}$
+	\begin{corrBox}
+		$f'(x)=9\times4x^3=36x^3$
+	\end{corrBox}
+	\item $h: x \mapsto \dfrac{3}{4} x-7$ définie sur $\mathbb{R}$
+	\begin{corrBox}
+		$h'(x)=\dfrac{3}{4}$
+	\end{corrBox}
+	\item  $i: x \mapsto \sqrt{x}(3 x-1)$ définie sur $[0 ;+\infty[$
+	\begin{corrBox}
+		on utilise la propriété $(uv)'=u'v+v'u$ avec $u(x)=\sqrt{x}$ et $v(x)=3x-1$\\
+		$i'(x)=\dfrac{1}{2\sqrt{x}}\times(3x-1)+3\sqrt{x}=\dfrac{3x-1+6x}{2\sqrt{x}}=\dfrac{9x-1}{2\sqrt{x}}$
+	\end{corrBox}
+	\item $j: x \mapsto \dfrac{x^3}{1-x}$ définie sur $\mathbb{R} \backslash\{1\}$
+	\begin{corrBox}
+		on utilise la propriété $(\dfrac{u}{v})'=\dfrac{u'v-v'u}{v^2}$ avec $u(x)=x^3$ et $v(x)=1-x$\\
+		$j'(x)=\dfrac{3x^2(1-x)-(-1)x^3}{(1-x)^2}=\dfrac{-2x^3+3x^2}{(1-x)^2}$
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{}
+
+Déterminer sur quel ensemble est dérivable chacune des fonctions suivantes, puis déterminer sa dérivée.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f: x \mapsto-1,2 x^4+7 x^3-x$ définie sur $\mathbb{R}$
+		\begin{corrBox}
+			$f'(x)=-1,2\times4x^3+7\times3x^2-1=-4,8x^3+21x^2-1$
+		\end{corrBox}
+		\item $g: x \mapsto \dfrac{3}{5} x^5-\dfrac{1}{9} x^3-\dfrac{11}{2}$ définie sur $\mathbb{R}$
+		\begin{corrBox}
+			$g'(x)=\dfrac{3}{5}\times5x^4-\dfrac{1}{9}\times3x^2-0=3x^4-\dfrac{1}{3}x^2$
+		\end{corrBox}
+		\item $h: x \mapsto x^3(11-6 x)$ définie sur $\mathbb{R}$
+		\begin{corrBox}
+			on utilise la propriété $(uv)'=u'v+v'u$ avec $u(x)=x^3$ et $v(x)=11-6 x$\\
+			$h'(x)=3x^2\times(11-6x)-6x^3=-24x^3+33x^2$
+		\end{corrBox}
+		\item $j: x \mapsto \dfrac{25}{-10 x+9}$ définie sur $\mathbb{R} \backslash\left\{\dfrac{9}{10}\right\}$
+		\begin{corrBox}
+			on utilise la propriété $\left(\dfrac{k}{u}\right)'=-\dfrac{ku'}{u^2}$ avec $u(x)=-10x+9$\\
+			$j'(x)=-\dfrac{25\times (-10)}{(-10x+9)^2}=\dfrac{250}{(-10x+9)^2}$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\exercice{}
+
+Déterminer sur quel ensemble est dérivable chacune des fonctions suivantes, puis déterminer sa dérivée.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f: x \mapsto \dfrac{1}{2} x^2+\dfrac{1}{x^4}$
+		\begin{corrBox}
+			$f'(x)=\dfrac{1}{2}\times 2x-\dfrac{4}{x^5}=\dfrac{x^6-4}{x^5}$
+		\end{corrBox}
+		\item $g: x \mapsto \dfrac{1}{x}(9-6 x)$
+		\begin{corrBox}
+			on utilise la propriété $(uv)'=u'v+v'u$ avec $u(x)=\dfrac{1}{x}$ et $v(x)=9-6x$\\
+			$g'(x)=-\dfrac{1}{x^2}\times(9-6x)-6\times\dfrac{1}{x}=\dfrac{-9+6x-6x}{x^2}=\dfrac{-9}{x^2}$
+		\end{corrBox}
+		\item $h: x \mapsto \dfrac{2}{1-x}$
+		\begin{corrBox}
+			on utilise la propriété $\left(\dfrac{k}{u}\right)'=-\dfrac{ku'}{u^2}$ avec $u(x)=1-x$\\
+			$j'(x)=-\dfrac{2\times (-1)}{(1-x)^2}=\dfrac{2}{(1-x)^2}$
+		\end{corrBox}
+		\item $i: x \mapsto \dfrac{x^2-1}{4 x+7}$
+		\begin{corrBox}
+			on utilise la propriété $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-v'u}{v^2}$ avec $u(x)=x^2-1$ et $v(x)=4x+7$\\
+			$i'(x)=\dfrac{2x(4x+7)-4(x^2-1)}{(4x+7)^2}=\dfrac{4x^2+14x+4}{(4x+7)^2}$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+
+\exercice{}
+
+Soit $g$ la fonction définie sur $\mathbb{R}$ par $g: x \mapsto(-9 x+1)^5$ et $h$ la fonction définie sur $[0 ;+\infty[$ par $h: x \mapsto \sqrt{3 x-1}$.\\
+Pour les 2 fonctions, déterminer sur quel ensemble elle est dérivable puis déterminer sa dérivée.
+
+\begin{corrBox}
+	$g'(x)=-9\time5(-9x+1)^4=-45(-9x+1)^4$ \quad \quad \quad \quad $h'(x)=\dfrac{3}{2\sqrt{3x-1}}$
+\end{corrBox}
+
+\exercice{}
+
+Déterminer pour chacune des fonctions suivantes, I'ensemble I sur lequel elle est dérivable, puis sa fonction dérivée sur $\mathrm{I}$.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f(x)=\dfrac{5}{2 x}+\dfrac{3}{4}-\dfrac{7 x^2}{4}$
+		\begin{corrBox}
+			$f'(x)=-\dfrac{5}{2x^2}-\dfrac{7\times2x}{4}=-\dfrac{5}{2x^2}-\dfrac{7x\times x^2}{2x^2}=\dfrac{-7x^3-5}{2x^2}$
+		\end{corrBox}
+		\item $g(x)=\dfrac{-4}{5 x}(x-11)$
+		\begin{corrBox}
+			on utilise la propriété $(uv)'=u'v+v'u$ avec $u(x)=-\dfrac{4}{5x}$ et $v(x)=x-11$\\
+			$g'(x)=\dfrac{4}{5x^2}\times(x-11)+1\times\dfrac{-4}{5x}=\dfrac{4x-44-4x}{5x^2}=-\dfrac{44}{5x^2}$
+		\end{corrBox}
+		\item $h(x)=\dfrac{5 x^2-8 x+1}{21-7 x}$
+		\begin{corrBox}
+			on utilise la propriété $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-v'u}{v^2}$ avec $u(x)=5 x^2-8 x+1$ et $v(x)=21-7 x$\\
+			$h'(x)=\dfrac{(10x-8)(21-7x)-(-7)(5x^2-8x+1)}{(21-7x)^2}=\dfrac{210x-168+56x-70x^2+35x^2-56x+7}{(21-7x)^2}$\\
+			$h'(x)=\dfrac{-35x^2+210x-161}{(21-7x)^2}$
+		\end{corrBox}
+		\item $j(x)=\dfrac{-5}{3 x^2+2}$
+		\begin{corrBox}
+			on utilise la propriété $\left(\dfrac{k}{u}\right)'=-\dfrac{ku'}{u^2}$ avec $u(x)=3x^2+2$\\
+			$j'(x)=\dfrac{5\times6x}{(3x^2+2)^2}=\dfrac{30x}{(3x^2+2)^2}$
+		\end{corrBox}
+		\item $k(x)=\dfrac{9 x}{x^2-6 x+5}$
+		\begin{corrBox}
+			on utilise la propriété $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-v'u}{v^2}$ avec $u(x)=9x$ et $v(x)=x^2-6x+5$\\
+			$k'(x)=\dfrac{9(x^2-6x+5)-(2x-6)(9x)}{(x^2-6x+5)^2}=\dfrac{-9x^2+45}{(x^2-6x+5)^2}$\\
+			$h'(x)=\dfrac{-35x^2+210x-161}{(21-7x)^2}$
+		\end{corrBox}
+		\item $m(x)=\sqrt{10-x}$
+		\begin{corrBox}
+			$m'(x)=-1\times \dfrac{1}{2\sqrt{10-x}}=-\dfrac{1}{2\sqrt{10-x}}$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+
+\exercice{}
+
+Déterminer pour chacune des fonctions suivantes, l'ensemble I sur lequel elle est dérivable, puis sa fonction dérivée sur I.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $m: x \mapsto-\dfrac{2}{9} x^3+4 x^2-5$
+		\begin{corrBox}
+			$m'(x)=\dfrac{2}{9}\times3x^2+4\times 2x=\dfrac{2}{3}x^2+8x$
+		\end{corrBox}
+		\item $n: x \mapsto-\dfrac{7 x}{2}(8 x+1)$
+		\begin{corrBox}
+			on utilise la propriété $(uv)'=u'v+v'u$ avec $u(x)=-\dfrac{7 x}{2}$ et $v(x)=(8 x+1)$\\
+			$g'(x)=-\dfrac{7}{2}\times(8x+1)+8\times\dfrac{-7x}{2}=-56x-\dfrac{7}{2}$
+		\end{corrBox}
+		\item $j: x \mapsto \dfrac{1}{5 x^5}$
+		\begin{corrBox}
+			$j'(x)=\dfrac{1}{5}\times \dfrac{-5}{x^4}=-\dfrac{1}{x^4}$
+		\end{corrBox}
+		\item $p: x \mapsto-\dfrac{\sqrt{4 x+3}}{2}$
+		\begin{corrBox}
+			$m'(x)=-\dfrac{1}{2}\times4\times \dfrac{1}{2\sqrt{4x+3}}=-\dfrac{1}{\sqrt{4x+3}}$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\end{document}
+

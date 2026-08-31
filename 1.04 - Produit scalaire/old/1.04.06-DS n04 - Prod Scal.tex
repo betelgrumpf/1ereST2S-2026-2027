@@ -1,0 +1,155 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$04 - 12/01/2022}
+
+\begin{document}
+\graphicspath{{../../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+DS n$^{\circ}$04 - Produit scalaire
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{2h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\vspace{-.3cm} 
+\exerciceDS{ - ( 2 points )}
+On considère 3 points $A, B$ et $C$. Dans chacun des cas suivants, calculer $\vv{A B} \cdot \vv{A C}$ ( on donnera la valeur exacte).
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $A B=4, A C=5$ et $\widehat{A B C}=\dfrac{\pi}{6}$
+    \item $A B=6, A C=6$ et $\widehat{A B C}=\dfrac{\pi}{2}$
+    \item $A B=3, A C=7$ et $\widehat{A B C}=\dfrac{\pi}{3}$
+    \item $A B=4, A C=9$ et $\widehat{A B C}=\dfrac{\pi}{4}$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 1,5 points )}
+On considère un carré $A B C D$ de côté 5 cm. Calculer:
+\begin{multicols}{3}
+\begin{enumMet}
+    \item $\vv{A B} \cdot \vv{A C}$
+    \item $\vv{C A} \cdot \vv{C D}$
+    \item $\vv{D C} \cdot \vv{D A}$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 2 points )}
+
+$\mathrm{ABC}$ est un triangle et $\mathrm{H}$ est le pied de la hauteur issue de $\mathrm{A}$. On a $\mathrm{AB}=5, \mathrm{BH}=3$ et $\mathrm{HC}=6$
+\begin{multicols}{2}
+\begin{enumMet}
+    \item Calculer $\vv{B A} \cdot \vv{B C}$
+    \item Calculer AH
+    \item Calculer $\vv{A C} \cdot \vv{A H}$.
+\end{enumMet}
+\columnbreak
+\begin{center}
+    \includegraphics[scale=0.6]{1.04.06-Img01}
+\end{center}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 2 points )}
+
+Soit un losange $A B C D$ de centre $O$ tel que $A C=4$ et $B D=7$.
+%\begin{multicols}{2}
+\begin{enumMet}
+    \item Calculer $\vv{B C} \cdot \vv{B D}$.
+    \item Calculer $\vv{D C} \cdot \vv{D O}$.
+\end{enumMet}
+%\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 3 points )}
+On considère les points $A(-1 ; 2), B(4 ; 3)$ et $C(1 ;-5)$
+\begin{enumMet}
+    \item Calculer les coordonnées des vecteurs $\vv{A B}, \vv{A C}$ et $\vv{B C}$
+    \item Calculer $\vv{A B} \cdot \vv{A C}, \vv{A B} \cdot \vv{B C}$ et $\vv{A C} \cdot \vv{B C}$
+\end{enumMet}
+\newpage
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 2,5 points )}
+Soit les points $A(2 ; 7), B(6 ; 5)$ et $C(4 ; 1)$.
+%\begin{multicols}{2}
+\begin{enumMet}
+    \item Calculer le produit scalaire $\vv{B A} \cdot \vv{B C}$
+    \item Que peut-on en conclure pour le triangle $A B C$ ?
+\end{enumMet}
+%\end{multicols}
+
+
+\exerciceDS{ - ( 3,5 points )}
+
+Dans le repère orthonormé ci-dessous, on donne le triangle $A B C$.\\
+\begin{center}
+    \includegraphics[scale=0.95]{1.04.06-Img02}
+\end{center}
+\begin{enumMet}
+    \item \begin{enumMet}
+        \item calculer $\vv{A B} \cdot \vv{A C}$.
+        \item En déduire la mesure, en degré, de l'angle $\widehat{B A C}$. Arrondir au dixième.
+    \end{enumMet}
+    \item \begin{enumMet}
+        \item Dans ce triangle, H est le pied de la hauteur issue du sommet $C$.
+Déterminer la longueur $\mathrm{CH}$. Arrondir au dixième.
+        \item En déduire une valeur approchée de l'aire du triangle $A B C$.
+    \end{enumMet}
+\end{enumMet}
+
+\exerciceDS{ - ( 2 points )}
+Dans les 2 cas ci dessous, calculer $\vv{A B} \cdot \vv{A C}$.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \ \\
+    \includegraphics[scale=1.2]{1.04.06-Img03}
+    \item \ \\
+    \includegraphics[scale=1.2]{1.04.06-Img04}
+\end{enumMet}
+\end{multicols}
+
+\exerciceDS{ - ( 2 points )}
+Soient deux vecteurs $\vv{u}$ et $\vv{v}$ tels que $\|\vv{u}\|=2,\|\vv{v}\|=4$ et $(\vv{u} ; \vv{v})=\dfrac{\pi}{3}$.\\
+Calculer $(\vv{u}-3 \vv{v}) \cdot(5 \vv{u}+\vv{v})$.
+
+\end{document}
+

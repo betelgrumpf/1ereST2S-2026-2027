@@ -1,0 +1,194 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+%\usepackage{mathrsfs}
+
+\rhead{Exercices obligatoires $-$ Chap. 10 $-$ Fonction exponentielle}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{img_oblig/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Exercices obligatoires\\
+						Chap. 10 $-$ Fonction Exponentielles
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\begin{multicols}{2}
+	\exercice{ $-$ Ex 45 p 172 du LS}
+
+$f$ est définie sur $\mathbb{R}$ par $f(x)=-2 \mathrm{e}^x$.
+
+Vérifier que $f^{\prime}=f$ et calculer $f(0)$.
+
+\exercice{ $-$ Ex 46 p 172 du LS}
+
+
+Déterminer une fonction $g$ définie et dérivable sur $\mathbb{R}$ telle que $g^{\prime}=g$ et $g(0)=\dfrac{3}{2}$.
+\columnbreak
+
+
+\exercice{ $-$ Ex 47 p 172 du LS}
+
+Déterminer une fonction $h$ définie et dérivable sur $\mathbb{R}$ telle que $h^{\prime}=h$ et $h(0)=-4$.
+\end{multicols}
+
+
+\begin{multicols}{2}
+	\exercice{ $-$ Ex 50 p 172 du LS}
+
+Simplifier au maximum les expressions suivantes.
+\begin{enumMet}
+	\item $A=e^2 \times e^{32} \times e^8$
+	\item $\mathrm{B}=\dfrac{\mathrm{e}}{\mathrm{e}^5}$
+	\item $\mathrm{C}=\dfrac{\left(\mathrm{e}^7\right)^3 \times \mathrm{e}^4}{\mathrm{e}^{-4}}$
+\end{enumMet}
+
+\exercice{ $-$ Ex 51 p 172 du LS}
+
+$x$ est un réel quelconque. Simplifier au maximum les expressions suivantes.
+\begin{enumMet}
+	\item $a(x)=\mathrm{e}^{2 x} \times\left(\mathrm{e}^x\right)^2 \times \mathrm{e}^{-3 x}$
+	\item $b(x)=\dfrac{\mathrm{e}^{x^2}}{\mathrm{e}^x}$
+	\item $c(x)=\dfrac{\mathrm{e}^{x-1} \times \mathrm{e}^{4 x}}{\mathrm{e}^x}$
+	\item $d(x)=\dfrac{\mathrm{e}^{-2 x}}{\mathrm{e}^{-3 x} \times \mathrm{e}^{x+1}}$
+\end{enumMet}
+\columnbreak
+
+
+\exercice{ $-$ Ex 56 p 173 du LS}
+
+Développer et réduire les expressions suivantes.
+\begin{enumMet}
+	\item $A=e^4\left(e^3+e^7\right)$
+	\item $B=\left(e^2+e^6\right)\left(e^3+e\right)$
+	\item $C=\left(e^8-e^2\right)\left(e^6+1\right)$
+	\item $\mathrm{D}=\left(\mathrm{e}^{-2}+\mathrm{e}^3\right)\left(\mathrm{e}^{-2}-\mathrm{e}^8\right)$
+\end{enumMet}
+
+
+\exercice{ $-$ Ex 57 p 173 du LS}
+
+Développer et réduire les expressions suivantes.
+\begin{enumMet}
+	\item $\mathrm{A}=\left(\mathrm{e}^3+\mathrm{e}^5\right)^2$
+	\item $\mathrm{B}=\left(\mathrm{e}^2-\mathrm{e}^{-2}\right)^2$
+	\item  $\mathrm{C}=\left(\mathrm{e}^6-\mathrm{e}^{-4}\right)\left(\mathrm{e}^6+\mathrm{e}^{-4}\right)$
+	\item $\mathrm{D}=\left(2 \mathrm{e}^4-3 \mathrm{e}^{-1}\right)^2$
+\end{enumMet}
+\end{multicols}
+
+\begin{multicols}{2}
+	\exercice{ $-$ Ex 29 p 171 du LS}
+
+$x$ est un nombre réel. Simplifier les expressions.
+\begin{enumMet}
+	\item $\mathrm{e}^{-2 x+1} \times \mathrm{e}^{x+3}$
+	\item $\mathrm{e}^{x+4} \times\left(\mathrm{e}^x\right)^2 \times \mathrm{e}^{-2 x}$
+	\item $\mathrm{e}^x \times \mathrm{e}$
+	\item $\mathrm{e}^x \times x \mathrm{e}^x$
+\end{enumMet}
+
+\exercice{ $-$ Ex 30 p 171 du LS}
+
+$x$ est un nombre réel. Simplifier les expressions.
+\begin{enumMet}
+	\item $\dfrac{\mathrm{e}^x \times\left(\mathrm{e}^x\right)^2}{\mathrm{e}^{2 x}}$
+	\item $\dfrac{\mathrm{e}^{x+4}}{\mathrm{e}^{4 x}}$
+	\item $\dfrac{1}{\mathrm{e}^{3-2 x}}$
+\end{enumMet}
+
+\columnbreak
+
+\exercice{ $-$ Ex 31 p 171 du LS}
+
+Déterminer le signe des fonctions suivantes définies sur $\mathbb{R}$.
+\begin{enumMet}
+	\item $f(x)=3 \mathrm{e}^x$
+	\item $g(x)=2 \mathrm{e}^{-5 x}$
+	\item $h(x)=-\sqrt{2} \mathrm{e}^{-3 x}$
+\end{enumMet}
+
+\exercice{ $-$ Ex 32 p 171 du LS} 
+
+Déterminer le signe des fonctions suivantes définies sur $\mathbb{R}$.
+\begin{enumMet}
+	\item $f(x)=\dfrac{1+\mathrm{e}^{4 x}}{x^2+2}$
+	\item $g(x)=\dfrac{-9}{-2-\mathrm{e}^{-8 x}}$
+\end{enumMet}
+
+\exercice{ $-$ Ex 33 p 171 du LS}
+
+Calculer la dérivée de la fonction $f$ définie sur $\mathbb{R}$.
+\begin{enumMet}
+	\item $f(x)=3 \mathrm{e}^x-5 x^2+2$
+	\item $f(x)=x-4 \mathrm{e}^x+1$
+	\item $f(x)=\mathrm{e}^x+\mathrm{e}^3$
+	\item $f(x)=x \mathrm{e}^x$
+\end{enumMet}
+\end{multicols}
+
+\newpage
+
+\begin{multicols}{2}
+	\exercice{ $-$ Ex 34 p 171 du LS}
+
+Calculer la dérivée de la fonction $f$ définie sur $\mathbb{R}$ et en déduire son tableau de variations.
+\begin{enumMet}
+	\item $f(x)=\mathrm{e}^{3 x}$
+	\item $f(x)=\mathrm{e}^{-2 x}$
+	\item $f(x)=\mathrm{e}^{-x+4}$
+	\item $f(x)=5 \mathrm{e}^{x+6}$
+\end{enumMet}
+
+\exercice{ $-$ Ex 35 p 171 du LS}
+
+Résoudre les équations suivantes dans $\mathbb{R}$.
+\begin{enumMet}
+	\item $\mathrm{e}^x=\mathrm{e}^{-2}$
+	\item $\mathrm{e}^x=\mathrm{e}$
+	\item $\mathrm{e}^{x+2}=\mathrm{e}^3$
+	\item $e^{2 x+1}=e$
+	\item $\mathrm{e}^x=1$
+	\item $\mathrm{e}^x+4=0$
+	\item $\mathrm{e}^{x^2}=\mathrm{e}$
+	\item $\mathrm{e}^{x^2+1}=1$
+\end{enumMet}
+\columnbreak
+
+\exercice{ $-$ Ex 36 p 171 du LS}
+
+Résoudre les équations suivantes dans $\mathbb{R}$.
+\begin{enumMet}
+	\item $\mathrm{e}^{-x}=1$
+	\item $\mathrm{e}^{2 x-3}=\mathrm{e}$
+	\item $5 \mathrm{e}^{3 x+1}=5$
+	\item $-2 \mathrm{e}^{x^2}=3$
+\end{enumMet}
+
+\exercice{ $-$ Ex 37 p 171 du LS}
+
+Résoudre les inéquations suivantes dans $\mathbb{R}$.
+\begin{enumMet}
+	\item $e^{2 x}>e^{-2}$
+	\item $\mathrm{e}^{-3 x}<\mathrm{e}$
+	\item $\mathrm{e}^{3 x-5} \geqslant \mathrm{e}^{-3}$
+	\item $\mathrm{e}^{-2 x-1} \leqslant 1$
+\end{enumMet}
+\end{multicols}
+
+\end{document}
+

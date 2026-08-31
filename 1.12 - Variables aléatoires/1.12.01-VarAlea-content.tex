@@ -1,0 +1,155 @@
+\chapter{Variables aléatoires}
+\thispagestyle{fancy}
+
+\section{Variable aléatoire et loi de probabilité}
+
+\subsection{Variable aléatoire}
+
+\begin{bexemple}
+Soit l'expérience aléatoire : \guillemets{On lance un dé à six faces et on regarde le résultat.} \\
+L'ensemble de toutes les issues possibles $E = \{1 ; 2 ; 3 ; 4 ; 5 ; 6\}$ s'appelle l'univers des possibles. Il se note $\Omega$.\\
+On considère le jeu suivant :\\
+\begin{itemEx}
+\item Si le résultat est pair, on gagne \EUR{2}.
+\item Si le résultat est 1, on gagne \EUR{3}.
+\item Si le résultat est 3 ou 5, on perd \EUR{4}.
+\end{itemEx}
+On peut définir ainsi une variable aléatoire $X$ sur $E = \{1 ; 2 ; 3 ; 4 ; 5 ; 6\}$ qui peut prendre les valeurs $2$, $3$ ou $-4$.
+
+Pour les issues $2$, $4$ ou $6$, on a : $X = 2$
+Pour l'issue $1$, on a : $X = 3$
+Pour les issues $3$ et $5$, on a : $X = -4$.
+\end{bexemple}
+
+\begin{bdefi}
+Une \grasInDef{variable aléatoire X} associe un nombre réel à chaque issue de l'univers $\Omega$.\\
+\end{bdefi}
+
+\subsection{Loi de probabilité}
+
+\begin{bdefi}
+    La \grasInDef{probabilité de l’événement} $\{X=x_i\}$ est la somme des probabilités des issues de $X$ auxquelles on associe le réel $x_i$.
+\end{bdefi}
+
+\begin{bdefi}
+    Soit $X$ une variable aléatoire définie sur $\Omega$. \grasInDef{Définir la loi de probabilité} de la variable aléatoire $X$, c’est associer à chaque valeur $x_i$ prise par $X$ la probabilité de l’événement $\{X=x_i\}$.\\
+    On présente souvent la loi de probabilité de X sous la forme d’un tableau.\\
+    
+    \begin{tabular}{ | Xc | Xc | Xc | Xc | Xc |}
+     \hline			
+       $x_i$  & $x_1$ & $x_2$ & ... & $x_n$ \\ \hline
+       $P(X=x_i)$ & $p_1$ & $p_2$ & ... & $p_n$ \\
+     \hline  
+    \end{tabular}
+    
+\end{bdefi}
+
+\begin{bexemple}
+    On considère la variable aléatoire $X$ définie dans l'exemple précédent.\\
+    Chaque issue du lancer de dé est équiprobable et égale à $\dfrac{1}{6}$.
+    La probabilité que la variable aléatoire prenne la valeur $2$ est égale à $\dfrac{1}{6} + \dfrac{1}{6} + \dfrac{1}{6} = \dfrac{1}{2}$.\\
+    On note : $P(X = 2) = \dfrac{1}{2}$.\\
+    De même : $P(X = 3) = \dfrac{1}{6}$ et $P(X = -4) = \dfrac{1}{6} + \dfrac{1}{6} = \dfrac{1}{3}$.
+    \\
+    On peut résumer les résultats dans un tableau :\\
+    \ \\
+    \begin{tabular}{ | Xc | Xc | Xc | Xc | }
+     \hline			
+       $x_i$  & $-4$ & $2$ & $3$ \\ \hline
+       $P(X=x_i)$ & $\dfrac{1}{3}$ & $\dfrac{1}{2}$ & $\dfrac{1}{6}$ \\
+     \hline  
+    \end{tabular}\\
+    \ \\
+    Ce tableau résume la loi de probabilité de la variable aléatoire X.
+\end{bexemple}
+
+
+\begin{brmqs}
+    \begin{itemRem}
+        \item $P(X = x_i)$ peut se noter $p_i$.
+        \item $p_1 + p_2 + ... + p_n = 1$
+    \end{itemRem}
+\end{brmqs}
+
+\begin{bexemple}
+    Dans l'exemple traité plus haut : $p_1 + p_2 + p_3 = \dfrac{1}{3} + \dfrac{1}{2} + \dfrac{1}{6} = 1$.
+\end{bexemple}
+
+\begin{bmethodet}{Déterminer une loi de probabilité}
+    Soit l'expérience aléatoire : \guillemets{On tire une carte dans un jeu de $32$ cartes.}\\
+    On considère le jeu suivant :
+    \begin{itemMet}
+        \item Si on tire un cœur, on gagne \EUR{2}.
+        \item Si on tire un roi, on gagne \EUR{5}.
+        \item Si on tire une autre carte, on perd \EUR{1}.
+    \end{itemMet}
+    On appelle $X$ la variable aléatoire qui, à une carte tirée, associe un gain ou une perte.\\
+    1) Déterminer la loi de probabilité de $X$.\\
+    2) Calculer $P(X \geq 5)$ et interpréter le résultat.\\
+    \\
+    \\
+    1) La variable aléatoire $X$ peut prendre les valeurs $2$, $5$, $-1$ mais aussi $7$.\\
+    En effet, si on tire le roi de cœur, on gagne $5$(roi) + $2$(cœur) = \EUR{7}.\\
+    \begin{itemMet}
+        \item Si la carte tirée est un cœur (autre que le roi de cœur), $X = 2$.\\
+        $P(X = 2) = \dfrac{7}{32}$.
+        \item Si la carte tirée est un roi (autre que le roi de cœur), $X = 5$.\\
+        $P(X = 5) = \dfrac{3}{32}$.
+        \item Si la carte tirée est le roi de cœur, $X = 7$.\\
+        $P(X = 7) = \dfrac{1}{32}$.
+        \item Si la carte tirée n'est ni un cœur, ni un roi, $X = -1$.\\
+        $P(X = -1) = \dfrac{21}{32}$.
+    \end{itemMet}
+    La loi de probabilité de X est :\\
+    \begin{tabular}{ | Xc | Xc | Xc | Xc | Xc |}
+         \hline			
+           $x_i$  & $-1$ & $2$ & $5$ & $7$ \\ \hline
+           $p_i$ & $\dfrac{21}{32}$ & $\dfrac{7}{32}$ & $\dfrac{3}{32}$ & $\dfrac{1}{32}$ \\
+         \hline  
+    \end{tabular}
+    \ \\
+    \ \\
+    On constate que : $p_1 + p_2 + p_3 + p_4  = \dfrac{21}{32} + \dfrac{7}{32} + \dfrac{3}{32} + \dfrac{1}{32} = 1$\\
+    \ \\
+    2) $P(X \geq 5) = P(X = 5) + P(X = 7) = \dfrac{3}{32} + \dfrac{1}{32} = \dfrac{4}{32} = \dfrac{1}{8}$\\
+    La probabilité de gagner plus de \EUR{5} est égale à $\dfrac{1}{8}$.
+\end{bmethodet}
+
+\section{Espérance, variance et écart-type}
+
+\subsection{Espérance}
+
+\begin{bdefi}
+L'espérance mathématique de la loi de probabilité de $X$ est le nombre réel, noté $E(X)$, défini par :\\
+        $$E(X) = \sum_{i=1}^{n} p_ix_i = p_1x_1 + p_2x_2 + ... + p_nx_n$$
+\end{bdefi}
+
+\begin{bmethodet}{Déterminer une loi de probabilité}
+    Dans le jeu de la \guillemets{Méthode} du paragraphe précédent, calculer l'espérance de la loi de probabilité de X et interpréter le résultat.\\
+    \ \\
+    	$E(X) = \dfrac{21}{32} \times (-1)+ \dfrac{7}{32} \times 2+ \dfrac{3}{32} \times 5+\dfrac{1}{32} \times 7=\dfrac{15}{32}$\\
+    L'espérance est égale à $\dfrac{15}{32}\approx 0,5$ signifie qu'en jouant un grand nombre de fois, on peut espérer gagner environ \EUR{0,50} par partie.
+\end{bmethodet}
+
+\begin{brmq}
+    L'espérance est donc le gain moyen par partie que l'on peut espérer si l'on répète l'expérience un grand nombre de fois. Dans tous les jeux au casino l'espérance est négative. Sur un grand nombre de parties, c'est le casino qui est gagnant.
+\end{brmq}
+
+\subsection{Variance et écart-type}
+
+\begin{bdefis}
+
+    \begin{itemDef}
+        \item La variance de $X$ est le nombre réel, noté $Var(X)$, défini par :\\
+        $$Var(x) = \sum_{i=1}^{n} p_i(x_i-E(X))^2 = p_1(x_1-E(X))^2 + p_2(x_2-E(X))^2 + ... + p_n(x_n-E(X))^2$$
+        \item L'écart-type de $X$ est le nombre réel, noté $\sigma(X)$, défini par, $\sigma(X)=\sqrt{Var(X)}$\\
+    \end{itemDef}
+\end{bdefis}
+
+\begin{bmethodet}{Déterminer une variance et un écart-type}
+    Dans le jeu de la \guillemets{Méthode} précédente, calculer la variance et l'écart-type.\\
+    On rappelle que $E(X) =\dfrac{15}{32}$\\
+    $Var(X) = \dfrac{21}{32} \times (-1-\dfrac{15}{32})^2+ \dfrac{7}{32} \times (2-\dfrac{15}{32})^2+ \dfrac{3}{32} \times (5-\dfrac{15}{32})^2+\dfrac{1}{32} \times (7-\dfrac{15}{32})^2=\dfrac{5311}{1024}\approx 5,19$\\
+	$\sigma(X)=\sqrt{Var(X)}=\sqrt{\dfrac{5311}{1024}}\approx 2,28$\\
+    L'écart-type est d'environ $2,28$. Plus l'écart-type est petit, plus les résultats des parties seront proches de l'espérance. Un grand écart-type signifie donc que vous pouvez avoir des résultats très différents que ce qui est prévu (en positif comme en négatif).
+\end{bmethodet}

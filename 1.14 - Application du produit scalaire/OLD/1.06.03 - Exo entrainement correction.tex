@@ -1,0 +1,561 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+\usepackage{mathrsfs}
+
+\rhead{\textcolor{red}{ Correction - Exercices d'entrainement - Appl. produit scalaire}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{../images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction - Exercices d'entrainement\\
+						Application du produit scalaire}
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\exerciceDS{}
+$\mathrm{ABC}$ est un triangle tel que :$A B=2, A C=6 \text { et } \widehat{B A C}=60^{\circ} .$\\
+Calculer la valeur exacte de la longueur $B C$.
+
+\begin{corrBox}
+	$\vv{AB}\cdot\vv{AC}=AB\times AC\times\cos(\widehat{BAC})=2\times6\times\cos(60)=6$\\
+	On a également :\\
+	$\vv{AB}\cdot\vv{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)$\\
+	Soit : $BC^2=AB^2+AC^2-2\vv{AB}\cdot\vv{AC}$\\
+	Donc : $BC^2=2^2+6^2-2\times6=28$\\
+	D'ou $BC=\sqrt{28}=2\sqrt{7}$
+\end{corrBox}
+
+\exerciceDS{}
+ABCD est un parallélogramme tel que :$A B=6, A D=4 \text { et } \widehat{D A B}=60^{\circ} .$
+%\begin{multicols}{2}
+\begin{enumMet}
+	\item Construire une figure.\\
+	\begin{corrBox}
+		\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+		\newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+		\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+		\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(-2.28,7)(22.12,12.02)
+			\psline[linewidth=2.pt](3.,8.)(9.,8.)
+			\pscustom[linewidth=2.pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
+				\parametricplot{0.0}{1.0471975511965976}{0.6*cos(t)+3.|0.6*sin(t)+8.}
+				\lineto(3.,8.)\closepath}
+			\psline[linewidth=2.pt](3.,8.)(5.,11.464101615137757)
+			\psline[linewidth=2.pt](5.,11.464101615137757)(11.,11.464101615137757)
+			\psline[linewidth=2.pt](11.,11.464101615137757)(9.,8.)
+			\begin{scriptsize}
+				%\psdots[dotstyle=*,linecolor=ududff](3.,8.)
+				\rput[bl](2.6,7.66){\ududff{$A$}}
+				%\psdots[dotstyle=*,linecolor=xdxdff](9.,8.)
+				\rput[bl](8.94,7.48){\xdxdff{$B$}}
+				\rput[bl](5.98,7.7){$6$}
+				\rput[bl](3.68,8.26){\qqwuqq{$\alpha = 60^{\circ}$}}
+				%\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](5.,11.464101615137757)
+				\rput[bl](4.78,11.72){\darkgray{$D$}}
+				%\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](11.,11.464101615137757)
+				\rput[bl](11.38,11.62){\darkgray{$C$}}
+				\rput[bl](3.56,9.8){$4$}
+			\end{scriptsize}
+		\end{pspicture*}
+	\end{corrBox}
+	\item Calculer la longueur BD.\\
+	\begin{corrBox}
+		$\vv{AB}\cdot\vv{AD}=AB\times AD\times\cos(\widehat{BAD})=6\times4\times\cos(60)=12$\\
+		$\vv{A B} \cdot \vv{A D}=\dfrac{1}{2}\left(A B^{2}+A D^{2}-B D^{2}\right)$\\
+		$12=\dfrac{1}{2}\left(6^{2}+4^{2}-B D^{2}\right)$\\
+		$24=36+16-BD^2$\\
+		$BD^2=28$\\
+		$BD=\sqrt{28}=2\sqrt{7}$
+	\end{corrBox}
+	\item Quelle est la mesure de l'angle $\widehat{A B C}$ ?\\
+	\begin{corrBox}
+		Dans un quadrilatère la somme des angles fait $360^{\circ}$.\\
+		De plus dans un parallélogramme, les côtés opposés sont égaux.\\
+		Donc $\widehat{ABC}=\dfrac{1}{2}(360-2\times60)=120^{\circ}$
+	\end{corrBox}   
+	\item Calculer la longueur AC.\\
+	\begin{corrBox}
+		$\vv{BA}\cdot\vv{BC}=AB\times BC\times\cos(\widehat{ABC})=6\times4\times\cos(120)=-12$\\
+		$\vv{BA} \cdot \vv{BC}=\dfrac{1}{2}\left(BA^{2}+BC^{2}-AC^{2}\right)$\\
+		$-12=\dfrac{1}{2}\left(6^{2}+4^{2}-AC^{2}\right)$\\
+		$-24=36+16-AC^2$\\
+		$AC^2=76$\\
+		$AC=\sqrt{76}$
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{}
+
+\begin{minipage}[c]{0.55\linewidth}
+	Un voilier V approche de la côte. Il est situé à 9 milles du phare A, à 5 milles du phare $B$ et l'angle $\widehat{AVB}$ mesure $60^{\circ} .$
+	Calculer la distance AB entre les deux phares. Arrondir au dixième.
+\end{minipage} \hfill
+\begin{minipage}[c]{0.4\linewidth}
+	\begin{center}
+		\includegraphics[scale=0.9]{1.06.04 - Img01.png}
+	\end{center}
+\end{minipage}
+
+\begin{corrBox}
+	$\vv{VA}\cdot\vv{VB}=VA\times VB\times\cos(\widehat{AVB})=9\times5\times\cos(60)=22,5$\\
+	$\vv{VA} \cdot \vv{VB}=\dfrac{1}{2}\left(VA^{2}+VB^{2}-AB^{2}\right)$\\
+	$22,5=\dfrac{1}{2}\left(9^{2}+5^{2}-AB^{2}\right)$\\
+	$45=81+25-AB^2$\\
+	$AB^2=61$\\
+	$AB=\sqrt{61}\approx7,8$
+\end{corrBox}
+
+\exerciceDS{}
+Dans les 2 cas ci dessous, calculer $\vv{A B} \cdot \vv{A C}$.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item \ \\
+		\includegraphics[scale=1.2]{1.06.04 - Img02.png}\\
+		\begin{corrBox}
+			$\vv{AB}\cdot\vv{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)=\dfrac{1}{2}(4^2+6^2-3^2)=21,5$
+		\end{corrBox}
+		\columnbreak
+		\item \ \\
+		\includegraphics[scale=1.]{1.06.04 - Img03.png}\\
+		\begin{corrBox}
+			$\vv{AB}\cdot\vv{AC}=xx'+yy'=-3\times1,5+(-1)\times(-2,5)=-2$
+		\end{corrBox}
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS{}
+On considère deux vecteurs $\vv{u}$ et $\vv{v}$ du plan tels que $\|\vv{u}+\vv{v}\|=5$ et $\|\vv{u}-\vv{v}\|=3$. Calculer le produit scalaire $\vv{u} \cdot \vv{v}$.\\
+
+\begin{corrBox}
+	$\vv{u} \cdot \vv{v}=\dfrac{1}{4}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)=\dfrac{1}{4}\times(5^2-3^2)=\dfrac{1}{4}\times16=4$
+\end{corrBox}
+
+\exerciceDS{}
+Dans le plan muni d'un repère orthonormé, on considère les vecteurs
+$\Coord{u}{2}{-3}$ et $\Coord{v}{1}{2}$.
+\begin{enumMet}
+	\item calculer $\vv{u} \cdot \vv{v},\|\vv{u}\|$ et $\|\vv{v}\|$.\\
+	\begin{corrBox}
+		$\vv{u}\cdot\vv{v}=2\times1-3\times2=-4$, $\left\|\vv{u}\right\|=\sqrt{2^2+(-3)^2}=\sqrt{13}$ et $\left\|\vv{v}\right\|=\sqrt{1^2+2^2}=\sqrt{5}$
+	\end{corrBox}
+	\item Calculer de deux façons les nombres : $\|\vv{u}+\vv{v}\|^{2} \text { et }\|\vv{u}-\vv{v}\|^{2}$\\
+	\begin{corrBox}
+		\fbox{$\left\|\vv{u}+\vv{v}\right\|^2$}\\
+		\grasInMet{1ère méthode:}\\
+		On sait que $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}\right)$ donc:\\
+		$\|\vv{u}+\vv{v}\|^{2}=2\vv{u} \cdot \vv{v}+\|\vv{u}\|^{2}+\|\vv{v}\|^{2}=2\times(-4)+13+5=10$\\
+		\grasInMet{2ème méthode:}\\
+		$\Coord{u}{2}{-3}+\Coord{v}{1}{2}=\vv{u}+\vv{v} \CoordSV{3}{-1}$\\
+		$\|\vv{u}+\vv{v}\|^{2}=3^2+(-1)^2=10$\\
+		\ \\
+		\fbox{$\left\|\vv{u}-\vv{v}\right\|^2$}\\
+		\grasInMet{1ère méthode:}\\
+		On sait que $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}\|^{2}+\|\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)$ donc:\\
+		$\|\vv{u}-\vv{v}\|^{2}=\|\vv{u}\|^{2}+\|\vv{v}\|^{2}-2\vv{u} \cdot \vv{v}=13+5-2\times(-4)=26$\\
+		\grasInMet{2ème méthode:}\\
+		$\Coord{u}{2}{-3}-\Coord{v}{1}{2}=\vv{u}-\vv{v} \CoordSV{1}{-5}$\\
+		$\|\vv{u}-\vv{v}\|^{2}=1^2+(-5)^2=26$
+	\end{corrBox}
+	\item Calculer de deux façons $(\vv{u}+\vv{v}) \cdot(\vv{u}-\vv{v})$.\\
+	\begin{corrBox}
+		\grasInMet{1ère méthode:}\\
+		$(\vv{u}+\vv{v}) \cdot(\vv{u}-\vv{v})=\|\vv{u}\|^{2}-\|\vv{v}\|^{2}=13-5=8$\\
+		\grasInMet{2ème méthode:}\\
+		$\vv{u}+\vv{v} \CoordSV{3}{-1} \cdot \vv{u}-\vv{v} \CoordSV{1}{-5}=3\times1+(-1)\times(-5)=8$
+	\end{corrBox}
+	
+\end{enumMet}
+
+\exerciceDS{}
+Le plan est muni d'un repère orthonormé. Dans chaque cas, calculer $\vv{A B} \cdot \vv{A C}$ puis une mesure (arrondie au degré près) de l'angle $\widehat{B A C}$.
+\begin{enumMet}
+	\item $A(-1 ; 4), B(2 ; 2)$ et $C(1 ; 5)$\\
+	\begin{corrBox}
+		$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{2-(-1)}{2-4}=\Coord{AB}{3}{-2} \Longrightarrow AB=\sqrt{3^2+(-2)^2}=\sqrt{13}$\\
+		$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{1-(-1)}{5-4}=\Coord{AC}{2}{1} \Longrightarrow AC=\sqrt{2^2+1^2}=\sqrt{5}$\\
+		$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{1-2}{5-2}=\Coord{BC}{-1}{3} \Longrightarrow BC=\sqrt{(-1)^2+3^2}=\sqrt{10}$\\
+		$\vv{A B} \cdot \vv{A C}=3\times2+(-2)\times1=4$\\
+		$\vv{A B} \cdot \vv{A C}=AB\times AC\times\cos(\widehat{B A C})$\\
+		$4=\sqrt{13}\times\sqrt{5}\times\cos(\widehat{B A C})$\\
+		$\widehat{B A C}=\cos^{-1}\left(\dfrac{4}{\sqrt{13}\times\sqrt{5}}\right)\approx60^{\circ}$
+	\end{corrBox}
+	\item $A(2 ; 4), B(1 ; 3)$ et $C(4 ; 2)$\\
+	\begin{corrBox}
+		$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{1-2}{3-4}=\Coord{AB}{-1}{-1} \Longrightarrow AB=\sqrt{(-1)^2+(-1)^2}=\sqrt{2}$\\
+		$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{4-2}{2-4}=\Coord{AC}{2}{-2} \Longrightarrow AC=\sqrt{2^2+(-2)^2}=\sqrt{8}$\\
+		$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{4-1}{2-3}=\Coord{BC}{3}{-1} \Longrightarrow BC=\sqrt{3^2+(-1)^2}=\sqrt{10}$\\
+		$\vv{A B} \cdot \vv{A C}=(-1)\times2+(-1)\times(-2)=0$\\
+		donc $\widehat{B A C}=90^{\circ}$
+	\end{corrBox}
+	\item $A(0 ; 4), B(-3 ; 5)$ et $C(6 ; 2)$\\
+	\begin{corrBox}
+		$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{-3-0}{5-4}=\Coord{AB}{-3}{1} \Longrightarrow AB=\sqrt{(-3)^2+1^2}=\sqrt{10}$\\
+		$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{6-0}{2-4}=\Coord{AC}{6}{-2} \Longrightarrow AC=\sqrt{6^2+(-2)^2}=\sqrt{40}$\\
+		$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{6-(-3)}{2-5}=\Coord{BC}{9}{-3} \Longrightarrow BC=\sqrt{9^2+(-3)^2}=\sqrt{90}$\\
+		$\vv{A B} \cdot \vv{A C}=-3\times6+1\times(-2)=-20$\\
+		$\vv{A B} \cdot \vv{A C}=AB\times AC\times\cos(\widehat{B A C})$\\
+		$-20=\sqrt{10}\times\sqrt{40}\times\cos(\widehat{B A C})$\\
+		$-20=20\times\cos(\widehat{B A C})$\\
+		$\widehat{B A C}=\cos^{-1}\left(-1\right)=180^{\circ}$
+	\end{corrBox}
+\end{enumMet}
+
+
+\exerciceDS{}
+Dans un repère orthonormé du plan, on considère les points $A(1 ; 4), B(-3 ;-2)$ et $C(2 ;-5)$.\\
+Déterminer les angles du triangle $A B C$ à 0,1 degré près.\\
+\begin{corrBox}
+	On utilise le théorème d'AL-Kashi : Dans un triangle $\mathrm{ABC},$ on a, avec les notations de la figure :
+	$$
+	a^{2}=b^{2}+c^{2}-2 b c \cos \hat{A} \iff \hat{A}=\cos^{-1}\left(\dfrac{b^2+c^2-a^2}{2bc}\right)
+	$$
+	\begin{center}
+		\includegraphics[scale=0.7]{1.04.IMG-03}
+	\end{center}
+	On commence donc par calculer les 3 longueurs:\\
+	$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{-3-1}{-2-4}=\Coord{AB}{-4}{-6} \Longrightarrow AB=\sqrt{(-4)^2+(-6)^2}=\sqrt{52}$\\
+	$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{2-1}{-5-4}=\Coord{AC}{1}{-9} \Longrightarrow AC=\sqrt{1^2+(-9)^2}=\sqrt{82}$\\
+	$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{2-(-3)}{-5-(-2)}=\Coord{BC}{5}{-3} \Longrightarrow BC=\sqrt{5^2+(-3)^2}=\sqrt{34}$\\
+	On peut maintenant calculer les angles:\\
+	$\widehat{BAC}=\cos^{-1}\left(\dfrac{AC^2+AB^2-BC^2}{2\times AC\times AB}\right)=\cos^{-1}\left(\dfrac{82+52-34}{2\times \sqrt{82}\times \sqrt{52}}\right)\approx40,0^{^\circ}$\\
+	$\widehat{ABC}=\cos^{-1}\left(\dfrac{BC^2+AB^2-AC^2}{2\times BC\times AB}\right)=\cos^{-1}\left(\dfrac{34+52-82}{2\times \sqrt{34}\times \sqrt{52}}\right)\approx87,3^{^\circ}$\\
+	$\widehat{ACB}=180-\widehat{BAC}-\widehat{ABC}=180-40-87,3=52,7^{^\circ}$
+\end{corrBox}
+
+\exerciceDS{}
+$A B C$ est un triangle tel que $A B=4, A C=3$ et $\widehat{B A C}=135^{\circ} . M$ est le milieu du segment $[A C]$ et $P$ est le point déini par $\vv{A P}=\dfrac{3}{4} \vv{A B}$.
+\begin{enumMet}
+	\item En notant que $\vv{M P}=\vv{A P}-\vv{A M}$, calculer $\vv{M P}^2$.\\
+	\begin{corrBox}
+		$\vv{M P}^2=(\vv{A P}-\vv{A M})^2=\vv{A P}^2-2\vv{A P}\cdot\vv{A M}+\vv{A M}^2=\vv{A P}^2-2\times \dfrac{3}{4}\times\dfrac{1}{2}\vv{A B}\cdot\vv{A C}+\vv{A M}^2$\\
+		$\vv{M P}^2=3^2-\dfrac{3}{4}\times3\times4\times\cos(135)+1,5^2=\dfrac{18\sqrt{2}+45}{4}$
+	\end{corrBox}
+	\item En déduire la longueur $M P$.\\
+	\begin{corrBox}
+		$MP^2=\dfrac{18\sqrt{2}+45}{4} \iff MP=\sqrt{\dfrac{18\sqrt{2}+45}{4}}\approx4,2$
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+$A B C D$ est un parallélogramme tel que $A B=3$, $A D=5$ et $A C=6$.
+\begin{enumMet}
+	\item 1. Rappeler la formule exprimant $\vv{u} \cdot \vv{v}$ en fonction de $\|\vv{u}\|,\|\vv{v}\|$ et $\|\vv{u}+\vv{v}\|$.\\
+	Calculer alors le produit scalaire $\vv{A B} \cdot \vv{A D}$.\\
+	\begin{corrBox}
+		On sait que $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}\right)$ donc\\
+		$\vv{AB} \cdot \vv{AD}=\dfrac{1}{2}\left(\|\vv{AB}+\vv{AD}\|^{2}-\|\vv{AB}\|^{2}-\|\vv{AD}\|^{2}\right)=\dfrac{1}{2}(6^2-5^2-3^2)=1$
+	\end{corrBox}   
+	\item En déduire une mesure, en degré, de l'angle $\widehat{B A D}$ (on donnera une valeur arrondie au degré près).\\
+	\begin{corrBox}
+		$\vv{AB}\cdot\vv{AD}=AB\times AD\times\cos(\widehat{BAD})$\\
+		$1=3\times5\times\cos(\widehat{BAD})$\\
+		$\widehat{BAD}=\cos^{-1}\left(\dfrac{1}{15}\right)\approx86\degree$
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+$A B C D$ est un parallélogramme tel que $A B=4$, $A D=6$ et $\widehat{B A D}=40^{\circ}$.\\
+Calculer le produit scalaire $\vv{A B} \cdot \vv{A C}$ (on pourra décomposer le vecteur $\vv{A C}$ ).
+
+\begin{corrBox}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-0.78,-0.54)(11,4.5)
+		\pspolygon[linewidth=1.5pt,linecolor=red](1.,1.)(4.06,3.57)(10.06,3.57)(7.,1.)
+		\pscustom[linewidth=1.5pt,linecolor=qqwuqq]{
+			\parametricplot{0.0}{0.6981317007977319}{0.6*cos(t)+1.|0.6*sin(t)+1.}
+			\lineto(1.,1.)\closepath}
+		\begin{scriptsize}
+			\rput[bl](0.66,1.14){\large{$A$}}
+			\rput[bl](6.78,1.2){\large{$D$}}
+			\rput[bl](1.7,1.14){\large{\qqwuqq{$\alpha = 40^{\circ}$}}}
+			\rput[bl](3.98,3.88){\large{$B$}}
+			\rput[bl](9.92,3.74){\large{$C$}}
+			\rput[bl](2.78,2.16){\large{\red{AB = 4}}}
+			\rput[bl](4.04,1.18){\large{\red{AD = 6}}}
+		\end{scriptsize}
+	\end{pspicture*}
+	
+	$\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot (\vv{A D}+\vv{DC})$\\
+	$\phantom{\vv{A B} \cdot \vv{A C}}=\vv{A B} \cdot (\vv{A D}+\vv{AB})$\\
+	$\phantom{\vv{A B} \cdot \vv{A C}}=\vv{A B} \cdot \vv{A D} + \vv{A B} \cdot \vv{A B}$\\
+	$\phantom{\vv{A B} \cdot \vv{A C}}=AB\times AD\times\cos(\widehat{BAD}) + AB\times AB$\\
+	$\phantom{\vv{A B} \cdot \vv{A C}}=4\times 6\times\cos(40) + 4\times 4$\\
+	$\phantom{\vv{A B} \cdot \vv{A C}}\approx34,4$
+\end{corrBox}
+
+\exerciceDS{}
+
+Donner un vecteur directeur pour chacune des droites suivantes et en déduire qu'elles sont perpendiculaires.
+\begin{enumMet}
+	\item Pour les droites $d_1$ et $d_2$ d'équations cartésiennes $2 x-3 y+4=0$ et $3 x+2 y-1=0$
+	\begin{corrBox}
+		On a $\Coord{u_1}{3}{2}$ et $\Coord{u_2}{-2}{3}$.\\
+		$\vv{u_1}\cdot\vv{u_2}=3\times(-2)+2\times3=0$.
+		Les vecteurs directeurs son orthogonaux donc les droites $d_1$ et $d_2$ sont perpendiculaires.
+	\end{corrBox}
+	\item Pour les droites $d_1$ et $d_2$ d'équations cartésiennes $x-y+3=0$ et $2 x+2 y-1=0$.
+	\begin{corrBox}
+	On a $\Coord{u_1}{1}{1}$ et $\Coord{u_2}{-2}{2}$.\\
+	$\vv{u_1}\cdot\vv{u_2}=1\times(-2)+1\times2=0$.
+	Les vecteurs directeurs son orthogonaux donc les droites $d_1$ et $d_2$ sont perpendiculaires.
+	\end{corrBox}
+	\item Pour les droites $d_1$ et $d_2$ d'équations $y=-3 x+1$ et $-x+3 y-1=0$
+	\begin{corrBox}
+		On a $\Coord{u_1}{-1}{3}$ et $\Coord{u_2}{-3}{-1}$.\\
+		$\vv{u_1}\cdot\vv{u_2}=(-1)\times(-3)+3\times(-1)=0$.
+		Les vecteurs directeurs son orthogonaux donc les droites $d_1$ et $d_2$ sont perpendiculaires.
+	\end{corrBox}
+\end{enumMet}
+
+
+
+\exerciceDS{}
+
+Déterminer un vecteur normal à chacune des droites données par les équations cartésiennes ci-dessous.
+\begin{enumMet}
+	\item $2 x+y-3=0$ \quad \quad \corr{$\Coord{n}{2}{1}$}
+	\item $-3 x+5 y=0$ \quad \quad \corr{$\Coord{n}{-3}{5}$}
+	\item $5 x-3 y+2=0$ \quad \quad \corr{$\Coord{n}{5}{-3}$}
+	\item $-2 x-4 y+1=0$ \quad \quad \corr{$\Coord{n_1}{-2}{-4}$ ou $\Coord{n_2}{2}{4}$ ou $\Coord{n_3}{1}{2}$}
+\end{enumMet}
+
+\exerciceDS{}
+
+Déterminer un vecteur normal à chacune des droites données par les équations réduites ci-dessous.
+\begin{enumMet}
+	\item $y=2 x-3$ \quad \quad \corr{$\Coord{n}{2}{-1}$}
+	\item $y=4 x$ \quad \quad \corr{$\Coord{n}{4}{-1}$}
+	\item $y=-3 x+1$ \quad \quad \corr{$\Coord{n_1}{-3}{-1}$ ou $\Coord{n_2}{3}{1}$}
+	\item $y=-7 x-2$ \quad \quad \corr{$\Coord{n_1}{-7}{-1}$ ou $\Coord{n_2}{7}{1}$}
+\end{enumMet}
+
+\exerciceDS{}
+
+Déterminer un vecteur normal à chacune des droites définies par les deux points donnés.
+\begin{enumMet}
+	\item $\mathrm{B}(-3 ; 2)$ et $\mathrm{C}(1 ;-2)$
+	\begin{corrBox}
+		On a un vecteur directeur de $(BC)$: $\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{1-(-3)}{-2-2}=\Coord{BC}{4}{-4}$\\
+		un vecteur normal de $(BC)$ est donc : $\Coord{n_1}{-4}{-4}$ ou $\Coord{n_2}{4}{4}$ ou $\Coord{n_3}{1}{1}$
+	\end{corrBox}
+	\item $\mathrm{F}(1 ; 0)$ et $\mathrm{G}(-3 ; 4)$
+	\begin{corrBox}
+		On a un vecteur directeur de $(FG)$: $\Coord{FG}{x_G-x_F}{y_G-y_F}=\Coord{FG}{-3-1}{4-0}=\Coord{FG}{-4}{4}$\\
+		un vecteur normal de $(FG)$ est donc : $\Coord{n_1}{4}{4}$ ou $\Coord{n_2}{1}{1}$
+	\end{corrBox}
+	\item $\mathrm{M}(0 ;-2)$ et $\mathrm{N}(5 ; 4)$
+	\begin{corrBox}
+		On a un vecteur directeur de $(MN)$: $\Coord{MN}{x_N-x_M}{y_N-y_M}=\Coord{MN}{5-0}{4-(-2)}=\Coord{MN}{5}{6}$\\
+		un vecteur normal de $(MN)$ est donc : $\Coord{n_1}{6}{-5}$
+	\end{corrBox}
+	\item $\mathrm{H}(-2 ; 3)$ et $\mathrm{K}(-1 ;-5)$
+	\begin{corrBox}
+		On a un vecteur directeur de $(HK)$: $\Coord{HK}{x_K-x_H}{y_K-y_H}=\Coord{HK}{-1-(-2)}{-5-3}=\Coord{HK}{1}{-8}$\\
+		un vecteur normal de $(HK)$ est donc : $\Coord{n}{8}{1}$
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+
+Dans chacun des cas, donner une équation cartésienne de la droite passant par le point $\mathrm{B}$ et de vecteur normal $\vv{n}$.
+\begin{enumMet}
+	\item $B(4 ; 1)$ et $\Coord{n}{1}{-3}$
+	\begin{corrBox}
+		Avec $\Coord{n}{1}{-3}$, on a l'équation cartésienne qui est de la forme : $x-3y+c=0$.\\
+		 Comme $B(4 ; 1)$, on a $4-3\times1+c=0$\\
+		 Soit : $1+c=0$ et donc $c=-1$.\\
+		 l'équation cartésienne est de la forme : $x-3y-1=0$
+	\end{corrBox}
+	\item $\mathrm{B}(2 ; 3)$ et $\Coord{n}{4}{2}$
+	\begin{corrBox}
+		Avec $\Coord{n}{4}{2}$, on a l'équation cartésienne qui est de la forme : $4x+2y+c=0$ ou encore $2x+y+c'=0$.\\
+		Comme $B(2 ; 3)$, on a $2\times2+3+c'=0$\\
+		Soit : $7+c'=0$ et donc $c'=-7$.\\
+		l'équation cartésienne est de la forme : $2x+y-7=0$ ou $4x+2y-14=0$
+	\end{corrBox}
+	\item $\mathrm{B}(-2 ;-1)$ et $\Coord{n}{-3}{-1}$
+	\begin{corrBox}
+		Avec $\Coord{n}{-3}{-1}$, on a l'équation cartésienne qui est de la forme : $-3x-y+c=0$ ou encore $3x+y+c'=0$.\\
+		Comme $B(-2 ; -1)$, on a $3\times(-2)+(-1)+c'=0$\\
+		Soit : $-7+c'=0$ et donc $c'=7$.\\
+		l'équation cartésienne est de la forme : $3x+y+7=0$ ou $-3x-y-7=0$
+	\end{corrBox}
+	\item $\mathrm{B}(0 ; 5)$ et $\Coord{n}{5}{3}$
+	\begin{corrBox}
+		Avec $\Coord{n}{5}{3}$, on a l'équation cartésienne qui est de la forme : $5x+3y+c=0$.\\
+		Comme $B(0 ; 5)$, on a $0+3\times5+c=0$\\
+		Soit : $15+c=0$ et donc $c=-15$.\\
+		l'équation cartésienne est de la forme : $5x+3y-15=0$
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+On considère la droite $d$ d'équation réduite $y=-4 x+5$.
+\begin{enumMet}
+	\item Donner un vecteur directeur de $d$.
+	\begin{corrBox}
+		Une équation cartésienne de $d$ est : $4x+y-5=0$ donc un vecteur directeur est $\Coord{u}{-1}{4}$
+	\end{corrBox}
+	\item En déduire un vecteur normal de $d$. \corr{$\Coord{n}{4}{1}$}
+	\item Donner une équation cartésienne de la droite $d$ ' perpendiculaire à $d$ passant par le point $\mathrm{A}(1 ; 1)$.
+	\begin{corrBox}
+		Le vecteur directeur $\Coord{u}{-1}{4}$ de la droite $d$ est un vecteur normal à la droite $d'$. L'équation de $d'$ est donc de la forme:\\
+		$-x+4y+c=0$.\\
+		Comme $A(1 ; 1)$, on a $-1+4\times1+c=0$\\
+		Soit : $3+c=0$ et donc $c=-3$.\\
+		l'équation cartésienne est de la forme : $-x+4y-3=0$
+	\end{corrBox}
+	\item Donner une équation réduite de la droite $d^{\prime}$.
+	\begin{corrBox}
+		$-x+4y-3=0 \iff 4y=x+3 \iff y=\dfrac{1}{4}x+\dfrac{3}{4}$
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+On considère la droite $d$ d'équation cartésienne $-5 x+3 y-1=0$.
+\begin{enumMet}
+	\item Donner un vecteur directeur de $d$. \corr{$\Coord{u}{-3}{-5}$ ou $\Coord{u'}{3}{5}$}
+	\item En déduire un vecteur normal de $d$. \corr{$\Coord{n}{-5}{3}$}
+	\item Donner une équation cartésienne de la droite $d^{\prime}$ perpendiculaire à $d$ passant par le point $\mathrm{F}(2 ;-2)$.
+	\begin{corrBox}
+		Le vecteur directeur $\Coord{u'}{3}{5}$ de la droite $d$ est un vecteur normal à la droite $d'$. L'équation de $d'$ est donc de la forme:\\
+		$3x+5y+c=0$.\\
+		Comme $F(2 ; -2)$, on a $3\times2+5\times(-2)+c=0$\\
+		Soit : $-4+c=0$ et donc $c=4$.\\
+		l'équation cartésienne est de la forme : $3x+5y+4=0$
+	\end{corrBox}
+	\item Donner une équation réduite de la droite $d^{\prime}$.
+	\begin{corrBox}
+		$3x+5y+4=0 \iff 5y=-3x-4 \iff y=-\dfrac{3}{5}x-\dfrac{4}{5}$
+	\end{corrBox}
+\end{enumMet}
+
+
+\exerciceDS{} %Ex 81
+On donne deux points $A(-1 ; 2)$ et $\mathrm{B}(3 ; 4)$.
+\begin{enumMet}
+	\item Déterminer les coordonnées du milieu I du segment [AB].
+	\begin{corrBox}
+		$x_I=\dfrac{x_A+x_B}{2}=\dfrac{-1+3}{2}=1$ et $y_I=\dfrac{y_A+y_B}{2}=\dfrac{2+4}{2}=3$\\
+		Donc $I(1;3)$.
+	\end{corrBox}
+	\item Déterminer les coordonnées du vecteur $\vv{A B}$.
+	\begin{corrBox}
+		$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{3-(-1)}{4-2}=\Coord{AB}{4}{2}$
+	\end{corrBox}
+	\item Déterminer une équation cartésienne de la médiatrice du segment $[A B]$.
+	\begin{corrBox}
+		Le vecteur $\Coord{AB}{4}{2}$ est un vecteur normal à la médiatrice. L'équation de la médiatrice est donc de la forme:\\
+		$4x+2y+c=0$.\\
+		La médiatrice passe par I et comme $I(1 ; 3)$, on a $4\times1+2\times3+c=0$\\
+		Soit : $10+c=0$ et donc $c=-10$.\\
+		l'équation cartésienne est de la forme : $4x+2y-10=0$ ou encore $2x+y-5=0$
+	\end{corrBox}
+\end{enumMet}
+
+
+\exerciceDS{} %Ex 85
+On considère un triangle $A B C$ avec $A(1 ;-3), B(-2 ; 4)$ et $\mathrm{C}(3 ; 0)$.
+\begin{enumMet}
+	\item Déterminer les coordonnées du vecteur $\vv{B C}$.
+	\begin{corrBox}
+		$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{3-(-2)}{0-4}=\Coord{BC}{5}{-4}$
+	\end{corrBox}
+	\item Déterminer une équation cartésienne de la hauteur issue de $A$ dans le triangle $A B C$.
+	\begin{corrBox}
+		Le vecteur $\Coord{BC}{5}{-4}$ est un vecteur normal à la hauteur. L'équation de la hauteur est donc de la forme:\\
+		$5x-4y+c=0$.\\
+		La hauteur passe par A et comme $A(1 ;-3)$, on a $5\times1-4\times(-3)+c=0$\\
+		Soit : $17+c=0$ et donc $c=-17$.\\
+		l'équation cartésienne est de la forme : $5x-4y-17=0$
+	\end{corrBox}
+	\item Déterminer les coordonnées de $\mathrm{H}$ projeté orthogonal de A sur (BC).
+	\begin{corrBox}
+		On commence par déterminer l'équation de $(BC)$ qui est de la forme $y=mx+p$.\\
+		$m=\dfrac{y_C-y_B}{x_C-x_B}=\dfrac{-4}{5}$ et comme la droite passe par C, on a:\\
+		$0=-\dfrac{4}{5}\times3+c \iff c=\dfrac{12}{5}$\\
+		Donc $(BC)$ a pour équation $y=-\dfrac{4}{5}x+\dfrac{12}{5}$.\\
+		H est le point d'intersection de $(BC)$ et de la hauteur issue de A. Je vais remplacer $y$ par $-\dfrac{4}{5}x+\dfrac{12}{5}$ dans l'équation de la hauteur.\\
+		$5x-4\left(-\dfrac{4}{5}x+\dfrac{12}{5}\right)-17=0 \iff 25x+16x-48-85=0 \iff 41x-133=0 \iff x=\dfrac{133}{41}$.\\
+		On remplace $x$ par $\dfrac{133}{41}$ dans 1 des 2 équations pour trouver y:\\
+		$y=-\dfrac{4}{5}\times \dfrac{133}{41}+\dfrac{12}{5}=-\dfrac{8}{41}$.\\
+		Donc $H\left(\dfrac{133}{41}; -\dfrac{8}{41}\right)$
+	\end{corrBox}
+	\item Calculer la longueur $\mathrm{AH}$.
+	\begin{corrBox}
+		$AH=\sqrt{(x_H-x_A)^2+(y_H-y_A)^2}=\sqrt{\left(\dfrac{133}{41}-1\right)^2+\left(-\dfrac{8}{41}+3\right)^2}=\dfrac{23\sqrt{41}}{41}$
+	\end{corrBox}
+	\item En déduire l'aire du triangle $A B C$.
+	\begin{corrBox}
+		$BC=\sqrt{5^2+4^2}=\sqrt{41}$\\
+		$\mathrm{\mathscr{A}}_{ABC}=\dfrac{BC\times AH}{2}=\dfrac{\sqrt{41}\times 23\sqrt{41}}{41\times2}=\dfrac{23}{2}=11,5$
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{} %Ex 86
+On donne les points $E(-2 ;-2), F(5 ;-4)$ et $\mathrm{G}(1 ; 2)$.
+\begin{enumMet}
+	\item Déterminer une équation cartésienne de la médiatrice du segment [EF].
+	\begin{corrBox}
+		$\Coord{EF}{x_F-x_E}{y_F-y_E}=\Coord{EF}{5-(-2)}{-4-(-2)}=\Coord{EF}{7}{-2}$.\\
+		Le vecteur $\Coord{EF}{7}{-2}$ est un vecteur normal à la médiatrice. L'équation de la hauteur est donc de la forme:\\
+		$7x-2y+c=0$.\\
+		La médiatrice passe par le milieu I de $[EF]$ et comme $I(1,5 ;-3)$, on a $7\times1,5-2\times(-3)+c=0$\\
+		Soit : $16,5+c=0$ et donc $c=-16,5$.\\
+		l'équation cartésienne est de la forme : $7x-2y-16,5=0$
+	\end{corrBox}
+	\item Le point $\mathrm{G}$ appartient-il à cette droite ?
+	\begin{corrBox}
+		On remplace x et y dans l'équation cartésienne par les coordonnées de G et si l'égalité est respectée alors le point appartient à la droite.\\
+		$7\times1-2\times2-16,5=-13,5\neq0$
+		Le point G n'appartient pas à la médiatrice. 
+	\end{corrBox}
+	\item Déterminer une équation de la hauteur issue de $\mathrm{G}$ dans le triangle EFG.
+	\begin{corrBox}
+		Le vecteur $\Coord{EF}{7}{-2}$ est un vecteur normal à la hauteur. L'équation de la hauteur est donc de la forme:\\
+		$7x-2y+c=0$.\\
+		La hauteur passe par G et comme $G(1 ;2)$, on a $7\times1-2\times(2)+c=0$\\
+		Soit : $3+c=0$ et donc $c=-3$.\\
+		l'équation cartésienne est de la forme : $7x-2y-3=0$
+	\end{corrBox}
+	\item Déterminer les coordonnées de K projeté orthogonal de $G$ sur la droite (EF).
+	\begin{corrBox}
+		On commence par déterminer l'équation de $(EF)$ qui est de la forme $y=mx+p$.\\
+		$m=\dfrac{y_F-y_E}{x_F-x_E}=\dfrac{-2}{7}$ et comme la droite passe par E, on a:\\
+		$-2=-\dfrac{2}{7}\times(-2)+c \iff c=-\dfrac{18}{7}$\\
+		Donc $(EF)$ a pour équation $y=-\dfrac{2}{7}x-\dfrac{18}{7}$.\\
+		K est le point d'intersection de $(EF)$ et de la hauteur issue de G. Je vais remplacer $y$ par $-\dfrac{2}{7}x-\dfrac{18}{7}$ dans l'équation de la hauteur.\\
+		$7x-2\left(-\dfrac{2}{7}x-\dfrac{18}{7}\right)-3=0 \iff 49x+4x+36-21=0 \iff 53x+15=0 \iff x=-\dfrac{15}{53}$.\\
+		On remplace $x$ par $-\dfrac{15}{53}$ dans 1 des 2 équations pour trouver y:\\
+		$y=-\dfrac{2}{7}\times(-\dfrac{15}{53}) -\dfrac{18}{7}=-\dfrac{132}{53}$.\\
+		Donc $H\left(-\dfrac{15}{53}; -\dfrac{132}{53}\right)$
+	\end{corrBox}
+	\item Calculer l'aire du triangle EFG.
+	\begin{corrBox}
+		$KG=\sqrt{(x_G-x_K)^2+(y_G-y_K)^2}=\sqrt{\left(1+\dfrac{15}{53}\right)^2+\left(2+\dfrac{132}{53}\right)^2}=\dfrac{34\sqrt{53}}{53}$\\
+		$EF=\sqrt{7^2+2^2}=\sqrt{53}$\\
+		$\mathrm{\mathscr{A}}_{EFG}=\dfrac{EF\times KG}{2}=\dfrac{\sqrt{53}\times 34\sqrt{53}}{53\times2}=\dfrac{34}{2}=17$
+	\end{corrBox}
+\end{enumMet}
+
+
+\end{document}
+

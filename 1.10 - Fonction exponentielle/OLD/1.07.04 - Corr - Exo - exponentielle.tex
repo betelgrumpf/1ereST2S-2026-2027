@@ -1,0 +1,303 @@
+\documentclass[12pt,a4paper]{book}
+	% \documentclass[a4paper,french]{book}
+	% \usepackage[17pt]{extsizes}
+
+\input{../1ere-preambule}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+\graphicspath{{../images/}}
+\setcounter{chapter}{6}
+\chapter[Correction des exercices]{Fonction exponentielle \\ correction des exercices}
+\thispagestyle{fancy}
+
+%\section*{étude de la fonction exponentielle}
+
+%\subsection*{Ex 22 p 171}
+%Pour tout réel $x$, on a :
+%\begin{enumMet}
+%    \item $f^{\prime}(x)=\mathrm{e}^{x}$ (par somme).
+%    \item $g^{\prime}(x)=3 \mathrm{e}^{x}$ (par produit d'une fonction par une constante).
+%    \item $h^{\prime}(x)=\dfrac{\mathrm{e}^{x}}{3}$ (par produit d'une fonction par une constante). 
+%\end{enumMet}
+
+\subsection*{Ex 23 p 171}
+
+\subsection*{Ex 24 p 171}
+
+\subsection*{Ex 26 p 171}
+\begin{enumMet}
+    \item $\mathrm{e}^{5} \times \mathrm{e}^{-2} \times \mathrm{e}^{3}=\mathrm{e}^{5+(-2)+3}=\mathrm{e}^{6}$
+    \item $\mathrm{e}^{5} \times\left(\mathrm{e}^{8}\right)^{2} \times \mathrm{e}=\mathrm{e}^{5} \times \mathrm{e}^{8 \times 2} \times \mathrm{e}^{1}=\mathrm{e}^{5} \times \mathrm{e}^{16} \times \mathrm{e}^{1}=\mathrm{e}^{5+16+1}=\mathrm{e}^{22}$
+    \item $\mathrm{e}^{-4} \times\left(\mathrm{e}^{2}\right)^{8} \times \mathrm{e}^{-1}=\mathrm{e}^{-4} \times \mathrm{e}^{2 \times 8} \times \mathrm{e}^{-1}=\mathrm{e}^{-4+16-1}=\mathrm{e}^{11}$
+\end{enumMet}
+
+\subsection*{Ex 27 p 171}
+
+%\subsection*{Ex 28 p 171}
+%\begin{enumMet}
+%    \item $e^{\mRouge{-2}} \times e^{7} \times e^{-2}=e^{3}$
+%    \item $\left(e^{3}\right)^{4} \times e^{\mRouge{-10}}=e^{3} \times e^{-1}$
+%    \item $\dfrac{e^{\mRouge{2}}}{e^{3}}=e^{-1}$
+%    \item $\dfrac{\mathrm{e}}{\mathrm{e}^{\mRouge{4}}}=\frac{\mathrm{e}^{2}}{\mathrm{e}^{5}}$
+%\end{enumMet}
+
+\subsection*{Ex 30 p 171}
+\grasInMet{$x$ est un nombre réel. Simplifier les expressions.}
+\begin{enumMet}
+    \item \grasInMet{$\dfrac{\mathrm{e}^x \times\left(\mathrm{e}^x\right)^2}{\mathrm{e}^{2 x}}$}\\
+    $\dfrac{\mathrm{e}^{x} \times\left(\mathrm{e}^{x}\right)^{2}}{\mathrm{e}^{2 x}}=\dfrac{\mathrm{e}^{x} \times \mathrm{e}^{2 x}}{\mathrm{e}^{2 x}}=\dfrac{\mathrm{e}^{x+2 x}}{\mathrm{e}^{2 x}}=\mathrm{e}^{3 x-2 x}=\mathrm{e}^{x}$
+    \item \grasInMet{$\dfrac{\mathrm{e}^{x+4}}{\mathrm{e}^{4 x}}$}\\
+    $\dfrac{\mathrm{e}^{\mathrm{x}+4}}{\mathrm{e}_{1}^{4 x}}=\mathrm{e}^{x+4-4 x}=\mathrm{e}^{-3 x+4}$
+    \item \grasInMet{$\dfrac{1}{\mathrm{e}^{3-2 x}}$}\\
+    $\dfrac{1}{\mathrm{e}^{3-2 x}}=\mathrm{e}^{-(3-2 x)}=\mathrm{e}^{2 x-3}$
+\end{enumMet}
+
+%\subsection*{Ex 31 p 171}
+%\begin{enumMet}
+%    \item Pour tout réel $x$, $\mathrm{e}^{x}>0$ et $3>0$ donc $f(x)>0$.
+%    \item Pour tout réel $x$, $\mathrm{e}^{-5 x}>0$ et $2>0$ donc $g(x)>0$.
+%    \item Pour tout réel $x, \mathrm{e}^{-3 x}>0$ et $-\sqrt{2}<0,$ donc $h(x)<0$.
+%\end{enumMet}
+%
+%\subsection*{Ex 32 p 171}
+%\begin{enumMet}
+%    \item Pour tout réel $x, \mathrm{e}^{4 x}>0$ donc le numérateur est strictement positif. De plus pour tout réel $x$, $x^{2}+2>0$. Donc, au final, $f$ est positive.
+%    \item Pour tout réel $x,-\mathrm{e}^{-8 x}<0,$ donc le dénominateur est strictement négatif. Le numérateur étant lui aussi négatif, la fonction $g$ est donc positive.
+%\end{enumMet}
+
+\subsection*{Ex 33 p 171}
+\grasInMet{Calculer la dérivée de la fonction $f$ définie sur $\mathbb{R}$.}
+\begin{enumMet}
+	\item \grasInMet{$f(x)=3 \mathrm{e}^x-5 x^2+2$}\\
+	$f^{\prime}(x)=3 \mathrm{e}^x-5 \times 2 x+0=3 \mathrm{e}^x-10 x$.
+	\item \grasInMet{$f(x)=x-4 \mathrm{e}^x+1$}\\
+	$f^{\prime}(x)=1-4 \mathrm{e}^x+0=1-4 \mathrm{e}^x$.
+	\item \grasInMet{$f(x)=\mathrm{e}^x+\mathrm{e}^3$}\\
+	$f^{\prime}(x)=\mathrm{e}^x+0=\mathrm{e}^x$.
+	\item \grasInMet{$f(x)=x \mathrm{e}^x$}\\
+	$f^{\prime}(x)=1 \times \mathrm{e}^x+x \times \mathrm{e}^x=(1+x) \mathrm{e}^x$ (dérivée d'un produit).
+\end{enumMet}
+
+
+\subsection*{Ex 34 p 171}
+\grasInMet{Calculer la dérivée de la fonction $f$ définie sur $\mathbb{R}$ et en déduire son tableau de variations.}
+\begin{enumMet}
+	\item \grasInMet{$f(x)=\mathrm{e}^{3 x}$}\\
+	$f^{\prime}(x)=3 \times \mathrm{e}^{3 x}=3 \mathrm{e}^{3 x}, f$ est donc strictement croissante sur $\mathbb{R}$.
+	\item \grasInMet{$f(x)=\mathrm{e}^{-2 x}$}\\
+	$f^{\prime}(x)=-2 \times \mathrm{e}^{-2 x}=-2 \mathrm{e}^{-2 x}, f$ est donc strictement décroissante sur $\mathbb{R}$.
+	\item \grasInMet{$f(x)=\mathrm{e}^{-x+4}$}\\
+	$f^{\prime}(x)=-1 \times \mathrm{e}^{-x+4}=-\mathrm{e}^{-x+4}, f$ est donc strictement décroissante sur $\mathbb{R}$.
+	\item \grasInMet{$f(x)=5 \mathrm{e}^{x+6}$}\\
+	$f^{\prime}(x)=5 \times 1 \times \mathrm{e}^{x+6}=5 \mathrm{e}^{x+6}, f$ est donc strictement croissante sur $\mathbb{R}$.
+\end{enumMet}
+
+%\subsection*{38 p 172}
+%\begin{enumMet}
+%    \item $A=\mathrm{e}^{3+4}=\mathrm{e}^{7}$
+%    \item $B=\mathrm{e}^{5-8+3}=\mathrm{e}^{0}=1$
+%    \item $C=\mathrm{e}^{7-4}=\mathrm{e}^{3}$
+%    \item $D=\mathrm{e}^{2-1-3}=\mathrm{e}^{-2}$
+%\end{enumMet}
+%
+%\subsection*{39 p 172}
+%\begin{enumMet}
+%    \item $f^{\prime}(x)=3 \mathrm{e}^{3 x}$
+%    \item $g^{\prime}(x)=2 \mathrm{e}^{2 x+5}$
+%    \item $h^{\prime}(x)=-4 \mathrm{e}^{-4 x+1}$
+%    \item $j^{\prime}(x)=0$ car il s'agit d'une fonction constante.
+%\end{enumMet}
+
+%\section*{Résolution d'équations}
+
+
+\subsection*{52 p 172}
+\grasInMet{$t$ est un réel quelconque. Simplifer au maximum les expressions suivantes.}
+\begin{enumMet}
+    \item \grasInMet{$d(t)=\mathrm{e}^{3 t} \times \mathrm{e}^{1-6 t} \times\left(\mathrm{e}^{2 t+1}\right)^{3}$}\\
+    $d(t)=\mathrm{e}^{3 t} \times \mathrm{e}^{1-6 t} \times \mathrm{e}^{6 t+3}=\mathrm{e}^{3 t+1-6 t+6 t+3}=\mathrm{e}^{3 t+4}$
+    \item \grasInMet{$e(t)=\dfrac{\mathrm{e}^{8 t-3}}{\mathrm{e}^{2 t+5}}$}\\
+    $e(t)=\mathrm{e}^{8 t-3-(2 t+5)}=\mathrm{e}^{6 t-8}$
+    \item \grasInMet{$f(t)=\dfrac{\mathrm{e}^{-2 t+1} \times \mathrm{e}^{6 t+5}}{\mathrm{e}^{-4 t-2}}$}\\
+    $f(t)=\mathrm{e}^{-2 t+1+6 t+5-(-4 t-2)}=\mathrm{e}^{8 t+8}$ 
+\end{enumMet}
+
+%\subsection*{53 p 172}
+%\grasInMet{$n$ est un entier relatif quelconque. Simplifier au maximum les expressions suivantes.}
+%\begin{enumMet}
+%    \item \grasInMet{$u(n)=\mathrm{e}^{2 n+1} \times \mathrm{e}^{3 n-4}$}\\
+%$u(n)=\mathrm{e}^{2 n+1+3 n-4}=\mathrm{e}^{5 n-3}$
+%\item \grasInMet{$v(n)=\dfrac{\mathrm{e}^{5 n-3}}{\mathrm{e}^{-2 n+1}}$}\\
+%$v(n)=\mathrm{e}^{5 n-3-(-2 n+1)}=\mathrm{e}^{7 n-4}$
+%\item \grasInMet{$w(n)=\left(\mathrm{e}^{2 n-1}\right)^{2} \times \mathrm{e}^{3 n+4}$}\\
+%$w(n)=\mathrm{e}^{4 n-2} \times \mathrm{e}^{3 n+4}=\mathrm{e}^{4 n-2+3 n+4}=\mathrm{e}^{7 n+2}$
+%\end{enumMet}
+%
+%\subsection*{54 p 172}
+%\grasInMet{$x$ est un réel quelconque. Simplifier au maximum les expressions suivantes.}
+%\begin{enumMet}
+%    \item \grasInMet{$g(x)=\left(\mathrm{e}^{4 x-5} \times \mathrm{e}^{3 x+2}\right)^{3}$}\\
+%$g(x)=\left(\mathrm{e}^{4 x-5+3 x+2}\right)^{3}=\left(\mathrm{e}^{7 x-3}\right)^{3}=\mathrm{e}^{21 x-9}$
+%    \item \grasInMet{$h(x)=\dfrac{\mathrm{e}^{3 x}}{\mathrm{e}^{-x} \times\left(\mathrm{e}^{-3 x}\right)^{2}}$}\\
+%$h(x)=\dfrac{\mathrm{e}^{3 x}}{\mathrm{e}^{-x} \times \mathrm{e}^{-6 x}}=\mathrm{e}^{3 x-(-x)-(-6 x)}=\mathrm{e}^{10 x}$
+%\end{enumMet}
+
+\subsection*{56 p 173}
+\grasInMet{Développer et réduire les expressions suivantes.}
+\begin{enumMet}
+	\item \grasInMet{$\mathrm{A}=\mathrm{e}^4\left(\mathrm{e}^3+\mathrm{e}^7\right)$}\\
+	$A=\mathrm{e}^4 \times \mathrm{e}^3+\mathrm{e}^4 \times \mathrm{e}^7=\mathrm{e}^{4+3}+\mathrm{e}^{4+7}=\mathrm{e}^7+\mathrm{e}^{11}$
+	\item \grasInMet{$B=\left(e^2+e^6\right)\left(e^3+e\right)$}\\
+	$B=\mathrm{e}^2 \times \mathrm{e}^3+\mathrm{e}^2 \times \mathrm{e}^2+\mathrm{e}^6 \times \mathrm{e}^3+\mathrm{e}^6 \times \mathrm{e}=\mathrm{e}^5+\mathrm{e}^3+\mathrm{e}^9+\mathrm{e}^7$
+	\item \grasInMet{$\mathrm{C}=\left(\mathrm{e}^8-\mathrm{e}^2\right)\left(\mathrm{e}^6+1\right)$}\\
+	$C=\mathrm{e}^8 \times \mathrm{e}^6+\mathrm{e}^8-\mathrm{e}^2 \times \mathrm{e}^6-\mathrm{e}^2=\mathrm{e}^{14}+\mathrm{e}^8-\mathrm{e}^8+\mathrm{e}^2=\mathrm{e}^{14}+\mathrm{e}^2$
+	\item  \grasInMet{$D=\left(e^{-2}+e^3\right)\left(e^{-2}-e^8\right)$}\\
+	$D=\mathrm{e}^{-2} \times \mathrm{e}^{-2}-\mathrm{e}^{-2} \times \mathrm{e}^8+\mathrm{e}^3 \times \mathrm{e}^{-2}-\mathrm{e}^3 \times \mathrm{e}^8=\mathrm{e}^{-4}-\mathrm{e}^6+\mathrm{e}-\mathrm{e}^{11}$
+\end{enumMet}
+
+\subsection*{69 p 174}
+\grasInMet{Dans chaque cas, déterminer la fonction dérivée de la fonction $f$ définie et dérivable sur $\mathbb{R}$.}
+\begin{enumMet}
+	\item \grasInMet{$f(x)=5 \mathrm{e}^x-x^2$}\\
+	$f^{\prime}(x)=5 \mathrm{e}^x-2 x$.
+	\item \grasInMet{$f(x)=x \mathrm{e}^x$}\\
+	$f^{\prime}(x)=1 \times \mathrm{e}^x+x \times \mathrm{e}^x=(1+x) \mathrm{e}^x$, comme dérivée d'un produit de fonctions.
+	\item \grasInMet{$f(t)=2 \mathrm{e}^{-t}+6 t^3-3 \mathrm{e}^5$}\\
+	$f^{\prime}(t)=-2 \mathrm{e}^{-t}+18 t^2$
+	\item \grasInMet{$f(t)=\mathrm{e}^{-3} \times \mathrm{e}^{2 t}+\mathrm{e}^{-4 t}$}\\
+	$f^{\prime}(t)=2 \mathrm{e}^{-3} \mathrm{e}^{2 t}-4 \mathrm{e}^{-\dot{4 t}}=2 \mathrm{e}^{2 t-3}-4 \mathrm{e}^{-4 t}$.
+	\item  \grasInMet{$f(t)=-8 t \mathrm{e}^{-3 t+1}$}\\
+	$f^{\prime}(t)=-8 \mathrm{e}^{-3 t+1}+24 t \mathrm{e}^{-3 t+1}=(24 t-8) \mathrm{e}^{-3 t+1}$, comme dérivée d'un produit de fonctions.
+\end{enumMet}
+
+
+\subsection*{70 p 174}
+\grasInMet{Déterminer la fonction dérivée, sous forme factorisée, de la fonction $f$ définie et dérivable sur $\mathbb{R}$.}
+\begin{enumMet}
+	\item \grasInMet{$f(x)=(x+1) \mathrm{e}^x$}\\
+	On utilise la formule de dérivée d'un produit de fonctions : $(u v)^{\prime}=u^{\prime} v+u v^{\prime}$.\\
+	$f^{\prime}(x)=1 \times \mathrm{e}^x+(x+1) \mathrm{e}^x=(2+x) \mathrm{e}^x$
+	\item \grasInMet{$f(x)=(-2 x+3) \mathrm{e}^x$}\\
+	On utilise la formule de dérivée d'un produit de fonctions : $(u v)^{\prime}=u^{\prime} v+u v^{\prime}$.\\
+	$f^{\prime}(x)=-2 \times \mathrm{e}^x+(-2 x+3) \mathrm{e}^x=(-2 x+1) \mathrm{e}^x$
+	\item \grasInMet{$f(x)=x^2 \mathrm{e}^x$}\\
+	On utilise la formule de dérivée d'un produit de fonctions : $(u v)^{\prime}=u^{\prime} v+u v^{\prime}$.\\
+	$f^{\prime}(x)=2 x \times \mathrm{e}^x+x^2 \mathrm{e}^x=\left(2 x+x^2\right) \mathrm{e}^x$
+	\item \grasInMet{$f(x)=\left(x^2-3 x+1\right) \mathrm{e}^x$}\\
+	On utilise la formule de dérivée d'un produit de fonctions : $(u v)^{\prime}=u^{\prime} v+u v^{\prime}$.\\
+	$f^{\prime}(x)=(2 x-3) \mathrm{e}^x+\left(x^2-3 x+1\right) \mathrm{e}^x=\left(x^2-x-2\right) \mathrm{e}^x$
+\end{enumMet}
+
+\subsection*{Ex 36 p 171}
+\begin{enumMet}
+    \item $\mathrm{e}^{-x}=1 \Leftrightarrow \mathrm{e}^{-x}=\mathrm{e}^{0} \Leftrightarrow-x=0 \Leftrightarrow x=0$
+    \item $\mathrm{e}^{2 x-3}=\mathrm{e} \Leftrightarrow \mathrm{e}^{2 x-3}=\mathrm{e}^{1} \Leftrightarrow 2 x-3=1 \Leftrightarrow x=2$
+    \item $5 \mathrm{e}^{3 x+1}=5 \Leftrightarrow \mathrm{e}^{3 x+1}=1 \Leftrightarrow \mathrm{e}^{3 x+1}=\mathrm{e}^{0} \Leftrightarrow 3 x+1=0 \Leftrightarrow x=-\dfrac{1}{3}$
+    \item $-2 \mathrm{e}^{x^{2}}=3 \Leftrightarrow \mathrm{e}^{x^{2}}=-\dfrac{3}{2}$
+    Ce qui est impossible car la fonction exponentielle est strictement positive sur $\mathbb{R}$. L'équation n'admet aucune solution : $S=\varnothing$.
+\end{enumMet}
+
+\subsection*{Ex 37 p 171}
+\begin{enumMet}
+    \item $\mathrm{e}^{2 x}>\mathrm{e}^{-2} \Leftrightarrow 2 x>-2 \Leftrightarrow x>-1$ donc l'ensemble des solutions est $\left.S=\right]-1 ;+\infty[$.
+    \item $\mathrm{e}^{-3 x}<\mathrm{e} \Leftrightarrow \mathrm{e}^{-3 x}<\mathrm{e}^{1} \Leftrightarrow-3 x<1 \Leftrightarrow x>-\dfrac{1}{3}$\\
+    Donc $S=\left]-\dfrac{1}{3} ;+\infty\right[$
+    \item $\mathrm{e}^{3 x-5} \geqslant \mathrm{e}^{-3} \Leftrightarrow 3 x-5 \geqslant-3 \Leftrightarrow 3 x \geqslant 2 \Leftrightarrow x \geqslant \dfrac{2}{3}$\\
+    Donc $S=\left[\dfrac{2}{3} ;+\infty\right[.$
+    \item $\mathrm{e}^{-2 x-1} \leqslant 1 \Leftrightarrow \mathrm{e}^{-2 x-1} \leqslant \mathrm{e}^{0} \Leftrightarrow-2 x-1 \leqslant 0 \Leftrightarrow-2 x \leqslant 1 \Leftrightarrow x \geqslant-\dfrac{1}{2}$\\
+    Donc $S=\left[\dfrac{1}{2} ;+\infty\right[$.
+\end{enumMet}
+
+
+
+%\subsection*{71 p 174}
+%\grasInMet{Déterminer la fonction dérivée de la fonction $f$ définie et dérivable sur $\mathbb{R} \backslash\{0\}$.}
+%\begin{enumMet}
+%    \item \grasInMet{$f(x)=\dfrac{\mathrm{e}^{x}}{x}$}\\
+%    On utilise la formule de dérivée d'un quotient de fonctions :\\ $\left(\dfrac{u}{v}\right)^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$. $f^{\prime}(x)=\dfrac{\mathrm{e}^{x} \times x-\mathrm{e}^{x} \times 1}{x^{2}}=\dfrac{(x-1) \mathrm{e}^{x}}{x^{2}}$
+%    \item \grasInMet{$f(x)=\dfrac{x}{\mathrm{e}^{x}-1}$}\\
+%    On utilise la formule de dérivée d'un quotient de fonctions :\\ $\left(\dfrac{u}{v}\right)^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$. $f^{\prime}(x)=\dfrac{1 \times\left(\mathrm{e}^{x}-1\right)-x \times \mathrm{e}^{x}}{\left(\mathrm{e}^{x}-1\right)^{2}}=\dfrac{\mathrm{e}^{x}-1-x \mathrm{e}^{x}}{\left(\mathrm{e}^{x}-1\right)^{2}}$
+%\end{enumMet}
+%
+%\subsection{72 p 174}
+%\grasInMet{Pour chaque fonction $f$ définie ci-dessous, donner le domaine de définition ainsi que l'expression de la fonction dérivée $f^{\prime}$.}
+%\begin{enumMet}
+%    \item \grasInMet{$f(x)=\dfrac{x}{\mathrm{e}^{x}}$}\\
+%    Pour tout réel $x$, on a $\mathrm{e}^{x}>0$, et en particulier $\mathrm{e}^{x} \neq 0$. Le domaine de définition de $f$ est donc $\mathbb{R}$.\\
+%    Et pour tout réel $x, f^{\prime}(x)=\dfrac{1 \times \mathrm{e}^{x}-x \times \mathrm{e}^{x}}{\left(\mathrm{e}^{x}\right)^{2}}=\dfrac{(1-x) \mathrm{e}^{x}}{\mathrm{e}^{2 x}}=\dfrac{1-x}{\mathrm{e}^{x}}$
+%    \item  \grasInMet{$f(x)=\dfrac{\mathrm{e}^{x}+1}{\mathrm{e}^{x}-1}$}\\
+%    On a $\mathrm{e}^{x}-1=0 \Leftrightarrow \mathrm{e}^{x}=1 \Leftrightarrow x=0$.\\
+%    Le domaine de définition est donc $\mathbb{R} \backslash\{0\}$.\\
+%    Et pour tout $x \in \mathbb{R} \backslash\{0\}, f^{\prime}(x)=\dfrac{\mathrm{e}^{x} \times\left(\mathrm{e}^{x}-1\right)-\left(\mathrm{e}^{x}+1\right) \times \mathrm{e}^{x}}{\left(\mathrm{e}^{x}-1\right)^{2}}=\dfrac{-2 \mathrm{e}^{x}}{\left(\mathrm{e}^{x}-1\right)^{2}}$.
+%    \item \grasInMet{$f(x)=\mathrm{e}^{x}+1$}\\
+%    Le domaine de définition de la fonction est $\mathbb{R}$.\\
+%    Et pour tout $x$ réel, $f^{\prime}(x)=\mathrm{e}^{x}$.
+%    \item \grasInMet{$f(t)=\dfrac{\mathrm{e}^{t}+1}{t-1}$}\\
+%    Le domaine de définition de la cette fonction est $\mathbb{R} \backslash\{1\}$.\\
+%    Et pour tout $t \in \mathbb{R} \backslash\{1\}, f^{\prime}(t)=\dfrac{\mathrm{e}^{t} \times(t-1)-\left(\mathrm{e}^{t}+1\right) \times 1}{(t-1)^{2}}=\dfrac{t \mathrm{e}^{t}-2 \mathrm{e}^{t}-1}{(t-1)^{2}}$.
+%\end{enumMet}
+%
+\subsection*{73 p 174}
+\grasInMet{Résoudre les équations suivantes dans $\mathbb{R}$.}
+\begin{enumMet}
+    \item \grasInMet{$\mathrm{e}^{x-4}=\mathrm{e}$}\\
+    $\mathrm{e}^{x-4}=\mathrm{e} \Leftrightarrow \mathrm{e}^{x-4}=\mathrm{e}^{1} \Leftrightarrow x-4=1 \Leftrightarrow x=5$.\\
+    Donc l'ensemble des solutions de cette équation est $S=\{5\}$.
+    \item \grasInMet{$\mathrm{e}^{x^{2}+x}=1$}\\
+    $\mathrm{e}^{x^{2}+x}=1 \Leftrightarrow \mathrm{e}^{x^{2}+x}=\mathrm{e}^{0} \Leftrightarrow x^{2}+x=0 \Leftrightarrow x(x+1)=0 \Leftrightarrow x=0$ ou $x=-1$.\\
+    Donc l'ensemble des solutions de cette équation est $S=\{-1 ; 0\}$.
+    \item \grasInMet{$\mathrm{e}^{-x^{2}}=\dfrac{1}{\mathrm{e}}$}\\
+    $\mathrm{e}^{-x^{2}}=\dfrac{1}{\mathrm{e}} \Leftrightarrow \mathrm{e}^{-x^{2}}=\mathrm{e}^{-1} \Leftrightarrow-x^{2}=-1 \Leftrightarrow x=1$ ou $x=-1$. Donc l'ensemble des solutions de cette équation est $S=\{-1 ; 1\}$
+    \item \grasInMet{$3+\mathrm{e}^{x}=1$}\\
+    $3+\mathrm{e}^{x}=1 \Leftrightarrow \mathrm{e}^{x}=-2$ ce qui est impossible car la fonction exponentielle est strictement positive sur $\mathbb{R}$. On a donc $S=\varnothing .$
+\end{enumMet}
+
+\subsection*{74 p 174}
+Résoudre les équations suivantes dans $\mathbb{R}$.
+
+\begin{enumMet}
+    \item \grasInMet{$\left(\mathrm{e}^{x}-1\right)\left(\mathrm{e}^{x}+1\right)=0$}\\
+    $\left(\mathrm{e}^{x}-1\right)\left(\mathrm{e}^{x}+1\right)=0 \Leftrightarrow \mathrm{e}^{x}-1=0$ ou $\mathrm{e}^{x}+1=0$. Or, $\mathrm{e}^{x}-1=0 \Leftrightarrow x=0$ et pour tout réel $x$, on a $\mathrm{e}^{x}+1>0$. Ainsi $S=\{0\}$.
+    \item \grasInMet{$(3 x+1) \mathrm{e}^{x}=0$}\\
+    Puisque pour tout réel $x$, $\mathrm{e}^{x} \neq 0$, alors $(3 x+1) \mathrm{e}^{x}=0 \Leftrightarrow 3 x+1=0 \Leftrightarrow x=-\frac{1}{3}$. L'ensemble des solutions de cette équation est donc $S=\left\{-\frac{1}{3}\right\}$.
+    \item \grasInMet{$(2 x-1) \mathrm{e}^{x}=\mathrm{e}^{x}$}\\
+    Puisque pour tout réel $x$, $\mathrm{e}^{x} \neq 0$, on peut donc diviser les deux membres de cette équation par $\mathrm{e}^{x}$. Ce qui nous donne $2 x-1=1 \Leftrightarrow x=1$. Ainsi $S=\{1\}$.
+    \item \grasInMet{$x \mathrm{e}^{x+3}=2 \mathrm{e}^{x+3}$}\\
+    Pour tout réel $x, \mathrm{e}^{x+3} \neq 0$, on peut donc diviser les deux membres de cette équation par $\mathrm{e}^{x+3}$. Ainsi, $x \mathrm{e}^{x+3}=2 \mathrm{e}^{x+3} \Leftrightarrow x=2$. On a donc $S=\{2\}$.
+    \item \grasInMet{$-\mathrm{e}^{x^{2}+3}=\frac{1}{\mathrm{e}^{x+3}}$}\\
+    Soit $x$ un réel. D'une part $-\mathrm{e}^{x^{2}+3}<0$ et d'autre part $\dfrac{1}{\mathrm{e}^{x+3}}>0$. L'équation n'a donc pas de solution. L'ensemble des solutions de cette équation est $S=\varnothing$.
+\end{enumMet}
+
+ \subsection*{79 p 174}
+ \grasInMet{Résoudre les inéquations suivantes dans $\mathbb{R}$.}
+ \begin{enumMet}
+     \item \grasInMet{$\mathrm{e}^{x+3}<\mathrm{e}^4$}\\
+     $\mathrm{e}^{x+3}<\mathrm{e}^4 \Leftrightarrow x+3<4$ car la fonction exponentielle est strictement croissante sur $\mathbb{R}$ et donc $x<1$. On a donc $S=]-\infty ; 1[$.
+     \item \grasInMet{$\mathrm{e}^{-2 x+1}>\mathrm{e}^{x-7}$}\\
+     $\mathrm{e}^{-2 x+1}>\mathrm{e}^{x-7} \Leftrightarrow-2 x+1>x-7 \Leftrightarrow-3 x>-8 \Leftrightarrow x<\frac{8}{3}$
+     L'ensemble des solutions de cette inéquation est donc $S=]-\infty ; \frac{8}{3}[$
+     \item \grasInMet{$e^{9 t-1} \leqslant e^{4 t}$}\\
+     $\left.\left.\mathrm{e}^{9 t-1} \leqslant \mathrm{e}^{4 t} \Leftrightarrow 9 t-1 \leqslant 4 t \Leftrightarrow t \leqslant \frac{1}{5} \text {. Ainsi } S=\right]-\infty ; \frac{1}{5}\right] \text {. }$
+     \item \grasInMet{$\mathrm{e}^{t+4} \geqslant \mathrm{e}^{-3 t}$}\\
+     De même $\mathrm{e}^{t+4} \geqslant \mathrm{e}^{-3 t} \Leftrightarrow t+4 \geqslant-3 t \Leftrightarrow t \geqslant-1$. Ainsi $S=[-1 ;+\infty[$.
+ \end{enumMet}
+
+ \subsection*{81 p 175}
+\grasInMet{ Résoudre les inéquations suivantes dans $\mathbb{R}$.}
+ \begin{enumMet}
+     \item \grasInMet{$(x-1) \mathrm{e}^x>0$}\\
+     Comme $\mathrm{e}^x>0$ pour tout $x \in \mathbb{R}$, on a $(x-1) \mathrm{e}^x>0 \Leftrightarrow x-1>0 \Leftrightarrow x>1$.
+     \item \grasInMet{$(-2 x+3) \mathrm{e}^x<0$}\\
+     $(-2 x+3) \mathrm{e}^x<0 \Leftrightarrow-2 x+3<0 \Leftrightarrow x>\frac{3}{2}$
+     \item \grasInMet{$x^2 \mathrm{e}^{-2 x+5} \geqslant 0$}\\
+     Cette inégalité est respectée pour tout $x \in \mathbb{R}$.
+     \item \grasInMet{$\dfrac{x-4}{\mathrm{e}^x} \leqslant 0$}\\
+     $\dfrac{x-4}{\mathrm{e}^x} \leqslant 0 \Leftrightarrow x-4 \leqslant 0 \Leftrightarrow x \leqslant 4$
+ \end{enumMet}
+
+
+\end{document}
+

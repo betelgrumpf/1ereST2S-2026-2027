@@ -1,0 +1,237 @@
+\chapter{Fonctions de référence}
+\thispagestyle{fancy}
+
+\graphicspath{{images/}}
+
+\section{Fonction carré}
+    \subsection{définition}
+    \begin{bdefi}
+        La fonction carré $f$ est définie sur \R par $f(x)=x^2$.
+    \end{bdefi}
+    
+    \subsection{Représentation graphique}
+    
+    \begin{minipage}{0.5\linewidth}
+        \begin{tabular}{ | Xc | Xc | Xc | Xc | Xc | Xc |}
+         \hline			
+           $x$  & $-2$ & $-1$ & $0$ & $1$ & $2$\\ \hline
+           $f(x)$ & $4$ & $1$ & $0$ & $1$ & $4$ \\
+         \hline  
+        \end{tabular}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\linewidth}
+        \begin{center}
+            \newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+            \newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+            \newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+            \newrgbcolor{xfqqff}{0.4980392156862745 0. 1.}
+            \psset{xunit=1.2cm,yunit=1.2cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=2pt 2,arrowinset=0.25}
+            \begin{pspicture*}(-2.5,-0.8)(2.5,5.8)
+            \psgrid[xunit=1.2cm,yunit=1.2cm,subgriddiv=0,gridcolor=lightgray,gridlabels=0pt](-3,-1)(3,6)
+            \psaxes[linewidth=0.6pt,labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=1]{->}(0,0)(-2.5,-0.8)(2.5,5.8)
+            \psplot[linewidth=1.2pt,linecolor=qqwuqq,plotpoints=600]{-3}{3}{x^2}
+            \psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(1.,0.)
+            \psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(0.,1.)
+            \psdots[dotstyle=x,linecolor=blue](-2.,4)
+            \psdots[dotstyle=x,linecolor=blue](-1.,1.)
+            \psdots[dotstyle=x,linecolor=blue](-0.5,0.25)
+            \psdots[dotstyle=x,linecolor=blue](0.5,0.25)
+            \psdots[dotstyle=x,linecolor=blue](1.,1.)
+            \psdots[dotstyle=x,linecolor=blue](2.,4.)
+            \begin{scriptsize}
+            \rput[bl](0.34,-0.54){\textcolor{blue}{$\vv{i}$}}
+            \rput[bl](-0.4,0.2){\textcolor{blue}{$\vv{j}$}}
+            \end{scriptsize}
+            \end{pspicture*}
+        \end{center}
+    \end{minipage}
+    
+    \begin{brmqs}
+        \begin{itemRem}
+            \item Le tableau de valeurs n'est pas un tableau de proportionnalité. La fonction carré n'est donc pas une fonction linéaire.
+            \item 	Dans un repère $(O, I, J)$, la courbe d'équation $y=x^2$ de la fonction carré est appelée une \grasInRem{parabole} de sommet O.
+            \item 	Dans un repère orthogonal, la courbe d'équation $y=x^2$ de la fonction carré est symétrique par rapport à l'axe des ordonnées. La fonction carré est donc une \grasInRem{fonction paire}.
+        \end{itemRem}
+    \end{brmqs}
+    
+    \subsection{Variations de la fonction carré}
+    
+    \begin{bprop}
+        La fonction carré $f$ est décroissante sur l'intervalle $\intervOF{-\infty}{0}$ et croissante sur l'intervalle $\intervFO{0}{+\infty}$.
+    \end{bprop}
+    
+    % \begin{demonstration}
+    %     On pose : $f(x)=x^2$.\\
+	   % Soit $a$ et $b$ deux nombres réels quelconques positifs tels que $a<b$.\\
+    %     $f(b)-f(a)=b^2-a^2=(b-a)(b+a)$\\
+    %     Or $b-a>0$, $a\geq 0$ et $b \geq 0$ donc $f(b)-f(a)\geq 0$ ce qui prouve que $f$ est croissante sur l'intervalle $\intervFO{0}{+\infty}$.\\
+    %     \ \\
+    % 	La décroissance sur l'intervalle $\intervOF{-\infty}{0}$ est prouvée de manière analogue en choisissant $a$ et $b$ deux nombres réels quelconques négatifs tels que $a<b$.
+    % \end{demonstration}
+
+\section{Fonction racine carrée}
+    \subsection{définition}
+    \begin{bdefi}
+        La fonction racine carrée est la fonction $f$ définie sur $\intervFO{0}{+\infty}$ par $f(x)=\sqrt{x}$.
+    \end{bdefi}
+    
+    \subsection{Représentation graphique}
+    
+    \begin{center}
+            \newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+            \psset{xunit=1.3cm,yunit=1.3cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=2pt 2,arrowinset=0.25}
+            \begin{pspicture*}(-0.5,-0.8)(9.5,3.5)
+            \psgrid[xunit=1.3cm,yunit=1.3cm,subgriddiv=0,gridcolor=lightgray,gridlabels=0pt](-1,-1)(10,4)
+            \psaxes[linewidth=0.6pt,labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=1]{->}(0,0)(-0.5,-0.8)(9.5,3.5)
+            \psplot[linewidth=1.2pt,linecolor=qqwuqq,plotpoints=600]{0}{10}{sqrt(x)}
+            \psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(1.,0.)
+            \psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(0.,1.)
+            \begin{scriptsize}
+            \rput[bl](0.34,-0.54){\textcolor{blue}{$\vv{i}$}}
+            \rput[bl](-0.4,0.2){\textcolor{blue}{$\vv{j}$}}
+            \end{scriptsize}
+            \end{pspicture*}
+    \end{center}
+    
+    
+    \begin{brmq}
+        La fonction racine carrée n'est pas définie pour des valeurs négatives.
+    \end{brmq}
+    
+    \subsection{Variations de la fonction racine carrée}
+    
+    \begin{bprop}
+        La fonction racine carrée est strictement croissante sur l'intervalle $\intervFO{0}{+\infty}$.
+    \end{bprop}
+    
+    \begin{bdemo}
+        On pose : $f(x)=\sqrt{x}$.\\
+        Soit $a$ et $b$ deux nombres réels positifs tels que $a < b$.\\
+        $f(b)-f(a)=\sqrt{b}-\sqrt{a}=  \dfrac{(\sqrt{b}-\sqrt{a})(\sqrt{b}+\sqrt{a})}{\sqrt{b}+\sqrt{a}}=\dfrac{\sqrt{b}^2-\sqrt{a}^2}{\sqrt{b}+\sqrt{a}} = \dfrac{b-a}{\sqrt{b}+\sqrt{a}}$.\\
+        Or $\sqrt{b}+\sqrt{a}  > 0$ et $b - a > 0$. Donc $f(b)-f(a)>0$
+        Donc $f(a)<f(b)$.\\
+        Ce qui prouve que $f$ est croissante sur l'intervalle $\intervFO{0}{+\infty}$.
+    \end{bdemo}
+    
+\section{Fonction inverse}
+    \subsection{définition}
+    \begin{bdefi}
+        La fonction inverse $f$ est définie sur $\R\textbackslash\{0\}$ par $f(x)= \dfrac{1}{x}$.
+    \end{bdefi}
+    
+    \begin{brmqs}
+        \begin{itemRem}
+            \item $\R\textbackslash\{0\}$ désigne l'ensemble des nombres réels sauf 0, c'est-à-dire 
+            $\intervOO{-\infty}{0}\  \cup \  \intervOO{0}{+\infty}$. On peut aussi noter cet ensemble $\R^*$.
+            \item La fonction inverse n'est pas définie en 0.
+        \end{itemRem}
+    \end{brmqs}
+    
+    \subsection{Représentation graphique}
+    
+    \setlength{\tabcolsep}{0.25cm}
+    \begin{minipage}{0.4\linewidth}
+        \begin{tabular}{ | Xc | Xc | Xc | Xc | Xc | Xc | Xc |}
+         \hline			
+           $x$  & $-2$ & $-1$ & $0,25$ & $1$ & $2$ & $3$\\ \hline
+           $f(x)$ & $-0,5$ & $-1$ & $4$ & $1$ & $0,5$ & $\dfrac{1}{3}$ \\
+         \hline  
+        \end{tabular}
+    \end{minipage}\hfill
+    \begin{minipage}{0.55\linewidth}
+        \begin{center}
+            \newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+            \newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+            \newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+            \newrgbcolor{xfqqff}{0.4980392156862745 0. 1.}
+            \psset{xunit=0.9cm,yunit=0.9cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=2pt 2,arrowinset=0.25}
+            \begin{pspicture*}(-3.9,-3.2)(4.3,4.2)
+            \psgrid[xunit=0.9cm,yunit=0.9cm,subgriddiv=0,gridcolor=lightgray,gridlabels=0pt](-4,-4)(5,5)
+            \psaxes[linewidth=0.6pt,labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=1]{->}(0,0)(-3.9,-3.2)(4.3,4.2)
+            \psplot[linewidth=1.2pt,linecolor=qqwuqq,plotpoints=600]{-4}{-0.01}{1/x}
+            \psplot[linewidth=1.2pt,linecolor=qqwuqq,plotpoints=600]{0.01}{5}{1/x}
+            \psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(1.,0.)
+            \psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(0.,1.)
+            \psdots[dotstyle=x,linecolor=blue](-3.,-0.3333)
+            \psdots[dotstyle=x,linecolor=blue](-2.,-0.5)
+            \psdots[dotstyle=x,linecolor=blue](-1.,-1.)
+            \psdots[dotstyle=x,linecolor=blue](0.25,4.)
+            \psdots[dotstyle=x,linecolor=blue](1.,1.)
+            \psdots[dotstyle=x,linecolor=blue](2.,0.5)
+            \psdots[dotstyle=x,linecolor=blue](3.,0.3333)
+            \psdots[dotstyle=x,linecolor=blue](4.,0.25)
+            \begin{scriptsize}
+            \rput[bl](0.34,-0.54){\textcolor{blue}{$\vv{i}$}}
+            \rput[bl](-0.4,0.2){\textcolor{blue}{$\vv{j}$}}
+            \end{scriptsize}
+            \end{pspicture*}
+        \end{center}
+    \end{minipage}
+    
+    \begin{brmqs}
+        \begin{itemRem}
+            \item Dans un repère $(O, I, J)$, la courbe d'équation $y= \dfrac{1}{x}$  de la fonction inverse est une \grasInRem{hyperbole} de centre O.
+            \item 	La courbe d'équation $y= \dfrac{1}{x}$ de la fonction inverse est symétrique par rapport à l'origine. La fonction inverse est donc une \grasInRem{fonction impaire}.
+        \end{itemRem}
+    \end{brmqs}
+    
+    \subsection{Variations de la fonction inverse}
+    
+    \begin{bprop}
+        La fonction inverse est décroissante sur l'intervalle $\intervOO{-\infty}{0}$  et décroissante sur l'intervalle $\intervOO{0}{+\infty}$.
+    \end{bprop}
+    
+    \begin{brmq}
+        La variation d'une fonction ne peut s'étudier que sur un intervalle. \\
+        On ne peut donc pas évoquer de décroissance sur $\intervOO{-\infty}{0}\  \cup \  \intervOO{0}{+\infty}$ qui n'est pas un intervalle mais conclure de manière séparée que la fonction inverse est décroissante sur l'intervalle $\intervOO{-\infty}{0}$ et décroissante sur l'intervalle $\intervOO{0}{+\infty}$.
+    \end{brmq}
+    
+    % \begin{demonstration}
+    %     On pose : $f(x)= \dfrac{1}{x}$.\\
+    %     Soit $a$ et $b$ deux nombres réels strictement positifs avec $a < b$.\\ 
+    %     $f(b)-f(a)= \dfrac{1}{b} - \dfrac{1}{a} = \dfrac{a-b}{ab}$.\\
+    %     Or $a > 0$, $b  > 0$ et $a – b < 0$. Donc $f(b)-f(a)\leq 0$.\\
+    %     $f$ est ainsi décroissante sur l'intervalle $\intervOO{0}{+\infty}$.\\
+    %     \ \\
+    %     La décroissance sur l'intervalle $\intervOO{-\infty}{0}$  est prouvée de manière analogue.
+    % \end{demonstration}
+    
+\section{Fonction cube}
+    \subsection{définition}
+    \begin{bdefi}
+        La fonction cube est la fonction $f$ définie sur \R par $f(x)=x^3$.
+    \end{bdefi}
+    
+    \subsection{Représentation graphique}
+    
+    \begin{center}
+        \newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+        \newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+        \newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+        \newrgbcolor{xfqqff}{0.4980392156862745 0. 1.}
+        \psset{xunit=1.2cm,yunit=1.2cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=2pt 2,arrowinset=0.25}
+        \begin{pspicture*}(-2.5,-3.2)(2.5,3.2)
+        \psgrid[xunit=1.2cm,yunit=1.2cm,subgriddiv=0,gridcolor=lightgray,gridlabels=0pt](-3,-4)(3,4)
+        %\psgrid[gridwidth=0.1pt,gridcolor=lightgray,gridlabels=0](0,0)(-4.,-2.)(4.5,5.5)
+        \psaxes[linewidth=0.6pt,labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=1]{->}(0,0)(-2.5,-3.2)(2.5,3.2)
+        \psplot[linewidth=1.2pt,linecolor=qqwuqq,plotpoints=600]{-3}{3}{x^(3.0)}
+        \psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(1.,0.)
+        \psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(0.,1.)
+        \begin{scriptsize}
+        \rput[bl](0.34,-0.54){\textcolor{blue}{$\vv{i}$}}
+        \rput[bl](-0.4,0.2){\textcolor{blue}{$\vv{j}$}}
+        \end{scriptsize}
+        \end{pspicture*}
+    \end{center}
+    
+    \begin{brmq}
+        Dans un repère orthogonal, la courbe d'équation $y=x^3$ de la fonction cube est symétrique par rapport au centre du repère. La fonction cube est donc une \grasInRem{fonction impaire}.
+    \end{brmq}
+    
+    \subsection{Variations de la fonction cube}
+    
+    \begin{bprop}
+        La fonction cube est strictement croissante sur \R.
+    \end{bprop}
+    
+    Cette propriété est admise.

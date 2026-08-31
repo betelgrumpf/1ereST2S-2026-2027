@@ -1,0 +1,124 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$03 - Sujet B - 28/11/2025}
+
+\begin{document}
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+DS n$^{\circ}$3 - Équations du second degré\\
+Sujet B\\
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+
+
+\begin{center}\textbf{55 min - Calculatrice autorisée - Barème indicatif}\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+\vspace{.05cm} 
+
+\exerciceDS{ - Equations - ( 1,5 points )}
+
+Déterminer les racines des fonctions polynômes du second degré.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \ding{46} $f(x)=4(x+6)(-x+12)$
+    \item $g(x)=2x(x-54)$
+    \item $h(x)=-8(x+8)(x-425)$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Factorisation - ( 5,5 points )}
+
+Donner les racines du polynôme du second degré donné, puis le factoriser
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $A(x)=x^{2}-8 x+16$
+    \item \ding{46} $B(x)=-x^{2}+3 x+10$
+    \item $C(x)=x^{2}+15x+26$
+    \item $D(x)=3 x^{2}-5 x+12$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Inéquations - ( 5,5 points )}
+
+Résoudre les inéquations données.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \ding{46} $x^{2}-8 x+7 \leqslant 0$
+    \item $3 x^{2}+8 x-3 \leqslant 0$
+    \item $25 x^{2}-16 \geqslant 0$
+    \item $9 x^{2}-3x+\dfrac{1}{4}>0$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Tableau de variations - ( 2 points )}
+Pour la fonction polynôme du second degré ci-dessous, dresser son tableau de variations (les valeurs du tableau de variations doivent être justifiées).
+$$f(x)=5x^2+30x-25$$
+
+\vspace{-0.3cm}
+\exerciceDS{ - Somme et Produit de racines - ( 2 points )}
+
+Pour chaque équation, déterminer une solution évidente et en déduire l'autre sans calculer le discriminant.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $10x^2+2x-8=0$
+    \item $2x^2-18x+28=0$
+\end{enumMet}
+\end{multicols}
+
+\newpage
+
+\exerciceDS{ - Problème - ( 4 points )}
+
+Une athlète lance un javelot à l'instant $t=0$. La hauteur $h(t)$, en mètre, à l'instant $t$, en seconde, du centre de gravité est :
+$$
+h(t)=-\frac{1}{2} t^2+8 t+2
+$$
+
+La hauteur est mesurée à partir du sol.
+\begin{enumMet}
+	\item À quel instant le javelot est-il au plus haut et quelle est la hauteur maximale?
+	\item Pendant combien de temps le javelot est-il au-dessus de 32m?
+	\item Au bout de combien de temps le javelot touchera-t-il le sol? (À quel instant le javelot touchera-t-il le sol?)
+\end{enumMet}
+
+
+\end{document}
+

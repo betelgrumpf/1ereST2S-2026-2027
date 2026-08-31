@@ -1,0 +1,389 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+%\usepackage{mathrsfs}
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$08 - Sujet A - 03/06/2025}}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+\textcolor{red}{Correction - DS n$^{\circ}$08 \\
+	Suites numériques}
+	}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{1h50 - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\exerciceDS{ $-$ ( 3 points )}
+
+Pour chacune des suites suivantes, calculer $u_0, u_1, u_2$, $u_3$ et $u_{10}$ lorsque c'est possible.
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $u_n=\dfrac{n+1}{n+4}+1$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U_0=\frac{0+1}{0+4}+1=\frac{1}{4}+1=\frac{5}{4} \quad U_2=\frac{2+1}{2+4}+1=\frac{3}{6}+1=\frac{3}{2} \\
+				& U_1=\frac{1+1}{1+4}+1=\frac{2}{5}+1=\frac{7}{5} \quad U_3=\frac{3+1}{3+4}+1=\frac{4}{7}+1=\frac{11}{7} \\
+				& U_{10}=\frac{10+1}{10+4}+1=\frac{11}{14}+1=\frac{25}{14}
+			\end{aligned}
+			$$	
+		\end{corrBox}
+		\item $u_n=2n^2-4 n+3$
+		\begin{corrBox}
+			$$
+			\begin{array}{cc}
+				U_0=2 \times 0^2-4 \times 0+3=3 & U_1=2 \times 1^2-4 \times 1+3=1 \\
+				U_2=2 \times 2^2-4 \times 2+3=3 & U_3=2 \times 3^2-4 \times 3+3=9 \\
+				U_{10}=2 \times 10^2-4 \times 10+3=163
+			\end{array}
+			$$		
+		\end{corrBox}
+		\item \ding{46} $u_n=-\dfrac{5}{4}+\dfrac{1}{4} n$
+		\begin{corrBox}
+			$$
+			\begin{array}{cl}
+				U_0=-\dfrac{5}{4}+\dfrac{1}{4} \times 0=-\dfrac{5}{4} & U_1=-\dfrac{5}{4}+\dfrac{1}{4} \times 1=-\dfrac{4}{4}=-1 \\
+				U_2=-\dfrac{5}{4}+\dfrac{1}{4} \times 2=-\dfrac{3}{4} & U_3=-\dfrac{5}{4}+\dfrac{1}{4} \times 3=-\dfrac{2}{4}=-\dfrac{1}{2} \\
+				U_{10}=-\dfrac{5}{4}+\frac{1}{4} \times 10=\dfrac{5}{4}
+			\end{array}
+			$$		
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{ $-$ ( 3 points )}
+
+Pour chacune des suites définies pour tout entier naturel $n$, calculer les trois termes suivant le premier.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $\left\{\begin{array}{l}u_0=4 \\ u_{n+1}=2 u_n-5 n\end{array}\right.$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U_0=4 \quad U_1=2 U_0-5 \times 0=2 \times 4-0=8 \\
+				& U_2=2 U_1-5 \times 1=2 \times 8-5=11 \\
+				& U_3=2 U_2-5 \times 2=2 \times 11-10=12
+			\end{aligned}
+			$$
+		\end{corrBox}
+		\item $\left\{\begin{array}{l}u_0=0 \\ u_{n+1}=u_n^2+\dfrac{1}{ n+1}\end{array}\right.$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U_0=0 \quad U_1=U_0^2+\frac{1}{0+1}=0+1=1 \\
+				& U_2=U_1^2+\frac{1}{1+1}=1+\frac{1}{2}=\frac{3}{2} \\
+				& U_3=U_2^2+\frac{1}{2+1}=\left(\frac{3}{2}\right)^2+\frac{1^2}{3}=\frac{31}{12}
+			\end{aligned}
+			$$
+		\end{corrBox}
+		\item \ding{46} $\left\{\begin{array}{l}u_0=5 \\ u_{n+1}=2 u_{n}+3\end{array}\right.$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U_0=5 \quad U_1=2 U_0+3=2 \times 5+3=13 \\
+				& U_2=2 U_1+3=2 \times 13+3=29 \\
+				& U_3=2 U_2+3=2 \times 29+3=61
+			\end{aligned}
+			$$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{ $-$ ( 4 points )}
+
+Les suites suivantes sont arithmétiques de raison $r$. Exprimer $u_n$ en fonction de $n$, pour tout $n \in \mathbb{N}$, puis calculer $u_{20}$
+%\begin{multicols}{4}
+	\begin{enumMet}
+		\item $u_0=2$ et $r=-3$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U_n=U_0+n \times n=2-3 n \\
+				& U_{20}=2-3 \times 20=-58
+			\end{aligned}
+			$$
+		\end{corrBox}
+		\item $u_0=5$ et $r=\dfrac{2}{3}$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U_n=U_0+n \times r=5+\frac{2}{3} n \\
+				& U_{20}=5+\frac{2}{3} \times 20=\frac{55}{3}
+			\end{aligned}
+			$$
+		\end{corrBox}
+		\item \ding{46} $u_2=6$ et $r=8$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U_n=U_p+(n-p) \times r=U_2+(n-2) \times r =6+(n-2) \times 8 =-10+8 n\\
+				& U_{20}=-10+8 \times 20=150
+			\end{aligned}
+			$$
+		\end{corrBox}
+		\item $u_4=\dfrac{5}{6}$ et $r=-\dfrac{1}{6}$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U_n=U_4+(n-4) \times r=\frac{5}{6}+(n-4) \times\left(-\frac{1}{6}\right)=\frac{9}{6}-\frac{1}{6} n \\
+				& U_{20}=\frac{9}{6}-\frac{1}{6} \times 20=-\frac{11}{6}
+			\end{aligned}
+			$$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{ $-$ ( 3 points )}
+
+Déterminer si les suites suivantes sont arithmétiques. Si oui, donner le premier terme et la raison.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $u_n=-2+4n$, pour tout $n \in \mathbb{N}$.
+		\begin{corrBox}
+			$U_n=-2+4 n$ est du type $U_n=U_0+n \times r$ avec $U_0=-2$ et $r=4$.
+			
+			La suite est arithmétique.
+		\end{corrBox}
+		\item $u_n=2n^2-3$, pour tout $n \in \mathbb{N}$.
+		\begin{corrBox}
+			$$
+			\begin{array}{ll}
+				\text { 2) } U_0=2 \times 0^2-3=-3 \quad U_1=2 \times 1^2-3=-1 \\
+				U_2=2 \times 2^2-3=5 \\
+				U_1-U_0=-1-(-3)=2 \neq U_2-U_1=5-(-1)=6 \\
+			\end{array}
+			$$
+			
+			La suite n'est pas arithmétique
+		\end{corrBox}
+		\item $u_n=5n+2$, pour tout $n \in \mathbb{N}$.
+		\begin{corrBox}
+			$$
+			\begin{gathered}
+				U_0=5 \times 0+2=2 \quad U_1=5 \times 1+2=7 \quad U_2=5 \times 2+2=12 \\
+				U_1-U_0=7-2=5=U_2-U_1=12-7
+			\end{gathered}
+			$$
+			
+			La suite semble arithmétique
+			$$
+			\begin{aligned}
+				U_{n+1}-U_n=5(n+1)+2-(5 n+2) & =5 n+5+2-5 n-2 \\
+				& =5
+			\end{aligned}
+			$$
+			
+			La suite est arithmétique der raison $r=5$ et de $1^{\text {er }}$ terme $U_0=2$
+			
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+
+
+%\exerciceDS{ $-$ ( 5 points )}
+%
+%Lorentz place une somme de 1000 euros au taux simple annuel de $5 \%$; c'est-à-dire que chaque année, la somme placée augmentera de $5 \%$ de la somme initiale. Pour tout entier naturel $n, u_n$ désigne le capital de Lorentz $n$ années après son placement.
+%\begin{enumMet}
+%	\item Déterminer $u_0, u_1, u_2$ et $u_3$.
+%	\item Exprimer $u_{n+1}$ en fonction de $u_n$.
+%	\item Prouver que la suite $\left(u_n\right)$ est arithmétique. Donner sa raison et son premier terme $u_0$.
+%	\item En déduire une expression de $u_n$ en fonction de $n$.
+%	\item Au bout de combien d'années le capital de Lorentz aura-t-il doublé ?
+%\end{enumMet}
+
+%\newpage
+
+\exerciceDS{ $-$ ( 3 points )}
+
+Calculer les sommes suivantes.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $S=1+2+3+\ldots+30$.
+		\begin{corrBox}
+			$S=1+2+\cdots+30=\frac{n(n+1)}{2}=\dfrac{30 \times 31}{2}=465$		
+		\end{corrBox}
+		\item $\mathrm{U}=31+32+33+\ldots+50$.
+		\begin{corrBox}
+			$U=1+2+\cdots+50-S=\dfrac{50 \times 51}{2}-465=1275-465=810$
+		\end{corrBox}
+		\item $\mathrm{V}=2+4+6+\ldots+80$.
+		\begin{corrBox}
+			$V=2+4+6+\cdots+80=2 \times(1+2+\cdots+40)=2 \times \dfrac{40 \times 41}{2}=1640$		
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+
+%\begin{bidee}
+%	Pour calculer U, on peut se servir du résultat de S (qu'il faudra soustraire à une autre somme pour obtenir U).
+%\end{bidee}
+
+\exerciceDS{ $-$ ( 4 points )}
+
+Chacune des suites suivantes est géométrique. Exprimer $v_n$ en fonction de $n$, pour tout $n \in \mathbb{N}$, puis calculer $v_{10}$.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $v_0=2$ et $q=-4$
+			\begin{corrBox}
+				$V_n=V_0 \times q^n=2 \times(-4)^n$
+				
+				$V_{10}=2 \times(-4)^{10}=2\ 097\ 152$		
+			\end{corrBox}
+		\item $v_0=-5$ et $q=2$
+		\begin{corrBox}
+			$V_n=-5 \times 2^n $
+			
+			$V_{10}=-5 \times 2^{10}=-5120$		
+		\end{corrBox}
+		\item $v_1=-16$ et $q=\dfrac{1}{4}$
+		\begin{corrBox}
+			$V_0=\dfrac{V_1}{q}=-16 \times 4$
+			$V_n=-64 \times\left(\dfrac{1}{4}\right)^n$
+			$V_{10}=-64 \times\left(\dfrac{1}{4}\right)^{10}=-\dfrac{1}{16\ 384}$		
+		\end{corrBox}
+		\item \ding{46} $v_{2}=\dfrac{1}{5}$ et $q=2$
+		\begin{corrBox}
+			$V_0=\dfrac{V_2}{q^2}=\dfrac{1}{5} \times \dfrac{1}{4}=\dfrac{1}{20}$
+			
+			$V_n=\dfrac{1}{20}\times 2^n$
+			
+			$V_{10}=\dfrac{1}{20}\times 2^{10}=\dfrac{256}{5}$		
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{ $-$ ( 3 points )}
+
+Déterminer si les suites suivantes sont géométriques. Si oui, donner le premier terme et la raison.
+
+\begin{enumMet}
+	\item \ding{46} $v_n=5^n$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		$V_n=1 \times 5^n$ on reconnait une suite géométrique $\left(U_n=U_0 \times q^n\right)$ avec $U_0=1$ et $q=5$		
+	\end{corrBox}
+	\item $v_n=2n^3$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		$$
+		\begin{aligned}
+			& V_0=0 \quad V_1=2 \quad V_2=16 \quad V_3=54 \\
+			& \frac{V_2}{V_1}=8 \neq \frac{V_3}{V_2}=\frac{54}{16}=\frac{27}{8}
+		\end{aligned}
+		$$
+		la suite n'est pas géométrique.		
+	\end{corrBox}
+	\item $v_n=-4 \times 3^{n+1}$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		$$
+		\begin{aligned}
+			& V_{n+1}=-4 \times 3^{n+2} \\
+			& V_0=-4 \times 3^1=-12
+		\end{aligned}
+		$$
+		$$
+		\frac{V_{n+1}}{V_n}=\frac{-4 \times 3^{n+2}}{-4 \times 3^{n+1}}=3^1=3
+		$$
+		
+		La suite est géométrique de raison $q=3$ et de premier terme $V_0=-12$		
+	\end{corrBox}
+\end{enumMet}
+
+
+\exerciceDS{ $-$ ( 3 points )}
+Calculer les sommes suivantes.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item \ding{46} $S=1+2+4+\ldots+4096$
+		\begin{corrBox}
+			$S=1+2+\cdots+4096=1+2^1+\cdots+2^{12}=1-2^{13}=8\ 191$.
+		\end{corrBox}
+		\item $T=1-3+9-\ldots-19\ 683$
+		\begin{corrBox}
+			$T=1+(-3)^1+(-3)^2+\cdots+(-3)^9=\frac{1-(-3)^{10}}{1(-3)}=-14\ 762$			
+		\end{corrBox}
+		\item $U=3+\dfrac{3}{2}+\dfrac{3}{4}+\ldots+\dfrac{3}{4096}$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				U=3 \times\left(1+\frac{1}{2}+\cdots+\frac{1}{4096}\right) & =3 \times\left(1+\left(\frac{1}{2}\right)^1+\cdots+\left(\frac{1}{2}\right)^{12}\right) \\
+				& =3 \times \frac{1-\left(\frac{1}{2}\right)^{13}}{1-\frac{1}{2}}=\frac{24\ 573}{4\ 096}
+			\end{aligned}
+			$$		
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{ $-$ ( \textcolor{red}{4,5} points )}
+
+Une feuille a une épaisseur de $0,1 \mathrm{~mm}$, que l'on note $e_0$. Si on la plie en deux, on obtient une feuille d'une épaisseur de $0,2 \mathrm{~mm}$, que l'on note $e_1$. Pour tout entier naturel $n$, on note $e_n$ l'épaisseur de la feuille (en mm) après le $n$-ième pliage.
+\begin{enumMet}
+	\item Calculer $e_3$ et $e_4$
+	\begin{corrBox}
+		$$
+		\begin{aligned}
+			& e_3=e_2 \times 2=0,4 \mathrm{~mm} \\
+			& e_4=e_3 \times 2=0,8 \mathrm{~mm}
+		\end{aligned}
+		$$		
+	\end{corrBox}
+	\item Pour tout $n \in \N$, exprimer $e_{n+1}$ en fonction de $e_n$. En déduire la nature de la suite $\left(e_n\right)$ ?
+	\begin{corrBox}
+		$e_{n+1}=2 e_n$. 
+		
+		la suite est géométrique de raison $q=2$ et de premier terme $e_0=0,1$		
+	\end{corrBox}
+	\item Pour tout entier naturel $n$, exprimer $e_n$ en fonction de $n$.
+	\begin{corrBox}
+		$e_n=e_0 \times 9^n=0,1 \times 2^n$		
+	\end{corrBox}
+	\item Calculer $e_{20}$. Ce résultat semble-t-il possible dans la réalité?
+	\begin{corrBox}
+		$$\begin{aligned}
+			e_{20}=0,1 \times 2^{20} & =104857,6 \mathrm{~mm} \\
+			& \approx 104 \mathrm{~m}
+		\end{aligned}$$
+		
+		Cela semble impossible dans la réalité. En réalité, le maximum de pliage est de 7. Au delà c'est impossible de plier davantage.		
+	\end{corrBox}
+\end{enumMet}
+
+\end{document}

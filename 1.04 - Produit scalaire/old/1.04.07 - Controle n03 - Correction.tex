@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt]{article}        % énoncé seul
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\begin{document}
+\graphicspath{{../images/}}
+\pagestyle{empty}
+%\fancyhf{}
+\vspace*{-1.5cm}
+1ère spécialité\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}27/01/2023
+{\begin{center}\Huge{\textcolor{red}{Correction - Contrôle n$^{\circ}$03 - Sujet A}}\end{center}}
+
+\exerciceDS{ - (2 points)}
+
+Démontrez la propriété suivante :
+\begin{propriete}
+	Soit $\vv{u}$ et $\vv{v}$ deux vecteurs de coordonnées respectives $\Coord{u}{x}{y}$ et $\Coord{v}{x'}{y'}$.\\
+	On a: $\vv{u} \cdot \vv{v}=x x^{\prime}+y y^{\prime}$
+\end{propriete}
+
+\begin{corrBox}
+	\begin{align*}
+		\vec{u} \cdot \vec{v}&=(x \vec{\imath}+y \vec{\jmath})\left(x^{\prime} \vec{\imath}+y^{\prime} \vec{\jmath}\right)\\
+		&=x x^{\prime} \vec{\imath} \cdot \vec{\imath}+x y^{\prime} \vec{\imath} \cdot \vec{\jmath}+y x^{\prime} \vec{\jmath} \cdot \vec{\imath}+y y^{\prime} \vec{\jmath} \cdot \vec{\jmath}\\
+		&=x x^{\prime}\|\vec{\imath}\|^{2}+x y^{\prime} \vec{\imath} \cdot \vec{\jmath}+y x^{\prime} \vec{\jmath} \cdot \vec{\imath}+y y^{\prime}\|\vec{j}\|^{2}\\
+		&=x x^{\prime}+y y^{\prime}
+	\end{align*}
+	car $\|\vec{\imath}\|=\|\vec{j}\|=1$, le repère étant normé, et $\vec{\imath} \cdot \vec{\jmath}=\vec{\jmath} \cdot \vec{\imath}=0$, le repère étant orthogonal.
+\end{corrBox}
+
+
+\exerciceDS{ - ( 2,5 points )}
+On considère 3 points $A, B$ et $C$. Dans chacun des cas suivants, calculer $\vv{A B} \cdot \vv{A C}$ ( on donnera la valeur exacte).
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $A B=4, A C=5$ et $\widehat{A B C}=\dfrac{\pi}{4}$
+		\begin{corrBox}
+			$\vv{AB}\cdot \vv{AC} = \normeB{AB}\times\normeB{AC}\times\cos{(\widehat{BAC})}=4\times5\times\dfrac{\sqrt{2}}{2}=10\sqrt{2}$   \quad \bareme{1}
+		\end{corrBox}
+		\item $A B=6, A C=7$ et $\widehat{A B C}=\dfrac{\pi}{2}$
+		\begin{corrBox}
+			$\vv{AB}\cdot \vv{AC} = \normeB{AB}\times\normeB{AC}\times\cos{(\widehat{BAC})}=6\times7\times0=0$ \quad \bareme{0,5}
+		\end{corrBox}
+		\item $A B=3, A C=7$ et $\widehat{A B C}=\dfrac{\pi}{3}$
+		\begin{corrBox}
+			$\vv{AB}\cdot \vv{AC} = \normeB{AB}\times\normeB{AC}\times\cos{(\widehat{BAC})}=3\times7\times\dfrac{1}{2}=\dfrac{21}{2}$   \quad \bareme{1}
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+\newpage
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 2,5 points )}
+On considère un carré $A B C D$ de côté 5 cm. Calculer:
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $\vv{A B} \cdot \vv{A C}$
+		\begin{corrBox}
+			$\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A B}=AB\times AB=5\times 5=25$  \quad \bareme{1}
+		\end{corrBox}
+		\item $\vv{AC} \cdot \vv{C D}$
+		\begin{corrBox}
+			$\vv{A C} \cdot \vv{CD}=\vv{DC} \cdot \vv{CD}=-CD\times CD=-5\times 5=-25$  \quad \bareme{1}
+		\end{corrBox}
+		\item $\vv{D C} \cdot \vv{D A}$
+		\begin{corrBox}
+			$\vv{DC} \cdot \vv{DA}=0$ car les vecteurs son orthogonaux.  \quad \bareme{0,5}
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 3 points )}
+On considère les points $A(-1 ; 2), B(4 ; 3)$ et $C(1 ;-5)$
+\begin{enumMet}
+	\item Calculer les coordonnées des vecteurs $\vv{A B}, \vv{A C}$ et $\vv{B C}$
+	\begin{corrBox}
+		$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{4-(-1)}{3-2}=\Coord{AB}{5}{1}$ \quad \bareme{0,5}\\
+		$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{1-(-1)}{-5-2}=\Coord{AC}{2}{-7}$ \quad \bareme{0,5}\\
+		$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{1-4}{-5-3}=\Coord{BC}{-3}{-8}$ \quad \bareme{0,5}
+	\end{corrBox}
+	\item Calculer $\vv{A B} \cdot \vv{A C}, \vv{A B} \cdot \vv{B C}$ et $\vv{A C} \cdot \vv{B C}$
+	\begin{corrBox}
+		$\vv{A B} \cdot \vv{A C}=5\times2+1\times(-7)=10-7=3$\quad \bareme{0,5}\\
+		$\vv{AB} \cdot \vv{BC}=5\times(-3)+1\times(-8)=-15-8=-23$\quad \bareme{0,5}\\
+		$\vv{A C} \cdot \vv{BC}=2\times(-3)+(-7)\times(-8)=-6+56=50$\quad \bareme{0,5}
+	\end{corrBox}
+\end{enumMet}
+
+\end{document}

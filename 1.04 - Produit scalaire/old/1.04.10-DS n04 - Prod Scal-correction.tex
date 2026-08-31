@@ -1,0 +1,422 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$04} - 02/03/2023}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+\textcolor{red}{Correction - DS n$^{\circ}$04 - Produit scalaire}
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+%\begin{center}\textbf{2h - Calculatrice autorisée - Barème indicatif}\\
+%\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\\
+%Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+%\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+%
+%\begin{center}
+%%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+%Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+%\end{center}
+
+\vspace{-.3cm} 
+\exerciceDS{ - ( 2 points )}
+On considère 3 points $A, B$ et $C$. Dans chacun des cas suivants, calculer $\vv{A B} \cdot \vv{A C}$ ( on donnera la valeur exacte).
+%\begin{multicols}{2}
+%\begin{enumMet}
+%    \item $A B=4, A C=5$ et $\widehat{A B C}=\dfrac{\pi}{6}$
+%    \item $A B=6, A C=6$ et $\widehat{A B C}=\dfrac{\pi}{2}$
+%    \item $A B=3, A C=7$ et $\widehat{A B C}=\dfrac{\pi}{3}$
+%    \item $A B=4, A C=9$ et $\widehat{A B C}=\dfrac{\pi}{4}$
+%\end{enumMet}
+%\end{multicols}
+
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $A B=4, A C=5$ et $\widehat{A B C}=\dfrac{\pi}{6}$\quad \bareme{0,5}\\
+		\begin{corrBox}
+			$\vv{A B} \cdot \vv{A C}=A B \times A C \times \cos (\widehat{B A C})$\\
+			$\vv{A B} \cdot \vv{AC}=5 \times 4 \times \cos \left(\dfrac{\pi}{6}\right)$\\
+			$\vv{A B} \cdot \vv{AC}=20 \times \dfrac{\sqrt{3}}{2}=10 \sqrt{3}$
+		\end{corrBox}
+		\item $A B=6, A C=6$ et $\widehat{A B C}=\dfrac{\pi}{2}$\quad \bareme{0,5}\\
+		\begin{corrBox}
+			$\vv{A B} \cdot \vv{B C}=6 \times 6 \times \cos \left(\dfrac{\pi}{2}\right)=0$
+		\end{corrBox}
+		\item $A B=3, A C=7$ et $\widehat{A B C}=\dfrac{\pi}{3}$\quad \bareme{0,5}\\
+		\begin{corrBox}
+			$\vv{A B} \cdot \vv{A C}=3 \times 7 \times \cos \left(\dfrac{\pi}{3}\right)$\\
+			$\vv{A B} \cdot \vv{A C}=21 \times \dfrac{1}{2}=\dfrac{21}{2}$
+		\end{corrBox}
+		\item $A B=4, A C=9$ et $\widehat{A B C}=\dfrac{\pi}{4}$\quad \bareme{0,5}\\
+		\begin{corrBox}
+			$\vv{A B} \cdot \vv{A C}=6 \times 9 \times \cos \left(\dfrac{\pi}{4}\right)$\\
+			$\vv{A B} \cdot \vv{A C}=4 \times 9 \times \dfrac{\sqrt{2}}{2}=18 \sqrt{2}$
+		\end{corrBox}
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS{ - ( 2 points )}
+Dans les 2 cas ci dessous, calculer $\vv{A B} \cdot \vv{A C}$.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item \ \\
+		\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+		\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+		\psset{xunit=0.9cm,yunit=0.9cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(0.,0.5)(7.,6.5)
+			\pspolygon[linewidth=2.pt,linecolor=qqwuqq,fillcolor=YellowGreen,fillstyle=solid,opacity=0.1](2.9376,5.1452)(3.3219,4.9655)(3.5016,5.3499)(3.1172,5.5295)
+			\psline(1.,1.)(6.1218637165966525,4.125141927754758)
+			\psline(6.1218637165966525,4.125141927754758)(2.2703662826677307,3.7177508178383416)
+			\psline(1.,1.)(2.2703662826677307,3.7177508178383416)
+			\psline[linestyle=dashed](2.2703662826677307,3.7177508178383416)(3.1172771377795505,5.529584696397235)
+			\psline[linestyle=dashed](3.1172771377795505,5.529584696397235)(6.1218637165966525,4.125141927754758)
+			\rput[bl](0.62,1.06){\ududff{$A$}}
+			\rput[bl](2.,4.){\darkgray{$C$}}
+			\rput[bl](2.84,5.84){\darkgray{$H$}}
+			\rput[bl](6.2,4.28){\darkgray{$B$}}
+			\rput[bl](3.72,2.3){$6$}
+			\rput[bl](1.48,2.62){$3$}
+			\rput[bl](2.5,4.82){$2$}
+		\end{pspicture*}
+		%\includegraphics[scale=1.2]{1.04.06-Img03}
+		\item \ \\
+		\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+		\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+		\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.3pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(0.,0.2)(6.,4.)
+			\pspolygon[linecolor=qqwuqq,fillcolor=YellowGreen,fillstyle=solid,opacity=0.1](2.8055522163904247,2.8369531245015627)(3.1081271803714507,2.5395503821270498)(3.4055299227459637,2.8421253461080758)(3.1029549587649377,3.1395280884825887)
+			\psline(1.,1.)(4.989841373819047,1.284896142061883)
+			\psline(4.989841373819047,1.284896142061883)(1.700984986254979,1.7131760294941962)
+			\psline(1.,1.)(1.700984986254979,1.7131760294941962)
+			\psline[linestyle=dashed](1.700984986254979,1.7131760294941962)(3.1029549587649377,3.1395280884825887)
+			\psline[linestyle=dashed](3.1029549587649377,3.1395280884825887)(4.989841373819047,1.284896142061883)
+				%\psdots[dotstyle=*,linecolor=ududff](1.,1.)
+				\rput[bl](0.62,1.){\ududff{$B$}}
+				%\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](1.700984986254979,1.7131760294941962)
+				\rput[bl](1.35,1.85){\darkgray{$A$}}
+				%\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](3.1029549587649377,3.1395280884825887)
+				\rput[bl](2.82,3.46){\darkgray{$H$}}
+				%\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](4.989841373819047,1.284896142061883)
+				\rput[bl](5.06,1.44){\darkgray{$C$}}
+				\rput[bl](3.,0.8){$4$}
+				\rput[bl](1.12,1.45){$1$}
+				\rput[bl](2.1,2.5){$2$}
+		\end{pspicture*}
+		%\includegraphics[scale=1.2]{1.04.06-Img04}
+	\end{enumMet}
+\end{multicols}
+
+\begin{corrBox}
+	\begin{multicols}{2}
+		\begin{enumMet}
+			\item $\vv{A B} \cdot \vv{A C}=\vv{A C} \cdot \vv{A B}=\vv{A C} \cdot \vv{A H}$ \bareme{1}\\
+			$\vv{A B} \cdot \vv{A C}=A C \times A H=3 \times 5=15$
+			\item $\vv{A B} \cdot \vv{A C}=\vv{A C} \cdot \vv{A B}=\vv{A C} \cdot \vv{A H}$ \bareme{1}\\
+			$\vv{A B} \cdot \vv{A C}=-A C \times A H=-1 \times 2=-2$
+		\end{enumMet}
+	\end{multicols}
+\end{corrBox}
+
+%\vspace{-0.3cm}
+%\exerciceDS{ - ( 1,5 points )}
+%On considère un carré $A B C D$ de côté 5 cm. Calculer:
+%\begin{multicols}{3}
+%\begin{enumMet}
+%    \item $\vv{A B} \cdot \vv{A C}$
+%    \item $\vv{C A} \cdot \vv{C D}$
+%    \item $\vv{D C} \cdot \vv{D A}$
+%\end{enumMet}
+%\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 5 points )}
+
+$\mathrm{ABC}$ est un triangle et $\mathrm{H}$ est le pied de la hauteur issue de $\mathrm{A}$. On a $\mathrm{AB}=5, \mathrm{BH}=3$ et $\mathrm{HC}=6$
+\begin{center}
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=0.6cm,yunit=0.6cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(1.,0.)(12.,6.)
+		\pspolygon[linewidth=1.5pt,linecolor=qqwuqq,fillcolor=GreenYellow,fillstyle=solid,opacity=0.1](8.,1.4242640687119286)(7.575735931288071,1.4242640687119286)(7.575735931288071,1.)(8.,1.)
+		\psline(2.,1.)(8.,1.)
+		\psline(8.,1.)(11.,1.)
+		\psline(2.,1.)(8.,5.)
+		\psline(8.,5.)(11.,1.)
+		\psline(8.,5.)(8.,1.)
+		%\psdots[dotstyle=*,linecolor=ududff](2.,1.)
+		\rput[bl](1.52,1.22){\ududff{$C$}}
+		%\psdots[dotstyle=*,linecolor=ududff](8.,1.)
+		\rput[bl](8.08,1.2){\ududff{$H$}}
+		%\psdots[dotstyle=*,linecolor=ududff](11.,1.)
+		\rput[bl](11.08,1.2){\ududff{$B$}}
+		%\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](8.,5.)
+		\rput[bl](8.08,5.16){\darkgray{$A$}}
+	\end{pspicture*}
+	%\includegraphics[scale=0.6]{1.04.06-Img01}
+\end{center}
+%\begin{multicols}{2}
+\begin{enumMet}
+    \item Calculer $\vv{B A} \cdot \vv{B C}$ \quad \bareme{1}
+    \begin{corrBox}
+    	On utilise la projection orthogonale.\\
+    	$\vv{B A} \cdot \vv{B C}=\vv{B C} \cdot \vv{B A}=\vv{B C} \cdot \vv{B H}=B C \times B H=9 \times 3=27$
+    \end{corrBox}
+    \item Calculer AH \quad \bareme{1,5}\\
+    \begin{corrBox}
+    	on utilise le théorème de Pythagore dans le triangle ABH.\\
+    	$A B^{2}=A H^{2}+H B^{2}$\\
+    	$A H^{2}=A B^{2}-H B^{2}=25-9=16$ d'où $A H=\sqrt{16}=4$
+    \end{corrBox}
+    \item Calculer $\vv{A B} \cdot \vv{A H}$. On prendra si nécessaire $AH=4$. \quad \bareme{1}
+     \begin{corrBox}
+    	On utilise la projection orthogonale.\\
+    	$\vv{AB} \cdot \vv{AH}=\vv{AH} \cdot \vv{AB}=\vv{AH} \cdot \vv{AH}=AH \times AH=4 \times 4=16$
+    \end{corrBox}
+    \item En déduire la mesure, en degré, de l'angle $\widehat{B A H}$. Arrondir au dixième. \quad \bareme{1,5}
+    \begin{corrBox}
+    	On sait que $\vv{AB} \cdot \vv{AH}=16$ d'après la question précédente. De plus :\\
+    	$\vv{AB} \cdot \vv{AH}=AB\times AH\times \cos(\widehat{BAH})$. Donc:\\
+    	$16=5\times4\times \cos(\widehat{BAH})\iff  \cos(\widehat{BAH})=\dfrac{16}{20}$. D'où: \fbox{$\widehat{BAH}\approx36,7\degree$}
+    \end{corrBox}
+\end{enumMet}
+
+%\columnbreak
+%
+%\end{multicols}
+
+%\vspace{-0.3cm}
+%\exerciceDS{ - ( 2 points )}
+%
+%Soit un losange $A B C D$ de centre $O$ tel que $A C=4$ et $B D=7$.
+%%\begin{multicols}{2}
+%\begin{enumMet}
+%    \item Calculer $\vv{B C} \cdot \vv{B D}$.
+%    \item Calculer $\vv{D C} \cdot \vv{D O}$.
+%\end{enumMet}
+%%\end{multicols}
+%
+%\vspace{-0.3cm}
+%\exerciceDS{ - ( 3 points )}
+%On considère les points $A(-1 ; 2), B(4 ; 3)$ et $C(1 ;-5)$
+%\begin{enumMet}
+%    \item Calculer les coordonnées des vecteurs $\vv{A B}, \vv{A C}$ et $\vv{B C}$
+%    \item Calculer $\vv{A B} \cdot \vv{A C}, \vv{A B} \cdot \vv{B C}$ et $\vv{A C} \cdot \vv{B C}$
+%\end{enumMet}
+%\newpage
+
+%\newpage
+\vspace{-0.3cm}
+\exerciceDS{ - ( \textcolor{red}{2,5 points} )}
+Soit les points $A(2 ; 7), B(6 ; 5)$ et $C(4 ; 1)$.
+%\begin{multicols}{2}
+\begin{enumMet}
+	\item Calculer le produit scalaire $\vv{B A} \cdot \vv{B C}$\quad \bareme{1,5}\\
+	\begin{corrBox}
+		$\Coord{BA}{x_A-x_B}{y_A-y_B}=\Coord{BA}{2-6}{7-5}=\Coord{BA}{-4}{2}$\\
+		$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{4-6}{1-5}=\Coord{BC}{-2}{-4}$\\
+		$\vv{B A} \cdot \vv{B C}=x x^{\prime}+y y^{\prime}=-4 \times(-2)+2 \times(-4)=0$
+	\end{corrBox}
+	\item Que peut-on en conclure pour le triangle $A B C$ ?\quad \bareme{1}\\
+	\begin{corrBox}
+		$\vv{B A} \cdot \vv{B C}=0$ donc $\widehat{A B C}=\dfrac{\pi}{2}$.\\
+		De plus $B A=B C=\sqrt{4^{2}+2^{2}}=\sqrt{20}$\\
+		donc $A B C$ est un triangle rectangle et isocèle en $B$.
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+
+\exerciceDS{ - ( \textcolor{red}{2,5 points}  )}
+
+Dans le repère orthonormé ci-dessous, on donne le triangle $A B C$.\\
+\begin{center}
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+	\psset{xunit=0.7cm,yunit=0.7cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=10pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-1.,-0.8)(7.5,5.8)
+		\psgrid[gridwidth=0.6pt,gridcolor=gray,subgriddiv=0,gridlabels=0](0,0)(-1.,-1)(8,6)
+		\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-1.,-0.8)(7.5,5.8)
+		\psline(1.,2.)(3.,5.)
+		\psline(3.,5.)(7.,1.)
+		\psline(7.,1.)(1.,2.)
+		\psdots[dotstyle=x,linecolor=ududff](1.,2.)
+		\rput[bl](0.45,2.12){\ududff{$A$}}
+		\psdots[dotstyle=x,linecolor=ududff](7.,1.)
+		\rput[bl](7.08,1.2){\ududff{$B$}}
+		\psdots[dotstyle=x,linecolor=ududff](3.,5.)
+		\rput[bl](3.08,5.2){\ududff{$C$}}
+	\end{pspicture*}
+    %\includegraphics[scale=0.95]{1.04.06-Img02}
+\end{center}
+%\begin{enumMet}
+%    \item 
+\begin{enumMet}
+		\item calculer $\vv{A B} \cdot \vv{A C}$.\quad \bareme{1,5}\\
+		\begin{corrBox}
+			$\Coord{AB}{7-1}{1-2}=\Coord{AB}{6}{-1}\quad \quad \quad \quad \Coord{AC}{3-1}{5-2}=\Coord{AC}{2}{3}$\\
+			$\vv{A B} \cdot \vv{A C}=x x^{\prime}+y y^{\prime}=6 \times 2+(-1) \times 3=9$
+		\end{corrBox}
+		\item En déduire la mesure, en degré, de l'angle $\widehat{B A C}$. Arrondir au dixième.\quad \bareme{1}\\
+		\begin{corrBox}
+			$\vv{A B} \cdot \vv{A C}=A B \times A C \times \cos (\widehat{BA C})$\\
+			$A B=\sqrt{6^{2}+(-1)^{2}}=\sqrt{37}$\quad \quad \quad \quad $A C=\sqrt{2^{2}+3^{2}}=\sqrt{13}$\\
+			$\cos(\widehat{B A C})=\dfrac{\vv{A B} \cdot \vv{A C}}{AB \times A C}=\dfrac{9}{\sqrt{37} \times \sqrt{13}} \Rightarrow \widehat{B A C} \approx 65,8^{\circ}$
+		\end{corrBox}
+\end{enumMet}
+%    \item \begin{enumMet}
+%        \item Dans ce triangle, H est le pied de la hauteur issue du sommet $C$.
+%Déterminer la longueur $\mathrm{CH}$. Arrondir au dixième.
+%        \item En déduire une valeur approchée de l'aire du triangle $A B C$.
+%    \end{enumMet}
+%\end{enumMet}
+
+\exerciceDS{ - ( \textcolor{red}{3 points} )}
+Soient deux vecteurs $\vv{u}$ et $\vv{v}$ tels que $\|\vv{u}\|=2,\|\vv{v}\|=4$ et $(\vv{u} ; \vv{v})=\dfrac{\pi}{3}$.
+\begin{enumMet}
+	\item Calculer $\vv{u}\cdot\vv{v}$\quad \bareme{1}\\
+	\begin{corrBox}
+		$\vv{u} \cdot \vv{v}=\|\vv{u}\| \times \|\vv{v}\| \times \cos \left(\dfrac{\pi}{3}\right)=2 \times 4 \times \dfrac{1}{2}=4$
+	\end{corrBox}
+	\item Calculer $(\vv{u}-3 \vv{v}) \cdot(5 \vv{u}+\vv{v})$ \quad \bareme{2}
+	\begin{corrBox}
+		$\begin{aligned}
+			(\vv{u}-3 \vv{v}) \cdot(5 \vv{u}+\vv{v}) &=5 \vv{u}^{2}+\vv{u} \cdot \vv{v}-15 \vv{v} \cdot \vv{u}-3 \vv{v}^{2} \\
+			&=5 \vv{u}^{2}-14 \vv{u} \cdot \vv{v}-3 \vv{v}^{2} \\
+			&=5\|\vv{u}\|^{2}-14 \vv{u} \cdot \vv{v}-3\|\vv{v}\|^{2} \\
+			(\vv{u}-3 \vv{v}) \cdot(5 \vv{u}+\vv{v}) &=5 \times 2^2-14 \times 4-3 \times 4^2 \\
+			&=-84
+		\end{aligned}$
+	\end{corrBox}
+\end{enumMet}
+
+
+
+\exerciceDS{ - ( 4 points )}
+
+$A B C D$ est un rectangle tel que $A B=4$ et $B C=3$. Le triangle $A B F$ est équilatéral et le triangle $B C E$ est rectangle isocèle en $C$. H est le milieu de $[A B]$. Calculer les produits scalaires suivants : 
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+\newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=10pt 0,linewidth=1.5pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{center}
+	\begin{pspicture*}(-1.,-0.6)(8.,7.)
+	\pspolygon[linecolor=qqwuqq,fillcolor=YellowGreen,fillstyle=solid,opacity=0.1](4.424264068711929,0.)(4.424264068711929,0.4242640687119286)(4.,0.4242640687119286)(4.,0.)
+		\psline(4.,3.)(4.,0.)
+		\psline(4.12,1.6)(3.88,1.6)
+		\psline(4.12,1.5)(3.88,1.5)
+		\psline(4.12,1.4)(3.88,1.4)
+		\psline(4.,0.)(0.,0.)
+		\psline(0.,0.)(0.,3.)
+		\psline(4.,3.)(7.,0.)
+		\psline(7.,0.)(4.,0.)
+		\psline(5.6,-0.12)(5.6,0.12)
+		\psline(5.5,-0.12)(5.5,0.12)
+		\psline(5.4,-0.12)(5.4,0.12)
+		\psline(0.,3.)(2.,6.464101615137754)
+		\psline(2.,6.464101615137754)(4.,3.)
+		\psline(0.,3.)(2.,3.)
+		\psline(0.95,3.12)(0.95,2.88)
+		\psline(1.05,3.12)(1.05,2.88)
+		\psline(2.,3.)(4.,3.)
+		\psline(2.95,3.12)(2.95,2.88)
+		\psline(3.05,3.12)(3.05,2.88)
+		\rput[bl](-0.54,3.2){\ududff{$A$}}
+		\rput[bl](4.08,3.2){\ududff{$B$}}
+		\rput[bl](3.54,0.12){\xdxdff{$C$}}
+		\rput[bl](-0.56,0.16){\darkgray{$D$}}
+		\rput[bl](7.08,0.2){\xdxdff{$E$}}
+		\rput[bl](2.08,6.62){\darkgray{$F$}}
+		\psdots[dotstyle=x,linecolor=xdxdff](2.,3.)
+		\rput[bl](2.08,3.2){\xdxdff{$H$}}
+	\end{pspicture*}
+\end{center}
+%\begin{multicols}{2}
+	\begin{multicols}{2}
+	\begin{enumMet}
+		\item $ \vv{A B} \cdot  \vv{A C}$
+		\begin{corrBox}
+			$ \vv{A B} \cdot  \vv{A C}= \vv{A B} \cdot  \vv{A B}=AB\times AB$\\ 
+			$ \vv{A B} \cdot  \vv{A C}= 4\times4=16$
+		\end{corrBox}
+		\item $ \vv{A B} \cdot  \vv{A H}$
+		\begin{corrBox}
+			$ \vv{A B} \cdot  \vv{A H}= AB\times AH$\\ 
+			$ \vv{A B} \cdot  \vv{A H}= 4\times2=8$
+		\end{corrBox}
+		%\item $ \vv{B A} \cdot  \vv{B F}$
+		\item $ \vv{A D} \cdot  \vv{C E}$
+		\begin{corrBox}
+			$ \vv{A D} \cdot  \vv{CE}= \vv{BC} \cdot  \vv{CE}$\\ 
+			$ \vv{A D} \cdot  \vv{CE}= 0$
+		\end{corrBox}
+		\item $ \vv{B A} \cdot  \vv{A F}$
+		\begin{corrBox}
+			$ \vv{BA} \cdot  \vv{AF}= -\vv{A B} \cdot  \vv{A H}=-AB\times AH$\\ 
+			$ \vv{BA} \cdot  \vv{AF}= -4\times2=-8$
+		\end{corrBox}
+	
+		\columnbreak
+		\item $ \vv{C A} \cdot  \vv{C E}$
+		\begin{corrBox}
+			$ \vv{CA} \cdot  \vv{CE}= \vv{CD} \cdot  \vv{CE}=-CD\times CE$\\ 
+			$ \vv{CA} \cdot  \vv{CE}=- 4\times3=12$
+		\end{corrBox}
+		\item $ \vv{C E} \cdot  \vv{B A}$
+		\begin{corrBox}
+			$ \vv{CE} \cdot  \vv{BA}= \vv{CD} \cdot  \vv{CE}=-CD\times CE$\\ 
+			$ \vv{CE} \cdot  \vv{BA}= -4\times3=12$
+		\end{corrBox}
+		\item $ \vv{A F} \cdot  \vv{D E}$
+		\begin{corrBox}
+			$ \vv{A F} \cdot  \vv{DE}= \vv{AH} \cdot  \vv{DE}=AH\times DE$\\ 
+			$ \vv{AF} \cdot  \vv{DE}= 2\times7=14$
+		\end{corrBox}
+		\item $ \vv{B E} \cdot  \vv{D A}$
+		\begin{corrBox}
+			$ \vv{BE} \cdot  \vv{DA}= \vv{DA} \cdot  \vv{AD}=-AD\times AD$\\ 
+			$ \vv{BE} \cdot  \vv{DA}= -3\times3=-9$
+		\end{corrBox}
+	\end{enumMet}
+	\end{multicols}
+
+%	\columnbreak
+%	
+%
+%\end{multicols}
+
+
+
+\end{document}
+

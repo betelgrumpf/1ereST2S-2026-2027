@@ -1,0 +1,213 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{DS n$^{\circ}$03 - correction - Sujet B - 28/11/2025}}
+
+\begin{document}
+\begin{center}
+	\fbox{
+		\begin{minipage}[]{15cm}
+			\begin{center}
+				\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+					\textcolor{red}{Correction - DS n$^{\circ}$3\\
+						Équations du second degré - Sujet B\\}
+				}
+			\end{center}
+		\end{minipage}
+	}
+	
+\end{center}
+
+\vspace{.05cm} 
+
+\exerciceDS{ - Equations - ( 1,5 points )}
+
+Déterminer les racines des fonctions polynômes du second degré.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \ding{46} $f(x)=4(x+6)(-x+12)$ \bareme{0,5}
+    \begin{corrBox}
+    	$x+6=0$ et $-x+12=0 \iff x_1=-6$ et $x_2=12$
+    \end{corrBox}
+    \item $g(x)=2x(x-54)$ \bareme{0,5}
+    \begin{corrBox}
+    	$x=0$ et $x-54=0 \iff x_1=0$ et $x_2=54$
+    \end{corrBox}
+    \item $h(x)=-8(x+8)(x-425)$ \bareme{0,5}
+    \begin{corrBox}
+    	$ x+8=0$ et $x-425=0 \iff x_1=-8$ et $x_2=425$
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Factorisation - ( 5,5 points )}
+
+Donner les racines du polynôme du second degré donné, puis le factoriser
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $A(x)=x^{2}-8 x+16$ \quad \bareme{1}
+    \begin{corrBox}
+    	$A(x)=x^{2}-8x+16=(x-4)^2$\\
+    	(Identité remarquable)
+    \end{corrBox}
+    \item \ding{46} $B(x)=-x^{2}+3 x+10$ \quad \bareme{1,5}
+    \begin{corrBox}
+    	$\Delta=9+4\times10=49$\\
+    	$x_1=\dfrac{-3-\sqrt{49}}{2\times(-1)}=5$\\
+    	et $x_2=\dfrac{-3+\sqrt{49}}{2\times(-1)}=-2$\\
+    	$B(x)=-(x+2)(x-5)$
+    \end{corrBox}
+    \item $C(x)=x^{2}+15x+26$ \quad \bareme{1,5}
+    \begin{corrBox}
+    	$\Delta=15^2-4\times26=121$\\
+    	$x_1=\dfrac{-15-\sqrt{121}}{2}=-13$\\
+    	et $x_2=\dfrac{-15+\sqrt{121}}{2}=-2$\\
+    	$C(x)=(x+13)(x+2)$
+    \end{corrBox}
+    \item $D(x)=3 x^{2}-5 x+12$ \quad \bareme{1,5}
+    \begin{corrBox}
+    	$\Delta=(-5)^2-4\times3\times12=-119$\\
+    	Pas de racines et factorisation impossible.
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Inéquations - ( 5,5 points )}
+
+Résoudre les inéquations données.
+%\begin{multicols}{2}
+\begin{enumMet}
+    \item \ding{46} $x^{2}-8 x+7 \leqslant 0$\quad \bareme{1,5}
+    \begin{corrBox}
+    	$\Delta=36$\\
+    	$x_1=1$\\
+    	$x_2=7$\\
+    	\begin{tikzpicture}
+    		\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$1$, $7$, $+\infty$}
+    		\tkzTabLine{, +, z,- , z, +, }
+    	\end{tikzpicture}\\
+    	$S=\left[1;7\right]$
+    \end{corrBox}
+    \item $3 x^{2}+8 x-3 \leqslant 0$\quad \bareme{1,5}
+    \begin{corrBox}
+    	$\Delta=100$\\
+    	$x_1=-3$\\
+    	$x_2=\dfrac{1}{3}$\\
+    	\begin{tikzpicture}
+    		\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$-3$, $\dfrac{1}{3}$, $+\infty$}
+    		\tkzTabLine{, +, z,- , z, +, }
+    	\end{tikzpicture}\\
+    	$S=\left[-3;\dfrac{1}{3}\right]$
+    \end{corrBox}
+    \item $25 x^{2}-16 \geqslant 0$\quad \bareme{1,5}
+    \begin{corrBox}
+    	$\iff (5x-4)(5x+4) \geqslant 0$\\
+    	\begin{tikzpicture}
+    		\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$-\dfrac{4}{5}$, $\dfrac{4}{5}$, $+\infty$}
+    		\tkzTabLine{, +, z,- , z, +, }
+    	\end{tikzpicture}\\
+    	$S=\left]-\infty;-\dfrac{4}{5}\right]\cup\left[\dfrac{4}{5}; +\infty\right[$
+    \end{corrBox}
+    \item $9 x^{2}-3x+\dfrac{1}{4}>0$\quad \bareme{1}
+    \begin{corrBox}
+    	$\Delta=0$ et $x_0=\dfrac{1}{6}$ et $a>0$ donc\\ $S=\R\textbackslash\left\{\dfrac{1}{6}\right\}$
+    \end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Tableau de variations - ( 2 points )}
+Pour la fonction polynôme du second degré ci-dessous, dresser son tableau de variations (les valeurs du tableau de variations doivent être justifiées).
+$$f(x)=5x^2+30x-25$$
+\begin{corrBox}
+	On a $a=5>0$, $\alpha=-\dfrac{b}{2a}=-3$ et $\beta=f(\alpha)=5\times (-3)^2+30\times (-3)-25=-70$ donc :\\
+	\ \\
+	\begin{tikzpicture}
+		\tkzTabInit{$x$ / 1 , $f$ / 1.5}{$-\infty$, $-3$, $+\infty$}
+		\tkzTabVar{+/ , -/ $-70$, +/ }
+	\end{tikzpicture}
+\end{corrBox}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Somme et Produit de racines - ( 2 points )}
+
+Pour chaque équation, déterminer une solution évidente et en déduire l'autre sans calculer le discriminant.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $10x^2+2x-8=0$ \quad \bareme{1}
+    \item $2x^2-18x+28=0$ \quad \bareme{1}
+\end{enumMet}
+\end{multicols}
+
+\begin{corrBox}
+	\begin{multicols}{2}
+		\begin{enumMet}
+			\item $x_1=-1$, d'ou $S=-\dfrac{b}{a}=-\dfrac{1}{5}$\\
+			$x_2=-\dfrac{1}{5}+1=\dfrac{4}{5}$
+			\item $x_1=2$, d'ou $S=-\dfrac{b}{a}=9$\\
+			$x_2=9-2=7$
+		\end{enumMet}
+	\end{multicols}
+\end{corrBox}
+
+%\newpage
+
+\exerciceDS{ - Problème - ( 4 points )}
+
+Une athlète lance un javelot à l'instant $t=0$. La hauteur $h(t)$, en mètre, à l'instant $t$, en seconde, du centre de gravité est :
+$$
+h(t)=-\frac{1}{2} t^2+8 t+2
+$$
+
+La hauteur est mesurée à partir du sol.
+\begin{enumMet}
+	\item À quel instant le javelot est-il au plus haut et quelle est la hauteur maximale? \quad \bareme{1}
+	\begin{corrBox}
+		On cherche $\alpha$ et $\beta$:\\
+		$\alpha=-\dfrac{b}{2a}=\dfrac{8}{2\times (-0,5)}=8$\quad\quad et \quad\quad 	$\beta=f(\alpha)=-\dfrac{1}{2}\times 8^2+8\times 8+2=34$\\
+		Au bout de 8 secondes, le javelot atteint une hauteur de 34m.
+	\end{corrBox}
+	\item Pendant combien de temps le javelot est-il au-dessus de 32m? \quad \bareme{2}
+	\begin{corrBox}
+		on résout l'inéquation:
+		$h(t)\geqslant32 \iff -\dfrac{1}{2} t^2+8 t+2\geqslant32 \iff -\dfrac{1}{2} t^2+8 t-30\geqslant0$\\
+		$\Delta=64-4\times\dfrac{1}{2}\times30 =4$\\
+		$t_1=\dfrac{-8-\sqrt{4}}{2\times(-0,5)}=10$\\
+		et $t_2=\dfrac{-8+\sqrt{4}}{2\times(-0,5)}=6$\\
+		Le javelot sera au-dessus de 32m pendant $x_1-x_2=4$ secondes.
+	\end{corrBox}
+	\item Au bout de combien de temps le javelot touchera-t-il le sol? (À quel instant le javelot touchera-t-il le sol?) \quad \bareme{1}
+	\begin{corrBox}
+		on résout l'équation $h(x)=0$:\\
+		$-\dfrac{1}{2} t^2+8 t+2=0$
+		$\Delta=64-4\times\dfrac{-1}{2}\times2 =68$\\
+		$t_1=\dfrac{-8-\sqrt{68}}{2\times(-0,5)}=8-2\sqrt{17}\approx-0,246$\\
+		et $t_2=\dfrac{-8+\sqrt{68}}{2\times(-0,5)}=8+2\sqrt{17}\approx 16,246$\\
+		Le javelot touchera donc le sol au bout de $16,2$ secondes environ.	
+	\end{corrBox}
+\end{enumMet}
+
+
+\end{document}
+

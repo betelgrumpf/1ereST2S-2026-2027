@@ -1,0 +1,94 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Chapitre 02 - Trigonométrie - Activité 1}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{./images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Chapitre 02 - Trigonométrie\\
+						Activité 1 - Cercle trigonométrique
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+Dans toute cette activité le plan est muni d'un repère orthonormé $(O;\vv{OI};\vv{OJ})$ orienté.
+
+On considère le cercle de centre $\mathrm{O}$ et de rayon 1 (ce cercle est appelé cercle trigonométrique.)
+
+\begin{minipage}{0.55\linewidth}
+	\begin{center}
+		\includegraphics[scale=1]{1.02.04-Img02}
+	\end{center}
+\end{minipage} \hfill
+\begin{minipage}{0.42\linewidth}
+	A l'instant initial une bille est placée au point $I(1 ; 0)$. Cette bille se déplace dans le sens positif donné par l'orientation de la flèche (voir schéma). Ce sens est appelé \grasInMet{sens direct} ou \grasInMet{sens trigonométrique}.
+\end{minipage}
+\begin{spacing}{1.7}
+\begin{enumMet}
+	
+	\item Quelle est la longueur parcourue par la bille lorsqu'elle revient à son point de départ? (Penser au périmètre d'un cercle):\pointille[12cm]
+	\item On considère les points $I^{\prime}$ et $J$ 'symétriques respectifs de $I$ et $J$ par rapport à l'origine du repère $\mathrm{O}$.Quelle est la distance parcourue par la bille de son point de départ au point $I^{\prime}$ ? (Autrement dit : quelle est la longueur de l'arc de cercle $\wideparen{II'}$ ?)\pointille[12cm]
+	\item Quelle est la longueur de l'arc de cercle $\wideparen{IJ}$? (c'est la distance parcourue par la bille de son point de départ au point J.)\pointille[12cm]
+	\item Le point $A$ est situé au tiers de l'arc de cercle $\wideparen{IJ}$. La longueur de l'arc $\wideparen{IA}$ est \pointille[3cm].\\
+	Le point $B$ est situé à la moitié de l'arc de cercle $\wideparen{IJ}$. La longueur de l'arc $\wideparen{IB}$ est \pointille[3cm].\\
+	Le point $C$ est situé au deux tiers de l'arc de cercle $\wideparen{IJ}$. La longueur de l'arc $\wideparen{IC}$ est \pointille[3cm].
+	\begin{bdefi}
+	la mesure en radian, notée rad, de l'angle géométrique $\widehat{IOA}$ est égale à la longueur de l'arc de cercle $\wideparen{IA}$. On a donc $\widehat{IOA}=$\pointille[3cm] rad.
+	\end{bdefi}
+	\begin{brmq}
+		\grasInRem{Attention}: cette égalité entre mesure d'angle en radian et longueur d'arc de cercle n'est vraie que pour un cercle de rayon 1 .
+	\end{brmq}
+	Compléter le tableau suivant :\\
+	\renewcommand{\arraystretch}{1.2}
+	\setlength{\tabcolsep}{0.2cm}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline Longueur de l'arc & $\wideparen{IA}$ & $\wideparen{IB}$ & $\wideparen{IC}$ & $\wideparen{IJ}$ & $\wideparen{II'}$ \\
+		\hline Mesure en radian de & $\widehat{IOA}=\dfrac{\pi}{6}$ & $\widehat{IOB}=$\pointille[1cm] & $\widehat{IOC}=$\pointille[1cm] & $\widehat{IOJ}=$\pointille[1cm] & $\widehat{IOI'}=$\pointille[1cm] \\
+		\hline Mesure en degré de & $\widehat{IOA}=30^{\circ}$ & $\widehat{IOB}=$\pointille[1cm] & $\widehat{IOC}=$\pointille[1cm] & $\widehat{IOJ}=$\pointille[1cm] & $\widehat{IOI'}=$\pointille[1cm] \\
+		\hline
+	\end{tabular}
+	\item Les points $D$, $E$ et $F$ sont respectivement les images des points $C$, $B$ et $A$ par rapport à l'axe des ordonnées.\\
+	Les points $A'$, $B'$ , $C'$, $D'$, $E'$, $F'$et $J'$ sont respectivement les images des points $A$, $B$ , $C$, $D$, $E$, $F$et $J$ par rapport à l'axe des abscisses.
+	Ci-dessous, à coté de chaque point du cercle, noter les distances que la bille a parcourues pour arriver à ce point. On note par exemple : A $\left(\dfrac{\pi}{6}\right)$ 
+\end{enumMet}
+\end{spacing}
+\begin{center}
+	\includegraphics[scale=1.4]{1.02.04-Img02}
+\end{center}
+
+
+
+\end{document}
+

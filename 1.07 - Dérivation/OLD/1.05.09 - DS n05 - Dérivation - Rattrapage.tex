@@ -1,0 +1,90 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\usepackage{mathrsfs}
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$05 - Rattrapage - 28/04/2023}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+DS n$^{\circ}$05 - Dérivation\\
+Rattrapage
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{1h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+
+\exerciceDS{ - nombre dérivé - ( 6 points )}
+On considère la courbe $\mathscr{C}_f$ d'une fonction $f$ définie sur l'intervalle $[-5 ; 4]$.
+\begin{enumMet}
+    \item Pour chacune des tangentes tracées, lire graphiquement l'abscisse $a$ du point de tangence, la valeur de $f(a)$ puis celle de $f^{\prime}(a)$
+    \item Retrouver l'équation réduite de la droite $\mathscr{F}_1$ 
+\end{enumMet}
+\begin{center}
+    \includegraphics[scale=0.8]{1.05.DS-IMG-05}
+\end{center}
+
+\exerciceDS{ - dérivabilité - ( 3 points )}
+
+Soit $f$ la fonction définie sur \R par $f(x)=3 x^{2}-2 x-4$\\
+Montrer que la fonction f est dérivable pour $x=-2$ et calculer $f^{\prime}(-2)$
+
+
+\exerciceDS{ - fonction dérivée - ( 11 points )}
+
+Calculer la dérivé des fonctions suivantes
+\begin{enumMet}
+    \item $f(x)=5 x^{2}-4 x-5$
+    \item $g(x)=2 x^{3}+5 x^{2}-4 x+1$
+    \item $h(x)=\dfrac{2}{x}+5 \sqrt{x}$
+    \item $d(x)=\dfrac{5}{3} x^{3}-2,5 x^{2}-\dfrac{4}{x}$
+    \item $e(x)=5 x^{2} \sqrt{x}$
+    \item $k(x)=(5 x-2)^{2}$
+    \item $l(x)=\dfrac{2 x-3}{x-5}$
+    \item $m(x)=\sqrt{4 x-3}$
+    \item $n(x)=\dfrac{3 x-2}{x^2+2x+3}$
+    \item $p(x)=-2x+3+\dfrac{2}{-2x-3}$
+    \item $r(x)=4x(2x-5)^2$
+\end{enumMet}
+
+
+\end{document}

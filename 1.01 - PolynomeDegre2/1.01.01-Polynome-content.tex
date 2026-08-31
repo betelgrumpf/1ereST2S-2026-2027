@@ -1,0 +1,211 @@
+\chapter{Fonctions polynôme de dégré 2}
+\thispagestyle{fancy}
+
+\section{Forme développée}
+
+
+    \begin{bdefi}
+        On appelle \grasInDef{fonction polynôme de degré 2} toute fonction f définie sur \R par une expression de la forme :\\
+				\grasInDef{$\bm{f(x)=ax^2+bx+c}$}
+        où les coefficients $a$, $b$ et $c$ sont des réels donnés avec $a\neq0$.
+    \end{bdefi}
+    
+    \begin{brmq}
+        Une fonction polynôme de degré 2 s'appelle également fonction trinôme du second degré ou par abus de langage \guillemets{trinôme}.
+    \end{brmq}
+
+	\begin{bmanip}
+		Sur le logiciel GeoGebra  $\vcenter{\hbox{\includegraphics[height=1.2\baselineskip]{ggb-icon}}}$ créer trois curseurs $a, b, c$ puis dans la ligne de saisie taper $f(x)=a x^2+b x+c$. On obtient ainsi le tracé de la courbe représentative de la fonction $f$ définie par $f(x)=a x^2+b x+c$ on s'intéressera aux cas où $a \neq 0$. (si $a=0 f$ est une fonction affine)
+	\end{bmanip}
+
+	\begin{bdefi}
+		La courbe représentative d'une fonction polynôme du second degré est appelée \grasInDef{parabole}.
+	\end{bdefi}
+    
+    \begin{bexemple}
+        \begin{itemEx}
+            \item $f(x)=2\mRouge{x^2}-5x+2$ ou $g(x)=(\mRouge{x}-4)(5-2\mRouge{x})$ sont des fonctions polynômes de degré 2.
+            \item $h(x)=5\mRouge{x}-3$ est une fonction polynôme de degré 1.
+            \item $i(x)=5\mRouge{x^4}-7x^3+3x-8$  est une fonction polynôme de degré 4.
+            
+        \end{itemEx}
+    \end{bexemple}
+
+	\subsection*{Variations de la fonction trinôme}
+	
+	\begin{bmanip}
+		Sur le logiciel GeoGebra  $\vcenter{\hbox{\includegraphics[height=1.2\baselineskip]{ggb-icon}}}$, reprendre la manipulation précédente et prendre un $a>0$. Faire alors varier $b$ et $c$. Que constatez-vous quant variations de $f$? Et si on prend un autre $a$ strictement positif? Conjecturer les variations de $f$ en complétant le tableau de variation suivant :\\
+		1er cas $a>0$ :
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 2}{\phantom{$-\infty$}, \phantom{$-\dfrac{b}{2a}$}, \phantom{$+\infty$}}
+			\tkzTabVar{}
+		\end{tikzpicture}
+		
+	\end{bmanip}
+
+	\begin{bmanip}
+		Sur le logiciel GeoGebra  $\vcenter{\hbox{\includegraphics[height=1.2\baselineskip]{ggb-icon}}}$, reprendre la manipulation précédente et prendre un $a<0$. Faire alors varier $b$ et $c$. Que constatez-vous quant variations de $f$? Et si on prend un autre $a$ strictement négatif? Conjecturer les variations de $f$ en complétant le tableau de variation suivant :\\
+		2ème cas $a<0$ :
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 2}{\phantom{$-\infty$}, \phantom{$-\dfrac{b}{2a}$}, \phantom{$+\infty$}}
+			\tkzTabVar{}
+		\end{tikzpicture}
+	\end{bmanip}
+		Nous retiendrons donc : 
+	\begin{bprop}
+		\begin{minipage}[c]{0.5\linewidth}
+			Si $a>0$
+			\ \\
+			
+			\begin{tikzpicture}
+				\tikzset{node style/.append style = {fill=none}}
+				\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $x_S$, $+\infty$}
+				\tkzTabVar{+/, -/ $y_S$, +/ }
+			\end{tikzpicture}
+		\end{minipage}
+		\begin{minipage}[c]{0.5\linewidth}
+			Si $a<0$
+			\ \\
+			
+			\begin{tikzpicture}
+				\tikzset{node style/.append style = {fill=none}}
+				\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $x_S$, $+\infty$}
+				\tkzTabVar{-/, +/ $y_S$, -/ }
+			\end{tikzpicture}
+		\end{minipage}
+	\end{bprop}
+
+	\begin{bdefi}
+		le point de coordonnés $\left(x_S ; y_S\right)$ avec $y_S$ l'extremum de $f$ sur $\mathrm{P}$ est appelé \grasInDef{sommet de la parabole}.
+	\end{bdefi}
+    
+\section{Forme canonique d'une fonction polynôme de degré 2}
+        
+    \begin{bprop}
+        Toute fonction polynôme f de degré 2 définie sur \R par $f(x)=ax^2+bx+c$ peut s'écrire sous la forme :
+        
+		$f(x)=a(x-\alpha)^2+\beta$, où $\alpha$ et $\beta$ sont deux nombres réels.
+		
+        Cette dernière écriture s'appelle \grasInProp{la forme canonique de f}.
+        
+    \end{bprop}
+    
+    \begin{bdemo}
+        Comme $a\neq0$, on peut écrire pour tout réel $x$ :
+        
+        $f(x)=ax^2+bx+c$
+        
+        $=a\biggl[x^2+\dfrac{b}{a} x\biggr]+c$
+        
+        $=a\biggl[x^2+\dfrac{b}{a} x+\biggl(\dfrac{b}{2a}\biggr)^2-\biggl(\dfrac{b}{2a}\biggr)^2 \biggr]+c$
+        
+        $=a\biggl[\biggl(x+\dfrac{b}{2a}\biggr)^2-\biggl(\dfrac{b}{2a}\biggr)^2 \biggr]+c$
+        
+        $=a\biggl(x+\dfrac{b}{2a}\biggr)^2-\dfrac{a b^2}{4a^2}+c$
+        
+        $=a\biggl(x+\dfrac{b}{2a}\biggr)^2-\dfrac{b^2}{4a}+c$
+        
+        $=a\biggl(x+\dfrac{b}{2a}\biggr)^2-\dfrac{b^2-4ac}{4a}$
+        
+        $=a(x-\alpha)^2+\beta$
+        
+        avec  $\alpha=- \dfrac{b}{2a}$ et $\beta= -\dfrac{b^2-4ac}{4a}$.
+
+    \end{bdemo}
+
+	\begin{bmanip}
+		Sur le logiciel GeoGebra  $\vcenter{\hbox{\includegraphics[height=1.2\baselineskip]{ggb-icon}}}$ créer trois curseurs $a, \alpha, \beta$ puis dans la ligne de saisie taper $f(x)=a(x-\alpha)^2+\beta$. On obtient ainsi le tracé de la courbe représentative de la fonction $f$ définie par $f(x)=a(x-\alpha)^2+\beta$. Compléter alors le cas général ci-dessous.
+	\end{bmanip}
+
+	\begin{bprop}
+		Le sommet S a pour coordonnées \grasInProp{$\bm{(\alpha;\beta)}$}
+	\end{bprop}
+
+	\begin{bprop}
+		La parabole possède un \grasInProp{axe de symétrie}. Il s'agit de la droite d'équation $x=\alpha$.
+	\end{bprop}
+
+	Avec ces nouvelles données, on peut maintenant compléter notre tableau de variations : 
+	
+	\begin{bprop}
+		\begin{minipage}[c]{0.5\linewidth}
+			Si $a>0$
+			\ \\
+			
+			\begin{tikzpicture}
+				\tikzset{node style/.append style = {fill=none}}
+				\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $\alpha$, $+\infty$}
+				\tkzTabVar{+/, -/ $\beta$, +/ }
+			\end{tikzpicture}
+		\end{minipage}
+		\begin{minipage}[c]{0.5\linewidth}
+			Si $a<0$
+			\ \\
+			
+			\begin{tikzpicture}
+				\tikzset{node style/.append style = {fill=none}}
+				\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $\alpha$, $+\infty$}
+				\tkzTabVar{-/, +/ $\beta$, -/ }
+			\end{tikzpicture}
+		\end{minipage}
+	\end{bprop}
+
+	\section{passage de la forme développée à la forme canonique}
+	
+	Pour passer de la forme développée à la forme canonique, il existe 2 méthodes
+	
+	\subsection{passer à la forme canonique à l'aide d'identité remarquable}
+    
+    \begin{bmethodet}{Déterminer la forme canonique d'une fonction polynôme de degré 2}
+        \grasInMet{Enoncé :} 
+        
+        Soit la fonction f définie sur \R par : $f(x)=2x^2-20x+10$.
+        
+        On veut exprimer la fonction $f$ sous sa forme canonique.
+        
+        \grasInMet{Réponse :}
+        
+        f doit être de la forme : 	
+ 		$f(x)=a(x-\alpha)^2+\beta$ 	
+ 		ou $a$, $\alpha$ et $\beta$ sont des nombres réels.
+        
+        $f(x)=2x^2-20x+10$
+        
+        On commence par mettre le $a$ en facteur pour les 2 termes avec des $x$
+        
+        $f(x)=2[x^2-10x]+10$
+          
+        On fait ensuite apparaitre le 3ème terme d'une identité remarquable ($a^2+2ab+b^2$ ou $a^2-2ab+b^2$)
+        
+        $f(x)=2[x^2-10x+25-25]+10$
+        
+        On factorise l'identité remarquable et on regroupe les termes qui restent ensemble.
+        
+        $f(x)=2[(x-5)^2-25]+10$
+        
+        $f(x)=2(x-5)^2-50+10$
+        
+        $f(x)=2(x-5)^2-40$
+
+        $f(x)=2(x-5)^2-40$ est la forme canonique de $f$.
+    \end{bmethodet}
+
+	\subsection{Cas général}
+	
+	\begin{bprop}
+		Pour passer de la forme développée à la forme canonique (ou inversement), on peut utiliser les formules:
+		\grasInProp{$\bm{\alpha=- \dfrac{b}{2a}}$} et \grasInProp{$\bm{\beta= -\dfrac{b^2-4ac}{4a}}$}.
+	\end{bprop}
+
+	\begin{bexemple}
+		Soit la fonction f définie sur \R par : $f(x)=3x^2+60x-20$.
+		On veut exprimer la fonction $f$ sous sa forme canonique.\\
+		\ \\
+		On commence par calculer $\alpha$:\\
+		$\alpha=- \dfrac{b}{2a}=-\dfrac{60}{2\times 3}=-10$.
+		\ \\
+		Pour calculer $\beta$, on a 2 possibilités : soit on utilise la formule ci-dessus, soit on dit que $\beta=f(\alpha)$ et on remplace $x$ par $\alpha$ dans l'expression $f(x)$
+	\end{bexemple}
+    
+
+

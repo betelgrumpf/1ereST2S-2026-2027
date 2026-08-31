@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\pagestyle{empty}
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Liste du matériel pour l'année}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Première - Mathématiques\\
+						Liste du matériel pour l'année
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\section*{Pour celles et ceux qui travaillent avec des cahiers}
+
+\begin{itemMet}
+	\item 1 cahier format A4 petits carreaux 192 pages pour le cours 
+	\item 1 cahier format A4 petits carreaux 192 pages pour les exercices 
+	\item 1 cahier format A4 petits carreaux 96 pages pour les séances informatiques 
+	\item 1 pochette pour conserver les interrogations et leur correction Règle graduée, équerre, compas, rapporteur, crayon à papier, gomme, etc... 
+	\item 1 paquet de feuilles simples format $A 4$ petits carreaux avec marge pour les interrogations 
+	\item 1 paquet de feuilles doubles format A4 petits carreaux avec marge pour les interrogations 
+	\item 1 calculatrice graphique Mode Examen avec Python (Numworks)
+\end{itemMet}
+
+\section*{Pour celles et ceux qui travaillent avec des classeurs}
+
+\begin{itemMet}
+	\item 1 classeur format A4 suffisamment épais
+	\item 4 intercalaires pour : cours / exercices / séances informatiques / interrogations et corrections 
+	\item Règle graduée, équerre, compas, rapporteur, crayon à papier, gomme, etc...
+	\item 1 paquet de feuilles simples format A4 petits carreaux avec marge pour les interrogations
+	\item 1 paquet de feuilles doubles format A4 petits carreaux avec marge pour les interrogations 
+	\item 1 calculatrice graphique Mode Examen avec Python (Numworks)
+\end{itemMet}
+
+\section*{Pour celles et ceux qui travaillent avec des portes-vues}
+ 
+\begin{itemMet}
+	\item 1 porte-vues format A4 environ 192 pages pour le cours
+	\item 1 porte-vues format $A 4$ environ 192 pages pour les exercices
+	\item 1 porte-vues format A4 environ 96 pages pour les séances informatiques
+	\item 1 pochette pour conserver les interrogations et leur correction
+	\item Règle graduée, équerre, compas, rapporteur, crayon à papier, gomme, etc...
+	\item 1 paquet de feuilles simples format $A 4$ petits carreaux avec marge pour les interrogations 
+	\item 1 paquet de feuilles doubles format $A 4$ petits carreaux avec marge pour les interrogations
+	\item 1 calculatrice graphique Mode Examen avec Python (Numworks)
+\end{itemMet}
+
+\section*{Pour celles et ceux qui travaillent avec un trieur}
+
+Je serais tenté de déconseiller cet outil, qui demande une gestion très (trop ?!) rigoureuse... Cependant, il est possible d'utiliser un trieur réservé aux mathématiques !
+\begin{itemMet}
+	\item 4 rubriques : cours / exercices / séances informatiques / interrogations et corrections
+	\item Règle graduée, équerre, compas, rapporteur, crayon à papier, gomme, etc...
+	\item 1 paquet de feuilles simples format $A 4$ petits carreaux avec marge pour les interrogations 
+	\item 1 paquet de feuilles doubles format $A 4$ petits carreaux avec marge pour les interrogations
+	\item 1 calculatrice graphique Mode Examen avec Python (Numworks)
+\end{itemMet}
+
+	\begin{center}
+	
+\newpage	
+	\fbox{
+		\begin{minipage}[]{15cm}
+			\begin{center}
+				\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+					Première - Mathématiques\\
+					Liste du matériel pour l'année
+				}
+			\end{center}
+		\end{minipage}
+	}
+\end{center}
+
+\section*{Pour celles et ceux qui travaillent avec des cahiers}
+
+\begin{itemMet}
+	\item 1 cahier format A4 petits carreaux 192 pages pour le cours 
+	\item 1 cahier format A4 petits carreaux 192 pages pour les exercices 
+	\item 1 cahier format A4 petits carreaux 96 pages pour les séances informatiques 
+	\item 1 pochette pour conserver les interrogations et leur correction Règle graduée, équerre, compas, rapporteur, crayon à papier, gomme, etc... 
+	\item 1 paquet de feuilles simples format $A 4$ petits carreaux avec marge pour les interrogations 
+	\item 1 paquet de feuilles doubles format A4 petits carreaux avec marge pour les interrogations 
+	\item 1 calculatrice graphique Mode Examen avec Python (Numworks)
+\end{itemMet}
+
+\section*{Pour celles et ceux qui travaillent avec des classeurs}
+
+\begin{itemMet}
+	\item 1 classeur format A4 suffisamment épais
+	\item 4 intercalaires pour : cours / exercices / séances informatiques / interrogations et corrections 
+	\item Règle graduée, équerre, compas, rapporteur, crayon à papier, gomme, etc...
+	\item 1 paquet de feuilles simples format A4 petits carreaux avec marge pour les interrogations
+	\item 1 paquet de feuilles doubles format A4 petits carreaux avec marge pour les interrogations 
+	\item 1 calculatrice graphique Mode Examen avec Python (Numworks)
+\end{itemMet}
+
+\section*{Pour celles et ceux qui travaillent avec des portes-vues}
+
+\begin{itemMet}
+	\item 1 porte-vues format A4 environ 192 pages pour le cours
+	\item 1 porte-vues format $A 4$ environ 192 pages pour les exercices
+	\item 1 porte-vues format A4 environ 96 pages pour les séances informatiques
+	\item 1 pochette pour conserver les interrogations et leur correction
+	\item Règle graduée, équerre, compas, rapporteur, crayon à papier, gomme, etc...
+	\item 1 paquet de feuilles simples format $A 4$ petits carreaux avec marge pour les interrogations 
+	\item 1 paquet de feuilles doubles format $A 4$ petits carreaux avec marge pour les interrogations
+	\item 1 calculatrice graphique Mode Examen avec Python (Numworks)
+\end{itemMet}
+
+\section*{Pour celles et ceux qui travaillent avec un trieur}
+
+Je serais tenté de déconseiller cet outil, qui demande une gestion très (trop ?!) rigoureuse... Cependant, il est possible d'utiliser un trieur réservé aux mathématiques !
+\begin{itemMet}
+	\item 4 rubriques : cours / exercices / séances informatiques / interrogations et corrections
+	\item Règle graduée, équerre, compas, rapporteur, crayon à papier, gomme, etc...
+	\item 1 paquet de feuilles simples format $A 4$ petits carreaux avec marge pour les interrogations 
+	\item 1 paquet de feuilles doubles format $A 4$ petits carreaux avec marge pour les interrogations
+	\item 1 calculatrice graphique Mode Examen avec Python (Numworks)
+\end{itemMet}
+
+\end{document}
+

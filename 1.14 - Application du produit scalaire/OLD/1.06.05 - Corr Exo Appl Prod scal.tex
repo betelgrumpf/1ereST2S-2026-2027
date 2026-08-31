@@ -1,0 +1,234 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../1ere-preambule}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+\graphicspath{{images/}}
+\setcounter{chapter}{5}
+\chapter[Correction des exercices]{Application Produit Scalaire \\ correction des exercices}
+\thispagestyle{fancy}
+
+%\section*{Equation du second degré}
+
+\subsection*{Ex 27 p 243}
+
+\begin{enumMet}
+    \item \grasInMet{$\mathrm{AB}=3, \mathrm{AC}=4$ et $\mathrm{BC}=6$}\\
+$\vv{A B} \cdot \vv{A C}=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)=\dfrac{1}{2}\left(3^{2}+4^{2}-6^{2}\right)=\dfrac{1}{2}(9+16-36)=\dfrac{-11}{2}$
+\item \grasInMet{$\mathrm{AB}=2, \mathrm{AC}=\dfrac{7}{3}$ et $\mathrm{BC}=1$}\\
+$\vv{A B} \cdot \vv{A C}=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)=\dfrac{1}{2}\left(2^{2}+\dfrac{7^{2}}{3}-1^{2}\right)=\dfrac{1}{2}\left(\dfrac{76}{9}\right)=\dfrac{38}{9} .$
+\item \grasInMet{$\mathrm{ABC}$ est isocèle en $\mathrm{A}, \mathrm{AB}=5$ et $\mathrm{BC}=2,5$}\\
+$\vv{A B} \cdot \vv{A C}=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)=\dfrac{1}{2}\left(5^{2}+5^{2}-2,5^{2}\right)=\dfrac{175}{8}$ 
+\end{enumMet}
+
+\subsection*{Ex 31 p 243}
+
+\subsection*{Ex 36 p 244}
+\grasInMet{≈Calculer les trois produits scalaires $\vv{\mathrm{AB}} \cdot \vv{\mathrm{AC}}, \vv{\mathrm{BC}} \cdot \vv{\mathrm{BA}}$ et $\vv{\mathrm{CA}} \cdot \vv{\mathrm{CB}}$.}\\
+On pourra remarquer que le triangle possède un angle obtus et deux angles aigus donc, parmi les produits scalaires proposés, l'un sera négatif et et les deux autres positifs.
+$$
+\begin{aligned}
+&\vv{A B} \cdot \vv{A C}=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)=\dfrac{1}{2}\left(4^{2}+3^{2}-2^{2}\right)=10,5 \\
+&\vv{B C} \cdot \vv{B A}=\dfrac{1}{2}\left(B C^{2}+B A^{2}-C A^{2}\right)=\dfrac{1}{2}\left(2^{2}+4^{2}-3^{2}\right)=5,5 \text { et } \\
+&\vv{C A} \cdot \vv{C B}=\dfrac{1}{2}\left(C A^{2}+C B^{2}-A B^{2}\right)=\dfrac{1}{2}\left(3^{2}+2^{2}-4^{2}\right)=-1,5
+\end{aligned}
+$$
+
+\subsection*{Ex 63 p 247}
+
+On rappelle que $\|\vv{u}+\vv{v}\|^{2}=(\vv{u}+\vv{v}) \cdot(\vv{u}+\vv{v})$.
+\begin{enumMet}
+    \item 
+    \begin{enumMet}
+        \item \grasInMet{Démontrer que $\|\vv{u}+\vv{v}\|^{2}=\|\vv{u}\|^{2}+2 \vv{u} \cdot \vv{v}+\|\vv{v}\|$.}\\
+$$
+\begin{aligned}
+\|\vv{u}+\vv{v}\|^{2} &=(\vv{u}+\vv{v}) \cdot(\vv{u}+\vv{v}) \\
+&=\vv{u} \cdot \vv{u}+\vv{u} \cdot \vv{v}+\vv{v} \cdot \vv{u}+\vv{v} \cdot \vv{v} \text { par double distributivité. } \\
+&=\|\vv{u}\|^{2}+2 \vv{u} \cdot \vv{v}+\|\vv{v}\|^{2}
+\end{aligned}
+$$
+    \item \grasInMet{En déduire la formule : $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}\right)$.}\\
+Alors $\|\vv{u}+\vv{v}\|^{2}=\|\vv{u}\|^{2}+2 \vv{u} \cdot \vv{v}+\|\vv{v}\|^{2}$ implique que $\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}=2 \vv{u} \cdot \vv{v}$ et enfin\\
+$\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}\right)$
+    \end{enumMet}
+    \item En raisonnant de même, démontrer les formules suivantes.\\
+    \begin{enumMet}
+        \item \grasInMet{$\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}\|^{2}+\|\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)$.}\\
+De la même façon, on a : $\|\vv{u}-\vv{v}\|^{2}=\|\vv{u}\|^{2}-2 \vv{u} \cdot \vv{v}+\|\vv{v}\|^{2}$ donc $2 \vv{u} \cdot \vv{v}=-\|\vv{u}-\vv{v}\|^{2}+\|\vv{u}\|^{2}+\|\vv{v}\|^{2}$ et enfin $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(-\|\vv{u}-\vv{v}\|^{2}+\|\vv{u}\|^{2}+\|\vv{v}\|^{2}\right)$.
+        \item \grasInMet{$\vv{u} \cdot \vv{v}=\dfrac{1}{4}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)$.}\\
+
+En combinant les deux expressions,\\
+$\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}=\|\vv{u}\|^{2}+2 \vv{u} \cdot \vv{v}+\|\vv{v}\|^{2}-\left(\|\vv{u}\|^{2}-2 \vv{u} \cdot \vv{v}+\|\vv{v}\|^{2}\right)$\\
+$\begin{aligned} &=\|\vv{u}\|^{2}+2 \vv{u} \cdot \vv{v}+\|\vv{v}\|^{2}-\|\vv{u}\|^{2}+2 \vv{u} \cdot \vv{v}-\|\vv{v}\|^{2} \\ &=4 \vv{v} \cdot \vv{v} \end{aligned}$\\
+donc $\vv{u} \cdot \vv{v}=\dfrac{1}{4}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)$
+    \end{enumMet}
+\end{enumMet}
+
+\subsection*{Ex 68 p 248}
+\grasInMet{Pour chacun des cas suivants, déterminer un vecteur directeur de la droite $(\mathrm{AB})$ puis un vecteur normal.}
+\begin{enumMet}
+    \item \grasInMet{$\mathrm{A}(-4 ; 3)$ et $\mathrm{B}(2 ; 0)$}\\
+    Un vecteur directeur de la droite $(A B)$ est $\Coord{AB}{6}{-3}$, donc un vecteur normal a pour coordonnées $\Coord{n}{3}{6}$ ou encore  $\Coord{n'}{1}{2}$.
+    \item  \grasInMet{$\mathrm{A}(2 ; 5)$ et $\mathrm{B}(-3 ; 1)$}\\
+    Un vecteur directeur de la droite $(A B)$ est $\Coord{AB}{-5}{-4}$, donc un vecteur normal a pour coordonnées $\Coord{n}{-4}{5}$.
+    \item \grasInMet{$\mathrm{A}\left(\dfrac{5}{4} ; 1\right)$ et $\mathrm{B}\left(3 ;-\dfrac{1}{4}\right)$}\\
+    Un vecteur directeur de la droite $(A B)$ est $\Coord{AB}{\dfrac{7}{4}}{-\dfrac{5}{4}}$, donc un vecteur normal a pour coordonnées $\Coord{n}{\dfrac{5}{4}}{\dfrac{7}{4}}$ ou encore  $\Coord{n'}{5}{7}$.
+    \item \grasInMet{$\mathrm{A}(\sqrt{2} ; 1)$ et $\mathrm{B}(1 ; \sqrt{2})$}\\
+    Un vecteur directeur de la droite $(A B)$ est $\Coord{AB}{1-\sqrt{2}}{\sqrt{2}-1}$, donc un vecteur normal a pour coordonnées $\Coord{n}{\sqrt{2}-1}{\sqrt{2}-1}$ ou encore  $\Coord{n'}{1}{1}$.
+\end{enumMet}
+
+\subsection*{Ex 69 p 248}
+\grasInMet{Dans chaque cas, déterminer en justifiant, si les droites $\mathrm{D}_{1}$ et $\mathrm{D}_{2}$ sont perpendiculaires.}
+\begin{enumMet}
+    \item \grasInMet{$\mathrm{D}_{1}: 2 x+8 y-5=0$ et $\mathrm{D}_{2}: 5 x-7 y-6=0$.}\\
+On détermine un vecteur directeur de chaque droite :$\Coord{u_{D1}}{-8}{2}$    et $\Coord{u_{D2}}{7}{5}$.\\
+On calcule ensuite le produit scalaire de ces deux vecteurs :\\
+$\vv{u_{D 1}} \cdot \vv{u_{D 2}}=(-8) \times 7+2 \times 5=-56+10=-46 \neq 0$.\\
+Les deux droites ne sont pas perpendiculaires.
+    \item \grasInMet{$\mathrm{D}_{1}:-5 x+2 y+1=0$ et $\mathrm{D}_{2}: y=\dfrac{-2}{5} x$.}\\
+On détermine un vecteur normal de chaque droite : $\Coord{n_{D1}}{-5}{2}$ et $\Coord{n_{D2}}{2}{5}$.\\
+On calcule ensuite le produit scalaire de ces deux vecteurs :\\
+$\vv{n_{D 1}} \cdot \vv{n_{D 2}}=(-5) \times 2+2 \times 5=-10+10=0$.\\
+Les deux droites sont perpendiculaires.
+\item \grasInMet{$\mathrm{D}_{1}$ de vecteur directeur $\Coord{u}{\dfrac{7}{3}}{\dfrac{2}{3}}$ et $\mathrm{D}_{2}: \dfrac{9}{4} x+2=0$}\\
+$\Coord{u_{D1}}{7}{2}$\\
+On détermine un vecteur directeur de $D_{2}$: $\Coord{u_{D2}}{0}{\dfrac{9}{4}}$ soit $\Coord{u'_{D2}}{0}{9}$\\.
+On calcule ensuite le produit scalaire des deux vecteurs directeurs :\\
+$\vv{u_{D1}} \cdot \vv{u'_{D 2}}=7 \times 0+2 \times 9=18 \neq 0$\\
+Les deux droites ne sont pas perpendiculaires.
+    \item \grasInMet{$\mathrm{D}_{1}:(1-\sqrt{2}) x+(\sqrt{2}+1) y=-3$ et $\mathrm{D}_{2}:(1+\sqrt{2}) x+(\sqrt{2}-1) y=12$.}\\
+On détermine un vecteur directeur de chaque droite : $\Coord{u_{D1}}{-\sqrt{2}-1}{1-\sqrt{2}}$ et $\Coord{u_{D2}}{1-\sqrt{2}}{1+\sqrt{2}}$.\\
+On calcule ensuite le produit scalaire de ces deux vecteurs:\\
+$\vv{u_{D 1}} \cdot \vv{u_{D 2}}=(-\sqrt{2}-1) \times(1-\sqrt{2})+(1-\sqrt{2}) \times(1+\sqrt{2})=2-1+1-2=0$\\
+Les deux droites sont perpendiculaires.
+\item  \grasInMet{$\mathrm{D}_{1}: y=8 x-5$ et $\mathrm{D}_{2}$ passant par les points de coordonnées $\mathrm{A}(-2 ; 0)$ et $\mathrm{B}(6 ;-1)$.}\\
+On détermine un vecteur directeur de chaque droite: $\Coord{u_{D1}}{1}{8}$ et $\Coord{u_{D2}}{8}{-1}$.\\
+On calcule ensuite le produit scalaire des deux vecteurs directeurs :\\
+$\vv{u_{D 1}} \cdot \vv{u_{D 2}}=1 \times 8+8 \times(-1)=8-8=0$\\
+Les deux droites sont perpendiculaires.
+\end{enumMet}
+
+\subsection*{Ex 70 p 248}
+\grasInMet{Pour chaque droite, utiliser l'équation donnée pour déterminer les coordonnées d'un vecteur normal et d'un vecteur directeur.}
+\begin{enumMet}
+    \item \grasInMet{$3 x-8 y+6=0$}\\
+    Un vecteur normal de la droite est $\Coord{n}{3}{-8}$ et un vecteur directeur est $\Coord{u}{8}{3}$.
+    \item \grasInMet{$-2 x+5 y-2=0$}\\
+    Un vecteur normal de la droite est $\Coord{n}{-2}{5}$ et un vecteur directeur est $\Coord{u}{-5}{-2}$ ou encore $\Coord{u}{5}{2}$.
+    \item \grasInMet{$-y+3 x+4=0$}\\
+    Un vecteur normal de la droite est $\Coord{n}{3}{-1}$ et un vecteur directeur est $\Coord{u}{1}{3}$.
+    \item \grasInMet{$y=\frac{2}{3} x-6$}\\
+    Un vecteur normal de la droite est $\Coord{n}{\dfrac{2}{3}}{-1}$ ou $\Coord{n'}{2}{-3}$ et un vecteur directeur est $\Coord{u}{3}{2}$.
+    \item \grasInMet{$x=-7$}\\
+    Un vecteur normal de la droite est $\Coord{n}{1}{0}$ et un vecteur directeur est $\Coord{u}{0}{1}$.
+    \item \grasInMet{$-2 x-3=0$}\\
+    Un vecteur normal de la droite est $\Coord{n}{-2}{0}$ ou $\Coord{n}{1}{0}$ et un vecteur directeur est $\Coord{u}{0}{1}$.
+\end{enumMet}
+
+
+\subsection*{Ex 71 p 248}
+\grasInMet{À partir des équations de droite suivantes, trouver les coordonnées d'un vecteur normal à la droite et d'un point appartenant à cette droite.}
+\begin{enumMet}
+    \item \grasInMet{$5 x-6 y+3=0$}\\
+    Un vecteur normal de la droite est $\Coord{n}{5}{-6}$ et le point de coordonnées $\left(3 ; 3\right)$ appartient à la droite (on remplace $x$ par $3$ dans l'équation et on calcule la valeur de $y$ correspondante).
+    \item \grasInMet{$3 y-2 x=5$}\\
+    Un vecteur normal de la droite est $\Coord{n}{-2}{3}$ et le point de coordonnées $(-1 ; 1)$ appartient à la droite.
+    \item \grasInMet{$\sqrt{2} x-\sqrt{2} y=2$}\\
+    Un vecteur normal de la droite est $\Coord{n}{\sqrt{2}}{-\sqrt{2}}$ ou $\Coord{n}{1}{-1}$ et le point de coordonnées $\left(\sqrt{2};0\right)$ appartient à la droite.
+    \item \grasInMet{$y=x$}\\
+    Un vecteur normal de la droite est $\Coord{n}{1}{-1}$ et le point de coordonnées $(1 ; 1)$ appartient à la droite.
+    \item \grasInMet{$y-\frac{7}{3}=0$}\\
+    Un vecteur normal de la droite est $\Coord{n}{0}{1}$ et le point de coordonnées $\left(26 ; \dfrac{7}{3}\right)$ ou $\left(18 ; \dfrac{7}{3}\right)$ appartiennent à la droite.
+    \item \grasInMet{$x=-4$}\\
+    Un vecteur normal de la droite est $\Coord{n}{1}{0}$ et le point de coordonnées $(-4 ;-12)$ ou $(-4 ;2)$ appartiennent à la droite.    
+\end{enumMet}
+
+
+\subsection*{Ex 72 p 248}
+\grasInMet{Soit $\Coord{u}{3}{5}$ un vecteur du plan. Parmi les droites suivantes, quelles sont celles qui admettent $\vv{u}$ comme vecteur normal ? Justifier.}
+\begin{enumMet}
+    \item \grasInMet{La droite $D_{1}$ d'équation $3 y+5 x-10=0$.}\\
+    Un vecteur normal est $\Coord{n}{5}{3}$, qui n'est pas colinéaire à $\vv{u}$, donc $\vv{u}$ n'est pas normal à $D_{1}$.
+    \item \grasInMet{La droite $\mathrm{D}_{2}$ d'équation $y=\frac{2}{5}-3 x$.}\\
+    $y=\dfrac{2}{5}-3 x \iff 3x+y-\dfrac{2}{5}=0$\\
+    Un vecteur normal est $\Coord{n}{3}{1}$, qui n'est pas colinéaire à $\vv{u}$, donc $\vv{u}$ n'est pas normal à $D_{2}$.
+    \item \grasInMet{La droite $\mathrm{D}_{3}$ d'équation $3 x=-5 y+13$.}\\
+    $3 x=-5 y+13 \iff 3x+5y-13=0$\\
+    Un vecteur normal est $\Coord{n}{3}{5}$, donc $\vv{u}$ est normal à $D_{3}$.
+    \item \grasInMet{La droite $\mathrm{D}_{4}$ passant par les points $\mathrm{A}(-4 ; 3)$ et $\mathrm{B}(1 ; 1)$.}\\
+    Un vecteur directeur est $\Coord{AB}{5}{-2}$ qui n'est pas orthogonal à $\vv{u}\left(\right.$ car $\vv{A B} \cdot \vv{u}=5 \times 3+(-2) \times 5=15-10=5$ ), donc $\vv{u}$ n'est pas normal à $D_{4}$
+    \item \grasInMet{La droite $\mathrm{D}_{5}$ coupant l'axe des abscisses en $x=5$ et l'axe des ordonnées en $y=3$.}\\
+    La droite passe par les points $C(5 ; 0)$ et $D(0 ; 3)$, donc un vecteur directeur est $\Coord{CD}{-5}{3}$.\\
+    $\vv{C D} \cdot \vv{u}=-5 \times 3+3 \times 5=0$ donc $\vv{u}$ est normal à $D_{5}$.    
+\end{enumMet}
+
+
+\subsection*{Ex 73 p 248}
+\grasInMet{Dans chaque cas, déterminer une équation cartésienne de la droite $d$ passant par le point $\mathrm{A}$ et perpendiculaire à la droite (BC).}
+\begin{enumMet}
+    \item \grasInMet{$\mathrm{A}(1 ; 4)$ et $\Coord{u}{-4}{3}$ un vecteur directeur de $(\mathrm{BC})$.}\\
+    Comme $\Coord{u}{-4}{3}$ est un vecteur directeur de la droite $(B C)$, il est un vecteur normal à la droite $d$.\\
+    Une équation cartésienne est de la forme $-4 x+3 y+c=0$.\\
+    Or, le point $A$ appartient à la droite $d$, donc $-4 x_{A}+3 y_{A}+c=0$, donc $-4 \times 1+3 \times 4+c=0$, donc $c=-8$.\\
+    Une équation de la droite $d$ est donc $-4 x+3 y-8=0$.
+    \item \grasInMet{$\mathrm{A}(0 ; 3), \mathrm{B}(2 ;-1)$ et $\mathrm{C}(-5 ; 3)$.}\\
+    Comme $\Coord{BC}{-7}{4}$  est un vecteur directeur de la droite $(B C)$, il est un vecteur normal à la droite $d$.\\
+    Une équation cartésienne est de la forme $-7 x+4 y+c=0$.\\
+    Or, le point $A$ appartient à la droite $d$, donc $-7 x_{A}+4 y_{A}+c=0$, donc $-7 \times 0+4 \times 3+c=0$, donc $c=-12$.\\
+    Une équation de la droite $d$ est donc $-7 x+4 y-12=0$
+    \item \grasInMet{$\mathrm{A}(-5 ; 7)$ et la droite $(\mathrm{BC})$ est parallèle à l'axe des ordonnées.}\\
+    La droite $(B C)$ étant verticale, un vecteur directeur de cette droite et un vecteur normal à $d$ est $\Coord{u}{0}{1}$.\\
+    Une équation cartésienne de $d$ est de la forme $y+c=0$.\\
+    Or, le point $A$ appartient à la droite $d$, donc $y_{A}+c=0$, donc $7+c=0$, donc $c=-7$.\\
+    Une équation de la droite $d$ est donc $y-7=0$.
+\end{enumMet}
+
+
+\subsection*{Ex 74 p 248}
+\grasInMet{On considère le triangle $\mathrm{ABC}$ tel que $\mathrm{A}(4 ;-3), \mathrm{B}(5 ; 3)$ et $\mathrm{C}(-2 ; 3)$.}
+\begin{enumMet}
+    \item \grasInMet{Déterminer une équation de la hauteur issue de $\mathrm{A}$ dans le triangle $\mathrm{ABC}$.}\\
+    La hauteur issue de $A$ est la droite passant par $A$ et perpendiculaire au côté opposé du triangle: $[B C]$.\\
+    Le vecteur $\vv{B C}$ est donc un vecteur normal à la hauteur issue de $A$.\\
+    Comme $\Coord{BC}{-2-5}{3-3}$ soit $\Coord{BC}{-7}{0}$, une équation de la hauteur est de la forme $-7 x+c=0$.\\
+    Or $A$ appartient à la hauteur, donc $-7 x_{A}+c=0$, donc $-7 \times 4+c=0$, donc $c=28$.\\
+    Une équation de la hauteur issue de $A$ est alors $-7 x+28=0$, ce qui équivaut à $-x+4=0$.
+    \item \grasInMet{Déterminer une équation de la hauteur issue de $\mathrm{B}$ dans le triangle $\mathrm{ABC}$.}\\
+    La hauteur issue de $B$ est la droite passant par $B$ et perpendiculaire au côté opposé du triangle: $[A C]$. Le vecteur $\vv{A C}$ est donc un vecteur normal à la hauteur issue de $B$.\\
+    Comme $\Coord{AC}{-6}{6}$, une équation de la hauteur est de la forme $-6 x+6 y+c=0$.\\
+    Or $B$ appartient à la hauteur, donc $-6 x_{B}+$ $6 y_{B}+c=0$, donc $-6 \times 5+6 \times 3+c=0$, donc $-30+18+c=0$, donc $c=12$.\\
+    Une équation de la hauteur issue de $B$ est alors $-6 x+6 y+12=0$, ce qui équivaut à $-x+y+2=0$.
+    \item \grasInMet{Déterminer les coordonnées du point d'intersection $\mathrm{H}$ des deux hauteurs.}\\
+    On note $H$ le point d'intersection des deux hauteurs. On sait que $H$ existe car les vecteurs directeurs des deux droites, $\Coord{u_A}{0}{1}$ et $\Coord{u_B}{1}{1}$ ne sont pas colinéaires.\\
+    Afin de trouver les coordonnées de $H$, on résout le système d'équations $\begin{cases}
+    -x+4=0\\
+    -x+y+2=0\\
+    \end{cases}$.
+    II équivaut à $\left\{\begin{array}{r}x=4 \\ -x+y+2=0\end{array}\right.$, donc $\left\{\begin{array}{r}x=4 \\ -4+y+2=0\end{array}\right.$, donc $\left\{\begin{array}{rl}x=4 \\ -2+y= & 0\end{array}\right.$, donc $\left\{\begin{aligned} x &=4\\ y&= 2 \end{aligned}\right.$.
+    Les coordonnées de $H$ sont donc $(4 ; 2)$.
+    \item \grasInMet{Calculer le produit scalaire $\overrightarrow{\mathrm{AB}} \cdot \overrightarrow{\mathrm{CH}}$. Quel résultat connu retrouve-t-on ?}\\
+    Alors $\Coord{CH}{4-(-2)}{2-3}$, donc $\Coord{CH}{6}{-1}$ et $\Coord{AB}{5-4}{3-(-3)}$, donc $\Coord{AB}{1}{6}$.\\
+    Alors $\vv{A B} \cdot \vv{C H}=1 \times 6+6 \times(-1)=6-6=0$.\\
+    Les vecteurs $\vv{A B}$ et $\vv{C H}$ sont orthogonaux, donc $(C H)$ est la hauteur issue de $C$ dans le triangle $A B C$. On en déduit que les hauteurs sont concourantes en $H$.
+\end{enumMet}
+
+
+% \subsection*{Ex 75 p 248}
+% \grasInMet{On considère le triangle $\mathrm{ABC}$ tel que $\mathrm{A}(6 ;-1), \mathrm{B}(1 ; 2)$ et $\mathrm{C}(-3 ; 1)$.}
+% \begin{enumMet}
+%     \item \grasInMet{Déterminer une équation de la médiatrice de $[\mathrm{BC}]$.}\\
+%     La médiatrice de $[B C]$ est la droite perpendiculaire à $(B C)$ passant par le milieu $A^{\prime}$ du segment $[B C]$. Le vecteur $\overrightarrow{B C}$ est donc un vecteur normal à la médiatrice du segment $[B C]$. Comme $\overrightarrow{B C}(-3-11-2)$, c'est-à-dire $\overrightarrow{B C}(-4-1)$, une équation de la médiatrice est de la forme $-4 x-y+c=0$. Or le milieu $A^{\prime}$ du segment $[B C]$ appartenant à la médiatrice, on calcule ses coordonnées: $A^{\prime}\left(\frac{1-3}{2} ; \frac{2+1}{2}\right)$, donc $A^{\prime}\left(\frac{-2}{2} ; \frac{3}{2}\right)$, c'est-à-dire $A^{\prime}\left(-1 ; \frac{3}{2}\right)$.
+%     On les remplace dans l'équation précédente : $-4 \times(-1)-\frac{3}{2}+c=0$, donc $4-\frac{3}{2}+c=0$, donc $c=-\frac{5}{2}$.
+%     Une équation de la médiatrice est alors $-4 x-y-\frac{5}{2}=0$.
+%     \item \grasInMet{Déterminer une équation de la médiatrice de $[\mathrm{AC}]$.}\\
+%     La médiatrice de $[A C]$ est la droite passant perpendiculairement par le milieu $B^{\prime}$ du segment $[A C]$. Le vecteur $\overrightarrow{A C}$ est donc un vecteur normal à la médiatrice du segment $[A C]$. Comme $\overrightarrow{A C}(-3-61-(-1))$, c'est-à-dire $\overrightarrow{A C}(-92)$, une équation de la médiatrice est de la forme $-9 x+2 y+c=0$.
+%     Or le milieu $B^{\prime}$ du segment $[A C]$ appartient à la médiatrice, on calcule ses coordonnées: $B^{\prime}\left(\frac{6-3}{2} ; \frac{-1+1}{2}\right)$, donc $B^{\prime}\left(\frac{3}{2} ; 0\right)$. On les remplace dans l'équation précédente $:-9 \times \frac{3}{2}+2 \times 0+c=0$, donc $-\frac{27}{2}+c=0$, donc $c=\frac{27}{2}$.
+%     Une équation de la médiatrice est alors $-9 x+2 y+\frac{27}{2}=0$.
+% \end{enumMet}
+
+\end{document}
+

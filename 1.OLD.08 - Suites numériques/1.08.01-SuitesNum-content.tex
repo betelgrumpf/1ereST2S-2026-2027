@@ -1,0 +1,144 @@
+\chapter{Suites numériques}
+\thispagestyle{fancy}
+
+Dès l'Antiquité, Archimède de Syracuse (-287 ; -212), met en oeuvre une procédure itérative pour trouver une approximation du nombre $\pi$. Il encadre le cercle par des polygones inscrits et circonscrits possédant un nombre de côtés de plus en plus grand. Par ce procédé,
+Archimède donne naissance, sans le savoir, à la notion de suite numérique.\\
+Vers la fin du XVII$^\text{e}$ siècle, des méthodes semblables sont utilisées pour résoudre des équations de façon approchée pour des problèmes de longueurs, d'aires, ...\\
+Un formalisme plus rigoureux de la notion de suite n'apparaitra qu'au début du XIX$^\text{e}$ siècle avec le mathématicien français Augustin Louis Cauchy (1789 ;1857).
+
+\section{Définition et représentation graphique}
+
+\subsection{Définition d'une suite numérique}
+
+\begin{exempleTitre}{Exemple d'introduction}
+On considère une liste de nombres formée par tous les nombres impairs rangés dans l'ordre croissant : $1,3,5,7, \ldots$\\
+On note $\left(u_{n}\right)$ l'ensemble des éléments de cette suite de nombres tel que :\\
+$u_{0}=1, u_{1}=3, u_{2}=5, u_{3}=7, \ldots$\\
+On a ainsi défini une suite numérique.\\
+On peut lui associer une fonction définie sur $\mathbb{N}$ par 
+$$u: \mathbb{N} \rightarrow \mathbb{R}$$
+$$\phantom{......................}n \mapsto u(n)=u_{n}$$
+
+\end{exempleTitre}
+
+\begin{definitions}
+\begin{itemDef}
+\item Une \grasInDef{suite numérique} $\left(u_{n}\right)$ est une liste ordonnée de nombres réels telle qu'à tout entier $n$ on associe un nombre réel noté $u_{n}$.
+\item $u_{n}$ est appelé \grasInDef{le terme de rang $\boldsymbol{n}$} de cette suite (ou d'indice $\left.n\right)$.
+\end{itemDef}
+\end{definitions}
+
+\subsection{Suite définie par une formule explicite}
+
+\begin{exemples}
+\begin{itemEx}
+\item Pour tout $n$ de $\mathbb{N}$, on donne : $u_{n}=2 n$ qui définit la suite des nombres pairs. Les premiers termes de cette suite sont donc :\\
+$u_{0}=2 \times 0=0$\\
+$u_{1}=2 \times 1=2$\\
+$u_{2}=2 \times 2=4$\\
+$u_{3}=2 \times 3=6$
+\item Pour tout $n$ de $\mathbb{N}$, on donne $: v_{n}=3 n^{2}-1$ Les premiers termes de cette suite sont donc :\\
+$v_{0}=3 \times 0^{2}-1=-1$\\
+$v_{l}=3 \times 1^{2}-1=2$\\
+$v_{2}=3 \times 2^{2}-1=11$\\
+$v_{3}=3 \times 3^{2}-1=26$
+\end{itemEx}
+\end{exemples}
+\begin{definition}
+    Lorsqu'on génère une suite par une formule explicite, chaque terme de la suite est exprimé en fonction de $n$ et indépendamment des termes précédents.
+\end{definition}
+
+\subsection{Suite définie par une relation de récurrence}
+\begin{exemples}
+\begin{itemEx}
+\item On définit la suite $\left(u_{n}\right)$ par: $u_{0}=5$ et chaque terme de la suite est le triple de son précédent. Les premiers termes de cette suite sont donc :\\
+$u_{0}=5$\\
+$u_{1}=3 \times u_{0}=3 \times 5=15$\\
+$u_{2}=3 \times u_{1}=3 \times 15=45$\\
+De façon générale, on peut noter $: u_{n+1}=3 u_{n}$
+\item On définit la suite $\left(v_{n}\right)$ par : $v_{0}=3$ et pour tout $n$ de $\mathbb{N}, v_{n+1}=4 v_{n}-6$ Les premiers termes de cette suite sont donc :\\
+$v_{0}=3$\\
+$v_{1}=4 v_{0}-6=4 \times 3-6=6$\\
+$v_{2}=4 v_{1}-6=4 \times 6-6=18$\\
+$v_{3}=4 v_{2}-6=4 \times 18-6=66$\\
+Contrairement à une suite définie par une formule explicite, il n'est pas possible, dans l'état, de calculer par exemple $v_{13}$ sans connaître $v_{12}$.\\
+\ \\
+Cependant il est possible d'écrire un algorithme avec Python :
+\begin{center}
+    \includegraphics[scale=0.4]{1.08.00-Img01}
+\end{center}
+Ou sur une calculatrice : 
+\begin{center}
+    \includegraphics[scale=0.4]{1.08.00-Img02}
+\end{center}
+\end{itemEx}
+\end{exemples}
+\begin{definition}
+Lorsqu'on génère une suite par une relation de récurrence, chaque terme de la suite s'obtient à partir de son terme précédent.Il faut connaître au moins un terme de la suite pour calculer les autres termes.
+\end{definition}
+
+\begin{remarque}
+Le mot \emph{récurrence} vient du latin \emph{recurrere} qui signifie "revenir en arrière".
+\end{remarque}
+
+\subsection{Représentation graphique d'une suite}
+
+Dans un repère du plan, on représente une suite par un nuage de points de coordonnées $\left(n ; u_{n}\right) .$
+\begin{exemple}
+Pour tout $n$ de $\mathbb{N}$, on donne $: u_{n}=\dfrac{n^{2}}{2}-3$.\\
+On construit le tableau de valeurs avec les premiers termes de la suite :
+\begin{tabular}{|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|}
+\hline$n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\hline$u_{n}$ & $-3$ & $-2,5$ & $-1$ & 1,5 & 5 & 9,5 & 15 & 21,5 & 29 \\
+\hline
+\end{tabular}\\
+Il est possible d'obtenir un nuage de points à l'aide d'un logiciel.
+\begin{center}
+    \includegraphics[scale=0.5]{1.08.00-Img03}
+\end{center}
+
+\end{exemple}
+
+\section{Sens de variation d'une suite numérique}
+
+\begin{exemple}
+On a représenté ci-dessous le nuage de points des premiers termes d'une suite $\left(u_{n}\right)$ :
+\begin{center}
+    \includegraphics[scale=0.5]{1.08.00-Img04}
+\end{center}
+On peut conjecturer que cette suite est croissante. On constate par exemple que $u_{1}<u_{2}$ ou encore $u_{4}<u_{5}$. De manière générale, on peut écrire : $u_{n}<u_{n+1}$
+\end{exemple}
+
+\begin{definitions}
+Soit une suite numérique $\left(u_{n}\right)$.
+\begin{itemDef}
+\item La \grasInDef{suite $\left(u_{n}\right)$ est croissante} signifie que pour tout entier $n$, on a $u_{n+1} \geqslant u_{n}$.
+\item La \grasInDef{suite $\left(u_{n}\right)$ est décroissante} signifie que pour tout entier $n$, on a $u_{n+1} \leqslant u_{n}$.
+\end{itemDef}
+\end{definitions}
+
+\begin{methodeTitre}{Étudier les variations d'une suite}
+\grasInMet{Énoncé:}
+\begin{enumMet}
+\item Pour tout $n$ de $\mathbb{N}$, on donne la suite $\left(u_{n}\right)$ définie par : $u_{n+1}=u_{n}+2$.\\
+Démontrer que la suite $\left(u_{n}\right)$ est croissante.
+\item Pour tout $n$ de $\mathbb{N}$, on donne la suite $\left(v_{n}\right)$ définie par : $v_{n}=4 n+4$.\\
+Démontrer que la suite $\left(v_{n}\right)$ est croissante.
+\end{enumMet}
+\grasInMet{Réponse:}
+\begin{enumMet}
+\item $u_{n+1}-u_{n}=2>0$\\
+On en déduit que $\left(u_{n}\right)$ est croissante.
+\item On commence par calculer la différence $v_{n+1}-v_{n}$ :\\
+On a $: v_{n}=4 n+4$ donc $v_{\mVert{n+1}}=4\mVert{(n+1)}+4=4 n+4+4=4 n+8$
+\begin{align*}
+v_{n+1}-v_{n}&=4 n+8-(4 n+4) \\
+&=4 n+8-4 n-4 \\
+&=4
+\end{align*}
+On étudie ensuite le signe de $v_{n+1}-v_{n}$ :\\
+Pour tout $n$ entier $v_{n+1}-v_{n}=4>0$.\\
+On en déduit que la suite $\left(v_{n}\right)$ est croissante.
+\end{enumMet}
+\end{methodeTitre}
+

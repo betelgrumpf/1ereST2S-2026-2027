@@ -1,0 +1,308 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{pgf}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}  
+\definecolor{CyanTikz40}{cmyk}{.4,0,0,0}
+\definecolor{CyanTikz20}{cmyk}{.2,0,0,0}
+\tikzstyle{general}=[line width=0.3mm, >=stealth, x=1cm, y=1cm,line cap=round, line join=round]
+\tikzstyle{quadrillage}=[line width=0.3mm, color=CyanTikz40]
+\tikzstyle{quadrillageNIV2}=[line width=0.3mm, color=CyanTikz20]
+\tikzstyle{quadrillage55}=[line width=0.3mm, color=CyanTikz40, xstep=0.5, ystep=0.5]
+\tikzstyle{cote}=[line width=0.3mm, <->]
+\tikzstyle{epais}=[line width=0.5mm, line cap=butt]
+\tikzstyle{tres epais}=[line width=0.8mm, line cap=butt]
+\tikzstyle{axe}=[line width=0.3mm, ->, color=Noir, line cap=rect]
+ \definecolor{A1}                {cmyk}{1.00, 0.00, 0.00, 0.50}
+ \definecolor{B4}                {cmyk}{0.00, 0.05, 0.05, 0.00}
+ \definecolor{J3}                {cmyk}{0.00, 0.10, 0.20, 0.00}
+
+
+\rhead{Exercices Vecteurs - Rappels seconde}
+
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Vecteurs - Rappels seconde \\
+						Exercices d'entrainement
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+% \begin{multicols}{2}
+% \exercice{- Milieu} 
+
+% Le plan est muni d'un repère quelconque. On donne les points A$(2\,;\,3)$ et I$(-4\,;\,1)$.\\
+% On sait que I est le milieu de [AB]. Déterminer les coordonnées du point B.
+
+% \exercice{ - Milieux et parallélogrammes}\\
+% Le plan est muni d'un repère quelconque. On donne les points A$(-5\,;\,3)$, B$(-4\,;\,1)$ et C$(1\,;\,-4)$.
+% \begin{enumMet}
+% 	\item Déterminer les coordonnées de M, milieu de [AC].\\
+% 	\item Déterminer les coordonnées du point D tel que $ABCD$ soit un parallélogramme.\\
+% \end{enumMet}
+
+% \exercice{ - Nature d'un triangle - Aire et périmètre} 
+% On considère les points $\mathrm{A}(6 ; 5), \mathrm{B}(2 ;-3)$ et $\mathrm{C}(-4 ; 0)$.
+% \begin{enumMet}
+% 	\item \grasInMet{Calculer les distances $\mathrm{AB}, \mathrm{BC}, \mathrm{AC}$.}\\
+% 	\item \grasInMet{En déduire la nature du triangle ABC.}\\
+% 	\item \grasInMet{Calculer le périmètre et l'aire de ce triangle.}\\
+% \end{enumMet}
+% \exercice{ - Nature d'un triangle - Pythagore} 
+
+% \noindent Le plan est muni d'un repère orthonormé. \\
+% Dans chacun des cas suivants, déterminer la nature du triangle $ABC$.
+% \begin{enumMet}
+% 	\item A$\,(-4\,;\,-1)$, B$\,(4\,;\,-2)$ et C$\,(-2\,;\,2)$
+% 	\item A$\,(-5\,;\,0)$, B$\,(3\,;\,-4)$ et C$\,(2\,;\,4)$
+% 	\item A$\,(0\,;\,0)$, B$\,(4\,;\,2\sqrt{3})$ et C$\,(-1\,;\,3\sqrt{3})$
+% \end{enumMet}
+
+% \exercice{ - Nature d'un quadrilatère}
+% \noindent Le plan est muni d'un repère orthonormé.\\
+% En faisant d'abord une figure, conjecturer dans chacun des cas suivants, la nature du quadrilatère ABCD, puis la démontrer :
+% \begin{enumMet}
+% 	\item A$\,(1\,;\,0)$, B$\,(1\,;\,3)$, C$\,(2\,;\,3)$ et D$\,(3\,;\,1)$ ;
+% 	\item A$\,(1\,;\,2)$, B$\,(4\,;\,7)$, C$\,(1\,;\,6)$ et D$\,(-2\,;\,1)$ ;
+% 	\item A$\,(1\,;\,0)$, B$\,(0\,;\,2)$, C$\,(4\,;\,4)$ et D$\,(5\,;\,2)$ ;
+% 	\item A$\,(-4\,;\,-1)$, B$\,(4\,;\,-2)$, C$\,(8\,;\,5)$ et D$\,(0\,;\,6)$ ;
+% 	\item A$\,(0\,;\,-2)$, B$\,(3\,;\,-1)$, C$\,(2\,;\,2)$ et D$\,(-1\,;\,1)$.
+% \end{enumMet}
+% \end{multicols}
+
+\exercice{ - Nature d'un quadrilatère et droites remarquables}  \\
+On considère un repère orthonormé $(\mathrm{O} ; \mathrm{I}, \mathrm{J})$ du plan. On donne les points $\mathrm{A}(-1 ; 6), \mathrm{B}(7 ;-2), \mathrm{C}(1 ;-2)$ et $\mathrm{D}(9 ; 6)$.
+\begin{enumMet}
+	\item Faire une figure.
+	\item  Construire le centre $\Omega$ du cercle circonscrit au triangle $\mathrm{ABC}$.
+	\item Donner, sans justification, les coordonnées de $\Omega$ et calculer le rayon du cercle.
+	\item  Montrer que les points $\mathrm{A}, \mathrm{B}, \mathrm{C}$ et $\mathrm{D}$ appartiennent à un même cercle : on dira qu'ils sont cocycliques.
+	\item Soit $M$, un point de coordonnées $(4 ; 1)$.
+	\begin{enumMet}
+		\item Montrer que $M$ appartient au segment $[A B]$.
+		\item Montrer que $\mathrm{M}$ appartient au segment [DC].
+		\item Calculer $\mathrm{MA} \times \mathrm{MB}$ et $\mathrm{MC} \times \mathrm{MD}$.
+		\item Conclure
+	\end{enumMet} 
+\end{enumMet}
+
+\exercice{ - Nature d'un quadrilatère}
+
+Dans un repère du plan (O,I,J) ci - contre, on considère les points A(-3;-1), B(4;0), C(9;5) et D(2;4).
+
+
+\begin{enumMet}
+	\item Faire une figure dans un repère orthonormé\\
+	\item Placer les points A, B, C et D dans le repère ci-contre.
+	\item
+	\begin{enumMet}
+		\item Que peut-on conjecturer sur la nature du quadrilatère ABCD ?
+		\item En prenant soin de détailler les étapes, démontrer la conjecture de la question précédente.
+	\end{enumMet}
+	\item La perpendiculaire à la droite (BC) passant par le point D coupe la droite (BC) au point E.\\
+	Compléter la figure, puis, par lecture graphique, déterminer les coordonnées du point E.
+	\item La droite (ED) coupe la droite (AC) au point M.
+	\begin{enumMet} 
+		\item Que représente le point M pour le triangle BCD ? \\Justifier votre réponse.
+		\item Montrer que les droites (BM) et (DC) sont perpendiculaires.
+	\end{enumMet}
+\end{enumMet}
+
+% \begin{exercice}{}
+% 	Dans le plan muni d'un repère, les coordonnées du vecteur $\vv u$ sont $\CoordSV{-2}{3}$, celles du point $A(5;2)$.\\ 
+% 	Calculer les coordonnées du point $B$ tel que $\vv{AB}=\vv u$.\\
+% \end{exercice}
+
+\begin{exercice}{}
+	Dans le plan muni d'un repère, les coordonnées du vecteur $\vv v$ sont $\CoordSV{4}{-5}$, celles du point $A(1;-2)$.\\ Calculer les coordonnées du point $C$ tel que $\vv{CA}=\vv v$.
+\end{exercice}
+
+\begin{exercice}{}
+	Dans le plan muni d'un repère, on considère les points $K(-2;-3)$, $L(3;-4)$ et $M(-1;5)$. \\ Quelles sont les coordonnées du vecteur $\vv{KL}+\vv{LM}$?\\
+\end{exercice}
+
+\begin{exercice}{}
+	Construire un repère $(O; I, J)$ orthogonal.
+	\begin{enumMet}
+		\item  Placer les points $A(3;-9)$  et $B(-1;-5)$. 
+		\item Placer les points $C$ et $D$ tels que le quadrilatère $ABCD$ soit un parallélogramme de centre $I$.
+		\item Déterminer les coordonnées des vecteurs suivants.  
+		\begin{multicols}{3}
+			\begin{enumMet}
+				\item $\vv{AB}$\\
+				\item $\vv{DC}$\\
+				\item $\vv{AD}$\\ 
+		\end{enumMet}
+		\end{multicols}
+	\end{enumMet}
+\end{exercice}
+
+% \begin{exercice}{}
+% 	Dans le plan muni d'un repère d'origine $O$, on considère les points $P(-3;-1)$ et $R(2;3)$. \\ Quelles sont les coordonnées du point $N$ qui vérifie l'égalité $\vv{ON}=4\vv{PR}$?
+% \end{exercice}
+
+\begin{exercice}{}
+	Dans un repère, on considère les points $A$ et $B$ de coordonnées respectives $(3;-4)$ et $(-1; 2)$. Quelles sont les coordonnées de $C$ tel que $\vv{AB}=-5\vv{AC}$?
+\end{exercice}
+
+\begin{exercice}{}
+	Dans un repère, on considère les points suivants: $A\left(\dfrac{2}{ 9};\dfrac{6}{25}\right)$ et $B\left(-\dfrac{5}{6};\dfrac{9}{20}\right)$.\\
+	Calculer les coordonnées de $C$ tel que $\vv{AC}=\dfrac{15}{2}\vv{AB}$.
+\end{exercice}
+
+\begin{exercice}{}Dans un repère orthogonal, placer les points:
+	\begin{multicols}{4}
+		\begin{itemMet}
+			\item $A(-3;1)$
+			\item $B(1;3)$
+			\item $C(1,-4)$
+			\item $D(7;-1)$
+		\end{itemMet}
+	\end{multicols}
+	Les droites suivantes sont-elles parallèles?
+	\begin{enumMet}
+		\item $(AB)$ et $(CD)$
+		\item $(AC)$ et $(BD)$
+	\end{enumMet}
+\end{exercice}
+
+% \begin{exercice}{}
+% 	Dans le plan muni d'un repère, on considère les vecteurs suivants: $\vv u \left(\begin{array}{c}2\\4\end{array}\right)$ et $\vv v \left(\begin{array}{c}-1\\3\end{array}\right)$. 
+% 	Quelles sont les coordonnées du vecteur $\vv w$ vérifiant l'égalité $\vv w=2\vv u -\vv v$?
+% \end{exercice}
+
+\begin{exercice}{}
+	Dans un plan muni d'un repère, on place les points $A(1;-2)$, $B(-3;1)$, $C(-17;15)$ et $D(-5;6)$.
+	
+	Montrer que $ABCD$ est un trapèze.
+\end{exercice}
+
+% \begin{exercice}{}
+% 	Construire un triangle $ABC$. 
+% 	\begin{enumMet}
+% 		\item Placer les points $M$, $P$ et $N$ tels que:
+% 		\begin{multicols}{3}
+% 			\begin{enumMet}
+% 				\item $\vv{BM}=\vv{BA}+\vv{BC}$
+% 				\item  $\vv{MP}=2\vv{MA}$
+% 				\item  $\vv{MN}=2\vv{MC}$
+% 			\end{enumMet}
+% 		\end{multicols}
+% 		\item Prouver que $\vv{PN}=2\vv{PB}$. \\ 
+% 		Que peut-on en déduire pour les points $A$, $B$ et $C$?
+% 	\end{enumMet}
+% \end{exercice}
+
+\begin{exercice} { - Sommes alg\'ebriques sans grille}
+	Soit $A$, $B$, $C$ et $D$ quatre points quelconques.
+	\begin{enumMet} \item Démontrer les \'egalit\'es suivantes.
+		\begin{enumMet}
+			\item 
+			$\vv{AB} - \vv{CD} - \left(\vv{AC} -\vv{BA}\right) = \vv{DA}$
+			\item  $\vv{AD} + \vv{BC} = \vv{AC} + \vv{BD}$
+		\end{enumMet}
+		
+		\item Simplifier l'écriture des vecteurs suivants.
+		\begin{enumMet}
+			\item $\vv{u} = \left( \vv{AB} -\vv{AC}\right) + \left(\vv{BD} - \vv{CD}\right)$
+			\item $\vv{v} = \left(\vv{AD} -\vv{CD}\right) - \left(\vv{AB} + \vv{BC}\right)$
+		\end{enumMet}
+	\end{enumMet}
+\end{exercice}
+
+% \begin{exercice}{ - Autour d'un triangle}
+% 	Soient $T$, $R$ et $I$ trois points non alignés.\\
+% 	Les points $U$ et $V$ sont définis par:
+% 	\begin{multicols}{2}
+% 		\begin{itemMet}
+% 			\item $\vv{IU} = \vv{IR} + \vv{TI}$
+% 			\item $\vv{TV} = \vv{TI} + \vv{TR}$
+% 		\end{itemMet}
+% 	\end{multicols}
+% 	\vspace{-1,5em}
+% 	\begin{enumMet}
+% 		\item Faire une figure sur papier ou \`a l'aide d'un logiciel de g\'eom\'etrie dynamique.
+% 		\item Que peut-on conjecturer?
+% 		\item \begin{enumMet} \item D\'emontrer que $\vv{UV} = \vv{RI} + \vv{IT} + \vv{TR}$.
+% 			\item Conclure.
+% 		\end{enumMet}
+% 	\end{enumMet}
+% \end{exercice}
+
+\begin{exercice}{ - Alignement}
+	\begin{multicols}{2}
+	On considère un parallélogramme $ABCD$ et les points $E$ et $F$ définis par:
+	\begin{multicols}{2}
+		\begin{itemMet}
+			\item $\vv {AE} = 2 \vv {AD}$
+			\item $\vv {AF} = \dfrac{2}{3} \vv {AC}$
+		\end{itemMet}
+	\end{multicols}
+	\begin{enumMet}
+		\item Faire une figure.
+		\item Que peut-on conjecturer sur les points $B$, $F$ et $E$?
+	\end{enumMet}
+	On choisit $\left(A;D,B\right)$ comme repère.
+	\begin{enumMet}[resume]
+%		\setcounter{enumi}{2}
+		\item Déterminer les coordonnées du vecteur $\vv {AC}$. 
+		\item En déduire les coordonnées du point $C$.
+		\item Quelles sont les coordonnées du vecteur $\vv{AF}$?
+		\item En déduire les coordonnées du point $F$.
+		\item Calculer les coordonnées du point $E$.
+		\item Démontrer que $\vv{BE}$ et $\vv{BF}$ sont colinéaires. Conclure.
+	\end{enumMet}
+	\end{multicols}
+\end{exercice}
+
+\begin{exercice}{ - Un classique}
+	Sur la figure ci-dessous, on considère le carré $ABCD$ de côté 5 cm et les triangles équilatéraux $ABI$ et $BCV$.
+	\begin{multicols}{2}
+			\begin{center}
+			\begin{tikzpicture}[general, scale=0.5]
+				\draw[color=A1,epais,fill=J3] (0,0)-- (5,0)--(5,5)--(0,5)--cycle;
+				\draw[color=A1,epais,fill=B4] (0,0)-- (2.5,4.33)--(5,0)--cycle;
+				\draw[color=A1,epais,fill=B4] (5,0)-- (9.33,2.5)--(5,5)--cycle;
+				\draw (0,0) node[below left]{$A$};
+				\draw (5,0) node[below right]{$B$};
+				\draw (5,5) node[above right]{$C$};
+				\draw (0,5) node[above left]{$D$};
+				\draw (2.5,4.33) node[right]{$I$};
+				\draw (9.33,2.5) node[right]{$V$};
+			\end{tikzpicture}
+		\end{center}
+		\columnbreak
+		\begin{enumMet}
+			\item Construire la figure en vraie grandeur.
+		\end{enumMet}
+		On se place dans le repère $(A;B,D)$.
+		\begin{enumMet}[resume]
+			\item Calculer les coordonnées des points $I$ et $V$.
+			\item Démontrer que les points $D$, $I$ et $V$ sont alignés.
+		\end{enumMet} 
+	\end{multicols}
+	%\vspace{-0.2em}
+
+\end{exercice}
+
+
+
+
+\end{document}
+

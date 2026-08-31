@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+%\usepackage{mathrsfs}
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$07 - Sujet A - 10/04/2025}}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+\textcolor{red}{Correction - DS n$^{\circ}$07 - Dérivation - Partie 2\\
+Sujet A}
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{1h40 - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\exerciceDS{ - fonction dérivée - ( 5 points )}
+
+Calculer la dérivé des fonctions suivantes
+\begin{enumMet}
+	\item $f(x)=3 x^{2}+2 x-5$ \quad \corr{$f^{\prime}(x)=3 \times 2 x+2=6 x+2$} \quad \bareme{1}
+	\item \ding{46} $g(x)=4 x^{3}-2 x^{2}+2 x+1$ \quad \corr{$g^{\prime}(x)=4 \times 3 x^{2}-2 \times 2 x+2=12 x^{2}-4 x+2$} \quad \bareme{1}
+	\item $h(x)=5x^4-3x^3+2x^2-5x+3$\quad \corr{$h'(x)=20x^3-9x^2+4x-5$} \quad \bareme{1}
+	\item \ding{46} $k(x)=(2 x-3)^{2}$ \quad \corr{$k^{\prime}(x)=2 \times 2 \times(2 x-3)=4(2 x-3)$} \quad \bareme{1}
+	\item $m(x)=\sqrt{3 x+4}$ \quad \corr{$m^{\prime}(x)=\dfrac{3}{2 \sqrt{3 x+4}}=\dfrac{3 \sqrt{3 x+4}}{6 x+8}$} \quad \bareme{1}
+\end{enumMet}
+
+\exerciceDS{ - fonction dérivée - ( 9,5 points )}
+
+Calculer la dérivé des fonctions suivantes
+\begin{enumMet}
+	\item $f(x)=\dfrac{3}{x}+4 \sqrt{x}$ \quad \corr{$f^{\prime}(x)=-\dfrac{3}{x^{2}}+\dfrac{4}{2 \sqrt{x}}=\dfrac{-3+2 x \sqrt{x}}{x^{2}}$} \quad \bareme{1,5}
+	\item \ding{46} $g(x)=\dfrac{4}{3} x^{3}-0,5 x^{2}-\dfrac{2}{x}$\quad \corr{$g^{\prime}(x)=\dfrac{4}{3} \times 3 x^{2}-0,5 \times 2 x+\dfrac{2}{x^{2}}=\dfrac{4 x^{4}- x^{3}+2}{x^{2}}$} \quad \bareme{1,5}
+	\item $h(x)=2 x^{2} \sqrt{x}$ \quad \corr{$h^{\prime}(x)=4 x \times(\sqrt{x})+\dfrac{2 x^{2}}{2 \sqrt{x}}=\dfrac{4 x^{2}+x^{2}}{\sqrt{x}}=\dfrac{5 x^{2}}{\sqrt{x}}$} \quad \bareme{1,5}
+	\item $k(x)=\dfrac{3 x-4}{x^{2}-5}$ \quad \corr{$l^{\prime}(x)=\dfrac{3\left(x^{2}-5\right)-2 x(3 x-4)}{\left(x^{2}-5\right)^{2}}=\dfrac{-3 x^{2}+8 x-15}{\left(x^{2}-5\right)^{2}}$} \quad \bareme{1}
+	\item $p(x)=\dfrac{4}{3x^2-4x+3}-3x^2$ \quad \bareme{2}
+	\begin{corrBox}
+		$p'(x)=-4\times \dfrac{6x-4}{(3x^2-4x+3)^2}-6x=\dfrac{-24x+16}{(3x^2-4x+3)^2}-\dfrac{6x(3x^2-4x+3)^2}{(3x^2-4x+3)^2}$
+		
+		$p'(x)=\dfrac{-24x+16}{(3x^2-4x+3)^2}-\dfrac{6x\left(9x^4-12x^3+9x^2-12x^3+16x^2-12x+9x^2-12x+9\right)}{(3x^2-4x+3)^2}$
+		
+		$p'(x)=\dfrac{-24x+16}{(3x^2-4x+3)^2}-\dfrac{6x\left(9x^4-24x^3+34x^2-24x+9\right)}{(3x^2-4x+3)^2}$
+		
+		$p'(x)=\dfrac{-54x^5+144x^4-204x^3+144x^2-78x+16}{(3x^2-4x+3)^2}$		
+	\end{corrBox}
+	\item $q(x)=\dfrac{5x^2-2x+1}{3x^2-5x+5}$ \quad \bareme{2}
+	\begin{corrBox}
+		$q'(x)=\dfrac{(10x-2)(3x^2-5x+5)-(6x-5)(5x^2-2x+1)}{(3x^2-5x+5)^2}$		
+		
+		$q'(x)=\dfrac{30x^3-50x^2+50x-6x^2+10x-10-(30x^3-12x^2+6x-25x^2+10x-5)}{(3x^2-5x+5)^2}$
+		
+		$q'(x)=\dfrac{-19x^2+44x-5}{(3x^2-5x+5)^2}$
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - problème de dérivation - ( 7 points )}
+Soit $f$ la fonction définie sur $\left] \dfrac{2}{3} ;+\infty\right[$ par: $f(x)=\dfrac{3 x^{2}-11 x+11}{-3 x+2}$
+\begin{enumMet}
+	\item Déterminer l'expression de $f^{\prime}$\quad \bareme{2}\\
+	\begin{corrBox}
+		$f^{\prime}(x)=\dfrac{(6 x-11)(-3 x+2)+3\left(3 x^{2}-11 x+11\right)}{(-3 x+2)^{2}}$
+		
+		$\phantom{f^{\prime}(x)}=\dfrac{-18 x^{2}-22+33 x+12 x+9 x^{2}-33 x+33}{(-3 x+2)^{2}}$
+		
+		$\phantom{f^{\prime}(x)}=\dfrac{-9 x^{2}+12 x+11}{(-3 x+2)^{2}}$
+	\end{corrBox}
+	\item Vérifier que pour tout réel $x$ tel que $x>\dfrac{2}{3}$\\ $f(x)=-x+3+\dfrac{5}{-3 x+2}$\quad \bareme{2}\\
+	\begin{corrBox}
+		$-x+3+\dfrac{5}{-3 x+2}=\dfrac{(-x+3)(-3 x+2)+5}{-3 x+2}=\dfrac{3 x^{2}-11 x+11}{-3 x+2}=f(x)$
+	\end{corrBox}
+	\item En déduire une autre expression de $f^{\prime}$\quad \bareme{2}\\
+	\begin{corrBox}
+		$f^{\prime}(x)=-1-\dfrac{5 \times(-3)}{(-3 x+2)^{2}}=\dfrac{-(-3 x+2)^{2}+15}{(-3 x+2)^{2}}=\dfrac{-9 x^{2}+12 x-4+15}{(-3 x+2)^{2}}=\dfrac{-9 x^{2}+12 x+11}{(-3 x+2)^{2}}$
+	\end{corrBox}
+	\item Vérifier la cohérence des résultats obtenus au 1) et au 3).\quad \bareme{1}\\
+	\begin{corrBox}
+		Les résultats des 2 réponses sont identiques.
+	\end{corrBox}
+\end{enumMet}
+
+\end{document}

@@ -1,0 +1,398 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{pgf}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}  
+\definecolor{CyanTikz40}{cmyk}{.4,0,0,0}
+\definecolor{CyanTikz20}{cmyk}{.2,0,0,0}
+\tikzstyle{general}=[line width=0.3mm, >=stealth, x=1cm, y=1cm,line cap=round, line join=round]
+\tikzstyle{quadrillage}=[line width=0.3mm, color=CyanTikz40]
+\tikzstyle{quadrillageNIV2}=[line width=0.3mm, color=CyanTikz20]
+\tikzstyle{quadrillage55}=[line width=0.3mm, color=CyanTikz40, xstep=0.5, ystep=0.5]
+\tikzstyle{cote}=[line width=0.3mm, <->]
+\tikzstyle{epais}=[line width=0.5mm, line cap=butt]
+\tikzstyle{tres epais}=[line width=0.8mm, line cap=butt]
+\tikzstyle{axe}=[line width=0.3mm, ->, color=Noir, line cap=rect]
+ \definecolor{A1}                {cmyk}{1.00, 0.00, 0.00, 0.50}
+ \definecolor{B4}                {cmyk}{0.00, 0.05, 0.05, 0.00}
+ \definecolor{J3}                {cmyk}{0.00, 0.10, 0.20, 0.00}
+
+
+\rhead{Exercices d'entrainement - Produit scalaire - Projection orthogonale}
+
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Produit scalaire - Projection orthogonale \\
+						\textcolor{red}{Correction - Exercices d'entrainement}
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\exercice{}  \\
+
+
+\begin{minipage}[c]{0.65\linewidth}
+	On considère un carré $\mathrm{ABCD}$ de centre $\mathrm{O}$ et de côté $c$. Calculer les produits scalaires suivants.
+	\begin{multicols}{2}
+		\begin{enumMet}
+			\item $\vv{\mathrm{AB}} \cdot \vv{\mathrm{AC}}$
+			\item $\vv{\mathrm{AB}} \cdot \vv{\mathrm{AO}}$
+			\item $\vv{\mathrm{AB}} \cdot \vv{\mathrm{CD}}$
+			\item $\vv{\mathrm{BC}} \cdot \vv{\mathrm{AD}}$
+			\item $\vv{\mathrm{DB}} \cdot \vv{\mathrm{AB}}$
+			\item $\vv{\mathrm{OA}} \cdot \vv{\mathrm{AC}}$
+			\item $\vv{\mathrm{DB}} \cdot \vv{\mathrm{OC}}$
+		\end{enumMet}
+	\end{multicols}
+	
+\end{minipage} \hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\begin{center}
+		\begin{tikzpicture}[general, scale=0.5]
+			\draw[color=A1,epais,fill=J3] (0,0)-- (5,0)--(5,5)--(0,5)--cycle;
+			\draw[color=A1,epais] (5,0)--(0,5)--cycle;
+			\draw[color=A1,epais] (0,0)--(5,5)--cycle;
+			\draw (0,0) node[below left]{$A$};
+			\draw (5,0) node[below right]{$B$};
+			\draw (5,5) node[above right]{$C$};
+			\draw (0,5) node[above left]{$D$};
+			\draw (2.5,2.5) node[above]{$O$};
+			\draw (2.5,5) node[above]{c};
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\begin{corrBox}
+\begin{enumMet}
+	\item $\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A B}=c^{2}$ par projection orthogonale du point $C$ sur le segment $[A B]$.
+	\item $\vv{A B} \cdot \vv{A O}=\vv{A B} \cdot \dfrac{1}{2} \vv{A B}=\dfrac{c^{2}}{2}$ par projection orthogonale du point $O$ sur le segment $[A B]$
+	\item $\vv{A B} \cdot \vv{C D}=-\vv{A B} \cdot \vv{A B}=-c^{2}$
+	\item $\vv{B C} \cdot \vv{A D}=\vv{B C} \cdot \vv{B C}=c^{2}$
+	\item $\vv{D B} \cdot \vv{A B}=\vv{A B} \cdot \vv{A B}=c^{2}$ par projection orthogonale du point $D$ sur le segment $[A B]$
+	\item $\vv{O A} \cdot \vv{A C}=-\dfrac{1}{2} \vv{A C} \cdot \vv{A C}=-\dfrac{1}{2}(\sqrt{2} c)^{2}=-c^{2}$
+	\item $\vv{DB} \cdot \vv{OC}=0$ car les 2 vecteurs sont orthogonaux.
+\end{enumMet}	
+\end{corrBox}
+
+\exercice{}  \\
+
+
+\begin{minipage}[c]{0.50\linewidth}
+	Dans une unité de longueur donnée, on considère un carré $\mathrm{ABCD}$ dont le côté mesure 3 , accolé à deux rectangles identiques BEFC et EGHF de largeur 2.\\
+	En utilisant la formule du projeté orthogonal, calculer les produits scalaires suivants.
+	\begin{multicols}{2}
+		\begin{enumMet}
+			\item $\vv{\mathrm{AB}} \cdot \vv{\mathrm{AC}}$
+			\item $\vv{\mathrm{BA}} \cdot \vv{\mathrm{BF}}$
+			\item $\vv{\mathrm{EI}} \cdot \vv{\mathrm{AG}}$
+			\item $\vv{\mathrm{CF}} \cdot \vv{\mathrm{GD}}$
+			\item $\vv{\mathrm{IC}} \cdot \vv{\mathrm{HG}}$
+			\item $\vv{\mathrm{EJ}} \cdot \vv{\mathrm{FA}}$
+		\end{enumMet}
+	\end{multicols}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.50\linewidth}
+	\begin{center}
+		\begin{tikzpicture}[general, scale=0.85]
+			\draw[color=A1,epais] (0,0)-- (3,0)--(3,3)--(0,3)--cycle;
+			\draw[color=A1,epais] (3,0)-- (5,0)--(5,3)--(3,3)--cycle;
+			\draw[color=A1,epais] (5,0)-- (7,0)--(7,3)--(5,3)--cycle;
+			\draw (0,0) node[below]{$A$};
+			\draw (3,0) node[below]{$B$};
+			\draw (3,3) node[above]{$C$};
+			\draw (0,3) node[above]{$D$};
+			\draw (5,0) node[below]{$E$};
+			\draw (7,0) node[below]{$G$};
+			\draw (5,3) node[above]{$F$};
+			\draw (7,3) node[above]{$H$};
+			\draw[color=A1,epais] (0,3)--(7,0);
+			\draw (3,1.7) node[above right]{$I$};
+			\draw (5,0.8) node[above right]{$J$};
+			\draw (1.5,0) node[below]{$3$};
+			\draw (4,0) node[below]{$2$};
+			\draw (6,0) node[below]{$2$};
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\begin{corrBox}
+\begin{enumMet}
+	\item On projette le vecteur $\vv{A C}$ sur le vecteur $\vv{A B}$ :\\
+	$\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A B}=3 \times 3=9$
+	\item On projette le vecteur $\vv{B F}$ sur le vecteur $\vv{B E}$ :\\
+	$\vv{B A} \cdot \vv{B F}=\vv{B A} \cdot \vv{B E}=-3 \times 2=-6$
+	\item On projette le vecteur $\vv{E I}$ sur le vecteur $\vv{E B}$ :\\
+	$\vv{E I} \cdot \vv{A G}=\vv{E B} \cdot \vv{A G}=-2 \times 7=-14$
+	\item On projette le vecteur $\vv{G D}$ sur le vecteur $\vv{H D}$ :\\
+	$\vv{C F} \cdot \vv{G D}=\vv{C F} \cdot \vv{H D}=-2 \times 7=-14$
+	\item Les droites $(B C)$ et $(G H)$ sont parallèles donc on projette le vecteur $\vv{I C}$ sur le vecteur $\vv{H G}$.\\
+	Pour calculer la longueur $I C$, on utilise le théorème de Thalès dans le triangle $G H D$\\
+	$\dfrac{I C}{G H}=\dfrac{D C}{D H}$, donc $ I C=\dfrac{D C \times G H}{D H}=\dfrac{3 \times 3}{7}=\dfrac{9}{7}$\\
+	Alors $\vv{I C} \cdot \vv{H G}=-\dfrac{9}{7} \times 3=-\dfrac{27}{7}$
+	\item Pour calculer la longueur $E J$, on utilise le théorème de Thalès dans le triangle $A G D$\\
+	$\dfrac{E J}{A D}=\dfrac{G E}{G A}$, donc $ E J=\dfrac{G E \times A D}{G A}=\dfrac{2 \times 3}{7}=\dfrac{6}{7}$\\
+	On projette le vecteur $\vv{F A}$ sur le vecteur $\vv{F E}$ :\\
+	$\vv{E J} \cdot \vv{F A}=\vv{E J} \cdot \vv{F E}=-\dfrac{6}{7} \times 3=-\dfrac{18}{7}$
+\end{enumMet}	
+\end{corrBox}
+
+\exercice{}  \\
+\begin{minipage}[c]{0.65\linewidth}
+	Le triangle $\mathrm{ABC}$ est un triangle équilatéral dont le côté mesure $2 \mathrm{~cm}$. I est le pied de la hauteur issue de A. Déterminer les valeurs exactes des produits scalaires suivants.
+	\begin{multicols}{3}
+		\begin{enumMet}
+			\item $\vv{\mathrm{BC}} \cdot \vv{\mathrm{BA}}$
+			\item $\vv{\mathrm{BA}} \cdot \vv{\mathrm{BI}}$
+			\item $\vv{\mathrm{AI}} \cdot \vv{\mathrm{AC}}$
+		\end{enumMet}
+	\end{multicols}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.25\linewidth}
+	\begin{center}
+		\begin{tikzpicture}[general, scale=1.3]
+%			\clip(1.3802449861741728,3.9906149058096956) rectangle (8.427747252449345,7.67566450630921);
+			\draw [color=A1] (2.,5.)-- (3.,5.);
+			\draw [color=A1] (2.48,5.08) -- (2.48,4.92);
+			\draw [color=A1] (2.52,5.08) -- (2.52,4.92);
+			\draw [color=A1] (3.,5.)-- (4.,5.);
+			\draw [color=A1] (3.48,5.08) -- (3.48,4.92);
+			\draw [color=A1] (3.52,5.08) -- (3.52,4.92);
+			\draw [color=A1] (4.,5.)-- (3.,6.7320508075688785);
+			\draw [color=A1] (3.45,5.82) -- (3.54,5.9);
+			\draw [color=A1] (3.,6.7320508075688785)-- (2.,5.);
+			\draw [color=A1] (2.54,5.82) -- (2.45,5.9);
+			\draw [color=A1,dash pattern=on 1pt off 1pt] (3.,6.7320508075688785)-- (3.,5.);
+%			\draw [fill=ududff] (2.,5.) circle (2.5pt);
+			\draw (2.,5.) node[below] {$B$};
+%			\draw [fill=ududff] (4.,5.) circle (2.5pt);
+			\draw (4.,5.) node[below] {$C$};
+%			\draw [fill=uuuuuu] (3.,6.7320508075688785) circle (2.5pt);
+			\draw (3.0304,6.809) node[above] {$A$};
+%			\draw [fill=uuuuuu] (3.,5.) circle (2.0pt);
+			\draw (3,5) node[below] {$I$};
+			\draw (3.5639780827664795,5.932400301359103) node[above right] {$2$};
+			\draw[color=A1,fill=A1,fill opacity=0.2] (3.2,5.) -- (3.2,5.2) -- (3.,5.2) -- (3.,5.) -- cycle; 
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\begin{corrBox}
+\grasInMet{Avec le projeté orthogonal}
+\begin{enumMet}
+	\item On projette $\vv{BA}$ sur $(BC)$\\
+	Alors $\vv{B C} \cdot \vv{B A}=\vv{B C} \cdot \vv{B I}=\|\vv{B C}\| \times\|\vv{B I}\|=2 \times 1=2$
+	\item On projette $\vv{BA}$ sur $(BI)$\\
+	$\vv{B A} \cdot \vv{B I}=\vv{B I} \cdot \vv{B A}=\vv{B I} \cdot \vv{B I}=\|\vv{B I}\| \times\|\vv{B I}\|=1 \times 1=1$
+	\item On projette $\vv{AC}$ sur $(AI)$\\
+	Pour trouver la longueur du segment $[A I]$, on utilise le théorème de Pythagore dans le triangle rectangle $A I C$ :\\
+	$A C^{2}=A I^{2}+C I^{2},$ donc $A I^{2}=A C^{2}-C I^{2}=2^{2}-1^{2}=4-1=3$ et enfin
+	$A I=\sqrt{3} \mathrm{~cm} .$ On obtient alors:\\
+	$\vv{A I} \cdot \vv{A C}=\vv{A I} \cdot \vv{A I}=\|\vv{A I}\| \times\|\vv{A I}\| =\sqrt{3} \times \sqrt{3}=3$
+\end{enumMet}	
+\grasInMet{Avec la définition}
+\begin{enumMet}
+	\item $A B C$ est un triangle équilatéral, donc $(\vv{B C}, \vv{B A})=\dfrac{\pi}{3}$.\\
+	Alors $\vv{B C} \cdot \vv{B A}=\|\vv{B C}\| \times\|\vv{B A}\| \times \cos \left(\dfrac{\pi}{3}\right)=2 \times 2 \times \dfrac{1}{2}=2$
+	\item I étant le pied de la hauteur issue de $A$ dans le triangle équilatéral $A B C$, il est également le milieu du segment $[B C],$ donc $B I=1 \mathrm{~cm}$.\\
+	De plus, la symétrie du produit scalaire implique que $\vv{B A} \cdot \vv{B I}=\vv{B I} \cdot \vv{B A}$ et comme $(\vv{B I}, \vv{B A})=\dfrac{\pi}{3}$, on obtient:\\
+	$\vv{B A} \cdot \vv{B I}=\vv{B I} \cdot \vv{B A}=\|\vv{B I}\| \times\|\vv{B A}\| \times \cos \left(\dfrac{\pi}{3}\right)=1 \times 2 \times \dfrac{1}{2}=1$
+	\item La droite $(A I)$ est également la bissectrice du sommet $A$ du triangle $A B C$, donc $(\vv{A I}, \vv{A C})=\dfrac{\pi}{6}$.\\
+	Pour trouver la longueur du segment $[A I]$, on utilise le théorème de Pythagore dans le triangle rectangle $A I C$ :\\
+	$A C^{2}=A I^{2}+C I^{2},$ donc $A I^{2}=A C^{2}-C I^{2}=2^{2}-1^{2}=4-1=3$ et enfin
+	$A I=\sqrt{3} \mathrm{~cm} .$ On obtient alors:\\
+	$\vv{A I} \cdot \vv{A C}=\|\vv{A I}\| \times\|\vv{A C}\| \times \cos \left(\dfrac{\pi}{6}\right)=\sqrt{3} \times 2 \times \dfrac{\sqrt{3}}{2}=3$
+\end{enumMet}	
+\end{corrBox}
+
+\exercice{}\\
+
+Dans le cas ci-dessous, calculer le produit scalaire $\vv{A B} \cdot \vv{A C}$ à l'aide des informations données.\\
+\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(9,0.9)(17,4.5)
+	\pspolygon[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1](14.424264068711928,1.)(14.424264068711928,1.4242640687119286)(14.,1.4242640687119286)(14.,1.)
+	\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+		\parametricplot{0.0}{0.5235987755982987}{0.6*cos(t)+2.|0.6*sin(t)+1.}
+		\lineto(2.,1.)\closepath}
+	\psline[linewidth=1.7pt](8.,1.)(2.,1.)
+	\psline[linewidth=1.7pt](6.330127018922193,3.5)(2.,1.)
+	\psline[linewidth=1.7pt](6.330127018922193,3.5)(8.,1.)
+	\psline[linewidth=1.7pt](10.,1.)(14.,4.)
+	\psline[linewidth=1.7pt,linestyle=dashed](14.,4.)(14.,1.)
+	\psline[linewidth=1.7pt](16.,1.)(14.,1.)
+	\psline[linewidth=1.7pt](14.,1.)(10.,1.)
+	\psline[linewidth=1.7pt](14.,4.)(16.,1.)
+	\rput[tl](5.08,1.42){\Large{6}}
+	\rput[tl](4.06,2.94){\Large{5}}
+	\rput[tl](12.14,1.4){\Large{4}}
+	\rput[tl](15.04,1.4){\Large{2}}
+	\rput[tl](2.1,3.5){$\fbox{\Large{1}}$}
+%	\rput[tl](9.2,3.5){$\fbox{\Large{2}}$}
+	%\begin{scriptsize}
+	\rput[bl](1.9,1.2){\Large{$A$}}
+	\rput[bl](8.08,1.2){\Large{$B$}}
+	\rput[bl](3,1.){\Large{$\frac{\pi}{6}$}}
+	\rput[bl](6.42,3.66){\Large{$C$}}
+	\rput[bl](9.7,1.2){\Large{$A$}}
+	\rput[bl](13.5,1.14){\Large{$H$}}
+	\rput[bl](16.08,1.2){\Large{$B$}}
+	\rput[bl](14.08,4.1){\Large{$C$}}
+	%\end{scriptsize}
+\end{pspicture*}
+
+\begin{corrBox}
+	$\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A H}=AB\times AH=6\times4=24$
+\end{corrBox}
+
+\exercice{} \\
+$A B D$ et $B C D$ sont deux triangles équilatéraux de côté 4. Calculer les produits scalaires suivants.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\begin{multicols}{2}
+			\item $\vv{A B} \cdot \vv{A D}$ 
+			\item $\vv{B A} \cdot \vv{B C}$
+			\item $\vv{D B} \cdot \vv{C D}$
+			\item $\vv{B D} \cdot \vv{C A}$
+			\item $\vv{A D} \cdot \vv{C B}$
+			\item $\vv{A C} \cdot \vv{D C}$
+		\end{multicols}
+	\end{enumMet}
+	\columnbreak
+	\begin{center}
+		\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+		\newrgbcolor{qqzzqq}{0. 0.6 0.}
+		\psset{xunit=0.42cm,yunit=0.42cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(0,0)(9.5,6.1)
+			\pspolygon[linewidth=1.5pt,linecolor=qqzzqq](5.,5.)(5.,1.)(8.464101615137755,3.)
+			\pspolygon[linewidth=1.5pt,linecolor=qqzzqq](5.,5.)(1.5358983848622443,3.)(5.,1.)
+			\begin{scriptsize}
+				\rput[bl](5.,5.2){\large{$D$}}
+				\rput[bl](5.,0.38){\large{$B$}}
+				\rput[bl](8.6,2.95){\large{$C$}}
+				\rput[bl](0.6,2.95){\large{$A$}}
+			\end{scriptsize}
+		\end{pspicture*}
+	\end{center}
+\end{multicols}
+
+\begin{corrBox}
+	\begin{enumMet}
+		\item $\vv{A B} \cdot \vv{A D}=AB\times AD \times \cos \left(\widehat{BAD}\right)=4\times4\times\cos\left(\dfrac{\pi}{3}\right)=16\times\dfrac{1}{2}=8$
+		\item $\vv{BA} \cdot \vv{BC}=BA\times BC \times \cos \left(\widehat{ABC}\right)=4\times4\times\cos\left(\dfrac{2\pi}{3}\right)=16\times\dfrac{-1}{2}=-8$
+		\item $\vv{DB} \cdot \vv{CD}=\vv{DB} \cdot \left(-\dfrac{1}{2}\vv{DB}\right)=-\dfrac{1}{2}DB\times DB=-\dfrac{1}{2}\times4\times4=-8$
+		\item $\vv{DB} \cdot \vv{C A}=0$ car $\vv{DB}$ et $\vv{CA}$ sont orthogonaux (les diagonales d'un losange se coupent $\perp$).
+		\item $\vv{A D} \cdot \vv{C B}=\vv{A D} \cdot \vv{DA}=-AD\times AD=-4\times4=-16$
+		\item $\vv{A C} \cdot \vv{D C}=\vv{AC} \cdot \left(\dfrac{1}{2}\vv{AC}\right)=\dfrac{1}{2}AC\times AC=\dfrac{1}{2}\times2\sqrt{12}\times2\sqrt{12}=24$
+	\end{enumMet}
+\end{corrBox}
+
+\exercice{}
+Dans chaque cas, calculer $\vv{A B} \cdot \vv{A C}$.
+\begin{center}
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(4,11)(17.5,15.2)
+		\pspolygon[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1](13.42426406871193,12.)(13.42426406871193,12.42426406871193)(13.,12.42426406871193)(13.,12.)
+		\pspolygon[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1](4.924264068711929,12.)(4.924264068711929,12.42426406871193)(4.5,12.42426406871193)(4.5,12.)
+		%1ère figure
+%		\psline[linewidth=1.7pt](9.,12.)(5.,12.)
+%		\psline[linewidth=1.7pt](5.,12.)(6.5,14.6)
+%		\psline[linewidth=1.7pt](6.5,14.6)(9.,12.)
+		%2ème figure
+		\psline[linewidth=1.7pt](11.,12.)(13.,14.4)
+		\psline[linewidth=1.7pt,linestyle=dashed](13.,14.4)(13.,12.)
+		\psline[linewidth=1.7pt](13.,12.)(11.,12.)
+		\psline[linewidth=1.7pt](13.,12.)(16.,12.)
+		\psline[linewidth=1.7pt](16.,12.)(13.,14.4)
+%		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+%			\parametricplot{0.0}{1.047518004662921}{0.6*cos(t)+5.|0.6*sin(t)+12.}
+%			\lineto(5.,12.)\closepath}
+		%3ème figure
+%		\psline[linewidth=1.7pt,linestyle=dashed](4.5,8.)(6.,8.)
+%		\psline[linewidth=1.7pt](6.,8.)(10.,8.)
+%		\psline[linewidth=1.7pt](10.,8.)(4.5,10.36)
+%		\psline[linewidth=1.7pt](4.5,10.36)(6.,8.)
+%		\psline[linewidth=1.7pt,linestyle=dashed](4.5,10.36)(4.5,8.)
+		
+		\psline[linewidth=1.7pt,linestyle=dashed](4.5,12.)(6.,12.)
+		\psline[linewidth=1.7pt](6.,12.)(10.,12.)
+		\psline[linewidth=1.7pt](10.,12.)(4.5,14.36)
+		\psline[linewidth=1.7pt](4.5,14.36)(6.,12.)
+		\psline[linewidth=1.7pt,linestyle=dashed](4.5,14.36)(4.5,12.)
+		%4ème figure
+%		\psline[linewidth=1.7pt](17.,8.)(12.,11.)
+%		\psline[linewidth=1.7pt](12.,11.)(13.,9.)
+%		\psline[linewidth=1.7pt](13.,9.)(17.,8.)
+%		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+%			\parametricplot{-0.24497866312686414}{2.0344439357957027}{0.6*cos(t)+13.|0.6*sin(t)+9.}
+%			\lineto(13.,9.)\closepath}
+%		\rput[tl](4,14.8){$\fbox{\Large{1}}$}
+		\rput[tl](10.5,14.8){$\fbox{\Large{2}}$}
+		\rput[tl](8.,15){$\fbox{\Large{1}}$}
+%		\rput[tl](15,11){$\fbox{\Large{4}}$}
+		%1ère figure
+%		\rput[tl](5.4,13.84){\Large{3}}
+%		\rput[tl](6.8,12.6){\Large{4}}
+%		\rput[bl](5.64,12.2){\Large{\qqwuqq{$60\degree$}}}
+%		\rput[bl](4.54,12.12){\Large{$A$}}
+%		\rput[bl](9.08,12.2){\Large{$B$}}
+%		\rput[bl](6.6,14.5){\Large{$C$}}
+		%2ème figure
+		\rput[tl](11.8,12.6){\Large{3}}
+		\rput[tl](14.54,12.6){\Large{5}}
+		\rput[bl](10.66,12.2){\Large{$A$}}
+		\rput[bl](12.4,12.1){\Large{$H$}}
+		\rput[bl](16.08,12.2){\Large{$B$}}
+		\rput[bl](13.08,14.4){\Large{$C$}}
+		%3ème figure
+		\rput[tl](5.5,13.42){\Large{3}}
+		\rput[tl](8.02,11.9){\Large{5}}
+		\rput[tl](5.18,11.9){\Large{2}}
+		\rput[bl](6.08,12.2){\Large{$A$}}
+		\rput[bl](10.08,12.2){\Large{$B$}}
+		\rput[bl](4.58,14.56){\Large{$C$}}
+		\rput[bl](3.9,12.){\Large{$H$}}
+		%4ème figure
+%		\rput[tl](11.62,10.1){\Large{2}}
+%		\rput[tl](15.18,8.2){\Large{3}}
+%		\rput[bl](13.,8.3){\Large{$A$}}
+%		\rput[bl](17.08,8.2){\Large{$B$}}
+%		\rput[bl](12.,11.){\Large{$C$}}
+%		\rput[bl](12.1,8.4){\Large{\qqwuqq{$\frac{3\pi}{4}$}}}
+		
+		
+		
+		
+	\end{pspicture*}
+	%\includegraphics[scale=0.4]{1.04.02-Img03}
+\end{center}
+\begin{corrBox}
+	\begin{enumMet}
+		\item $\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A H}=-AB\times AH=-5\times2=-10$
+		\item $\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A H}=AB\times AH=8\times3=24$
+	\end{enumMet}
+\end{corrBox}
+
+
+
+
+\end{document}
+

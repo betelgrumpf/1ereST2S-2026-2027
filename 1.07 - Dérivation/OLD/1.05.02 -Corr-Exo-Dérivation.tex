@@ -1,0 +1,625 @@
+ \documentclass[12pt,a4paper]{book}
+
+\input{../1ere-preambule}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+\graphicspath{{../images/}}
+\setcounter{chapter}{4}
+\chapter[Correction des exercices]{Dérivation \\ correction des exercices}
+\thispagestyle{fancy}
+
+\section*{Nombre dérivé}
+
+\subsection*{Ex 38 p 120}
+
+\begin{enumMet}
+\item Soit $h \neq 0$. On a $f(1+h)=(1+h)^{2}=1+2 h+h^{2}$ et $f(1)=1^{2}=1$ donc
+$$
+f(1+h)-f(1)=h^{2}+2 h+1-1=h^{2}+2 h
+$$
+\item Pour $h \neq 0$, le taux de variation de $f$ entre 1 et $1+h$ s'écrit :\\
+$\dfrac{f(1+h)-f(1)}{h}=\dfrac{h^{2}+2 h}{h}=\dfrac{h(h+2)}{h}=h+2$.\\
+$\lim\limits_{h \rightarrow 0} h+2=2$ donc, par définition, cela signifie que $f$ est dérivable en 1 et que le nombre dérivé de $f$ en 1 est égal à $f^{\prime}(1)=2$.
+\item On vérifie ce résultat à la calculatrice.
+$$
+\begin{array}{r}
+\operatorname{diff}\left(x^{2}, x, 1\right) \\
+\operatorname{diff}\left(x^{2}, x, 1\right) = 2
+\end{array}
+$$
+\end{enumMet}
+
+
+\subsection*{Ex 39 p 120}
+
+\begin{enumMet}
+\item Soit $h \neq 0$. On a $: f(2+h)=-(2+h)^{2}+2+h=-h^{2}-3 h-2$ et
+$$
+f(2)=-2^{2}+2=-4+2=-2 \text { donc }
+$$
+$f(2+h)-f(2)=-h^{2}-3 h-2-(-2)=-h^{2}-3 h$
+\item Pour $h \neq 0$, le taux de variation de $f$ entre 2 et $2+h$ s'écrit :\\
+$\dfrac{f(2+h)-f(2)}{h}=\dfrac{-h^{2}-3 h}{h}=\dfrac{-h(h+3)}{h}=-(h+3)$.\\
+$\lim\limits_{h \rightarrow 0} -(h+3)=-3$ alors, par définition, cela signifie que $f$ est dérivable en 2 et que le nombre dérivé de $f$ en 2 est égal à $f^{\prime}(2)=-3$
+\item On vérifie ce résultat à la calculatrice.
+$$
+\begin{array}{r}
+\operatorname{diff}\left(-x^{2}+x, x, 2\right) \\
+\operatorname{diff}\left(-x^{2}+x, x, 2\right) = -3
+\end{array}
+$$
+\end{enumMet}
+
+\subsection*{Ex 40 p 120}
+
+\begin{enumMet}
+\item Soit $a$ et $b$ deux réels.
+$$
+\begin{array}{l}
+(a+b)^{3}=(a+b)(a+b)^{2}=(a+b)\left(a^{2}+2 a b+b^{2}\right) \\
+(a+b)^{3}=a^{3}+2 a^{2} b+a b^{2}+a^{2} b+2 a b^{2}+b^{3} \\
+(a+b)^{3}=a^{3}+3 a^{2} b+3 a b^{2}+b^{3} \\
+\end{array}
+$$
+\item $$
+\begin{array}{l}
+\text { Soit } h \neq 0.\\
+\dfrac{(2+h)^{3}-2^{3}}{h}=\dfrac{2^{3}+3 \times 2^{2} h+3 \times 2 h^{2}+h^{3}-2^{3}}{h}=\dfrac{12 h+6 h^{2}+h^{3}}{h} \\
+=\dfrac{h\left(12+6 h+h^{2}\right)}{h} \\
+=h^{2}+6 h+12
+\end{array}
+$$
+\item Comme la limite de $h^{2}+6 h+12$ quand $h$ tend vers 0 est égale à 12 alors, par définition, cela signifie que $f$ est dérivable en 2 et que le nombre dérivé de $f$ en 2 est égal à $f^{\prime}(2)=12$
+\item On vérifie ce résultat à la calculatrice.
+$$
+\begin{array}{l}
+\operatorname{diff}\left(x^{3}, x, 2\right) \\
+\quad \operatorname{diff}\left(x^{3}, x, 2\right) = 12
+\end{array}
+$$
+\end{enumMet}
+
+\subsection*{Ex 41 p 120}
+
+\begin{enumMet}
+\item \begin{enumMet}
+    \item Soit $h \neq 0$ $f(\mRouge{1+h})-f(\mVert{1})=\dfrac{1}{\mRouge{1+h}}-\dfrac{1}{\mVert{1}}=\dfrac{1}{1+h}-\dfrac{1+h}{1+h}=\dfrac{1-1-h}{1+h}=-\dfrac{h}{1+h}$
+    \item Pour $h \neq 0$. Le taux de variation de $f$ entre 1 et $1+h$ est égal à :\\
+    $\dfrac{f(\mRouge{1+h})-f(\mVert{1})}{h}=(f(\mRouge{1+h})-f(\mVert{1})) \times \dfrac{1}{h}=-\dfrac{h}{1+h} \times \dfrac{1}{h}=-\dfrac{1}{1+h}$\\
+    Comme $\lim\limits_{h \rightarrow 0} -\dfrac{1}{1+h}=-1$ alors, par définition, cela signifie que $f$ est dérivable en 1 et que le nombre dérivé de $f$ en 1 est égal à $f^{\prime}(1)=-1$
+\end{enumMet}
+\item Soit $h \neq 0$. $f(2+h)-f(2)=\dfrac{1}{2+h}-\dfrac{1}{2}=\dfrac{2}{2(2+h)}-\left(\dfrac{2+h}{2(2+h)}\right)$\\ d'où
+$f(2+h)-f(2)=\dfrac{2-2-h}{2(2+h)}=-\dfrac{h}{2(2+h)}$.\\
+Le taux de variation de $f$ entre 2 et $2+h$ est donc égal à:\\ $\dfrac{f(2+h)-f(2)}{h}=-\dfrac{h}{2(2+h)} \times \dfrac{1}{h}=-\dfrac{1}{2(2+h)}$. Comme $\lim\limits_{h \rightarrow 0} -\dfrac{1}{2(2+h)}=-\dfrac{1}{4}$ alors, par définition, cela signifie que $f$ est
+dérivable en 2 et que le nombre dérivé de $f$ en 2 est égal $f^{\prime}(2)=-\dfrac{1}{4}$
+\item On vérifie ce résultat à la calculatrice.
+$$
+\begin{array}{c}
+\text { diff }\left(\dfrac{1}{x}, x, 1\right)\\
+\operatorname{diff}\left(\dfrac{1}{x}, x, 1\right) =-1 \\
+\text { diff }\left(\dfrac{1}{x}, x, 2\right) \\
+\text { diff }\left(\dfrac{1}{x}, x, 2\right) =-0.25
+\end{array}
+$$
+\end{enumMet}
+
+\subsection*{Ex 42 p 120}
+
+Soit $h \neq 0$. Le taux de variation de $f$ entre -1 et $-1+h$ s'écrit: $\dfrac{f(-1+h)-f(-1)}{h}$.\\
+Or $f(-1+h)=5(-1+h)-3=5 h-8$ et $f(-1)=5 \times(-1)-3=-8$\\
+donc $\dfrac{f(-1+h)-f(-1)}{h}=\dfrac{5 h-8-(-8)}{h}=\dfrac{5 h}{h}=5$. \\
+Comme $\lim\limits_{h \rightarrow 0} \dfrac{f(-1+h)-f(-1)}{h}=5$ alors, par définition, cela signifie que $f$ est dérivable en -1 et que $f^{\prime}(-1)=5$.
+
+
+\subsection*{Ex 23 p 119}
+$T$ admet pour équation $y=f^{\prime}(1)(x-1)+f(1)$. Or $f^{\prime}(1)=\dfrac{2-1}{1+3}=\dfrac{1}{4}$ et $f(1)=2$. Cette tangente admet donc comme équation $y=\dfrac{1}{4} x+\dfrac{7}{4}$.
+
+\subsection*{Ex 24 p 119}
+
+$T$ admet pour équation $y=f^{\prime}(-1)(x+1)+f(-1) .$ Or $f^{\prime}(-1)=\dfrac{3+1}{0+1}=4$ et $f(-1)=-1$.
+Cette tangente admet donc comme équation $y=4 x+3$.
+
+\subsection*{Ex 25 p 119}
+
+\begin{enumMet}
+    \item $T$ admet comme équation $y=f^{\prime}(a)(x-a)+f(a)$ avec $a=-2$.\\
+    De plus $f(-2)=(-2)^{3}=-8$ et\\
+    $f^{\prime}(-2)=\lim\limits_{h \rightarrow 0} \dfrac{f(-2+h)-(f(-2)}{h}$.\\
+    $f(-2+h)-f(-2)=(-2+h)^3-f(-2)$\\
+    $\phantom{f(-2+h)-f(-2)}=(-2)^3+3\times(-2)^2\times h+3\times(-2)\times h^2+h^3-(-8)$\\
+    $\phantom{f(-2+h)-f(-2)}=-8+12h-6h^2+h^3+8$\\
+    $\phantom{f(-2+h)-f(-2)}=h^3-6h^2+12h$.\\
+    \ \\
+    $\dfrac{f(-2+h)-(f(-2)}{h}=\dfrac{h^3-6h^2+12h}{h}=$\\
+    $\phantom{\dfrac{f(-2+h)-(f(-2)}{h}}=\dfrac{h(h^2-6h+12}{h}=h^2-6h+12$\\
+    \ \\
+    $\lim\limits_{h \rightarrow 0} \dfrac{f(-2+h)-(f(-2)}{h}= \lim\limits_{h \rightarrow 0} h^2-6h+12=12$\\
+    Donc $f^{\prime}(-2)=12$ alors on obtient : $y=12(x+2)-8=12x+16$
+    \item $T$ admet comme équation $y=f^{\prime}(a)(x-a)+f(a)$ avec $a=-1$.\\
+    De plus $f(-1)=\dfrac{1}{-1}=-1$ et\\
+    $f^{\prime}(-1)=\lim\limits_{h \rightarrow 0} \dfrac{f(-1+h)-(f(-1)}{h}$.\\
+    $f(-1+h)-f(-1)=\dfrac{1}{-1+h}+1$\\
+    $\phantom{f(-2+h)-f(-2)}=\dfrac{1}{-1+h}+\dfrac{-1+h}{-1+h}$\\
+    $\phantom{f(-2+h)-f(-2)}=\dfrac{1-1+h}{-1+h}$\\
+    $\phantom{f(-2+h)-f(-2)}=\dfrac{h}{-1+h}$.\\
+    \ \\
+    $\dfrac{f(-1+h)-(f(-1)}{h}=\dfrac{h}{-1+h}\times\dfrac{1}{h}$\\
+    $\phantom{\dfrac{f(-2+h)-(f(-2)}{h}}=\dfrac{1}{-1+h}$\\
+    \ \\
+    $\lim\limits_{h \rightarrow 0} \dfrac{f(-1+h)-(f(-1)}{h}= \lim\limits_{h \rightarrow 0} \dfrac{1}{-1+h}=-1$\\
+    Donc $f^{\prime}(-1)=-1$ alors on obtient : $y=-1(x+1)-1=-x-2$
+\end{enumMet}
+
+\subsection*{Ex 44 p 121}
+\begin{enumMet}
+    \item Par définition, le nombre dérivé de $f$ en 0 est le coefficient directeur de la tangente à la courbe de $f$ au point d'abscisse 0, c'est-à-dire celui de $T_{A}$. Par lecture graphique, on obtient $f^{\prime}(0)=-2$.
+    \item Par définition, $f^{\prime}(3)$ est le coefficient directeur de la tangente à la courbe de $f$ au point d'abscisse 3, c'est-à-dire celui de $T_{B}$. Par lecture graphique, on obtient : $f^{\prime}(3)=4$.
+\end{enumMet}
+
+\subsection*{Ex 45 p 121}
+
+Par définition, le nombre dérivé de $f$ en -4 est le coefficient directeur de la tangente à la courbe de $f$ au point d'abscisse $-4$, c'est-à-dire celui de $d_{2}$ qui passe par les points de coordonnées $(-4 ;-2)$ et
+$(-2 ;-5)$. On a donc
+$$
+f^{\prime}(-4)=\dfrac{-5-(-2)}{-2-(-4)}=-\dfrac{3}{2}
+$$
+De même, pour le nombre dérivé de $f$ en $-\dfrac{5}{2}$. On lit le coefficient directeur de la tangente à la courbe de $f$ au point d'abscisse $-\dfrac{5}{2},$ c'est-à-dire celui de $d_{1}$. Et comme $d_{1}$ est parallèle à l'axe des abscisses
+alors $f^{\prime}\left(-\dfrac{5}{2}\right)=0$.\\
+Enfin, on procède de même pour le nombre dérivé de $f$ en 0 : on lit le coefficient directeur de la tangente à la courbe de $f$ au point d'abscisse $0,$ c'est-à-dire celui de $d_{3}$ qui passe par $O(0 ; 0)$ et par
+le point de coordonnées $(-2 ;-5)$. On a donc :
+$$f^{\prime}(0)=\dfrac{0-(-5)}{0-(-2)}=\dfrac{5}{2}$$
+
+\subsection*{Ex 47 p 121}
+
+Par définition, le nombre dérivé de $f$ en $a$ est le coefficient directeur de la tangente à la courbe de $f$ au point d'abscisse $a$, c'est-à-dire celui de $T$. Graphiquement on obtient : $$f^{\prime}(a)=f^{\prime}(2)=-1$$.
+
+\subsection*{Ex 48 p 121}
+
+Par définition, le nombre dérivé de $f$ en $a$ est le coefficient directeur de la tangente à la courbe de $f$
+au point d'abscisse $a$, c'est-à-dire, ici, celui de $T$ qui passe par $B(-2 ; 1)$ et par $A\left(-1 ; \dfrac{1}{2}\right)$
+donc :
+$$
+f^{\prime}(a)=f^{\prime}(-1)=\dfrac{\dfrac{1}{2}-1}{-1-(-2)}=-\dfrac{1}{2}
+$$
+
+\subsection*{Ex 49 p 122}
+
+Par définition, le nombre dérivé de $f$ en $a$ est le coefficient directeur de la tangente à la courbe de $f$
+au point d'abscisse $a$, c'est à dire, ici, celui de $T$ passant par le point $B$ de coordonnées $\left(-1 ; \dfrac{5}{2}\right)$
+$$
+\text { Comme } A\left(1 ;-\dfrac{3}{2}\right) \text { , on a : } f^{\prime}(a)=f^{\prime}(1)=-\dfrac{-\dfrac{3}{2}-\dfrac{5}{2}}{1-(-1)}=-\dfrac{4}{2}=-2
+$$
+
+\subsection*{Ex 50 p 122}
+
+Par définition, le nombre dérivé de $f$ en $a$ est le coefficient directeur de la tangente à la courbe de $f$
+au point d'abscisse $a$, c'est-à-dire, dans ce cas, celui de $T$ qui passe par $A$ et par le point $B\left(\dfrac{1}{2} ; 2\right)$
+Comme $A(0 ; 1)$, on a
+$$
+f^{\prime}(a)=f^{\prime}(0)=\dfrac{1-2}{0-\dfrac{1}{2}}=2
+$$
+
+
+\subsection*{Ex 56 p 123}
+
+\begin{enumMet}
+    \item Comme $T_{A}$ est parallèle à l'axe des abscisses alors son équation réduite est $y=y_{A}$, c'est-à-dire $y=4$
+    \item Comme $T_{B}$ n'est pas parallèle à l'axe des ordonnées, son équation réduite s'écrit sous la forme $y=f^{\prime}\left(x_{B}\right)\left(x-x_{B}\right)+f\left(x_{B}\right)$ c'est à dire $y=f^{\prime}(-1)(x+1)+1$.\\
+    Pour déterminer l'équation de cette droite on calcule donc le coefficient directeur de cette dernière :
+    $f^{\prime}(-1)=\dfrac{1-\dfrac{29}{4}}{-1+2}=-\dfrac{25}{4}$.\\
+Donc $T_{B}$ admet pour équation $y=-\dfrac{25}{4}(x+1)+1$, ce qu'on
+peut aussi écrire $y=-\dfrac{25}{4} x-\dfrac{21}{4}$
+    \item On sait que deux droites non parallèles à l'axe des ordonnées sont parallèles si et seulement si elles ont le même coefficient directeur. $T_{C}$ a pour coefficient directeur $f^{\prime}(3)=-\dfrac{101}{12}$ alors 
+que $T_{B}$ a pour coefficient directeur $f^{\prime}(-1)=-\dfrac{25}{4}$ d'après la question 2.\\
+Comme $-\dfrac{101}{12} \neq-\dfrac{25}{4}$ alors les tangentes $T_{B}$ et $T_{C}$ ne sont pas parallèles.
+\end{enumMet}
+
+
+\subsection*{Ex 57 p 123}
+
+On sait que la tangente à la courbe de $f$ au point d'abscisse $a$ a pour équation réduite $y=f^{\prime}(a)(x-a)+f(a)$.\\
+
+On commence par déterminer l'équation de $d_{1}:$ on lit $a=-4$ $f(-4)=5$ et $f^{\prime}(-4)=-6$.\\
+Donc $d_{1}$ admet pour équation $y=-6(x+4)+5$, ce qu'on peut aussi écrire $y=-6 x-19$.\\
+
+Pour l'équation de $d_{2}$ maintenant : comme $d_{2}$ est parallèle à l'axe des abscisses alors son équation réduite est $y=y_{B}$, c'est-à-dire $y=-4$.\\
+
+Pour l'équation de $d_{3}:$ on lit $a=0, f(0)=-3$ et $ f^{\prime}(0)=2$ donc $d_{3}$ a pour équation $y=2 x-3$.\\
+
+Enfin pour l'équation de $d_{4}:$ on lit $a=1, f(1)=0$ et $f^{\prime}(1)=4$. Donc $d_{4}$ a pour équation $y=4(x-1)+0,$ ce qu'on peut aussi écrire $y=4 x-4$
+
+\subsection*{Ex 58 p 123}
+
+On sait que la tangente à la courbe de $f$ au point d'abscisse $a$ a pour équation réduite $y=f^{\prime}(a)(x-a)+f(a)$.\\
+On a $f(1)=3$ et $f^{\prime}(1)=\dfrac{3}{2}$, l'équation de la tangente au point d'abscisse 1 admet donc pour équation $y=\dfrac{3}{2}(x-4)+3$ ce qu'on peut aussi écrire $y=\dfrac{3}{2} x-3$\\
+
+On a $f(2)=3 \sqrt{2}$ et $f^{\prime}(2)=\dfrac{3 \sqrt{2}}{4}$, l'équation de la tangente au point d'abscisse 2 admet donc pour
+équation $y=\dfrac{3 \sqrt{2}}{4}(x-2)+3 \sqrt{2}$
+ce qu'on peut aussi écrire $y=\dfrac{3 \sqrt{2}}{4} x+\dfrac{3 \sqrt{2}}{2}$.
+
+\subsection*{Ex 59 p 123}
+
+\begin{enumMet}
+    \item \textbf{on utilise la formule} : $y=f^{\prime}(a)(x-a)+f(a)$\\
+    \ \\
+    $\mBleu{T_{A}}: y=f^{\prime}(-4)(x-(-4))+f(-4)$\\
+    $y=-\dfrac{1}{5}(x+4)+11$\\
+    $y=-\dfrac{1}{5} x+\dfrac{51}{5}$\\
+    \ \\
+    $\mBleu{T_{B}}: y=f^{\prime}(2)(x-2)+f(2) \\ y=\dfrac{1}{5}(x-2)+4 \\ y=\dfrac{1}{5} x+\dfrac{18}{5} \\$
+    \ \\
+    $\mBleu{T_{C}}: y=f^{\prime}(6)(x-6)+f(6) \\ y=\dfrac{1}{2}(x-6)+2 \\ y=\dfrac{1}{2} x-1$
+    \item On égalise $T_{A}$ et $T_{B}$ pour trouver le point d'intersection de ces 2 droites.\\
+    $-\dfrac{1}{5} x+\dfrac{51}{5}=\dfrac{1}{5} x+\dfrac{18}{5}$\\
+    $-x+51=x+18$\\
+    $51-18=x+x$\\
+    $33=2 x$\\
+    $x=\dfrac{33}{2}$\\
+    On calcule l'ordonnée du point d'abscisse $x=\dfrac{33}{2}$ en remplaçant x par cette valeur dans une des 2 équations de droite (ici on choisit $T_B$).\\
+    $y=\dfrac{1}{5}\times\dfrac{33}{2}+\dfrac{18}{5}=\dfrac{69}{10}$\\
+    $D\left(\dfrac{33}{2};\dfrac{69}{10}\right)$ est donc le point d'intersection des droites $T_{A}$ et $T_{B}$. On cherche à savoir si ce point appartient à $T_C$.\\
+    $y=\dfrac{1}{2}\times\dfrac{33}{2}-1=\dfrac{29}{4}\neq\dfrac{69}{10}$.\\
+    D n'appartient pas à $T_C$. Les 3 droites ne sont donc pas concourantes.
+\end{enumMet}
+
+
+
+\subsection*{Ex 61 p 124}
+
+\begin{enumMet}
+    \item On sait que la tangente à $C_{f}$ au point d'abscisse $a$ a pour équation réduite $y=f^{\prime}(a)(x-a)+f(a)$. Dans notre cas on a : $a=4, f(4)=0$ et $f^{\prime}(4)=\dfrac{12-0}{2-4}=-6$.\\ Donc $d$ a pour équation $y=-6(x-4)$, ce qu'on peut aussi écrire
+$y=-6 x+24$
+\item Soit $x$ un réel. Pour étudier la position relative des deux courbes, on étudie le signe de
+$f(x)-(-6 x+24)=-x^{2}+2 x+8+6 x-24=-x^{2}+8 x-16$. On effectue une étude théorique de ce signe : on commence par calculer $\Delta$ le discriminant de ce trinôme.\\
+$\Delta=b^{2}-4 a c=8^{2}-4 \times(-1) \times(-16)=0$ donc ce trinôme n'admet qu'une seule racine réelle.\\
+Le trinôme est donc du signe de $a=-2<0$ sauf en $x_{0}=-\dfrac{b}{2 a}=-\dfrac{8}{2 \times(-1)}=4$.\\
+Donc pour tout $x$ réel, $-2 x^{2}+8 x-8 \leqslant 0$ et donc pour
+tout $x$ réel, $f(x) \leqslant-6 x+12$.\\
+En conclusion, sur $\mathbb{R}$ tout entier la courbe de $f$ est "en dessous" de sa tangente $d$.
+\end{enumMet}
+
+% \subsection*{Ex 62 p 124}
+
+% \begin{enumMet}
+% \item
+% \begin{enumMet}
+% \item On détermine d'abord le nombre dérivé $f^{\prime}(-2)$ par la limite du taux de variation. Soit $h$ un réel non nul.\\
+% $\dfrac{f(-2+h)-f(-2)}{h}=\dfrac{\dfrac{1}{-2+h}+\dfrac{1}{2}}{h}=\dfrac{1}{h} \times \dfrac{2-2+h}{2(-2+h)}=\dfrac{1}{2(-2+h)}$
+% La limite de $\dfrac{1}{2(-2+h)}$ quand $h$ tend vers 0 est égale à $-\dfrac{1}{4}$ donc $f^{\prime}(-2)=-\dfrac{1}{4}$.\\
+% De même on détermine le nombre dérivé $f^{\prime}(2)$.\\
+% $\dfrac{f(2+h)-f(2)}{h}=\dfrac{\dfrac{1}{2+h}-\dfrac{1}{2}}{h}=\dfrac{1}{h} \times \dfrac{2-2-h}{2(2+h)}=-\dfrac{1}{2(2+h)}$
+% La limite de $\dfrac{1}{2(2+h)}$ quand $h$ tend vers 0 est égale à $-\dfrac{1}{4}$ donc $f^{\prime}(2)=-\dfrac{1}{4}$.
+% \item On sait que la tangente à $\mathcal{C}_{f}$ au point d'abscisse $a$ a pour équation réduite $y=f^{\prime}(a)(x-a)+f(a)$.\\
+% Donc pour l'équation de la tangente au point d'abscisse
+% -2: on a $f(-2)=-\dfrac{1}{2}$ et $f^{\prime}(-2)=-\dfrac{1}{4}$, donc la tangente au point d'abscisse $-2$ admet pour équation $y=-\dfrac{1}{4}(x+2)-\dfrac{1}{2}$, ce qu'on peut écrire $y=-\dfrac{1}{4} x-1$.\\
+% On procède de même pour trouver l'équation de la tangente au point d'abscisse 2: on a $f(2)=\dfrac{1}{2}$ et $ f^{\prime}(2)=-\dfrac{1}{4}$, donc la tangente au point d'abscisse 2 a pour équation $y=-\dfrac{1}{4}(x-2)+\dfrac{1}{2},$ ce qu'on peut écrire $y=-\dfrac{1}{4} x+1$
+% \item Comme les deux tangentes ont le même coefficient directeur alors elles sont parallèles.
+% \end{enumMet}
+% \end{enumMet}
+
+% \subsection*{Ex 66 p 124}
+
+% \begin{enumMet}
+% \item Le point $A$ a pour coordonnées $(1 ; 3)$. On a :\\ $f(1)=-1^{2}+4=3 \Leftrightarrow A \in \mathcal{C}_{f}$ et :\\
+% $g(1)=1^{2}-4 \times 1+6=3 \Leftrightarrow A \in \mathcal{C}_{g}$.\\
+% On vérifie ensuite que $f^{\prime}(1)=g^{\prime}(1)$\\
+% Soit $h \neq 0 . f(1+h)=-(1+h)^{2}+4=-1-2 h-h^{2}+4=-h^{2}-2 h+3$
+% \\donc $\dfrac{f(1+h)-f(1)}{h}=\dfrac{h(-h-2)}{h}=-h-2$\\
+% Et la limite de $-h-2$ quand $h$ tend vers 0 est égale à -2 donc $f^{\prime}(1)=-2$.\\
+% De même $: g(1+h)=(1+h)^{2}-4(1+h)+6=h^{2}-2 h+3$ donc\\
+% $\dfrac{g(1+h)-g(1)}{h}=\dfrac{h(h-2)}{h}=h-2$\\
+% Et la limite de $h-2$ quand $h$ tend vers 0 est égale à -2 donc $g^{\prime}(1)=-2$.\\
+% On en déduit que $f^{\prime}(1)=g^{\prime}(1)$.\\
+% Et comme une droite est déterminée de manière unique par son coefficient directeur et un point (ou par un vecteur directeur et un point) alors les tangentes en $A$ à $\mathcal{C}_{f}$ et $\mathcal{C}_{g}$ sont confondues.\\
+% Par conséquent $\mathcal{C}_{f}$ et $\mathcal{C}_{g}$ admettent une tangente commune $T$ en $A$
+% \item $T$ admet comme équation réduite $: y=-2(x-1)+3 \Leftrightarrow y=-2 x+5$ On obtient la figure ci-dessous.
+% \begin{center}
+%     \includegraphics[scale=1]{1.05.EXO-IMG-01}
+% \end{center}
+% \end{enumMet}
+
+% \subsection*{Ex 68 p 125}
+
+% \begin{enumMet}
+% \item On sait que la tangente $T_{a}$ à $\mathcal{C}_{f}$ au point d'abscisse $a$ a pour équation réduite $y=f^{\prime}(a)(x-a)+f(a)$.\\
+% On détermine d'abord le nombre dérivé $f^{\prime}(a)$ par la limite $\mathrm{du}$ taux de variation pour $a=0:$\\
+% Soit $h$ un réel non nul, $\dfrac{f(0+h)-f(0)}{h}=\dfrac{h^{3}-h}{h}=h^{2}-1$. La limite de $h^{2}-1$ quand $h$ tend vers 0 est égale
+% à -1 donc $f^{\prime}(0)=-1$. La tangente $d$ a donc pour équation : $y=-x$.
+% \item Soit $a$ un réel. On détermine $g^{\prime}(a)$ par la limite du taux de variation :\\
+% Soit $h$ un réel non nul, $g(a+h)=-(a+h)^{2}+3(a+h)-4=-h^{2}+(3-2 a) h-a^{2}+3 a+4$ donc
+% $\dfrac{g(a+h)-g(a)}{h}=-h+3-2 a$. La limite de $-h+3-2 a$ quand $h$ tend vers 0 est égale à $3-2 a$ donc $g^{\prime}(a)=3-2 a$.\\
+% On cherche alors $a$ pour que $g^{\prime}(a)=-1$, c'est-à-dire $3-2 a=-1 \Leftrightarrow a=2$. Par conséquent, le coefficient directeur de la tangente au point de $\mathcal{C}_{g}$ au point d'abscisse 2 est égal à -1 , comme celui de la droite $d$.\\
+% Et on a : $y_{A}=g(2)=-2^{2}+3 \times 2-4=-2=-x_{A}$. Par conséquent
+% $A(2 ;-2) \in \mathcal{C}_{g} \cap d$ et donc La droite $d$ est aussi la tangente à la courbe $\mathcal{C}_{g}$ en $A(2 ;-2)$
+% \end{enumMet}
+
+
+\section*{Fonction dérivé}
+
+\subsection*{Ex 26 p 119}
+
+\begin{enumMet}
+    \item $f$ est une fonction polynôme donc $D_{f^{\prime}}=\mathbb{R}$ et pour tout $x \in D_{f^{\prime}}, f^{\prime}(x)=3 x^{2}+2 x$.
+    \item  $f$ est un polynôme donc $D_{f^{\prime}}=\mathbb{R}$ et pour tout $x \in D_{f^{\prime}}, f^{\prime}(x)=3 x^{2}-2 x-1$.
+    \item Cette fonction est de la forme $f=u+v$ avec $u(x)=\sqrt{x}$ et $v(x)=x$. Comme $\left.D_{u^{\prime}}=\right] 0 ;+\infty[=I$ et $v$ est dérivable sur $I$, en tant que fonction affine dérivable sur $\mathbb{R}$, alors $\left.D_{f^{\prime}}=\right] 0 ;+\infty\left[\right.$ et $f^{\prime}=u^{\prime}+v^{\prime}$ donc pour tout $x \in D_{f^{\prime}}, f^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}+1=\dfrac{\sqrt{x}+2 x}{2 x} .$
+    \item  Cette fonction est de la forme $f=u+v$ avec $u(x)=x^{2}$ et $v(x)=-\dfrac{1}{x}$. Comme $u$ est dérivable sur $I=\mathbb{R}^{*}$ (fonction carré dérivable sur $\mathbb{R}$ ) et $D_{v^{\prime}}=\mathbb{R}^{*}$ alors $D_{f^{\prime}}=\mathbb{R}^{*}$ et $f^{\prime}=u^{\prime}+v^{\prime}$ donc pour tout $x \in D_{f^{\prime}}, f^{\prime}(x)=2 x-\left(-\dfrac{1}{x^{2}}\right)=2 x+\dfrac{1}{x^{2}}=\dfrac{2 x^{3}+1}{x^{2}} .$
+\end{enumMet}
+
+\subsection*{Ex 27 p 119}
+Dans chaque cas, $f$ est une fonction polynôme donc $D_{f^{\prime}}=\mathbb{R}$; et dans chaque cas on utilise les formules $(u+v)^{\prime}=u^{\prime}+v^{\prime}$ et $(k u)^{\prime}=k u^{\prime}$ avec $k$ réel.
+\begin{enumMet}
+    \item Pour tout $x \in \mathbb{R}, f^{\prime}(x)=3 \times 2 x-4 \times 1+0=6 x-4$.
+    \item Pour tout $x \in \mathbb{R}$,
+    $$
+    f^{\prime}(x)=-4 \times 4 x^{3}+3 \times 3 x^{2}-2 \times 2 x+1=-16 x^{3}+9 x^{2}-4 x+1 .
+    $$
+    \item Pour tout $x \in \mathbb{R}, f^{\prime}(x)=3 x^{2}-2 \times 2 x+3 \times 1+0=3 x^{2}-4 x+3$.
+\end{enumMet}
+
+\subsection*{Ex 74 p 126}
+
+\begin{enumMet}
+    \item On sait que la dérivée d'une fonction constante est nulle. Donc, pour tout $x \in I, f^{\prime}(x)=0$. .
+    \item On sait que la dérivée d'une fonction affine définie par $x \mapsto m x+p$ est une fonction constante définie par $x \mapsto m$. Donc pour tout $x \in J, g^{\prime}(x)=4$.
+\end{enumMet}
+
+\subsection*{Ex 75 p 126}
+
+\begin{enumMet}
+    \item \grasInMet{Calculer $f^{\prime}$ pour $f(x)=x^{4}$}\\
+On sait que la dérivée d'une fonction puissance définie par $x \mapsto x^{n}$ avec $n \in \mathbb{N}$ est la fonction définie par $x \mapsto n x^{n-1}$. Donc $f^{\prime}(x)=4 x^{4-1}=4 x^{3}$
+    \item \grasInMet{Calculer $g^{\prime}$ pour $g(x)=4 x^{4}$}\\
+    On utilise la formule $(k u)^{\prime}=k u^{\prime}$ pour $k$ réel et la dérivée de $f$ calculée à la question 1). $g^{\prime}(x)=4 f^{\prime}(x)=4 \times 4 x^{3}=16 x^{3}$
+\end{enumMet}
+
+\subsection*{Ex 77 p 126}
+\begin{enumMet}
+    \item \grasInMet{Calculer $f^{\prime}(x)$ pour $f(x)=2 x^{2}-3 x+1$}\\
+    $f^{\prime}(x)=2 \times 2 x^{2-1}-3=4 x-3$
+    \item \grasInMet{Calculer $g^{\prime}(x)$ pour $g(x)=x^{3}+4 x^{2}+5 x-6$}\\
+    $g^{\prime}(x)=3 x^{3-1}+4 \times 2 x^{2-1}+5=3 x^{2}+8 x+5$.
+\end{enumMet}
+
+\subsection*{Ex 78 p 126}
+\begin{enumMet}
+    \item \grasInMet{Calculer $f^{\prime}(x)$ pour $f(x)=\dfrac{1}{4} x^{4}-\dfrac{1}{3} x^{3}+\dfrac{1}{2} x^{2}-10$}\\
+    $f^{\prime}(x)=\dfrac{1}{4} \times 4 x^{4-1}-\dfrac{1}{3} \times 3 x^{3-1}+\dfrac{1}{2} \times 2 x^{2-1}=x^{3}-x^{2}+x$
+    \item \grasInMet{Calculer $g^{\prime}(x)$ pour $g(x)=\sqrt{x}+\dfrac{1}{x}$}\\
+    $g^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}-\dfrac{1}{x^{2}}=\dfrac{x \sqrt{x}}{2 x \sqrt{x} \times \sqrt{x}}-\dfrac{2}{2 x^{2}}=\dfrac{x \sqrt{x}-2}{2 x^{2}}$
+\end{enumMet}
+
+\subsection*{Ex 28 p 119}
+
+\begin{enumMet}
+    \item \grasInMet{$f(x)=\dfrac{1}{x}\left(x^{3}-1\right)$}\\
+    Cette fonction est de la forme $f=u v$ avec $u(x)=\dfrac{1}{x}$ et $v(x)=x^{3}-1$. Alors $f^{\prime}=u^{\prime} v+u v^{\prime}$ donc\\
+    $ f^{\prime}(x)=-\dfrac{1}{x^{2}}\left(x^{3}-1\right)+\dfrac{1}{x} \times 3 x^{2}=-x+\dfrac{1}{x^{2}}+$ $3 x=2 x+\dfrac{1}{x^{2}}=\dfrac{2 x^{3}+1}{x^{2}}$.
+    \item \grasInMet{$f(x)=x^{2}(\sqrt{x}+1)$}\\
+    Cette fonction est de la forme $f=u v$ avec $u(x)=x^{2}$ et $v(x)=\sqrt{x}+1$. Alors  $f^{\prime}=u^{\prime} v+u v^{\prime}$ donc\\
+    $f^{\prime}(x)=2 x(\sqrt{x}+1)+x^{2} \times \dfrac{1}{2 \sqrt{x}}=2 x \sqrt{x}+2 x+\dfrac{x^{2}}{2 \sqrt{x}}=\dfrac{4 x^{2}+4 x \sqrt{x}+x^{2}}{2 \sqrt{x}}$\\
+d'où $f^{\prime}(x)=\dfrac{5 x^{2}+4 x \sqrt{x}}{2 \sqrt{x}}=\dfrac{5x\sqrt{x}\sqrt{x}+4x\sqrt{x}}{2\sqrt{x}}=\dfrac{5}{2}x\sqrt{x}+2x$.
+    \item \grasInMet{$f(x)=\dfrac{1}{x^{2}+1}$}\\
+Cette fonction est de la forme $f=\dfrac{1}{v}$ avec $v(x)=x^{2}+1$. Alors $f^{\prime}=-\dfrac{v^{\prime}}{v^{2}}$ donc\\ $f^{\prime}(x)=-\dfrac{2 x}{\left(x^{2}+1\right)^{2}}$
+    \item \grasInMet{$f(x)=\dfrac{1}{\sqrt{x}}$}\\
+Cette fonction est de la forme $f=\dfrac{1}{v}$ avec $v(x)=\sqrt{x}$. Alors $f^{\prime}=-\dfrac{v^{\prime}}{v^{2}}$ donc\\ $f^{\prime}(x)=-\dfrac{\dfrac{1}{2 \sqrt{x}}}{(\sqrt{x})^{2}}=-\dfrac{1}{2 \sqrt{x}} \times \dfrac{1}{x}=-\dfrac{\sqrt{x}}{2 x^{2}}$.
+\end{enumMet}
+
+\subsection*{Ex 29 p 119}
+\begin{enumMet}
+    \item \grasInMet{$f(x)=\dfrac{x+1}{x-2}$}\\
+    Cette fonction est de la forme $f=\dfrac{u}{v}$ avec $u(x)=x+1$ et $v(x)=x-2$. Alors $f^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$. Donc \\ 
+    $ f^{\prime}(x)=\dfrac{1 \times(x-2)-(x+1) \times 1}{(x-2)^{2}}=\dfrac{x-2-x-1}{(x-2)^{2}}=-\dfrac{3}{(x-2)^{2}}$.
+    \item \grasInMet{$f(x)=\dfrac{x^{3}+1}{x^{2}-1}$}\\
+    Cette fonction est de la forme $f=\dfrac{u}{v}$ avec $u(x)=x^{3}+1$ et $v(x)=x^{2}-1$. Alors $f^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$. Donc \\
+    $f^{\prime}(x)=\dfrac{3 x^{2}\left(x^{2}-1\right)-\left(x^{3}+1\right) \times 2 x}{\left(x^{2}-1\right)^{2}}=\dfrac{x^{4}-3 x^{2}-2 x}{\left(x^{2}-1\right)^{2}}$.
+    \item \grasInMet{$f(x)=\dfrac{\sqrt{x}}{x-1}$}\\
+    Cette fonction est de la forme $f=\frac{u}{v}$ avec $u(x)=\sqrt{x}$ et $v(x)=x-1$. Alors $f^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$. Donc \\
+    $f^{\prime}(x)=\dfrac{\frac{1}{2 \sqrt{x}} \times(x-1)-\sqrt{x} \times 1}{(x-1)^{2}}$\\
+    $f^{\prime}(x)=\left(\dfrac{x-1}{2 \sqrt{x}}-\sqrt{x}\right) \times \dfrac{1}{(x-1)^{2}}=\dfrac{x-1-2 x}{2 \sqrt{x}(x-1)^{2}}=-\dfrac{1+x}{2 \sqrt{x}(x-1)^{2}}$\\
+    et donc, en conclusion, $f^{\prime}(x)=-\dfrac{\sqrt{x}(x+1)}{2 x(x-1)^{2}}$.
+    \item \grasInMet{$f(x)=\dfrac{x^{2}+x+1}{\sqrt{x}}$}\\
+    Cette fonction est de la forme $f=\dfrac{u}{v}$ avec $u(x)=x^{2}+x+1$ et $v(x)=\sqrt{x}$. Alors  $f^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$. Donc \\
+    $$
+    \begin{aligned}
+    f^{\prime}(x)&=\frac{(2 x+1) \times \sqrt{x}-\frac{1}{2 \sqrt{x}} \times\left(x^{2}+x+1\right)}{(\sqrt{x})^{2}} \\
+    f^{\prime}(x)&=\frac{4 x^{2}+2 x-x^{2}-x-1}{2 x \sqrt{x}} \\
+    f^{\prime}(x)&=\frac{\sqrt{x}\left(3 x^{2}+x-1\right)}{2 x^{2}}
+    \end{aligned}
+    $$
+\end{enumMet}
+
+\subsection*{Ex 76 p 126}
+\begin{enumMet}
+    \item \grasInMet{Calculer $f^{\prime}(x)$ pour $f(x)=(2 x-1)(x+3)$}\\
+    $u(x)=2 x-1 \Rightarrow u^{\prime}(x)=2$ et $v(x)=x+3 \Rightarrow v^{\prime}(x)=1$.\\
+    Donc, $f^{\prime}(x)=2(x+3)+(2 x-1) \times 1=4 x+5$.
+    \item \grasInMet{Calculer $g^{\prime}(x)$ pour $g(x)=\left(x^{2}-x+2\right)\left(2 x^{3}-4\right)$}\\
+    $u(x)=x^{2}-x+2 \Rightarrow u^{\prime}(x)=2 x-1$ et
+$v(x)=2 x^{3}-4 \Rightarrow v^{\prime}(x)=6 x^{2} .$\\
+Donc, $g^{\prime}(x)=(2 x-1)\left(2 x^{3}-4\right)+\left(x^{2}-x+2\right) \times 6 x^{2}$\\
+$g^{\prime}(x)=4 x^{4}-8 x-2 x^{3}+4+6 x^{4}-6 x^{3}+12 x^{2}=10 x^{4}-8 x^{3}+12 x^{2}-8 x+4$
+\end{enumMet}
+
+\subsection*{Ex 79 p 126}
+\grasInMet{Soient $f$ et $g$ les fonctions définies par $f(x)=\sqrt{x}(x+1)$ et $g(x)=$ $\sqrt{x}\left(x^{2}-x+1\right)$.}
+\begin{enumMet}
+    \item \grasInMet{Déterminer l'ensemble de définition et de dérivabilité des fonctions $f$ et $g$.}\\
+    On sait que la fonction racine carrée est définie sur $[0 ;+\infty[$ et dérivable sur $] 0 ;+\infty[$ donc $D_{f}=D_{g}=\left[0 ;+\infty\left[\right.\right.$ et $\left.\left.D_{f}^{\prime}=D_{g}^{\prime}=\right] 0 ;+\infty[\right.$
+    \item \grasInMet{Calculer $f^{\prime}(x)$ et $g^{\prime}(x)$.}\\
+    \grasInEx{On commence par calculer $f^{\prime}(x)$}\\
+$u(x)=\sqrt{x} \Rightarrow u^{\prime}(x)=\dfrac{1}{2 \sqrt{x}} \text { et } v(x)=x+1 \Rightarrow v^{\prime}(x)=1$\\
+$f^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}(x+1)+\sqrt{x} \times 1$
+Donc, pour tout $x>0$,\\
+$f^{\prime}(x)=\dfrac{x+1}{2 \sqrt{x}}+\dfrac{2 \sqrt{x} \times \sqrt{x}}{2 \sqrt{x}}=\dfrac{3 x+1}{2 \sqrt{x}}=\dfrac{(3 x+1)^{,} \sqrt{x}}{2 x}$\\
+\ \\
+\grasInEx{On calcule désormais $g^{\prime}(x)$}\\
+$u(x)=\sqrt{x} \Rightarrow u^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}$ et $v(x)=x^{2}-x+1 \Rightarrow v^{\prime}(x)=2 x-1$\\
+Donc, par produit,\\
+$g^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}\left(x^{2}-x+1\right)+\sqrt{x}(2 x-1)=\dfrac{5 x^{2}-3 x+1}{2 \sqrt{x}}$,\\
+ce qu'on peut aussi écrire
+$g^{\prime}(x)=\dfrac{\left(5 x^{2}-3 x+1\right) \sqrt{x}}{2 x}$
+\end{enumMet}
+
+
+\subsection*{Ex 80 p 126}
+\begin{enumMet}
+    \item 
+    \begin{enumMet}
+        \item \grasInMet{Calculer $f^{\prime}(x)$ pour $f(x)=(2 x+3)(1-4 x)$}\\
+        $u(x)=2 x+3 \Rightarrow u^{\prime}(x)=2$ et $v(x)=1-4 x \Rightarrow v^{\prime}(x)=-4$.\\
+Donc, par produit $f^{\prime}(x)=2(1-4 x)+(2 x+3) \times(-4)=-16 x-10$
+
+        \item \grasInMet{Développer et réduire $f(x)$ et calculer la dérivée de l'expression obtenue.}\\
+        $f(x)=-8 x^{2}-10 x+3 \Rightarrow f^{\prime}(x)=-16 x-10$. .
+    \end{enumMet}
+    \item
+    \begin{enumMet}
+        \item \grasInMet{Calculer $g^{\prime}(x)$ pour $g(x)=\left(x^{2}-1\right)\left(x^{3}+x\right)$}\\
+        $u(x)=x^{2}-1 \Rightarrow u^{\prime}(x)=2 x$ et
+$v(x)=x^{3}+x \Rightarrow v^{\prime}(x)=3 x^{2}+1$.\\
+Donc, par produit, $g^{\prime}(x)=2 x\left(x^{3}+x\right)+\left(x^{2}-1\right)\left(3 x^{2}+1\right)=5 x^{4}-1$
+        \item \grasInMet{Développer et réduire $g(x)$ et calculer la dérivée de l'expression obtenue.}\\
+        $g(x)=x^{5}-x \Rightarrow g^{\prime}(x)=5 x^{4}-1$.
+    \end{enumMet}
+\end{enumMet}
+
+\subsection*{Ex 30 p 119}
+
+\begin{enumMet}
+    \item \grasInMet{$f(x)=(3 x+1)^{3}$}\\
+    $f(x)=(3 x+1)^{3}=g(a x+b)$ avec $g(x)=x^{3}, a=3$ et $b=1 .$ Donc\\
+    $f^{\prime}(x)=a g^{\prime}(a x+b)=3 \times 3(3 x+1)^{2}=9(3 x+1)^{2}$.
+    \item \grasInMet{$f(x)=(1-2 x)^{4}$}\\
+    $f(x)=(1-2 x)^{4}=g(a x+b)$ avec $g(x)=x^{4}, a=-2$ et $b=1$. Donc\\
+    $f^{\prime}(x)=a g^{\prime}(a x+b)=-2 \times 4(1-2 x)^{3}=-8(1-2 x)^{3}$.
+    \item \grasInMet{$f(x)=\sqrt{2 x+1}$}\\
+    $f(x)=\sqrt{2 x+1}=g(a x+b)$ avec $g(x)=\sqrt{x}, a=2$ et $b=1 .$ Donc : \\
+    $f^{\prime}(x)=a g^{\prime}(a x+b)=2 \times \dfrac{1}{2 \sqrt{2 x+1}}=\dfrac{1}{\sqrt{2 x+1}}=\dfrac{\sqrt{2 x+1}}{2 x+1}$
+    \item \grasInMet{$f(x)=\sqrt{2-3 x}$}\\
+    $f(x)=\sqrt{2-3 x}=g(a x+b)$ avec $g(x)=\sqrt{x}, a=-3$ et $b=2$. Donc : \\
+    $f^{\prime}(x)=a g^{\prime}(a x+b)=-3 \times \dfrac{1}{2 \sqrt{2-3 x}}=\dfrac{-3 \sqrt{2-3 x}}{2(2-3 x)}$.
+\end{enumMet}
+
+\subsection*{Ex 81 p 126}
+\begin{enumMet}
+    \item \grasInMet{$f(x)=\sqrt{x}\left(x^{2}+1\right)$}\\
+    $u(x)=\sqrt{x} \Rightarrow u^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}$ et $v(x)=x^{2}+1 \Rightarrow v^{\prime}(x)=2 x$.\\
+    Donc, par produit:\\
+$\begin{aligned} f^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}\left(x^{2}+1\right)+\sqrt{x} \times 2 x &=\dfrac{x^{2}+1}{2 \sqrt{x}}+\dfrac{2 x \sqrt{x} \times 2 \sqrt{x}}{2 \sqrt{x}} \\ &=\dfrac{\left(5 x^{2}+1\right) \sqrt{x}}{2 x} \end{aligned}$
+    \item \grasInMet{$g(x)=\frac{1}{x}\left(x^{2}-1\right)$}\\
+    $u(x)=\dfrac{1}{x} \Rightarrow u^{\prime}(x)=-\dfrac{1}{x^{2}}$ et $v(x)=x^{2}-1 \Rightarrow v^{\prime}(x)=2 x$
+Donc, par produit:\\
+$g'(x)=-\dfrac{1}{x^{2}}\left(x^{2}-1\right)+\dfrac{1}{x} \times 2 x$ c'est à dire\\
+$g^{\prime}(x)=-\left(\dfrac{x^{2}-1}{x^{2}}\right)+\dfrac{2 x \times x}{x^{2}}=\dfrac{-x^{2}+1+2 x^{2}}{x^{2}}=\dfrac{x^{2}+1}{x^{2}}$
+\end{enumMet}
+
+\subsection*{Ex 82 p 126}
+On utilise les formules $(k u)^{\prime}=k u^{\prime}$ pour $k$ réel et $\left(\dfrac{1}{u}\right)^{\prime}=-\dfrac{u^{\prime}}{u^{2}}$
+\begin{enumMet}
+    \item \grasInMet{$\dfrac{4}{2x-3}$}\\
+    $u(x)=2 x-3 \Rightarrow u^{\prime}(x)=2$
+Donc :\\
+$f^{\prime}(x)=4 \times\left(-\dfrac{2}{(2 x-3)^{2}}\right)=-\dfrac{8}{(2 x-3)^{2}}$
+    \item \grasInMet{$\dfrac{2}{1-4x}$}\\
+    $u(x)=1-4 x \Rightarrow u^{\prime}(x)=-4$.
+Donc :\\
+$g'(x)=2 \times\left(-\dfrac{-4}{(1-4 x)^{2}}\right)=\dfrac{8}{(1-4 x)^{2}}$
+\end{enumMet}
+
+\subsection*{Ex 83 p 126}
+On utilise les formules $(k u)^{\prime}=k u^{\prime}$ pour $k$ réel et $\left(\dfrac{1}{u}\right)^{\prime}=-\dfrac{u^{\prime}}{u^{2}}$
+\begin{enumMet}
+    \item \grasInMet{Calculer $f^{\prime}(x)$ pour $f(x)=\dfrac{-2}{x^{2}+x+1}$}\\
+$u(x)=x^{2}+x+1 \Rightarrow u^{\prime}(x)=2 x+1$. Donc : \\
+$f^{\prime}(x)=-2 \times\left(-\dfrac{2 x+1}{\left(x^{2}+x+1\right)^{2}}\right)=\dfrac{2(2 x+1)}{\left(x^{2}+x+1\right)^{2}}$
+    \item \grasInMet{Calculer $g^{\prime}(x)$ pour $g(x)=\dfrac{3}{x^{4}+1}$}\\
+$u(x)=x^{4}+1 \Rightarrow u^{\prime}(x)=4 x^{3}$. Donc :\\ 
+$g^{\prime}(x)=3 \times\left(-\dfrac{4 x^{3}}{\left(x^{4}+1\right)^{2}}\right)=-\dfrac{12 x^{3}}{\left(x^{4}+1\right)^{2}}$
+\end{enumMet}
+
+\subsection*{Ex 84 p 126}
+\begin{enumMet}
+    \item \grasInMet{Calculer $f^{\prime}(x)$ pour $f(x)=\dfrac{5 x-1}{x+2}$.}\\
+    On utilise la formule $\left(\dfrac{u}{v}\right)^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$.\\
+    $u(x)=5 x-1 \Rightarrow u^{\prime}(x)=5$ et $v(x)=x+2 \Rightarrow v^{\prime}(x)=1$.
+    Donc, par quotient :\\
+    $f^{\prime}(x)=\dfrac{5(x+2)-(5 x-1) \times 1}{(x+2)^{2}}=\dfrac{5 x+10-5 x+1}{(x+2)^{2}}=\dfrac{11}{(x+2)^{2}}$.
+    \item \grasInMet{Calculer $g^{\prime}(x)$ pour $g(x)=\dfrac{3-x}{1+4 x}$}.\\
+    On utilise la formule $\left(\dfrac{u}{v}\right)^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$.
+    $u(x)=3-x \Rightarrow u^{\prime}(x)=-1$ et $v(x)=1+4 x \Rightarrow v^{\prime}(x)=4$
+    Donc, par quotient :\\ 
+    $g^{\prime}(x)=\dfrac{-1(1+4 x)-(3-x) \times 4}{(1+4 x)^{2}}=\dfrac{-1-4 x-12+4 x}{(1+4 x)^{2}}=-\dfrac{13}{(1+4 x)^{2}}$.
+\end{enumMet}
+
+\subsection*{Ex 85 p 126}
+On utilise la formule $\left(\dfrac{u}{v}\right)^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$
+\begin{enumMet}
+    \item \grasInMet{Calculer $f^{\prime}(x)$ pour $f(x)=\dfrac{x-1}{x^{2}+x+1}$}\\
+    $u(x)=x-1 \Rightarrow u^{\prime}(x)=1$ et $v(x)=x^{2}+x+1 \Rightarrow u^{\prime}(x)=2 x+1$
+donc, par quotient:\\
+$$f^{\prime}(x)=\dfrac{1 \times\left(x^{2}+x+1\right)-(x-1)(2 x+1)}{\left(x^{2}+x+1\right)^{2}}=\dfrac{-x^{2}+2 x+2}{\left(x^{2}+x+1\right)^{2}}$$
+    \item \grasInMet{Calculer $g^{\prime}(x)$ pour $g(x)=\frac{x^{2}+x+1}{x^{2}+1}$}\\
+    $u(x)=x^{2}+x+1 \Rightarrow u^{\prime}(x)=2 x+1$ et $v(x)=x^{2}+1 \Rightarrow v^{\prime}(x)=2 x$. Donc, par quotient :\\
+$$g^{\prime}(x)=\dfrac{(2 x+1)\left(x^{2}+1\right)-\left(x^{2}+x+1\right) \times 2x}{\left(x^{2}+1\right)^{2}}=\dfrac{1-x^{2}}{\left(x^{2}+1\right)^{2}}$$
+\end{enumMet}
+
+\subsection*{Ex 86 p 126}
+On utilise la formule $\left(\dfrac{u}{v}\right)^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$
+\begin{enumMet}
+    \item \grasInMet{Calculer $f^{\prime}(x)$ pour $f(x)=\frac{\sqrt{x}}{x+1}$}\\
+$u(x)=\sqrt{x} \Rightarrow u^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}$ et $v(x)=x+1 \Rightarrow u^{\prime}(x)=1$
+Donc:\\
+$$f^{\prime}(x)=\dfrac{\dfrac{1}{2 \sqrt{x}}(x+1)-1 \times \sqrt{x}}{(x+1)^{2}}=\dfrac{1-x}{2 \sqrt{x}(x+1)^{2}}=\dfrac{\sqrt{x}(1-x)}{2 x(x+1)^{2}}$$
+    \item \grasInMet{Calculer $g^{\prime}(x)$ pour $g(x)=\dfrac{\sqrt{x}}{x^{2}+1}$}\\
+$u(x)=\sqrt{x} \Rightarrow u^{\prime}(x)=\dfrac{1}{2 \sqrt{x}}$ et $v(x)=x^{2}+1 \Rightarrow v^{\prime}(x)=2 x$
+Donc :\\
+$$g^{\prime}(x)=\dfrac{\dfrac{1}{2 \sqrt{x}}\left(x^{2}+1\right)-2 x \sqrt{x}}{\left(x^{2}+1\right)^{2}}=\dfrac{1-3 x^{2}}{2 \sqrt{x}\left(x^{2}+1\right)^{2}}=\dfrac{\left(1-3 x^{2}\right) \sqrt{x}}{2 x\left(x^{2}+1\right)^{2}}$$
+\end{enumMet}
+
+\subsection*{Ex 88 p 126}
+
+\begin{enumMet}
+    \item \grasInMet{$f(x)=(5 x+3)^{2}$}\\
+    $f(x)=(5 x+3)^{2}=g(a x+b)$ avec $g(x)=x^{2}, a=5$ et $b=3$. Donc : \\
+    $f^{\prime}(x)=a g^{\prime}(a x+b)=5 \times 2(5 x+3)=10(5 x+3)=50 x+30$. 
+\item \grasInMet{$f(x)=\sqrt{3 x-4}$}\\
+$f(x)=\sqrt{3 x-4}=g(a x+b)$ avec $g(x)=\sqrt{x}, a=3$ et $b=-4$.
+Donc : \\
+$f^{\prime}(x)=a g^{\prime}(a x+b)=3 \times \dfrac{1}{2 \sqrt{3 x-4}}=\dfrac{3}{2 \sqrt{3 x-4}}=\dfrac{3 \sqrt{3 x-4}}{2(3 x-4)}$
+\item \grasInMet{$f(x)=\left(\dfrac{1}{2} x-1\right)^{3}$}\\
+$f(x)=\left(\dfrac{1}{2} x-1\right)^{3}=g(a x+b)$ avec $g(x)=x^{3}, a=\dfrac{1}{2}$ et $b=-1 .$ Donc : \\
+$f^{\prime}(x)=a g^{\prime}(a x+b)=\dfrac{1}{2} \times 3\left(\dfrac{1}{2} x-1\right)^{2}=\dfrac{3}{2}\left(\dfrac{1}{2} x-1\right)^{2}$.
+\end{enumMet}
+
+
+% \subsection*{Ex 89 p 127}
+% \begin{enumMet}
+%     \item $f=u+v$ avec $u(x)=\sqrt{2 x+3}=g(a x+b)$ pour $g(x)=\sqrt{x}, a=2$ et $b=3$ et
+% $v(x)=\dfrac{1}{x}$.\\
+% Comme $D_{g^{\prime}}=\mathbb{R}^{+*}$ et $2 x+3>0 \Leftrightarrow x>-\dfrac{3}{2}$ alors $\left.D_{u^{\prime}}=\right]-\dfrac{3}{2} ;+\infty[$ De
+% plus : $D_{v^{\prime}}=\mathbb{R}^{*}$ donc $D_{f^{\prime}}=\left]-\dfrac{3}{2} ; 0\right[\cup\left] 0 ;+\infty\right[$ et $f^{\prime}=u^{\prime}+v^{\prime}$
+% Donc pour tout $x \in D_{f^{\prime}}$,\\
+% $$f^{\prime}(x)=2 \times \dfrac{1}{2 \sqrt{2 x+3}}-\dfrac{1}{x^{2}}=\dfrac{x^{2}-\sqrt{2 x+3}}{x^{2} \sqrt{2 x+3}}$$
+%     \item $f=u v$ avec $u(x)=\sqrt{x-2}=g(a x+b)$ pour $g(x)=\sqrt{x}, a=1$ et $b=-2$ et
+% $v(x)=x^{2}-1$. Comme $D_{g^{\prime}}=\mathbb{R}^{+*}$ et $x-2>0 \Leftrightarrow x>2$ alors $\left.D_{u^{\prime}}=\right] 2 ;+\infty[$. De plus :
+% $D_{v^{\prime}}=\mathbb{R}$ donc $D_{f^{\prime}}=] 2 ;+\infty\left[\right.$ et $f^{\prime}=u^{\prime} v+u v^{\prime}$
+% Pour tout $x \in D_{f^{\prime}}
+% $,\\ 
+% $$f^{\prime}(x)=\dfrac{1}{2 \sqrt{x-2}}\left(x^{2}-1\right)+\sqrt{x-2} \times 2 x=\dfrac{5 x^{2}-8 x-1}{2 \sqrt{x-2}}$$
+%     \item $f=\dfrac{1}{v}$ avec $v(x)=\sqrt{1-2 x}=g(a x+b)$ pour $g(x)=\sqrt{x}, a=-2$ et $b=1 .$ Comme
+% $D_{g^{\prime}}=\mathbb{R}^{+*}$ et $1-2 x>0 \Leftrightarrow x<\dfrac{1}{2}$ alors $D_{v^{\prime}}=\left]-\infty ; \dfrac{1}{2}\right[$ Et comme $v$ ne s'annule pas
+% sur $\left]-\infty ; \dfrac{1}{2}\right[$ alors $D_{f'}=\left]-\infty ; \dfrac{1}{2}\right[$.\\
+% Pour tout $x \in D_{f^{\prime}}$,\\
+% $$v^{\prime}(x)=-2 \times \dfrac{1}{2 \sqrt{1-2 x}}=-\dfrac{1}{\sqrt{1-2 x}} \text { et donc } f^{\prime}(x)=\dfrac{\sqrt{1-2 x}}{(1-2 x)^{2}} .$$
+%     \item $f=\dfrac{u}{v}$ avec $u(x)=\sqrt{3-x}=g(a x+b)$ pour $g(x)=\sqrt{x}, a=-1$ et $b=3$ et
+% $v(x)=x^{3} .$ Comme $D_{g^{\prime}}=\mathbb{R}^{+*}$ et $3-x>0 \Leftrightarrow x<3$ alors $\left.D_{u^{\prime}}=\right]-\infty ; 3[$\\
+% D'autre part : $D_{v^{\prime}}=\mathbb{R}$ et $v$ ne s'annule pas sur $\mathbb{R}^{*}$ donc $D_{f^{\prime}}=]-\infty ; 0[\cup] 0 ; 3[$ et $f^{\prime}=\dfrac{u^{\prime} v-u v^{\prime}}{v^{2}}$. Pour tout $x \in D_{f^{\prime}}, u^{\prime}(x)=-1 \times \dfrac{1}{2 \sqrt{3-x}}=-\dfrac{1}{2 \sqrt{3-x}}$ et $v^{\prime}(x)=3 x^$ donc 
+% $$
+% \begin{aligned} f^{\prime}(x) &=\left(-\dfrac{1}{2 \sqrt{3-x}} \times x^{3}-3 x^{2} \sqrt{3-x}\right) \times \dfrac{1}{\left(x^{3}\right)^{2}} \\ &=-\dfrac{x^{2}}{x^{6}}\left(\dfrac{x}{2 \sqrt{3-x}}+3 \sqrt{3-x}\right) \\ &=-\dfrac{1}{x^{4}} \times \dfrac{x+3 \times 2(\sqrt{3-x})^{2}}{2 \sqrt{3-x}} \\ &=\dfrac{5 x-18}{2 x^{4} \sqrt{3-x}} \end{aligned}
+% $$
+% \end{enumMet}
+\end{document}
+

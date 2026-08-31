@@ -1,0 +1,589 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+%\usepackage{tikz}
+%\usepackage{tkz-tab}
+\usepackage{pgf}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}  
+\definecolor{CyanTikz40}{cmyk}{.4,0,0,0}
+\definecolor{CyanTikz20}{cmyk}{.2,0,0,0}
+\tikzstyle{general}=[line width=0.3mm, >=stealth, x=1cm, y=1cm,line cap=round, line join=round]
+\tikzstyle{quadrillage}=[line width=0.3mm, color=CyanTikz40]
+\tikzstyle{quadrillageNIV2}=[line width=0.3mm, color=CyanTikz20]
+\tikzstyle{quadrillage55}=[line width=0.3mm, color=CyanTikz40, xstep=0.5, ystep=0.5]
+\tikzstyle{cote}=[line width=0.3mm, <->]
+\tikzstyle{epais}=[line width=0.5mm, line cap=butt]
+\tikzstyle{tres epais}=[line width=0.8mm, line cap=butt]
+\tikzstyle{axe}=[line width=0.3mm, ->, color=Noir, line cap=rect]
+\definecolor{A1}                {cmyk}{1.00, 0.00, 0.00, 0.50}
+%\definecolor{A2}                {cmyk}{0.60, 0.00, 0.00, 0.10}
+%\definecolor{A3}                {cmyk}{0.30, 0.00, 0.00, 0.05}
+%\definecolor{A4}                {cmyk}{0.10, 0.00, 0.00, 0.00}
+%\definecolor{B1}                {cmyk}{0.00, 1.00, 0.60, 0.40}
+%\definecolor{B2}                {cmyk}{0.00, 0.85, 0.60, 0.15}
+%\definecolor{B3}                {cmyk}{0.00, 0.20, 0.15, 0.05}
+\definecolor{B4}                {cmyk}{0.00, 0.05, 0.05, 0.00}
+%\definecolor{C1}                {cmyk}{0.00, 1.00, 0.00, 0.50}
+%\definecolor{C2}                {cmyk}{0.00, 0.60, 0.00, 0.20}
+%\definecolor{C3}                {cmyk}{0.00, 0.30, 0.00, 0.05}
+%\definecolor{C4}                {cmyk}{0.00, 0.10, 0.00, 0.05}
+%\definecolor{D1}                {cmyk}{0.00, 0.00, 1.00, 0.50}
+%\definecolor{D2}                {cmyk}{0.20, 0.20, 0.80, 0.00}
+%\definecolor{D3}                {cmyk}{0.00, 0.00, 0.20, 0.10}
+%\definecolor{D4}                {cmyk}{0.00, 0.00, 0.20, 0.05}
+%\definecolor{F1}                {cmyk}{0.00, 0.80, 0.50, 0.00}
+%\definecolor{F2}                {cmyk}{0.00, 0.40, 0.30, 0.00}
+%\definecolor{F3}                {cmyk}{0.00, 0.15, 0.10, 0.00}
+%\definecolor{F4}                {cmyk}{0.00, 0.07, 0.05, 0.00}
+%\definecolor{G1}                {cmyk}{1.00, 0.00, 0.50, 0.00}
+%\definecolor{G2}                {cmyk}{0.50, 0.00, 0.20, 0.00}
+%\definecolor{G3}                {cmyk}{0.20, 0.00, 0.10, 0.00}
+%\definecolor{G4}                {cmyk}{0.10, 0.00, 0.05, 0.00}
+%\definecolor{H1}                {cmyk}{0.40, 0.00, 1.00, 0.10}
+%\definecolor{H2}                {cmyk}{0.20, 0.00, 0.50, 0.05}
+%\definecolor{H3}                {cmyk}{0.10, 0.00, 0.20, 0.00}
+%\definecolor{H4}                {cmyk}{0.07, 0.00, 0.15, 0.00}
+%\definecolor{J1}                {cmyk}{0.00, 0.50, 1.00, 0.00}
+%\definecolor{J2}                {cmyk}{0.00, 0.20, 0.50, 0.00}
+\definecolor{J3}                {cmyk}{0.00, 0.10, 0.20, 0.00}
+%\definecolor{J4}                {cmyk}{0.00, 0.07, 0.15, 0.00}
+%\newcommand{\quadrillageSeyes}[2]{\draw[line width=0.3mm, color=A1!10, ystep=0.2, xstep=0.8]
+	
+\newboolean{versionprof}
+\setboolean{versionprof}{true}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - Exercices Vecteurs - Rappels seconde}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction - Exercices Vecteurs \\
+						Rappels seconde}
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\exercice{ - Nature d'un quadrilatère et droites remarquables}  \\
+On considère un repère orthonormé $(\mathrm{O} ; \mathrm{I}, \mathrm{J})$ du plan. On donne les points $\mathrm{A}(-1 ; 6), \mathrm{B}(7 ;-2), \mathrm{C}(1 ;-2)$ et $\mathrm{D}(9 ; 6)$.
+\begin{enumMet}
+	\item Faire une figure.\\
+	\begin{corrBox}
+		\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+		\newrgbcolor{zzttqq}{0.6 0.2 0.}
+		\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(-3.7,-4.4)(12.5,9.4)
+			\multips(0,-4)(0,1.0){14}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=lightgray]{c-c}(-3.7,0)(12.5,0)}
+			\multips(-3,0)(1.0,0){21}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=lightgray]{c-c}(0,-4.4)(0,9.4)}
+			\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-3.7,-4.4)(12.5,9.4)
+			\pspolygon[linewidth=2.pt,linecolor=red](-1.,6.)(7.,-2.)(1.,-2.)
+			\pscircle[linewidth=2.pt](4.,3.){4,66476}
+			\psline[linewidth=2.pt,linestyle=dashed,dash=4pt 4pt](-1.3,-2.3)(6.69,5.69)
+			\psline[linewidth=2.pt,linestyle=dashed,dash=4pt 4pt](4.,-3.5)(4.,7.)
+			\begin{scriptsize}
+				\psdots[dotstyle=*,linecolor=ududff](-1.,6.)
+				\rput[bl](-1.2732210636907257,6.175418567859617){\Large{\ududff{$A$}}}
+				\psdots[dotstyle=*,linecolor=ududff](7.,-2.)
+				\rput[bl](7.020037783891843,-2.3328506942899185){\Large{\ududff{$B$}}}
+				\psdots[dotstyle=*,linecolor=ududff](1.,-2.)
+				\rput[bl](0.4004411203927437,-2.678924354554266){\Large{\ududff{$C$}}}
+				\psdots[dotstyle=*,linecolor=ududff](9.,6.)
+				\rput[bl](9.06263672227792,6.160060681104834){\Large{\ududff{$D$}}}
+				\psdots[dotsize=4pt 0,dotstyle=*,linecolor=ududff](4.,3.)
+				\rput[bl](4.240260281276204,2.8427571420718025){\Large{\ududff{$\Omega$}}}
+				\rput[bl](2.8580504733457763,1.5219788811605028){$h$}
+				\rput[bl](4.240260281276204,1.7523471824822412){$i$}
+				\psdots[dotstyle=*,linecolor=ududff](4.,1.)
+				\rput[bl](4.270976054785769,1.1533895990457215){\Large{\ududff{$M$}}}
+			\end{scriptsize}
+		\end{pspicture*}
+	\end{corrBox}
+	\item  Construire le centre $\Omega$ du cercle circonscrit au triangle $\mathrm{ABC}$.\\
+	\begin{corrBox}
+		Le centre du cercle circonscrit à un triangle est l'intersection de ses médiatrices. En traçant les médiatrices du triangle $A B C$, on peut donc construire le point $\Omega$. 
+	\end{corrBox}
+	\item Donner, sans justification, les coordonnées de $\Omega$ et calculer le rayon du cercle.\\
+	\begin{corrBox}
+		Par lecture graphique, le centre $\Omega$ a pour coordonnées $(4 ; 3)$. 
+		$$
+		\Omega A=\sqrt{\left(x_{A}-x_{\Omega}\right)^{2}+\left(y_{A}-y_{\Omega}\right)^{2}}=\sqrt{(-1-4)^{2}+(6-3)^{2}}=\sqrt{34}
+		$$
+		donc le ravon de ce cercle est $r=\Omega A=\sqrt{34}$
+	\end{corrBox}
+	\item  Montrer que les points $\mathrm{A}, \mathrm{B}, \mathrm{C}$ et $\mathrm{D}$ appartiennent à un même cercle : on dira qu'ils sont cocycliques.\\
+	\begin{corrBox}
+		Pour montrer que les points $B, C$ et $D$ appartiennent au cercle de centre $\Omega$ et de rayon $r=\sqrt{34}$ on va montrer que ces trois points sont tous à une distance $r$ de $\Omega$. Le repère étant orthonormé, on peut utiliser la formule de calcul des distances:\\
+		$\Omega B=\sqrt{\left(x_{B}-x_{\Omega}\right)^{2}+\left(y_{B}-y_{\Omega}\right)^{2}}=\sqrt{(7-4)^{2}+(-2-3)^{2}}=\sqrt{34}$\\
+		$\Omega C=\sqrt{\left(x_{C}-x_{\Omega}\right)^{2}+\left(y_{C}-y_{\Omega}\right)^{2}}=\sqrt{(1-4)^{2}+(-2-3)^{2}}=\sqrt{34}$ et\\
+		$\Omega D=\sqrt{\left(x_{D}-x_{\Omega}\right)^{2}+\left(y_{D}-y_{\Omega}\right)^{2}}=\sqrt{(9-4)^{2}+(6-3)^{2}}=\sqrt{34}$\\
+		Par conséquent, $\Omega A=\Omega B=\Omega C=\Omega D=\sqrt{34}$ donc les points, $A, B, C$ et $D$ appartiennent tous au cercle de centre $\Omega$ et de rayon $r$ : ils sont cocycliques.
+	\end{corrBox}
+	\item Soit $M$, un point de coordonnées $(4 ; 1)$.
+	\begin{enumMet}
+		\item Montrer que $M$ appartient au segment $[A B]$.\\
+		\begin{corrBox}
+			Le repère étant orthonormé, on peut utiliser la formule de calcul des distances:\\
+			$A M=\sqrt{(4+1)^{2}+(1-6)^{2}}=5 \sqrt{2}$\\
+			$M B=\sqrt{(7-4)^{2}+(-2-1)^{2}}=3 \sqrt{2}$\\
+			$A B=\sqrt{(7+1)^{2}+(-2-6)^{2}}=8 \sqrt{2}$\\
+			donc $A M+M B=A B$ et donc le point $M$ appartient au segment $[A B] .$
+		\end{corrBox}
+		\item Montrer que $\mathrm{M}$ appartient au segment [DC].\\
+		\begin{corrBox}
+			De même, on a :\\
+			$D M=\sqrt{(4-9)^{2}+(1-6)^{2}}=5 \sqrt{2}$;\\
+			$M C=\sqrt{(1-4)^{2}+(-2-1)^{2}}=3 \sqrt{2}$ et\\
+			$D C=\sqrt{(1-9)^{2}+(-2-6)^{2}}=8 \sqrt{2}$\\
+			donc $D M+M C=D C$ et donc le point $M$ appartient au segment $[D C]$ 
+		\end{corrBox}
+		\item Calculer $\mathrm{MA} \times \mathrm{MB}$ et $\mathrm{MC} \times \mathrm{MD}$.\\
+		\begin{corrBox}
+			$M A \times M B=5 \sqrt{2} \times 3 \sqrt{2}=15 \times 2=30$ et\\
+			$M C \times M D=3 \sqrt{2} \times 5 \sqrt{2}=15 \times 2=30$
+		\end{corrBox}
+		\item Conclure\\
+		\begin{corrBox}
+			D'après les questions précédentes, on peut conclure que $M A \times M B=M C \times M D$
+		\end{corrBox}
+	\end{enumMet} 
+\end{enumMet}
+
+\exercice{ - Nature d'un quadrilatère}
+
+Dans un repère du plan (O,I,J) ci - contre, on considère les points A(-3;-1), B(4;0), C(9;5) et D(2;4).
+
+
+\begin{enumMet}
+	\item Faire une figure dans un repère orthonormé\\
+	\begin{center}
+		\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+		\newrgbcolor{zzttqq}{0.6 0.2 0.}
+		\psset{xunit=0.9cm,yunit=0.9cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(-3.7,-2.2)(10.3,6.4)
+			\multips(0,-4)(0,1.0){14}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=lightgray]{c-c}(-3.7,0)(16.6,0)}
+			\multips(-3,0)(1.0,0){21}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=lightgray]{c-c}(0,-4.4)(0,9.4)}
+			\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-3.7,-2.2)(10.3,6.4)
+			\pspolygon[linewidth=2.pt,linecolor=red](-3.,-1.)(4.,0.)(9.,5.)(2.,4.)
+			\psline[linewidth=2.pt,linestyle=dotted](-3.,-1.)(9.,5.)
+			\psline[linewidth=2.pt,linestyle=dotted](2.,4.)(4.,0.)
+			\psline[linewidth=2.pt,linestyle=dashed,dash=4pt 4pt](0.3,5.7)(7.35,-1.35)
+			\begin{scriptsize}
+				\psdots[dotstyle=*,linecolor=ududff](-3.,-1.)
+				\rput[bl](-2.93187283320724,-1.4431356790760106){\large{\ududff{$A$}}}
+				\psdots[dotstyle=*,linecolor=ududff](4.,0.)
+				\rput[bl](3.855965640218814,0.25512695998485548){\large{\ududff{$B$}}}
+				\psdots[dotstyle=*,linecolor=ududff](9.,5.)
+				\rput[bl](9.06263672227792,5.146440155289186){\large{\ududff{$C$}}}
+				\psdots[dotstyle=*,linecolor=ududff](2.,4.)
+				\rput[bl](1.9594403620970847,4.24817751622832){\large{\ududff{$D$}}}
+				\psdots[dotsize=4pt 0,dotstyle=*,linecolor=ududff](5.,1.)
+				\rput[bl](4.831365185241418,0.2697899023639845){\large{\ududff{$E$}}}
+				\psdots[dotsize=4pt 0,dotstyle=*,linecolor=ududff](3.6666666666666665,2.3333333333333335)
+				\rput[bl](3.6259448110849033,2.5816730672404993){\large{\ududff{$M$}}}
+			\end{scriptsize}
+		\end{pspicture*}
+	\end{center}
+	\item Placer les points A, B, C et D dans le repère ci-contre.
+	\item
+	\begin{enumMet}
+		\item Que peut-on conjecturer sur la nature du quadrilatère ABCD ?
+		\begin{corrBox}
+			ABCD semble être un losange.
+		\end{corrBox}
+		\item En prenant soin de détailler les étapes, démontrer la conjecture de la question précédente.
+		\begin{corrBox}
+			Soit I le milieu de $[AC]$.\\
+			$x_I=\dfrac{-3+9}{2}=3$ et $y_I=\dfrac{-1+5}{2}=2$\\
+			Soit J le milieu de $[BD]$.\\
+			$x_J=\dfrac{4+2}{2}=3$ et $y_J=\dfrac{0+4}{2}=2$\\
+			$I(3;2)=J(3;2)$ donc ABCD est un parallélogramme (les diagonales se coupent en leur milieu).\\
+			$AB=\sqrt{(4-(-3))^2+(0-(-1))^2}=\sqrt{50}$ et $BC=\sqrt{(9-4)^2+(5-0)^2}=\sqrt{50}$\\
+			$AB= BC$ donc ABCD est un losange (2 côtés consécutifs égaux dans un parallélogramme).\\
+			ABCD est donc un losange.
+		\end{corrBox}
+	\end{enumMet}
+	\item La perpendiculaire à la droite (BC) passant par le point D coupe la droite (BC) au point E.\\
+	Compléter la figure, puis, par lecture graphique, déterminer les coordonnées du point E.
+	\begin{corrBox}
+		Graphiquement on a $E(5;1)$
+	\end{corrBox}
+	\item La droite (ED) coupe la droite (AC) au point M.
+	\begin{enumMet} 
+		\item Que représente le point M pour le triangle BCD ? \\Justifier votre réponse.
+		\begin{corrBox}
+			Comme ABCD est un losange, $(AC)\perp(BD)$. $(AC)$ est donc une hauteur du triangle BDC (la hauteur issue de C). $(DE)$ est également une hauteur du triangle BDC (la hauteur issue de D).\\
+			M est donc le point d'intersection des hauteurs du triangle BDC. c'est donc l'orthocentre du triangle.
+		\end{corrBox}
+		\item Montrer que les droites (BM) et (DC) sont perpendiculaires.
+		\begin{corrBox}
+			$(BM)$ passe par l'orthocentre du triangle et un sommet du triangle. Il s'agit donc de la hauteur issue de B du triangle BDC. Or une hauteur coupe perpendiculairement le côté opposé au côté dont elle est issue.Donc $(BM)\perp(DC)$
+		\end{corrBox}
+	\end{enumMet}
+\end{enumMet}
+
+\begin{exercice}{}
+	Dans le plan muni d'un repère, les coordonnées du vecteur $\vv v$ sont $\CoordSV{4}{-5}$, celles du point $A(1;-2)$.\\ Calculer les coordonnées du point $C$ tel que $\vv{CA}=\vv v$.
+	\begin{corrBox}
+		$\vv{CA}=\vv u \iff \CoordSV{x_A-x_C}{y_A-y_C}=\CoordSV{4}{-5} \iff \begin{cases*}
+			x_C=-x_A-4=1-4=-3\\
+			y_C=y_A-(-5)=-2+5=3
+		\end{cases*}$
+	\end{corrBox}
+\end{exercice}
+
+\begin{exercice}{}
+	Dans le plan muni d'un repère, on considère les points $K(-2;-3)$, $L(3;-4)$ et $M(-1;5)$. \\ Quelles sont les coordonnées du vecteur $\vv{KL}+\vv{LM}$?\\
+	\begin{corrBox}
+		\grasInMet{1ère méthode : avec la relation de Chasles}\\
+		$\vv{KL}+\vv{LM}=\Coord{KM}{x_M-xK}{y_M-y_K}=\Coord{KM}{-1-(-2)}{5-(-3)}=\Coord{KM}{1}{8}$\\
+		\grasInMet{2ème méthode : avec les coordonnées des vecteurs}\\
+		$\vv{KL}+\vv{LM}=\Coord{KL}{x_L-xK}{y_L-y_K}+\Coord{LM}{x_M-xL}{y_M-y_L}=\Coord{KL}{3-(-2)}{-4-(-3)}+\Coord{LM}{-1-3}{5-(-4)}=\Coord{KL}{5}{-1}+\Coord{LM}{-4}{9}$\\
+		Donc $\vv{KM}=\Coord{KL}{5}{-1}+\Coord{LM}{-4}{9}=\Coord{KM}{5+(-4)}{-1+9}=\Coord{KM}{1}{8}$
+	\end{corrBox}
+	
+%	\begin{corrige}
+%		$\left(\begin{array}{c} 1\\8 \end{array}\right)$
+%	\end{corrige}  
+\end{exercice}
+
+\begin{exercice}{}
+	Construire un repère $(O; I, J)$ orthogonal.
+	\begin{enumMet}
+		\item  Placer les points $A(3;-9)$  et $B(-1;-5)$. 
+		\item Placer les points $C$ et $D$ tels que le quadrilatère $ABCD$ soit un parallélogramme de centre $I$.
+		\begin{center}
+			\psset{xunit=0.5cm,yunit=0.5cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+			\begin{pspicture*}(-3.,-10)(5.,10.)
+				
+				\psgrid[gridwidth=0.6pt,gridcolor=gray,subgriddiv=0,gridlabels=0](0,0)(-3.,-10)(5.,10.)
+				
+				%axes
+				\psaxes[linewidth=1pt,labels=none,labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.]{->}(0,0)(-3.,-10)(5.,10.)
+				
+				\psdots[dotstyle=+,dotsize=5pt](0,0)(1,0)(0,1)
+				\pstGeonode[PosAngle={180,180,0,0},linecolor=red, dotscale=2, LabelColor=red,PointSymbol=x, linestyle=solid,CurveType=polygon,linewidth=1.5\pslinewidth] (3,-9){A}(-1,-5){B}(-1,9){C}(3,5){D}
+				\pstSegmentMark[linecolor=red,SegmentSymbol=none,linestyle=dashed]{B}{D}
+				\pstSegmentMark[linecolor=red,SegmentSymbol=none,linestyle=dashed]{A}{C}
+				
+				\begin{scriptsize}
+					\uput[dl](0,0){\textbf{O}}
+					\uput[d](1,0){\textbf{I}}
+					\uput[l](0,1){\textbf{J}}
+				\end{scriptsize}
+			\end{pspicture*}
+		\end{center}
+		\item Déterminer les coordonnées des vecteurs suivants.  
+%		\begin{multicols}{3}
+			\begin{enumMet}
+				\item $\vv{AB}$\\
+				\begin{corrBox}
+					$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{-1-3}{-5-(-9)}=\Coord{AB}{-4}{4}$
+				\end{corrBox} 
+				\item $\vv{DC}$\\
+				\begin{corrBox}
+					$\vv{DC}=\vv{AB}\iff \Coord{DC}{-4}{4}$
+				\end{corrBox}
+				\item $\vv{AD}$\\
+				\begin{corrBox}
+					$\Coord{AD}{x_D-x_A}{y_D-y_A}=\Coord{AD}{3-3}{5-(-9)}=\Coord{AD}{0}{14}$
+				\end{corrBox} 
+		\end{enumMet}
+%		\end{multicols}
+	\end{enumMet}
+\end{exercice}
+
+\begin{exercice}{}
+	Dans un repère, on considère les points $A$ et $B$ de coordonnées respectives $(3;-4)$ et $(-1; 2)$. Quelles sont les coordonnées de $C$ tel que $\vv{AB}=-5\vv{AC}$?
+	\begin{corrBox}
+		$\Coord{AB}{x_B-x_A}{y_B-y_A}=-5\Coord{AC}{x_C-x_A}{y_C-y_A}\iff \Coord{AB}{-4}{6}=-5\Coord{AC}{x_C-3}{y_C-(-4)}$\\
+		$\iff \begin{cases*}
+			-4=-5(x_C-3)\\
+			6=-5(y_C+4)
+		\end{cases*} \iff \begin{cases*}
+		-4=-5x_C+15\\
+		6=-5y_C-20
+	\end{cases*} \iff \begin{cases*}
+	x_C=\dfrac{19}{5}\\
+	y_C=-\dfrac{26}{5}
+\end{cases*}$
+		D'ou $C\coord{\dfrac{19}{5}}{-\dfrac{26}{5}}$
+	\end{corrBox}
+\end{exercice}
+
+\begin{exercice}{}
+	Dans un repère, on considère les points suivants: $A\left(\dfrac{2}{ 9};\dfrac{6}{25}\right)$ et $B\left(-\dfrac{5}{6};\dfrac{9}{20}\right)$.\\
+	Calculer les coordonnées de $C$ tel que $\vv{AC}=\dfrac{15}{2}\vv{AB}$.
+	\begin{corrBox}
+		$\dfrac{15}{2}\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AC}{x_C-x_A}{y_C-y_A}\iff \dfrac{15}{2}\Coord{AB}{-\dfrac{19}{18}}{\dfrac{21}{100}}=\Coord{AC}{x_C-\dfrac{2}{9}}{y_C-\dfrac{(6)}{25}}$\\
+		$\iff \begin{cases*}
+			\dfrac{15}{2}\times \dfrac{-19}{18}=x_C-\dfrac{2}{9}\\
+			\dfrac{15}{2} \times \dfrac{21}{100}=y_C-\dfrac{(6)}{25}
+		\end{cases*} \iff \begin{cases*}
+			-\dfrac{95}{12}+\dfrac{2}{9}=x_C\\
+			\dfrac{63}{40}+\dfrac{(6)}{25}=y_C
+		\end{cases*} \iff \begin{cases*}
+			x_C=-\dfrac{277}{36}\\
+			y_C=\dfrac{363}{200}
+		\end{cases*}$
+		D'ou $C\coord{-\dfrac{277}{36}}{\dfrac{363}{200}}$
+	\end{corrBox}
+\end{exercice}
+
+\begin{exercice}{}Dans un repère orthogonal, placer les points:
+	\begin{multicols}{4}
+		\begin{itemMet}
+			\item $A(-3;1)$
+			\item $B(1;3)$
+			\item $C(1,-4)$
+			\item $D(7;-1)$
+		\end{itemMet}
+	\end{multicols}
+			\psset{xunit=0.5cm,yunit=0.5cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-5.,-5)(8.,4.)
+	
+	\psgrid[gridwidth=0.6pt,gridcolor=gray,subgriddiv=0,gridlabels=0](0,0)(-5.,-5)(8.,4.)
+	
+	%axes
+	\psaxes[linewidth=1pt,labels=none,labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.]{->}(0,0)(-5.,-5)(8.,4.)
+	
+	\psdots[dotstyle=+,dotsize=5pt](0,0)(1,0)(0,1)
+	\pstGeonode[PosAngle={180,180,0,0},linecolor=red, dotscale=2, LabelColor=red,PointSymbol=x] (-3,1){A}(1,3){B}(1,-4){C}(7,-1){D}
+	\pstLineAB[nodesep=-3, linecolor=blue]{A}{B}
+	\pstLineAB[nodesep=-3, linecolor=blue]{C}{D}
+	
+	\pstLineAB[nodesep=-3, linecolor=red]{A}{C}
+	\pstLineAB[nodesep=-3, linecolor=red]{B}{D}
+	
+	\begin{scriptsize}
+		\uput[dl](0,0){\textbf{O}}
+		\uput[d](1,0){\textbf{I}}
+		\uput[l](0,1){\textbf{J}}
+	\end{scriptsize}
+\end{pspicture*}
+
+	Les droites suivantes sont-elles parallèles?
+	\begin{enumMet}
+		\item $(AB)$ et $(CD)$\\
+		\begin{corrBox}
+				$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{1-(-3)}{3-1}=\Coord{AB}{4}{2}$\\
+				$\Coord{CD}{x_D-x_C}{y_D-y_C}=\Coord{CD}{7-1}{-1-(-4)}=\Coord{CD}{6}{3}=1,5\Coord{AB}{4}{2}$\\
+				Les 2 vecteurs sont colinéaires. les droites sont donc parallèles.
+		\end{corrBox}
+		\item $(AC)$ et $(BD)$\\
+		\begin{corrBox}
+			$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{1-(-3)}{-4-1}=\Coord{AB}{4}{-5}$\\
+			$\Coord{BD}{x_D-x_B}{y_D-y_B}=\Coord{BD}{7-1}{-1-3}=\Coord{CD}{6}{-4}$\\
+			$det(\vv{AC};\vv{BD})=4\times(-4)-6\times (-5)=14\neq0$\\
+			Les 2 vecteurs ne sont pas colinéaires. les droites ne sont donc pas parallèles.
+		\end{corrBox}
+	\end{enumMet}
+\end{exercice}
+
+
+\begin{exercice}{}
+	Dans un plan muni d'un repère, on place les points $A(1;-2)$, $B(-3;1)$, $C(-17;15)$ et $D(-5;6)$.
+	
+	Montrer que $ABCD$ est un trapèze.
+	\begin{corrBox}
+		On calcule les 4 vecteurs $\vv{AB}$,$\vv{BC}$, $\vv{CD}$ et $\vv{DA}$.\\
+		$\vv{AB}=\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{-3-1}{1-(-2)}=\Coord{AB}{-4}{3}$\\
+		$\vv{BC}=\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{-17-(-3)}{15-1}=\Coord{BC}{-14}{14}$\\
+		$\vv{CD}=\Coord{CD}{x_D-x_C}{y_D-y_C}=\Coord{CD}{-5-(-17)}{6-15}=\Coord{CD}{12}{-9}$\\
+		$\vv{DA}=\Coord{DA}{x_A-x_D}{y_A-y_D}=\Coord{DA}{1-(-5)}{-2-6}=\Coord{DA}{6}{-8}$\\
+		Les vecteurs $\vv{AB}$ et $\vv{CD}$ sont colinéaires car $\vv{CD}=-3\vv{AB}$ donc les droites $(AB)$ et $(CD)$ sont parallèles.\\
+		ABCD est donc bien un trapèze. 
+	\end{corrBox}
+\end{exercice}
+
+
+\begin{exercice} { - Sommes alg\'ebriques sans grille}
+	Soit $A$, $B$, $C$ et $D$ quatre points quelconques.
+	\begin{enumMet} \item Démontrer les \'egalit\'es suivantes.
+		\begin{enumMet}
+			\item 
+			$\vv{AB} - \vv{CD} - \left(\vv{AC} -\vv{BA}\right) = \vv{DA}$\\
+			\begin{corrBox}
+				$\vv{AB} - \vv{CD} - \left(\vv{AC} -\vv{BA}\right)=\vv{AB}+\vv{DC}+\vv{CA}+\vv{BA}$\\
+				$\phantom{\vv{AB} - \vv{CD} - \left(\vv{AC} -\vv{BA}\right)}=\vv{AB}+\vv{BA}+\vv{DC}+\vv{CA}$\\
+				$\phantom{\vv{AB} - \vv{CD} - \left(\vv{AC} -\vv{BA}\right)}=\vv{AA}+\vv{DA}$\\
+				$\phantom{\vv{AB} - \vv{CD} - \left(\vv{AC} -\vv{BA}\right)}=\vv{DA}$\\
+			\end{corrBox}
+			\item  $\vv{AD} + \vv{BC} = \vv{AC} + \vv{BD}$\\
+			\begin{corrBox}
+				$\vv{AD} + \vv{BC} =\vv{AC} + \vv{CD}+\vv{BD} + \vv{DC}$\\
+				$\phantom{\vv{AD} + \vv{BC}}= \vv{AC} + \vv{BD}+ \vv{CD}+\vv{DC}$\\
+				$\phantom{\vv{AD} + \vv{BC}}= \vv{AC} + \vv{BD}+ \vv{CC}$\\
+				$\phantom{\vv{AD} + \vv{BC}}= \vv{AC} + \vv{BD}+ \vv{CD}$
+			\end{corrBox}
+		\end{enumMet}
+		
+		\item Simplifier l'écriture des vecteurs suivants.
+		\begin{enumMet}
+			\item $\vv{u} = \left( \vv{AB} -\vv{AC}\right) + \left(\vv{BD} - \vv{CD}\right)$\\
+			\begin{corrBox}
+				$\vv{u} =\vv{AB}+\vv{CA}+\vv{BD}+\vv{DC}$\\
+				$\vv{u} =\vv{BD}+\vv{DC}+\vv{CA}+\vv{AB}$\\
+				$\vv{u} =\vv{BC}+\vv{CB}$\\
+				$\vv{u} =\vv{BB}=\vv{0}$
+			\end{corrBox}
+			\item $\vv{v} = \left(\vv{AD} -\vv{CD}\right) - \left(\vv{AB} + \vv{BC}\right)$\\
+			\begin{corrBox}
+				$\vv{v} =\vv{AD}+\vv{DC}+\vv{BA}+\vv{CB}$\\
+				$\vv{v} =\vv{AD}+\vv{DC}+\vv{CB}+\vv{BA}$\\
+				$\vv{v} =\vv{AC}+\vv{CA}$\\
+				$\vv{u} =\vv{AA}=\vv{0}$
+			\end{corrBox}
+		\end{enumMet}
+	\end{enumMet}
+\end{exercice}
+
+
+\begin{exercice}{ - Alignement}\\
+%	\begin{multicols}{2}
+	On considère un parallélogramme $ABCD$ et les points $E$ et $F$ définis par:
+	\begin{multicols}{2}
+		\begin{itemMet}
+			\item $\vv {AE} = 2 \vv {AD}$
+			\item $\vv {AF} = \dfrac{2}{3} \vv {AC}$
+		\end{itemMet}
+	\end{multicols}
+	\begin{enumMet}
+		\item Faire une figure.
+		\begin{center}
+			\begin{tikzpicture}[general, scale=0.9]
+				\draw[color=A1,epais,fill=J3] (0,0)-- (4,0)--(5,3)--(1,3)--cycle;
+				\draw (0,0) node[below]{$A$};
+				\draw (4,0) node[below]{$B$};
+				\draw (5,3) node[above]{$C$};
+				\draw (1,3) node[above left]{$D$};
+				\draw[color=A1,epais,fill=B4] (0,0)--(2,6);
+				\draw (2,6) node[right]{$E$};
+				\draw[color=A1,epais,fill=B4] (0,0)--(5,3);
+				\draw[color=A1,epais,fill=B4] (4,0)--(2,6);
+				\draw (3.33,1.8) node[above left]{$F$};
+			\end{tikzpicture}
+		\end{center}
+		\item Que peut-on conjecturer sur les points $B$, $F$ et $E$?
+		\begin{corrBox}
+		Les points  $B$, $F$ et $E$ semblent alignés.
+		\end{corrBox}
+	\end{enumMet}
+	On choisit $\left(A;D,B\right)$ comme repère.
+	\begin{enumMet}[resume]
+%		\setcounter{enumi}{2}
+		\item Déterminer les coordonnées du vecteur $\vv {AC}$. 
+		\begin{corrBox}
+			$\vv {AC}=\vv{AB}+\vv{BC}=\vv{AB}+\vv{AD}=\Coord{AB}{1}{0}+\Coord{AD}{0}{1}=\Coord{AC}{1}{1}$	
+		\end{corrBox}
+		\item En déduire les coordonnées du point $C$.
+		\begin{corrBox}
+		$A$ étant l'origine du repère, $\vv{AC}$ et $C$ ont les mêmes coordonnées, donc $C(1;1)$.	
+		\end{corrBox}
+		\item Quelles sont les coordonnées du vecteur $\vv{AF}$?
+		\begin{corrBox}
+			$\vv {AF} = \dfrac{2}{3} \vv {AC}=\dfrac{2}{3}\times \CoordSV{1}{1}=\Coord{AF}{\frac{2}{3}}{\frac{2}{3}}$	
+		\end{corrBox}
+		\item En déduire les coordonnées du point $F$.
+		\begin{corrBox}
+			$A$ étant l'origine du repère, $\vv{AF}$ et $F$ ont les mêmes coordonnées, donc $F\left(\dfrac{2}{3};\dfrac{2}{3}\right)$.	
+		\end{corrBox}
+		\item Calculer les coordonnées du point $E$.
+		\begin{corrBox}
+			$\vv {AE} = 2 \vv {AD}=2\times \CoordSV{0}{1}=\Coord{AE}{0}{2}$	
+			$A$ étant l'origine du repère, $\vv{AE}$ et $E$ ont les mêmes coordonnées, donc $C(0;2)$.
+		\end{corrBox}
+		\item Démontrer que $\vv{BE}$ et $\vv{BF}$ sont colinéaires. Conclure.
+		\begin{corrBox}
+		$\Coord{BE}{x_E-x_B}{y_E-y_B}=\Coord{BE}{0-1}{2-0}$ donc $\Coord{BE}{-1}{2}$.\\
+		$\Coord{BF}{x_F-x_B}{y_F-y_B}=\Coord{BF}{\frac{2}{3}-1}{\frac{2}{3}-0}$ donc $\Coord{BF}{-\frac{1}{3}}{\frac{2}{3}}$.
+		On voit que $\vv{BE}=3\vv{BF}$. Les 2 vecteurs sont colinéaires et ont un point en commun (le point B), donc les points B,E et F sont alignés.	
+		\end{corrBox}
+	\end{enumMet}
+%	\end{multicols}
+\end{exercice}
+\newpage
+
+\begin{exercice}{ - Un classique}
+	Sur la figure ci-dessous, on considère le carré $ABCD$ de côté 5 cm et les triangles équilatéraux $ABI$ et $BCV$.
+%	\begin{multicols}{2}
+%		\columnbreak
+		\begin{enumMet}
+			\item Construire la figure en vraie grandeur.
+			\begin{center}
+				\begin{tikzpicture}[general, scale=1]
+					\draw[color=A1,epais,fill=J3] (0,0)-- (5,0)--(5,5)--(0,5)--cycle;
+					\draw[color=A1,epais,fill=B4] (0,0)-- (2.5,4.33)--(5,0)--cycle;
+					\draw[color=A1,epais,fill=B4] (5,0)-- (9.33,2.5)--(5,5)--cycle;
+					\draw (0,0) node[below left]{$A$};
+					\draw (5,0) node[below right]{$B$};
+					\draw (5,5) node[above right]{$C$};
+					\draw (0,5) node[above left]{$D$};
+					\draw (2.5,4.33) node[right]{$I$};
+					\draw (9.33,2.5) node[right]{$V$};
+					\draw[color=A1,epais,dash pattern=on 5pt off 5pt] (2.5,4.33)--(2.5,0);
+					\draw (2.5,0) node[below]{$E$};
+					\draw[color=A1,epais,dash pattern=on 5pt off 5pt] (9.33,2.5)--(5,2.5);
+					\draw (5,2.5) node[left]{$F$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumMet}
+		On se place dans le repère $(A;B,D)$.
+		\begin{enumMet}[resume]
+			\item Calculer les coordonnées des points $I$ et $V$.
+			\begin{corrBox}
+			Pour calculer les coordonnées, on a besoin de la hauteur des triangles équilatéraux. On va donc calculer IE (ou VF) à l'aide de Pythagore dans le triangle rectangle AEI (ou BVF).\\
+			$IE^2=IA^2-AE^2=1^2-\left(\dfrac{1}{2}\right)^2=\dfrac{3}{4}$ d'ou $IE=\dfrac{\sqrt{3}}{2}$\\
+			$\vv{AI}=\Coord{AE}{\frac{1}{2}}{0}+\Coord{EI}{0}{\frac{\sqrt{3}}{2}}=\Coord{AI}{\frac{1}{2}}{\frac{\sqrt{3}}{2}}$.\\
+			$A$ étant l'origine du repère, $\vv{AI}$ et $I$ ont les mêmes coordonnées, donc $I\left(\dfrac{1}{2};\dfrac{\sqrt{3}}{2}\right)$.\\
+			$\vv{AV}=\Coord{AB}{1}{0}+\Coord{BF}{0}{\frac{1}{2}}+\Coord{FV}{\frac{\sqrt{3}}{2}}{0}=\Coord{AV}{\frac{2+\sqrt{3}}{2}}{\frac{1}{2}}$.\\
+			$A$ étant l'origine du repère, $\vv{AV}$ et $V$ ont les mêmes coordonnées, donc $V\left(\dfrac{2+\sqrt{3}}{2};\dfrac{1}{2}\right)$.	
+			\end{corrBox}
+			\item Démontrer que les points $D$, $I$ et $V$ sont alignés.
+			\begin{corrBox}
+				$\Coord{DV}{x_V-x_D}{y_V-y_D}=\Coord{DV}{\frac{2+\sqrt{3}}{2}-0}{\frac{1}{2}-1}$ donc $\Coord{DV}{\frac{2+\sqrt{3}}{2}}{-\frac{1}{2}}$.\\
+				$\Coord{DI}{x_I-x_D}{y_I-y_D}=\Coord{DI}{\frac{1}{2}-0}{\frac{\sqrt{3}}{2}-1}$ donc $\Coord{DI}{\frac{1}{2}}{\frac{\sqrt{3}-2}{2}}$.\\
+				On voit que $\vv{DV}=(2+\sqrt{3})\times \vv{DI}$.\\
+				Les 2 vecteurs sont colinéaires et ont un point en commun (le point D), donc les points D,I et V sont alignés.	
+			\end{corrBox}
+		\end{enumMet} 
+%	\end{multicols}
+	%\vspace{-0.2em}
+
+\end{exercice}
+
+
+
+
+\end{document}
+

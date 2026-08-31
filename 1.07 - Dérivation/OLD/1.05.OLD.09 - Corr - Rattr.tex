@@ -1,0 +1,239 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+%  ------------------------------------------  Modules usuels  --------------------------------------
+%  --------------------------------------------------------------------------------------------------------
+
+\usepackage{amsmath} 	
+\usepackage{amssymb} 
+\usepackage{listings}         
+\usepackage{numprint} 
+\usepackage{pifont}
+
+%  --------------------------------------------------------------------------------------------------------
+% ----------------------  packages pour fontes et caractères spéciaux  ---------------------
+%  --------------------------------------------------------------------------------------------------------
+
+\usepackage{eurosym}   
+\usepackage{amsfonts}   
+\usepackage{amstext}       
+\usepackage{amsfonts}	
+\usepackage{mathrsfs}	 
+
+\usepackage{pstricks,pst-all,pstricks-add,pst-tree,pst-node,pst-3dplot}
+
+%------------------------------------------------------------------------------------------------------
+%  --------------------------  Francisation et gestion des caractères sous mac --------------------------------------------------------------------------------------------------------
+
+\usepackage[francais]{babel}   
+\usepackage[utf8]{inputenc}
+\usepackage[OT1,T1]{fontenc} 
+%  --------------------------------------------------------------------------------------------------------
+% ------------------------------------Packages  de  mise en page ---------------------------
+%--------------------------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr}	% en-têtes et pieds de pages
+\usepackage{amsfonts}
+
+ \usepackage{multicol} % permet l'utilisation du multicolonnage dans le texte. La syntaxe est \begin{multicols}{nb de colonnes}    ......  \end{multicols}
+ 
+\usepackage{calc}            % permet de faire un minimum de calcul sur les arguments des commandes et macros (utilisé dans la def de l'environnement preuve )
+\usepackage{epic}            % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{variations}   % permet d'obtenir de joli tableau de variations
+\usepackage{enumerate}  %permet de faire des listes personnalisées
+\usepackage{arydshln}     %permet d'avoir des lignes en pointillés
+\usepackage{framed}  
+\usepackage{multido} 
+
+
+%  --------------------------------------  MACROS USUELLES  ----------------------------------------
+
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\N}{\mathbb{N}} 
+\newcommand{\D}{\mathbb{D}} 
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\C}{\mathbb{C}} 
+
+%  -------------------------------------  MACROS SPECIFIQUES ------------------------------------
+
+
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+
+\newcounter{numexo}
+
+\setcounter{numexo}{1}
+
+\newcommand{\exercice}[1]{\vskip 0.6cm\noindent\rule[+2pt]{1cm}{0.5pt}\ {\large\bf \ Exercice \thenumexo {  #1 }}\raisedrule[+2pt]{0.5pt}\null\addtocounter{numexo}{1}\par\vskip 0,4cm}
+
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+
+
+
+% ----------------------------------------- FORMAT DE PAGE  -----------------------------------------
+
+\usepackage[left = 1.3cm,
+	 	      right = 1.3cm,
+		      top = 1.7cm,
+		      headsep = 8mm,
+		      bottom = 1.7cm,
+		      headheight = 14.2 pt
+		      ]{geometry}
+
+\setlength{\parindent}{0mm}
+
+
+\everymath{\displaystyle} 
+\renewcommand{\thesection}{\Roman{section}} 
+\author{}
+\title{}
+\date{}
+\pagestyle{fancy}
+
+ 
+\lhead{1ère - spécialité maths} 
+
+
+\rhead{\textcolor{red}{Correction - Rattrapage - DS n$^{\circ}$5 - 23/02/21}}		
+
+
+\fancyfoot[C]{} 
+\fancyfoot[L]{} 
+\fancyfoot[R]{} 
+
+\lstset{language=Python}  
+
+\lstset{frame = single
+framerule = 1pt
+showspaces = false,
+showstringspaces = false,
+numbers=left, numberstyle=\tiny}
+
+% ----------------------------------------- correction  -----------------------------------------
+\usepackage[most,skins,breakable]{tcolorbox}
+\usepackage{enumitem}
+
+\newcommand{\corr}[1]{\fcolorbox{red}{yellow!30}{#1}}
+
+\newcommand{\bareme}[1]{\tikz\node[circle,draw,inner sep=1pt,outer sep=1pt, color=red]{\textbf{#1}};}
+
+\newtcolorbox{corrBox}{enhanced,boxrule=1pt,nobeforeafter,boxsep=0pt,left=\fboxsep,right=\fboxsep,colback=yellow!30,colframe=red!75!black}
+
+\newlist{enumMet}{enumerate}{2}
+\setlist[enumMet,1]{label=\arabic*), font=\bf\color{blue!75!black}}
+\setlist[enumMet,2]{label=\alph*), font=\bf\color{blue!75!black}}
+
+
+\begin{document}
+\graphicspath{{images/}}
+
+\begin{center}
+
+\fbox{\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm} \textcolor{red}{Correction - Rattrapage DS N$^{\circ}$5}	\rule{0.5cm}{0pt}}}
+\end{center}
+
+
+\begin{center}\textbf{1h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+\vspace{.05cm} 
+
+\vspace{-0.3cm}
+\exercice{ - définition du produit scalaire - ( 3 points )}
+On considère 3 points $A, B$ et $C .$ Dans chacun des cas suivants, calculer $\overrightarrow{A B} \cdot \overrightarrow{A C}$ ( on donnera la valeur exacte).
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $A B=4, A C=5$ et $\widehat{A B C}=\dfrac{\pi}{6}$ \quad \bareme{1,5}\\
+    \begin{corrBox}
+        $\overrightarrow{A B} \cdot \overrightarrow{A C}=20 \times \cos \left(\frac{\pi}{6}\right)=20 \times \frac{\sqrt{3}}{2}=10 \sqrt{3}$
+    \end{corrBox}
+    
+    \columnbreak
+    \item $A B=5, A C=7$ et $\widehat{A B C}=\dfrac{3\pi}{4}$ \quad \bareme{1,5}\\
+    \begin{corrBox}
+        $\overrightarrow{A B} \cdot \overrightarrow{A C}=7 \times 5 \times \cos \left(\frac{3 \pi}{4}\right)=-35 \times \frac{\sqrt{2}}{2}=-\frac{35 \sqrt{2}}{2}$
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+
+\exercice{ - produit scalaire dans un triangle - ( 2 points )}
+
+Soit un triangle $\mathrm{ABC}$ de longueur $\mathrm{AB}=4, \mathrm{AC}=6$ et $\mathrm{BC}=9$\\
+Calculer le produit scalaire $\overrightarrow{B A} \cdot \overrightarrow{B C}$
+
+\begin{corrBox}
+    $$\overrightarrow{B A} \cdot \overrightarrow{B C}=\frac{1}{2}\left(B A^{2}+B C^{2}-A C^{2}\right)\quad \bareme{1}\quad=\frac{1}{2}\left(4^{2}+9^{2}-6^{2}\right)=\frac{1}{2}(16+81-36)$$
+$$\overrightarrow{B A} \cdot \overrightarrow{B C}=\frac{61}{2}=30,5\quad \bareme{1}$$
+\end{corrBox}
+
+\exercice{ - produit scalaire dans un repère - ( 4 points )}
+
+Soit les points $A(3 ; 10), B(5 ; 5)$ et $C(0 ; 3)$
+\begin{enumMet}
+    \item Calculer le produit scalaire $\overrightarrow{B A} \cdot \overrightarrow{B C}$\\
+    \begin{corrBox}
+        $\overrightarrow{B A} \begin{pmatrix} 3-5\\ 10-5 \end{pmatrix}=\overrightarrow{B A} \begin{pmatrix} -2\\ 5 \end{pmatrix}\quad \bareme{1}\quad$\quad et \quad $\overrightarrow{B C} \begin{pmatrix} 0-5\\ 3-5 \end{pmatrix}=\overrightarrow{B c} \begin{pmatrix} -5\\ -2 \end{pmatrix}$\quad \bareme{1}\quad\\
+        $\overrightarrow{B A} \cdot \widehat{B C}=-2 \times(-5)+5 x(-2)=10-10=0$\quad \bareme{1}\quad
+    \end{corrBox}
+    \item Que peut-on en conclure pour le triangle ABC?\\
+    \begin{corrBox}
+        $B A=B C=\sqrt{2^{2}+5^{2}}=\sqrt{29}$\\
+        donc $A B C$ est un triangle rectangle et isocèle.\quad \bareme{1}\quad
+    \end{corrBox}
+\end{enumMet}
+
+\eject
+\exercice{ - équation cartésienne - ( 2 points )}
+
+Déterminer dans le cas ci-dessous, une équation cartésienne de la droite D qui passe par le point $A$ et qui a pour vecteur normal le vecteur $\vec{n}$\\
+$A(3 ; 4)$ et $\vec{n}\left(\begin{array}{c}-3 \\ 5\end{array}\right)$
+
+\begin{corrBox}
+    on a : $-3 x+5 y+c=0$\quad \bareme{1}\quad\\
+$A(3 ; 4):-3 \times 3+5 \times 4+C=0 \Longleftrightarrow C=-11$\quad \bareme{0,5}\quad\\
+Donc: $-3 x+5 y-11=0$\quad \bareme{0,5}\quad\\
+\end{corrBox}
+
+\exercice{ - dérivabilité - ( 4 points )}
+
+Soit $f$ la fonction définie sur $R \operatorname{par} f(x)=-3 x^2+2x+5$\\
+Montrer que la fonction f est dérivable pour $\mathrm{x}=3$ et calculer $f^{\prime}(3)$
+
+\begin{corrBox}
+$$
+\begin{aligned} f(3+h)-f(3) &=-3(3+h)^{2}+2(3+h)+5-(-16) \\ &=-27-18 h-3 h^{2}+6+2 h+2 \\ &=-18 h-3 h^{2}+2 h \\ &=-3 h^{2}-16 h \quad \bareme{2} \\ \lim _{h \rightarrow 0} \frac{f(3+h)-f(3)}{h} &=\lim _{h \rightarrow 0}-3 h-16=-16 \quad \bareme{1} \\ \text { Donc: } f^{\prime}(-3) &=-16 \quad \bareme{1}\end{aligned}
+$$
+\end{corrBox}
+
+\exercice{ - dérivabilité - ( 5 points )}
+Soit f la fonction définie sur $\left] 2 ;+\infty\right[$ par $ f(x)=\dfrac{1}{2x+5}$.\\
+Montrer que la fonction f est dérivable pour $x=1$ et calculer $f^{\prime}(1)$
+
+\begin{corrBox}
+    $f(1+h)=\dfrac{1}{2(1+h)+5}=\dfrac{1}{2 h+7}\quad \bareme{1}\quad$\quad \quad \quad $f(1)=\dfrac{1}{7}\quad \bareme{1}\quad$\\
+    $f(1+h)-f(1)=\dfrac{7-(2 h+7)}{7(2 h+7)}=\dfrac{2 h}{14 h+49}\quad \bareme{1}\quad$\\
+    $\lim \limits_{h \rightarrow 0} \dfrac{f(1+h)-f(a)}{h}=\lim \limits_{h \rightarrow 0} \dfrac{2}{14 h+49}=\dfrac{2}{49}\quad \bareme{1}\quad$\\
+    Donc $f^{\prime}(1)=\dfrac{2}{49}\quad \bareme{1}\quad$
+\end{corrBox}
+
+\end{document}
+

@@ -1,0 +1,162 @@
+\chapter[Appl. Prod Scal.]{Application du produit scalaire}
+\thispagestyle{fancy}
+
+    \section{Produit scalaire et norme}
+    
+    \subsection{Propriétés}
+    
+    \begin{propriete}
+        Propriété : Soit $\vv{u}$ et $\vv{v}$ deux vecteurs. On a :
+        \begin{itemDef}
+            \item $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}\|^{2}+\|\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)$
+            \item $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}\right)$
+            \item $\vv{u} \cdot \vv{v}=\dfrac{1}{4}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)$
+        \end{itemDef}
+    \end{propriete}
+    
+    \begin{demonstrationTitre}{Démonstration de la première formule}
+        Exercice 63 p 247
+    \end{demonstrationTitre}
+
+    \begin{propriete}
+        Soit $A, B$ et $C$ trois points du plan. On a :
+        $\vv{A B} \cdot \vv{A C}=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)$
+    \end{propriete}
+    
+    \begin{demonstration}
+        % \begin{align*}
+        %     \vv{A B} \cdot \vv{A C}&=\dfrac{1}{2}\left(\|\vv{A B}\|^{2}+\|\vv{A C}\|^{2}-\|\vv{A B}-\vv{A C}\|^{2}\right) \\
+        %     &=\dfrac{1}{2}\left(A B^{2}+A C^{2}-\|\vv{C B}\|^{2}\right) \\
+        %     &=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)
+        % \end{align*}
+    \end{demonstration}
+    
+    \begin{exemple}
+        Si $\mathrm{AB}=6, \mathrm{AC}=5$ et $\mathrm{CB}=4$ alors:
+        $\vv{A B} \cdot \vv{A C}=\dfrac{1}{2}\left(A B^{2}+A C^{2}-C B^{2}\right)=\dfrac{1}{2}\left(6^{2}+5^{2}-4^{2}\right)$\\
+        $\vv{A B} \cdot \vv{A C}=\dfrac{1}{2}(36+25-16)=\dfrac{45}{2}$
+    \end{exemple}
+    
+    \begin{methodeTitre}{Calculer un produit scalaire à l'aide des normes}
+        \grasInMet{Enoncé :}\\
+        On considère la figure ci-dessous, calculer le produit scalaire $\vv{C G} \cdot \vv{C F}$
+        \begin{center}
+            \includegraphics[scale=0.8]{1.04.IMG-02}
+        \end{center}
+        \ \\
+        \grasInMet{Réponse :}\\
+        $\vv{C G} \cdot \vv{C F}=\frac{1}{2}\left(C G^{2}+C F^{2}-G F^{2}\right)$\\
+        $=\dfrac{1}{2}\left(6^{2}+7^{2}-3^{2}\right)$\\
+        $=38$
+    \end{methodeTitre}
+    
+    \subsection{Théorème d'Al Kashi}
+    
+    \begin{theoreme}
+        Dans un triangle $\mathrm{ABC},$ on a, avec les notations de la figure :
+        $$
+        a^{2}=b^{2}+c^{2}-2 b c \cos \hat{A}
+        $$
+        \begin{center}
+            \includegraphics[scale=0.8]{1.04.IMG-03}
+        \end{center}
+    \end{theoreme}
+    
+    \begin{demonstration}
+        % $\vv{A B} \cdot \vv{A C}=A B \times A C \times \cos \hat{A}=b c \cos \hat{A}$\\
+        % et\\
+        % $\vv{A B} \cdot \vv{A C}=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)=\dfrac{1}{2}\left(b^{2}+c^{2}-a^{2}\right)$\\
+        % Donc $: \dfrac{1}{2}\left(b^{2}+c^{2}-a^{2}\right)=b c \cos \hat{A}$\\
+        % Soit $: b^{2}+c^{2}-a^{2}=2 b c \cos \hat{A}$\\
+        % Soit encore $: a^{2}=b^{2}+c^{2}-2 b c \cos \hat{A}$\\
+    \end{demonstration}
+    
+    \begin{methodeTitre}{Calculer un angle à l'aide des normes}
+        \grasInMet{Enoncé :}\\
+        On considère la figure ci-dessous, calculer la mesure de l'angle $\widehat{B A C}$ au degré près.
+        \begin{center}
+            \includegraphics[scale=0.8]{1.04.IMG-05}
+        \end{center}
+        \ \\
+        \grasInMet{Réponse :}\\
+        D'après le théorème d'Al Kashi, on a :\\
+        $C B^{2}=A B^{2}+A C^{2}-2 \times A B \times A C \times \cos \widehat{B A C}$\\
+        $4^{2}=6^{2}+5^{2}-2 \times 6 \times 5 \times \cos \widehat{B A C}$\\
+        $16=36+25-60 \cos \widehat{B A C}$\\
+        $60 \cos \widehat{B A C}=36+25-16$\\
+        $60 \cos \widehat{B A C}=45$\\
+        $\cos \widehat{B A C}=\dfrac{45}{60}$\\
+        $\cos \widehat{B A C}=\dfrac{3}{4}$\\
+        $\widehat{B A C} \approx 41^{\circ}$
+    \end{methodeTitre}
+    
+    \section{Vecteur Normal}
+    
+    \subsection{définition et propriétés}
+    
+    \begin{definition}
+        Un \grasInDef{vecteur normal} à une droite $d$ quelconque du plan est un vecteur non nul et orthogonal à un vecteur directeur de $d$.
+    \end{definition}
+    
+    \begin{propriete}
+        Deux droites du plan sont perpendiculaires si et seulement si un vecteur normal de l'une est orthogonal à un vecteur normal de l'autre.
+    \end{propriete}
+    
+    \begin{demonstration}
+        On suppose que $d$ et $d^{\prime}$ sont perpendiculaires. Si $\vv{u}$ est un vecteur directeur de $d$ et $\vv{v}$ de $d^{\prime},$ alors $\vv{u}$ et $\vv{v}$ sont orthogonaux. $\vv{v}$ étant normal à $d$ et $\vv{u}$ à $d^{\prime},$ la propriété est vérifiée.\\
+        Réciproquement, si $\vv{u},$ vecteur normal à $d,$ est orthogonal à $\vv{v},$ vecteur normal à $d^{\prime},$ alors $\vv{v}$ est un vecteur directeur de $d$ et $\vv{u}$ de $d^{\prime} .$ Ayant des vecteurs directeurs orthogonaux, d et $d^{\prime}$ sont perpendiculaires.
+    \end{demonstration}
+    
+    \begin{methode}
+        \grasInMet{Enoncé:}\\
+        Soit $d$ une droite de vecteur directeur $\Coord{u}{3}{5}$.
+        \begin{enumMet}
+            \item Déterminer une condition sur les coordonnées d'un vecteur $\vv{n}$ non nul pour qu'il soit normal à $d$.
+            \item Le vecteur $\Coord{v}{-10}{6}$ est-il un vecteur normal à $d$?
+        \end{enumMet}
+        
+        \grasInMet{Réponse:}\\
+        \begin{enumMet}
+            \item Si $\Coord{n}{x}{y}$ est un vecteur normal à $d$, alors il est orthogonal à $\vv{u}$.\\
+            Donc $\vv{u} \cdot \vv{n}=3 x+5 y=0$ soit $y=-\dfrac{3}{5} x$.\\
+            Les coordonnées de $\vv{n}$ sont donc de la forme $\CoordSV{x}{-\dfrac{3}{5}x}$ avec $x \in \R$.
+            \item On calcule le produit scalaire $\vv{u}\cdot\vv{v}$\\
+            $\vv{u}\cdot\vv{v}=3\times(-10)+5\times6=-30+30=0$\\
+            le vecteur $\vv{v}$ est orthogonal au vecteur directeur $\vv{u}$ de la droite $d$, donc $\vv{v}$ est un vecteur normal à $d$. 
+        \end{enumMet}
+    \end{methode}
+    
+    \subsection{Équations cartésiennes et vecteur normal}
+    
+    \begin{proprieteTitre}{Rappel : équations cartésiennes}
+        Toute droite $D$ admet une équation de la forme $a x+b y+c=0$ avec $(a ; b) \neq(0 ; 0) .$ Un \grasInDef{vecteur directeur} de $D$ est $\Coord{u}{-b}{a}$ \\
+        Cette équation est appelée \grasInDef{équation cartésienne} de la droite $D$.
+    \end{proprieteTitre}
+        
+    \begin{propriete}
+        Soient $a, b$ et $c$ trois réels tels que $a$ et $b$ ne sont pas simultanément nuls.\\
+        La droite d'équation cartésienne $a x+b y+c=0$ admet pour \grasInDef{vecteur normal} le vecteur $\Coord{n}{a}{b}$.\\
+        \ \\
+        Réciproquement, toute droite ayant pour \grasInDef{vecteur normal} le vecteur non nul $\Coord{n}{a}{b}$ admet une équation cartésienne de la forme $a x+b y+c=0$.
+    \end{propriete}
+        
+    \begin{exemple}
+        La droite d'équation cartésienne $3 x-4 y+5=0$ admet pour vecteur normal le vecteur $\Coord{n}{3}{-4}$  et pour vecteur directeur le vecteur $\Coord{u}{4}{3}$.\\
+        On a bien $\vv{n} \cdot \vv{u}=0$
+    \end{exemple}
+    
+    \begin{methode}
+        \grasInMet{Enoncé:}\\
+        Dans un repère orthonormé, déterminer, de deux façons différentes, une équation cartésienne de la droite $d$ passant par le point $\mathrm{A}(5 ;-1)$ et de vecteur normal $\Coord{n}{2}{-3}$.
+        
+        \grasInMet{Réponse:}\\
+        \begin{enumMet}
+            \item 1. On lit sur le vecteur normal que $a=2$ et $b=-3$.
+            Donc une équation de $d$ est de la forme $2 x-3 y+c=0$. $\mathrm{A}(5 ;-1) \in d$ donc $2 \times 5-3 \times(-1)+c=0$ et donc $c=-13$.\\
+            Ainsi, une équation de la droite $d$ est $2 x-3 y-13=0$.
+            \item Soit $\mathrm{M}(x ;y)$ appartenant à $d .$ Alors $\vv{\mathrm{AM}}$ est un vecteur directeur de $d$ et est orthogonal au vecteur $\vv{n}$.\\
+            $\vv{\mathrm{AM}} \cdot \vv{n}=0 \iff \CoordSV{x-5}{y+1} \cdot \CoordSV{2}{-3}=0 \iff 2(x-5)-3(y+1)=0 \iff 2 x-3 y-13=0$\\
+            Donc une équation de la droite $d$ est $2 x-3 y-13=0$
+        \end{enumMet}
+    \end{methode}
+

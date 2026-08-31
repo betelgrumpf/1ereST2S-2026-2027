@@ -1,0 +1,269 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+
+\rhead{\red{Correction - DS n$^{\circ}02$ - Trigonométrie - Sujet A} - 28/11/2022}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\red{Correction - DS n$^{\circ}02$} \\
+						Trigonométrie - Sujet A 
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\begin{center}\textbf{1h50min - Barème indicatif}\end{center}
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+\begin{center}\textbf{Calculatrice autorisée.\\Les résultats devront être justifiés (à l'aide de calcul ou de propriétés).}\end{center}
+
+
+\exerciceDS {- enroulement autour du cercle trigo - 4 points }
+
+En utilisant la figure ci-dessous, donner les points du cercle qui correspondent aux angles suivants. On détaillera la décomposition du nombre en donnant la mesure principale de l'angle.
+%\begin{multicols}{4}
+	\begin{enumMet}
+		\item $\dfrac{149\pi}{6}$ \quad \corr{$=\dfrac{144\pi}{6}+\dfrac{5\pi}{6}=12\times2\pi+$\fbox{$\dfrac{5\pi}{6}$}. La mesure principale est $\dfrac{5\pi}{6}$. Il s'agit du point F.}
+		\item $\dfrac{255\pi}{4}$\quad \corr{$=\dfrac{256\pi}{4}-\dfrac{\pi}{4}=32\times2\pi+$\fbox{$\dfrac{-\pi}{4}$}. La mesure principale est $\dfrac{-\pi}{4}$. Il s'agit du point M.}
+		\item $\dfrac{-152\pi}{3}$\quad \corr{$=-\dfrac{150\pi}{3}-\dfrac{2\pi}{3}=-25\times2\pi+$\fbox{$\dfrac{-2\pi}{3}$}. La mesure principale est $\dfrac{-2\pi}{3}$. Il s'agit du point K.}
+		\item \ding{46} $\dfrac{2267\pi}{2}$\quad \corr{$=\dfrac{2268\pi}{2}-\dfrac{\pi}{2}=567\times2\pi+$\fbox{$\dfrac{-\pi}{2}$}. La mesure principale est $\dfrac{-\pi}{2}$. Il s'agit du point J'.}
+	\end{enumMet}
+%\end{multicols}
+\ \\
+\begin{center}
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=4.0cm,yunit=4.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-1.1,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+		\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-1.98066,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+		\pscircle[linewidth=2.pt](0.,0.){4.}
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844387,0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844387,0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844386,-0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844384,-0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865476,0.7071067811865475)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865475,0.7071067811865476)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865477,-0.7071067811865475)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865474,-0.7071067811865477)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,0.8660254037844386)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,0.8660254037844387)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,-0.8660254037844385)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,-0.8660254037844386)
+		\begin{scriptsize}
+			\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](0.,0.)
+			\rput[bl](0.00960106297279085,0.042848354149331562){\Large\black{$O$}}
+			\psdots[dotstyle=*,linecolor=ududff](1.,0.)
+			\rput[bl](1.027748218996967,0.03743267192752309){\Large\black{$I$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.8660254037844387,0.5)
+			\rput[bl](0.8761092808657066,0.5265068007775197){\Large\black{$A$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.7071067811865476,0.7071067811865475)
+			\rput[bl](0.7190546663726156,0.7350105663171459){\Large\black{$B$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.5,0.8660254037844386)
+			\rput[bl](0.5105511264421327,0.8920653507495917){\Large\black{$C$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.,1.)
+			\rput[bl](0.00960106297279085,1.0409966118493248){\Large\black{$J$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.5,0.8660254037844387)
+			\rput[bl](-0.5427979259339429,0.9028967151932086){\Large\black{$D$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865475,0.7071067811865476)
+			\rput[bl](-0.7658857895025951,0.7377184074280502){\Large\black{$E$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844387,0.5)
+			\rput[bl](-0.9256482421766014,0.5265068007775197){\Large\black{$F$}}
+			\psdots[dotstyle=*,linecolor=ududff](-1.,0.)
+			\rput[bl](-1.0994558275842002,0.020140513038427326){\Large\black{$I'$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844386,-0.5)
+			\rput[bl](-1.0000187858048398,-0.5597649802551862){\Large\black{$G$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865477,-0.7071067811865475)
+			\rput[bl](-0.850548494949918,-0.8072236335711421){\Large\black{$H$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.5,-0.8660254037844385)
+			\rput[bl](-0.620921440476689,-0.9859411468908217){\Large\black{$K$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.,-1.)
+			\rput[bl](0.036679444781944466,-1.1094567257687464){\Large\black{$J'$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.5,-0.8660254037844386)
+			\rput[bl](0.5376295082512864,-0.9205254646690133){\Large\black{$L$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.7071067811865474,-0.7071067811865477)
+			\rput[bl](0.7488408863626846,-0.7445157924602379){\Large\black{$M$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.8660254037844384,-0.5)
+			\rput[bl](0.9004798244939449,-0.51305963446988031){\Large\black{$N$}}
+		\end{scriptsize}
+	\end{pspicture*}
+\end{center}
+\vspace*{-0.3cm}
+\exerciceDS {- même point image - 3 points}
+Pour chacun des nombres suivants, déterminer deux autres réels ayant le même point image lors de l'enroulement de la droite numérique
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $\dfrac{3\pi}{7}$\quad  \corr{$\dfrac{3\pi}{7}+2\pi=\dfrac{3\pi}{7}+\dfrac{14\pi}{7}=$ \fbox{$\dfrac{17\pi}{7}$} ; $\dfrac{3\pi}{7}-2\pi=\dfrac{3\pi}{7}-\dfrac{14\pi}{7}=$ \fbox{$-\dfrac{11\pi}{7}$}}
+		\item $\dfrac{4\pi}{5}$\quad  \corr{$\dfrac{4\pi}{5}+2\pi=\dfrac{4\pi}{5}+\dfrac{10\pi}{5}=$ \fbox{$\dfrac{14\pi}{5}$} ; $\dfrac{4\pi}{5}-2\pi=\dfrac{4\pi}{5}-\dfrac{10\pi}{5}=$ \fbox{$-\dfrac{6\pi}{5}$}}
+		\item $\dfrac{-2\pi}{9}$\quad  \corr{$\dfrac{-2\pi}{9}+2\pi=\dfrac{-2\pi}{9}+\dfrac{18\pi}{9}=$ \fbox{$\dfrac{16\pi}{9}$} ; $\dfrac{-2\pi}{9}-2\pi=\dfrac{-2\pi}{9}-\dfrac{18\pi}{9}=$ \fbox{$-\dfrac{20\pi}{9}$}}
+	\end{enumMet}
+%\end{multicols}
+
+\exerciceDS {- convertir en degrés - 1 point }
+Pour chacun des angles suivants, convertir l'angle en degré. On arrondira si nécessaire à 1 chiffre après la virgule
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $\dfrac{11\pi}{20}$ rad \quad \corr{$=\dfrac{11\pi}{20}\times \dfrac{180}{\pi}=99\degree$}
+		\item $\dfrac{5\pi}{13}$ rad \quad \corr{$=\dfrac{5\pi}{13}\times \dfrac{180}{\pi}=69,23\degree$}
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS {- convertir en radians - 1 point }
+Pour chacun des angles suivants, convertir l'angle en radian. On donnera la valeur exacte/
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $32\degree$\quad \corr{$=32\times \dfrac{\pi}{180}=\dfrac{8\pi}{45}$ rad}
+		\item $458\degree$\quad \corr{$=458\times \dfrac{\pi}{180}=\dfrac{229\pi}{90}$ rad}
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS {- cosinus et sinus - 4 points}
+
+En utilisant le cercle trigonométrique de l'exercice 1, recopier et compléter le tableau suivant:\\
+\begin{center}
+	\begin{tabular}{ | Xc | Xc | Xc | Xc | Xc | }
+		\hline
+		$x$  & $\dfrac{29\pi}{4}$ & $\dfrac{5\pi}{3}$ & $-\dfrac{19\pi}{6}$ &  $\dfrac{65\pi}{2}$ \\ \hline
+		Point image  & \red{H} & \red{L}  & \red{F}  &  \red{J} \\ \hline
+		$\cos(x)$  & \red{$-\dfrac{\sqrt{2}}{2}$}  & \red{$\dfrac{1}{2}$}  & \red{$-\dfrac{\sqrt{3}}{2}$}  & \red{0}  \\ \hline
+		$\sin(x)$ & \red{$-\dfrac{\sqrt{2}}{2}$}  & \red{$-\dfrac{\sqrt{3}}{2}$}  & \red{$\dfrac{1}{2}$}  & \red{1}  \\
+		\hline  
+	\end{tabular}
+\end{center}
+
+\exerciceDS {- équations trigonométriques - 7 points}
+
+Résoudre les équations suivantes : 
+\begin{enumMet}
+	\item \ding{46} $\sin(x)=\dfrac{\sqrt{3}}{2}$ avec $x\in \left[0;2\pi\right]$\\
+	\begin{corrBox}
+		On commence par étudier la solution dans l'intervalle $]-\pi;\pi]$ (parmi les mesures principales de l'angle).\\
+		L'équation $\sin(x)=\dfrac{\sqrt{3}}{2}$ a pour solution :\\
+		$\begin{cases}
+			x_1 &=\dfrac{\pi}{3}\\
+			x_2 &=\dfrac{2\pi}{3}
+		\end{cases}$\\
+		On en déduit les solutions sur \R.\\
+		L'équation $\sin(x)=\dfrac{\sqrt{3}}{2}$ a pour solution ($k\in \Z$ ) :\\
+		$\begin{cases}
+			x_1 &=\dfrac{\pi}{3}+2k\pi\\
+			x_2 &=\dfrac{2\pi}{3}+2k\pi\
+		\end{cases}$\\
+		On teste différentes valeurs de $k$ pour trouver les valeurs qui appartiennent à l'intervalle souhaité $\left[0;2\pi\right]$ (ou $\left[\dfrac{0\pi}{3};\dfrac{6\pi}{3}\right]$)\\
+		$k=1\quad \begin{cases}
+			x_1 &=\dfrac{\pi}{3}+2\pi=\dfrac{7\pi}{3}\notin\left[\dfrac{0\pi}{3};\dfrac{6\pi}{3}\right]\\
+			x_2 &=\dfrac{2\pi}{3}+2\pi=\dfrac{8\pi}{3}\notin\left[\dfrac{0\pi}{3};\dfrac{6\pi}{3}\right]
+		\end{cases}$\\
+		On peut maintenant conclure : $S=\left\{\dfrac{\pi}{3};\dfrac{2\pi}{3}\right\}$
+	\end{corrBox}
+	\item $\cos(x)=-\dfrac{1}{2}$ avec $x\in \left[7\pi;9\pi\right]$\\
+	\begin{corrBox}
+		\begin{multicols}{2}
+			Solution dans l'intervalle $]-\pi;\pi]$:\\
+			$\begin{cases}
+				x_1 &=-\dfrac{2\pi}{3}\\
+				x_2 &=\dfrac{2\pi}{3}
+			\end{cases}$\\
+		
+			\columnbreak
+			On en déduit les solutions sur \R:\\
+			$\begin{cases}
+				x_1 &=-\dfrac{2\pi}{3}+2k\pi\\
+				x_2 &=\dfrac{2\pi}{3}+2k\pi\
+			\end{cases}$\\
+		\end{multicols}
+		On teste différentes valeurs de $k$ pour trouver les valeurs qui appartiennent à l'intervalle souhaité $\left[7\pi;9\pi\right]$ (ou $\left[\dfrac{21\pi}{3};\dfrac{27\pi}{3}\right]$)\\
+		$k=3\quad \begin{cases}
+			x_1 &=-\dfrac{2\pi}{3}+6\pi=\dfrac{16\pi}{3}\notin\left[\dfrac{21\pi}{3};\dfrac{27\pi}{3}\right]\\
+			x_2 &=\dfrac{2\pi}{3}+6\pi=\dfrac{20\pi}{3}\notin\left[\dfrac{21\pi}{3};\dfrac{27\pi}{3}\right]
+		\end{cases}$\\
+		$k=4\quad \begin{cases}
+			x_1 &=-\dfrac{2\pi}{3}+8\pi=\dfrac{22\pi}{3}\in\left[\dfrac{21\pi}{3};\dfrac{27\pi}{3}\right]\\
+			x_2 &=\dfrac{2\pi}{3}+8\pi=\dfrac{26\pi}{3}\in\left[\dfrac{21\pi}{3};\dfrac{27\pi}{3}\right]
+		\end{cases}$\\
+		$k=5\quad \begin{cases}
+			x_1 &=-\dfrac{2\pi}{3}+10\pi=\dfrac{28\pi}{3}\notin\left[\dfrac{21\pi}{3};\dfrac{27\pi}{3}\right]\\
+			x_2 &=\dfrac{2\pi}{3}+10\pi=\dfrac{32\pi}{3}\notin\left[\dfrac{21\pi}{3};\dfrac{27\pi}{3}\right]
+		\end{cases}$\\
+		On peut maintenant conclure : $S=\left\{\dfrac{22\pi}{3};\dfrac{26\pi}{3}\right\}$
+	\end{corrBox}
+	\newpage
+	\item $\sin(x)=\dfrac{\sqrt{2}}{2}$ avec $x\in \left[-2\pi;2\pi\right]$\\
+	\begin{corrBox}
+		\begin{multicols}{2}
+			Solution dans l'intervalle $]-\pi;\pi]$:\\
+			$\begin{cases}
+				x_1 &=\dfrac{\pi}{4}\in\left[-\dfrac{8\pi}{4};\dfrac{8\pi}{4}\right]\\
+				x_2 &=\dfrac{3\pi}{4}\in\left[-\dfrac{8\pi}{4};\dfrac{8\pi}{4}\right]
+			\end{cases}$\\
+			
+			\columnbreak
+			On en déduit les solutions sur \R:\\
+			$\begin{cases}
+				x_1 &=\dfrac{\pi}{4}+2k\pi\\
+				x_2 &=\dfrac{3\pi}{4}+2k\pi\
+			\end{cases}$\\
+		\end{multicols}
+		On teste différentes valeurs de $k$ pour trouver les valeurs qui appartiennent à l'intervalle souhaité $\left[-2\pi;2\pi\right]$ (ou $\left[-\dfrac{8\pi}{4};\dfrac{8\pi}{4}\right]$)\\
+		$k=-1\quad \begin{cases}
+			x_1 &=\dfrac{\pi}{4}-2\pi=-\dfrac{7\pi}{4}\in\left[-\dfrac{8\pi}{4};\dfrac{8\pi}{4}\right]\\
+			x_2 &=\dfrac{3\pi}{4}-2\pi=-\dfrac{5\pi}{4}\in\left[-\dfrac{8\pi}{4};\dfrac{8\pi}{4}\right]
+		\end{cases}$\\
+		$k=1\quad \begin{cases}
+			x_1 &=\dfrac{\pi}{4}+2\pi=\dfrac{9\pi}{4}\notin\left[-\dfrac{8\pi}{4};\dfrac{8\pi}{4}\right]\\
+			x_2 &=\dfrac{3\pi}{4}+2\pi=\dfrac{11\pi}{4}\notin\left[-\dfrac{8\pi}{4};\dfrac{8\pi}{4}\right]
+		\end{cases}$\\
+		On peut maintenant conclure : $S=\left\{-\dfrac{7\pi}{4};-\dfrac{5\pi}{4};\dfrac{\pi}{4};\dfrac{3\pi}{4}\right\}$
+	\end{corrBox}
+	\item \ding{46} $\cos(x)=-\dfrac{\sqrt{2}}{2}$ avec $x\in \left[-6\pi;-4\pi\right]$\\
+	\begin{corrBox}
+		\begin{multicols}{2}
+			Solution dans l'intervalle $]-\pi;\pi]$:\\
+			$\begin{cases}
+				x_1 &=\dfrac{3\pi}{4}\\
+				x_2 &=-\dfrac{3\pi}{4}
+			\end{cases}$\\
+			
+			\columnbreak
+			On en déduit les solutions sur \R:\\
+			$\begin{cases}
+				x_1 &=-\dfrac{3\pi}{4}+2k\pi\\
+				x_2 &=\dfrac{3\pi}{4}+2k\pi\
+			\end{cases}$\\
+		\end{multicols}
+		On teste différentes valeurs de $k$ pour trouver les valeurs qui appartiennent à l'intervalle souhaité $\left[-6\pi;-4\pi\right]$ (ou $\left[-\dfrac{24\pi}{4};-\dfrac{16\pi}{4}\right]$)\\
+		$k=-2\quad \begin{cases}
+			x_1 &=-\dfrac{3\pi}{4}-4\pi=-\dfrac{19\pi}{4}\in\left[-\dfrac{24\pi}{4};-\dfrac{16\pi}{4}\right]\\
+			x_2 &=\dfrac{3\pi}{4}-4\pi=-\dfrac{13\pi}{4}\notin\left[-\dfrac{24\pi}{4};-\dfrac{16\pi}{4}\right]
+		\end{cases}$\\
+		$k=-3\quad \begin{cases}
+			x_1 &=-\dfrac{3\pi}{4}-6\pi=-\dfrac{27\pi}{4}\notin\left[-\dfrac{24\pi}{4};-\dfrac{16\pi}{4}\right]\\
+			x_2 &=\dfrac{3\pi}{4}-6\pi=-\dfrac{21\pi}{4}\in\left[-\dfrac{24\pi}{4};-\dfrac{16\pi}{4}\right]
+		\end{cases}$\\
+		On peut maintenant conclure : $S=\left\{-\dfrac{21\pi}{4};-\dfrac{19\pi}{4}\right\}$
+	\end{corrBox}
+	\item $\sin(x)=\dfrac{15}{4}$ avec $x\in \left[-5\pi;5\pi\right]$\\
+	\begin{corrBox}
+		$\dfrac{15}{4}>1$ or pour tout $x \in \R$, $-1\leqslant \sin x\leqslant1$ donc\\
+		$S=\varnothing$
+	\end{corrBox}
+\end{enumMet}
+\end{document}
+

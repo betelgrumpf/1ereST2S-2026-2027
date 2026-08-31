@@ -1,0 +1,148 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+%\usepackage{mathrsfs}
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$06 - Sujet A - 20/03/2025}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+DS n$^{\circ}$06 - Dérivation\\
+Sujet A
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{1h40 - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\exerciceDS{ - nombre dérivé - ( 3 points )}
+Sur chacun des deux graphiques suivants sont représentées la courbe $C_{f}$ d'une fonction $f$ dérivable en a et sa tangente T au point d'abscisses Dans chacun des cas, déterminer par lecture graphique les nombres $a, f(a)$ et $f^{\prime}(a)$
+\begin{center}
+    \includegraphics[scale=0.8]{1.05.DS-IMG-02}
+\end{center}
+
+%\exerciceDS{ - nombre dérivé - ( 2 points )}
+%Une fonction $f$, dérivable sur $\mathbb{R}$, admet la représentation graphique $C_{f}$ ci-dessous. La droite (AB) est tangente à $C_{f}$ au point $A$ d'abscisse -2
+%\begin{enumMet}
+%    \item déterminer par la méthode de votre choix l'équation réduite de la droite $(AB)$
+%    \item en déduire le nombre dérivé de $f$ en $-2$. 
+%\end{enumMet}
+%\begin{center}
+%    \includegraphics[scale=0.8]{1.05.DS-IMG-03}
+%\end{center}
+
+\exerciceDS{ - dérivabilité - ( 3 points )}
+
+Soit $f$ la fonction définie sur \R par $f(x)=x^3-2 x^2+3 x+1$\\
+Montrer que la fonction f est dérivable pour $x=2$ et calculer $f'(2)$
+
+\exerciceDS{ - dérivabilité - ( 3 points )}
+Soit f la fonction définie sur $] 2 ;+\infty[$ par $f(x)=\dfrac{1}{x-2}$.\\
+Montrer que la fonction f est dérivable pour $x=4$ et calculer $f'(4)$
+
+%\exerciceDS{ - fonction dérivée - ( 8 points )}
+%
+%Calculer la dérivé des fonctions suivantes
+%\begin{enumMet}
+%    \item $f(x)=3 x^{2}+2 x-5$
+%    \item \ding{46} $g(x)=4 x^{3}-2 x^{2}+2 x+1$
+%    \item $h(x)=\dfrac{3}{x}+4 \sqrt{x}$
+%    \item $d(x)=\dfrac{4}{3} x^{3}-0,5 x^{2}-\dfrac{2}{x}$
+%    \item $e(x)=2 x^{2} \sqrt{x}$
+%    \item \ding{46} $k(x)=(2 x-3)^{2}$
+%    \item $l(x)=\dfrac{3 x-4}{x^{2}-5}$
+%    \item $m(x)=\sqrt{3 x+4}$
+%\end{enumMet}
+%
+%\exerciceDS{ - problème de dérivation - ( 4 points )}
+%Soit $f$ la fonction définie sur $\left] \dfrac{2}{3} ;+\infty\right[$ par: $\dfrac{3 x^{2}-11 x+11}{-3 x+2}$
+%\begin{enumMet}
+%    \item Déterminer l'expression de $f^{\prime}$
+%    \item Vérifier que pour tout réel $x$ tel que $x>\dfrac{2}{3}$\\ $f(x)=-x+3+\dfrac{5}{-3 x+2}$
+%    \item En déduire une autre expression de $f^{\prime}$
+%    \item Vérifier la cohérence des résultats obtenus au 1) et au 3).
+%\end{enumMet}
+
+\newpage
+ \exerciceDS{ - dérivabilité et graphique - ( 11,5 points )}
+ On considère la courbe représentative $C_{f}$ de la fonction $f$ définie par $f(x)=x^{2}-2x-1$ et dérivable sur $\mathbb{R}$. Soient $A$, $B$ et $C$ les point de $C_{f}$ d'abscisses respectives -1, 1 et 2 et $D_1$, $D_2$ et $D_3$ les tangente respectives en A, B et C à la courbe $C_{f}$.
+ \begin{center}
+%     \includegraphics[scale=0.4]{1.05.DS-IMG-04}
+%     \newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+%     \newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+     \psset{xunit=1.2cm,yunit=1.2cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.3pt,arrowsize=3pt 2,arrowinset=0.25}
+     \begin{pspicture*}(-3,-6.)(6,4)
+     	\psgrid[gridwidth=0.6pt,gridcolor=gray,subgriddiv=0,gridlabels=0](0,0)(-3,-6.)(6,4)
+     	\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-3,-6.)(6,4)
+     	\psplot[linewidth=1.7pt,linecolor=ForestGreen,plotpoints=200]{-5.534227042312126}{21.649325634230358}{x^(2.0)-2.0*x-1.0}
+     	\psplot[linewidth=1.7pt, linecolor=red]{-5.534227042312126}{21.649325634230358}{(-2.-4.*x)/1.}
+     	\psplot[linewidth=1.7pt, linecolor=NavyBlue]{-5.534227042312126}{21.649325634230358}{(-5.--2.*x)/1.}
+     	\psplot[linewidth=1.7pt, linecolor=magenta]{-5.534227042312126}{21.649325634230358}{(-2.-0.*x)/1.}
+   		\rput[bl](2.7,3.3){\Large{\textcolor{ForestGreen}{$C_f$}}}
+   		\psdots[dotstyle=x, dotsize=10pt](2.,-1.)
+   		\rput[bl](2.2,-1){\Large{$C$}}
+   		\psdots[dotstyle=x, dotsize=10pt](-1.,2.)
+   		\rput[bl](-1,2.2){\Large{$A$}}
+   		\rput[bl](0.8,-5){\Large{\textcolor{red}{$D_1$}}}
+   		\rput[bl](-1,-5.5){\Large{\textcolor{NavyBlue}{$D_3$}}}
+   		\psdots[dotstyle=x, dotsize=10pt](1.,-2.)
+   		\rput[bl](0.8,-1.8){\Large{$B$}}
+   		\rput[bl](-2.8,-1.9){\Large{\textcolor{magenta}{$D_2$}}}
+     \end{pspicture*}
+ \end{center}
+\begin{enumMet}
+	\item A l'aide du graphique, trouver les équations réduites des droites $D_1$, $D_2$ et $D_3$. %\quad \bareme{3}
+	\item En déduire $f'(-1)$, $f'(1)$ et $f'(2)$ %\quad \bareme{1,5}
+	\item Calculs concernant la droite $D_1$
+	\begin{enumMet}
+	   	\item Calculer $f(-1)$ %\quad \bareme{0,5}
+	   	\item Calculer $f'(-1)$ %\quad \bareme{2}
+	   	\item A l'aide des 2 résultats précédents et d'un calcul, retrouver l'équation réduite de la droite $D_1$. \quad %\bareme{1}  
+	\end{enumMet}
+	\item \ding{46} Calculs concernant la droite $D_3$
+	\begin{enumMet}
+		\item \ding{46} Calculer $f(2)$ %\quad \bareme{0,5}
+		\item \ding{46} Calculer $f'(2)$ %\quad \bareme{2}
+		\item \ding{46} A l'aide des 2 résultats précédents et d'un calcul, retrouver l'équation réduite de la droite $D_3$. %\quad \bareme{1} 
+	\end{enumMet}
+
+\end{enumMet}
+
+\end{document}

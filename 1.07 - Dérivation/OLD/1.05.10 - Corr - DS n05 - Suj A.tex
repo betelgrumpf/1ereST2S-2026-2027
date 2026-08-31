@@ -1,0 +1,153 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\usepackage{mathrsfs}
+\include{1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{Correction - DS n$^{\circ}$05 - Sujet A - 07/03/2022}
+
+\begin{document}
+\graphicspath{{images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+Correction - DS n$^{\circ}$05 - Dérivation\\
+Sujet A
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{1h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\exerciceDS{ - nombre dérivé - ( 3 points )}
+Sur chacun des deux graphiques suivants sont représentées la courbe $\mathscr{C}_{f}$ d'une fonction $f$ dérivable en a et sa tangente T au point d'abscisses Dans chacun des cas, déterminer par lecture graphique les nombres $a, f(a)$ et $f^{\prime}(a)$
+\begin{center}
+    \includegraphics[scale=0.8]{1.05.DS-IMG-02}
+\end{center}
+
+\begin{corrBox}
+\begin{multicols}{2}
+    \begin{enumMet}
+        \item $a=2\quad f(a)=4\quad f'(a)=-2$
+        \item $a=-1\quad f(a)=2\quad f'(a)=0$
+    \end{enumMet}
+\end{multicols}
+\end{corrBox}
+
+\exerciceDS{ - nombre dérivé - ( 2 points )}
+Une fonction $f$, dérivable sur $\mathbb{R}$, admet la représentation graphique $\mathscr{C}_{f}$ ci-dessous. La droite (AB) est tangente à $\mathscr{C}_{f}$ au point $A$ d'abscisse -2
+\begin{enumMet}
+    \item déterminer par la méthode de votre choix l'équation réduite de la droite $(AB)$\\
+    \begin{corrBox}
+        $A(-2\ ;\ 1)$ et $B(-1\ ;\ -2)$\\
+        $m=\dfrac{-2-1}{-1-(-2)}=-3$\\
+        $y=-3x+p$\\
+        $A(-2\ ;\ 1)\in D$ : $1=-3\times(-2)+p \iff p=-5$\\
+        Donc : $y=-3x-5$
+    \end{corrBox}
+    \item en déduire le nombre dérivé de $f$ en $-2$.\\
+    \begin{corrBox}
+        $f'(-2)=-3$
+    \end{corrBox} 
+\end{enumMet}
+\begin{center}
+    \includegraphics[scale=0.8]{1.05.DS-IMG-03}
+\end{center}
+
+\exerciceDS{ - \ding{46} dérivabilité - ( 2 points )}
+
+Soit $f$ la fonction définie sur \R par $f(x)=2 x^{2}-2 x+5$\\
+\ding{46} Montrer que la fonction f est dérivable pour $\mathrm{x}=2$ et calculer $f^{\prime}(2)$\\
+\begin{corrBox}
+    $f(2)=9$ et $f(2+h)=2(2+h)^2-2(2+h)+5=2h^2+6h+9$\\
+    $\lim\limits_{h \rightarrow 0} \dfrac{f(2+h)-f(2)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{2h^2+6h+9-9}{h}=\lim\limits_{h \rightarrow 0} \dfrac{2h^2+6h}{h}=\lim\limits_{h \rightarrow 0} 2h+6=6$\\
+    $6$ est un nombre réel donc f est dérivable pour $\mathrm{x}=2$ et $f^{\prime}(2)=6$.
+\end{corrBox}
+
+\exerciceDS{ - dérivabilité - ( 2 points )}
+Soit f la fonction définie sur $] 2 ;+\infty[$ par $f(x)=\dfrac{1}{x-2}$.\\
+Montrer que la fonction f est dérivable pour $x=3$ et calculer $f^{\prime}(3)$\\
+\begin{corrBox}
+    $f(3+h)-f(3)=\dfrac{1}{3+h-2}-\dfrac{1}{3-2}=\dfrac{1}{h+1}-\dfrac{1}{1}=\dfrac{-h}{h+1}$\\
+    $\lim\limits_{h \rightarrow 0} \dfrac{f(3+h)-f(3)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{\dfrac{-h}{h+1}}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-1}{h+1}=-1$\\
+    $-1$ est un nombre réel donc f est dérivable pour $\mathrm{x}=3$ et $f^{\prime}(3)=-1$.
+\end{corrBox}
+
+\exerciceDS{ - fonction dérivée - ( 8 points )}
+
+Calculer la dérivé des fonctions suivantes
+\begin{enumMet}
+    \item $f(x)=3 x^{2}+2 x-5$ \quad \corr{$f^{\prime}(x)=3 \times 2 x+2=6 x+2$}
+    \item \ding{46} $g(x)=4 x^{3}-2 x^{2}+2 x+1$ \quad \corr{$g^{\prime}(x)=4 \times 3 x^{2}-2 \times 2 x+2=12 x^{2}-4 x+2$}
+    \item $h(x)=\dfrac{3}{x}+4 \sqrt{x}$\quad \corr{$h^{\prime}(x)=-\dfrac{3}{x^{2}}+\dfrac{4}{2 \sqrt{x}}=\dfrac{-3+2 x \sqrt{x}}{x^{2}}$}
+    \item $d(x)=\dfrac{4}{3} x^{3}-0,5 x^{2}-\dfrac{2}{x}$\quad \corr{$d^{\prime}(x)=\dfrac{4}{3} \times 3 x^{2}-0,5 \times 2 x+\dfrac{2}{x^{2}}=\dfrac{4 x^{4}- x^{3}+2}{x^{2}}$}
+    \item $e(x)=2 x^{2} \sqrt{x}$\quad \corr{$e^{\prime}(x)=4 x \times(\sqrt{x})+\dfrac{2 x^{2}}{2 \sqrt{x}}=\dfrac{4 x^{2}+x^{2}}{\sqrt{x}}=\dfrac{5 x^{2}}{\sqrt{x}}$}
+    \item \ding{46} $k(x)=(2 x-3)^{2}$\quad \corr{$k^{\prime}(x)=2 \times 2 \times(2 x-3)=4(2 x-3)$}
+    \item $l(x)=\dfrac{3 x-4}{x^{2}-5}$ \quad \corr{$l^{\prime}(x)=\dfrac{3\left(x^{2}-5\right)-2 x(3 x-4)}{\left(x^{2}-5\right)^{2}}=\dfrac{-3 x^{2}+8 x-15}{\left(x^{2}-5\right)^{2}}$}
+    \item $m(x)=\sqrt{3 x+4}$ \quad \corr{$m^{\prime}(x)=\dfrac{3}{2 \sqrt{3 x+4}}=\dfrac{3 \sqrt{3 x+4}}{6 x+8}$}
+\end{enumMet}
+
+\exerciceDS{ - problème de dérivation - ( 4 points )}
+Soit $f$ la fonction définie sur $\left] \dfrac{2}{3} ;+\infty\right[$ par: $\dfrac{3 x^{2}-11 x+11}{-3 x+2}$
+\begin{enumMet}
+    \item Déterminer l'expression de $f^{\prime}$\\
+    \begin{corrBox}
+        $f^{\prime}(x)=\dfrac{(6 x-11)(-3 x+2)+3\left(3 x^{2}-11 x+11\right)}{(-3 x+2)^{2}}=\dfrac{-18 x^{2}-22+33 x+12 x+9 x^{2}-33 x+33}{(-3 x+2)^{2}}=\dfrac{-9 x^{2}+12 x+11}{(-3 x+2)^{2}}$
+    \end{corrBox}
+    \item Vérifier que pour tout réel $x$ tel que $x>\dfrac{2}{3}$\\ $f(x)=-x+3+\dfrac{5}{-3 x+2}$\\
+    \begin{corrBox}
+        $-x+3+\dfrac{5}{-3 x+2}=\dfrac{(-x+3)(-3 x+2)+5}{-3 x+2}=\dfrac{3 x^{2}-11 x+11}{-3 x+2}=f(x)$
+    \end{corrBox}
+    \item En déduire une autre expression de $f^{\prime}$\\
+    \begin{corrBox}
+        $f^{\prime}(x)=-1-\dfrac{5 \times(-3)}{(-3 x+2)^{2}}=\dfrac{-(-3 x+2)^{2}+15}{(-3 x+2)^{2}}=\dfrac{-9 x^{2}+12 x-4+15}{(-3 x+2)^{2}}=\dfrac{-9 x^{2}+12 x+11}{(-3 x+2)^{2}}$
+    \end{corrBox}
+    \item Vérifier la cohérence des résultats obtenus au 1) et au 3).\\
+    \begin{corrBox}
+        Les résultats des 2 réponses sont identiques.
+    \end{corrBox}
+\end{enumMet}
+% \exerciceDS{ - dérivabilité - ( 4 points )}
+% On considère la courbe représentative $C_{f}$ de la fonction $f$ définie par $f(x)=x^{2}-3 x+1$ et dérivable sur $\mathbb{R}$. Soient $D$ le point de $C_{f}$ d'abscisse 3 et $\mathrm{d}$ la tangente en $\mathrm{D}$ à la courbe $C_{f}$
+% \begin{center}
+%     \includegraphics[scale=0.5]{1.05.DS-IMG-04}
+% \end{center}
+% \begin{enumMet}
+%     \item Montrer que l'équation réduite de la tangente $d$ est $y=3x-8$.
+%     \item Étudier la position relative de la courbe $C_{f}$ par rapport à sa tangente $d$. On pourra éventuelle ment utiliser la calculatrice pour déterminer le signe d'un trinôme.
+% \end{enumMet}
+
+\end{document}

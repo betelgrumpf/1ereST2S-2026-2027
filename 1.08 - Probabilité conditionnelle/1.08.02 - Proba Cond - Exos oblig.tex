@@ -1,0 +1,219 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{pgf}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}  
+\definecolor{CyanTikz40}{cmyk}{.4,0,0,0}
+\definecolor{CyanTikz20}{cmyk}{.2,0,0,0}
+\tikzstyle{general}=[line width=0.3mm, >=stealth, x=1cm, y=1cm,line cap=round, line join=round]
+\tikzstyle{quadrillage}=[line width=0.3mm, color=CyanTikz40]
+\tikzstyle{quadrillageNIV2}=[line width=0.3mm, color=CyanTikz20]
+\tikzstyle{quadrillage55}=[line width=0.3mm, color=CyanTikz40, xstep=0.5, ystep=0.5]
+\tikzstyle{cote}=[line width=0.3mm, <->]
+\tikzstyle{epais}=[line width=0.5mm, line cap=butt]
+\tikzstyle{tres epais}=[line width=0.8mm, line cap=butt]
+\tikzstyle{axe}=[line width=0.3mm, ->, color=Noir, line cap=rect]
+\definecolor{A1}                {cmyk}{1.00, 0.00, 0.00, 0.50}
+\definecolor{A2}                {cmyk}{0.60, 0.00, 0.00, 0.10}
+\definecolor{A3}                {cmyk}{0.30, 0.00, 0.00, 0.05}
+\definecolor{A4}                {cmyk}{0.10, 0.00, 0.00, 0.00}
+\definecolor{B1}                {cmyk}{0.00, 1.00, 0.60, 0.40}
+\definecolor{B2}                {cmyk}{0.00, 0.85, 0.60, 0.15}
+\definecolor{B3}                {cmyk}{0.00, 0.20, 0.15, 0.05}
+\definecolor{B4}                {cmyk}{0.00, 0.05, 0.05, 0.00}
+\definecolor{C1}                {cmyk}{0.00, 1.00, 0.00, 0.50}
+\definecolor{C2}                {cmyk}{0.00, 0.60, 0.00, 0.20}
+\definecolor{C3}                {cmyk}{0.00, 0.30, 0.00, 0.05}
+\definecolor{C4}                {cmyk}{0.00, 0.10, 0.00, 0.05}
+\definecolor{D1}                {cmyk}{0.00, 0.00, 1.00, 0.50}
+\definecolor{D2}                {cmyk}{0.20, 0.20, 0.80, 0.00}
+\definecolor{D3}                {cmyk}{0.00, 0.00, 0.20, 0.10}
+\definecolor{D4}                {cmyk}{0.00, 0.00, 0.20, 0.05}
+\definecolor{F1}                {cmyk}{0.00, 0.80, 0.50, 0.00}
+\definecolor{F2}                {cmyk}{0.00, 0.40, 0.30, 0.00}
+\definecolor{F3}                {cmyk}{0.00, 0.15, 0.10, 0.00}
+\definecolor{F4}                {cmyk}{0.00, 0.07, 0.05, 0.00}
+\definecolor{G1}                {cmyk}{1.00, 0.00, 0.50, 0.00}
+\definecolor{G2}                {cmyk}{0.50, 0.00, 0.20, 0.00}
+\definecolor{G3}                {cmyk}{0.20, 0.00, 0.10, 0.00}
+\definecolor{G4}                {cmyk}{0.10, 0.00, 0.05, 0.00}
+\definecolor{H1}                {cmyk}{0.40, 0.00, 1.00, 0.10}
+\definecolor{H2}                {cmyk}{0.20, 0.00, 0.50, 0.05}
+\definecolor{H3}                {cmyk}{0.10, 0.00, 0.20, 0.00}
+\definecolor{H4}                {cmyk}{0.07, 0.00, 0.15, 0.00}
+\definecolor{J1}                {cmyk}{0.00, 0.50, 1.00, 0.00}
+\definecolor{J2}                {cmyk}{0.00, 0.20, 0.50, 0.00}
+\definecolor{J3}                {cmyk}{0.00, 0.10, 0.20, 0.00}
+\definecolor{J4}                {cmyk}{0.00, 0.07, 0.15, 0.00}
+\definecolor{Blanc}             {cmyk}{0.00, 0.00, 0.00, 0.00}
+\definecolor{Gris1}             {cmyk}{0.00, 0.00, 0.00, 0.20}
+\definecolor{Gris2}             {cmyk}{0.00, 0.00, 0.00, 0.40}
+\definecolor{Gris3}             {cmyk}{0.00, 0.00, 0.00, 0.50}
+\definecolor{Noir}              {cmyk}{0.00, 0.00, 0.00, 1.00}
+\definecolor{CyanTikz40}{cmyk}{.4,0,0,0}
+\definecolor{CyanTikz20}{cmyk}{.2,0,0,0}
+\tikzstyle{general}=[line width=0.3mm, >=stealth, x=1cm, y=1cm,line cap=round, line join=round]
+\tikzstyle{quadrillage}=[line width=0.3mm, color=CyanTikz40]
+\tikzstyle{quadrillageNIV2}=[line width=0.3mm, color=CyanTikz20]
+\tikzstyle{quadrillage55}=[line width=0.3mm, color=CyanTikz40, xstep=0.5, ystep=0.5]
+\tikzstyle{cote}=[line width=0.3mm, <->]
+\tikzstyle{epais}=[line width=0.5mm, line cap=butt]
+\tikzstyle{tres epais}=[line width=0.8mm, line cap=butt]
+\tikzstyle{axe}=[line width=0.3mm, ->, color=Noir, line cap=rect]
+\newcommand{\quadrillageSeyes}[2]{\draw[line width=0.3mm, color=A1!10, ystep=0.2, xstep=0.8] #1 grid #2;
+	\draw[line width=0.3mm, color=A1!30, xstep=0.8, ystep=0.8] #1 grid #2; }
+\newcommand{\axeX}[4][0]{\draw[axe] (#2,#1)--(#3,#1); \foreach \x in {#4} {\draw (\x,#1) node {\small $+$}; \draw (\x,#1) node[below] {\small $\x$};}}
+\newcommand{\axeY}[4][0]{\draw[axe] (#1,#2)--(#1,#3); \foreach \y in {#4} {\draw (#1, \y) node {\small $+$}; \draw (#1, \y) node[left] {\small $\y$};}}
+\newcommand{\axeOI}[3][0]{\draw[axe] (#2,#1)--(#3,#1);  \draw (1,#1) node {\small $+$}; \draw (1,#1) node[below] {\small $I$};}
+\newcommand{\axeOJ}[3][0]{\draw[axe] (#1,#2)--(#1,#3); \draw (#1, 1) node {\small $+$}; \draw (#1, 1) node[left] {\small $J$};}
+\newcommand{\axeOIsansI}[3][0]{\draw[axe] (#2,#1)--(#3,#1);}
+\newcommand{\axeOJsansJ}[3][0]{\draw[axe] (#1,#2)--(#1,#3);}
+\newcommand{\axeXgraduation}[2][0]{\foreach \x in {#2} {\draw (\x,#1) node {\small $+$};}}
+\newcommand{\axeYgraduation}[2][0]{\foreach \y in {#2} {\draw (#1, \y) node {\small $+$}; }}
+\newcommand{\origine}{\draw (0,0) node[below left] {\small $0$};}
+\newcommand{\origineO}{\draw (0,0) node[below left] {$O$};}
+\newcommand{\point}[4]{\draw (#1,#2) node[#4] {$#3$};}
+\newcommand{\pointGraphique}[4]{\draw (#1,#2) node[#4] {$#3$};
+	\draw (#1,#2) node {$+$};}
+\newcommand{\pointFigure}[4]{\draw (#1,#2) node[#4] {$#3$};
+	\draw (#1,#2) node {$\times$};}
+\newcommand{\pointC}[3]{\draw (#1) node[#3] {$#2$};}
+\newcommand{\pointCGraphique}[3]{\draw (#1) node[#3] {$#2$};
+	\draw (#1) node {$+$};}
+\newcommand{\pointCFigure}[3]{\draw (#1) node[#3] {$#2$};
+	\draw (#1) node {$\times$};}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+
+\rhead{Exercices obligatoires - Probabilités conditionnelles}
+
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Probabilités conditionnelles\\
+						Exercices obligatoires
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+\exercice{} \\
+On considère deux événements $A$ et $B$ tels que $\mathrm{P}(\mathrm{A})=0,3, \mathrm{P}(\mathrm{A} \cap \mathrm{B})=0,2$ et $\mathrm{P}(\mathrm{B})=0,6$. 
+
+Calculer $\mathrm{P}(\mathrm{A} \cup \mathrm{B}), \mathrm{P}_{\mathrm{B}}(\mathrm{A})$ et $\mathrm{P}_{\mathrm{A}}(\mathrm{B})$.
+
+\exercice{} \\
+Soient A et B deux événements tels que $P_A(B)=0,8$ et $P_B(A)=0,6$ et $P(A)=0,4$.
+\begin{enumMet}
+	\item Calculer $\mathrm{P}(\mathrm{A} \cap \mathrm{B})$.
+	\item En déduire $\mathrm{P}(\mathrm{B})$.
+	\item Calculer alors $\mathrm{P}(\mathrm{A} \cup \mathrm{B})$.
+\end{enumMet}
+
+\exercice{} \\
+
+On considère deux événements A et B dont les probabilités sont données dans l'arbre suivant.
+\begin{center}
+	\includegraphics[scale=0.5]{1.08.02-Img01}
+\end{center}
+\begin{enumMet}
+	\item Calculer $\mathrm{P}_{\mathrm{A}}(\mathrm{B})$.
+	\item Calculer $\mathrm{P}_{\overline{\mathrm{A}}}(\overline{\mathrm{B}})$.
+	\item Calculer la probabilité de chacune des issues $\mathrm{P}(\mathrm{A} \cap \mathrm{B}), \mathrm{P}(\mathrm{A} \cap \overline{\mathrm{B}}), \mathrm{P}(\overline{\mathrm{A}} \cap \overline{\mathrm{B}})$ et $\mathrm{P}(\overline{\mathrm{A}} \cap \mathrm{B})$.
+\end{enumMet}
+
+\exercice{}\\
+Soient $A$ et $B$ deux événements dont on donne les probabilités dans le tableau suivant.
+
+\begin{tabular}{|Xc|Xc|Xc|Xc|}
+	\hline & B & $\bar{B}$ & Total \\
+	\hline A & 0,16 & & 0,64 \\
+	\hline $\bar{A}$ & & & \\
+	\hline Total & 0,48 & & \\
+	\hline
+\end{tabular}
+\begin{enumMet}
+	\item Recopier et compléter le tableau.
+	\item En déduire les probabilités $\mathrm{P}_{\mathrm{A}}(\mathrm{B})$ et $\mathrm{P}_{\overline{\mathrm{A}}}(\mathrm{B})$.
+	\item Représenter cette situation à l'aide d'un arbre pondéré.
+\end{enumMet}
+
+\exercice{}\\
+
+Un piéton arrive à un passage protégé. D'après une étude statistique, on établit que le feu piéton est vert avec une probabilité de 0,45 . Si le feu est vert, alors le piéton s'engage sur le passage avec une probabilité de 0,9 . Sinon, il s'engage avec une probabilité de 0,3 .
+\begin{enumMet}
+	\item Représenter cette situation par un arbre de probabilité et le compléter entièrement.
+	\item Calculer la probabilité que le piéton s'engage sur le passage protégé.
+\end{enumMet}
+
+\exercice{}\\
+On considère trois événements $\mathrm{A}, \mathrm{B}$ et C qui forment une partition de l'univers $\Omega$ ainsi qu'un événement E . On donne l'arbre de probabilité suivant.
+\begin{center}
+	\includegraphics[scale=0.5]{1.08.02-Img02}
+\end{center}
+\begin{enumMet}
+	\item Reproduire et compléter cet arbre de probabilité.
+	\item Calculer $\mathrm{P}(\mathrm{E})$.
+\end{enumMet}
+
+\exercice{}\\
+On considère deux événements $A$ et $B$ tels que $\mathrm{P}(\mathrm{A})=0,6, \mathrm{P}(\mathrm{B})=0,4$ et $\mathrm{P}_{\mathrm{A}}(\mathrm{B})=0,5$.
+
+Calculer $\mathrm{P}_{\overline{\mathrm{A}}}(\mathrm{B})$.
+
+\exercice{}\\
+
+Lorsqu'une pie voit un objet brillant, elle vole dans sa direction pour tenter de l'attraper. Une personne se trouve à proximité de l'objet avec une probabilité de 0,7. Dans ce cas, la pie réussit à attraper l'objet dans 20 \% des cas.
+
+Sinon, elle y parvient dans $50 \%$ des cas car l'objet n'est pas toujours facilement accessible.
+
+Quelle est la probabilité que la pie attrape l'objet brillant?
+
+\exercice{}\\
+
+Dans chacun des cas suivants, dire si les événements A et $B$ sont indépendants.
+\begin{enumMet}
+	\item $P(A)=0,2, P(B)=0,8$ et $P(A \cap B)=0,9$.
+	\item $P(A)=0,4, P(B)=0,8$ et $P(A \cap B)=0,32$.
+	\item $P(A)=0,5, P(B)=0,3$ et $P(A \cup B)=0,65$.
+	\item $P(A)=0,48, P(B)=0,25$ et $P(A \cap B)=0$.
+\end{enumMet}
+
+\exercice{}\\
+Soient $A$ et $B$ deux événements indépendants tels que $\mathrm{P}(\overline{\mathrm{A}})=0,6$ et $\mathrm{P}(\mathrm{A} \cap \mathrm{B})=0,3$.
+
+Calculer $\mathrm{P}(\mathrm{A})$ puis $\mathrm{P}(\mathrm{B})$.
+
+\exercice{}\\
+Soient A et B deux événements indépendants tels que $\mathrm{P}(\mathrm{A})=0,8$ et $\mathrm{P}(\mathrm{A} \cap \mathrm{B})=0,32$.
+
+Calculer $\mathrm{P}(\mathrm{A} \cup \mathrm{B})$.
+
+\exercice{}\\
+On tire une carte dans un jeu de 32 cartes. Dans chacun des cas suivants, dire si les événements sont indépendants.
+\begin{enumMet}
+	\item A : \guillemets{tirer un roi} et B: \guillemets{tirer un rouge};
+	\item A : \guillemets{tirer un roi} et B: \guillemets{ne pas tirer un as} ;
+	\item A : \guillemets{tirer un roi ou tirer une dame rouge} et B : \guillemets{tirer un rouge}.
+\end{enumMet}
+
+\exercice{}\\
+Reprendre l'exercice précédent mais en considérant qu'il manque le roi de c\oe{}ur dans le jeu (le jeu ne contient donc plus que 31 cartes).
+\end{document}
+

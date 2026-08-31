@@ -1,0 +1,208 @@
+\chapter{Équations du second degré}
+\thispagestyle{fancy}
+
+\section{Résolution d'une équation du second degré}
+
+\subsection{Résoudre une équation à l'aide du discriminant}
+
+    \begin{bdefi}
+        Une \pointille[10cm] est une équation de la forme $ax^2+bx+c=0$ où $a$, $b$ et $c$ sont des réels avec $a\neq 0$.\\
+        Une solution de cette équation s'appelle une \pointille[4.5cm] du trinôme $ax^2+bx+c$.
+    \end{bdefi}
+    
+    \begin{bexemple}
+        L'équation $3x^2-6x-2=0$ est une équation du second degré.
+    \end{bexemple}
+    
+    \begin{brmq}
+        Résoudre l'équation $3x^2-6x-2=0$ ou trouver les racines du trinôme $3x^2-6x-2$ sont deux énoncés identiques.
+    \end{brmq}
+        
+    \begin{bdefi}
+        On appelle \pointille[4.5cm] du trinôme $ax^2+bx+c$, le nombre réel, noté $\Delta$.
+        $$\Delta = \pointille[4.5cm]$$
+    \end{bdefi}
+        
+    \begin{bprop}
+        Soit $\Delta$ le discriminant du trinôme $ax^2+bx+c$.\\
+        \begin{spacing}{1.7}
+        	\begin{itemProp}
+        		\item \pointille[\textwidth-1cm]
+        		\pointille[\textwidth-1cm]
+        		\item \pointille[\textwidth-1cm]
+        		\pointille[\textwidth-1cm]
+        		\item \pointille[\textwidth-1cm]
+        		\pointille[\textwidth-1cm]
+        		\pointille[\textwidth-1cm]
+        	\end{itemProp}
+        \end{spacing}  
+    \end{bprop}
+        
+        
+    \begin{bmethodet}{Résoudre une équation du second degré}
+        \grasInMet{Enoncé :} Résoudre les équations suivantes : 
+        \begin{enumMet}
+            \item $2x^2-x-6=0$
+            \item $2x^2-3x+\dfrac{9}{8}=0$.
+            \item $x^2+3x+10=0$
+        \end{enumMet}
+%        \grasInMet{Réponse :}\\
+%        \begin{enumMet}
+%            \item Calculons le discriminant de l'équation $2x^2-x-6=0$ :\\
+%            $a = 2$, $b = -1$ et $c = -6$ donc $\Delta = b^2-4ac = (-1)^2 - 4 \times 2 \times (-6) = 49$.\\
+%            Comme $\Delta > 0$, l'équation possède deux solutions distinctes :\\
+%            \hspace*{2cm} $x_1= \dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{-(-1)-\sqrt{49}}{2\times2}=-\dfrac{3}{2}$\\
+%            \hspace*{2cm} $x_2= \dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{-(-1)+\sqrt{49}}{2\times2}=2$
+%            \item Calculons le discriminant de l'équation $2x^2-3x+\dfrac{9}{8}=0$ :\\
+%            $a = 2$, $b = -3$ et $c = \dfrac{9}{8}$ donc $\Delta = b^2-4ac = (-3)^2 - 4 \times 2 \times \dfrac{9}{8} = 0$.\\
+%            Comme $\Delta = 0$, l'équation possède une solution unique :\\
+%            \hspace*{2cm} $x_0= -\dfrac{b}{2a}=-\dfrac{-3}{2\times2}=\dfrac{3}{4}$\\
+%            \item Calculons le discriminant de l'équation $x^2+3x+10=0$ :\\
+%            $a = 1$, $b = 3$ et $c = 10$ donc $\Delta = b^2-4ac = 3^2 - 4 \times 1 \times 10 = -31$.\\
+%            Comme $\Delta < 0$, l'équation ne possède pas de solution réelle.
+%        \end{enumMet}
+    \end{bmethodet}
+    
+\subsection{Résoudre une équation à l'aide de la somme et du produit des racines}
+    
+    \begin{bprop}
+        La somme $S$ et le produit $P$ des racines d'un polynôme du second degré de la forme $ax^2+bx+c$ sont donnés par : $S=\quad\quad\phantom{- \dfrac{b}{a}}$  et $P= \quad\quad\phantom{\dfrac{c}{a}}$. 
+    \end{bprop}
+    
+    \begin{bdemo}
+%        \begin{itemDem}
+%            \item $S=x_1+x_2=\dfrac{-b-\sqrt{\Delta}}{2a}+\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{-b-\sqrt{\Delta}-b+\sqrt{\Delta}}{2a}=\dfrac{-2b}{2a}=- \dfrac{b}{a}$
+%            \item $P=x_1\times x_2=\dfrac{-b-\sqrt{\Delta}}{2a}\times \dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{(-b-\sqrt{\Delta})\times(-b+\sqrt{\Delta})}{4a^2}=\dfrac{b^2-\Delta}{4a^2}=\dfrac{b^2-b^2+4ac}{4a^2}=\dfrac{c}{a}$
+%        \end{itemDem}
+    \end{bdemo}
+    
+    \begin{bmethodet}{utiliser somme et produit pour trouver les 2 racines}
+        \grasInMet{Enoncé :}\\
+        Trouver les 2 racines du polynôme suivant : $2x^2+3x-5$\\
+%        \grasInMet{Réponse :}\\
+%        On a une solution évidente ($x_1=1$). Or la somme des 2 racines vaut $S=- \dfrac{b}{a}=-\dfrac{3}{2}$. Donc:\\
+%        $x_1+x_2=-\dfrac{3}{2} \iff 1+x_2=-\dfrac{3}{2} \iff x_2=-\dfrac{3}{2}-1=-\dfrac{5}{2}$
+    \end{bmethodet}
+
+	\begin{brmq}
+		Quant on a des équations du second degré avec $a=1$ (donc du type $x^2+\ldots=0$) on retrouve directement la somme et le produit car l'équation s'écrit $x^2-Sx+P=0$.
+	\end{brmq}
+        
+    
+\section{Factorisation d'un trinôme}
+
+    \begin{bprop}
+        Soit $f$ une fonction polynôme de degré 2 définie sur \R  par $f(x)=ax^2+bx+c$.
+        \begin{spacing}{1.7}
+        	\begin{itemProp}
+        		\item \pointille[\textwidth-1cm]
+        		\pointille[\textwidth-1cm]
+        		\item \pointille[\textwidth-1cm]
+        		\pointille[\textwidth-1cm]
+        	\end{itemProp}
+        \end{spacing}
+    \end{bprop}
+    
+    \begin{brmq}
+        Si $\Delta < 0$, il n'existe pas de forme factorisée de $f$.
+    \end{brmq}
+    
+    \begin{bmethodet}{Factoriser un trinôme}
+        \grasInMet{Enoncé :} Factoriser les trinômes suivants
+        \begin{enumMet}
+            \item $4x^2+19x-5$
+            \item $9x^2-6x+1$.
+        \end{enumMet}
+%        \grasInMet{Réponse :}
+%        \begin{enumMet}
+%            \item On cherche les racines du trinôme $4x^2+19x-5$:\\
+%            Calcul du discriminant : $\Delta = 19^2 - 4 \times 4 \times (-5) = 441$\\
+%            Les racines sont : $x_1= \dfrac{-19-\sqrt{441}}{2\times4} = \mVert{-5}$  et  $x_2= \dfrac{-19+\sqrt{441}}{2\times4}  = \mVert{\dfrac{1}{4}}$\\
+%            On a donc :\\
+%            $\mRouge{4}x^2+19x-5=\mRouge{4}\left(x-(\mVert{-5})\right)\left(x-\mVert{\dfrac{1}{4}}\right)=(x+5)(4x-1)$
+%            \item On cherche les racines du trinôme $9x^2-6x+1$ :\\
+%            Calcul du discriminant : $\Delta = (-6)^2 – 4 \times 9 \times 1 = 0$\\
+%            La racine (double) est : $x_0=- \dfrac{-6}{2\times 9} = \mVert{\dfrac{1}{3}}$\\   
+%            On a donc :\\
+%            $\mRouge{9}x^2-6x+1=\mRouge{9} \left( x-\mVert{\dfrac{1}{3}} \right) ^2$
+%        \end{enumMet}
+    \end{bmethodet}
+    
+    \begin{brmq}
+        On peut vérifier le résultat à l'aide de la calculatrice. En traçant la courbe représentative de la fonction, on peut vérifier les racines à l'aide des points d'intersection de la courbe et de l'axe des abscisses. Ainsi en traçant les courbes précédentes, nous obtenons les courbes suivantes:
+        \begin{multicols}{2}
+            \includegraphics[scale=0.85]{01-03-01}
+            \includegraphics[scale=0.85]{01-03-02}
+        \end{multicols}
+    \end{brmq}
+    
+\section{signe d'un trinôme}
+
+    \begin{bintro}
+        Pour une fonction polynôme de degré 2 définie par $f(x)=ax^2+bx+c$ :
+        \begin{itemRem}
+            \item si $a > 0$, sa représentation graphique est une parabole tournée vers le haut.
+            \item si $a < 0$, sa représentation graphique est une parabole tournée vers le bas
+        \end{itemRem}
+    \end{bintro}
+    
+    \begin{bprop}
+        Soit $f$ une fonction polynôme de degré 2 définie sur \R par $f(x)=ax^2+bx+c$:
+        \begin{itemProp}
+            \item si $\Delta < 0$:\\
+            \begin{minipage}[b]{0.5\linewidth}
+                \begin{tikzpicture}
+                   \tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $+\infty$}
+                   \tkzTabLine{, \text{ } , }
+                \end{tikzpicture}
+            \end{minipage}
+            \begin{minipage}[b]{0.48\linewidth}
+                \includegraphics[scale=0.85]{01-03-03}      
+            \end{minipage}
+            \item si $\Delta = 0$:\\
+            \begin{minipage}[b]{0.6\linewidth}
+                \begin{tikzpicture}
+                   \tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_0$, $+\infty$}
+                   \tkzTabLine{, \text{ } , z, \text{ } , }
+                \end{tikzpicture}
+            \end{minipage}
+            \begin{minipage}[b]{0.38\linewidth}
+                \includegraphics[scale=0.85]{01-03-04}      
+            \end{minipage}
+            \item si $\Delta > 0$:\\
+            \begin{minipage}[b]{0.67\linewidth}
+                \begin{tikzpicture}
+                   \tkzTabInit[lgt = 1.2, espcl = 2.8, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_1$,$x_2$, $+\infty$}
+                   \tkzTabLine{, \text{ } , z, \text{ } ,z, \text{ } ,}
+                \end{tikzpicture}
+            \end{minipage}
+            \begin{minipage}[b]{0.31\linewidth}
+                \includegraphics[scale=0.85]{01-03-05}      
+            \end{minipage}
+        \end{itemProp}
+    \end{bprop}
+    
+    \begin{bmethodet}{Résoudre une inéquation du second degré}
+        \grasInMet{Enoncé :} Résoudre l'inéquation : $x^2+3x-5<-x+2$\\
+%        \ \\
+%        \grasInMet{Réponse :}\\
+%            \emph{On commence par rassembler tous les termes dans le membre de gauche afin de pouvoir étudier les signes des trinômes.}\\
+%            $x^2+3x-5<-x+2$ équivaut à $x^2+4x-7<0$.\\
+%            Le discriminant de $x^2+4x-7$ est $\Delta = 42 - 4 \times 1 \times (-7) = 44$ et ses racines sont :\\
+%            $x_1= \dfrac{-4-\sqrt{44}}{2\times1}=-2-\sqrt{11}$ et $x_2= \dfrac{-4+\sqrt{44}}{2\times1}=-2+\sqrt{11}$\\
+%            On obtient le tableau de signes :\\
+%            \begin{tikzpicture}
+%               \tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$-2-\sqrt{11}$, $-2+\sqrt{11}$, $+\infty$}
+%               \tkzTabLine{, +, z,- , z, +, }
+%            \end{tikzpicture}\\
+%            L'ensemble des solutions de l'inéquation $x^2+3x-5<-x+2$  est donc $\intervOO{-2-\sqrt{11}}{-2+\sqrt{11}}$.
+    \end{bmethodet}
+    
+    \begin{brmq}
+        Comme précédement, on peut vérifier le résultat à l'aide de la calculatrice.\\
+            \begin{center}
+                \includegraphics[scale=0.85]{01-03-06}
+            \end{center}
+    \end{brmq}
+
+

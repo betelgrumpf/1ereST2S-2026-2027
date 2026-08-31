@@ -1,0 +1,329 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+%  ------------------------------------------  Modules usuels  --------------------------------------
+%  --------------------------------------------------------------------------------------------------------
+
+\usepackage{amsmath} 	
+\usepackage{amssymb} 
+\usepackage{listings}         
+\usepackage{numprint} 
+\usepackage{pifont}
+
+%  --------------------------------------------------------------------------------------------------------
+% ----------------------  packages pour fontes et caractères spéciaux  ---------------------
+%  --------------------------------------------------------------------------------------------------------
+
+\usepackage{eurosym}   
+\usepackage{amsfonts}   
+\usepackage{amstext}       
+\usepackage{amsfonts}	
+\usepackage{mathrsfs}	 
+
+\usepackage{pstricks,pst-all,pstricks-add,pst-tree,pst-node,pst-3dplot}
+
+%------------------------------------------------------------------------------------------------------
+%  --------------------------  Francisation et gestion des caractères sous mac --------------------------------------------------------------------------------------------------------
+
+\usepackage[francais]{babel}   
+\usepackage[utf8]{inputenc}
+\usepackage[OT1,T1]{fontenc} 
+%  --------------------------------------------------------------------------------------------------------
+% ------------------------------------Packages  de  mise en page ---------------------------
+%--------------------------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr}	% en-têtes et pieds de pages
+\usepackage{amsfonts}
+
+ \usepackage{multicol} % permet l'utilisation du multicolonnage dans le texte. La syntaxe est \begin{multicols}{nb de colonnes}    ......  \end{multicols}
+ 
+\usepackage{calc}            % permet de faire un minimum de calcul sur les arguments des commandes et macros (utilisé dans la def de l'environnement preuve )
+\usepackage{epic}            % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{variations}   % permet d'obtenir de joli tableau de variations
+\usepackage{enumerate}  %permet de faire des listes personnalisées
+\usepackage{arydshln}     %permet d'avoir des lignes en pointillés
+\usepackage{framed}  
+\usepackage{multido} 
+
+
+%  --------------------------------------  MACROS USUELLES  ----------------------------------------
+
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\N}{\mathbb{N}} 
+\newcommand{\D}{\mathbb{D}} 
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\C}{\mathbb{C}} 
+
+%  -------------------------------------  MACROS SPECIFIQUES ------------------------------------
+
+
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+
+\newcounter{numexo}
+
+\setcounter{numexo}{1}
+
+\newcommand{\exercice}[1]{\vskip 0.6cm\noindent\rule[+2pt]{1cm}{0.5pt}\ {\large\bf \ Exercice \thenumexo {  #1 }}\raisedrule[+2pt]{0.5pt}\null\addtocounter{numexo}{1}\par\vskip 0,4cm}
+
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+
+
+
+% ----------------------------------------- FORMAT DE PAGE  -----------------------------------------
+
+\usepackage[left = 1.3cm,
+	 	      right = 1.3cm,
+		      top = 1.7cm,
+		      headsep = 8mm,
+		      bottom = 1.7cm,
+		      headheight = 14.2 pt
+		      ]{geometry}
+
+\setlength{\parindent}{0mm}
+
+
+\everymath{\displaystyle} 
+\renewcommand{\thesection}{\Roman{section}} 
+\author{}
+\title{}
+\date{}
+\pagestyle{fancy}
+
+ 
+\lhead{1ère - spécialité maths} 
+
+
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$5 - 27/01/21}}		
+
+
+\usepackage{lastpage}
+\fancyfoot[C]{\textbf{Page \thepage/\pageref{LastPage}}}
+\fancyfoot[L]{} 
+\fancyfoot[R]{} 
+
+\lstset{language=Python}  
+
+\lstset{frame = single
+framerule = 1pt
+showspaces = false,
+showstringspaces = false,
+numbers=left, numberstyle=\tiny}
+
+% ----------------------------------------- correction  -----------------------------------------
+\usepackage[most,skins,breakable]{tcolorbox}
+\usepackage{enumitem}
+
+\newcommand{\corr}[1]{\fcolorbox{red}{yellow!30}{#1}}
+
+\newtcolorbox{corrBox}{enhanced,boxrule=1pt,nobeforeafter,boxsep=0pt,left=\fboxsep,right=\fboxsep,colback=yellow!30,colframe=red!75!black}
+
+\newlist{enumMet}{enumerate}{2}
+\setlist[enumMet,1]{label=\arabic*), font=\bf\color{blue!75!black}}
+\setlist[enumMet,2]{label=\alph*), font=\bf\color{blue!75!black}}
+
+
+\begin{document}
+\graphicspath{{../../images/}}
+
+\begin{center}
+
+\fbox{\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm} \textcolor{red}{Correction - DS N$^{\circ}$5 - Produit scalaire et nombre dérivé}	\rule{0.5cm}{0pt}}}
+\end{center}
+
+
+% \begin{center}\textbf{2h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+% \begin{center}
+% %On veillera à ENCADRER ses résultats et soigner sa copie.\\
+% Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+% \end{center}
+% \vspace{.05cm} 
+
+\vspace{-0.3cm}
+\exercice{ - définition du produit scalaire - ( 1 point )}
+On considère 3 points $A, B$ et $C .$ Dans chacun des cas suivants, calculer $\overrightarrow{A B} \cdot \overrightarrow{A C}$ ( on donnera la valeur exacte).
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $A B=3, A C=7$ et $\widehat{A B C}=\dfrac{\pi}{3}$\\
+    \begin{corrBox}
+        $\overrightarrow{A B} \cdot \overrightarrow{A C}=AB\times AC\times \cos(\widehat{A B C})$\\
+        $\phantom{\overrightarrow{A B} \cdot \overrightarrow{A C}}=7\times3\times\dfrac{1}{2}$\\
+        $\phantom{\overrightarrow{A B} \cdot \overrightarrow{A C}}=\dfrac{21}{2}$
+    \end{corrBox}
+    \item $A B=4, A C=9$ et $\widehat{A B C}=\dfrac{\pi}{4}$\\
+    \begin{corrBox}
+        $\overrightarrow{A B} \cdot \overrightarrow{A C}=AB\times AC\times \cos(\widehat{A B C})$\\
+        $\phantom{\overrightarrow{A B} \cdot \overrightarrow{A C}}=4\times9\times\dfrac{\sqrt{2}}{2}$\\
+        $\phantom{\overrightarrow{A B} \cdot \overrightarrow{A C}}=18\sqrt{2}$
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+
+
+\exercice{ - projection orthogonale - ( 1,5 points )}
+
+On considère un carré ABCD de côté 5.\\
+Calculer $\overrightarrow{A B} \cdot \overrightarrow{A C}, \overrightarrow{C A} \cdot \overrightarrow{C D}$ et $\overrightarrow{D C} \cdot \overrightarrow{D A}$
+
+\begin{corrBox}
+    $\overrightarrow{A B} \cdot \overrightarrow{A C}=\overrightarrow{A B} \cdot \overrightarrow{A B}=5\times5=25$\\
+    $\overrightarrow{CA} \cdot \overrightarrow{CD}=\overrightarrow{CD} \cdot \overrightarrow{CD}=5\times5=25$\\
+    $\overrightarrow{DC} \cdot \overrightarrow{DA}=0$ car les 2 vecteurs sont orthogonaux.
+\end{corrBox}
+
+\exercice{ - produit scalaire dans un triangle - ( 1 point )}
+
+Soit un triangle $\mathrm{ABC}$ de longueur $\mathrm{AB}=5, \mathrm{AC}=7$ et $\mathrm{BC}=10$\\
+Calculer le produit scalaire $\overrightarrow{B A} \cdot \overrightarrow{B C}$
+
+\begin{corrBox}
+    $\overrightarrow{BA} \cdot \overrightarrow{BC}=\dfrac{1}{2}(AB^2+BC^2-AC^2)=\dfrac{1}{2}(5^2+10^2-7^2)=\dfrac{1}{2}\times76=38$\\
+\end{corrBox}
+
+\exercice{ - produit scalaire dans un repère - ( 2 points )}
+
+Soit les points $A(3 ; 3), B(8 ; 6)$ et $C(13 ; 3)$
+\begin{enumMet}
+    \item Calculer le produit scalaire $\overrightarrow{B A} \cdot \overrightarrow{B C}$\\
+    \begin{corrBox}
+        $\overrightarrow{BA}\left(\begin{array}{c}3-8 \\ 3-6\end{array}\right)=\overrightarrow{BA}\left(\begin{array}{c}-5 \\ -3\end{array}\right)$ et $\overrightarrow{BC}\left(\begin{array}{c}13-8 \\ 3-6\end{array}\right)=\overrightarrow{BC}\left(\begin{array}{c}5 \\ -3\end{array}\right)$\\
+        $\overrightarrow{B A} \cdot \overrightarrow{B C}=-5\times5+(-3)\times(-3)=-25+9=-16$
+    \end{corrBox}
+    \item Que peut-on en conclure pour le triangle ABC?\\
+    \begin{corrBox}
+        $BA=BC=\sqrt{34}$. Le triangle est donc isocèle.
+    \end{corrBox}
+\end{enumMet}
+
+
+\exercice{ - Au golf - ( 1,5 points )}
+\begin{minipage}[c]{.6\linewidth}
+Sur un green de golf, trois positions de la balle sont repérées en $\mathrm{M},$ N et P sur le schéma ci-contre. Le triangle MNP est tel que MN=8, $\mathrm{MP}=5$ et $\widehat{M}=53^{\circ}$.\\
+Calculer la valeur exacte de NP, puis son arrondi à 0,1 près.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.35\linewidth}
+\begin{center}
+   \includegraphics[scale=0.7]{1.05.DS-IMG-01} 
+\end{center}
+
+\end{minipage}
+
+\begin{corrBox}
+    On utilise Al Kashi.\\
+    $NP^2=NM^2+MP^2-2NM\times MP\times\cos(\widehat{M})$\\
+    $\phantom{NP^2}=8^2+5^2-2\times8\times5\times\cos(53)$\\
+    $\phantom{NP^2}=89-80\cos(53)$\\
+    Donc $NP=\sqrt{89-80\cos(53)}\approx6,4\ m$
+\end{corrBox}
+
+\exercice{ - équation cartésienne - ( 1 point )}
+
+Déterminer dans le cas ci-dessous, une équation cartésienne de la droite D qui passe par le point $A$ et qui a pour vecteur normal le vecteur $\vec{n}$\quad \quad
+$A(3 ; 4)$ et $\vec{n}\left(\begin{array}{c}-3 \\ 5\end{array}\right)$\\
+
+\begin{corrBox}
+    Une équation cartésienne de droite est du type $ax+by+c=0$.\\
+    Un vecteur normal à cette droite est du type $\vec{n}\left(\begin{array}{c}a \\ b\end{array}\right)$\\
+    La droite a donc pour équation : $-3x+5y+c=0$.
+    Le point $A(3 ; 4) \in D$ donc:\\
+    $-3\times3+5\times4+c=0 \iff c=-11$\\
+    Donc : $D: -3x+5y-11=0$
+\end{corrBox}
+
+%\newpage
+
+\exercice{ - nombre dérivé - ( 3 points )}
+Sur chacun des deux graphiques suivants sont représentées la courbe $C_{f}$ d'une fonction $f$ dérivable en a et sa tangente T au point d'abscisses Dans chacun des cas, déterminer par lecture graphique les nombres $a, f(a)$ et $f^{\prime}(a)$
+\begin{center}
+    \includegraphics[scale=0.6]{1.05.DS-IMG-02}
+\end{center}
+
+\begin{corrBox}
+\begin{multicols}{2}
+    \begin{enumMet}
+        \item $a=2\quad f(a)=4\quad f'(a)=-2$
+        \item $a=-1\quad f(a)=2\quad f'(a)=0$
+    \end{enumMet}
+\end{multicols}
+\end{corrBox}
+
+\exercice{ - nombre dérivé - ( 2 points )}
+Une fonction $f$, dérivable sur $\mathbb{R}$, admet la représentation graphique $\mathscr{b}_{f}$ ci-dessous. La droite (AB) est tangente à $\mathscr{b}_{f}$ au point $A$ d'abscisse -2
+\begin{enumMet}
+    \item déterminer par la méthode de votre choix l'équation réduite de la droite $(AB)$\\
+    \begin{corrBox}
+        $A(-2\ ;\ 1)$ et $B(-1\ ;\ -2)$\\
+        $m=\dfrac{-2-1}{-1-(-2)}=-3$\\
+        $y=-3x+p$\\
+        $A(-2\ ;\ 1)\in D$ : $1=-3\times(-2)+p \iff p=-5$\\
+        Donc : $y=-3x-5$
+    \end{corrBox}
+    \item en déduire le nombre dérivé de $f$ en $-2$.\\
+    \begin{corrBox}
+        $f'(-2)=-3$
+    \end{corrBox}
+\end{enumMet}
+\begin{center}
+    \includegraphics[scale=0.6]{1.05.DS-IMG-03}
+\end{center}
+
+\exercice{ - dérivabilité - ( 2 points )}
+
+Soit $f$ la fonction définie sur $R \operatorname{par} f(x)=2 x^{2}-2 x+5$\\
+Montrer que la fonction f est dérivable pour $\mathrm{x}=2$ et calculer $f^{\prime}(2)$\\
+\begin{corrBox}
+    $f(1)=5$ et $f(1+h)=2(1+h)^2-2(1+h)+5=2h^2+2h+5$\\
+    $\lim\limits_{h \rightarrow 0} \dfrac{f(1+h)-f(1)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{2h^2+2h+5-5}{h}=\lim\limits_{h \rightarrow 0} \dfrac{2h^2+2h}{h}=\lim\limits_{h \rightarrow 0} 2h+2=2$ Donc $f'(1)=2$
+\end{corrBox}
+
+\exercice{ - dérivabilité - ( 2 points )}
+Soit f la fonction définie sur $] 2 ;+\infty\left[\operatorname{par} f(x)=\frac{1}{x-2}\right.$\\
+Montrer que la fonction f est dérivable pour $x=3$ et calculer $f^{\prime}(3)$\\
+\begin{corrBox}
+    $f(3+h)-f(3)=\dfrac{1}{3+h-2}-\dfrac{1}{3-2}=\dfrac{1}{h+1}-\dfrac{1}{1}=\dfrac{-h}{h+1}$\\
+    $\lim\limits_{h \rightarrow 0} \dfrac{f(3+h)-f(3)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{\dfrac{-h}{h+1}}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-1}{h+1}=-1$ Donc $f'(3)=-1$
+\end{corrBox}
+
+\exercice{ - dérivabilité - ( 4 points )}
+On considère la courbe représentative $C_{f}$ de la fonction $f$ définie par $f(x)=x^{2}-3 x+1$ et dérivable sur $\mathbb{R}$. Soient $D$ le point de $C_{f}$ d'abscisse 3 et $\mathrm{d}$ la tangente en $\mathrm{D}$ à la courbe $C_{f}$
+\begin{center}
+    \includegraphics[scale=0.3]{1.05.DS-IMG-04}
+\end{center}
+\begin{enumMet}
+    \item Montrer que l'équation réduite de la tangente $d$ est $y=3x-8$.\\
+    \begin{corrBox}
+        Soit $D(3;1)\in d$ et $E(3,5;2,5)\in d$\\
+        $m=\dfrac{2,5-1}{3,5-3}=\dfrac{1,5}{0,5}=3$\\
+        $D(3;1)\in D$ : $1=3\times3+p \iff p=-8$\\
+        Donc : $y=3x-8$
+    \end{corrBox}
+    \item Étudier la position relative de la courbe $C_{f}$ par rapport à sa tangente $d$. On pourra éventuelle ment utiliser la calculatrice pour déterminer le signe d'un trinôme.\\
+    \begin{corrBox}
+        On va étudier le signe de $C_f-d$.\\
+        $g(x)=f(x)-(3x-8)=x^2-3x+1-3x+8=x^2-6x+9$\\
+        $g(x)=0 \iff x^2-6x+9=0$\\
+        $\Delta=0 \iff x_0=3$.\\
+        Le signe de $g$ est celui de $a$ sur $\mathbb{R}$ (sauf pour $x_0$) donc $g(x)\geqslant0$ sur $\mathbb{R}$.\\
+        La courbe $C_{f}$ est donc au-dessus de la tangente $d$ sauf pour $x=3$ ou les 2 sont confondus.
+    \end{corrBox}
+\end{enumMet}
+\end{document}
+

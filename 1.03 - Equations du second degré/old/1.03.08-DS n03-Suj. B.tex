@@ -1,0 +1,127 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$03 - Sujet B - 09/12/2021}
+
+\begin{document}
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+DS n$^{\circ}$3 - Équations du second degré\\
+Sujet B\\
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+
+
+\begin{center}\textbf{55 min - Calculatrice autorisée - Barème indicatif}\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+\vspace{.05cm} 
+
+\exerciceDS{ - Equations - ( 1,5 points )}
+
+Déterminer les racines des fonctions polynômes du second degré.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \ding{46} $f(x)=4(x+6)(-x+12)$
+    \item $g(x)=2x(x-54)$
+    \item $h(x)=-8(x+8)(x-425)$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Factorisation - ( 6 points )}
+
+Donner les racines du polynôme du second degré donné, puis le factoriser
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \ding{46} $A(x)=x^{2}-8 x+16$
+    \item $B(x)=-x^{2}+3 x+10$
+    \item $C(x)=x^{2}+15x+26$
+    \item $D(x)=3 x^{2}-5 x+12$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Inéquations - ( 6 points )}
+
+Résoudre les inéquations données.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \ding{46} $x^{2}-8 x+7 \leqslant 0$
+    \item $3 x^{2}+8 x-3 \leqslant 0$
+    \item $25 x^{2}-16 \geqslant 0$
+    \item $9 x^{2}-3x+\dfrac{1}{4}>0$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Tableau de variations - ( 2 points )}
+Pour la fonction polynôme du second degré ci-dessous, dresser son tableau de variations (les valeurs du tableau de variations doivent être justifiées).
+$$f(x)=5x^2+55x-25$$
+
+\vspace{-0.3cm}
+\exerciceDS{ - Somme et Produit de racines - ( 2 points )}
+
+Pour chaque équation, déterminer une solution évidente et en déduire l'autre sans calculer le discriminant.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $10x^2+2x-8=0$
+    \item $2x^2-18x+28=0$
+\end{enumMet}
+\end{multicols}
+
+\newpage
+
+\exerciceDS{ - Problème - ( 3 points )}
+
+% Le sponsor d'une célèbre équipe de football vend des maillots aux couleurs de l'équipe.\\
+
+% Il achète ces maillots à son fournisseur au prix de $10$ \EUR{} l'unité. Il en vend 200 unités par jour à $50$ \EUR{} chacune. Au vu des bons résultats de l'équipe au cours de la saison, il souhaite augmenter le prix de ces maillots.\\
+
+% Il réalise une étude de marché qui montre que toute augmentation de $1$ \EUR{} fera baisser la vente de deux maillots par jour. On admet que le nombre de maillots achetés au fournisseur est le même que le nombre de maillots vendus, quel que soit le prix.\\
+
+% \textbf{Déterminer le nouveau prix que devra fixer le sponsor pour réaliser un bénéfice maximum.}
+
+Marie-Lou et Charlotte veulent fabriquer une boîte à bijoux cylindrique pour la fête des mères. Elles disposent d'un ruban d'une longueur de $1,10 \mathrm{~m}$ avec lequel elles veulent entourer la boîte pour l'offrir.\\
+
+Elles auront besoin de $50 \mathrm{~cm}$ pour faire le noeud. Elles aimeraient en outre que la boîte ait la plus grande aire latérale possible pour la décorer d'un dessin.\\
+On considère uniquement l'aire latérale A du cylindre sans fond ni couvercle et, dans ce cas, $\mathrm{A}=2 \pi r \times h$.\\
+
+\textbf{Déterminer le rayon et la hauteur de la boîte vérifiant ces conditions}.
+
+
+\end{document}
+

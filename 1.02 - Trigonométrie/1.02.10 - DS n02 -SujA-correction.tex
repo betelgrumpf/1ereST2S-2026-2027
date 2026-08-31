@@ -1,0 +1,208 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{\textcolor{red}{correction - DS n$^{\circ}02$ - Trigonométrie - Sujet A} - 07/11/2025}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction - DS n$^{\circ}02$ \\
+						Trigonométrie - Sujet A} 
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+%\begin{center}\textbf{55min - Barème indicatif}\end{center}
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+%\begin{center}\textbf{Calculatrice autorisée.\\Les résultats devront être justifiés (à l'aide de calcul ou de propriétés).}\end{center}
+
+
+\exerciceDS {- enroulement autour du cercle trigo - 4 points }
+
+En utilisant la figure ci-dessous, donner les points du cercle qui correspondent aux angles suivants. On détaillera la décomposition du nombre en donnant la mesure principale de l'angle.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $\dfrac{149\pi}{6}$
+		\begin{corrBox}
+			$\dfrac{149\pi}{6}=\dfrac{144\pi+5\pi}{6}=6\times 2\pi+$\fbox{$\dfrac{5\pi}{6}$}\quad $\arrowkeyright$ point F
+		\end{corrBox}
+		\item $\dfrac{255\pi}{4}$
+		\begin{corrBox}
+			$\dfrac{255\pi}{4}=\dfrac{256\pi-\pi}{4}=32\times 2\pi+$\fbox{$-\dfrac{\pi}{4}$}\quad $\arrowkeyright$ point M
+		\end{corrBox}
+		\item $\dfrac{-152\pi}{3}$ 
+		\begin{corrBox}
+			$\dfrac{-152\pi}{3}=\dfrac{-150\pi-2\pi}{3}=-25\times 2\pi+$\fbox{$-\dfrac{2\pi}{3}$}\quad $\arrowkeyright$ point K
+		\end{corrBox}
+		\item \ding{46} $\dfrac{2267\pi}{2}$
+		\begin{corrBox}
+			$\dfrac{2267\pi}{2}=\dfrac{2268\pi-\pi}{2}=567\times 2\pi+$\fbox{$-\dfrac{\pi}{2}$}\quad $\arrowkeyright$ point J'
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+\ \\
+\begin{center}
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=4.0cm,yunit=4.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-1.1,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+		\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-1.98066,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+		\pscircle[linewidth=2.pt](0.,0.){4.}
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844387,0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844387,0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844386,-0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844384,-0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865476,0.7071067811865475)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865475,0.7071067811865476)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865477,-0.7071067811865475)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865474,-0.7071067811865477)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,0.8660254037844386)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,0.8660254037844387)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,-0.8660254037844385)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,-0.8660254037844386)
+		\begin{scriptsize}
+			\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](0.,0.)
+			\rput[bl](0.00960106297279085,0.042848354149331562){\Large\black{$O$}}
+			\psdots[dotstyle=*,linecolor=ududff](1.,0.)
+			\rput[bl](1.027748218996967,0.03743267192752309){\Large\black{$I$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.8660254037844387,0.5)
+			\rput[bl](0.8761092808657066,0.5265068007775197){\Large\black{$A$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.7071067811865476,0.7071067811865475)
+			\rput[bl](0.7190546663726156,0.7350105663171459){\Large\black{$B$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.5,0.8660254037844386)
+			\rput[bl](0.5105511264421327,0.8920653507495917){\Large\black{$C$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.,1.)
+			\rput[bl](0.00960106297279085,1.0409966118493248){\Large\black{$J$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.5,0.8660254037844387)
+			\rput[bl](-0.5427979259339429,0.9028967151932086){\Large\black{$D$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865475,0.7071067811865476)
+			\rput[bl](-0.7658857895025951,0.7377184074280502){\Large\black{$E$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844387,0.5)
+			\rput[bl](-0.9256482421766014,0.5265068007775197){\Large\black{$F$}}
+			\psdots[dotstyle=*,linecolor=ududff](-1.,0.)
+			\rput[bl](-1.0994558275842002,0.020140513038427326){\Large\black{$I'$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844386,-0.5)
+			\rput[bl](-1.0000187858048398,-0.5597649802551862){\Large\black{$G$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865477,-0.7071067811865475)
+			\rput[bl](-0.850548494949918,-0.8072236335711421){\Large\black{$H$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.5,-0.8660254037844385)
+			\rput[bl](-0.620921440476689,-0.9859411468908217){\Large\black{$K$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.,-1.)
+			\rput[bl](0.036679444781944466,-1.1094567257687464){\Large\black{$J'$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.5,-0.8660254037844386)
+			\rput[bl](0.5376295082512864,-0.9205254646690133){\Large\black{$L$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.7071067811865474,-0.7071067811865477)
+			\rput[bl](0.7488408863626846,-0.7445157924602379){\Large\black{$M$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.8660254037844384,-0.5)
+			\rput[bl](0.9004798244939449,-0.51305963446988031){\Large\black{$N$}}
+		\end{scriptsize}
+	\end{pspicture*}
+\end{center}
+\vspace*{-0.3cm}
+\exerciceDS {- même point image - 3 points}
+Pour chacun des nombres suivants, déterminer deux autres réels ayant le même point image lors de l'enroulement de la droite numérique
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $\dfrac{3\pi}{7}$\quad \corr{$\dfrac{3\pi}{7}+2\pi= \dfrac{17\pi}{7}$ et $\dfrac{3\pi}{7}-2\pi= -\dfrac{11\pi}{7}$}
+		\item $\dfrac{4\pi}{5}$\quad \corr{$\dfrac{4\pi}{5}+2\pi= \dfrac{14\pi}{5}$ et $\dfrac{4\pi}{5}-2\pi= -\dfrac{6\pi}{5}$}
+		\item \ding{46} $\dfrac{-2\pi}{9}$ \quad \corr{$-\dfrac{2\pi}{9}+2\pi= \dfrac{16\pi}{9}$ et $-\dfrac{2\pi}{9}-2\pi= -\dfrac{20\pi}{9}$}
+	\end{enumMet}
+%\end{multicols}
+
+\exerciceDS {- convertir en degrés - 1 point }
+Pour chacun des angles suivants, convertir l'angle en degré. On arrondira si nécessaire à 1 chiffre après la virgule
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $\dfrac{11\pi}{20}$ rad \quad \corr{$=\dfrac{11\pi}{20}\times \dfrac{180}{\pi}=99\degree$}
+		\item $\dfrac{5\pi}{13}$ rad \quad \corr{$=\dfrac{5\pi}{13}\times \dfrac{180}{\pi}\approx69,2\degree$}
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS {- convertir en radians - 1 point }
+Pour chacun des angles suivants, convertir l'angle en radian. On donnera la valeur exacte.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $32\degree$ \quad \corr{$=32\times \dfrac{\pi}{180}=\dfrac{8\pi}{45}$ rad}
+		\item $458\degree$ \quad \corr{$=458\times \dfrac{\pi}{180}=\dfrac{229\pi}{90}$ rad}
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS {- cosinus et sinus - 6 points}
+
+En utilisant le cercle trigonométrique de l'exercice 1, recopier et compléter le tableau suivant:\\
+\begin{center}
+%	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{ | Xc | Xc | Xc | Xc | Xc | }
+		\hline
+		$x$  & $\dfrac{29\pi}{4}$ & $\dfrac{5\pi}{3}$ & $-\dfrac{19\pi}{6}$ &  $\dfrac{65\pi}{2}$ \rule[-12pt]{0pt}{33pt}\\ \hline
+		Point image  & \textcolor{red}{H}  & \textcolor{red}{L}  & \textcolor{red}{F}  & \textcolor{red}{J}  \rule[-12pt]{0pt}{33pt}\\ \hline
+		$\cos(x)$  & \textcolor{red}{$-\dfrac{\sqrt{2}}{2}$}  & \textcolor{red}{$\dfrac{1}{2}$}  & \textcolor{red}{$-\dfrac{\sqrt{3}}{2}$}  & \textcolor{red}{$0$}  \rule[-12pt]{0pt}{33pt}\\ \hline
+		$\sin(x)$ & \textcolor{red}{$-\dfrac{\sqrt{2}}{2}$}  & \textcolor{red}{$-\dfrac{\sqrt{3}}{2}$}  & \textcolor{red}{$\dfrac{1}{2}$}  &  \textcolor{red}{$1$} \rule[-12pt]{0pt}{33pt}\\
+		\hline  
+	\end{tabular}
+\end{center}
+
+\exerciceDS {- cosinus et sinus - 5,5 points}
+
+Voici un tableau présentant 2 valeurs particulières de cosinus et sinus:\\
+\begin{center}
+%	\renewcommand{\arraystretch}{1}
+	\begin{tabular}{ | Xc | Xc | }
+		\hline
+		$x$  & $\dfrac{\pi}{12}$ \rule[-12pt]{0pt}{33pt}\\ \hline
+		$\cos(x)$  & $\dfrac{\sqrt{6}+\sqrt{2}}{4}$ \rule[-12pt]{0pt}{33pt}\\ \hline
+		$\sin(x)$ & $\dfrac{\sqrt{6}-\sqrt{2}}{4}$  \rule[-12pt]{0pt}{33pt}\\
+		\hline  
+	\end{tabular}
+\end{center}
+
+\begin{enumMet}
+	\item A l'aide du tableau-ci-dessus, donner les valeurs de (détailler les calculs):
+	\begin{enumMet}
+		\item $\cos\left(\dfrac{11\pi}{12}\right)$\quad \corr{$=-\cos\left(\dfrac{\pi}{12}\right)=-\dfrac{\sqrt{6}+\sqrt{2}}{4}$}
+		\item \ding{46} $\sin\left(\dfrac{23\pi}{12}\right)$\quad \corr{$=-\sin\left(\dfrac{\pi}{12}\right)=-\dfrac{\sqrt{6}-\sqrt{2}}{4}=\dfrac{\sqrt{2}-\sqrt{6}}{4}$}
+		\item $\cos\left(\dfrac{7\pi}{12}\right)$ \quad \corr{$=-\sin\left(\dfrac{\pi}{12}\right)=-\dfrac{\sqrt{6}-\sqrt{2}}{4}=\dfrac{\sqrt{2}-\sqrt{6}}{4}$}
+		\item \ding{46} $\sin\left(\dfrac{7\pi}{12}\right)$ \quad \corr{$=\cos\left(\dfrac{\pi}{12}\right)=\dfrac{\sqrt{6}+\sqrt{2}}{4}$}
+	\end{enumMet}
+	\item 
+	\begin{enumMet}
+		\item Effectuer le calcul suivant : $\left(\dfrac{\sqrt{6}+\sqrt{2}}{4}\right)^2+\left(\dfrac{\sqrt{6}-\sqrt{2}}{4}\right)^2$
+		\begin{corrBox}
+			$=\dfrac{6+2\sqrt{12}+2}{16}+\dfrac{6-2\sqrt{12}+2}{16}=\dfrac{6+2\sqrt{12}+2+6-2\sqrt{12}+2}{16}=\dfrac{16}{16}=1$
+		\end{corrBox}
+		\item Quelle propriété du cours retrouve-t-on? \quad \corr{$\cos^2 x + \sin^2 x = 1$}
+	\end{enumMet}
+\end{enumMet}
+\end{document}
+

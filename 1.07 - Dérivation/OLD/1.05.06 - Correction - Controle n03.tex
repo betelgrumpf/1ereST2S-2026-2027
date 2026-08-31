@@ -1,0 +1,132 @@
+\documentclass[a5paper,12pt]{article}        % énoncé seul
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{1ere-preambule}
+\usepackage{mathrsfs}
+
+\begin{document}
+\graphicspath{{images/}}
+\pagestyle{empty}
+%\fancyhf{}
+\vspace*{-1.5cm}
+1ère spécialité\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}24/01/2022
+{\begin{center}\Huge{\textcolor{red}{Correction - Contrôle n$^{\circ}$03 - Sujet A}}\end{center}}
+
+\exerciceDS{- équation réduite et nombre dérivé - ( 3 points )}
+
+On considère une fonction $f$ et sa courbe représentative $\mathscr{C}_{f}$. La droite $T$ est tangente à la courbe $\mathscr{C}_{f}$ au point $A(1 ; 3)$, et passe par le point $B(3 ; 4)$.
+\begin{enumMet}
+    \item Déterminer une équation réduite de la droite (AB).\\
+    \begin{corrBox}
+    La droite (AB) a pour équation $y=mx+p$ avec $m=\dfrac{y_B-y_A}{x_B-x_A}=\dfrac{4-3}{3-1}=\dfrac{1}{2}$.\\
+    De plus la droite (AB) passe par le point A donc $y_A=\dfrac{1}{2}\times x_A+p$ d'ou $p=y_A-\dfrac{1}{2}x_A=3-\dfrac{1}{2}=\dfrac{5}{2}$\\
+    Donc $(AB) : y=\dfrac{1}{2}x+\dfrac{5}{2}$
+    \end{corrBox}   
+    \item Déterminer le nombre dérivé de $f$ en 1 .\\
+    \begin{corrBox}
+        Le nombre dérivée de $f$ en 1 est le coefficient directeur de la droite (AB) donc $f'(1)=\dfrac{1}{2}$
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - dérivabilité - ( 3 points )}
+
+Soit $f$ la fonction définie sur $R \operatorname{par} f(x)=-3 x^2+2x+5$\\
+Montrer que la fonction f est dérivable pour $\mathrm{x}=3$ et calculer $f^{\prime}(3)$\\
+\begin{corrBox}
+    $f(3)=-3\times3^2+2\times3+5=-16$ et\\ $f(3+h)=-3(3+h)^2+2(3+h)+5=-3(9+6h+h^2)+6+2h+5=-3h^2-16h-16$\\
+    Donc $f(3+h)-f(3)=-3h^2-16h-16-(-16)=-3h^2-16h$\\
+    D'ou $\lim\limits_{h \rightarrow 0} \dfrac{f(3+h)-f(3)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-3h^2-16h}{h}=\lim\limits_{h \rightarrow 0} -3h-16=-16$\\
+    $-16$ est un nombre réel donc f est dérivable pour $\mathrm{x}=3$ et $f^{\prime}(3)=-16$
+\end{corrBox}
+
+\exerciceDS{ - tangentes et nombres dérivés - ( 4 point )}
+%\begin{multicols}{2}
+Dans le repère orthonormé $(\mathrm{O} ; \vv{i}, \vv{j})$ ci-contre, la courbe rouge $\mathscr{C}_{f}$ représente une fonction $f$ définie et dérivable sur $\mathbb{R}$, les droites tracées en bleu représentent les tangentes à $\mathscr{C}_{f}$ respectivement au point $\mathrm{O}$, au point $\mathrm{B}$ d'abscisse 1 et au point $C$ d'abscisse 3
+\begin{enumMet}
+    \item Déterminer graphiquement $f^{\prime}(-4)$, $f(-4)$ (point A)\\
+    \begin{corrBox}
+        $f^{\prime}(-4)=5$ et $f(-4)=1$
+    \end{corrBox}
+    \item Déterminer graphiquement $f^{\prime}(0)$, $f(0)$ (point B)\\
+    \begin{corrBox}
+        $f^{\prime}(0)=-1$ et $f(0)=-1$
+    \end{corrBox}
+    \item Déterminer graphiquement $f^{\prime}(4)$, $f(4)$ (point C)\\
+    \begin{corrBox}
+        $f^{\prime}(4)=\dfrac{5}{2}$ et $f(4)=4$
+    \end{corrBox}
+    \item Déterminer l'équation réduite de la tangente à $\mathscr{C}_{f}$ au point $A$.\\
+    \begin{corrBox}
+        on utilise la formule $y=f^{\prime}(a)(x-a)+f(a)$ avec $a=-4$, $f^{\prime}(-4)=5$ et $f(-4)=1$\\
+        $y=5(x-(-4))+1\iff y=5x+21$
+    \end{corrBox}
+\end{enumMet}
+
+%\columnbreak
+\begin{center}
+    \includegraphics[scale=2]{1.05.05-Img01}
+\end{center}
+%\end{multicols}
+
+
+
+\newpage
+\vspace*{-1.5cm}
+1ère spécialité\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}24/01/2022
+{\begin{center}\Huge{\textcolor{red}{Correction - Contrôle n$^{\circ}$03 - Sujet B}}\end{center}}
+
+\setcounter{numexo}{1}
+\exerciceDS{- équation réduite et nombre dérivé - ( 3 points )}
+
+On considère une fonction $f$ et sa courbe représentative $\mathscr{C}_{f}$. La droite $T$ est tangente à la courbe $\mathscr{C}_{f}$ au point $A(1 ; 3)$, et passe par le point $B(2 ; 5)$.
+\begin{enumMet}
+    \item Déterminer une équation réduite de la droite (AB).\\
+    \begin{corrBox}
+    La droite (AB) a pour équation $y=mx+p$ avec $m=\dfrac{y_B-y_A}{x_B-x_A}=\dfrac{5-3}{2-1}=\dfrac{2}{1}=2$.\\
+    De plus la droite (AB) passe par le point A donc $y_A=2\times x_A+p$ d'ou $p=y_A-2x_A=3-2=1$\\
+    Donc $(AB) : y=2x+1$
+    \end{corrBox} 
+    \item Déterminer le nombre dérivé de $f$ en 1 .\\
+    \begin{corrBox}
+        Le nombre dérivée de $f$ en 1 est le coefficient directeur de la droite (AB) donc $f'(1)=2$
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - dérivabilité - ( 3 points )}
+
+Soit $f$ la fonction définie sur $R \operatorname{par} f(x)=-2x^2+3x+5$\\
+Montrer que la fonction f est dérivable pour $\mathrm{x}=2$ et calculer $f^{\prime}(2)$\\
+\begin{corrBox}
+    $f(2)=-2\times2^2+3\times2+5=3$ et\\ $f(2+h)=-2(2+h)^2+3(2+h)+5=-2(4+4h+h^2)+6+3h+5=-2h^2-5h+3$\\
+    Donc $f(2+h)-f(2)=-2h^2-5h+3-3=-2h^2-5h$\\
+    D'ou $\lim\limits_{h \rightarrow 0} \dfrac{f(2+h)-f(2)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-2h^2-5h}{h}=\lim\limits_{h \rightarrow 0} -2h-5=-5$\\
+    $-5$ est un nombre réel donc f est dérivable pour $\mathrm{x}=2$ et $f^{\prime}(2)=-5$
+\end{corrBox}
+
+\exerciceDS{ - tangentes et nombres dérivés - ( 4 point )}
+%\begin{multicols}{2}
+Dans le repère orthonormé $(\mathrm{O} ; \vv{i}, \vv{j})$ ci-contre, la courbe rouge $\mathscr{C}_{f}$ représente une fonction $f$ définie et dérivable sur $\mathbb{R}$, les droites tracées en bleu représentent les tangentes à $\mathscr{C}_{f}$ respectivement au point $\mathrm{O}$, au point $\mathrm{B}$ d'abscisse 1 et au point $C$ d'abscisse 3
+\begin{enumMet}
+    \item Déterminer graphiquement $f^{\prime}(-2)$, $f(-2)$ (point A)\\
+    \begin{corrBox}
+        $f^{\prime}(-2)=-5$ et $f(-2)=4$
+    \end{corrBox}
+    \item Déterminer graphiquement $f^{\prime}(0)$, $f(0)$ (point B)\\
+    \begin{corrBox}
+        $f^{\prime}(0)=1$ et $f(0)=1$
+    \end{corrBox}
+    \item Déterminer graphiquement $f^{\prime}(3)$, $f(3)$ (point C)\\
+    \begin{corrBox}
+        $f^{\prime}(3)=-2$ et $f(3)=3$
+    \end{corrBox}
+    \item Déterminer l'équation réduite de la tangente à $\mathscr{C}_{f}$ au point $A$.\\
+    \begin{corrBox}
+        on utilise la formule $y=f^{\prime}(a)(x-a)+f(a)$ avec $a=-2$, $f^{\prime}(-2)=-5$ et $f(-2)=4$\\
+        $y=-5(x-(-2))+4\iff y=-5x-6$
+    \end{corrBox}
+\end{enumMet}
+
+%\columnbreak
+\begin{center}
+    \includegraphics[scale=2]{1.05.05-Img02}
+\end{center}
+\end{document}

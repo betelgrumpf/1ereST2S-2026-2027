@@ -1,0 +1,219 @@
+\chapter{Suites numériques}
+\thispagestyle{fancy}
+
+\begin{bhistoire}
+	Dès l'Antiquité, Archimède de Syracuse (-287 ; -212), met en oeuvre une procédure itérative pour trouver une approximation du nombre $\pi$. Il encadre le cercle par des polygones inscrits et circonscrits possédant un nombre de côtés de plus en plus grand. Par ce procédé,
+	Archimède donne naissance, sans le savoir, à la notion de suite numérique.\\
+	Vers la fin du XVII$^\text{e}$ siècle, des méthodes semblables sont utilisées pour résoudre des équations de façon approchée pour des problèmes de longueurs, d'aires, ...\\
+	Un formalisme plus rigoureux de la notion de suite n'apparaitra qu'au début du XIX$^\text{e}$ siècle avec le mathématicien français Augustin Louis Cauchy (1789 ;1857).
+\end{bhistoire}
+
+
+\section{Définition et représentation graphique}
+
+\subsection{Définition d'une suite numérique}
+
+\begin{bexemplet}{Exemple d'introduction}
+On considère une liste de nombres formée par tous les nombres impairs rangés dans l'ordre croissant : $1,3,5,7, \ldots$\\
+On note $\left(u_{n}\right)$ l'ensemble des éléments de cette suite de nombres tel que :\\
+$u_{0}=1, u_{1}=3, u_{2}=5, u_{3}=7, \ldots$\\
+On a ainsi défini une suite numérique.\\
+On peut lui associer une fonction définie sur $\mathbb{N}$ par 
+$$u: \mathbb{N} \rightarrow \mathbb{R}$$
+$$\phantom{......................}n \mapsto u(n)=u_{n}$$
+
+\end{bexemplet}
+
+\begin{bdefi}
+\begin{itemDef}
+\item Une \grasInDef{suite numérique} $\left(u_{n}\right)$ est une liste ordonnée de nombres réels telle qu'à tout entier $n$ on associe un nombre réel noté $u_{n}$.
+\item $u_{n}$ est appelé \grasInDef{le terme de rang $\boldsymbol{n}$} de cette suite (ou d'indice $\left.n\right)$.
+\end{itemDef}
+\end{bdefi}
+
+\subsection{Suite définie par une formule explicite}
+
+\begin{bexemples}
+\begin{itemEx}
+\item Pour tout $n$ de $\mathbb{N}$, on donne : $u_{n}=2 n$ qui définit la suite des nombres pairs. Les premiers termes de cette suite sont donc :\\
+$u_{0}=2 \times 0=0$\\
+$u_{1}=2 \times 1=2$\\
+$u_{2}=2 \times 2=4$\\
+$u_{3}=2 \times 3=6$
+\item Pour tout $n$ de $\mathbb{N}$, on donne $: v_{n}=3 n^{2}-1$ Les premiers termes de cette suite sont donc :\\
+$v_{0}=3 \times 0^{2}-1=-1$\\
+$v_{l}=3 \times 1^{2}-1=2$\\
+$v_{2}=3 \times 2^{2}-1=11$\\
+$v_{3}=3 \times 3^{2}-1=26$
+\end{itemEx}
+\end{bexemples}
+\begin{bdefi}
+    Lorsqu'on génère une suite par une formule explicite, chaque terme de la suite est exprimé en fonction de $n$ et indépendamment des termes précédents.
+\end{bdefi}
+
+\subsection{Suite définie par une relation de récurrence}
+\begin{bexemples}
+\begin{itemEx}
+\item On définit la suite $\left(u_{n}\right)$ par: $u_{0}=5$ et chaque terme de la suite est le triple de son précédent. Les premiers termes de cette suite sont donc :\\
+$u_{0}=5$\\
+$u_{1}=3 \times u_{0}=3 \times 5=15$\\
+$u_{2}=3 \times u_{1}=3 \times 15=45$\\
+De façon générale, on peut noter $: u_{n+1}=3 u_{n}$
+\item On définit la suite $\left(v_{n}\right)$ par : $v_{0}=3$ et pour tout $n$ de $\mathbb{N}, v_{n+1}=4 v_{n}-6$ Les premiers termes de cette suite sont donc :\\
+$v_{0}=3$\\
+$v_{1}=4 v_{0}-6=4 \times 3-6=6$\\
+$v_{2}=4 v_{1}-6=4 \times 6-6=18$\\
+$v_{3}=4 v_{2}-6=4 \times 18-6=66$\\
+Contrairement à une suite définie par une formule explicite, il n'est pas possible, dans l'état, de calculer par exemple $v_{13}$ sans connaître $v_{12}$.\\
+\ \\
+Cependant il est possible d'écrire un algorithme avec Python :
+\begin{center}
+    \includegraphics[scale=0.4]{1.08.00-Img01}
+\end{center}
+Ou sur une calculatrice : 
+\begin{center}
+    \includegraphics[scale=0.4]{1.08.00-Img02}
+\end{center}
+\end{itemEx}
+\end{bexemples}
+\begin{bdefi}
+Lorsqu'on génère une suite par une relation de récurrence, chaque terme de la suite s'obtient à partir de son terme précédent.Il faut connaître au moins un terme de la suite pour calculer les autres termes.
+\end{bdefi}
+
+\begin{brmq}
+Le mot \emph{récurrence} vient du latin \emph{recurrere} qui signifie "revenir en arrière".
+\end{brmq}
+
+\subsection{Représentation graphique d'une suite}
+
+Dans un repère du plan, on représente une suite par un nuage de points de coordonnées $\left(n ; u_{n}\right) .$
+\begin{bexemple}
+Pour tout $n$ de $\mathbb{N}$, on donne $: u_{n}=\dfrac{n^{2}}{2}-3$.\\
+On construit le tableau de valeurs avec les premiers termes de la suite :
+\begin{tabular}{|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|}
+\hline$n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\hline$u_{n}$ & $-3$ & $-2,5$ & $-1$ & 1,5 & 5 & 9,5 & 15 & 21,5 & 29 \\
+\hline
+\end{tabular}\\
+Il est possible d'obtenir un nuage de points à l'aide d'un logiciel.
+\begin{center}
+    \includegraphics[scale=0.4]{1.08.00-Img03}
+\end{center}
+
+\end{bexemple}
+
+
+\section{Suites arithmétiques}
+
+\subsection{Définition}
+
+\begin{bexemple}
+    Considérons une suite numérique $U_n$ où la différence entre un terme et son précédent reste constante et égale à 5.\\
+    Si le premier terme est égal à 3, les premiers termes successifs sont :\\
+    $U_0 = 3$,\\
+    $U_1 = 8$,\\
+    $U_2 = 13$,\\
+    $U_3 = 18$.\\
+    Une telle suite est appelée une suite arithmétique de raison 5 et de premier terme 3.
+    La suite est donc définie par : $U_{n+1}=U_n+5$ et $U_0=3$.
+\end{bexemple}
+
+\begin{bdefi}
+    Une suite $U_n$ est une \grasInDef{suite arithmétique} s'il existe un nombre r tel que pour tout entier $n$, on a : $U_{n+1}=U_n+r$.
+    Le nombre $r$ est appelé \grasInDef{raison} de la suite.
+\end{bdefi}
+\ \\
+\begin{bmethodet}{Démontrer si une suite est arithmétique}
+    1) La suite $U_n$ définie par : $U_n=7-9n$ est-elle arithmétique ?\\
+    2) La suite $V_n$ définie par : $V_n=n^2+3$ est-elle arithmétique ?\\
+    \\
+    1) $U_{n+1}-U_n=7-9(n+1)-7+9n=7-9n-9-7+9n=-9$.\\
+    La différence entre un terme et son précédent reste constante et égale à –9.\\
+    $U_n$ est une suite arithmétique de raison $–9$.\\
+    
+    2) $V_{n+1}-V_n=(n+1)^2+3-n^2-3=n^2+2n+1+3-n^2-3=2n+1$.\\
+    La différence entre un terme et son précédent ne reste pas constante.\\
+    $V_n$ n'est pas une suite arithmétique.
+\end{bmethodet}
+
+\begin{bprop}
+    $U_n$ est une suite arithmétique de raison $r$ et de premier terme $U_0$.\\
+    Pour tout entier naturel $n$, on a : $U_n=U_0+nr$.
+\end{bprop}
+
+\begin{bdemo}
+    La suite arithmétique $U_n$ de raison $r$ et de premier terme $U_0$ vérifie la relation $U_{n+1}=U_n+r$.\\
+    En calculant les premiers termes :\\
+    $U_1=u_0+r$\\ 
+    $U_2=u_1+r$\\
+    $U_3=u_2+r$\\
+    …\\
+    $U_n=U_{n-1}+r$\\
+    
+    En additionnant membre à membre ces n égalités, on obtient :\\
+    $U_1+U_2+U_3+...+U_n=U_0+U_1+U_2+...+U_{n-1}+n\times r$\\
+    Soit, en retranchant aux deux membres les termes identiques :
+    $U_n=U_0+nr$
+\end{bdemo}
+
+\begin{bmethodet}{Déterminer la raison et le premier terme d'une suite arithmétique}
+    Considérons la suite arithmétique $U_n$ tel que $U_5=7$ et $U_9=19$.\\
+    1) Déterminer la raison et le premier terme de la suite $U_n$.\\
+    2) Exprimer $U_n$ en fonction de $n$.\\ 
+    \\
+    1) Les termes de la suite sont de la forme $U_n=U_0+nr$\\
+    Ainsi 	$U_5=U_0+5r=7$  et $U_9=U_0+9r=19$.\\
+    En soustrayant membre à membre, on obtient :\\ $U_0+5r-U_0-9r=7-19$\\
+    Soit : $5r-9r=7-19$ donc $r=3$.
+    
+    Comme $U_0+5r=7$, on a : $U_0+5\times 3=7$ et donc : $U_0=-8$.\\
+    \\
+    2) $U_n=U_0+nr$  soit  $U_n=-8+n\times 3$ ou encore $U_n=3n-8$
+\end{bmethodet}
+
+\subsection{Représentation graphique}
+
+Les points de la représentation graphique d'une suite arithmétique sont alignés.
+
+\begin{bexemple}
+    On a représenté ci-dessous la suite de raison $–0,5$ et de premier terme $4$.
+    \begin{center}
+    \includegraphics[scale=1]{01-07-01}
+    \end{center}
+\end{bexemple}
+
+\section{Somme des termes consécutifs: suite arithmétique}
+
+\begin{bprop}
+$n$ est un entier naturel non nul alors on a : $1+2+3+...+n= \dfrac{n(n+1)}{2}$
+\end{bprop}
+
+\begin{brmq}
+Il s'agit de la somme des $n$ premiers termes d'une suite arithmétique de raison $1$ et de premier terme $1$
+\end{brmq}
+
+\begin{bdemo}
+    \begin{tabular}{ c c c c c c c c c c c c }			
+         & 1 & + & 2 & + & 3 & + &... & + &n-1 & + & n \\
+       + & n & + & n-1 & + & n-2 & + & ...& + & 2 & + & 1 \\
+       \hline
+         & (n+1) & + & (n+1) & + & (n+1) & + & ... & + & (n+1) & + & (n+1)\\
+    \end{tabular} \\
+    \\
+    Donc : $2\times (1+2+3+...+(n-1)+n)=n(n+1)$\\
+    Et donc : $1+2+3+...+(n-1)+n=\dfrac{n(n+1)}{2}$
+\end{bdemo}
+
+\begin{bmethodet}{Calculer la somme des termes d'une suite arithmétique}
+    Calculer les sommes $S_1$ et $S_2$ suivantes :\\ 
+    $S_1=1+2+3+...+348$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $S_2=33+36+39+...+267$
+    \\
+    \\
+    $S_1=1+2+3+...+348=\dfrac{348\times 349}{2}=60726$\\
+    \\
+    \\
+    $S_2=33+36+39+...+267=3\times(11+12+13+...+89)$\\
+    $=3\times((1+2+3+...+89)-(1+2+3+...+10))$\\
+    $=3\times \left(\dfrac{89\times 90}{2}-\dfrac{10\times11}{2}\right)=11\ 850$
+\end{bmethodet}
+

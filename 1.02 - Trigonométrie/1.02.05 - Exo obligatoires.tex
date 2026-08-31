@@ -1,0 +1,242 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Chapitre 02 - Trigonométrie - Exercices obligatoires}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Chapitre 02 - Trigonométrie\\
+						Exercices obligatoires
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+
+\exercice{- enroulement autour du cercle trigo}
+
+En utilisant la figure ci-dessous, donner les points du cercle qui correspondent aux angles suivants. On détaillera la décomposition du nombre en donnant la mesure principale de l'angle.
+\begin{multicols}{4}
+	\begin{enumMet}
+		\item $\dfrac{5\pi}{6}$
+		\item $\dfrac{15\pi}{4}$
+		\item $-\dfrac{132\pi}{3}$
+		\item $\dfrac{35\pi}{2}$
+		\item $-\dfrac{55\pi}{6}$
+		\item $-\dfrac{35\pi}{4}$
+		\item $\dfrac{26\pi}{3}$
+		\item $-\dfrac{1883\pi}{2}$
+	\end{enumMet}
+\end{multicols}
+\ \\
+\begin{center}
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=4.0cm,yunit=4.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-1.1,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+		\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-1.98066,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+		\pscircle[linewidth=2.pt](0.,0.){4.}
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844387,0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844387,0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844386,-0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844384,-0.5)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865476,0.7071067811865475)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865475,0.7071067811865476)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865477,-0.7071067811865475)
+		\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865474,-0.7071067811865477)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,0.8660254037844386)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,0.8660254037844387)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,-0.8660254037844385)
+		\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,-0.8660254037844386)
+		\begin{scriptsize}
+			\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](0.,0.)
+			\rput[bl](0.00960106297279085,0.042848354149331562){\Large\black{$O$}}
+			\psdots[dotstyle=*,linecolor=ududff](1.,0.)
+			\rput[bl](1.027748218996967,0.03743267192752309){\Large\black{$I$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.8660254037844387,0.5)
+			\rput[bl](0.8761092808657066,0.5265068007775197){\Large\black{$A$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.7071067811865476,0.7071067811865475)
+			\rput[bl](0.7190546663726156,0.7350105663171459){\Large\black{$B$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.5,0.8660254037844386)
+			\rput[bl](0.5105511264421327,0.8920653507495917){\Large\black{$C$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.,1.)
+			\rput[bl](0.00960106297279085,1.0409966118493248){\Large\black{$J$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.5,0.8660254037844387)
+			\rput[bl](-0.5427979259339429,0.9028967151932086){\Large\black{$D$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865475,0.7071067811865476)
+			\rput[bl](-0.7658857895025951,0.7377184074280502){\Large\black{$E$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844387,0.5)
+			\rput[bl](-0.9256482421766014,0.5265068007775197){\Large\black{$F$}}
+			\psdots[dotstyle=*,linecolor=ududff](-1.,0.)
+			\rput[bl](-1.0994558275842002,0.020140513038427326){\Large\black{$I'$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844386,-0.5)
+			\rput[bl](-1.0000187858048398,-0.5597649802551862){\Large\black{$G$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865477,-0.7071067811865475)
+			\rput[bl](-0.850548494949918,-0.8072236335711421){\Large\black{$H$}}
+			\psdots[dotstyle=*,linecolor=ududff](-0.5,-0.8660254037844385)
+			\rput[bl](-0.620921440476689,-0.9859411468908217){\Large\black{$K$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.,-1.)
+			\rput[bl](0.036679444781944466,-1.1094567257687464){\Large\black{$J'$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.5,-0.8660254037844386)
+			\rput[bl](0.5376295082512864,-0.9205254646690133){\Large\black{$L$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.7071067811865474,-0.7071067811865477)
+			\rput[bl](0.7488408863626846,-0.7445157924602379){\Large\black{$M$}}
+			\psdots[dotstyle=*,linecolor=ududff](0.8660254037844384,-0.5)
+			\rput[bl](0.9004798244939449,-0.51305963446988031){\Large\black{$N$}}
+		\end{scriptsize}
+	\end{pspicture*}
+\end{center}
+\vspace*{-0.3cm}
+
+\exercice{}
+
+En utilisant la figure de l'exercice 1, donner trois réels (dont au moins un positif et un négatif) associés à chacun des points suivants lors de l'enroulement de la droite numérique sur le cercle trigonométrique : C ; E ; K et J.
+
+\exercice{- même point image}
+
+Pour chacun des nombres suivants, déterminer deux autres réels ayant le même point image lors de l'enroulement de la droite numérique
+\begin{multicols}{5}
+	\begin{enumMet}
+		\item $\dfrac{3\pi}{4}$
+		\item $\dfrac{5\pi}{7}$
+		\item $-\dfrac{2\pi}{5}$
+		\item $\dfrac{7\pi}{9}$
+		\item $\dfrac{4\pi}{3}$
+	\end{enumMet}
+\end{multicols}
+
+\exercice{- convertir en degrés}
+
+Pour chacun des angles suivants, convertir l'angle en degré. On arrondira si nécessaire à 1 chiffre après la virgule
+\begin{multicols}{6}
+	\begin{enumMet}
+		\item $\dfrac{3\pi}{5}$ rad
+		\item $\dfrac{5\pi}{7}$ rad
+		\item $\dfrac{4\pi}{3}$ rad
+		\item $\dfrac{3\pi}{2}$ rad
+		\item $\dfrac{7\pi}{4}$ rad
+		\item $\dfrac{5\pi}{6}$ rad
+	\end{enumMet}
+\end{multicols}
+
+\exercice{- convertir en radians}
+
+Pour chacun des angles suivants, convertir l'angle en radian. On donnera la valeur exacte.
+\begin{multicols}{6}
+	\begin{enumMet}
+		\item $35\degree$
+		\item $260\degree$
+		\item $70\degree$
+		\item $195\degree$
+		\item $225\degree$
+		\item $54\degree$
+	\end{enumMet}
+\end{multicols}
+
+\exercice{}
+
+Dans chacune des listes suivantes, il y a un intrus. Le trouver en justifiant.
+\begin{enumMet}
+	\item $\dfrac{3 \pi}{2} ; \dfrac{9 \pi}{2} ; \dfrac{-\pi}{2} ; \dfrac{-5 \pi}{2}$.
+	\item $\dfrac{\pi}{3} ; \dfrac{14 \pi}{3} ; \dfrac{-8 \pi}{6} ; \dfrac{-10 \pi}{3}$.
+	\item $\dfrac{7 \pi}{4} ; \dfrac{-\pi}{4} ; \dfrac{-9 \pi}{4} ; \dfrac{-19 \pi}{4}$.
+	\item $\pi ;-\pi ; \pi \sqrt{9} ; 0$.
+\end{enumMet}
+
+\exercice{- cosinus et sinus}
+
+En utilisant le cercle trigonométrique de l'exercice 1, recopier et compléter le tableau suivant:\\
+\begin{center}
+	%	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{ | Xc | Xc | Xc | Xc | Xc | Xc | Xc | Xc | Xc |}
+		\hline
+		$x$  & $\dfrac{7\pi}{4}$ & $\dfrac{7\pi}{3}$ & $-\dfrac{13\pi}{6}$ &  $\dfrac{13\pi}{2}$ & $-\dfrac{15\pi}{4}$ & $-\dfrac{11\pi}{3}$ & $\dfrac{25\pi}{6}$ &  $-\dfrac{9\pi}{2}$ \rule[-12pt]{0pt}{33pt}\\ \hline
+		Point image  &   &   &   &  &   &   &   &  \\ \hline
+		$\cos(x)$  &   &   &   &  &   &   &   &  \\ \hline
+		$\sin(x)$ &   &   &   &  &   &   &   &  \\
+		\hline  
+	\end{tabular}
+\end{center}
+
+\exercice{}
+
+Une saisie calculatrice donne:
+
+\includegraphics[scale=0.8]{1.02.05-Img01}
+
+En admettant que cette réponse est correcte, en déduire la valeur exacte de chacun des nombres suivants.
+\begin{enumMet}
+	\item $\cos \left(\dfrac{6 \pi}{5}\right)$
+	\item $\cos \left(-\dfrac{\pi}{5}\right)$
+	\item $\sin \left(\dfrac{\pi}{5}\right)$
+	\item $\sin \left(\dfrac{3 \pi}{10}\right)$
+\end{enumMet}
+
+\exercice{}
+
+Une saisie calculatrice donne:
+
+\includegraphics[scale=0.8]{1.02.05-Img02}
+
+En admettant que cette réponse est correcte, en déduire la valeur exacte de chacun des nombres suivants.
+\begin{enumMet}
+	\item $\sin \left(-\dfrac{\pi}{10}\right)$
+	\item $\cos \left(\dfrac{\pi}{10}\right)$
+	\item $\sin \left(\dfrac{2 \pi}{5}\right)$
+	\item $\sin \left(\dfrac{9 \pi}{10}\right)$
+\end{enumMet}
+
+\exercice{}
+
+Sans calculatrice, calculer et réduire au même dénominateur les expressions suivantes. On pourra s'aider du cercle trigonométrique et on indiquera les étapes intermédiaires.
+\begin{enumMet}
+	\item $\cos \left(\dfrac{-\pi}{3}\right)-\sin \left(\dfrac{-7 \pi}{4}\right)$
+	\item $\cos \left(\dfrac{5 \pi}{3}\right)-\sin (2 \pi)+\cos \left(\dfrac{-\pi}{6}\right)$
+	\item $\cos (-2018 \pi)-\cos \left(\dfrac{-\pi}{4}\right)+\sin \left(\dfrac{3 \pi}{2}\right)-\sin \left(\dfrac{\pi}{4}\right)$
+	\item $\cos \left(\dfrac{\pi}{6}\right)+\sin \left(\dfrac{\pi}{3}\right)-\sin \left(\dfrac{\pi}{2}\right)+\sin \left(\dfrac{4 \pi}{3}\right)$
+\end{enumMet}
+
+\exercice{}
+
+Sans calculatrice, calculer les expressions suivantes. On pourra s'aider du cercle trigonométrique et on indiquera les étapes intermédiaires s'il y en a.
+\begin{enumMet}
+	\item $\cos ^2\left(\dfrac{-\pi}{13}\right)+\sin ^2\left(\dfrac{-\pi}{13}\right)$
+	\item $\cos ^2\left(\dfrac{-\pi}{6}\right)-\sin ^2\left(\dfrac{-\pi}{6}\right)$
+	\item $\sin \left(\dfrac{-5 \pi}{6}\right) \times \cos \left(\dfrac{2 \pi}{3}\right)-\cos (-\pi)$
+	\item $\dfrac{\sin \left(\dfrac{\pi}{4}\right)}{\cos ^2\left(\dfrac{\pi}{3}\right)}$
+\end{enumMet}
+
+
+\end{document}
+

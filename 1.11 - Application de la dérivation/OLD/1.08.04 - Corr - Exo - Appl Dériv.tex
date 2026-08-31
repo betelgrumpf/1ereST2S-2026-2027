@@ -1,0 +1,307 @@
+\documentclass[12pt,a4paper]{book}
+% \documentclass[a4paper,french]{book}
+% \usepackage[17pt]{extsizes}
+
+
+\input{1ere-preambule}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+\graphicspath{{images/}}
+\setcounter{chapter}{7}
+\chapter[Correction des exercices]{Application de la dérivation \\ correction des exercices}
+\thispagestyle{fancy}
+
+\subsection*{Ex 17 p 143}
+\begin{enumMet}
+    \item \ \\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1}{$-2$, $-1$, $2$ ,$4$}
+        \tkzTabLine{, -,z , +,z,-,  }
+    \end{tikzpicture}
+    \item le minimum de $f$ sur $[-2;4]$ est $-2$.\\
+    Le maximum de $f$ sur $[-2;4]$ est $3$.\\
+\end{enumMet}
+
+\subsection*{Ex 21 p 143}
+\begin{tikzpicture}
+    \tkzTabInit{$x$ / 1 , $f'(x)$ / 1, $f(x)$ / 2}{$-3$, $-1$, $3$ ,$4$}
+    \tkzTabLine{, +,z ,-,z, +,  }
+    \tkzTabVar{-/  ,+/$2$,-/$-1$  ,  +/ }
+\end{tikzpicture}
+
+\subsection*{Ex 35 p 145}
+\begin{enumMet}
+    \item $f'(x)=2x+4$\\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1}{$-\infty$, $-2$, $+\infty$}
+        \tkzTabLine{, -,z , +,  }
+    \end{tikzpicture}
+    \item \ \\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $-2$, $+\infty$}
+        \tkzTabVar{+/  ,-/$-9$ ,  +/ }
+    \end{tikzpicture}
+\end{enumMet}
+
+
+
+
+
+\subsection*{Ex 44 p 147}
+\begin{enumMet}
+    \item $f$ est une fonction polynôme du troisième degré donc $f$ est définie sur $\mathbb{R}$.
+    \item $f$ est une fonction polynôme du troisième degré donc $f$ est dérivable sur $\mathbb{R}$ et
+$$
+f^{\prime}(x)=-3 x^{2}+3=-3\left(x^{2}-1\right)=-3(x-1)(x+1)
+$$
+    \item \ \\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $-1$, $1$, $+\infty$}
+        \tkzTabLine{, -,z , +,z , -,  }
+        \tkzTabVar{+/  ,-/$-2$ ,  +/$2$, -/ }
+    \end{tikzpicture}
+\end{enumMet}
+
+\subsection*{45 p 147}
+\begin{enumMet}
+    \item $f$ est une fonction polynôme du troisième degré donc $f$ est définie sur $\mathbb{R}$.
+    \item $f$ est une fonction polynôme du troisième degré donc $f$ est dérivable sur $\mathbb{R}$ et $f^{\prime}(x)=3 x^{2}-2 x-1$
+    \item $f^{\prime}$ est une fonction trinôme du second degré qui admet deux racines 1 et $-\frac{1}{3}$. De plus le coefficient de $x^{2}$ est positif. La fonction $f$ admet donc le tableau de variations ci-dessous.\\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $-\dfrac{1}{3}$, $1$, $+\infty$}
+        \tkzTabLine{, +,z , -,z , +,  }
+        \tkzTabVar{-/  ,+/$\dfrac{32}{27}$ ,  -/$0$, +/ }
+    \end{tikzpicture}
+\end{enumMet}
+
+\subsection*{46 p 147}
+\begin{enumMet}
+    \item $f$ est une fonction polynôme du quatrième degré donc $f$ est définie sur $\mathbb{R}$.
+    \item $f$ est une fonction polynôme du quatrième degré donc $f$ est dérivable sur $\mathbb{R}$ et $f^{\prime}(x)=4 x^{3}-8 \times 2 x=4 x^{3}-16 x=4 x\left(x^{2}-4\right)=4 x(x+2)(x-2)$
+    \item On trouve tout d'abord le tableau de signe de $f^{\prime}(x)$ :\\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $4x$ / 1,$x+2$ / 1,$x-2$ / 1, $f'(x)$ / 1}{$-\infty$, $-2$, $0$,$2$, $+\infty$}
+        \tkzTabLine{, -,t , -,z , +,t,+,  }
+        \tkzTabLine{, -,z , +,t , +,t,+,  }
+        \tkzTabLine{, -,t , -,t , -,z,+,  }
+        \tkzTabLine{, -,z , +,z , -,z,+,  }
+    \end{tikzpicture}
+    
+    Et on peut alors en déduire le tableau de variations de $f$:\\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $-2$, $0$,$2$, $+\infty$}
+        \tkzTabLine{, -,z , +,z , -,z,+,  }
+        \tkzTabVar{+/  ,-/$-8$ ,  +/$8$,-/$-8$, +/ }
+    \end{tikzpicture}
+\end{enumMet}
+
+
+\subsection*{47 p 147}
+\begin{enumMet}
+    \item $f$ existe pour $x-1 \neq 0$ c'est à dire $x \neq 1 . f$ est donc définie sur $\mathbb{R}-\{1\}$.
+    \item $f$ est une fonction rationnelle donc $f$ est dérivable sur $]-\infty ; 1[$ et sur $] 1 ;+\infty[$. On alors $f=\dfrac{u}{v}$ donc $f^{\prime}=\dfrac{u^{\prime} v-v^{\prime} u}{v^{2}}$ ce qui nous donne
+$f^{\prime}(x)=\dfrac{x-1-x-2}{(x-1)^{2}}=\dfrac{-3}{(x-1)^{2}} .$
+    \item Pour tout $x \neq 1$, $(x-1)^{2}>0$ donc $f^{\prime}(x)<0$. On obtient donc :\\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $1$, $+\infty$}
+        \tkzTabLine{, -,d , -,  }
+        \tkzTabVar{+/  ,-D+/ ,  -/ }
+    \end{tikzpicture}
+\end{enumMet}
+
+\subsection*{48 p 147}
+\begin{enumMet}
+    \item Pour tout $x \in \mathbb{R}, x^{2}+1>0$ donc $f$ est définie sur $\mathbb{R}$. $f=\dfrac{u}{v}$
+    \item $f$ est une fonction rationnelle donc $f$ est dérivable sur $\mathbb{R}$ et comme $v$ alors $f^{\prime}=\dfrac{u^{\prime} v-v^{\prime} u}{v^{2}}$ et donc
+    $f^{\prime}(x)=\dfrac{-4 x^{2}-4+8 x^{2}}{\left(x^{2}+1\right)^{2}}=\dfrac{4 x^{2}-4}{\left(x^{2}+1\right)^{2}}=\dfrac{4(x+1)(x-1)}{\left(x^{2}+1\right)^{2}}$
+    \item $f^{\prime}(x)$ a le même signe que le produit $(x+1)(x-1)$. On obtient donc :
+\end{enumMet}
+
+\subsection*{Ex 59 à 63}
+\grasInMet{On suppose que $f$ est une fonction définie et dérivable sur un intervalle donné. Déterminer les éventuels extremums locaux de la fonction $f$ sur cet intervalle.}
+
+\subsection*{Ex 59 p 148}
+\grasInMet{$f(x)=x^{2}+4 x+3$ sur \R}\\
+On a $f'(x)=2 x+4, f'$ est une fonction affine qui s'annule pour $x=-2$. Le tableau de variations de la fonction $f$ est donc:\\
+\begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $-2$, $+\infty$}
+        \tkzTabLine{, -,z , +,  }
+        \tkzTabVar{+/  ,-/$-1$, +/ }
+    \end{tikzpicture}\\
+$f'$ s'annule en changeant de signe pour $x=-2$ donc $f(-2)=-1$ est un minimum local de $f$
+
+\subsection*{60 p 148}
+\grasInMet{$f(x)=\frac{1}{4} x\left(x^{2}-12\right)$ sur \R}\\
+$$
+\text { Comme }f(x)=\frac{1}{4}\left(x^{3}-12 x\right) \text { alors } f^{\prime}(x)=\frac{1}{4}\left(3 x^{2}-12\right)=\frac{3}{4}\left(x^{2}-4\right)=\frac{3}{4}(x+2)(x-2) \text { . }
+$$
+On obtient alors le tableau de variations ci-dessous.\\
+\begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $-2$, $2$, $+\infty$}
+        \tkzTabLine{, +,z , -,z,+,  }
+        \tkzTabVar{-/  ,+/$4$ ,  -/$-4$ , +/ }
+    \end{tikzpicture}\\
+    $f^{\prime}$ s'annule deux fois en changeant de signe : pour $x=-2$ et pour $x=2 . f(-2)=4$ est un maximum local de $f . f(2)=-4$ est un minimum local de $f$
+
+\subsection*{61 p 148}
+\grasInMet{$f(x)=2 x-3+\frac{2}{x-1}$ sur $] 1 ;+\infty[$}\\
+On a $f^{\prime}(x)=2-\dfrac{2}{(x-1)^{2}}=\dfrac{2 x^{2}-4 x}{(x-1)^{2}}=\dfrac{2 x(x-2)}{(x-1)^{2}}$
+Sur $] 1 ;+\infty\left[(x-1)^{2}>0\right.$. \\
+On étudie donc le signe de $2 x(x-2)$ sur $] 1 ;+\infty[$\\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$1$, $2$, $+\infty$}
+        \tkzTabLine{d, -,z , +,  }
+        \tkzTabVar{D+/  ,-/$3$ ,  +/ }
+    \end{tikzpicture}\\
+    $f^{\prime}$ s'annule en changeant de signe pour $x=2: f(2)=3$ est un minimum local de $f$.
+
+
+\subsection*{62 p 148}
+\grasInMet{$f(x)=-x^{3}+2 x^{2}-2 x+1$ sur \R.}\\
+On a $f^{\prime}(x)=-3 x^{2}+4 x-2$ donc $f^{\prime}$ est un trinôme du second degré. De plus son discriminant $\Delta=4^{2}-4 \times 2 \times 3=-8$ et le coefficient devant $x^{2}$ est négatif, donc $f^{\prime}$ est strictement négative sur $\mathbb{R}$. Et donc $f$ est strictement décroissante sur $\mathbb{R}$, donc $f$ n'admet pas d'extremums locaux.
+
+\subsection*{63 p 148}
+\grasInMet{$f(x)=\dfrac{3-x}{x-2} \text { sur }]-\infty ; 2[$}\\
+$f$ est de la forme $f=\dfrac{u}{v}$ donc $f^{\prime}=\dfrac{u^{\prime} v-v^{\prime} u}{v^{2}}$ d'où $f^{\prime}(x)=\dfrac{-x+2-3+x}{(x-2)^{2}}=\dfrac{-1}{(x-2)^{2}}$.
+Pour tout $x \in]-\infty ; 2\left[, f^{\prime}(x)<0\right.$ donc $f$ est strictement décroissante sur $]-\infty ; 2[$ et donc $f$ n'admet pas d'extremum sur $]-\infty ; 2[$.
+
+
+% \subsection*{50 p 147}
+% \begin{enumMet}
+%     \item $D_f=\R\backslash\{2\}$
+%     \item $f$ est la somme d'une fonction affine et d'une fonction rationnelle donc $f$ est dérivable sur ]$-\infty ; 2[$ et sur $] 2 ;+\infty[$\\ $f$ s'écrit sous la forme $f=u+\dfrac{4}{v}$ donc $f^{\prime}=u^{\prime}+\dfrac{-4 v^{\prime}}{v^{2}}$ et donc\\ $f^{\prime}(x)=1+\dfrac{-4}{(x-2)^{2}}=\dfrac{x^{2}-4 x}{(x-2)^{2}}=\dfrac{x(x-4)}{(x-2)^{2}}$
+%     \item Pour tout $x \neq 2, f^{\prime}(x)$ a le même signe que le produit $x(x-4)$. On a donc \\
+%     \begin{tikzpicture}
+%         \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $0$, $2$,$4$, $+\infty$}
+%         \tkzTabLine{, +,z , -,d , -,z,+,  }
+%         \tkzTabVar{-/  ,+/$-3$ ,  -D+/ ,-/$5$, +/ }
+%     \end{tikzpicture}
+% \end{enumMet}
+
+% \subsection*{51 p 247}
+% \begin{enumMet}
+%     \item $D_f=\R\backslash\{-1\}$
+%     \item $f'(x)= \dfrac{u'v-v'u}{v^2}=\dfrac{2x(x+1)-1(x^2+3)}{(x+1)^2}=\dfrac{2x^2+2x-x^2-3}{(x+1)^2}=\dfrac{x^2+2x-3}{(x+1)^2}$\\
+%     $\dfrac{(x-1)(x+3)}{(x+1)^2}=\dfrac{x^2-1x+3x-3}{(x+1)^2}=\dfrac{x^2+2x-3}{(x+1)^2}=f'(x)$
+%     \item \ \\
+%     \begin{tikzpicture}
+%         \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $-3$, $-1$,$1$, $+\infty$}
+%         \tkzTabLine{, +,z , -,d , -,z,+,  }
+%         \tkzTabVar{-/  ,+/$-6$ ,  -D+/ ,-/$2$, +/ }
+%     \end{tikzpicture}
+% \end{enumMet}
+
+\subsection*{87 p 151}
+\grasInMet{Une entreprise fabrique des rétroviseurs pour voitures. La fonction "coût total" est définie sur $\mathrm{I}=[0 ; 11]$ par $\mathrm{C}(x)=0,3 x^{3}-3 x^{2}+$ $9 x+6$.
+$\mathrm{C}(x)$ est exprimée en millier d'euros et $x$ est le nombre de milliers d'articles fabriqués. Le prix de vente de 1000 articles est $8025 $\EUR{}. On suppose que chaque article fabriqué est vendu. La courbe représentative de la fonction $\mathrm{C}$ est représentée ci-dessous dans un repère orthogonal.}
+\begin{center}
+            \psset{xunit=1.0cm,yunit=0.08cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+            \begin{pspicture*}(-2.14,-10)(11.7,148)
+                \def\C{0.3*x*x*x-3*x*x+9*x+6}
+                \def\R{8.025*x}
+                \def\B{-0.3*x*x*x+3*x*x-0.975*x-6}
+                %\def\B{-0.3*x*x*x*x+3*x*x*x-0.975*x*x-6*x}
+                \psgrid[gridcolor=lightgray, subgriddiv=2, gridlabels=0pt,xunit=1,yunit=20](-2.14,-5)(11.7,148)
+                \psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=20.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-2.14,-5)(11.7,148)
+                \psplot[linecolor=red,linewidth=1.5pt]{0}{11}{\C}
+                \psplot[linecolor=blue,linewidth=1.5pt]{0}{11}{\R}
+                \psplot[linecolor=violet,linewidth=1.5pt]{0}{11}{\B}
+                \begin{scriptsize}
+                    \rput[bl](10,140){\large{\red{$C(x)$}}}
+                    \rput[bl](10,70){\large{\blue{$R(x)$}}}
+                    \rput[bl](9.5,10){\large{\textcolor{violet}{$B(x)$}}}
+                \end{scriptsize}
+            \end{pspicture*}
+            %\includegraphics[scale=0.8]{1.08.EXO.Img01}
+        \end{center}
+\begin{enumMet}
+    \item \grasInMet{On note $\mathrm{R}$ la fonction recette, exprimée en millier d'euros, relative à la vente de $x$ milliers d'articles.}
+    \begin{enumMet}
+        \item \grasInMet{Expliquer pourquoi $\mathrm{R}(x)=8,025 x$.}\\
+        Chaque article est vendu 8,025 euro, donc 1000 articles sont vendus 8025 euro soit 8,025 milliers d'euros, d'où $R(x)=8,025 x$.
+        \item \grasInMet{Dans le repère ci-dessus, tracer la courbe représentative de $R$.}\\
+    On obtient les courbes ci-dessous. La droite bleue est celle de $R$ et la courbe rouge celle de $C$. La courbe violette est celle du bénéfice.
+        \item \grasInMet{Déterminer graphiquement l'intervalle de production qui permet de réaliser un bénéfice.}\\
+    La courbe représentative de $R$ est au-dessus de la courbe représentative de $C$ pour $x$ compris entre 1,8 et 9,4 (environ) soit une production comprise entre 1800 et 9400 articles.
+        \item \grasInMet{Déterminer graphiquement la quantité $x_{0}$ que l'entreprise doit fabriquer pour réaliser un bénéfice maximal.}\\
+        L'écart entre les deux courbes entre 1,8 et 9,4 est maximal pour $x \approx 6$, donc le bénéfice est maximal pour une production de 6000 articles environ.
+    \end{enumMet}
+    \item \grasInMet{Le bénéfice réalisé par cette entreprise est donné, en millier d'euros, par la fonction $\mathrm{B}$ définie et dérivable sur $\mathrm{I}$. On note $\mathrm{B}^{\prime}$ la fonction dérivée de $B$.}
+    \begin{enumMet}
+        \item \grasInMet{Montrer que, pour tout $x \in \mathrm{I}, \mathrm{B}^{\prime}(x)=-0,075(6 x-1)(2 x-13)$.}\\
+    Le bénéfice est donné par $B=R-C$ donc
+    $$
+    B(x)=8,025 x-0,3 x^{3}+3 x^{2}-9 x-6=-0,3 x^{3}+3 x^{2}-0,975 x-6
+    $$
+    Et donc $B^{\prime}(x)=-0,3 \times 3 x^{2}+3 \times 2 x-0,975=-0,9 x^{2}+6 x-0,975$.\\
+    En développant $-0,075(6 x-1)(2 x-13)$ on obtient $-0,9 x^{2}+6 x-0,975$ donc $B^{\prime}(x)=-0,075(6 x-1)(2 x-13)$
+            \item \grasInMet{Étudier le signe de $\mathrm{B}^{\prime}(x)$ puis dresser le tableau de variations de $\mathrm{B}$.}\\
+            $B^{\prime}$ est un polynôme du second degré qui a deux racines $x_{1}=\dfrac{1}{6}$ et $x_{2}=6,5$ donc
+    $B^{\prime}(x)$ est positif sur $[1 ; 6,5]$ et négatif sur $[6,5 ; 11]$. Et donc $B$ est croissante sur $[1 ; 6,5]$ et décroissante sur $[6,5 ; 11]$\\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$1$, $6{,}5$, $11$}
+        \tkzTabLine{, +,z , -,  }
+        \tkzTabVar{-/  ,+/$32{,}025$, -/ }
+    \end{tikzpicture}
+    \item \grasInMet{Retrouver, à partir du tableau de variations, la valeur de $x_{0}$.}\\
+    La fonction $B$ atteint son maximum pour $x_{0}=6,5$ donc le bénéfice est maximal pour une production de 6500 articles. 
+    \item \grasInMet{Quel est le montant, en euro, du bénéfice maximal?}\\
+    $B(6,5)=32,025$ donc le bénéfice maximal est de 32025 euros.
+    \end{enumMet}
+\end{enumMet}
+
+\subsection*{88 p 152}
+\grasInMet{D'après Bac technologique - France Métropolitaine - 2009\\
+Dans le Périgord, un producteur de truffes noires cultive, ramasse et conditionne de 0 à $45 \mathrm{~kg}$ de ce produit par semaine durant la période de production de la truffe.
+On désigne par $x$ le nombre de kilogrammes de truffes traitées chaque semaine et par $f(x)$ le coût unitaire de revient en euro. Chaque kilogramme de truffes conditionné est vendu $450$\EUR{}.
+On admet dans la suite du problème que la fonction $f$ est définie sur ] $0 ; 45]$ par $f(x)=x^{2}-60 x+975$}
+\begin{enumMet}
+    \item \grasInMet{Justifier que le coût de production total $C(x)$ pour $x \mathrm{~kg}$ de truffes est $\mathrm{C}(x)=x^{3}-60 x^{2}+975 x$.}\\
+    $f$ correspond au cout de revient unitaire en euro, or le producteur en cultive $x$ kg donc le cout total vaut $C(x)=x f(x)=x^{3}-60 x^{2}+975 x$.
+    \item \grasInMet{Exprimer le bénéfice $\mathrm{B}(x)$ réalisé par le producteur pour $x \mathrm{~kg}$ de truffes conditionnés et vendus.}\\
+    $B(x)=R(x)-C(x)=450 x-x^{3}+60 x^{2}-975 x$ donc $B(x)=-x^{3}+60 x^{2}-525 x$
+    \item \grasInMet{Déterminer la fonction dérivée $\mathrm{B}^{\prime}$ de la fonction $\mathrm{B}$ et montrer que, pour tout $x \in] 0 ; 45], \mathrm{B}^{\prime}(x)=(-3 x+15)(x-35)$.}\\
+    On $B^{\prime}(x)=-3 x^{2}+60 \times 2 x-525 x=-3 x^{2}+120 x-525$. En développant $(-3 x+15)(x-35)$ on obtient $-3 x^{2}+120 x-525$ donc $B^{\prime}(x)=(-3 x+15)(x-35)$
+    \item \grasInMet{Étudier le signe de $\mathrm{B}^{\prime}(x)$ puis dresser le tableau de variations de $\mathrm{B}$.}\\
+    $B^{\prime}$ est un polynôme du second degré admettant deux racines : 5 et 35. Sur $\left.] 0 ; 5\right]$ et sur $[35 ; 45], B^{\prime}(x)$ est négatif et donc $B$ est décroissante. Sur $[5 ; 35], B^{\prime}(x)$ est positif et donc $B$ est croissante. On obtient donc le tableau de variations ci-dessous.\\
+    \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $B'(x)$ / 1,$B(x)$ / 2}{$0$, $5$,$35$, $45$}
+        \tkzTabLine{, -,z , +,z,-,  }
+        \tkzTabVar{+/$0$  ,-/$-1250$, +/$12250$, -/$6750$ }
+    \end{tikzpicture}
+    \item \grasInMet{Compléter le tableau de valeurs suivant:}\\
+    Le tableau - une fois complété - est le suivant.\\
+    {\setlength{\tabcolsep}{8pt}
+    \begin{tabular}{|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|Xc|}
+    \hline$x$ & 0 & 5 & 10 & 15 & 20 & 25 & 30 & 35 & 40 & 45 \\
+    \hline$B(x)$ & 0 & $-1250$ & $-250$ & 2250 & 5500 & 8750 & 11250 & 12250 & 1100 & 6750 \\
+    \hline
+    \end{tabular}}
+    \item On obtient la courbe ci-dessous\\
+    \begin{center}
+        \psset{xunit=0.27cm,yunit=0.0008cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+        \begin{pspicture*}(-5.14,-2000)(46,12800)
+            \def\B{-x*x*x+60*x*x-525*x}
+            \psgrid[gridcolor=lightgray, subgriddiv=2, gridlabels=0pt,xunit=5,yunit=2000](-5.14,-2000)(46,12800)
+            \psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=5.,Dy=2000.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-5.14,-2000)(46,12800)
+            \psplot[linecolor=blue,linewidth=1.5pt]{0}{45}{\B}
+            \begin{scriptsize}
+                \rput[bl](38,8000){\large{\blue{$B(x)$}}}
+            \end{scriptsize}
+        \end{pspicture*}
+        %\includegraphics[scale=0.8]{1.08.EXO.Img02}
+    \end{center}
+\end{enumMet}
+
+
+
+% \subsection*{******}
+% \begin{enumMet}
+%     \item 
+% \end{enumMet}
+
+\end{document}
+

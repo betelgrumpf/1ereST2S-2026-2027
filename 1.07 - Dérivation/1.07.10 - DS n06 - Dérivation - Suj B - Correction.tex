@@ -1,0 +1,172 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+%\usepackage{mathrsfs}
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction DS n$^{\circ}$06 - Sujet B - 20/03/2025}}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+\textcolor{red}{Correction - DS n$^{\circ}$06 - Dérivation\\
+Sujet B}
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+
+
+\exerciceDS{ - nombre dérivé - ( 3 points )}
+Sur chacun des deux graphiques suivants sont représentées la courbe $C_{f}$ d'une fonction $f$ dérivable en a et sa tangente T au point d'abscisses Dans chacun des cas, déterminer par lecture graphique les nombres $a, f(a)$ et $f^{\prime}(a)$
+\begin{center}
+    \includegraphics[scale=0.8]{1.05.DS-IMG-02}
+\end{center}
+\begin{corrBox}
+	\begin{multicols}{2}
+		\begin{enumMet}
+			\item $a=2$, $f(a)=4$ et $f'(a)=-2$
+			\item $a=-1$, $f(a)=2$ et $f'(a)=0$
+		\end{enumMet}
+	\end{multicols}	
+\end{corrBox}
+
+\exerciceDS{ - dérivabilité - ( 3 points )}
+
+Soit $f$ la fonction définie sur \R par $f(x)=x^3+2 x^2-5 x-5$\\
+\ding{46} Montrer que la fonction f est dérivable pour $x=2$ et calculer $f'(2)$
+\begin{corrBox}
+	$f(2)=2^3+2\times 2^2-5\times 2-5=1$ et\\
+	$f(2+h)=(2+h)^3+2(2+h)^2-5(2+h)-5$\\
+	$\phantom{f(2+h)}=2^3+3\times 2^2\times h+3\times 2\times h^2+h^3+2(4+4h+h^2)-10-5h-5$\\
+	$\phantom{f(2+h)}=h^3+8h^2+15h+1$\\
+	$\lim\limits_{h \rightarrow 0} \dfrac{f(2+h)-f(2)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{h^3+8h^2+15h+1-1}{h}=\lim\limits_{h \rightarrow 0} \dfrac{h^3+8h^2+15h}{h}=\lim\limits_{h \rightarrow 0} h^2+8h+15=15$\\
+	$15$ est un nombre réel donc f est dérivable pour $\mathrm{x}=2$ et $f^{\prime}(2)=15$.
+\end{corrBox}
+
+\newpage
+\exerciceDS{ - dérivabilité - ( 3 points )}
+Soit f la fonction définie sur $] 1 ;+\infty[$ par $f(x)=\dfrac{1}{x-1}$.\\
+Montrer que la fonction f est dérivable pour $x=3$ et calculer $f^{\prime}(3)$
+\begin{corrBox}
+	$f(3+h)-f(3)=\dfrac{1}{3+h-1}-\dfrac{1}{3-1}=\dfrac{1}{h+2}-\dfrac{1}{2}=\dfrac{2}{2(h+2)}-\dfrac{h+2}{2(h+2)}=\dfrac{-h}{2h+4}$\\
+	$\lim\limits_{h \rightarrow 0} \dfrac{f(3+h)-f(3)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{\dfrac{-h}{2h+4}}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-1}{2h+4}=-\dfrac{1}{4}$\\
+	$-\dfrac{1}{4}$ est un nombre réel donc f est dérivable pour $\mathrm{x}=3$ et $f^{\prime}(3)=-\dfrac{1}{4}$.
+\end{corrBox}
+
+\exerciceDS{ - dérivabilité et graphique - ( 11,5 points )}
+On considère la courbe représentative $C_{f}$ de la fonction $f$ définie par $f(x)=-x^{2}+2x+1$ et dérivable sur $\mathbb{R}$. Soient $A$, $B$ et $C$ les point de $C_{f}$ d'abscisses respectives -1, 1 et 2 et $D_1$, $D_2$ et $D_3$ les tangente respectives en A, B et C à la courbe $C_{f}$.
+\begin{center}
+	%     \includegraphics[scale=0.4]{1.05.DS-IMG-04}
+	%     \newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	%     \newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+	\psset{xunit=1.2cm,yunit=1.2cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.3pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-3,-4.)(6,6)
+		\psgrid[gridwidth=0.6pt,gridcolor=gray,subgriddiv=0,gridlabels=0](0,0)(-3,-4.)(6,6)
+		\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-3,-4.)(6,6)
+		\psplot[linewidth=1.7pt,linecolor=ForestGreen,plotpoints=200]{-5.534227042312126}{21.649325634230358}{-x^(2.0)+2.0*x+1.0}
+		\psplot[linewidth=1.7pt, linecolor=red]{-5.534227042312126}{21.649325634230358}{(4.*x+2.)/1.}
+		\psplot[linewidth=1.7pt, linecolor=NavyBlue]{-5.534227042312126}{21.649325634230358}{(5.-2.*x)/1.}
+		\psplot[linewidth=1.7pt, linecolor=magenta]{-5.534227042312126}{21.649325634230358}{(2.-0.*x)/1.}
+		\rput[bl](2.7,-3.8){\Large{\textcolor{ForestGreen}{$C_f$}}}
+		\psdots[dotstyle=x, dotsize=10pt](2.,1.)
+		\rput[bl](2.2,1){\Large{$C$}}
+		\psdots[dotstyle=x, dotsize=10pt](-1.,-2.)
+		\rput[bl](-0.8,-2){\Large{$A$}}
+		\rput[bl](-2,-3.5){\Large{\textcolor{red}{$D_1$}}}
+		\rput[bl](4.3,-3.5){\Large{\textcolor{NavyBlue}{$D_3$}}}
+		\psdots[dotstyle=x, dotsize=10pt](1.,2.)
+		\rput[bl](0.8,2.2){\Large{$B$}}
+		\rput[bl](-2.8,2.2){\Large{\textcolor{magenta}{$D_2$}}}
+	\end{pspicture*}
+\end{center}
+\begin{enumMet}
+	\item A l'aide du graphique, trouver les équations réduites des droites $D_1$, $D_2$ et $D_3$. \quad \bareme{3}
+	\begin{corrBox}
+		\begin{multicols}{3}
+			\begin{itemMet}
+				\item $D_1$: $y=4x+2$
+				\item $D_2$: $y=2$
+				\item $D_3$: $y=-2x+5$
+			\end{itemMet}
+		\end{multicols}
+	\end{corrBox}
+	\item En déduire $f'(-1)$, $f'(1)$ et $f'(2)$ \quad \bareme{1,5}
+	\begin{corrBox}
+		\begin{multicols}{3}
+			\begin{itemMet}
+				\item $f'(-1)=4$
+				\item $f'(1)=0$
+				\item $f'(2)=-2$
+			\end{itemMet}
+		\end{multicols}
+	\end{corrBox}
+	\newpage
+	\item Calculs concernant la droite $D_1$
+	\begin{enumMet}
+		\item Calculer $f(-1)$ \quad \bareme{0,5}
+		\begin{corrBox}
+			$f(-1)=-(-1)^{2}+2\times (-1)+1=-2$	
+		\end{corrBox}
+		\item Calculer $f'(-1)$ \quad \bareme{2}
+		\begin{corrBox}
+			$f(-1+h)=-(-1+h)^{2}+2\times (-1+h)+1=-h^2+4h-2$\\
+			$f'(-1)=\lim\limits_{h \rightarrow 0} \dfrac{f(-1+h)-f(-1)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-h^2+4h-2-(-2)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-h^2+4h}{h}=\lim\limits_{h \rightarrow 0} -h+4$\\
+			$f'(-1)=4$
+		\end{corrBox}
+		\item A l'aide des 2 résultats précédents et d'un calcul, retrouver l'équation réduite de la droite $D_1$. \quad \bareme{1} 
+		\begin{corrBox}
+			$y=f'(a)(x-a)+f(a)$ avec $a=-1$\\
+			$y=f'(-1)(x-(-1))+f(1)$\\
+			$y=4(x+1)-2$ d'ou $y=4x+2$	
+		\end{corrBox} 
+	\end{enumMet}
+	\item \ding{46} Calculs concernant la droite $D_3$
+	\begin{enumMet}
+		\item \ding{46} Calculer $f(2)$ \quad \bareme{0,5}
+		\begin{corrBox}
+			$f(2)=-2^{2}+2\times 2+1=1$	
+		\end{corrBox}
+		\item \ding{46} Calculer $f'(2)$ \quad \bareme{2}
+		\begin{corrBox}
+			$f(2+h)=-(2+h)^{2}+2\times (2+h)+1=-h^2-2h+1$\\
+			$f'(2)=\lim\limits_{h \rightarrow 0} \dfrac{f(2+h)-f(2)}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-h^2-2h+1-1}{h}=\lim\limits_{h \rightarrow 0} \dfrac{-h^2-2h}{h}=\lim\limits_{h \rightarrow 0} -h-2$\\
+			$f'(2)=-2$
+		\end{corrBox}
+		\item \ding{46} A l'aide des 2 résultats précédents et d'un calcul, retrouver l'équation réduite de la droite $D_3$. \quad \bareme{1} 
+		\begin{corrBox}
+			$y=f'(a)(x-a)+f(a)$ avec $a=2$\\
+			$y=f'(2)(x-2)+f(2)$\\
+			$y=-2(x-2)+1$ d'ou $y=-2x+5$	
+		\end{corrBox}
+	\end{enumMet}
+	
+\end{enumMet}
+
+\end{document}

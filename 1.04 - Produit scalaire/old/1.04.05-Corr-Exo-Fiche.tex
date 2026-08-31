@@ -1,0 +1,135 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{1ere-preambule}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\newcommand{\degreees}{\ensuremath{^\circ}}
+
+%\newcommand{\norme}[1]{\left\Vert #1\right\Vert}
+
+\begin{document}
+\graphicspath{{images/}}
+\setcounter{chapter}{2}
+\chapter[Correction des exercices]{Produit Scalaire \\ correction des exercices\\ Fiche d'exercices}
+\thispagestyle{fancy}
+
+\section*{Recto}
+
+\subsection*{Ex 35}
+
+$$\vv{AB}\cdot\vv{AC}=AB\times AC\times\cos(\widehat{BAC})=2\times6\times\cos(60)=6$$
+
+\subsection*{Ex 36}
+
+\begin{enumMet}
+    \item \ \\
+\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+\newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.28,7)(22.12,12.02)
+\psline[linewidth=2.pt](3.,8.)(9.,8.)
+\pscustom[linewidth=2.pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
+\parametricplot{0.0}{1.0471975511965976}{0.6*cos(t)+3.|0.6*sin(t)+8.}
+\lineto(3.,8.)\closepath}
+\psline[linewidth=2.pt](3.,8.)(5.,11.464101615137757)
+\psline[linewidth=2.pt](5.,11.464101615137757)(11.,11.464101615137757)
+\psline[linewidth=2.pt](11.,11.464101615137757)(9.,8.)
+\begin{scriptsize}
+\psdots[dotstyle=*,linecolor=ududff](3.,8.)
+\rput[bl](2.6,7.66){\ududff{$A$}}
+\psdots[dotstyle=*,linecolor=xdxdff](9.,8.)
+\rput[bl](8.94,7.48){\xdxdff{$B$}}
+\rput[bl](5.98,7.7){$6$}
+\rput[bl](3.68,8.26){\qqwuqq{$\alpha = 60\textrm{\degreees}$}}
+\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](5.,11.464101615137757)
+\rput[bl](4.78,11.72){\darkgray{$D$}}
+\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](11.,11.464101615137757)
+\rput[bl](11.38,11.62){\darkgray{$C$}}
+\rput[bl](3.56,9.8){$4$}
+\end{scriptsize}
+\end{pspicture*}
+\item $\vv{AB}\cdot\vv{AD}=AB\times AD\times\cos(\widehat{BAD})=6\times4\times\cos(60)=12$\\
+$\vv{A B} \cdot \vv{A D}=\dfrac{1}{2}\left(A B^{2}+A D^{2}-B D^{2}\right)$\\
+$12=\dfrac{1}{2}\left(6^{2}+4^{2}-B D^{2}\right)$\\
+$24=36+16-BD^2$\\
+$BD^2=28$\\
+$BD=\sqrt{28}$
+\item Dans un quadrilatère la somme des angles fait 360\degreees.\\
+De plus dans un parallélogramme, les côtés opposés sont égaux.\\
+Donc $\widehat{ABC}=\dfrac{1}{2}(360-2\times60)=120\degreees$
+\item $\vv{BA}\cdot\vv{BC}=AB\times BC\times\cos(\widehat{ABC})=6\times4\times\cos(120)=-12$\\
+$\vv{BA} \cdot \vv{BC}=\dfrac{1}{2}\left(BA^{2}+BC^{2}-AC^{2}\right)$\\
+$-12=\dfrac{1}{2}\left(6^{2}+4^{2}-AC^{2}\right)$\\
+$-24=36+16-AC^2$\\
+$AC^2=76$\\
+$AC=\sqrt{76}$
+\end{enumMet}
+
+\subsection*{Ex 37}
+$\vv{VA}\cdot\vv{VB}=VA\times VB\times\cos(\widehat{AVB})=9\times5\times\cos(60)=22,5$\\
+$\vv{VA} \cdot \vv{VB}=\dfrac{1}{2}\left(VA^{2}+VB^{2}-AB^{2}\right)$\\
+$22,5=\dfrac{1}{2}\left(9^{2}+5^{2}-AB^{2}\right)$\\
+$45=81+25-AB^2$\\
+$AB^2=60$\\
+$AC=\sqrt{60}$
+
+\subsection*{Ex 47}
+\begin{enumMet}
+    \item
+    \begin{enumMet}
+        \item $AC=\sqrt{2^2+3^2}=\sqrt{13}$, $AB=\sqrt{1^2+6^2}=\sqrt{37}$ et $BC=\sqrt{4^2+4^2}=\sqrt{32}$
+        \item $\vv{AB}\cdot\vv{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)=\dfrac{1}{2}(37+13-32)=9$\\
+        $\vv{AB}\cdot\vv{AC}=AB\times AC\times\cos(\widehat{BAC})$\\
+        $\cos(\widehat{BAC})=\dfrac{\vv{AB}\cdot\vv{AC}}{AB\times AC}$\\
+        $\cos(\widehat{BAC})=\dfrac{9}{\sqrt{37}\times \sqrt{13}}=\dfrac{9}{\sqrt{481}}\approx0,41$\\
+        $\widehat{BAC}\approx65,8\degreees$
+    \end{enumMet}
+    \item 
+    \begin{enumMet}
+        \item $\vv{AB}\cdot\vv{AC}=AB\times AH$\\
+        $9=\sqrt{37}\times AH$\\
+        $AH=\dfrac{9}{\sqrt{37}}\approx1,5$
+        On utilise Pythagore pour calculer CH (dans le triangle ACH)\\
+        $CH^2=AC^2-AH^2$\\
+        $CH^2=\dfrac{20\sqrt{37}}{37}\approx3,29$
+        \item $A_{ABC}=\dfrac{AB\times CH}{2}=\dfrac{\sqrt{37}\times\dfrac{20\sqrt{37}}{37}}{2}=10$
+    \end{enumMet}
+\end{enumMet}
+
+\subsection*{Ex 72}
+\begin{enumMet}
+    \item $\vv{AB}\cdot\vv{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)=\dfrac{1}{2}(4^2+6^2-3^2)=21,5$
+    \item $\vv{AB}\cdot\vv{AC}=AH\times AC=5\times3=15$
+    \item $\vv{AB}\cdot\vv{AC}=AH\times AC=-2\times1=-2$
+    \item $\vv{AB}\cdot\vv{AC}=xx'+yy'=-6\times3+(-2)\times(-5)=-8$
+\end{enumMet}
+
+\subsection*{Ex 68}
+\begin{enumMet}
+    \item $\vv{u}\cdot\vv{v}=2\times1-3\times2=-4$, $\left\|\vv{u}\right\|=\sqrt{2^2+(-3)^2}=\sqrt{13}$ et $\left\|\vv{v}\right\|=\sqrt{1^2+2^2}=\sqrt{5}$
+    \item $\left\|\vv{u}+\vv{v}\right\|^2$\\
+    \grasInMet{1ère méthode:}\\
+    On sait que $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}\right)$ donc:\\
+    $\|\vv{u}+\vv{v}\|^{2}=2\vv{u} \cdot \vv{v}+\|\vv{u}\|^{2}+\|\vv{v}\|^{2}=2\times(-4)+13+5=10$\\
+    \grasInMet{2ème méthode:}\\
+    $\Coord{u}{2}{-3}+\Coord{v}{1}{2}=\vv{u}+\vv{v} \CoordSV{3}{-1}$\\
+    $\|\vv{u}+\vv{v}\|^{2}=3^2+(-1)^2=10$\\
+    \ \\
+    $\left\|\vv{u}-\vv{v}\right\|^2$\\
+    \grasInMet{1ère méthode:}\\
+    On sait que $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}\|^{2}+\|\vv{u}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)$ donc:\\
+    $\|\vv{u}-\vv{v}\|^{2}=\|\vv{u}\|^{2}+\|\vv{v}\|^{2}-2\vv{u} \cdot \vv{v}=13+5-2\times(-4)=26$\\
+    \grasInMet{2ème méthode:}\\
+    $\Coord{u}{2}{-3}-\Coord{v}{1}{2}=\vv{u}+\vv{v} \CoordSV{1}{-5}$\\
+    $\|\vv{u}+\vv{v}\|^{2}=1^2+(-5)^2=26$
+    \item 
+\end{enumMet}
+
+
+
+
+\end{document}
+

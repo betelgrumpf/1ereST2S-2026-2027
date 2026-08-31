@@ -1,0 +1,605 @@
+\documentclass[10pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Pour préparer l'entrée en Première}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Spécialité Mathématiques\\
+						Pour préparer l'entrée en Première
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+\vspace*{-0.7cm}
+\section*{Présentation :}
+Ce fascicule, élaboré par M.Buisson librement inspiré d'un document de l'équipe de mathématiques du Lycée Arago, a pour objectif de permettre aux élèves entrant en classe de première de mieux appréhender la spécialité mathématique.
+
+\vspace*{-0.5cm}
+\section*{Capacité 1 : Calculer sans calculatrice.}
+\vspace*{-0.8cm}
+\exerciceDS{}
+Écrire le plus simplement possible\\
+\begin{multicols}{3}
+	\begin{enumMet}
+	\item $A=\dfrac{13}{8}-\dfrac{5}{24}$
+	\item $B=\dfrac{24}{35} \times \dfrac{14}{36}$
+	\item $\mathrm{C}=\dfrac{\dfrac{15}{4}}{\dfrac{21}{16}}$
+	\item $\mathrm{D}=\dfrac{5}{4}-\dfrac{7}{4} \times \dfrac{7}{8}$
+	\item $E=\dfrac{-2}{3} \times \dfrac{-5}{2} \times \dfrac{3}{-7}$
+	\item $\mathrm{~F}=\dfrac{-4}{45} \times \dfrac{25}{8}$
+	\item $G=11 \div\left(\dfrac{2}{3}-\dfrac{5}{2}\right)$
+	\item $\mathrm{H}=1 \div\left(\dfrac{-7}{4}\right)$
+	\item $\mathrm{I}=\dfrac{-2}{3} \times \dfrac{-5}{2}$
+	\item $\mathrm{~J}=\dfrac{-4}{45} \div \dfrac{16}{15}$
+	\item $\mathrm{~K}=\dfrac{2}{\dfrac{3}{5}}$
+	\item $\mathrm{~L}=\left(\dfrac{1}{7}-\dfrac{2}{5}\right) \times \dfrac{25}{7}$
+	\item $M=\left(3-\dfrac{2}{3}\right)^{2}$
+	\item $N=1-2\left(1-\dfrac{1}{3}\right)$
+	\item $P=-2 \times\left(\dfrac{1}{3}\right)^{2}+5$
+	\item $Q=-7\left(\dfrac{4}{3}-2\right)^{2}+\dfrac{1}{9}$
+	\item $R=\dfrac{-\dfrac{2}{3}+1}{\left(-\dfrac{2}{3}\right)^{2}+1}$
+	\item $S=\left(\dfrac{2}{3}-3\right)^{2}$
+	\item $T=\left(\dfrac{2}{3}-3\right)^{3}$
+	\item $U=(-1)^{10}$
+	\item $\mathrm{~V}=(-1)^{15}$
+\end{enumMet}
+\end{multicols}
+\vspace*{-0.8cm}
+\exerciceDS{}
+\begin{enumMet}
+  \item Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=2 x^{2}-3 x+2$.
+  
+  Déterminer les images respectives de : $1 ;-1 ; \dfrac{2}{3} ;-\dfrac{1}{4}$.
+  \item Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=-2 x^{2}+3 x+2$.
+  
+  Déterminer les images respectives de: $1 ;-1 ; \dfrac{2}{3} ;-\dfrac{1}{4}$.
+  \item Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=x^{3}-x^{2}+x+6$.
+  
+  Déterminer les images respectives de: 1; -1 ; 2 et -2 .\\
+  \item Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=\dfrac{2 x+1}{x^{2}+1}$.
+  
+  Déterminer les images respectives de : $1 ;-1 ; \dfrac{2}{3} ;-\dfrac{1}{4}$.
+\end{enumMet}
+\vspace*{-0.8cm}
+\exerciceDS{}
+
+\begin{brappel}
+	\grasInProp{Règles calculatoires sur les puissances.}\\
+	a et $b$ sont des nombres réels. $n$ et $p$ sont des entiers naturels.
+	\begin{multicols}{3}
+		\begin{itemMet}
+		\item $a^{n} \times a^{p}=a^{n+p}$
+		\item $\dfrac{a^{n}}{a^{p}}=a^{n-p}$
+		\item $\left(a^{p}\right)^{n}=a^{n p}$
+		\item $(a b)^{n}=a^{n} \times b^{n}$
+		\item $\left(\dfrac{a}{b}\right)^{n}=\dfrac{a^{n}}{b^{n}}$
+		\item $a^{-n}=\dfrac{1}{a^{n}}$
+	\end{itemMet}
+	\end{multicols}
+\end{brappel}	
+
+
+Simplifier les expressions suivantes :
+
+\begin{multicols}{5}
+	$A=\dfrac{5^{10}}{5^{11}}$\\
+	$B=\dfrac{7^{101}}{7^{100}}$\\
+	$C=\dfrac{2^{n+1}}{2^{n}}$\\
+	$D=\dfrac{3^{n}}{3^{n+2}}$\\
+	$E=\dfrac{2 \times 3^{7}}{8 \times 3^{5}}$\\
+	$F=2^{-1}$\\
+	$G=3^{-2}$\\
+	$H=\left(2^{-1}\right)^{-3}$\\
+	$I=3^{n} \times 3^{2}$\\
+	$J=3^{n} \times 3$\\
+	$K=3^{n} \times 3^{2 n+1}$\\
+	$L=5^{n} \times 5^{2-n}$\\
+	$M=7+7^{-1}$\\
+	$N=2^{-1}+3^{-2}$\\
+	$P=\dfrac{5^{3}}{5}$\\
+	$Q=\dfrac{5^{2} \times 7^{3}}{5^{3} \times 7^{2}}$\\
+	$R=\dfrac{3 \times 5 \times 7}{7^{2} \times 3^{2}}$\\
+	$S=(3 y)^{2}$\\
+	$T=(2 y)^{3}$\\
+	$U=\left(\dfrac{x}{8}\right)^{2}$\\
+	$V=\dfrac{15^{2}}{5^{2}}$\\
+	$W=\dfrac{15^{2}}{5}$\\
+	$X=\dfrac{15^{2}}{5^{3}}$\\
+	$Y=\dfrac{(3 \times 7)^{4}}{3^{4} \times 11^{1} \times 7^{2}}$\\
+	$Z=\dfrac{8^{3} \times 15^{2}}{9 \times 5 \times 16^{2}}$\\
+\end{multicols}
+\vspace*{-0.8cm}
+\exerciceDS{}
+\begin{brappel}
+	\grasInProp{Règles calculatoires sur les racines carrées.}\\
+	pour tout a positif,
+	\begin{multicols}{2}
+		\begin{itemMet}
+			\item $(\sqrt{a})^{2}=\sqrt{a} \times \sqrt{a}=\sqrt{a^{2}}=a$
+			\item $\sqrt{a b}=\sqrt{a} \times \sqrt{b}$
+			\item $\sqrt{\dfrac{a}{b}}=\dfrac{\sqrt{a}}{\sqrt{b}}$
+			\item $\sqrt{a+b} \neq \sqrt{a}+\sqrt{b}$
+		\end{itemMet}
+	\end{multicols}
+\end{brappel}
+
+
+
+\begin{enumMet}
+  \item Simplifier, si possible, les écritures suivantes:\\
+  $(\sqrt{36})^{2}\quad;\quad\sqrt{4^{2}}\quad;\quad\sqrt{3} \times \sqrt{3}\quad;\quad \sqrt{3} \times 2 \sqrt{3}\quad;\quad\sqrt{3} \times 2 \sqrt{2}\quad;\quad4 \sqrt{3} \times 2 \sqrt{3}\quad;\quad4 \sqrt{2} \times 2 \sqrt{3}$\\
+  $(3 \sqrt{5})^{2} (10 \sqrt{2})^{2}\quad;\quad\sqrt{\dfrac{9}{4}}\quad;\quad\sqrt{\dfrac{25}{16}}\quad;\quad\sqrt{\dfrac{5}{4}}\quad;\quad\sqrt{3}+\sqrt{3}\quad;\quad\sqrt{3}+\sqrt{2}\quad;\quad\sqrt{3}-2 \sqrt{3}$\\
+  $5 \sqrt{3}+2 \sqrt{7}-2 \sqrt{3}+\sqrt{7}-\sqrt{2}$
+  \item Ecrire sous la forme $a \sqrt{b}$ où $b$ est le plus petit entier positif possible.\\
+  $\sqrt{8}\quad;\quad\sqrt{500}\quad;\quad\sqrt{12}\quad;\quad\sqrt{27}\quad;\quad \sqrt{75}\quad;\quad\sqrt{48}\quad;\quad7 \sqrt{2} \times 5 \sqrt{70}\quad;\quad \sqrt{32}+5 \sqrt{8}-\sqrt{18}$
+  \item Développer et réduire :\\
+  $2 \sqrt{7}(4-\sqrt{7})\quad;\quad(2-\sqrt{5})^{2}\quad;\quad(3+2 \sqrt{5})^{2}\quad;\quad(\sqrt{2}+\sqrt{3})^{2}$
+\end{enumMet}
+
+\vspace*{-0.6cm}
+\section*{Capacité 2 : Développer une expression littérale.}
+
+\begin{brappel}
+	\grasInProp{Incontournable : Identités remarquables.}
+	\begin{multicols}{3}
+		\begin{itemMet}
+		\item $(a+b)^{2}=a^{2}+2 a b+b^{2}$
+		\item $(a-b)^{2}=a^{2}-2 a b+b^{2}$
+		\item $(a+b)(a-b)=a^{2}-b^{2}$
+	\end{itemMet}
+	\end{multicols}
+\end{brappel}
+\vspace*{-0.6cm}
+\exerciceDS{ $-$ Sans les identités remarquables.}
+Développer et réduire les expressions suivantes :
+
+\begin{multicols}{2}
+	\begin{enumMet}
+  \item $6+2 x(3-x)$
+  \item $(6+2 x)(3-x)$
+  \item $5\left(x^{2}-2 x-1\right)$
+  \item $2 x-5-3 x(2+3 x)$
+  \item $4(3-x)(2 x+6)$
+  \item $6-2 x(3-x)$
+  \item $(6+2 x)-(3-x)$
+  \item $2 x-5+3 x(2+3 x)$
+  \item $2 x-5+(5 x-3)(2+3 x)$
+  \item $(2 x-5)(x+6)-(x-9)(x+4)$
+\end{enumMet}
+\end{multicols}
+\vspace*{-0.8cm}
+\exerciceDS{ $-$ Avec les identités remarquables.}
+Déterminer la forme développée de chacune des expressions suivantes :
+
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item $A(x)=(x+9)^{2}$
+		\item $B(x)=(x-9)^{2}$
+		\item $C(x)=(x-9)(x+9)$
+		\item $D(x)=(2 x+9)^{2}$
+		\item $E(x)=(2 x-9)^{2}$
+		\item $F(x)=(3-4 x)^{2}$
+		\item $G(x)=(3 x+1)(3 x-1)$
+		\item $H(x)=(-2 x+1)^{2}$
+		\item $I(x)=(-3 x-9)^{2}$
+		\item $J(x)=(x+1)^{2}+(x-1)^{2}$
+		\item $K(x)=(x+1)^{2}-(x-1)^{2}$
+		\item $L(x)=3(5 x-6)^{2}$
+		\item $M(x)=5-(3+2 x)^{2}$
+		\item $N(x)=5(3-4 x)(3+4 x)$
+		\item $P(x)=(2 x-1)(9-x)^{2}$
+	\end{enumMet}
+\end{multicols}
+\section*{Capacité 3 : Factoriser une expression littérale}
+\begin{brappel}
+	\grasInProp{Méthode :}
+	\begin{itemMet}
+		\item Recherche d'un facteur commun
+		\item Sinon, utilisation des identités remarquables.
+	\end{itemMet}
+\end{brappel}
+
+\vspace*{-0.8cm}
+\exerciceDS{ $-$ Factoriser avec un facteur commun}
+\begin{multicols}{2}
+	\begin{enumMet}
+  \item $3 x^{2}+2 x$
+  \item $6 x-x^{2}$
+  \item $3(x-4)+2 x(x-4)$
+  \item $3 x(x-5)+(x-5)(2 x+6)$
+  \item $3 x(x+2)+2 x$
+  \item $x-3 x^{2}$
+  \item $3 x^{2}-4 x+x^{3}$
+  \item $3(x-4)-2 x(x-4)$
+  \item $3 x(x-5)-(x-5)(2 x+6)$
+  \item $(x-2)-5(x-2)(x+3)$
+\end{enumMet}
+\end{multicols}
+\vspace*{-0.8cm}
+\exerciceDS{ $-$ Factoriser avec les identités remarquables}
+Factoriser les expressions suivantes :
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item $A(x)=x^{2}-9$
+		\item $B(x)=49-81 x^{2}$
+		\item $C(x)=9 x^{2}-36$
+		\item $D(x)=(3-4 x)^{2}-25$
+		\item $E(x)=25-(3-4 x)^{2}$
+		\item $F(x)=(2 x+1)^{2}-(x+3)^{2}$
+	\end{enumMet}
+\end{multicols}
+\vspace*{-0.8cm}
+\section*{Capacité 4 : Ecrire une expression littérale sous forme d'un quotient, simplifier un quotient.}
+\vspace*{-0.8cm}
+\exerciceDS{}
+Ecrire sous forme d'un quotient (on ne s'occupera pas de l'ensemble de définition)
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item $A=1+\dfrac{2}{x}$
+		\item $B=2-\dfrac{6}{x}$
+		\item $C=1+\dfrac{1}{x-3}$
+		\item $D=\dfrac{2}{x+1}-2$
+		\item $E=\dfrac{2}{x+1}-1$
+		\item $F=\dfrac{1}{2}+\dfrac{3}{x}$
+		\item $G=\dfrac{2}{x}-\dfrac{3}{x+1}$
+		\item $H=\dfrac{1}{2}+\dfrac{1}{6}-\dfrac{5}{x}$
+		\item $I=\dfrac{1}{x}-\dfrac{1}{2 x}-\dfrac{1}{3 x}$
+		\item $J=\dfrac{1}{x^{2}-2 x+1}-1$
+	\end{enumMet}
+\end{multicols}
+\vspace*{-0.8cm}
+\exerciceDS{}
+Simplifier les écritures fractionnaires suivantes (si possible)
+\begin{multicols}{3}
+	\begin{enumMet}
+	\item $A=\dfrac{2 x+4}{2}$
+	\item $B=\dfrac{3 x-6}{2}$
+	\item $C=\dfrac{5 x+15}{5}$
+	\item $\mathrm{D}=\dfrac{5 x+1}{5}$
+	\item $E=\dfrac{4 x+8}{2 x+6}$
+	\item $F=\dfrac{\dfrac{2}{x}}{\dfrac{3}{x}}$
+	\item $\mathrm{G}=\dfrac{\dfrac{(2 x+1)}{2}}{8}$
+	\item $H=\dfrac{\dfrac{1}{x}+2}{\dfrac{1}{x}-2}$
+	\item $\mathrm{I}=\dfrac{\dfrac{1}{x^{2}}}{\dfrac{3}{x}}$
+	\item $\mathrm{J}=\dfrac{\dfrac{1}{x}}{\dfrac{3}{x^{2}}}$
+	\item $\mathrm{K}=\dfrac{x^{2}+3 x}{4 x-x^{2}}$
+	\item $L=\dfrac{3 x^{2}+1}{x^{2}+5 x}$
+\end{enumMet}
+\end{multicols}
+\vspace*{-0.8cm}
+\section*{Capacité 5 : Résoudre une équation, une inéquation du premier degré.}
+\begin{brappel}
+	\begin{itemMet}
+		\item Equations du premier degré : $S=\{\ \ldots\ \}$
+		\item Inéquations du premier degré : $S=[\ \ldots\ [$ (intervalle)
+	\end{itemMet}
+\end{brappel}
+\vspace*{-0.8cm}
+\exerciceDS{}
+Résoudre dans $\mathbb{R}$ :
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item $2 x-4=0$
+		\item $\dfrac{3}{4} t+7=1$
+		\item $2(x-4)=x+3$
+		\item $x+1=2-8 x$
+		\item $7 x-13 \geqslant 1$
+		\item $x+1<-2 x$
+		\item $-2 x+10 \leqslant 12 x+150$
+		\item $\dfrac{x}{2}>2(x-1)$
+	\end{enumMet}
+\end{multicols}
+\vspace*{-0.6cm}
+\section*{Capacité 6 : Résoudre une équation du second degré.}
+\begin{brappel}
+	\begin{itemMet}
+		\item Equations produit : $A \times B=0 \Leftrightarrow A=0 \text { ou } B=0$
+		\item Equations de la forme $x^{2}=k$ : $S=\{\sqrt{k};-\sqrt{k}\}$ si $k\geqslant0$
+		\item Equations du second degré : factoriser pour se ramener à une équation produit.
+		\item Equations quotients : $\dfrac{A}{B}=0 \Leftrightarrow A=0 \text { et } B \neq 0$
+		\item Produit en croix : $\dfrac{A}{B}=\dfrac{C}{D} \Leftrightarrow A \times D=B \times C \quad($ avec $B \neq 0$ et $D \neq 0)$
+	\end{itemMet}
+\end{brappel}
+
+\vspace*{-0.8cm}
+\exerciceDS{}
+Résoudre les équations suivantes :
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item $x^{2}=8$
+		\item $(2 x-5)(3 x+4)=0$
+		\item $8 x^{2}-16=0$
+		\item $6 x^{2}-2 x=0$
+		\item $9-(2 x+1)^{2}=0$
+		\item $\dfrac{1-3 x}{x+8}=0$
+		\item $\dfrac{5-2 x}{3+3 x}=4$
+	\end{enumMet}
+\end{multicols}
+\vspace*{-0.8cm}
+\exerciceDS{}
+
+\begin{enumMet}
+  \item Déterminer les coordonnées des points d'intersection de la courbe C et de la droite d d'équations respectives : $y=x^{2}-2 x+3$ et $y=3 x+3$.
+  \item Déterminer les coordonnées du point d'intersection de la courbe C d'équation : $y=2 x^{2}-7$ avec l'axe des ordonnées.
+  \item Déterminer les coordonnées des points d'intersection de la courbes C d'équation : $y=2 x^{2}-7$ avec l'axe des abscisses.
+  \item Déterminer les coordonnées des points d'intersection des courbes C et C 'd'équations respectives : $y=\dfrac{3+x}{x+1}$ et $y=\dfrac{2+x}{x-5}$. (Utiliser un produit en croix)
+\end{enumMet}
+\vspace*{-0.8cm}
+\exerciceDS{}
+
+Soit $f(x)=(x-3)^{2}-(2 x-5)^{2}$.
+
+\begin{enumMet}
+  \item \begin{enumMet}
+  	\item Démontrer que pour pour tout $x$ réel, $f(x)=-3 x^{2}+14 x-16$
+	\item Démontrer que pour pour tout $x$ réel, $f(x)=(2-x)(3 x-8)$.
+  \end{enumMet}
+  \item Quel est le nom de chacune de ces deux formes?
+  \item En utilisant la forme la plus adaptée :
+	\begin{multicols}{2}
+		\begin{enumMet}
+		\item Calculer $f(0)$
+		\item Résoudre $f(x)=0$
+		\item Calculer $f(2)$
+		\item Résoudre $f(x)=-16$.
+	\end{enumMet}
+	\end{multicols}
+\end{enumMet}
+
+\section*{Capacité 7: Lectures graphiques.}
+\vspace*{-0.8cm}
+\exerciceDS{}
+
+\begin{minipage}[c]{0.48\linewidth}
+	On donne ci-contre la courbe représentative d'une fonction $f$ définie sur [-3; 5]. Répondre aux questions suivantes en utilisant ce graphique.
+\begin{enumMet}
+  \item Donner la valeur de $f(0)$.
+  \item Donner l'image de 2 par $f$.
+  \item Quels sont les antécédents de 2 par $f$ ?
+  \item Quelles sont les solutions de l'équation $f(x)=0$ ?
+  \item Quelles sont les solutions de l'inéquation $f(x) \leq 4$ ?
+  \item Dresser le tableau de variation de $f$.
+  \item Donner le maximum de $f$.
+  \item Dresser le tableau de signe de $f$.\\
+\end{enumMet}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.48\linewidth}
+	\includegraphics[scale=0.42]{Img01}
+\end{minipage}
+\vspace*{-0.7cm}
+\exerciceDS{}
+\begin{minipage}[c]{0.48\linewidth}
+	On donne ci-contre la courbe représentative d'une fonction $f$ définie sur $[-3,5 ; 4,8]$. Répondre aux questions suivantes en utilisant ce graphique.
+
+\begin{enumMet}
+  \item Donner la valeur de $f(0)$.
+  \item Donner l'image de 3 par $f$.
+  \item Quels sont les antécédents de -1 par $f$ ?
+  \item Quelles sont les solutions de l'équation $f(x)=0$ ?
+  \item Dresser le tableau de variation de $f$.
+  \item Dresser le tableau de signe de $f$.\\
+
+\end{enumMet}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.48\linewidth}
+	\includegraphics[scale=0.42]{Img02}
+\end{minipage}
+\vspace*{-0.7cm}
+\exerciceDS{}
+On considère le tableau de variation d'une fonction $g$ :
+
+\begin{center}
+\includegraphics[scale=0.45]{Img03}
+\end{center}
+
+\begin{enumMet}
+  \item Donner 3 exemples de nombres dont les images sont positives.
+  \item On sait de plus que la fonction s'annule pour $x=-6$ et pour $x=1$. Dresser alors le tableau de signe de cette fonction.
+\end{enumMet}
+
+\section*{Capacité 8 : Equations de droites.}
+\begin{brappel}
+	\begin{itemMet}
+		\item L' équation d' une droite non verticale est de la forme $y=m x+p$ ( $m$ étant appelé coefficient directeur, et $p$ ordonnée à l' origine).
+		\item Lire graphiquement le coefficient directeur et l'ordonnée à l'origine d'une droite non verticale.
+		\item Soit $d$ une droite non verticale d'équation $\mathrm{y}=m x+p$. Si $d$ passe par les points $\mathrm{A}\left(x_{A}, y_{A}\right)$ et $\mathrm{B}\left(x_{B}, y_{B}\right)$
+		
+		Alors, $m=\dfrac{y_{B}-y_{A}}{x_{B}-x_{A}}$
+		\item L'équation d'une droite verticale est de la forme $x=k$.
+	\end{itemMet}
+\end{brappel}
+\vspace*{-0.7cm}
+\exerciceDS{}
+\begin{minipage}[c]{0.45\linewidth}
+	\begin{enumMet}
+	\item Pour chacune des droites, compléter
+
+	\begin{tabularx}{7.5cm}{|c|X|X|}
+	\hline
+	Droite & Coefficient & Ordonnée\\
+	& directeur & à l'origine\\ \hline
+	D1 &  &  \\
+	\hline
+	D2 &  &  \\
+	\hline
+	D3 &  &  \\
+	\hline
+	D4 &  &  \\
+	\hline
+	D5 &  &  \\
+	\hline
+	\end{tabularx}
+
+	\item En déduire l'équation de chaque droite .\\
+\end{enumMet}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.52\linewidth}
+	\begin{center}
+		\includegraphics[scale=0.3]{Img04}
+	\end{center}
+\end{minipage}
+
+\vspace*{-0.7cm}
+\exerciceDS{}
+Représenter dans un repère orthogonal :
+
+\begin{enumMet}
+  \item La droite $d_{1}$ d'équation $y=0,5 x+2$
+  \item La droite $d_{2}$ passant par le point $A(3 ; 1)$ et d'ordonnée à l'origine 7
+  \item La droite $d_{3}$ passant par le points $B(2 ;-2)$ et de coefficient directeur -1 .
+  \item La droite $d_{4}$ d'équation: $y=-3 x$.
+  \item La droite $d_{5}$ passant par $\mathrm{D}(1 ; 2)$ et de coefficient directeur 0 .
+  \item La droite $d_{6}$ d'équation: $y=-\dfrac{1}{3} x+2$
+  \item La droite $d_{7}$ d'équation: $x=-5$.
+\end{enumMet}
+\vspace*{-0.8cm}
+\exerciceDS{}
+\begin{enumMet}
+  \item On désire déterminer l'équation de la droite passant par les points $A(5 ; 6)$ et $B(7 ;-2)$.
+\begin{enumMet}
+	\item Déterminer, par le calcul, le coefficient directeur $m$ de la droite.
+	\item L'équation de la droite (AB) est alors de la forme $y=\cdots \cdot x+p$.
+	\item Remplacer $x$ et $y$ par les coordonnées de $A$. En déduire la valeur de $p$.
+	\item Déterminer alors l'équation de la droite (AB).
+\end{enumMet}
+  \item Déterminer l'équation de la droite passant par les points $M(-5 ;-14)$ et $N(1 ; 4)$.
+  \item Le point $\mathrm{R}(10,31)$ appartient-il à une de ces deux droites ?
+\end{enumMet}
+
+\section*{Capacité 9 : Etudier le signe d'une fonction.}
+\begin{brappel}
+	\grasInProp{Méthode :}
+	\begin{itemMet}
+		\item Fonctions affines : voir cours seconde.
+		\item Autres fonctions : se ramener à un produit ou à un quotient de fonctions.
+	\end{itemMet}
+\end{brappel}
+\vspace*{-0.7cm}
+\exerciceDS{}
+Dresser le tableau de signe des fonctions suivantes :
+
+\begin{multicols}{3}
+	\begin{enumMet}
+	\item $f(x)=(2 x+1)(x-3)$
+	\item $g(x)=-2 x+3$
+	\item $h(x)=x+5$
+	\item $j(x)=(-2 x+6)(3+x)$
+	\item $k(x)=4 x^{2}-3 x$
+	\item $l(x)=\dfrac{2 x+1}{2-x}$
+	\item $m(x)=\dfrac{1-3 x}{-1-x}$
+	\item $n(x)=1-\dfrac{1}{x}$
+\end{enumMet}
+\end{multicols}
+
+\section*{Capacité 10 : Les vecteurs.}
+\begin{brappel}
+	\begin{itemMet}
+		\item Lire les coordonnées d'un vecteur.
+		\item Savoir calculer les coordonnées d'un vecteur.
+		
+		Considérons les points $\mathrm{A}\left(x_{A} ; y_{A}\right)$ et $\mathrm{B}\left(x_{B} ; y_{B}\right)$. Les coordonnées du vecteur $\vv{A B}$ sont $\CoordSV{x_{B}-x_{A}}{y_{B}-y_{A}}$
+		\item Relation de Chasles: Soient $\mathrm{A}, \mathrm{B}$ et C trois points du plan : $\vv{A B}+\vv{B C}=\vv{A C}$
+		\item Déterminant de deux vecteurs. On considère les vecteurs $\Coord{u}{x}{y}$ et $\Coord{v}{x'}{y'}$. Alors :
+		
+		$\operatorname{det}(\vv{u} ; \vv{v})=\left|\begin{array}{ll}x & x' \\ y & y'\end{array}\right|=x y'-y x'$.
+		\item Colinéarité de deux vecteurs.
+		
+		Deux vecteurs sont colinéaires si et seulement si leur déterminant est nul.
+	\end{itemMet}
+\end{brappel}
+
+\vspace*{-0.7cm}
+\exerciceDS{}
+les questions 1,2 et 3 sont indépendantes
+
+\begin{enumMet}
+  \item Lire, dans le repère ci-contre, les coordonnées des vecteurs représentés :
+  \begin{center}
+  	\includegraphics[scale=0.28]{Img05}
+  \end{center}
+
+  \item Dans un repère, on considère les points $\mathrm{A}(2 ; 1) ; \mathrm{B}(3 ;-4)$ et $\mathrm{C}(2 ; 0)$. On veut placer un point $\mathrm{M}(x ; y)$ tel que : $\vv{A M}=\vv{A B}+\vv{A C}$.
+	\begin{enumMet}
+		\item Calculer les coordonnées des vecteurs $\vv{A B}$ et $\vv{A C}$.
+		\item Calculer les coordonnées de $\vv{A B}+\vv{A C}$.
+		\item Exprimer les coordonnées du vecteur $\vv{A M}$ en fonction de $x$ et de $y$.
+		\item Déterminer alors les coordonnées de M.
+	\end{enumMet}
+  \item Dans un repère, on considère les points $\mathrm{A}(3 ;-1) ; \mathrm{B}(0 ; 5)$ et $\mathrm{C}(-4 ; 1)$.
+  
+  On veut placer un point $\mathrm{M}(x ; y)$ tel que $: \vv{B M}=2 \vv{B C}-\vv{A B}$.
+  \begin{enumMet}
+  	\item Calculer les coordonnées de $2 \vv{B C}-\vv{A B}$.
+	\item Exprimer les coordonnées du vecteur $\vv{B M}$ en fonction de $x$ et de $y$.
+	\item Déterminer alors les coordonnées de M.
+  \end{enumMet}
+\end{enumMet}
+
+\vspace*{-0.8cm}
+\exerciceDS{}
+Simplifier, au maximum, les expressions suivantes en utilisant la relation de Chasles:\\
+Soient $\mathrm{R}, \mathrm{S}, \mathrm{T}, \mathrm{U}$ et V des points du plan.
+\begin{multicols}{3}
+	\begin{enumMet}
+	\item $\vv{R T}+\vv{T U}$
+	\item $\vv{T U}+\vv{U S}$
+	\item $\vv{T U}+\vv{V T}$
+	\item $\vv{T U}-\vv{T U}$
+	\item $\vv{T U}+\vv{U S}+\vv{S R}$
+\end{enumMet}
+\end{multicols}
+\vspace*{-0.8cm}
+\exerciceDS{}
+les questions 1,2, 3,4 et 5 sont indépendantes.
+
+\begin{enumMet}
+  \item Dire si les vecteurs suivants sont (ou ne sont pas) colinéaires.
+	\begin{multicols}{2}
+		\begin{enumMet}
+		\item $\Coord{u}{2}{9}$ et $\Coord{v}{-6}{-27}$.
+		\item $\Coord{u}{4}{-2}$ et $\Coord{v}{6}{3}$.
+	\end{enumMet}
+	\end{multicols}
+  \item On considère les points suivants : $\mathrm{R}(-4 ; 1) ; \mathrm{S}(3 ;-2) ; \mathrm{T}(5 ; 7)$ et $U(13,4 ; 3,4)$.
+  
+  Les droites (RS) et (TU) sont-elles parallèles ?
+  \item On considère les points suivants : $\mathrm{R}(-4 ; 1) ; \mathrm{S}(-1 ;-2) ; \mathrm{T}(5 ;-5)$.
+  
+  Les points $\mathrm{R}, \mathrm{S}$ et T sont-ils alignés ?
+  \item On considère les vecteurs $\Coord{u}{2}{9}$ et $\Coord{v}{-6}{z}$. Pour quelle valeur du réel z ; ces deux vecteurs sont-ils colinéaires?
+  \item On considère les points suivants : $\mathrm{R}(-4 ; 1) ; \mathrm{S}(-1 ;-2) ; \mathrm{T}(w ;-5)$. Pour quelle valeur du réel $w$, ces points sont-ils alignés ?
+\end{enumMet}
+\end{document}

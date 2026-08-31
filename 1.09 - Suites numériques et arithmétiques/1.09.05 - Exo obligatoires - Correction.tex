@@ -1,0 +1,1137 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+%\usepackage{mathrsfs}
+
+\rhead{\textcolor{red}{Correction - Exercices obligatoires - Suites numériques}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{img_oblig/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction - Exercices obligatoires\\
+						Suites numériques}
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+\section{Généralités sur les suites}
+
+\exercice{ $-$ Ex 22 p 31 du LS}
+
+Pour chacune des suites suivantes, calculer $u_0, u_1, u_2$, $u_3, u_4$ et $u_{10}$ lorsque c'est possible.
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $u_n=3 n+7$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& u_0=3 \times 0+7=7 ; u_1=3 \times 1+7=10 ; u_2=3 \times 2+7=13 \\
+				& u_3=3 \times 3+7=16 ; u_{10}=3 \times 10+7=37
+			\end{aligned}
+			$$
+		\end{corrBox}
+		\item $u_n=\frac{n}{n+1}+2$
+		\begin{corrBox}
+			$$
+			u_0=\frac{0}{0+1}+2=2 ; u_1=\frac{1}{1+1}+2=\frac{5}{2} ; u_2=\frac{2}{2+1}+2=\frac{8}{3}
+			$$
+			
+			
+			$$
+			u_3=\frac{3}{3+1}+2=\frac{11}{4} ; u_{10}=\frac{10}{10+1}+2=\frac{32}{11}
+			$$
+			
+		\end{corrBox}
+		\item $u_n=n^2-7 n+2$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& u_0=0^2-7 \times 0+2=2 ; u_1=1^2-7 \times 1+2=-4 \\
+				& u_2=2^2-7 \times 2+2=-8 ; u_3=3^2-7 \times 3+2=-10 \\
+				& u_{10}=10^2-7 \times 10+2=32
+			\end{aligned}
+			$$
+		\end{corrBox}
+		\item $u_n=2^n-3$
+		\begin{corrBox}
+			$$u_0=2^0-3=-2 ; u_1=2^1-3=-1 ; u_2=2^2-3=1$$
+			$$
+			u_3=2^3-3=5 ; u_{10}=2^{10}-3=1021
+			$$
+		\end{corrBox}	
+		\item $u_n=(-1)^n-n$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& u_0=(-1)^0-0=1 ; u_1=(-1)^1-1=-2 ; u_2=(-1)^2-2=-1 \\
+				& u_3=(-1)^3-3=-4 ; u_{10}=(-1)^{10}-10=-9
+			\end{aligned}
+			$$		
+		\end{corrBox}
+		\item $u_n=\frac{3}{4}-\frac{1}{4} n$
+		\begin{corrBox}
+			$$u_0=\frac{3}{4}-\frac{1}{4} \times 0=\frac{3}{4} ; u_1=\frac{3}{4}-\frac{1}{4} \times 1=\frac{1}{2} ; u_2=\frac{3}{4}-\frac{1}{4} \times 2=\frac{1}{4}$$
+			
+			$$
+			u_3=\frac{3}{4}-\frac{1}{4} \times 3=0 ; u_{10}=\frac{3}{4}-\frac{1}{4} \times 10=-\frac{7}{4}
+			$$		
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+
+
+\exercice{ $-$ Ex 33 p 32 du LS}
+
+Pour chacune des suites définies pour tout entier naturel $n$, calculer les trois termes suivant le premier.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $\left\{\begin{array}{l}u_0=2 \\ u_{n+1}=3 u_n-4 n\end{array}\right.$
+		\begin{corrBox}
+			$$\begin{aligned}
+				& u_0=2 ; u_1=2 u_0+1=2 \times 2+1=5 \\
+				& u_2=2 u_1+1=2 \times 5+1=11 \\
+				& u_3=2 u_2+1=2 \times 11+1=23 \\
+				& u_4=2 u_3+1=2 \times 23+1=47
+			\end{aligned}$$		
+		\end{corrBox}
+		\item $\left\{\begin{array}{l}u_0=0 \\ u_{n+1}=u_n^2+\dfrac{1}{2 n+1}\end{array}\right.$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& u_0=1 ; u_1=u_0^2+1=1^2+1=2 \\
+				& u_2=u_1^2+1=2^2+1=5 ; \\
+				& u_3=u_2^2+1=5^2+1=26 \\
+				& u_4=u_3^2+1=26^2+1=677
+			\end{aligned}
+			$$		
+		\end{corrBox}
+		\item $\left\{\begin{array}{l}u_0=3 \\ u_n=5 u_{n-1}-2\end{array}\right.$
+		\begin{corrBox}
+			$$\begin{aligned}
+				& u_1 =1 ; \\
+				& u_2  =\frac{1}{u_1+2}=\frac{1}{1+2}=\frac{1}{3} \\
+				&u_3 = \frac{1}{u_2+2} =\frac{1}{\frac{1}{3}+2}=\frac{3}{7}\\ 
+				& u_4=\frac{1}{u_3+2}=\frac{1}{\frac{3}{7}+2}=\frac{7}{17} \\
+				& u_5 =\frac{1}{u_4+2}=\frac{1}{\frac{7}{17}+2}=\frac{17}{41}
+			\end{aligned}$$		
+		\end{corrBox}
+		\item $\left\{\begin{array}{l}u_0=1 \\ u_1=2 \\ u_{n+2}=2 u_{n+1}+u_n\end{array}\right.$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& u_0=1 ; u_1=\sqrt{u_0^2+1}=\sqrt{1^2+1}=\sqrt{2} \\
+				& u_2=\sqrt{u_1^2+1}=\sqrt{(\sqrt{2})^2+1}=\sqrt{3} ; u_3=\sqrt{u_2^2+1}=\sqrt{(\sqrt{3})^2+1}=\sqrt{4}=2 \\
+				& u_4=\sqrt{u_3^2+1}=\sqrt{2^2+1}=\sqrt{5}
+			\end{aligned}
+			$$		
+		\end{corrBox}
+		\item $\left\{\begin{array}{l}u_0=1 \\ u_1=2 \\ u_{n+2}=u_{n+1}+n\end{array}\right.$
+	\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 25 p 31 du LS}
+
+Représenter dans un repère les cinq premiers termes des suites définies pour tout $n \in \mathbb{N}$ par:
+\begin{multicols}{3}
+	\begin{enumMet}
+	\item $u_n=4 n-7$
+	\item $u_n=n^2+1$
+	\item $u_n=\left(\dfrac{1}{2}\right)^n$
+\end{enumMet}
+\end{multicols}
+
+\section{Suites arithmétiques}
+
+\exercice{ $-$ Ex 26 p 31 du LS}
+
+Les suites suivantes sont arithmétiques. Exprimer $u_{n+1}$ en fonction de $u_n$ puis calculer les cinq premiers termes.
+%\begin{multicols}{4}
+	\begin{enumMet}
+	\item $u_0=2$ et $r=3$
+	\begin{corrBox}
+		Pour tout $n \in \mathbb{N}, u_{n+1}=u_n+3$
+		
+		$$
+		\begin{aligned}
+			& u_0=2 \\
+			& u_1=u_0+3=2+3=5 \\
+			& u_2=u_1+3=5+3=8 \\
+			& u_3=u_2+3=8+3=11 \\
+			& u_4=u_3+3=11+3=14
+		\end{aligned}
+		$$
+				
+	\end{corrBox}
+	\item $u_0=4$ et $r=-3$
+	\begin{corrBox}
+		
+		Pour tout $n \in \mathbb{N}, u_{n+1}=u_n-3$
+		
+		$$
+		\begin{aligned}
+			& u_0=4 \\
+			& u_1=u_0-3=4-3=1 \\
+			& u_2=u_1-3=1-3=-2 \\
+			& u_3=u_2-3=-2-3=-5 \\
+			& u_4=u_3-3=-5-3=-8
+		\end{aligned}
+		$$
+				
+	\end{corrBox}
+	\item $u_1=3$ et $r=\dfrac{1}{2}$
+	\begin{corrBox}
+		Pour tout entier $n \geqslant 1, u_{n+1}=u_n+\frac{1}{2}$
+		
+		$$
+		\begin{aligned}
+			& u_1=3 \\
+			& u_2=u_1+\frac{1}{2}=3+\frac{1}{2}=\frac{7}{2} \\
+			& u_3=u_2+\frac{1}{2}=\frac{7}{2}+\frac{1}{2}=\frac{8}{2}=4 \\
+			& u_4=u_3+\frac{1}{2}=4+\frac{1}{2}=\frac{9}{2} \\
+			& u_5=u_4+\frac{1}{2}=\frac{9}{2}+\frac{1}{2}=\frac{10}{2}=5
+		\end{aligned}
+		$$		
+	\end{corrBox}
+	\item $u_1=\dfrac{3}{4}$ et $r=\dfrac{1}{2}$
+	\begin{corrBox}
+		Pour tout entier $n \geqslant 1, u_{n+1}=u_n+\dfrac{1}{2}$
+		
+		$$
+		\begin{aligned}
+			& u_1=\frac{3}{4} \\
+			& u_2=u_1+\frac{1}{2}=\frac{3}{4}+\frac{1}{2}=\frac{5}{4} \\
+			& u_3=u_2+\frac{1}{2}=\frac{5}{4}+\frac{1}{2}=\frac{7}{4} \\
+			& u_4=u_3+\frac{1}{2}=\frac{7}{4}+\frac{1}{2}=\frac{9}{4} \\
+			& u_5=u_4+\frac{1}{2}=\frac{9}{4}+\frac{1}{2}=\frac{11}{4}
+		\end{aligned}
+		$$
+				
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 28 p 31 du LS}
+
+Les suites suivantes sont arithmétiques de raison $r$. Exprimer $u_n$ en fonction de $n$, pour tout $n \in \mathbb{N}$.
+\begin{corrBox}
+	La suite étant arithmétique, on sait que le terme général peut s'écrire sous la forme $u_n=u_p+(n-p) r$. On obtient donc:	
+\end{corrBox}
+%\begin{multicols}{4}
+	\begin{enumMet}
+	\item $u_2=2$ et $r=4$
+	\begin{corrBox}
+		Pour tout entier $n \in \mathbb{N}, u_n=u_2+(n-2) \times r_{\text {donc }} u_n=2+4(n-2)=4 n-6$
+	\end{corrBox}
+	\item $u_5=7$ et $r=-\frac{1}{2}$
+	\begin{corrBox}
+		Pour tout entier $n \in \mathbb{N}, u_n=u_5+(n-5) \times r_{\text {donc }} u_n=7-\frac{1}{2}(n-5)=-\frac{1}{2} n+\frac{19}{2}$	
+	\end{corrBox}
+	\item $u_3=4$ et $r=12$
+	\begin{corrBox}
+		Pour tout entier $n \in \mathbb{N}, n \in \mathbb{N}, u_n=u_3+(n-3) \times r$ donc
+		$$
+		u_n=4+12(n-3)=12 n-32
+		$$	
+	\end{corrBox}
+	\item $u_8=\frac{37}{2}$ et $r=-\frac{1}{4}$
+	\begin{corrBox}
+		Pour tout entier, $n \in \mathbb{N}, u_n=u_8+(n-8) \times r$ donc
+		
+		$$
+		u_n=\frac{37}{2}-\frac{1}{4}(n-8)=-\frac{1}{4} n+\frac{41}{2}
+		$$				
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 27 p 31 du LS}
+
+Déterminer si les suites suivantes sont arithmétiques. Si oui, donner le premier terme et la raison.
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item $u_n=7 n-3$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		On calcule les premiers termes:
+		$$
+		u_0=-3, u_1=7 \times 1-3=4 \text { et } u_2=7 \times 2-3=11
+		$$
+		On a $u_1-u_0=7$ et $u_2-u_1=7$, la suite semble arithmétique. II faut vérifier pour tout $n$ entier naturel.
+		Pour tout entier $n \in \mathbb{N}, u_{n+1}=7(n+1)-3=7 n+4$
+		D'où, pour tout entier $n \in \mathbb{N}$,
+		$$
+		u_{n+1}-u_n=7 n+4-(7 n-3)=7 n+4-7 n+3=7
+		$$
+		La suite est donc bien arithmétique de raison $r=7$ et de premier terme $u_0=-3$.
+		
+		Remarque: On peut également reconnaître que $u_n$ est de la forme $u_0+n r$ et déduire directement que $\left(u_n\right)$ est arithmétique de raison $r=7$ et de premier terme $u_0=-3$.		
+	\end{corrBox}
+	\item $u_n=n^2+4$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		u_0=4, u_1=1+4=5 \text { et } u_2=2^2+4=8 .
+		$$
+		
+		
+		On a $u_2-u_1=3$ et $u_1-u_0=1$.
+		La suite n'est donc pas arithmétique.	
+	\end{corrBox}
+	\item $\left\{\begin{array}{l}u_0=1 \\ u_{n+1}=2 u_n+7, \text { pour tout } n \in \mathbb{N} \text {. }\end{array}\right.$
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		u_1=2 \times 1+7=9 \text { et } u_2=2 \times 9+7=25
+		$$
+		
+		
+		On a $u_2-u_1=16$ et $u_1-u_0=8$.
+		La suite n'est pas arithmétique.		
+	\end{corrBox}
+	\item $\left\{\begin{array}{l}u_1=-3 \\ u_{n+1}=u_n+n+9, \text { pour tout } n \in \mathbb{N}^* .\end{array}\right.$
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		\begin{aligned}
+			& u_2=u_1+1+9=-3+1-9=7 \\
+			& u_3=u_2+2+9=7+2+9=18 \\
+			& \text { On a } u_3-u_2=11 \text { et } u_2-u_1=10
+		\end{aligned}
+		$$
+		
+		
+		La suite n'est pas arithmétique.			
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 54 p 34 du LS}
+
+Pour chacune des suites suivantes, calculer $u_{20}$.
+\begin{enumMet}
+	\item La suite ( $u_n$ ) est arithmétique de raison $r=3$ et telle que $u_7=12$.
+	\begin{corrBox}
+		Comme la suite est arithmétique de premier terme $u_7=12$ et de raison $r=3$, on peut écrire son terme général sous la forme $u_n=u_p+(n-p) r$ soit ici : $u_n=u_7+(n-7) \times 3$.
+		On a donc $u_{20}=12+(20-7) \times 3=12+13 \times 3=51$.
+	\end{corrBox}
+	\item La suite $\left(u_n\right)$ est arithmétique de raison $r=5$ et telle que $u_{25}=17$.
+	\begin{corrBox}
+		Comme la suite est arithmétique avec $u_{25}=17$ et de raison $r=5$, on peut écrire son terme général sous la forme $u_n=u_p+(n-p) r$ soit ici : $u_n=u_{25}+(n-25) \times 5$.
+		On a donc $u_{20}=17+(20-25) \times 5=17+(-5) \times 5=-8$.		
+	\end{corrBox}
+	\item La suite $\left(u_n\right)$ est définie par $\left\{\begin{array}{l}u_0=3 \\ u_{n+1}=u_n+7\end{array}\right.$ pour $n \in \mathbb{N}$.
+	\begin{corrBox}
+		La suite $\left(u_n\right)$ est arithmétique car $u_{n+1}-u_n=7$. La raison est donc 7 et le premier terme $u_0=3$.
+		
+		On peut donc écrire le terme général sous la forme $u_n=u_p+(n-p) r$ soit ici :
+		$$
+		u_n=u_0+n \times 7
+		$$
+		On a donc $u_{20}=3+20 \times 7=3+20 \times 7=143$.			
+	\end{corrBox}
+	\item La suite $\left(u_n\right)$ est définie par $\left\{\begin{array}{l}u_1=-2 \\ u_{n+1}=u_n-4\end{array}\right.$ pour $n \in \mathbb{N}$.
+	\begin{corrBox}
+		La suite $\left(u_n\right)$ est arithmétique car $u_{n+1}-u_n=-4$. La raison est donc -4 et le premier terme $u_1=-2$. On peut donc écrire le terme général sous la forme $u_n=u_p+(n-p) r$ soit ici : $u_n=u_1+(n-1) \times(-4)$. On a donc $u_{20}=-78$.			
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{ $-$ Ex 55 p 34 du LS}
+
+Déterminer si les suites suivantes sont arithmétiques. Si oui, donner le premier terme et la raison.
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item Pour tout $n \in \mathbb{N}, u_n=\dfrac{n+5}{n+1}$.
+	\begin{corrBox}
+		On calcule les premiers termes: $u_0=\dfrac{0+5}{0+1}=5, u_1=\dfrac{1+5}{1+1}=3$ et $u_2=\dfrac{2+5}{2+1}=\dfrac{7}{3}$
+		On a $u_2-u_1=-\dfrac{2}{3}$ et $u_1-u_0=-2$.
+		La suite n'est donc pas arithmétique.		
+	\end{corrBox}
+	\item Pour tout $n \in \mathbb{N}, u_n=\dfrac{-3 n+5}{8}$.
+	\begin{corrBox}
+		On calcule les premiers termes : $u_0=\dfrac{5}{8}, u_1=\dfrac{-3+5}{8}=\frac{2}{8}=\frac{1}{4}$ et $u_2=\dfrac{-3 \times 2+5}{8}=-\dfrac{1}{8}$
+		
+		On a $u_2-u_1=-\frac{3}{8}$ et ${ }^{u_1}-u_0=-\frac{3}{8}$, la suite semble arithmétique. Il faut vérifier pour tout entier naturel $n$.
+		
+		$$
+		u_{n+1}=\dfrac{-3(n+1)+5}{8}=\dfrac{-3 n+2}{8}
+		$$
+		
+		
+		D'où $u_{n+1}-u_n=\dfrac{-3 n+2}{8}-\dfrac{-3 n+5}{8}=-\dfrac{3}{8}$.
+		La suite est arithmétique de raison $r=-\dfrac{3}{8}$ et de premier terme $u_0=\dfrac{5}{8}$.		
+	\end{corrBox}
+	\item Pour tout $n \in \mathbb{N}, u_n=\dfrac{n^2+4 n+3}{n+3}$.
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		u_0=\frac{3}{3}=1, u_1=\frac{1^2+4 \times 1+3}{1+3}=\frac{8}{4}=2{ }_{\text {et }} u_2=\frac{2^2+4 \times 2+3}{2+3}=\frac{15}{5}=3
+		$$
+		
+		
+		On a $u_2-u_1^{\prime}=1$ et $u_1-u_0=1$, la suite semble arithmétique. II faut vérifier pour tout entier naturel $n$.
+		
+		$$
+		\begin{aligned}
+			& u_{n+1}=\frac{(n+1)^2+4(n+1)+3}{n+1+3} \\
+			& u_{n+1}=\frac{n^2+2 n+1+4 n+4+3}{n+4}=\frac{n^2+6 n+8}{n+4} \\
+			& \text { D'où } u_{n+1}-u_n=\frac{n^2+6 n+8}{n+4}-\frac{n^2+4 n+3}{n+3} \\
+			& =\frac{\left(n^2+6 n+8\right)(n+3)-\left(n^2+4 n+3\right)(n+4)}{(n+4)(n+3)} \\
+			& =\frac{n^3+3 n^2+6 n^2+18 n+8 n+24-\left(n^3+4 n^2+4 n^2+16 n+3 n+12\right)}{\left(n^2+3 n+4 n+12\right)} \\
+			& =\frac{n^2+7 n+12}{n^2+7 n+12}=1
+		\end{aligned}
+		$$
+		
+		
+		La suite est arithmétique de raison $r=1$ et de premier terme $u_0=1$.		
+	\end{corrBox}
+	\item Pour tout $n \in \mathbb{N}, u_n=\dfrac{n^2+1}{n+2}$.
+	\begin{corrBox}
+		On calcule les premiers termes: $u_0=\dfrac{1}{2}, u_1=\dfrac{2}{3}$ et $u_2=\dfrac{5}{4}$. On a $u_2-u_1=\dfrac{7}{12}$ et $u_1-u_0=\dfrac{1}{6}$. La suite n'est donc pas arithmétique.		
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 56 p 34 du LS}
+
+À chaque fois, on donne deux termes d'une suite arithmétique $\left(u_n\right)$ définie sur $\mathbb{N}$.
+Déterminer la raison et le premier terme puis exprimer, $u_n$ en fonction de $n \in \mathbb{N}$.
+\begin{corrBox}
+	La suite étant arithmétique, on sait que le terme général peut s'écrire sous la forme $u_n=u_p+(n-p) r$. On obtient:	
+\end{corrBox}
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item $u_3=4$ et $u_8=24$.
+	\begin{corrBox}
+		$$
+		\begin{aligned}
+			& u_8=u_3+(8-3) \times r \text { soit } 24=4+5 r \Longleftrightarrow 20=5 r \Longleftrightarrow r=4 \text {. } \\
+			& u_0=u_3+(0-3) r \Longleftrightarrow u_0=4-3 \times 4=-8 \\
+			& \text { Donc } u_n=-8+4 n
+		\end{aligned}
+		$$
+	\end{corrBox}
+	\item $u_5=\frac{7}{4}$ et $u_9=\dfrac{1}{4}$.
+	\begin{corrBox}
+		
+		$u_9=u_5+(9-5) \times r_{\text {soit }} \frac{1}{4}=\frac{7}{4}+4 r \Longleftrightarrow-\frac{6}{4}=4 r \Longleftrightarrow r=-\frac{6}{16}=-\frac{3}{8}$.
+		
+		$$
+		u_0=u_5+(0-5) r \Longleftrightarrow u_0=\frac{7}{4}-5 \times\left(-\frac{3}{8}\right)=\frac{29}{8}
+		$$
+		
+		
+		Donc $u_n=\frac{29}{8}-\frac{3}{8} n$				
+	\end{corrBox}
+	\item $u_{13}=16$ et $u_{32}=-7$.
+	\begin{corrBox}
+		$u_{32}=u_{13}+(32-13) \times r_{\text {soit }}-7=16+19 r \Longleftrightarrow-23=19 r \Longleftrightarrow r=-\frac{23}{19}$
+		
+		$$
+		u_0=u_{13}+(0-13) r \Longleftrightarrow u_0=16-13 \times\left(-\frac{23}{19}\right)=\frac{603}{19}
+		$$
+		
+		
+		Donc $u_n=\frac{603}{19}-\frac{23}{19} n$	
+	\end{corrBox}
+	\item $u_{50}=159$ et $u_{100}=309$.
+	\begin{corrBox}
+		d. $u_{100}=u_{50}+(100-50) \times r_{\text {soit }} 309=159+50 r \Longleftrightarrow 150=50 r \Longleftrightarrow r=3$.	
+		
+		$$
+		\begin{aligned}
+			& u_0=u_{50}+(0-50) r \Longleftrightarrow u_0=159-50 \times 3=9 \\
+			& \text { Donc } u_n=9+3 n
+		\end{aligned}
+		$$		
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 58 p 34 du LS}
+
+Dans le repère orthonormé ci-dessous, on a représenté quelques termes de trois suites arithmétiques.
+Pour chacune d'elle, déterminer le premier terme, la raison ainsi que l'expression de $u_n$ en fonction de $n$. Donner la valeur de $u_3$ et $u_6$.
+\begin{center}
+	\includegraphics[scale=0.7]{Img01}
+\end{center}
+
+\begin{corrBox}
+	\textcolor{red}{Pour les points verts:}
+	
+	Le premier terme est $u_0=2$.
+	La raison est $r=1$.
+	On a donc $u_n=2+n$. $u_3=5$ et $u_6=8$.
+	
+	\textcolor{red}{Pour les points rouges:}
+	
+	Le premier terme est $u_0=4$.
+	Comme $u_0=4$ et $u_5=6$ et que la suite est arithmétique, on a $u_5=u_0+(5-0) \times r$
+	
+	$$
+	\text { soit } 6=4+5 r \Longleftrightarrow 2=5 r \Longleftrightarrow r=\frac{2}{5}
+	$$
+	
+	
+	La raison est $r=\frac{2}{5}$.
+	On a donc $u_n=4+\frac{2}{5} n$.
+	
+	$$
+	u_3=4+\frac{2}{5} \times 3=\frac{26}{5} \text { et } u_6=4+\frac{2}{5} \times 6=\frac{32}{5}
+	$$
+	
+	
+	\textcolor{red}{Pour les points violets:}
+	
+	Le premier terme est $u_0=7$.
+	Comme $u_0=7$ et $u_2=6$ et que la suite est arithmétique, on a $u_2=u_0+(2-0) \times r$
+	
+	$$
+	\text { soit } 6=7+2 r \Longleftrightarrow-1=2 r \Longleftrightarrow r=-\frac{1}{2}
+	$$
+	
+	
+	La raison est $r=-\frac{1}{2}$.
+	On a donc $u_n=7-\frac{1}{2} n$.
+	
+	$$
+	u_3=7-\frac{1}{2} \times 3=\frac{11}{2} \text { et } u_6=7-\frac{1}{2} \times 6=4
+	$$
+		
+\end{corrBox}
+
+\exercice{ $-$ Ex 59 p 34 du LS}
+
+Lorentz place une somme de 1000 euros au taux simple annuel de $5 \%$; c'est-à-dire que chaque année, la somme placée augmentera de $5 \%$ de la somme initiale. Pour tout entier naturel $n, u_n$ désigne le capital de Lorentz $n$ années après son placement.
+\begin{enumMet}
+	\item Déterminer $u_0, u_1, u_2$ et $u_3$.
+	\begin{corrBox}
+		$$
+		\begin{aligned}
+			& u_0=1000 \\
+			& u_1=1000+\frac{5}{100} \times 1000=1050 \\
+			& u_2=1050+\frac{5}{100} \times 1000=1100 \\
+			& u_3=1100+\frac{5}{100} \times 1000=1150
+		\end{aligned}
+		$$	
+	\end{corrBox}
+	\item Exprimer $u_{n+1}$ en fonction de $u_n$.
+	\begin{corrBox}
+		Pour tout entier naturel $n, u_{n+1}=u_n+\frac{5}{100} \times 1000=u_n+50$.		
+	\end{corrBox}
+	\item Prouver que la suite $\left(u_n\right)$ est arithmétique. Donner sa raison et son premier terme $u_0$.
+	\begin{corrBox}
+		$u_{n+1}-u_n=50$. La suite est donc arithmétique de raison 50 et de premier terme $u_0=1000$.		
+	\end{corrBox}
+	\item En déduire une expression de $u_n$ en fonction de $n$.
+	\begin{corrBox}
+		On sait que la suite est arithmétique de raison 50 et de premier terme $u_0=1000$ donc, pour tout entier naturel $n, u_n=1000+50 n$.			
+	\end{corrBox}
+	\item Au bout de combien d'années le capital de Lorentz aura-t-il doublé ?
+	\begin{corrBox}
+		On veut trouver $n$ tel que $u_n=2000$ soit :
+		
+		$$
+		\begin{aligned}
+			& 1000+50 n=2000 \Longleftrightarrow 50 n=1000 \Longleftrightarrow n=20 . \\
+			& 1000+50 n=2000 \Longleftrightarrow 50 n=1000 \Longleftrightarrow n=20 .
+		\end{aligned}
+		$$
+		
+		Au bout de 20 ans, le capital de Lorentz aura doublé.		
+	\end{corrBox}
+\end{enumMet}
+
+\section{Somme des termes d'une suite arithmétique}
+
+\exercice{ $-$ Ex 60 p 34 du LS}
+
+Calculer les sommes suivantes.
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item $S=1+2+3+\ldots+73$.
+	\begin{corrBox}
+		D'après la formule $1+2+3+\cdots+n=\dfrac{n(n+1)}{2}$, on obtient :
+		
+		$$
+		S=\frac{73 \times 74}{2}=2701
+		$$
+				
+	\end{corrBox}
+	\item $\mathrm{T}=1+4+7+\ldots+40$.
+	\begin{corrBox}
+		$$
+		\begin{aligned}
+			& T=1+(1+3 \times 1)+(1+3 \times 2)+(1+3 \times 3)+\cdots+(1+3 \times 13) \\
+			& T=1 \times 14+3 \times(1+2+3+\cdots+13) \\
+			& T=14+3 \times \frac{13 \times 14}{2}=14+3 \times 91=287
+		\end{aligned}
+		$$
+		
+		
+		\textcolor{red}{Autre méthode :}
+		
+		Les termes $1 ; 4 ; 7 ; 10 ; \ldots$ sont les termes d'une suite arithmétique de premier terme $u_0=1$ et de raison $r=3$. La somme de $u_0+u_1+u_2+\cdots+u_n=(n+1) \frac{u_0+u_n}{2}$. On a donc la somme $T=u_0+u_1+u_2+u_3+\cdots+u_{13}$ D'où $T=14 \times \frac{1+40}{2}=287$		
+	\end{corrBox}
+	\item $\mathrm{U}=71+72+73+\ldots+100$.
+	\begin{corrBox}
+	$$
+	\begin{aligned}
+		& U=(70+1)+(70+2)+(70+3)+\cdots+(70+30) \\
+		& U=70 \times 30+(1+2+3+\cdots+30) \\
+		& U=2100+\frac{30 \times 31}{2}=2100+465=2565
+	\end{aligned}
+	$$
+	
+	
+	\textcolor{red}{Autre méthode:}
+	
+	Les termes $71 ; 72 ; 73 ; \ldots$ sont les termes d'une suite arithmétique de premier terme 71 et de raison 1.
+	On a donc la somme $U=30 \times \frac{71+100}{2}=2565$		
+	\end{corrBox}
+	\item $\mathrm{V}=2+4+6+\ldots+50$.
+	\begin{corrBox}
+		$$
+		\begin{aligned}
+			& V=2 \times(1+2+3+\cdots+25) \\
+			& V=2 \times\left(\frac{25 \times 26}{2}\right)=650
+		\end{aligned}
+		$$
+		
+		
+		\textcolor{red}{Autre méthode :}
+		
+		Les termes $2 ; 4 ; 6 ; \ldots$ sont les termes d'une suite arithmétique de premier terme 2 et de raison 2.
+
+		On a donc la somme $U=25 \times \frac{2+50}{2}=650$		
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 61 p 35 du LS}
+
+Le but de l'exercice est de manipuler le symbole $\sum$.
+\begin{enumMet}
+	\item Écrire chaque somme en développant puis la calculer.
+%	\begin{multicols}{2}
+		\begin{enumMet}
+		\item $\mathrm{S}=\sum_{i=0}^{15}(2 i+1)$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& S=1+3+5+\cdots+31 \\
+				& S=16 \times 1+2(1+2+\cdots+15) \\
+				& S=16+2 \times \frac{15 \times 16}{2}=256
+			\end{aligned}
+			$$		
+		\end{corrBox}
+		\item $\mathrm{T}=\sum_{i=2}^7(3 i-2)$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& T=4+7+10+\cdots+19 \\
+				& T=6 \times(-2)+3(2+3+\cdots+7) \\
+				& T=-12+3 \times\left(\frac{7 \times 8}{2}-1\right)=-12+81=69
+			\end{aligned}
+			$$		
+		\end{corrBox}
+	\end{enumMet}
+%	\end{multicols}
+	\item Écrire chaque somme avec le symbole $\sum$ puis la calculer.
+%	\begin{multicols}{2}
+		\begin{enumMet}
+		\item $\mathrm{U}=3+6+9+\ldots+81$
+		\begin{corrBox}
+			$$
+			\begin{aligned}
+				& U=\sum_{i=1}^{27} 3 i \\
+				& U=3(1+2+3+\cdots+27)=3 \times \frac{27 \times 28}{2}=1134
+			\end{aligned}
+			$$		
+		\end{corrBox}
+		\item $V=5+9+13+\ldots+45$
+		\begin{corrBox}
+			$$
+			\begin{gathered}
+				V=\sum_{i=0}^{10}(5+4 i) \\
+				V=5 \times 11+4 \times \frac{10 \times 11}{2}=275
+			\end{gathered}
+			$$		
+		\end{corrBox}
+	\end{enumMet}
+%	\end{multicols}
+\end{enumMet}
+
+\exercice{ $-$ Ex 62 p 35 du LS}
+
+On souhaite empiler des canettes de soda de cette manière. On note $c_n$ le nombre de canettes sur la rangée $n$ pour $n \in \mathbb{N}^*$.
+\begin{center}
+	\includegraphics[scale=0.5]{Img02}
+\end{center}
+\begin{enumMet}
+	\item Calculer les cinq premiers termes de la suite $\left(c_n\right)$.
+	\begin{corrBox}
+			$c_1=1, c_2=2, c_3=3, c_4=4$ et $c_5=5$.	
+	\end{corrBox}
+	\item Conjecturer une expression de $c_{n+1}$ en fonction de $c_n$ pour $n \in \mathbb{N}^*$. Quelle est la nature de la suite ?
+	\begin{corrBox}
+		Pour tout entier $n \geqslant 1, c_{n+1}=c_n+1$. La suite est donc arithmétique de raison $r=1$ et de premier terme $c_1=1$.
+	\end{corrBox}
+	\item En déduire le terme général $c_n$ en fonction de $n$.
+	\begin{corrBox}
+		On a donc, pour tout entier $n \geqslant 1, c_n=1+(n-1) \times 1=n$.		
+	\end{corrBox}
+	\item Quel est le nombre total de canettes utilisées pour sept rangées?
+	\begin{corrBox}
+		Pour 7 niveaux, on a :
+		
+		$$
+		1+2+3+\cdots+7=\frac{7 \times 8}{2}=28
+		$$
+		
+		
+		On utilise 28 canettes pour 7 niveaux.		
+	\end{corrBox}
+	\item À l'aide de la calculatrice, déterminer combien de rangées on peut dresser avec 91 canettes.
+	\begin{corrBox}
+		On cherche $n$ tel que $\frac{n(n+1)}{2}=91$.
+		
+		On résout $91=\frac{n(n+1)}{2}$
+		
+		$$
+		\Longleftrightarrow 182=n^2+n \Longleftrightarrow n^2+n-182=0 .
+		$$
+		
+		
+		On calcule le discriminant : $\Delta=b^2-4 a c=1+4 \times 182=729$.
+		Les solutions sont $n_1=\dfrac{-1-27}{2}=-14{ }_{\text {et }} n_2=\dfrac{-1+27}{2}=13$.
+		Seule la solution positive est valide. Il y aura donc 13 rangées.		
+	\end{corrBox}
+\end{enumMet}
+
+
+\exercice{ $-$ Ex 64 p 35 du LS}
+
+Une famille décide d'épargner afin de pouvoir s'offrir un voyage en Égypte.
+La première année, elle économise 500 euros. Chaque année, elle augmente la somme épargnée de 100 euros. Pour $n \geqslant 1$, on note $s_n$, la somme épargnée l'année $n$.
+\begin{enumMet}
+	\item Déterminer $s_1, s_2$ et $s_3$. Pour tout $n$ de $\mathbb{N}^*$, exprimer $s_{n+1}$ en fonction de $s_n$.
+	\begin{corrBox}
+		$s_1=500, s_2=600$ et $s_3=700$
+		
+		Pour tout entier $n \geqslant 1, s_{n+1}=s_n+100$.		
+	\end{corrBox}
+	\item En déduire l'expression de $s_n$ en fonction de l'entier naturel $n \geqslant 1$.
+	\begin{corrBox}
+		La suite est arithmétique de raison $r=100$ et de premier terme $u_1=500$ donc $u_n=500+(n-1) \times 100$ soit $u_n=100 n+400$.		
+	\end{corrBox}
+	\item A l'aide de la calculatrice, déterminer dans combien d'années la famille pourra partir en voyage sachant que le voyage coûte 4200 euros.
+	\begin{corrBox}
+		La somme totale épargnée est $S=s_1+s_2+\cdots+s_n=n \times \frac{s_1+s_n}{2}$. On doit résoudre $S \geqslant 4200$
+		
+		$$
+		\begin{aligned}
+			& \Longleftrightarrow n \times \frac{500+100 n+400}{2} \geq 4200 \\
+			& \Longleftrightarrow 100 n^2+900 n \geq 8400 \\
+			& \Longleftrightarrow 100 n^2+900 n-8400 \geq 0
+		\end{aligned}
+		$$
+		On calcule le discriminant:
+		
+		$$
+		\Delta=900^2+4 \times 8400=4170000
+		$$
+		
+		
+		Les racines sont:
+		
+		$$
+		\begin{aligned}
+			& n_1=\frac{-900-\sqrt{4170000}}{200}=\frac{-9-\sqrt{417}}{2}<0 \\
+			& \text { et } n_2=\frac{-900+\sqrt{4170000}}{200}=\frac{-9+\sqrt{417}}{2} \approx 5,7 .
+		\end{aligned}
+		$$
+		
+		
+		Le polynôme est du signe de $a=100$ donc positif à l'extérieur des racines.
+		La famille pourra donc partir en voyage au bout de 6 ans.
+	\end{corrBox}
+\end{enumMet}
+
+
+
+
+\begin{center}
+	\includegraphics[scale=0.5]{Img03}
+\end{center}
+
+\section{Suites géométriques}
+
+\exercice{ $-$ Ex 29 p 31 du LS}
+
+On donne le premier terme et la raison $q$ des suites géométriques suivantes. Exprimer $v_{n+1}$ en fonction de $v_n$ puis calculer les cinq premiers termes.
+
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item $v_0=3$ et $q=4$
+	\begin{corrBox}
+		Pour tout entier, $n \in \mathbb{N}, v_{n+1}=4 \times v_n$.
+		$$
+		\begin{aligned}
+			& v_0=3 \\
+			& v_1=4 \times 3=12 \\
+			& v_2=4 \times 12=48 \\
+			& v_3=4 \times 48=192 \\
+			& v_4=4 \times 192=768
+		\end{aligned}
+		$$		
+	\end{corrBox}
+	\item $v_0=2$ et $q=-3$
+	\begin{corrBox}
+		Pour tout entier, $n \in \mathbb{N}, v_{n+1}=-3 \times v_n$
+		
+		$$
+		\begin{aligned}
+			& v_0=2 \\
+			& v_1=-3 \times 2=-6 \\
+			& v_2=-3 \times(-6)=18 \\
+			& v_3=-3 \times 18=-54 \\
+			& v_4=-3 \times(-54)=162 v_4=-3 \times(-54)=162
+		\end{aligned}
+		$$		
+	\end{corrBox}
+	\item $v_1=5$ et $q=\dfrac{1}{2}$
+	\begin{corrBox}
+		3. Pour tout entier $n \in \mathbb{N},{ }^{v_{n+1}}=\frac{1}{2} \times v_n$
+		
+		$$
+		\begin{aligned}
+			& v_0=5 \\
+			& v_1=\frac{1}{2} \times 5=\frac{5}{2} \\
+			& v_2=\frac{1}{2} \times \frac{5}{2}=\frac{5}{4} \\
+			& v_3=\frac{1}{2} \times \frac{5}{4}=\frac{5}{8} \\
+			& v_4=\frac{1}{2} \times \frac{5}{8}=\frac{5}{16}
+		\end{aligned}
+		$$
+				
+	\end{corrBox}
+	\item $v_1=-\dfrac{1}{4}$ et $q=2$
+	\begin{corrBox}
+		Pour tout entier, $n \in \mathbb{N}, v_{n+1}=2 \times v_n$
+		
+		$$
+		\begin{aligned}
+			& v_0=-\frac{1}{4} \\
+			& v_1=2 \times\left(-\frac{1}{4}\right)=-\frac{1}{2} \\
+			& v_2=2 \times\left(-\frac{1}{2}\right)=-1 \\
+			& v_3=2 \times(-1)=-2 \\
+			& v_4=2 \times(-2)=-4
+		\end{aligned}
+		$$
+				
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 30 p 31 du LS}
+
+Déterminer si les suites suivantes sont géométriques. Si oui, donner le premier terme et la raison.
+
+\begin{enumMet}
+	\item $v_n=8^n$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		\begin{aligned}
+			& v_0=8^0=1 \\
+			& v_1=8^1=8 \\
+			& v_2=8^2=64 \\
+			& \quad \frac{v_2}{v_1}=\frac{64}{8}=8 \quad \text { et } \frac{v_1}{v_0}=\frac{8}{1}=8=\frac{v_2}{v_1}
+		\end{aligned}
+		$$
+		
+		
+		La suite semble donc géométrique. Il faut vérifier pour tout entier $n$.
+		
+		Pour tout entier $n \in \mathbb{N}, v_{n+1}=8^{n+1}=8^n \times 8=8 \times v_n$.
+		
+		La suite est donc bien géométrique de raison $q=8$ et de premier terme $v_0=1$.
+		
+		Remarque: On peut également reconnaître la forme $q^n$ et déduire que la suite est géométrique de raison $q=8$ et de premier terme $v_0=1$.		
+	\end{corrBox}
+	\item $v_n=n^4$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		\begin{aligned}
+			& v_0=0^4=0 \\
+			& v_1=1^4=1 \\
+			& v_2=2^4=16 \\
+			& v_3=3^4=81 \\
+			& \text { On a } \frac{v_3}{v_2}=\frac{81}{16}{ }_{\text {et }} \frac{v_2}{v_1}=\frac{16}{1}=16\neq\frac{v_3}{v_2}
+		\end{aligned}
+		$$
+		
+		
+		La suite n'est donc pas géométrique.		
+	\end{corrBox}
+	\item $v_n=2 \times 3^n$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		\begin{aligned}
+			& v_0=2 \times 3^0=2 \\
+			& v_1=2 \times 3^1=6 \\
+			& v_2=2 \times 3^2=18 \\
+			&  \text { On a } \quad \frac{v_2}{v_1}=\frac{18}{6}=3 \quad \text { et } \frac{v_1}{v_0}=\frac{6}{2}=3=\frac{v_2}{v_1}
+		\end{aligned}
+		$$
+		
+		
+		La suite semble donc géométrique. Il faut vérifier pour tout entier $n$.
+		
+		Pour tout entier $n \in \mathbb{N}, v_{n+1}=2 \times 3^{n+1}=2 \times 3^n \times 3=3 \times v_n$.
+		
+		La suite est donc bien géométrique de raison $q=3$ et de premier terme $v_0=2$.
+		
+		Remarque: On peut également reconnaître la forme $v_0 \times q^n$ et déduire que la suite est géométrique de raison $q=3$ et de premier terme $v_0=2$.	
+	\end{corrBox}
+	\item $v_n=-5 \times 2^{n+1}$, pour tout $n \in \mathbb{N}$.
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		\begin{aligned}
+			& v_0=-5 \times 2^{0+1}=-10 \\
+			& v_1=-5 \times 2^{1+1}=-20 \\
+			& v_2=-5 \times 2^{2+1}=-40 \\
+			& \text { On a } \frac{v_2}{v_1}=\frac{-40}{-20}=2 \text { et }\quad \frac{v_1}{v_0}=\frac{-20}{-10}=2=\frac{v_2}{v_1}
+		\end{aligned}
+		$$
+		
+		
+		La suite semble donc géométrique. Il faut vérifier pour tout entier $n$.
+		
+		Pour tout entier $n \in \mathbb{N}, v_{n+1}=-5 \times 2^{n+1+1}=-5 \times 2^{n+1} \times 2=2 \times v_n$.
+		
+		La suite est donc bien géométrique de raison $q=2$ et de premier terme $v_0=-10$.
+		
+		Remarque: On peut également reconnaître la forme $v_0 \times q^n=-5 \times 2 \times 2^n=-10 \times 2^n$ et déduire que la suite est géométrique de raison $q=2$ et de premier terme $v_0=-10$.		
+	\end{corrBox}
+	\item $\left\{\begin{array}{l}v_0=1 \\ v_{n+1}=3 v_n+3 n, \text { pour tout } n \in \mathbb{N} .\end{array}\right.$
+	\begin{corrBox}
+		On calcule les premiers termes :
+		
+		$$
+		v_1=3 v_0+3 \times 0=3 \times 1+3 \times 0=3
+		$$
+		
+		
+		$$
+		v_2=3 v_1+3 \times 1=3 \times 3+3 \times 1=12
+		$$
+		
+		
+		On a donc $\dfrac{v_2}{v_1}=\dfrac{12}{3}=4$ et $\dfrac{v_1}{v_0}=\dfrac{3}{1}=3\neq\dfrac{v_2}{v_1}$. La suite n'est donc pas géométrique.
+	\end{corrBox}
+	\item $\left\{\begin{array}{l}v_0=2 \\ v_{n+1}=5+7 v_n, \text { pour tout } n \in \mathbb{N} .\end{array}\right.$
+	\begin{corrBox}
+		On calcule les premiers termes:
+		
+		$$
+		\begin{aligned}
+			& v_1=5+7 v_0=5+7 \times 2=19 \\
+			& v_2=5+7 v_1=5+7 \times 19=138
+		\end{aligned}
+		$$
+		
+		
+		On a donc $\dfrac{v_2}{v_1}=\dfrac{138}{19} \approx 7,26$ et $\dfrac{v_1}{v_0}=\dfrac{19}{2} \approx 6,33\neq\dfrac{v_2}{v_1}$. La suite n'est donc pas géométrique.		
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{ $-$ Ex 31 p 31 du LS}
+
+Chacune des suites suivantes est géométrique. Exprimer $v_n$ en fonction de $n$, pour tout $n \in \mathbb{N}$.
+\begin{corrBox}
+	La suite étant géométrique, on sait que le terme général peut s'écrire sous la forme $u_n=u_p \times q^{n-p}$. On obtient donc:	
+\end{corrBox}
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item $v_2=2$ et $q=-3$
+	\begin{corrBox}
+		Pour tout entier $n \in \mathbb{N}, v_n=v_2 \times q^{n-2}$ soit $v_n=2 \times(-3)^{n-2}=2 \times(-3)^n \times(-3)^{-2}$ D'où $v_n=\dfrac{2}{9} \times(-3)^n$		
+	\end{corrBox}
+	\item $v_5=-3$ et $q=2$
+	\begin{corrBox}
+		Pour tout entier $n \in \mathbb{N}, v_n=v_5 \times q^{n-5}$ soit $v_n=-3 \times 2^{n-5}=-3 \times 2^n \times 2^{-5}$ D'où $v_n=-\dfrac{3}{32} \times 2^n$		
+	\end{corrBox}
+	\item $v_1=-1$ et $q=\dfrac{1}{3}$
+	\begin{corrBox}
+		Pour tout entier $n \in \mathbb{N}, v_n=v_1 \times q^{n-1}$ soit
+		
+		$$
+		\begin{aligned}
+			& v_n=-1 \times\left(\frac{1}{3}\right)^{n-1}=-1 \times\left(\frac{1}{3}\right)^n \times\left(\frac{1}{3}\right)^{-1} \\
+			& \text { D'où } v_n=-3 \times\left(\frac{1}{3}\right)^n
+		\end{aligned}
+		$$		
+	\end{corrBox}
+	\item $v_{10}=\dfrac{1}{6}$ et $q=-1$
+	\begin{corrBox}
+		Pour tout entier $n \in \mathbb{N}, v_n=v_{10} \times q^{n-10}$ soit
+		
+		$$
+		\begin{aligned}
+			& v_n=\frac{1}{6} \times(-1)^{n-10}=\frac{1}{6} \times(-1)^n \times(-1)^{-10} \\
+			& \text { D'où } v_n=\frac{1}{6} \times(-1)^n \text { car }(-1)^{-10}=1
+		\end{aligned}
+		$$
+				
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 69 p 36 du LS}
+Pour chacune des suites, calculer $v_{20}$.
+\begin{enumMet}
+	\item La suite $\left(v_n\right)$ est géométrique de raison $q=3$ et telle que $v_3=12$.
+	\begin{corrBox}
+		Comme la suite est géométrique de premier terme $v_3=12$ et de raison $q=3$, on peut écrire son terme général sous la forme $v_n=v_p q^{n-p}$ soit ici : $v_n=v_3 \times q^{n-3}$.
+		
+		On a donc $v_{20}=12 \times 3^{20-3}=12 \times 3^{17}=1549681956$.	
+	\end{corrBox}
+	\item La suite $\left(v_n\right)$ est géométrique de raison $q=-2$ et telle que $v_{31}=32$.
+	\begin{corrBox}
+		Comme la suite est géométrique de premier terme $v_{31}=32$ et de raison $q=-2$, on peut écrire son terme général sous la forme $v_n=v_p q^{n-p}$ soit ici : $v_n=v_{31} \times q^{n-31}$.
+		
+		On a donc $v_{20}=32 \times(-2)^{20-31}=32 \times(-2)^{-11}=-\frac{1}{64}$		
+	\end{corrBox}
+	\item La suite $\left(v_n\right)$ est définie par $\left\{\begin{array}{l}v_0=-5 \\ v_{n+1}=2 v_n, n \in \mathbb{N}\end{array}\right.$
+	\begin{corrBox}
+		La suite $\left(v_n\right)$ est géométrique car $v_{n+1}=2 v_n$. La raison est donc $q=2$ et le premier terme $v_0=-5$.
+		
+		On peut donc écrire le terme général sous la forme $v_n=v_p q^{n-p}$ soit ici : $v_n=v_0 \times 2^{n-0}$. 
+		
+		On a donc $v_{20}=v_0 \times 2^{20-0}=-5 \times 2^{20}=-5242880$.
+			
+	\end{corrBox}
+	\item La suite $\left(v_n\right)$ est définie par $\left\{\begin{array}{l}v_1=2048 \\ v_{n+1}=-\dfrac{1}{2} v_n, n \in \mathbb{N}\end{array}\right.$
+	\begin{corrBox}
+		La suite $\left(v_n\right)$ est géométrique car $v_{n+1}=-\frac{1}{2} v_n$. La raison est donc $q=-\frac{1}{2}$ et le premier terme $v_1=2048$.
+		On peut donc écrire le terme général sous la forme $v_n=v_p q^{n-p}$ soit ici :
+		
+		$$
+		\begin{aligned}
+			& v_n=v_1 \times\left(-\frac{1}{2}\right)^{n-1} \\
+			& \text { On a donc } v_{20}=v_1 \times\left(-\frac{1}{2}\right)^{20-1}=2048 \times\left(-\frac{1}{2}\right)^{19}=-\frac{1}{256}
+		\end{aligned}
+		$$
+						
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{ $-$ Ex 72 p 36 du LS}
+Calculer les sommes suivantes.
+\begin{corrBox}
+	D'après la formule $1+q+q^2+\cdots+q^n=\dfrac{1-q^{n+1}}{1-q}$, on obtient:		
+\end{corrBox}
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item $S=1+4+16+\ldots+262144$
+	\begin{corrBox}
+		$$S=1+4+4^2+\cdots+4^9=\frac{1-4^{10}}{1-4}$$
+		
+		$$
+		S=\frac{1\ 048\ 576-1}{3}=349\ 525
+		$$
+		
+			
+	\end{corrBox}
+	\item $T=3-6+12-24+\ldots+192$
+	\begin{corrBox}
+		$$T=3(1-2+4-8+\cdots+64)=3\left(1+(-2)^1+(-2)^2+(-2)^3+\cdots+(-2)^6\right)$$
+		
+		
+		$$
+		T=3 \times \frac{1-(-2)^7}{1-(-2)}
+		$$
+		
+		
+		$$
+		T=3 \times \frac{129}{3}=129
+		$$			
+	\end{corrBox}
+	\item $U=9+3+1+\dfrac{1}{3}+\ldots+\dfrac{1}{729}$
+	\begin{corrBox}
+		$$\begin{aligned}
+			& U=9\left(1+\frac{1}{3}+\frac{1}{9}+\frac{1}{27}+\cdots+\frac{1}{6561}\right) \\
+			& U=9\left(1+\frac{1}{3}+\frac{1}{3^2}+\frac{1}{3^3} \cdots+\frac{1}{3^8}\right) \\
+			& U=9 \times \frac{1-\left(\frac{1}{3}\right)^9}{1-\frac{1}{3}}=\frac{9\ 841}{729}
+		\end{aligned}$$		
+	\end{corrBox}
+	\item $V=1+0,5+0,25+\ldots+0,03125$
+	\begin{corrBox}
+		$$
+		V=1+\frac{1}{2}+\frac{1}{2^2}+\cdots+\frac{1}{2^5}=\frac{1-\left(\frac{1}{2}\right)^6}{1-\frac{1}{2}}=\frac{63}{32}
+		$$		
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{ $-$ Ex 75 p 36 du LS}
+
+Pour stocker des photos numériques, on utilise un algorithme de compression. On estime qu'à chaque niveau de compression, la taille diminue de $21,4 \%$.
+La taille initiale d'une photo est de 4 Mo . On pose $\mathrm{T}_0=4$ et, pour tout entier naturel non nul $n, \mathrm{~T}_n$ désigne la taille de cette photo après une compression de niveau $n$.
+\begin{enumMet}
+	\item Calculer $T_1$ et $T_2$.
+	\begin{corrBox}
+		$$
+		\begin{aligned}
+			& T_1=4-0,214 \times 4=0,786 \times 4=3,144 \\
+			& T_2=0,786 \times 3,144=2,471184
+		\end{aligned}
+		$$		
+	\end{corrBox}
+	\item Pour tout $n \in \mathbb{N}$, exprimer $\mathrm{T}_{n+1}$ en fonction de $\mathrm{T}_n$. En déduire la nature de la suite $\left(\mathrm{T}_n\right)$.
+	\begin{corrBox}
+		Pour tout $n \in \mathbb{N}, T_{n+1}=0,786 T_n$.
+		
+		La suite est donc géométrique de raison $q=0,786$ et de premier $T_0=4$.		
+	\end{corrBox}
+	\item Exprimer $\mathrm{T}_n$ en fonction de $n$.
+	\begin{corrBox}
+		Pour tout $n \in \mathbb{N}, T_n=4 \times 0,786^n$		
+	\end{corrBox}
+	\item Peut-on stocker 20000 photos sur une clé USB d'une capacité de 32 Go ? Avec quelle compression?
+	\begin{corrBox}
+		La suite étant décroissante puisque $0<q<1$, on pourra atteindre une capacité de $32 \mathrm{Go}=$ 32000 Mo .
+		
+		On résout $20000 \times 4 \times 0,786^n<32000$
+		
+		$\iff 0,786^n<0,4 \iff n \geqslant 4$ avec la calculatrice car $0,786^3 \approx 0,4856$ et $0,786^4 \approx 0,3817$.
+		
+		Avec une compression de niveau 4, on peut stocker 20000 photos sur une clé USB de capacité 32 Go.		
+	\end{corrBox}
+\end{enumMet}
+\end{document}
+

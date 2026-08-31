@@ -1,0 +1,85 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{1ere-preambule}
+\usepackage{standalone}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setcounter{tocdepth}{1}
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}} 
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+\begin{document}
+\let\cleardoublepage\clearpage
+\graphicspath{{images/}}
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+
+    % Upper part of the page. The '~' is needed because \\
+    % only works if a paragraph has started.
+    \includegraphics[scale=0.25]{01-01-03}~\\[1.5cm]
+
+    \textsc{\LARGE 1ère spécialité maths}\\[1.5cm]
+    
+    \includegraphics[scale=0.9]{logo fond transparent}~\\[1cm]
+
+    %\textsc{\Large Rapport de stage 1A}\\[1.5cm]
+
+    % Title
+    \HRule \\[0.4cm]
+    { \huge \bfseries Cours de Mathématiques\\[0.4cm] }
+
+    \HRule \\[2cm]
+    \includegraphics[scale=0.45]{01-05-Img04}
+    \\[2cm]
+
+    % Author and supervisor
+    \begin{minipage}{0.4\textwidth}
+      \begin{flushleft} \large
+        Cours de M. Buisson
+      \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+      \begin{flushright} \large
+        Lycée Notre-Dame de Bel Air - Tarare
+      \end{flushright}
+    \end{minipage}
+
+    \vfill
+    
+    \vfill
+
+    % Bottom of the page
+    {\large Année scolaire 2024-2025}
+
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{fancy}
+
+\input{1.01 - Fonctions de référence/1.01.01-Polynome-content}
+\input{1.02 - Trigonométrie/1.02.01-trigonometrie-content}
+\input{1.03 - Equations du second degré/1.03.01-Eqs2ndDeg-content}
+\input{1.04 - Produit scalaire/1.04.01-ProduitScalaire-content}
+\graphicspath{{./1.05 - Fonction sinus et cosinus/images/}}
+\input{1.05 - Fonction sinus et cosinus/1.05.01-foncsinuscos-content}
+\graphicspath{{images/}}
+\input{1.06 - Fonctions de référence/1.06.01-FoncRef-content}
+\input{1.07 - Dérivation/1.07.01-Dérivation-content}
+\input{1.08 - Probabilité conditionnelle/1.08.01-ProbCond-content}
+\input{1.09 - Suites numériques et arithmétiques/1.09.01-SuitesNum-content}
+\input{1.10 - Fonction exponentielle/1.10.01-FoncExpo-content}
+\graphicspath{{./1.11 - Application de la dérivation/img_cours/}}
+\input{1.11 - Application de la dérivation/1.11.01-ApplDerivation-content}
+\graphicspath{{images/}}
+\input{1.12 - Variables aléatoires/1.12.01-VarAlea-content}
+\input{1.13 - Variation d'une suite/1.13.01-varSuite-content}
+\input{1.14 - Application du produit scalaire/1.14.01-ApplProdScal-content}
+
+
+\end{document}

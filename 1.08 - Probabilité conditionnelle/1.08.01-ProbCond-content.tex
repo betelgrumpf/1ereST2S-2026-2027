@@ -1,0 +1,388 @@
+\chapter{Probabilités conditionnelles et indépendance}
+\thispagestyle{fancy}
+
+\section{Probabilité conditionnelle}
+
+\begin{definition}
+    Soit $A$ et $B$ deux événements avec $P(A)\neq 0$.\\
+    On appelle probabilité conditionnelle de $B$ sachant $A$, la probabilité que l'événement $B$ se réalise sachant que l'événement $A$ est réalisé. Elle est notée $P_A (B)$  et est définie par : \\$P_A(B)= \dfrac{Card(A \cap B)}{Card(A)}$. 
+\end{definition}
+
+\begin{bexemples}
+%    \begin{enumEx}
+    
+%        \item	On tire une carte au hasard dans un jeu de 32 cartes.\\
+%        Soit $A$ l'événement \guillemets{Le résultat est un pique}.\\
+%        Soit $B$ l'événement \guillemets{Le résultat est un roi}.\\
+%        Donc $A \cap B$ est l'événement \guillemets{Le résultat est le roi de pique}.\\
+%        
+%        Alors : $P(A)= \dfrac{8}{32} = \dfrac{1}{4}$ et $P(A \cap B)= \dfrac{1}{32}$.\\
+%        Donc la probabilité que le résultat soit un roi sachant qu'on a tiré un pique est :\\
+%        $P_A(B)= \dfrac{Card(A \cap B)}{Card(A)}=\dfrac{\dfrac{1}{32}}{\dfrac{1}{4}}=\dfrac{1}{8}$.\\
+%        \ \\
+%        On peut retrouver intuitivement ce résultat. En effet, sachant que le résultat est un pique, on a une chance sur 8 d'obtenir le roi.\\
+%        \\
+%        \item 
+        Un sac contient 50 boules, dont 20 boules rouges et 30 boules noires, où il est marqué soit \guillemets{Gagné} ou soit \guillemets{Perdu}.\\ 
+        Sur 15 boules rouges, il est marqué Gagné.\\
+        Sur 9 boules noires, il est marqué Gagné.\\
+        On tire au hasard une boule dans le sac.\\
+        Soit $R$ l'événement \guillemets{On tire une boule rouge}.\\
+        Soit $G$ l'événement \guillemets{On tire une boule marquée Gagné}.\\
+        Donc $R \cap G$ est l'événement \guillemets{On tire une boule rouge marquée Gagné}.\\
+        \ \\
+        Alors : $P(R)= \dfrac{20}{50} = \dfrac{2}{5}=0,4$ et $P(R \cap G)= \dfrac{15}{50}=\dfrac{3}{10}=0,3$.\\
+        Donc la probabilité qu'on tire une boule marquée Gagné sachant qu'elle est rouge est :\\
+        $P_R(G)= \dfrac{Card(R \cap G)}{Card(R)}=\dfrac{O,3}{0,4}=\dfrac{3}{4}=0,75$.\\
+        \ \\
+        On peut retrouver intuitivement ce résultat. En effet, sachant que le résultat est une boule rouge, on a 15 chances sur 20 qu'il soit marqué Gagné.
+%    \end{enumEx}
+\end{bexemples}
+
+\begin{brmq}
+	La probabilité conditionnelle suit les règles et lois de probabilités vues pour les probabilité simples. On a en particulier :
+\end{brmq}
+
+\begin{bprop}
+    Soit A et B deux événements avec $P(A)\neq 0$.
+    \begin{itemProp}
+    	\item $0\leq P_A(B)\leq 1$
+    	\item $P_A(\overline{B})=1-P_A(B)$
+    	\item $P(A \cap B)=P(A)\times P_A (B)$
+    \end{itemProp}
+\end{bprop}
+
+\section{Arbre pondéré}
+
+\subsection{Exemple}
+
+\begin{bexemple}
+    On reprend l'exemple étudié au paragraphe I.
+    L'expérience aléatoire peut être schématisée par un arbre pondéré (ou arbre de probabilité) :
+%    \begin{center}
+%    	\includegraphics[scale=0.8]{01-09-01.png}
+%    \end{center}
+	\begin{center}
+		%\includegraphics[scale=0.8]{TSTG.04.01.png}\\
+		\begin{tikzpicture}[xscale=1,yscale=1]
+			% Styles (MODIFIABLES)
+			\tikzstyle{fleche}=[->,>=latex,thick]
+			\tikzstyle{noeud}=[rectangle]
+			\tikzstyle{feuille}=[rectangle]
+			\tikzstyle{etiquette}=[midway,fill=white]
+			% Dimensions (MODIFIABLES)
+			\def\DistanceInterNiveaux{3.8}
+			\def\DistanceInterFeuilles{2.5}
+			% Dimensions calculées (NON MODIFIABLES)
+			\def\NiveauA{(0)*\DistanceInterNiveaux}
+			\def\NiveauB{(1.5)*\DistanceInterNiveaux}
+			\def\NiveauC{(2.5)*\DistanceInterNiveaux}
+			\def\InterFeuilles{(-1)*\DistanceInterFeuilles}
+			% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+			\node[noeud] (R) at ({\NiveauA},{(1.5)*\InterFeuilles}) {On tire une boule};
+			\node[noeud] (Ra) at ({\NiveauB},{(0.5)*\InterFeuilles}) {Boule Rouge};
+			\node[feuille] (Raa) at ({\NiveauC},{(0)*\InterFeuilles}) {Gagné };
+			\node[feuille] (Rab) at ({\NiveauC},{(1)*\InterFeuilles}) {Perdu};
+			\node[noeud] (Rb) at ({\NiveauB},{(2.5)*\InterFeuilles}) {Boule Noire};
+			\node[feuille] (Rba) at ({\NiveauC},{(2)*\InterFeuilles}) {Gagné};
+			\node[feuille] (Rbb) at ({\NiveauC},{(3)*\InterFeuilles}) {Perdu};
+			% Arcs (MODIFIABLES : Styles)
+			\draw[fleche] (R)--(Ra) node[etiquette] {\footnotesize{$P(R)=0,4$}};
+			\draw[fleche] (Ra)--(Raa) node[etiquette] {\footnotesize{$P_R(G)=0,75$}};
+			\draw[fleche] (Ra)--(Rab) node[etiquette] {\footnotesize{$P_R(\overline{G})$}};
+			\draw[fleche] (R)--(Rb) node[etiquette] {\footnotesize{$P(\overline{R})=0,6$}};
+			\draw[fleche] (Rb)--(Rba) node[etiquette] {\footnotesize{$P_{\overline{R}}(G)$}};
+			\draw[fleche] (Rb)--(Rbb) node[etiquette] {\footnotesize{$P_{\overline{R}}(\overline{G})$}};
+			\draw[ForestGreen,<-] (Raa)--($(Raa)+(1.5,0)$) node[right,font=\sffamily] {$R\cap G$ (boule rouge inscrit gagné)} ;
+			\draw[white,<-] (Raa)--($(Raa)+(1.5,-0.5)$) node[right,font=\sffamily] {\textcolor{ForestGreen}{$P(R\cap G)=P(R)\times P(G)=0,3$}} ;
+			\draw[ForestGreen,<-] (Rab)--($(Rab)+(1.5,0)$) node[right,font=\sffamily] {$R\cap \overline{G}$ (boule rouge inscrit perdu)} ;
+			\draw[ForestGreen,<-] (Rba)--($(Rba)+(1.5,0)$) node[right,font=\sffamily] {$\overline{R}\cap G$ (boule noire inscrit gagné)} ;
+			\draw[ForestGreen,<-] (Rbb)--($(Rbb)+(1.5,0)$) node[right,font=\sffamily] {$\overline{R}\cap \overline{G}$ (boule noire inscrit perdu)} ;
+		\end{tikzpicture}
+	\end{center}	
+\end{bexemple}
+\subsection{Règles}
+\begin{bregle}
+	La somme des probabilités des branches issues d'un même noeud est égale à 1.
+\end{bregle}
+\begin{bexemples}
+    \begin{itemEx}
+        \item A partir du noeud \guillemets{On tire une boule}, on a : $P(R)+P(\overline{R})=0,4+0,6=1$ 
+        \item A partir du noeud \guillemets{Boule rouge}, on a : $P_R (\overline{G})=1-P_R(G)=1-0,75=0,25$.	
+    \end{itemEx}
+\end{bexemples}
+Ces exemples font apparaître une formule donnée au paragraphe I.\\
+
+\begin{bregle}
+	La probabilité d'une \guillemets{feuille} (extrémité d'un chemin) est égale au produit des probabilités du chemin aboutissant à cette feuille.
+\end{bregle}
+\begin{bexemple}
+	On considère la feuille $R \cap G$.
+    On a :\\
+     $P(R \cap G)=P(R)\times P_R (G)=0,4\times 0,75=0,3$ 
+\end{bexemple}
+
+\begin{bregle}
+	\grasInProp{Formule des probabilités totales}\\
+	La probabilité d'un événement associé à plusieurs "feuilles" est égale à la somme des probabilités de chacune de ces "feuilles".
+\end{bregle}
+\begin{bexemple}
+    L'événement \guillemets{On tire une boule marquée Gagné} est associé aux feuilles $R \cap G$ et $\overline R \cap G$. On a :\\
+    
+    $P(R \cap G)=0,3$ et 
+    $P(\overline R \cap G)= \dfrac{9}{50} = 0,18$\\ (Probabilité de tirer une boule noire marquée Gagné)\\
+    Donc $P(G)=P(R \cap G)+P(\overline R \cap G)=0,3+0,18=0,48$.
+\end{bexemple}
+
+%\begin{bmethodet}{Calculer la probabilité d'un événement associé à plusieurs feuilles}
+%    Lors d'une épidémie chez des bovins, on s'est aperçu que si la maladie est diagnostiquée suffisamment tôt chez un animal, on peut le guérir ; sinon la maladie est mortelle.\\ 
+%    Un test est mis au point et essayé sur un échantillon d'animaux dont 2 \% est porteur de la maladie. On obtient les résultats suivants :\\
+%    – si un animal est porteur de la maladie, le test est positif dans 85 \% des cas ;\\
+%    – si un animal est sain, le test est négatif dans 95 \% des cas.\\
+%    \ \\
+%    On choisit de prendre ces fréquences observées comme probabilités pour toute la population et d'utiliser le test pour un dépistage préventif de la maladie.\\
+%    \ \\
+%    On note respectivement $M$ et $T$ les événements \guillemets{Être porteur de la maladie} et
+%    \guillemets{Avoir un test positif}.
+%    
+%    1) Un animal est choisi au hasard. Quelle est la probabilité que son test soit positif ?\\
+%    \emph{D'après BAC S, Antilles-Guyanne 2010}\\	
+%    \ \\
+%    2) Si le test du bovin est positif, quelle est la probabilité qu'il soit malade ?\\
+%    \ \\
+%    \ \\
+%%    \begin{center}
+%%    	\includegraphics{01-09-02}
+%%    \end{center}
+%		    \begin{center}
+%		%\includegraphics[scale=0.8]{TSTG.04.01.png}\\
+%		\begin{tikzpicture}[xscale=1,yscale=1]
+%			% Styles (MODIFIABLES)
+%			\tikzstyle{fleche}=[->,>=latex,thick]
+%			\tikzstyle{noeud}=[rectangle]
+%			\tikzstyle{feuille}=[rectangle]
+%			\tikzstyle{etiquette}=[midway,fill=white]
+%			% Dimensions (MODIFIABLES)
+%			\def\DistanceInterNiveaux{4.5}
+%			\def\DistanceInterFeuilles{1.5}
+%			% Dimensions calculées (NON MODIFIABLES)
+%			\def\NiveauA{(0)*\DistanceInterNiveaux}
+%			\def\NiveauB{(1.5)*\DistanceInterNiveaux}
+%			\def\NiveauC{(2.5)*\DistanceInterNiveaux}
+%			\def\InterFeuilles{(-1)*\DistanceInterFeuilles}
+%			% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+%			\node[noeud] (R) at ({\NiveauA},{(1.5)*\InterFeuilles}){};
+%			\node[noeud] (Ra) at ({\NiveauB},{(0.5)*\InterFeuilles}) {$M$};
+%			\node[feuille] (Raa) at ({\NiveauC},{(0)*\InterFeuilles}) {$T$};
+%			\node[feuille] (Rab) at ({\NiveauC},{(1)*\InterFeuilles}) {$\overline{T}$};
+%			\node[noeud] (Rb) at ({\NiveauB},{(2.5)*\InterFeuilles}) {$\overline{M}$};
+%			\node[feuille] (Rba) at ({\NiveauC},{(2)*\InterFeuilles}) {$T$};
+%			\node[feuille] (Rbb) at ({\NiveauC},{(3)*\InterFeuilles}) {$\overline{T}$};
+%			% Arcs (MODIFIABLES : Styles)
+%			\draw[fleche] (R)--(Ra) node[etiquette] {\footnotesize{$P(M)=0,02$}};
+%			\draw[fleche] (Ra)--(Raa) node[etiquette] {\footnotesize{$P_M(T)=0,85$}};
+%			\draw[fleche] (Ra)--(Rab) node[etiquette] {\footnotesize{$P_M(\overline{T})=0,15$}};
+%			\draw[fleche] (R)--(Rb) node[etiquette] {\footnotesize{$P(\overline{M})=0,98$}};
+%			\draw[fleche] (Rb)--(Rba) node[etiquette] {\footnotesize{$P_{\overline{M}}(T)=0,05$}};
+%			\draw[fleche] (Rb)--(Rbb) node[etiquette] {\footnotesize{$P_{\overline{M}}(\overline{T})=0,95$}};
+%			\draw[ForestGreen,<-] (Raa)--($(Raa)+(1.5,0)$) node[right,font=\sffamily] {$M\cap T$} ;
+%			%\draw[white,<-] (Raa)--($(Raa)+(1.5,-0.5)$) node[right,font=\sffamily] {\textcolor{ForestGreen}{$P(R\cap G)=P(R)\times P(G)=0,3$}} ;
+%			\draw[ForestGreen,<-] (Rab)--($(Rab)+(1.5,0)$) node[right,font=\sffamily] {$M\cap \overline{T}$} ;
+%			\draw[ForestGreen,<-] (Rba)--($(Rba)+(1.5,0)$) node[right,font=\sffamily] {$\overline{M}\cap T$} ;
+%			\draw[ForestGreen,<-] (Rbb)--($(Rbb)+(1.5,0)$) node[right,font=\sffamily] {$\overline{M}\cap \overline{T}$} ;
+%		\end{tikzpicture}
+%	\end{center}	
+%    La probabilité que le test soit positif est associée aux deux feuilles $M\cap T$ et $\overline M\cap T$.\\
+%    $P(T)=P(M\cap T)+P(\overline M\cap T )$ (Formule des probabilités totales)\\
+%             $P(T)= 0,02 \times 0,85 + 0,98 \times 0,05 = 0,066$.
+%    La probabilité que le test soit positif est égale à 6,6\%. \\
+%    \ \\
+%    2) $P_T (M)= \dfrac{P(T\cap M)}{P(T)}  = \dfrac{0,02\times 0,85}{0,066} \approx 0,26$.\\
+%    La probabilité que le bovin soit malade sachant que le test est positif est d'environ 26\%.
+%\end{bmethodet}
+
+\section{Probabilités et indépendance}
+
+\subsection{Indépendance de deux événements}
+
+\begin{bdefi}
+	On dit que deux évènements $A$ et $B$ de probabilité non nulle sont indépendants lorsque $P(A\cap B)=P(A)\times P(B)$.
+\end{bdefi}
+
+\begin{brmq}
+	On a également :
+$A$ et $B$ sont indépendants, si et seulement si, $P_A (B)=P(B)$ ou $P_B (A)=P(A)$.
+\end{brmq}
+
+\begin{bexemple}
+	On tire une carte au hasard dans un jeu de 32 cartes.\\
+    Soit $R$ l'événement \guillemets{On tire un roi}.\\
+    Soit $T$ l'événement \guillemets{On tire un trèfle}.\\
+    Alors $R\cap T$ est l'événement \guillemets{On tire le roi de trèfle}.\\
+    \ \\
+    On a :\\
+    $P(R)  = \dfrac{4}{32} = \dfrac{1}{8}$ , $P(T)= \dfrac{8}{32} = \dfrac{1}{4}$ et $P(R\cap T)= \dfrac{1}{32}$\\ 
+    Donc $P(R)\times P(T)  = \dfrac{1}{8} \times \dfrac{1}{4} = \dfrac{1}{32} = P(R\cap T)$\\
+    Les événements $R$ et $T$ sont donc indépendants.
+    Ainsi, par exemple, $P_T (R)=P(R)$. Ce qui se traduit par la probabilité de tirer un roi parmi les trèfles et égale à la probabilité de tirer un roi parmi toutes les cartes.\\
+    \\
+    \underline{Contre-exemple :}\\
+    On reprend l'expérience précédente en ajoutant deux jokers au jeu de cartes.\\
+    Ainsi :
+    $P(R)  = \dfrac{4}{34} = \dfrac{2}{17}$, $P(T)= \dfrac{8}{34} = \dfrac{4}{17}$ et $P(R\cap T)= \dfrac{1}{34}$\\
+    Donc $P(R)\times P(T)  = \dfrac{2}{17} \times \dfrac{4}{17} = \dfrac{8}{289} \neq P(R\cap T)$\\
+    Les événements R et T ne sont donc pas indépendants.
+\end{bexemple}
+
+%\begin{bmethodet}{Utiliser l'indépendance de deux événements}
+%    Dans une population, un individu est atteint par la maladie $m$ avec une probabilité égale à $0,005$ et par la maladie $n$ avec une probabilité égale à $0,01$.\\
+%    On choisit au hasard un individu de cette population.\\
+%    Soit $M$ l'événement \guillemets{L'individu a la maladie $m$}.\\
+%    Soit $N$ l'événement \guillemets{L'individu a la maladie $n$}.\\
+%    On suppose que les événements $M$ et $N$ sont indépendants.\\
+%    Calculer la probabilité de l'événement $E$ \guillemets{L'individu a au moins une des deux maladies}.\\
+%    \\
+%    $P(E)=P(M\cup N)=P(M)+P(N)-P(M\cap N)$\\
+%             $P(E)=P(M)+P(N)-P(M)\times P(N)$, car les événements $M$ et $N$ sont indépendants.\\
+%             $P(E)= 0,005 + 0,01 – 0,005 \times 0,01 = 0,01495$\\
+%    
+%    La probabilité qu'un individu choisi au hasard ait au moins une des deux maladies est égale à $0,01495$.\\
+%\end{bmethodet}
+
+\begin{bprop}
+	Si $A$ et $B$ sont indépendants alors $\overline{A}$ et $B$ sont indépendants.
+\end{bprop}
+
+%    \begin{bdemo}
+%    $P(\overline{A}\cap B)=P(B\cap \overline{A})$\\
+%    $P(\overline{A}\cap B)=P(B)\times P_B (\overline{A})$\\
+%    $P(\overline{A}\cap B)=P(B)\times (1-P_B(A))$\\
+%    $P(\overline{A}\cap B)=P(B)\times (1-P(A))$ car A et B sont indépendants\\
+%    $P(\overline{A}\cap B)=P(B)\times P(\overline{A})$\\
+%    \\
+%    Donc $\overline{A}$ et $B$ sont indépendants.
+%\end{bdemo}
+
+\begin{bexemple}
+    Lors d'un week-end prolongé, Bison futé annonce qu'il y a $42\%$ de risque de tomber dans un bouchon sur l'autoroute A6 et $63\%$ sur l'autoroute A7.\\
+    Soit $A$ l'événement \guillemets{On tombe dans un bouchon sur l'autoroute A6.}\\
+    Soit $B$ l'événement \guillemets{On tombe dans un bouchon sur l'autoroute A7.}\\
+    On suppose que les événements $A$ et $B$ sont indépendants.\\
+    \\
+    Alors les événements $\overline{A}$ et $B$ sont également indépendants et on a :\\
+    $P(\overline{A} \cap B)=P(\overline{A})\times P(B)=0,58\times 0,63=0,3654$\\
+    \\
+    On peut interpréter ce résultat : \\
+    La probabilité de tomber dans un bouchon sur l'autoroute A7 mais pas sur l'autoroute A6 est égale à $36,54\%$.
+\end{bexemple}
+
+\subsection{Succession de deux épreuves indépendantes}
+
+\begin{bexemples}
+    \begin{itemEx}
+        \item On lance un dé plusieurs fois de suite et on note à chaque fois le résultat. On répète ainsi la même expérience (lancer un dé) et les expériences sont indépendantes l'une de l'autre (un lancer n'influence pas le résultat d'un autre lancer).
+        \item Une urne contient 2 boules blanches et 3 boules noires. On tire au hasard une boule et on la remet dans l'urne.\\
+        On répète cette expérience 10 fois de suite. Ces expériences sont identiques et indépendantes.
+    \end{itemEx}
+\end{bexemples}
+
+\begin{bdefi}
+	Plusieurs expériences sont \grasInDef{identiques et indépendantes} si :
+    \begin{itemDef}
+        \item elles ont les mêmes issues,
+        \item chaque issue possède la même probabilité.
+    \end{itemDef} 
+\end{bdefi}
+
+\begin{bprop}
+	On considère une expérience aléatoire à deux issues $A$ et $B$ avec les probabilités $P(A)$ et $P(B)$.\\
+    Si on répète l'expérience deux fois de suite :\\
+    \begin{itemDef}
+        \item la probabilité d'obtenir l'issue $A$ suivie de l'issue $B$ est égale à $P(A) \times P(B)$,
+        \item la probabilité d'obtenir l'issue $B$ suivie de l'issue $A$ est égale à $P(B) \times P(A)$,
+        \item la probabilité d'obtenir deux fois l'issue $A$ est égale à $P(A)^2$,
+        \item la probabilité d'obtenir deux fois l'issue $B$ est égale à $P(B)^2$.
+    \end{itemDef}
+\end{bprop}
+
+%\begin{bmethodet}{Représenter la répétition d'expériences identiques et indépendantes dans un arbre}
+%On considère l'expérience suivante :\\
+%Une urne contient 3 boules blanches et 2 boules rouges. On tire au hasard une boule et on la remet dans l'urne. On répète l'expérience deux fois de suite.\\
+%1) Représenter l'ensemble des issues de ces expériences dans un arbre.\\
+%2) Déterminer la probabilité :\\
+%\ \ \ \ \ \ a) d'obtenir deux boules blanches\\
+%\ \ \ \ \ \ b) une boule blanche et une boule rouge\\
+%\ \ \ \ \ \ c) au moins une boule blanche.\\
+%\\
+%1) On note $A$ l'issue "On tire une boule blanche" et $B$ l'issue "On tire une boule rouge".
+%$P(A) = 3/5 = 0,6$ et $P(B) = 2/5 = 0,4$.\\
+%On résume les issues de l'expérience dans un arbre de probabilité :\\
+%%\begin{center}
+%%	\includegraphics[scale=0.7]{01-09-03}
+%%\end{center}
+%		    \begin{center}
+%	%\includegraphics[scale=0.8]{TSTG.04.01.png}\\
+%	\begin{tikzpicture}[xscale=1,yscale=1]
+%		% Styles (MODIFIABLES)
+%		\tikzstyle{fleche}=[->,>=latex,thick]
+%		\tikzstyle{noeud}=[rectangle]
+%		\tikzstyle{feuille}=[rectangle]
+%		\tikzstyle{etiquette}=[midway,fill=white]
+%		% Dimensions (MODIFIABLES)
+%		\def\DistanceInterNiveaux{3}
+%		\def\DistanceInterFeuilles{1.5}
+%		% Dimensions calculées (NON MODIFIABLES)
+%		\def\NiveauA{(0)*\DistanceInterNiveaux}
+%		\def\NiveauB{(1.5)*\DistanceInterNiveaux}
+%		\def\NiveauC{(2.5)*\DistanceInterNiveaux}
+%		\def\InterFeuilles{(-1)*\DistanceInterFeuilles}
+%		% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+%		\node[noeud] (R) at ({\NiveauA},{(1.5)*\InterFeuilles}){};
+%		\node[noeud] (Ra) at ({\NiveauB},{(0.5)*\InterFeuilles}) {$A$};
+%		\node[feuille] (Raa) at ({\NiveauC},{(0)*\InterFeuilles}) {$A$};
+%		\node[feuille] (Rab) at ({\NiveauC},{(1)*\InterFeuilles}) {$B$};
+%		\node[noeud] (Rb) at ({\NiveauB},{(2.5)*\InterFeuilles}) {$B$};
+%		\node[feuille] (Rba) at ({\NiveauC},{(2)*\InterFeuilles}) {$A$};
+%		\node[feuille] (Rbb) at ({\NiveauC},{(3)*\InterFeuilles}) {$B$};
+%		% Arcs (MODIFIABLES : Styles)
+%		\draw[fleche] (R)--(Ra) node[etiquette] {\footnotesize{$0,6$}};
+%		\draw[fleche] (Ra)--(Raa) node[etiquette] {\footnotesize{$0,6$}};
+%		\draw[fleche] (Ra)--(Rab) node[etiquette] {\footnotesize{$0,4$}};
+%		\draw[fleche] (R)--(Rb) node[etiquette] {\footnotesize{$0,4$}};
+%		\draw[fleche] (Rb)--(Rba) node[etiquette] {\footnotesize{$0,6$}};
+%		\draw[fleche] (Rb)--(Rbb) node[etiquette] {\footnotesize{$0,4$}};
+%		\draw[ForestGreen,<-] (Raa)--($(Raa)+(1.5,0)$) node[right,font=\sffamily] {$0,6\times 0,6=0,36$} ;
+%		%\draw[white,<-] (Raa)--($(Raa)+(1.5,-0.5)$) node[right,font=\sffamily] {\textcolor{ForestGreen}{$P(R\cap G)=P(R)\times P(G)=0,3$}} ;
+%		\draw[ForestGreen,<-] (Rab)--($(Rab)+(1.5,0)$) node[right,font=\sffamily] {$0,6\times 0,4=0,24$} ;
+%		\draw[ForestGreen,<-] (Rba)--($(Rba)+(1.5,0)$) node[right,font=\sffamily] {$0,4\times 0,6=0,24$} ;
+%		\draw[ForestGreen,<-] (Rbb)--($(Rbb)+(1.5,0)$) node[right,font=\sffamily] {$0,4\times 0,4=0,16$} ;
+%	\end{tikzpicture}
+%\end{center}	
+%2)	a) Obtenir deux boules blanches correspond à l'issue $(A ; A)$ :\\
+%	$P_1 =  0,36$ (d'après l'arbre).\\
+%\\	
+%	b) Obtenir une boule blanche et une boule rouge correspond aux issues 
+%$(A ; B)$ et $(B ; A)$ :\\
+%	$P_2 = 0,24 + 0,24 = 0,48$.\\
+%\\
+%	b) Obtenir au moins une boule blanche correspond aux issues 
+%$(A ; B)$, $(A ; A)$ et $(B ; A)$ :\\
+%	$P_3 = 0,24 + 0,36 + 0,24 = 0,84$.
+%\end{bmethodet}
+
+\begin{brmq}
+    \begin{itemRem}
+        \item Pour une expérience dont le nombre d'issues est supérieur à 2, le principe reste le même.
+        \item Pour une expérience dont le nombre de répétition est supérieur à 2, le principe reste le même.
+    \end{itemRem}
+\end{brmq}
+
+\begin{bexemple}
+    On lance un dé à six faces 4 fois de suite.\\
+    On considère les issues suivantes :\\
+    A : On obtient un nombre pair.\\
+    B : On obtient un 1.\\
+    C : On obtient un 3 ou un 5.\\
+    La probabilité d'obtenir la suite d'issues $(A ; B ; A ; C)$ est égale à :\\
+    $\dfrac{1}{2}\times \dfrac{1}{6} \times \dfrac{1}{2} \times \dfrac{1}{3}=\dfrac{1}{72}$
+\end{bexemple}

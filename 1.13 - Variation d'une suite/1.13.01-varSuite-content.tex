@@ -1,0 +1,97 @@
+\chapter{Variations de suites}
+\thispagestyle{fancy}
+
+
+\section{Sens de variation d'une suite numérique}
+
+\begin{bexemple}
+On a représenté ci-dessous le nuage de points des premiers termes d'une suite $\left(u_{n}\right)$ :
+\begin{center}
+    \includegraphics[scale=0.4]{1.08.00-Img04}
+\end{center}
+On peut conjecturer que cette suite est croissante. On constate par exemple que $u_{1}<u_{2}$ ou encore $u_{4}<u_{5}$. De manière générale, on peut écrire : $u_{n}<u_{n+1}$
+\end{bexemple}
+
+\begin{bdefis}
+Soit une suite numérique $\left(u_{n}\right)$.
+\begin{itemDef}
+\item La \grasInDef{suite $\left(u_{n}\right)$ est croissante} signifie que pour tout entier $n$, on a $u_{n+1} \geqslant u_{n}$.
+\item La \grasInDef{suite $\left(u_{n}\right)$ est décroissante} signifie que pour tout entier $n$, on a $u_{n+1} \leqslant u_{n}$.
+\end{itemDef}
+\end{bdefis}
+
+\begin{bmethodet}{Étudier les variations d'une suite}
+\grasInMet{Énoncé:}
+\begin{enumMet}
+\item Pour tout $n$ de $\mathbb{N}$, on donne la suite $\left(u_{n}\right)$ définie par : $u_{n+1}=u_{n}+2$.\\
+Démontrer que la suite $\left(u_{n}\right)$ est croissante.
+\item Pour tout $n$ de $\mathbb{N}$, on donne la suite $\left(v_{n}\right)$ définie par : $v_{n}=4 n+4$.\\
+Démontrer que la suite $\left(v_{n}\right)$ est croissante.
+\end{enumMet}
+\grasInMet{Réponse:}
+\begin{enumMet}
+\item $u_{n+1}-u_{n}=2>0$\\
+On en déduit que $\left(u_{n}\right)$ est croissante.
+\item On commence par calculer la différence $v_{n+1}-v_{n}$ :\\
+On a $: v_{n}=4 n+4$ donc $v_{\mVert{n+1}}=4\mVert{(n+1)}+4=4 n+4+4=4 n+8$
+\begin{align*}
+v_{n+1}-v_{n}&=4 n+8-(4 n+4) \\
+&=4 n+8-4 n-4 \\
+&=4
+\end{align*}
+On étudie ensuite le signe de $v_{n+1}-v_{n}$ :\\
+Pour tout $n$ entier $v_{n+1}-v_{n}=4>0$.\\
+On en déduit que la suite $\left(v_{n}\right)$ est croissante.
+\end{enumMet}
+\end{bmethodet}
+
+
+\section{variation d'une suite arithmétique}
+
+\begin{bprop}
+    $U_n$ est une suite arithmétique de raison $r$.
+    \begin{itemDef}
+    	\item Si $r > 0$ alors la suite $U_n$ est croissante.
+    	\item Si $r < 0$ alors la suite $U_n$ est décroissante.
+    \end{itemDef}
+\end{bprop}
+
+\begin{bdemo}
+    $U_{n+1}-U_n=U_n+r-U_n=r$.
+    \begin{itemDem}
+    	\item Si $r > 0$ alors $U_{n+1}-U_n>0$  et la suite $U_n$ est croissante.
+    	\item Si $r < 0$ alors $U_{n+1}-U_n<0$ et la suite $U_n$ est décroissante.
+    \end{itemDem}
+\end{bdemo}
+\begin{bexemple}
+    La suite arithmétique $U_n$ définie par $U_n=8-3n$ est décroissante car de raison négative et égale à $-3$.
+\end{bexemple}
+
+
+\section{variation d'une suite géométrique}
+
+\begin{bprop}
+    $U_n$ est une suite géométrique de raison $q$ et de premier terme non nul $U_0$.\\
+    Pour $U_0>0$ :
+    \begin{itemProp}
+    	\item Si $q > 1$ alors la suite $U_n$ est croissante.
+    	\item Si $0 < q < 1$ alors la suite $U_n$ est décroissante.
+    \end{itemProp}
+    Pour $U_0<0$ :
+    \begin{itemDef}
+    	\item Si $q > 1$ alors la suite $U_n$ est décroissante.
+    	\item Si $0 < q < 1$ alors la suite $U_n$ est croissante.
+    \end{itemDef}
+\end{bprop}
+
+\begin{bdemot}{cas où $U_0 > 0$ }
+    $U_{n+1}-U_n=U_0\times q^{n+1}-U_0\times q^n=U_0\times q^n\times (q-1)$.
+    \begin{itemDem}
+    	\item Si $q > 1$ alors $U_{n+1}-U_n>0$ et la suite $U_n$ est croissante.
+    	\item Si $0 < q < 1$ alors $U_{n+1}-U_n<0$ et la suite $U_n$ est décroissante.
+    \end{itemDem}
+\end{bdemot}
+
+
+
+

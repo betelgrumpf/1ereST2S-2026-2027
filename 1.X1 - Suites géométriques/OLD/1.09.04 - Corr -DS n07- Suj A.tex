@@ -1,0 +1,246 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\usepackage{mathrsfs}
+\include{1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$07 - Sujet A} - 23/05/2022}
+
+\begin{document}
+\graphicspath{{images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+\textcolor{red}{Correction - DS n$^{\circ}$07 - Sujet A}\\
+Application de la dérivation et suites
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{1h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\exerciceDS{ - extremums locaux - ( 9 points )}
+On suppose que $f$, $g$ et $h$ sont des fonctions définies et dérivables sur un intervalle donné. Déterminer, à l'aide du tableau de variations, les éventuels extremums locaux des fonctions $f$ et $g$ et $h$ sur cet intervalle.
+\begin{enumMet}
+    \item $f: x \mapsto 3x^{2}-6 x+9$\\
+    \begin{corrBox}
+        $f'(x)=6x-6$\\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $f'(x)$ / 1,$f(x)$ / 2}{$-\infty$, $1$, $+\infty$}
+        \tkzTabLine{, -,z , +,  }
+        \tkzTabVar{+/  ,-/$6$, +/ }
+    \end{tikzpicture}\\
+    Le minimum de la fonction $f$ est 6 atteint pour $x=1$.\\
+    Il n'y a pas de maximum.
+    \end{corrBox}
+    \item $g: x \mapsto x^{3}-6 x^{2}+9 x-1$\\
+    \begin{corrBox}
+        $g'(x)=3x^2-12x+9$\\
+        $\Delta=36$ donc $x_1=1$ et $x_2=3$\\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1 , $g'(x)$ / 1,$g(x)$ / 2}{$-\infty$, $1$ , $3$, $+\infty$}
+        \tkzTabLine{, +,z,-,z , +,  }
+        \tkzTabVar{-/  ,+/$3$, -/$-1$, +/ }
+    \end{tikzpicture}\\
+    Il n'y a pas de maximum ni de minimum.\\
+    OU\\
+    Le minimum local de la fonction $f$ est $-1$ atteint pour $x=3$.\\
+    Le maximum local de la fonction $f$ est $3$ atteint pour $x=1$.\\
+    \end{corrBox}
+    %\item $f(x)=2x(3x^2-18)$
+    \item \ding{46} $h: x \mapsto 4x-5+\dfrac{3}{x-2}$\\
+    \begin{corrBox}
+        $h(x)=\dfrac{(4x-5)(x-2)}{x-2}+\dfrac{3}{x-2}=\dfrac{4x^2-13x+13}{x-2}$\\
+        $h'(x)=\dfrac{(8x-13)(x-2)-1\times(4x^2-13x+13)}{(x-2)^2}=\dfrac{4x^2-16x+13}{(x-2)^2}$\\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 1.3 , $4x^2-16x+13$ / 1,$(x-2)^2$ / 1,$h'(x)$ / 1,$h(x)$ / 2}{$-\infty$, $\dfrac{-\sqrt{3}+4}{2}$ ,$2$, $\dfrac{\sqrt{3}+4}{2}$, $+\infty$}
+        \tkzTabLine{, +,z,-,t,-,z , +,  }
+        \tkzTabLine{, +,t,+,z,+,t , +,  }
+        \tkzTabLine{, +,z,-,d,-,z , +,  }
+        \tkzTabVar{-/  ,+/$-4\sqrt{3}+3$, -D+/, -/$4\sqrt{3}+3$,+/ }
+        \end{tikzpicture}\\
+        Il n'y a pas de maximum ni de minimum.\\
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - Reconnaître une suite arithmétique - ( 4,5 points )}
+Reconnaître parmi les suites définies sur $\mathbb{N}$ ci-dessous celles qui sont arithmétiques et préciser alors leur premier terme et leur raison.
+\begin{enumMet}
+    \item $u_{n}=-2+3 n$ \quad\bareme{0,5}\\
+    \begin{corrBox}
+        On reconnaît une expression d'une suite arithmétique :\\
+        $u_n=u_0+n\times r$ avec $u_0=-2$ et $r=3$
+    \end{corrBox}
+    \item $u_{n}=2 n^{2}+3$ \quad\bareme{0,5}\\
+    \begin{corrBox}
+        $u_0=3\quad\quad\quad u_1=5\quad\quad\quad u_2=11\quad\quad\quad\quad\quad\quad\quad\quad u_2-u_1=6\neq u_1-u_0=2$\\
+        $u_n$ n'est donc pas une suite arithmétique.
+    \end{corrBox}
+    \item $u_{n}=\dfrac{n+5}{2}$ \quad\bareme{0,5}\\
+    \begin{corrBox}
+        On reconnaît une expression d'une suite arithmétique :\\
+        $u_n=u_0+n\times r$ avec $u_0=\dfrac{5}{2}$ et $r=\dfrac{1}{2}$
+    \end{corrBox}
+    \item $u_{n}=\dfrac{1}{n+1}$ \quad\bareme{0,5}\\
+    \begin{corrBox}
+        $u_0=1\quad\quad\quad u_1=\dfrac{1}{2}\quad\quad\quad u_2=\dfrac{1}{3}\quad\quad\quad\quad\quad\quad\quad\quad u_2-u_1=-\dfrac{1}{6}\neq u_1-u_0=-\dfrac{1}{2}$\\
+        $u_n$ n'est donc pas une suite arithmétique.
+    \end{corrBox}
+    \item $u_{0}=-1$ et $u_{n+1}=u_{n}+2 n$ \quad\bareme{0,5}\\
+    \begin{corrBox}
+        $u_{n+1}-u_n=u_n+2 n-u_n=2n$. La différence n'est pas constante.\\
+        La suite $u_n$ n'est donc pas arithmétique. 
+    \end{corrBox}
+    \item $u_{0}=4$ et $u_{n+1}=1,5+u_{n}$ \quad\bareme{0,5}\\
+    \begin{corrBox}
+        $u_{n+1}-u_n=1,5+u_n-u_n=1,5=r$.\\
+        La suite $u_n$ est une suite arithmétique de raison $r=1,5$ et de premier terme $u_0=4$. 
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - Calcul des termes d'une suite - ( 4 points )}
+Pour chacune des suites suivantes définies sur $\mathbb{N}$, calculer $u_{0}, u_{1}, u_{2}, u_{3}$ et $u_{10}$.
+\begin{enumMet}
+    \item \ding{46} $u_{n}=2 n+5$\\
+    \begin{corrBox}
+        $u_0=5\quad\quad\quad u_1=7\quad\quad\quad u_2=9\quad\quad\quad u_3=11\quad\quad\quad u_{10}=25$
+    \end{corrBox}
+    \item $u_{n}=\dfrac{n+1}{n+2}+2$\\
+    \begin{corrBox}
+        $u_0=\dfrac{5}{2}\quad\quad\quad u_1=\dfrac{8}{3}\quad\quad\quad u_2=\dfrac{11}{4}\quad\quad\quad u_3=\dfrac{14}{5}\quad\quad\quad u_{10}=\dfrac{35}{12}$
+    \end{corrBox}
+    \item $u_{n}=2n^{2}-5 n+2$\\
+    \begin{corrBox}
+        $u_0=2\quad\quad\quad u_1=-1\quad\quad\quad u_2=0\quad\quad\quad u_3=5\quad\quad\quad u_{10}=152$
+    \end{corrBox}
+    \item $u_{n}=2^{n}-5$\\
+    \begin{corrBox}
+        $u_0=-4\quad\quad\quad u_1=-3\quad\quad\quad u_2=-1\quad\quad\quad u_3=3\quad\quad\quad u_{10}=1019$
+    \end{corrBox}
+\end{enumMet}  
+
+\exerciceDS{ - Calcul des termes d'une suite - ( 3 points )}
+Pour chacune des suites définies pour tout entier naturel $n$, calculer les trois termes suivant le premier.
+\begin{enumMet}
+    \item $\left\{\begin{array}{l}u_{0}=2 \\ u_{n+1}=2u_{n}-6 n\end{array}\right.$\\
+    \begin{corrBox}
+        $u_1=2\times2-6\times0=4\quad\quad\quad u_2=2\times4-6\times1=2\quad\quad\quad u_3=2\times2-6\times2=-8$
+    \end{corrBox}
+    \item $\left\{\begin{array}{l}u_{0}=0 \\ u_{n+1}=u_{n}^{2}+\dfrac{1}{2 n+3}\end{array}\right.$\\
+    \begin{corrBox}
+        $u_1=0^2+\dfrac{1}{2\times0+3}=\dfrac{1}{3}\quad u_2=\left(\dfrac{1}{3}\right)^2+\dfrac{1}{2\times1+3}=\dfrac{14}{45}$\\
+        $u_3=\left(\dfrac{14}{45}\right)^2+\dfrac{1}{2\times2+3}=\dfrac{3\ 397}{14\ 175}$
+    \end{corrBox}
+    \item \ding{46} $\left\{\begin{array}{l}u_{0}=3 \\ u_{n}=4 u_{n-1}-3\end{array}\right.$\\
+    \begin{corrBox}
+        $u_1=4\times3-3=9\quad\quad\quad u_2=4\times9-3=33\quad\quad\quad u_3=4\times33-3=129$
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - monotonie d'une suite - ( 5 points )}
+Étudier la monotonie des suites suivantes.
+\begin{enumMet}
+    \item pour tout entier naturel $n$, $u_{n}=\dfrac{1}{2 n+3}$.\\
+    \begin{corrBox}
+        $u_{n+1}-u_n=\dfrac{1}{2n+5}-\dfrac{1}{2n+3}=\dfrac{(2n+3)-(2n+5)}{(2n+3)(2n+5)}=\dfrac{-2}{(2n+3)(2n+5)}<0$\\
+        La suite $u_n$ est décroissante. 
+    \end{corrBox}
+    \item Pour tout entier naturel $n, u_{n}=2\times3^{n}$.\\
+    \begin{corrBox}
+        $u_{n+1}-u_n=2\times3^{n+1}-2\times3^n=2\times3^n\times(3-1)=2\times2\times3^n>0$.\\
+        La suite est croissante.
+    \end{corrBox}
+    \item Pour tout entier naturel $n, v_{n}=0,6^{n}$.\\
+    \begin{corrBox}
+        $v_{n+1}-v_n=0,6^{n+1}-0,6^n=0,6^n\times(0,6-1)=-0,4\times0,6^n<0$.\\
+        La suite est décroissante.
+    \end{corrBox}
+    \item Pour tout entier naturel $n, w_{n}=(-5)^{n}$.\\
+    \begin{corrBox}
+        $w_{n+1}-w_n=(-5)^{n+1}-(-5)^n=(-5)^n\times(-5-1)=-6\times(-5)^n$.\\
+        Si n est pair, $w_{n+1}-w_n<0$ et Si n est impair, $w_{n+1}-w_n>0$. La suite n'est donc pas monotone.
+    \end{corrBox}
+    \item \ding{46} Pour tout entier naturel $n, t_{n}=2 n+3$.\\
+    \begin{corrBox}
+        Pour tout entier $t_{n+1}=2(n+1)+3=2n+5$\\
+        Pour tout entier $t_{n+1}-t_{n}=2n+5-(2n+3)=2>0$\\
+        La suite $\left(t_{n}\right)$ est croissante.\\
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - terme général d'une suite arithmétique - ( 4 points )}
+Les suites suivantes sont arithmétiques de raison $r$. Exprimer $u_{n}$ en fonction de $n$, pour tout $n \in \mathbb{N}$.
+\begin{enumMet}
+    \item $u_{2}=5$ et $r=2$\\
+    \begin{corrBox}
+        $u_0=u_2-2r=5-2\times2=1\Longrightarrow u_n=u_0+nr \Longrightarrow u_n=1+2n$
+    \end{corrBox}
+    \item $u_{6}=8$ et $r=-\dfrac{1}{2}$\\
+    \begin{corrBox}
+        $u_0=u_6-6r=8+6\times\dfrac{1}{2}=11\Longrightarrow u_n=u_0+nr \Longrightarrow u_n=11-\dfrac{1}{2}n$
+    \end{corrBox}
+    \item \ding{46} $u_{3}=4$ et $r=8$\\
+    \begin{corrBox}
+        $u_0=u_3-3r=4-3\times8=-20\Longrightarrow u_n=u_0+nr \Longrightarrow u_n=-20+8n$
+    \end{corrBox}
+    \item $u_{8}=\dfrac{15}{2}$ et $r=-\dfrac{1}{4}$\\
+    \begin{corrBox}
+        $u_0=u_8-8r=\dfrac{15}{2}+8\times\dfrac{1}{4}=\dfrac{19}{2}\Longrightarrow u_n=u_0+nr \Longrightarrow u_n=\dfrac{19}{2}-\dfrac{1}{4}n$
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - Calcul d'un terme - ( 4 points )}
+Pour chacune des suites suivantes, calculer $u_{25}$.
+\begin{enumMet}
+    \item La suite $\left(u_{n}\right)$ est arithmétique de raison $r=2$ et telle que $u_{9}=12$.\\
+    \begin{corrBox}
+        $u_{25}=u_{9}+(25-9)\times r=12+(25-9)\times 2=44$
+    \end{corrBox}
+    \item La suite $\left(u_{n}\right)$ est arithmétique de raison $r=5$ et telle que $u_{30}=34$.\\
+    \begin{corrBox}
+        $u_{25}=u_{30}+(25-30)\times r=34+(25-30)\times 5=9$
+    \end{corrBox}
+    \item La suite $\left(u_{n}\right)$ est définie par $\left\{\begin{array}{l}u_{0}=8 \\ u_{n+1}=u_{n}+8\end{array}\right.$\\
+    \begin{corrBox}
+        $u_{25}=u_{0}+25\times r=8+25\times 8=208$
+    \end{corrBox}
+    \item \ding{46} La suite $\left(u_{n}\right)$ est définie par $\left\{\begin{array}{l}u_{1}=-5 \\ u_{n+1}=u_{n}-3\end{array}\right.$ pour $n \in \mathbb{N}$.\\
+    \begin{corrBox}
+        $u_{25}=u_{1}+(25-1)\times r=-5+(25-1)\times -3=-77$
+    \end{corrBox}
+\end{enumMet}
+
+\end{document}

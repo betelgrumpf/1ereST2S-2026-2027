@@ -1,0 +1,133 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\usepackage{mathrsfs}
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$06 - Sujet B - 15/05/2022}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+DS n$^{\circ}$06 - Sujet B - Fonction exponentielle\\
+Application du produit scalaire
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{1h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\exerciceDS{ - Au golf - ( 2 points )}
+\begin{minipage}[c]{.6\linewidth}
+Sur un green de golf, trois positions de la balle sont repérées en $\mathrm{M},$ N et P sur le schéma ci-contre. Le triangle MNP est tel que MN=8, $\mathrm{MP}=5$ et $\widehat{M}=53^{\circ}$.\\
+Calculer la valeur exacte de NP, puis son arrondi à 0,1 près.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.35\linewidth}
+\begin{center}
+   \includegraphics[scale=0.8]{1.05.DS-IMG-01} 
+\end{center}
+
+\end{minipage}
+
+\exerciceDS{ - Angles dans un triangle - ( 3 points )}
+Dans un repère orthonormé du plan, on considère les points $\mathrm{A}(-2 ;1), \mathrm{B}(3 ; 4)$ et $\mathrm{C}(2 ; 1)$.\\
+Déterminer les angles du triangle $A B C$ à 0,1 degré près.\\
+
+
+\exerciceDS{ - Médiatrice dans un triangle - ( 8 points )}
+On considère le triangle $\mathrm{ABC}$ tel que $\mathrm{A}(-2 ;1), \mathrm{B}(3 ; 4)$ et $\mathrm{C}(2 ; 1)$.
+\begin{enumMet}
+	\item Montrer que les coordonnées du milieu M du segment $[BC]$ sont $M(2,5;2,5)$
+	\item Déterminer une équation de la médiatrice  du segment $[BC]$ dans le triangle $\mathrm{ABC}$ (la médiatrice est la perpendiculaire à $[BC]$ passant par M).
+	\item \ding{46} Montrer que les coordonnées du milieu N du segment $[AC]$ sont $N(0;1)$
+	\item Déterminer une équation de la médiatrice  du segment $[AC]$ dans le triangle $\mathrm{ABC}$.
+	\item Déterminer les coordonnées du point d'intersection $\mathrm{O}$ des deux médiatrices.
+	\item \ding{46} Montrer que les coordonnées du milieu P du segment $[AB]$ sont $P(0,5;2,5)$
+	\item Calculer le produit scalaire $\vv{\mathrm{AB}} \cdot \vv{\mathrm{OP}}$. Quel résultat connu retrouve-t-on ?
+\end{enumMet}
+
+
+\exerciceDS{ - Équations cartésiennes - ( 3 points )}
+Dans chaque cas, déterminer une équation cartésienne de la droite $d$ passant par le point $\mathrm{A}$ et perpendiculaire à la droite (BC).
+\begin{enumMet}
+	\item \ding{46} $\mathrm{A}(3 ; 4)$ et $\Coord{u}{-2}{4}$ un vecteur directeur de $(\mathrm{BC})$.
+	\item $\mathrm{A}(1 ; 2), \mathrm{B}(2 ;-1)$ et $\mathrm{C}(-3 ; 2)$.
+	\item $\mathrm{A}(-4 ; 5)$ et la droite $(\mathrm{BC})$ est parallèle à l'axe des abscisses.
+\end{enumMet}
+
+\exerciceDS{ - simplification - ( 4 points )}
+$x$ est un réel quelconque. Simplifier au maximum les expressions suivantes.
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $a(x)=\mathrm{e}^{2 x} \times\left(\mathrm{e}^x\right)^2 \times \mathrm{e}^{-3 x}$
+	\item $b(x)=\dfrac{\mathrm{e}^{x^2}}{\mathrm{e}^x}$
+	\item $c(x)=\dfrac{\mathrm{e}^{x-1} \times \mathrm{e}^{4 x}}{\mathrm{e}^x}$
+	\item \ding{46} $d(x)=\dfrac{\mathrm{e}^{-2 x}}{\mathrm{e}^{-3 x} \times \mathrm{e}^{x+1}}$
+\end{enumMet}
+\end{multicols}
+
+\exerciceDS{ - dérivation - ( 4 points )}
+Calculer la dérivée de la fonction $f$ définie sur $\mathbb{R}$.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f(x)=4 \mathrm{e}^x-8 x^2+2$
+		\item \ding{46} $f(x)=2x-3 \mathrm{e}^x+1$
+		\item $f(x)=2\mathrm{e}^x+\mathrm{e}^3$
+		\item $f(x)=2x \mathrm{e}^x$
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS{ - Résolution d'équations et d'inéquations - ( 8 points )}
+Résoudre dans \R.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $\mathrm{e}^{4x-9}=\mathrm{e}$
+		\item $\mathrm{e}^{-2x^2}=\dfrac{1}{\mathrm{e}^{-18}}$
+		\item \ding{46} $\mathrm{e}^{3x^2-6x}=1$
+		\item $6+\mathrm{e}^x=1$
+		\item $\mathrm{e}^{x+5}<1$
+		\item $\mathrm{e}^{-3 x+7} \geqslant 0$
+		\item $-5 \mathrm{e}^{x^2-4}>8$
+		\item $\mathrm{e}^{x+5} \leqslant \dfrac{1}{\mathrm{e}^{4 x}}$
+	\end{enumMet}
+\end{multicols}
+
+
+
+\end{document}

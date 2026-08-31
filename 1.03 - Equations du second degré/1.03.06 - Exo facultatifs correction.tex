@@ -1,0 +1,351 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+%\usepackage{mathrsfs}
+
+\rhead{\textcolor{red}{Correction - Exercices facultatifs - Equations du 2nd degré}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{../images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction - Exercices facultatifs}\\
+						Équations du 2nd degré
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\exercice{- Racine évidente} 
+Factoriser les fonctions polynômes du second degré sans calculer leur discriminant.
+\begin{enumMet}
+	\item $f: x \mapsto-6 x^2+10 x-4$
+	\begin{corrBox}
+		$f(1)=-6\times1^2+10\times1-4=-6+10-4=0$. 1 est une racine évidente.\\
+		$P=x_1\times x_2=\dfrac{c}{a}=\dfrac{4}{6}=\dfrac{2}{3}\iff x_2=\dfrac{2}{3}$\\
+		$f(x)=a(x-x_1)(x-x_2)=-6(x-1)(x-\dfrac{2}{3})$
+	\end{corrBox}
+	\item $g: x \mapsto 6 x^2+2 x-20$
+	\begin{corrBox}
+		$f(-2)=6\times(-2)^2+2\times(-2)-20=24-4-20=0$. $-2$ est une racine évidente.\\
+		$P=x_1\times x_2=\dfrac{c}{a}=\dfrac{-20}{6}=-\dfrac{10}{3}\iff x_2=-\dfrac{5}{3}$\\
+		$f(x)=a(x-x_1)(x-x_2)=6(x+2)(x+\dfrac{5}{3})$
+	\end{corrBox}
+	\item $h: x \mapsto 4 x^2-14 x+12$
+	\begin{corrBox}
+		$f(2)=4\times(2)^2-14\times2+12=16-28+12=0$. $2$ est une racine évidente.\\
+		$P=x_1\times x_2=\dfrac{c}{a}=\dfrac{12}{4}=3\iff x_2=\dfrac{3}{2}$\\
+		$f(x)=a(x-x_1)(x-x_2)=4(x-2)(x-\dfrac{3}{2})$
+	\end{corrBox}
+	\item $k: x \mapsto 2 x^2-8 x+8$
+	\begin{corrBox}
+		$f(2)=2\times(2)^2-8\times2+8=8-16+8=0$. $2$ est une racine évidente.\\
+		$P=x_1\times x_2=\dfrac{c}{a}=\dfrac{8}{2}=4\iff x_2=2=x_1$\\
+		$f(x)=a(x-x_1)(x-x_2)=2(x-2)(x-2)=2(x-2)^2$
+	\end{corrBox}
+\end{enumMet}
+
+
+\exercice{- Equations} 
+Resoudre dans \R les équations suivantes.
+%\begin{multicols}{2}
+\begin{enumMet}
+	\item $-2 x^2+x-1=0$
+	\begin{corrBox}
+		$\Delta=b^2-4ac=1^2-4\times(-2)\times(-1)=-7$\\
+		$\Delta<0$ donc $S=\varnothing$
+	\end{corrBox}
+	\item $2 x^2-2 x-1=0$
+	\begin{corrBox}
+		$\Delta=b^2-4ac=(-2)^2-4\times2\times(-1)=12$\\
+		$\Delta>0$ donc 2 solutions:\\
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{2-\sqrt{12}}{2\times2}=\dfrac{1-\sqrt{3}}{2}$\quad et \quad $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{2+\sqrt{12}}{2\times2}=\dfrac{1+\sqrt{3}}{2}$\\
+		$S=\left\{\dfrac{1-\sqrt{3}}{2};\dfrac{1+\sqrt{3}}{2}\right\}$
+	\end{corrBox}
+	\item $5 x^2-2 x+1=0$
+	\begin{corrBox}
+		$\Delta=b^2-4ac=(-2)^2-4\times5\times1=-16$\\
+		$\Delta<0$ donc $S=\varnothing$
+	\end{corrBox}
+	\item $2 x^2+4=-6 x$
+	\begin{corrBox}
+		$2 x^2+6 x+4=0$\\
+		$\Delta=b^2-4ac=6^2-4\times2\times4=4$\\
+		$\Delta>0$ donc 2 solutions:\\
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{-6-\sqrt{4}}{2\times2}=-2$\quad et \quad $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{-6+\sqrt{4}}{2\times2}=-1$\\
+		$S=\left\{-2;-1\right\}$
+	\end{corrBox}
+	\item $x(2 x-1)=1$
+	\begin{corrBox}
+		$2x^2-x-1=0$\\
+		$\Delta=b^2-4ac=(-1)^2-4\times2\times(-1)=9$\\
+		$\Delta>0$ donc 2 solutions:\\
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{1-\sqrt{9}}{2\times2}=-\dfrac{1}{2}$\quad et \quad $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{1+\sqrt{9}}{2\times2}=1$\\
+		$S=\left\{-\dfrac{1}{2};1\right\}$
+	\end{corrBox}
+	\item $x^2=-5 x-1$
+	\begin{corrBox}
+		$x^2+5x+1=0$\\
+		$\Delta=b^2-4ac=5^2-4\times1\times1=21$\\
+		$\Delta>0$ donc 2 solutions:\\
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{-5-\sqrt{21}}{2}$\quad et \quad $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{-5+\sqrt{21}}{2}$\\
+		$S=\left\{\dfrac{-5-\sqrt{21}}{2};\dfrac{-5+\sqrt{21}}{2}\right\}$
+	\end{corrBox}
+	\item $-x+3 x^2-1=0$
+	\begin{corrBox}
+		$3x^2-x-1=0$\\
+		$\Delta=b^2-4ac=(-1)^2-4\times3\times(-1)=13$\\
+		$\Delta>0$ donc 2 solutions:\\
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{1-\sqrt{13}}{6}$\quad et \quad $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{1+\sqrt{13}}{6}$\\
+		$S=\left\{\dfrac{1-\sqrt{13}}{6};\dfrac{1+\sqrt{13}}{6}\right\}$
+	\end{corrBox}
+	\item $x(8-x)+1=0$
+	\begin{corrBox}
+		$-x^2+8x+1=0$\\
+		$\Delta=b^2-4ac=8^2-4\times(-1)\times1=68$\\
+		$\Delta>0$ donc 2 solutions:\\
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{-8-\sqrt{68}}{2\times (-1)}=4+\sqrt{17}$\quad et \quad $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{-8+\sqrt{68}}{2\times (-1)}=4-\sqrt{17}$\\
+		$S=\left\{4-\sqrt{17};4+\sqrt{17}\right\}$
+	\end{corrBox}
+	\item $2 x^2+6 x+\dfrac{9}{2}=0$
+	\begin{corrBox}
+		$\Delta=b^2-4ac=6^2-4\times2\times\dfrac{9}{2}=0$\\
+		$\Delta=0$ donc 1 solution:\\
+		$x_0=\dfrac{-b}{2a}=\dfrac{-6}{4}=-\dfrac{3}{2}$\\
+		$S=\left\{-\dfrac{3}{2}\right\}$
+	\end{corrBox}
+	\item $x^2+2 \sqrt{3} x+3=0$
+	\begin{corrBox}
+		$\Delta=b^2-4ac=(2 \sqrt{3})^2-4\times1\times3=0$\\
+		$\Delta=0$ donc 1 solution:\\
+		$x_0=\dfrac{-b}{2a}=\dfrac{-2 \sqrt{3}}{2}=-\sqrt{3}$\\
+		$S=\left\{-\sqrt{3}\right\}$
+	\end{corrBox}
+	\item $-3 x^2+x=-\dfrac{1}{4}$
+	\begin{corrBox}
+		$-3 x^2+x+\dfrac{1}{4}=0$\\
+		$\Delta=b^2-4ac=1^2-4\times(-3)\times\dfrac{1}{4}=4$\\
+		$\Delta>0$ donc 2 solutions:\\
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{-1-\sqrt{4}}{2\times (-3)}=\dfrac{1}{2}$\quad et \quad $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{-1+\sqrt{4}}{2\times (-3)}=-\dfrac{1}{6}$\\
+		$S=\left\{-\dfrac{1}{6};\dfrac{1}{2}\right\}$
+	\end{corrBox}
+	\item $2 x(5+2 x)=9-2 x$
+	\begin{corrBox}
+		$10x+4x^2-9+2x=0\iff 4x^2+12x-9=0$\\
+		$\Delta=b^2-4ac=12^2-4\times4\times(-9)=288$\\
+		$\Delta>0$ donc 2 solutions:\\
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{-12-\sqrt{288}}{2\times 4}=\dfrac{-3-3\sqrt{2}}{2}$\quad et \quad $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{-12+\sqrt{288}}{2\times 4}=\dfrac{-3+3\sqrt{2}}{2}$\\
+		$S=\left\{\dfrac{-3-3\sqrt{2}}{2};\dfrac{-3+3\sqrt{2}}{2}\right\}$
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{- Inéquations et représentations graphiques}
+
+$f$ et $g$ sont deux fonctions définies sur $\R$ par $f(x)=8 x^2-5 x+3$ et $g(x)=3 x+1$, de représentations graphiques $C_f$ et $C_g$
+\begin{enumMet}
+	\item Préciser la nature de $C_f$ et de $C_g$
+	\begin{corrBox}
+		$f(x)$ est une fonction du second degré. $C_f$ est donc une parabole.\\
+		$g(x)$ est une fonction affine. $C_g$ est donc une droite.
+	\end{corrBox}
+	\item Étudier la position relative de $C_f$ et $C_g$
+	\begin{corrBox}
+		On résoud l'inéquation $f(x)-g(x)\leqslant0$. Les solutions de l'inéquation indiqueront quand $C_f$ est en dessous de $C_g$.
+		$f(x)-g(x)\leqslant0 \iff 8 x^2-5 x+3-3x-1\leqslant0 \iff 8x^2-8x+2\leqslant0$\\
+		$\Delta=0\iff x_0=-\dfrac{1}{2}$\\
+		
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$\dfrac{1}{2}$, $+\infty$}
+			\tkzTabLine{, +, z, +, }
+		\end{tikzpicture}\\
+		
+		$S={0}$
+		$C_f$ est toujours au-dessus de $C_g$ sauf pour $x=\dfrac{1}{2}$ ou les 2 courbes sont confondus.
+	\end{corrBox}
+	\item Tracer $C_f$ et $C_g$ dans un même repère. Le graphique confirme-t-il la réponse à la question 2. ?
+	\begin{corrBox}
+		\begin{center}
+			\includegraphics[scale=1.3]{1.03.11-Img01}
+		\end{center}
+		On retrouve bien le résultat de la question 2).
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{- Inéquations}
+Résoudre dans \R les inéquations suivantes.
+%\begin{multicols}{2}
+\begin{enumMet}
+	\item $6 x^2+7 x+2>0$
+	\begin{corrBox}
+		$\Delta=1\iff x_1=-\dfrac{2}{3}$ et $x_2=-\dfrac{1}{2}$\\
+		
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$-\dfrac{2}{3}$, $-\dfrac{1}{2}$, $+\infty$}
+			\tkzTabLine{, +, z,- , z, +, }
+		\end{tikzpicture}\\
+		
+		$S=\bigg]-\infty ;-\dfrac{2}{3}\bigg[\cup\bigg] -\dfrac{1}{2} ;+\infty\bigg[$
+	\end{corrBox}
+	\item $-5 x^2+10 x+1<0$
+	\begin{corrBox}
+		$\Delta=120\iff x_1=\dfrac{5-\sqrt{30}}{5}$ et $x_2=\dfrac{5+\sqrt{30}}{5}$\\
+		
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$\dfrac{5-\sqrt{30}}{5}$, $\dfrac{5+\sqrt{30}}{5}$, $+\infty$}
+			\tkzTabLine{, -, z,+ , z, -, }
+		\end{tikzpicture}\\
+		
+		$S=\bigg]-\infty ;\dfrac{5-\sqrt{30}}{5}\bigg[\cup\bigg] \dfrac{5+\sqrt{30}}{5} ;+\infty\bigg[$
+	\end{corrBox}
+	\item $49 x^2+28 x+4<0$
+	\begin{corrBox}
+		$\Delta=0\quad x_0=-\dfrac{2}{7}$\\
+		
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$-\dfrac{2}{7}$, $+\infty$}
+			\tkzTabLine{, +, z,+, }
+		\end{tikzpicture}\\
+		
+		$S=\varnothing$
+	\end{corrBox}
+	\item $-2 x^2+4 x-4>0$
+	\begin{corrBox}
+		$\Delta=-16\iff$ pas de racines\\
+		\begin{tabular}{|c|lll|}
+			\hline$x$ & $-\infty$ & & $+\infty$ \\
+			\hline$f(x)$ & & $-$ & \\
+			\hline
+		\end{tabular}\\
+		\ \\
+		$S=\varnothing$.
+	\end{corrBox}
+	\item $7 x^2>3 x-5$
+	\begin{corrBox}
+		$7 x^2-3 x+5>0$\\
+		$\Delta=-131\iff$ pas de racines\\
+		\begin{tabular}{|c|lll|}
+			\hline$x$ & $-\infty$ & & $+\infty$ \\
+			\hline$f(x)$ & & $+$ & \\
+			\hline
+		\end{tabular}\\
+		\ \\
+		$S=\R$
+	\end{corrBox}
+	\item $-x^2+x>1$
+	\begin{corrBox}
+		$-x^2+x-1>0$\\
+		$\Delta=-3\iff$ pas de racines\\
+		\begin{tabular}{|c|lll|}
+			\hline$x$ & $-\infty$ & & $+\infty$ \\
+			\hline$f(x)$ & & $-$ & \\
+			\hline
+		\end{tabular}\\
+		\ \\
+		$S=\varnothing$.
+	\end{corrBox}
+	\item $-x^2+x>1$
+	\begin{corrBox}
+		identique au 6)
+	\end{corrBox}
+	\item $2 x \leqslant 5 x^2+4$
+	\begin{corrBox}
+		$0 \leqslant 5 x^2-2x+4\iff 5 x^2-2x+4\geqslant 0$\\
+		$\Delta=-76\iff$ pas de racines\\
+		\begin{tabular}{|c|lll|}
+			\hline$x$ & $-\infty$ & & $+\infty$ \\
+			\hline$f(x)$ & & $+$ & \\
+			\hline
+		\end{tabular}\\
+		\ \\
+		$S=\R $
+	\end{corrBox}
+	\item $8 x^2-10>7 x^2$
+	\begin{corrBox}
+		$8 x^2-7x^2-10>0\iff x^2-10>0 \iff (x-\sqrt{10})(x+\sqrt{10})$\\
+		
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$-\sqrt{10}$, $\sqrt{10}$, $+\infty$}
+			\tkzTabLine{, +, z,- , z, +, }
+		\end{tikzpicture}\\
+		
+		$S=\bigg]-\infty ;-\sqrt{10}\bigg[\cup\bigg] \sqrt{10} ;+\infty\bigg[$
+	\end{corrBox}
+	\item $\dfrac{4}{3} x^2<\dfrac{2}{7} x+3$
+	\begin{corrBox}
+		$\dfrac{4}{3} x^2-\dfrac{2}{7} x-3<0$\\
+		$\Delta=\dfrac{788}{49}\iff x_1=\dfrac{3-3\sqrt{197}}{28}$ et $x_2=\dfrac{3+3\sqrt{197}}{28}$\\
+		
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$\dfrac{3-3\sqrt{197}}{28}$, $\dfrac{3+3\sqrt{197}}{28}$, $+\infty$}
+			\tkzTabLine{, +, z,- , z, +, }
+		\end{tikzpicture}\\
+		
+		$S=\bigg]\dfrac{3-3\sqrt{197}}{28};\dfrac{3+3\sqrt{197}}{28}\bigg[$
+	\end{corrBox}
+	\item $(2 x-3) \times(6 x+4)>x^2-6$
+	\begin{corrBox}
+		$(2 x-3) \times(6 x+4)>x^2-6 \iff 12x^2-18x+8x-12-x^2+6>0\iff 11x^2-10x-6>0$\\
+		$\Delta=364\iff x_1=\dfrac{5-\sqrt{91}}{11}$ et $x_2=\dfrac{5+\sqrt{91}}{11}$\\
+		
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$\dfrac{5-\sqrt{91}}{11}$, $\dfrac{5+\sqrt{91}}{11}$, $+\infty$}
+			\tkzTabLine{, +, z,- , z, +, }
+		\end{tikzpicture}\\
+		
+		$S=\bigg]-\infty ;\dfrac{5-\sqrt{91}}{11}\bigg[\cup\bigg] \dfrac{5+\sqrt{91}}{11} ;+\infty\bigg[$
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{- Factoriser}
+Factoriser $f(x)$ par la méthode la plus adaptée.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f(x)=137 x^2-x-136$
+		\begin{corrBox}
+			$f(1)=137\times1^2-1-136=137+-1-136=0$. 1 est une racine évidente.\\
+			$P=x_1\times x_2=\dfrac{c}{a}=\dfrac{136}{137}\iff x_2=\dfrac{136}{137}$\\
+			$f(x)=a(x-x_1)(x-x_2)=137(x-1)\left(x-\dfrac{136}{137}\right)=(x-1)(137x-136)$
+		\end{corrBox}
+		\item $f(x)=4 x^2-8 x+4$
+		\begin{corrBox}
+			$f(1)=4\times1^2-8\times1+4=4-8+4=0$. 1 est une racine évidente.\\
+			$P=x_1\times x_2=\dfrac{c}{a}=\dfrac{4}{4}=1\iff x_2=1=x_1$\\
+			$f(x)=a(x-x_1)(x-x_2)=4(x-1)^2$
+		\end{corrBox}
+		\item $f(x)=-x^2+x+12$
+		\begin{corrBox}
+			$\Delta=49\quad x_1=-3$ et $x_2=4$\\
+			$f(x)=a(x-x_1)(x-x_2)=-(x-(-3))(x-4)=-(x+3)(x-4)$
+		\end{corrBox}
+		\item $f(x)=x^2-7 x+10$
+		\begin{corrBox}
+			$\Delta=9\quad x_1=2$ et $x_2=5$\\
+			$f(x)=a(x-x_1)(x-x_2)=(x-2)(x-5)$
+		\end{corrBox}
+		\item $f(x)=-x^2+9$
+		\begin{corrBox}
+			$f(x)=9-x^2=3^2-x^2=(3-x)(3+x)$
+		\end{corrBox}
+		\item $f(x)=-6 x^2+25 x-14$
+		\begin{corrBox}
+			$\Delta=289\quad x_1=\dfrac{2}{3}$ et $x_2=\dfrac{7}{2}$\\
+			$f(x)=a(x-x_1)(x-x_2)=-6\left(x-\dfrac{2}{3}\right)\left(x-\dfrac{7}{2}\right)=-(3x-2)(2x-7)$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\end{document}
+

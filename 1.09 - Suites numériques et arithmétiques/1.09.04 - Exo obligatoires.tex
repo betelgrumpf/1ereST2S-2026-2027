@@ -1,0 +1,295 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+%\usepackage{mathrsfs}
+
+\rhead{Exercices obligatoires - Suites numériques}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{img_oblig/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Exercices obligatoires\\
+						Suites numériques
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+\section{Généralités sur les suites}
+
+\exercice{ $-$ Ex 22 p 31 du LS}
+
+Pour chacune des suites suivantes, calculer $u_0, u_1, u_2$, $u_3, u_4$ et $u_{10}$ lorsque c'est possible.
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item $u_n=3 n+7$
+		\item $u_n=\frac{n}{n+1}+2$
+		\item $u_n=n^2-7 n+2$
+		\item $u_n=2^n-3$	
+		\item $u_n=(-1)^n-n$
+		\item $u_n=\frac{3}{4}-\frac{1}{4} n$
+	\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 33 p 32 du LS}
+
+Pour chacune des suites définies pour tout entier naturel $n$, calculer les trois termes suivant le premier.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $\left\{\begin{array}{l}u_0=2 \\ u_{n+1}=3 u_n-4 n\end{array}\right.$
+		\item $\left\{\begin{array}{l}u_0=0 \\ u_{n+1}=u_n^2+\dfrac{1}{2 n+1}\end{array}\right.$
+		\item $\left\{\begin{array}{l}u_0=3 \\ u_n=5 u_{n-1}-2\end{array}\right.$
+		\item $\left\{\begin{array}{l}u_0=1 \\ u_1=2 \\ u_{n+2}=2 u_{n+1}+u_n\end{array}\right.$
+		\item $\left\{\begin{array}{l}u_0=1 \\ u_1=2 \\ u_{n+2}=u_{n+1}+n\end{array}\right.$
+	\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 25 p 31 du LS}
+
+Représenter dans un repère les cinq premiers termes des suites définies pour tout $n \in \mathbb{N}$ par:
+\begin{multicols}{3}
+	\begin{enumMet}
+	\item $u_n=4 n-7$
+	\item $u_n=n^2+1$
+	\item $u_n=\left(\dfrac{1}{2}\right)^n$
+\end{enumMet}
+\end{multicols}
+
+\section{Suites arithmétiques}
+
+\exercice{ $-$ Ex 26 p 31 du LS}
+
+Les suites suivantes sont arithmétiques. Exprimer $u_{n+1}$ en fonction de $u_n$ puis calculer les cinq premiers termes.
+\begin{multicols}{4}
+	\begin{enumMet}
+	\item $u_0=2$ et $r=3$
+	\item $u_0=4$ et $r=-3$
+	\item $u_1=3$ et $r=\dfrac{1}{2}$
+	\item $u_1=\dfrac{3}{4}$ et $r=\dfrac{1}{2}$
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 28 p 31 du LS}
+
+Les suites suivantes sont arithmétiques de raison $r$. Exprimer $u_n$ en fonction de $n$, pour tout $n \in \mathbb{N}$.
+\begin{multicols}{4}
+	\begin{enumMet}
+	\item $u_2=2$ et $r=4$
+	\item $u_5=7$ et $r=-\frac{1}{2}$
+	\item $u_3=4$ et $r=12$
+	\item $u_8=\frac{37}{2}$ et $r=-\frac{1}{4}$
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 27 p 31 du LS}
+
+Déterminer si les suites suivantes sont arithmétiques. Si oui, donner le premier terme et la raison.
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $u_n=7 n-3$, pour tout $n \in \mathbb{N}$.
+	\item $u_n=n^2+4$, pour tout $n \in \mathbb{N}$.
+	\item $\left\{\begin{array}{l}u_0=1 \\ u_{n+1}=2 u_n+7, \text { pour tout } n \in \mathbb{N} \text {. }\end{array}\right.$
+	\item $\left\{\begin{array}{l}u_1=-3 \\ u_{n+1}=u_n+n+9, \text { pour tout } n \in \mathbb{N}^* .\end{array}\right.$
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 54 p 34 du LS}
+
+Pour chacune des suites suivantes, calculer $u_{20}$.
+\begin{enumMet}
+	\item La suite ( $u_n$ ) est arithmétique de raison $r=3$ et telle que $u_7=12$.
+	\item La suite $\left(u_n\right)$ est arithmétique de raison $r=5$ et telle que $u_{25}=17$.
+	\item La suite $\left(u_n\right)$ est définie par $\left\{\begin{array}{l}u_0=3 \\ u_{n+1}=u_n+7\end{array}\right.$ pour $n \in \mathbb{N}$.
+	\item La suite $\left(u_n\right)$ est définie par $\left\{\begin{array}{l}u_1=-2 \\ u_{n+1}=u_n-4\end{array}\right.$ pour $n \in \mathbb{N}$.
+\end{enumMet}
+
+\exercice{ $-$ Ex 55 p 34 du LS}
+
+Déterminer si les suites suivantes sont arithmétiques. Si oui, donner le premier terme et la raison.
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item Pour tout $n \in \mathbb{N}, u_n=\dfrac{n+5}{n+1}$.
+	\item Pour tout $n \in \mathbb{N}, u_n=\dfrac{-3 n+5}{8}$.
+	\item Pour tout $n \in \mathbb{N}, u_n=\dfrac{n^2+4 n+3}{n+3}$.
+	\item Pour tout $n \in \mathbb{N}, u_n=\dfrac{n^2+1}{n+2}$.
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 56 p 34 du LS}
+
+À chaque fois, on donne deux termes d'une suite arithmétique $\left(u_n\right)$ définie sur $\mathbb{N}$.
+Déterminer la raison et le premier terme puis exprimer, $u_n$ en fonction de $n \in \mathbb{N}$.
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $u_3=4$ et $u_8=24$.
+	\item $u_5=\frac{7}{4}$ et $u_9=\frac{1}{4}$.
+	\item $u_{13}=16$ et $u_{32}=-7$.
+	\item $u_{50}=159$ et $u_{100}=309$.
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 58 p 34 du LS}
+
+Dans le repère orthonormé ci-dessous, on a représenté quelques termes de trois suites arithmétiques.
+Pour chacune d'elle, déterminer le premier terme, la raison ainsi que l'expression de $u_n$ en fonction de $n$. Donner la valeur de $u_3$ et $u_6$.
+\begin{center}
+	\includegraphics[scale=0.7]{Img01}
+\end{center}
+
+\exercice{ $-$ Ex 59 p 34 du LS}
+
+Lorentz place une somme de 1000 euros au taux simple annuel de $5 \%$; c'est-à-dire que chaque année, la somme placée augmentera de $5 \%$ de la somme initiale. Pour tout entier naturel $n, u_n$ désigne le capital de Lorentz $n$ années après son placement.
+\begin{enumMet}
+	\item Déterminer $u_0, u_1, u_2$ et $u_3$.
+	\item Exprimer $u_{n+1}$ en fonction de $u_n$.
+	\item Prouver que la suite $\left(u_n\right)$ est arithmétique. Donner sa raison et son premier terme $u_0$.
+	\item En déduire une expression de $u_n$ en fonction de $n$.
+	\item Au bout de combien d'années le capital de Lorentz aura-t-il doublé ?
+\end{enumMet}
+
+\section{Somme des termes d'une suite arithmétique}
+
+\exercice{ $-$ Ex 60 p 34 du LS}
+
+Calculer les sommes suivantes.
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $S=1+2+3+\ldots+73$.
+	\item $\mathrm{T}=1+4+7+\ldots+40$.
+	\item $\mathrm{U}=71+72+73+\ldots+100$.
+	\item $\mathrm{V}=2+4+6+\ldots+50$.
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 61 p 35 du LS}
+
+Le but de l'exercice est de manipuler le symbole $\sum$.
+\begin{enumMet}
+	\item Écrire chaque somme en développant puis la calculer.
+	\begin{multicols}{2}
+		\begin{enumMet}
+		\item $\mathrm{S}=\sum_{i=0}^{15}(2 i+1)$
+		\item $\mathrm{T}=\sum_{i=2}^7(3 i-2)$
+	\end{enumMet}
+	\end{multicols}
+	\item Écrire chaque somme avec le symbole $\sum$ puis la calculer.
+	\begin{multicols}{2}
+		\begin{enumMet}
+		\item $\mathrm{U}=3+6+9+\ldots+81$
+		\item $V=5+9+13+\ldots+45$
+	\end{enumMet}
+	\end{multicols}
+\end{enumMet}
+
+\exercice{ $-$ Ex 62 p 35 du LS}
+
+On souhaite empiler des canettes de soda de cette manière. On note $c_n$ le nombre de canettes sur la rangée $n$ pour $n \in \mathbb{N}^*$.
+\begin{center}
+	\includegraphics[scale=0.5]{Img02}
+\end{center}
+\begin{enumMet}
+	\item Calculer les cinq premiers termes de la suite $\left(c_n\right)$.
+	\item Conjecturer une expression de $c_{n+1}$ en fonction de $c_n$ pour $n \in \mathbb{N}^*$. Quelle est la nature de la suite ?
+	\item En déduire le terme général $c_n$ en fonction de $n$.
+	\item Quel est le nombre total de canettes utilisées pour sept rangées?
+	\item À l'aide de la calculatrice, déterminer combien de rangées on peut dresser avec 91 canettes.
+\end{enumMet}
+
+\exercice{ $-$ Ex 64 p 35 du LS}
+
+Une famille décide d'épargner afin de pouvoir s'offrir un voyage en Égypte.
+La première année, elle économise 500 euros. Chaque année, elle augmente la somme épargnée de 100 euros. Pour $n \geqslant 1$, on note $s_n$, la somme épargnée l'année $n$.
+\begin{enumMet}
+	\item Déterminer $s_1, s_2$ et $s_3$. Pour tout $n$ de $\mathbb{N}^*$, exprimer $s_{n+1}$ en fonction de $s_n$.
+	\item En déduire l'expression de $s_n$ en fonction de l'entier naturel $n \geqslant 1$.
+	\item A l'aide de la calculatrice, déterminer dans combien d'années la famille pourra partir en voyage sachant que le voyage coûte 4200 euros.
+\end{enumMet}
+
+\begin{center}
+	\includegraphics[scale=0.5]{Img03}
+\end{center}
+
+\section{Suites géométriques}
+
+\exercice{ $-$ Ex 29 p 31 du LS}
+
+On donne le premier terme et la raison $q$ des suites géométriques suivantes. Exprimer $v_{n+1}$ en fonction de $v_n$ puis calculer les cinq premiers termes.
+
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $v_0=3$ et $q=4$
+	\item $v_0=2$ et $q=-3$
+	\item $v_1=5$ et $q=\dfrac{1}{2}$
+	\item $v_1=-\dfrac{1}{4}$ et $q=2$
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 30 p 31 du LS}
+
+Déterminer si les suites suivantes sont géométriques. Si oui, donner le premier terme et la raison.
+
+\begin{enumMet}
+	\item $v_n=8^n$, pour tout $n \in \mathbb{N}$.
+	\item $v_n=n^4$, pour tout $n \in \mathbb{N}$.
+	\item $v_n=2 \times 3^n$, pour tout $n \in \mathbb{N}$.
+	\item $v_n=-5 \times 2^{n+1}$, pour tout $n \in \mathbb{N}$.
+	\item $\left\{\begin{array}{l}v_0=1 \\ v_{n+1}=3 v_n+3 n, \text { pour tout } n \in \mathbb{N} .\end{array}\right.$
+	\item $\left\{\begin{array}{l}v_0=2 \\ v_{n+1}=5+7 v_n, \text { pour tout } n \in \mathbb{N} .\end{array}\right.$
+\end{enumMet}
+
+\exercice{ $-$ Ex 31 p 31 du LS}
+
+Chacune des suites suivantes est géométrique. Exprimer $v_n$ en fonction de $n$, pour tout $n \in \mathbb{N}$.
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $v_2=2$ et $q=-3$
+	\item $v_5=-3$ et $q=2$
+	\item $v_1=-1$ et $q=\frac{1}{3}$
+	\item $v_{10}=\dfrac{1}{6}$ et $q=-1$
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 69 p 36 du LS}
+Pour chacune des suites, calculer $v_{20}$.
+\begin{enumMet}
+	\item La suite $\left(v_n\right)$ est géométrique de raison $q=3$ et telle que $v_3=12$.
+	\item La suite $\left(v_n\right)$ est géométrique de raison $q=-2$ et telle que $v_{31}=32$.
+	\item La suite $\left(v_n\right)$ est définie par $\left\{\begin{array}{l}v_0=-5 \\ v_{n+1}=2 v_n, n \in \mathbb{N}\end{array}\right.$
+	\item La suite $\left(v_n\right)$ est définie par $\left\{\begin{array}{l}v_1=2048 \\ v_{n+1}=-\dfrac{1}{2} v_n, n \in \mathbb{N}\end{array}\right.$
+\end{enumMet}
+
+\exercice{ $-$ Ex 72 p 36 du LS}
+Calculer les sommes suivantes.
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $S=1+4+16+\ldots+262144$
+	\item $T=3-6+12-24+\ldots+192$
+	\item $U=9+3+1+\dfrac{1}{3}+\ldots+\dfrac{1}{729}$
+	\item $V=1+0,5+0,25+\ldots+0,03125$
+\end{enumMet}
+\end{multicols}
+
+\exercice{ $-$ Ex 75 p 36 du LS}
+
+Pour stocker des photos numériques, on utilise un algorithme de compression. On estime qu'à chaque niveau de compression, la taille diminue de $21,4 \%$.
+La taille initiale d'une photo est de 4 Mo . On pose $\mathrm{T}_0=4$ et, pour tout entier naturel non nul $n, \mathrm{~T}_n$ désigne la taille de cette photo après une compression de niveau $n$.
+\begin{enumMet}
+	\item Calculer $T_1$ et $T_2$.
+	\item Pour tout $n \in \mathbb{N}$, exprimer $\mathrm{T}_{n+1}$ en fonction de $\mathrm{T}_n$. En déduire la nature de la suite $\left(\mathrm{T}_n\right)$.
+	\item Exprimer $\mathrm{T}_n$ en fonction de $n$.
+	\item Peut-on stocker 20000 photos sur une clé USB d'une capacité de 32 Go ? Avec quelle compression?
+\end{enumMet}
+\end{document}
+

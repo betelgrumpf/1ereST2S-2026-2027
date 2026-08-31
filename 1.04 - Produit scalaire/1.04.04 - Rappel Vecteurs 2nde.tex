@@ -1,0 +1,615 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+\newboolean{versionprof}
+\setboolean{versionprof}{true}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Rappels de cours sur les vecteurs}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{../images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Vecteurs\\
+						Rappels de cours
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\section{géométrie dans un repère}
+
+
+% \subsection{Repères}
+
+
+
+% \begin{definition}{(Repère du plan)}
+% 	\noindent Trois points \textbf{distincts} et \textbf{non alignés} O, I et J forment un {\ifthenelse{\boolean{versionprof}}{\emph{repère du plan}}{\quad\dots\phantom{repère du plan xxxxxxx}}} que l'on note {\ifthenelse{\boolean{versionprof}}{(O,I,J)}{\ \dots\phantom{(O,I,J) xxx}}}.
+	
+% 	\vspace{0.2cm}
+% 	\noindent Les unités OI et OJ permettent de graduer les axes (OI) et (OJ).
+	
+% 	\begin{itemDef}
+% 		\vspace{0.1cm}
+% 		\item Le point O s'appelle {\ifthenelse{\boolean{versionprof}}{\textbf{l'origine}}{$\quad\dots\dots\ $ \hspace{2.cm}}} du repère.
+% 		\vspace{0.1cm}
+		
+% 		\item L'axe $(OI)$ s'appelle l'axe des {\ifthenelse{\boolean{versionprof}}{\textbf{abscisses}}{$\quad\dots\dots\ $ \hspace{2.cm}}} et la distance OI donne l'unité sur cet axe.
+% 		\vspace{0.1cm}
+% 		\item L'axe $(OJ)$ s'appelle l'axe des {\ifthenelse{\boolean{versionprof}}{\textbf{ordonnées}}{$\quad\dots\dots\ $ \hspace{2.cm}}} et la distance OJ donne l'unité sur cet axe.
+% 	\end{itemDef}
+% \end{definition}
+
+
+% \begin{center}
+% 	\psset{unit=.5cm}
+% 	\begin{pspicture}(-2,-3)(6,6)
+% 		\psline[linewidth=.75pt,linecolor=darkgray]{->}(-2,0)(6,0)
+% 		\psline[linewidth=.75pt,linecolor=darkgray]{->}(-.5,-1)(3,6)
+		
+% 		\psdots[dotstyle=*](1.5,0)(3,0)(4.5,0)
+% 		\psdots[dotstyle=*](1,2)(2,4)
+		
+% 		\psline[linewidth=1.5pt,linecolor=black]{-}(0,0)(1.5,0)
+% 		\psline[linewidth=1.5pt,linecolor=black]{-}(0,0)(1,2)
+		
+% 		\begin{scriptsize}
+% 			\uput[d](1.5,0){I}
+% 			\uput[l](1,2){J}
+% 			\uput[dl](-0.1,0){O}
+% 			\uput[dl](6,0){$x$}
+% 			\uput[dl](2.8,6){$y$}
+% 		\end{scriptsize}
+% 		{\ifthenelse{\boolean{versionprof}}{\rput(2,-2.5){Repère \textbf{quelconque}}}{\rput(2,-2.5){Repère \quad\dots\phantom{quelconque}}}}
+% 	\end{pspicture} \hfill
+% 	\psset{unit=.5cm}
+% 	\begin{pspicture}(-2,-3)(6,6)
+% 		\psaxes[labels=none,linewidth=.75pt,ticks=none,linecolor=darkgray]{->}(0,0)(-2,-1)(6,6)
+% 		\psaxes[labels=none,linewidth=1.5pt,ticks=none,linecolor=black]{-}(0,0)(1.5,2.6)
+% 		\psdots[dotstyle=*](1.5,0)(3,0)(4.5,0)
+% 		\psdots[dotstyle=*](0,2.6)(0,5.2)
+		
+% 		\begin{scriptsize}
+% 			\uput[dl](0,0){O}
+% 			\uput[dl](6,0){$x$}
+% 			\uput[dl](0,6){$y$}
+% 			\uput[d](1.5,0){I}
+% 			\uput[l](0,2.6){J}
+% 		\end{scriptsize}
+		
+% 		{\ifthenelse{\boolean{versionprof}}{\rput(2,-2.5){Repère \textbf{orthogonal}}}{\rput(2,-2.5){Repère \quad\dots\phantom{orthogonal}}}}
+% 		{\ifthenelse{\boolean{versionprof}}{\rput(2,-3.5){(OI) $\perp$ (OJ)}}{\rput(2,-3.5){\dots}}}
+% 	\end{pspicture}\hfill
+% 	\psset{unit=.5cm}
+% 	\begin{pspicture}(-2,-3)(6,6)
+% 		\psaxes[labels=none,linewidth=.75pt,ticks=none,linecolor=darkgray]{->}(0,0)(-2,-1)(6,6)
+% 		\psaxes[labels=none,linewidth=1.5pt,ticks=none,linecolor=black]{-}(0,0)(2,2)
+% 		\psdots[dotstyle=*](2,0)(4,0)
+% 		\psdots[dotstyle=*](0,2)(0,4)
+		
+% 		\begin{scriptsize}
+% 			\uput[dl](0,0){O}
+% 			\uput[dl](6,0){$x$}
+% 			\uput[dl](0,6){$y$}
+% 			\uput[d](2,0){I}
+% 			\uput[l](0,2){J}
+% 		\end{scriptsize}
+		
+% 		{\ifthenelse{\boolean{versionprof}}{\rput(2,-2.5){Repère \textbf{orthonormé}}}{\rput(2,-2.5){Repère \quad\dots\phantom{orthonormé}}}}
+% 		{\ifthenelse{\boolean{versionprof}}{\rput(2,-3.5){(OI) $\perp$ (OJ) \quad et \quad OI $=$ OJ}}{\rput(2,-3.5){\dots\quad et \quad\dots}}}
+% 	\end{pspicture}
+% \end{center}
+
+
+\subsection{Milieu d'un segment}
+\begin{bprop}
+	\begin{minipage}[c]{.65\linewidth}
+		
+		Dans un repère \textbf{quelconque} du plan :
+		Si $A$ et $B$ sont deux points de coordonnées respectives $(x_A;y_A)$ et $(x_B;y_B)$ :
+		
+		\medskip
+		\noindent le milieu de $[AB]$ a pour coordonnées  {\ifthenelse{\boolean{versionprof}}{$\Big(\ \dfrac{x_A\ + \ x_B}{2}\ ; \ \dfrac{y_A\ + \ y_B}{2}\ \Big)$.}{$\Big(\ \dfrac{\phantom{xxx + xxx}}{\phantom{2}} \ ; \ \dfrac{\phantom{xxx + xxx}}{\phantom{2}}\ \Big)$.}}  
+		
+	\end{minipage}\hfill
+	% image à droite - surtout pas de ligne vide avant cette partie        
+	\begin{minipage}[c]{.35\linewidth}
+		\vspace{-0.5cm}
+		\begin{center}
+			\psset{xunit=0.65cm,yunit=0.65cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.pt,arrowsize=3pt 2,arrowinset=0.25}
+			\begin{pspicture*}(-1,-0.8)(5.5,6.5)
+				
+				% pas besoin de grille, ça encombre
+				%\psgrid[gridwidth=0.8pt,gridcolor=darkgray,subgriddiv=0,gridlabels=0,griddots=4](0,0)(-2.,-1.)(5.,5.)
+				
+				\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1.,Dy=1.,ticksize=-4pt 0,subticks=0]{->}(0,0)(-0.5,-0.5)(5.5,6)
+				
+				\psline[linewidth=1.2pt,linestyle=dotted](2,0)(2,2)
+				\psline[linewidth=1.2pt,linestyle=dotted](4,0)(4,5)
+				\psline[linewidth=1.2pt,linestyle=dotted](0,2)(2.,2)
+				\psline[linewidth=1.2pt,linestyle=dotted](0,5)(4.,5)
+				\psline[linewidth=1.2pt,linestyle=dotted](2,2)(4.,5)
+				\psline[linewidth=1.2pt,linestyle=dotted](0,3.5)(3.,3.5)
+				\psline[linewidth=1.2pt,linestyle=dotted](3,0)(3.,3.5)
+				
+				\psdots[dotsize=3pt 0,dotstyle=*](0.,0.)(1.,0.)(0.,1.)(2.,2.)(4.,5)
+				
+				\begin{scriptsize}
+					\uput[dl](0,0){O}
+					\uput[d](1,0){I}
+					\uput[l](0,1){J}
+					\uput[ul](2.,2){A}
+					\uput[dr](4,5){B}
+					\uput[dl](5.5,0){$x$}
+					\uput[d](2,0){$x_A$}
+					\uput[d](4,0){$x_B$}
+					\uput[l](0,2){$y_A$}
+					\uput[l](0,5){$y_B$}
+					\uput[dl](0,6){$y$}
+				\end{scriptsize}
+			\end{pspicture*}
+		\end{center}
+	\end{minipage}
+\end{bprop}
+
+\bigskip
+
+\begin{bmethodet}{Milieu et parallélogramme}
+	Rappel : les diagonales d'un parallélogramme {\ifthenelse{\boolean{versionprof}}{se coupent en leur milieu.}{\quad \dots}}
+	
+	\medskip
+	Pour montrer qu'un quadrilatère ABCD est un parallélogramme, on montre que les 2 diagonales [AC] et [BD] ont le même milieu :
+	\begin{enumMet}
+		\item On détermine les coordonnées du milieu M de la diagonale [AC].
+		\item On détermine les coordonnées du milieu N de la diagonale [BD].
+		\item On montre que les points M et N sont confondus et on conclut.
+	\end{enumMet}
+	
+	Pour trouver le 4ème point D d'un parallélogramme ABCD :
+	\begin{enumMet}
+		\item On détermine le milieu M de la diagonale [AC].
+		\item On détermine le point D tel que M soit milieu de la diagonale [BD].
+	\end{enumMet}
+	
+\end{bmethodet}
+
+
+\begin{bexemple} : Dans le repère (O;I;J), on veut déterminer les coordonnées de M milieu de [AB] et N milieu de [AC].
+	
+	\begin{minipage}[c]{.7\linewidth}
+		Les coordonnées de A, B et C sont : A$(\ 1 \ ; \ 4 \ )$ \quad B$(\ 5 \ ; \ 2 \ )$ \quad C$(\ -2 \ ; \ -2 \ )$
+		
+		\medskip
+		Les coordonnées de M milieu de [AB] sont :
+		
+		$x_M=$ {\ifthenelse{\boolean{versionprof}}{
+				$\dfrac{x_A\ + \ x_B}{2}=\dfrac{1\ + \ 5}{2}=\dfrac{6}{2}=3$}
+			{$\dfrac{x_A\ + \ x_B}{2}=\dfrac{\phantom{xxx}+\phantom{xxx}}{\phantom{2}}=\dfrac{\phantom{xxx}}{\phantom{2}}=\dots$}} 
+		
+		$y_M=$ {\ifthenelse{\boolean{versionprof}}{
+				$\dfrac{y_A\ + \ y_B}{2}=\dfrac{4\ + \ 2}{2}=\dfrac{6}{2}=3$ \quad donc M$(\ 3 \ ; \ 3 \ )$.}
+			{$\dfrac{y_A\ + \ y_B}{2}=\dfrac{\phantom{xxx}+\phantom{xxx}}{\phantom{2}2}=\dfrac{\phantom{xxx}}{\phantom{2}}=\dots$}}
+		
+		\medskip
+		Les coordonnées de N milieu de [AC] sont :
+		
+		$x_N=$ {\ifthenelse{\boolean{versionprof}}{
+				$\dfrac{x_A\ + \ x_C}{2}=\dfrac{1\ + \ (-2)}{2}=-\dfrac{1}{2}=-0,5$}
+			{$\dfrac{x_A\ + \ x_C}{2}=\dfrac{\phantom{xxx}+\phantom{xxx}}{\phantom{2}}=\dfrac{\phantom{xxx}}{\phantom{2}}=\dots$}}
+		
+		$y_N=$ {\ifthenelse{\boolean{versionprof}}{
+				$\dfrac{y_A\ + \ y_C}{2}=\dfrac{4\ + \ (-2)}{2}=\dfrac{2}{2}=1$ \quad donc N$(\ -0,5 \ ; \ 1 \ )$.}
+			{$\dfrac{y_A\ + \ y_C}{2}=\dfrac{\phantom{xxx}+\phantom{xxx}}{\phantom{2}2}=\dfrac{\phantom{xxx}}{\phantom{2}}=\dots$}}
+		
+		\medskip
+		On peut le vérifier graphiquement en traçant les segments et leur milieu.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{.3\linewidth}
+		\begin{center}
+			\psset{xunit=0.6cm,yunit=0.6cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.pt,arrowsize=3pt 2,arrowinset=0.25}
+			\begin{pspicture*}(-3.,-2.5)(6,5)
+				
+				\psgrid[gridwidth=0.8pt,gridcolor=darkgray,subgriddiv=0,gridlabels=0,griddots=4](0,0)(-3.,-2.)(6.,5.)
+				
+				\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1.,Dy=1.,ticksize=-4pt 0,subticks=2]{->}(0,0)(-3.,-2)(6,5)
+				
+				\psdots[dotsize=3pt 0,dotstyle=*](0.,0.)(1.,0.)(0.,1.)(1.,4.)(5,2)(-2,-2)
+				
+				{\ifthenelse{\boolean{versionprof}}{
+						\pspolygon[linecolor=red](1.,4.)(5,2)(-2,-2)}{}}  
+				
+				\begin{scriptsize}
+					\uput[dl](0,0){O}
+					\uput[d](1,0){I}
+					\uput[l](0,1){J}
+					\uput[ur](1,4){A}
+					\uput[ur](5,2){B}
+					\uput[ul](-2,-2){C}
+					\uput[dl](5,0){$x$}
+					\uput[dl](0,5){$y$}
+				\end{scriptsize}
+			\end{pspicture*}
+		\end{center}
+	\end{minipage}
+\end{bexemple}
+
+\subsection{Distance entre deux points dans un repère orthonormé}
+\begin{bprop}
+	\bigskip
+	\begin{minipage}[c]{.7\linewidth}
+		
+		\noindent Soit $A$ et $B$ deux points de coordonnées respectives $(x_A;y_A)$ et $(x_B;y_B)$ dans un \textbf{repère orthonormé} :
+		
+		\begin{center} $AB \quad = \quad {\ifthenelse{\boolean{versionprof}}{ \sqrt{\quad \left( \ x_B \ - \ x_A \ \right)^2  \quad + \quad \left( \ y_B \ - \ y_A \ \right)^2 \  }}{ \sqrt{\quad \big(\ \phantom{xxxx \ - \ xxxx} \ \big) \phantom{^2  \quad + \quad} \big( \ \phantom{xxxx  \ - \ xxxx} \ \big)\phantom{^2} \quad }}} \quad$\end{center}
+		
+		\smallskip
+		{\small Attention : cette formule est \\
+			\underline{valable uniquement si le repère est orthonormé}.}
+		
+	\end{minipage}\hfill
+	% image à droite - surtout pas de ligne vide avant cette partie        
+	\begin{minipage}[c]{.3\linewidth}
+		\vspace{-0.8cm}
+		\begin{center}
+			\psset{xunit=0.65cm,yunit=0.65cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.pt,arrowsize=3pt 2,arrowinset=0.25}
+			\begin{pspicture*}(-1,-0.8)(6.5,6.5)
+				
+				% pas besoin de grille, ça encombre
+				%\psgrid[gridwidth=0.8pt,gridcolor=darkgray,subgriddiv=0,gridlabels=0,griddots=4](0,0)(-2.,-1.)(5.,5.)
+				
+				\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1.,Dy=1.,ticksize=-4pt 0,subticks=0]{->}(0,0)(-0.5,-0.5)(5.5,6)
+				
+				\psline[linewidth=1.2pt,linestyle=dotted](2,0)(2,5)
+				\psline[linewidth=1.2pt,linestyle=dotted](4,0)(4,5)
+				\psline[linewidth=1.2pt,linestyle=dotted](0,2)(4.,2)
+				\psline[linewidth=1.2pt,linestyle=dotted](0,5)(4.,5)
+				\psline[linewidth=1.2pt,linestyle=dotted](2,2)(4.,5)
+				
+				\psdots[dotsize=3pt 0,dotstyle=*](0.,0.)(1.,0.)(0.,1.)(2.,2.)(4.,5)
+				{\ifthenelse{\boolean{versionprof}}{
+						\psdots[dotsize=3pt 0,dotstyle=*](4,2)
+						\psline[linewidth=0.8pt,linecolor=red]{<->}(2,1)(4,1)
+						\psline[linewidth=0.8pt,linecolor=red]{<->}(4.5,2)(4.5,5)
+					}{}} 
+				
+				\begin{scriptsize}
+					\uput[dl](0,0){O}
+					\uput[d](1,0){I}
+					\uput[l](0,1){J}
+					\uput[dl](2.,2){A}
+					\uput[dr](4,5){B}
+					\uput[dl](5.5,0){$x$}
+					\uput[d](2,0){$x_A$}
+					\uput[d](4,0){$x_B$}
+					\uput[l](0,2){$y_A$}
+					\uput[l](0,5){$y_B$}
+					\uput[dl](0,6){$y$}
+					
+					{\ifthenelse{\boolean{versionprof}}{
+							\uput[dr](4,2){\red H}
+							\uput[d](3,1){\red $x_B-x_A$}
+							\uput[r](4.3,3.5){\red $y_B-y_A$}
+						}{}} 
+					
+				\end{scriptsize}
+			\end{pspicture*}
+		\end{center}
+	\end{minipage}
+	
+\end{bprop}
+
+\begin{bexemple} : Les coordonnées de A, B et C sont :
+	A$(\ 1 \ ; \ 4 \ )$ \quad B$(\ 5 \ ; \ 2 \ )$ \quad C$(\ -2 \ ; \ -2 \ )$.\\
+	\begin{itemEx}
+		\item Calculons les longueurs AB, AC et BC.
+		\medskip
+		Le repère (O,I,J) ci-dessus est \underline{orthonormé} donc on peut utiliser la formule ci-dessus :
+		
+		\medskip
+		AB {\ifthenelse{\boolean{versionprof}}{
+				$= \sqrt{ \left(x_B -x_A\right)^2   +  \left(y_B-y_A\right)^2}= \sqrt{ \left(5-1\right)^2   +  \left(2-4\right)^2}= \sqrt{4^2 + (-2)^2 }=\sqrt{16+4 }=\sqrt{20}=2\sqrt{5} $}
+			{$= \sqrt{ \left(\phantom{xxx} - \phantom{xxx} \right)^2   +  \left(\phantom{xxx} -\phantom{xxx} \right)^2}= \sqrt{ \left(\phantom{xxx} - \phantom{xxx} \right)^2   +  \left(\phantom{xxx} -\phantom{xxx} \right)^2}= \sqrt{\phantom{xxx} +\phantom{xxx}}=\sqrt{\phantom{xxx} }=\phantom{xxx} $}} 
+		
+		
+		
+		
+		
+		\medskip
+		AC {\ifthenelse{\boolean{versionprof}}{
+				\textcolor{red}{$= \sqrt{ \left(x_C -x_A\right)^2   +  \left(y_C-y_A\right)^2}= \sqrt{ \left(-2-1\right)^2   +  \left(-2-4\right)^2}= \sqrt{(-3)^2 + (-6)^2 }=\sqrt{9+36 }=\sqrt{45}=3\sqrt{5} $}}
+			{$= \sqrt{ \left(\phantom{xxx} - \phantom{xxx} \right)^2   +  \left(\phantom{xxx} -\phantom{xxx} \right)^2}= \sqrt{ \left(\phantom{xxx} - \phantom{xxx} \right)^2   +  \left(\phantom{xxx} -\phantom{xxx} \right)^2}= \sqrt{\phantom{xxx} +\phantom{xxx}}=\sqrt{\phantom{xxx} }=\phantom{xxx} $}}
+		
+		\medskip
+		BC {\ifthenelse{\boolean{versionprof}}{
+				\textcolor{red}{$= \sqrt{ \left(x_C -x_B\right)^2   +  \left(y_C-y_B\right)^2}= \sqrt{ \left(-2-5\right)^2   +  \left(-2-2\right)^2}= \sqrt{(-7)^2 + (-4)^2 }=\sqrt{49+16 }=\sqrt{65}$}}
+			{$= \sqrt{ \left(\phantom{xxx} - \phantom{xxx} \right)^2   +  \left(\phantom{xxx} -\phantom{xxx} \right)^2}= \sqrt{ \left(\phantom{xxx} - \phantom{xxx} \right)^2   +  \left(\phantom{xxx} -\phantom{xxx} \right)^2}= \sqrt{\phantom{xxx} +\phantom{xxx}}=\sqrt{\phantom{xxx} }=\phantom{xxx} $}}
+		
+		\item Que peut-on dire du triangle ABC ?\\
+		{\ifthenelse{\boolean{versionprof}}{\textcolor{red}{Il semble que ABC soit un triangle rectangle en A. \textbf{Prouvons-le :}}\\
+				
+				\textcolor{red}{$AB^2+AC^2=(\sqrt{20})^2+(\sqrt{45})^2=20+45=65$ \quad et \quad $BC^2=(\sqrt{65})^2=65$.} 
+				
+				\textcolor{red}{Donc $AB^2+AC^2=BC^2$ d'après la réciproque du théorème de Pythagore, ABC est rectangle en A}}{}}  
+	\end{itemEx} 
+\end{bexemple}
+\section{Généralités sur les vecteurs}
+
+\subsection{Vecteur et translation}
+
+\begin{bdefi}
+	Un vecteur $\vv{AB}$ est un outil mathématique qui matérialise la translation d'un point à un autre point. Il est défini par 3 caractéristiques:
+	\begin{itemDef}
+		\item sa direction (son inclinaison)
+		\item son sens (droite, gauche, haut, bas etc)
+		\item sa norme (sa longueur) notée $\| \vv{AB}\|$
+	\end{itemDef}
+\end{bdefi}
+
+\begin{brmq}
+	\grasInRem{Vecteur nul :} le vecteur qui matérialise la translation du point $\mathrm{A}$ au point $\mathrm{A}$, c'està-dire sur lui-même, est noté $\vv{0}$ et s'appelle le vecteur nul. On a $\vv{A A}=\vv{0}$. Ce vecteur n'a ni direction ni sens, et a pour norme $0$.
+\end{brmq}
+\begin{bdefi}
+	\grasInDef{vecteurs égaux : } Deux vecteurs sont égaux s'ils ont : 
+	\begin{itemDef}
+		\item la même direction
+		\item le même sens
+		\item la même norme 
+	\end{itemDef}
+\end{bdefi}
+
+\begin{bdefi}
+    \grasInDef{vecteurs opposés : } Deux vecteurs $\vv{u}$ et $\vv{v}$ sont dits opposés s'ils ont :
+	\begin{itemDef}
+		\item La même direction
+		\item La même norme
+	\end{itemDef}
+	MAIS des sens opposés On note $\vv{u}=-\vv{v}$ ou $\vv{v}=-\vv{u}$
+\end{bdefi}
+\begin{bprop}
+	Le vecteur opposé à $\vv{A B}$ est le vecteur $\vv{B A}$ : c'est-à-dire qu'il part de B pour aller vers A. On a donc:
+	$\vv{A B}=-\vv{B A}$ ou encore $\vv{B A}=-\vv{A B}$
+\end{bprop}
+
+\section{Opérations sur les vecteurs}
+\subsection{Règle du parallélogramme}
+
+\begin{bprop}
+	Propriété : ABCD est un parallélogramme équivaut à dire que $\vv{A B}=\vv{D C}$
+\end{bprop}
+
+\subsection{Somme de vecteurs et relation de Chasles}
+
+\begin{bdefi}
+	\grasInDef{somme de vecteurs : } Soient deux vecteurs $\vv{u}$ et $\vv{v}$ du plan. On définit la somme $\vv{u}+\vv{v}$ comme un vecteur formé en mettant bout à bout les vecteurs $\vv{u}$ et $\vv{v}$.
+\end{bdefi}
+
+\begin{bprop}
+	\grasInProp{Relation de Chasles : } Soient $A$, $B$ et $C$ trois points du plan. On a : $\vv{A B}+\vv{B C}=\vv{A C}$
+\end{bprop}
+
+\begin{bexemple}
+	\begin{multicols}{2}
+		\begin{enumEx}
+			\item $\vv{C B}+\vv{B A}=$ \textcolor{red}{$\vv{CA}$}
+			\item $\vv{C B}+\vv{B C}=$ \textcolor{red}{$\vv{CC}=\vv{0}$}
+			\item $\vv{A C}+$ \textcolor{red}{$\vv{CB}$} $=\vv{A B}$
+			\item $\vv{B C}+\vv{A B}=$ \textcolor{red}{$\vv{AB}+\vv{BC}=\vv{AC}$}
+			\item $\vv{C B}-\vv{A B}=$ \textcolor{red}{$\vv{CB}+\vv{BA}=\vv{CA}$}
+			\item $\vv{A B}+\vv{\mRougeWB{C}A}=\mRougeWB{\vv{CA}+\vv{AB}=}\vv{C\mRougeWB{B}}$
+		\end{enumEx}
+	\end{multicols}
+\end{bexemple}
+
+\subsection{Multiplication par un réel}
+
+\begin{bprop}
+	On peut factoriser ou développer par un réel avec des vecteurs.
+\end{bprop}
+
+\begin{bexemples}
+	\begin{enumEx}
+		\item $4(\vv{u}+\vv{v})=\mRougeWB{4\vv{u}+4\vv{v}}$
+		\item $4(2 \vv{u})=\mRougeWB{8\vv{u}}$
+		\item $5(2 \vv{u}+3 \vv{v})=\mRougeWB{10\vv{u}+15\vv{v}}$
+	\end{enumEx}
+\end{bexemples}
+
+
+\subsection{colinéarité de vecteurs}
+
+\begin{bdefi}
+	\grasInDef{notion de colinéarité : } Deux vecteurs $\vv{u}$ et $\vv{v}$ sont dits colinéaires s'ils ont la même direction quel que soit leurs sens et leurs normes. Dans ce cas, il existe un nombre réel $k$ tel que $\vv{u}=k \times \vv{v}$
+\end{bdefi}
+
+\begin{bprop}
+	\grasInProp{Parallélisme et alignement :} Soient les points $\mathrm{A}, \mathrm{B} \mathrm{C}$ et $\mathrm{D}$ du plan.
+	\begin{itemDef}
+		\item $\vv{A B}$ et $\vv{C D}$ sont colinéaires équivaut à dire que $(\mathrm{AB}) / /(\mathrm{CD})$
+		\item $\vv{A B}$ et $\vv{A C}$ sont colinéaires équivaut à dire que $A, B$ et $C$ sont alignés
+	\end{itemDef}
+\end{bprop}
+
+\begin{bprop}
+	\grasInProp{milieux :} Soient A et B deux points du plan. I est le milieu de $[\mathrm{AB}] \Leftrightarrow \vv{A I}=\dfrac{1}{2} \vv{A B},$ c'est-à-dire $\vv{A I}=\vv{I B}$
+\end{bprop}
+
+\section{Coordonnées de vecteurs dans un repère}
+
+\begin{bdefi}
+	Soit \Rij, un repère du plan. Pour tout vecteur $\vv{u}$, il existe un unique point $\mathrm{M}$ tel que $\vv{u}=\vv{O M}$. Les coordonnées du vecteur $\vv{u}$ dans ce repère sont alors celles du point $\mathrm{M}$.\\
+	Si un point $\mathrm{M}$ a pour coordonnées $\left(x_{M} ; y_{M}\right)$ alors on note  $\vv{u}\left(x_{M} ; y_{M}\right)$ ou $\Coord{u}{x_M}{y_M}$
+\end{bdefi}
+
+\begin{center}
+	\psset{xunit=0.7cm,yunit=0.7cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=7pt 0,linewidth=2.pt,arrowsize=2pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-1.2,-1)(4,3.5)
+		%\psgrid[xunit=0.9cm,yunit=0.9cm,subgriddiv=0,gridcolor=lightgray,gridlabels=0pt](-4,-4)(5,5)
+		\psaxes[linewidth=0.6pt,labels=none,subticks=1]{->}(0,0)(-1.2,-1)(4,3.5)
+		\psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(1.,0.)
+		\psline[linewidth=1.2pt,linecolor=blue]{->}(0.,0.)(0.,1.)
+		\psline[linewidth=1.2pt,linecolor=red]{->}(0.,0.)(3.,2.)
+		\rput[tl](1.8,1.1){\large{\textcolor{red}{$\vv{OM}$}}}
+		\psline[linewidth=1.2pt,linecolor=red]{->}(-1.,1.)(2.,3.)
+		\rput[tl](0.6,2){\large{\textcolor{red}{$\vv{u}$}}}
+		\psdots[dotstyle=x,linecolor=blue](3.,2.)
+		\rput[bl](3.1,2.1){\large{\textcolor{blue}{M}}}
+		\begin{scriptsize}
+			\rput[tl](0.4,-0.1){\textcolor{blue}{$\vv{i}$}}
+			\rput[br](-0.1,0.3){\textcolor{blue}{$\vv{j}$}}
+			\rput[tr](4,-0.2){\large{$x$}}
+			\rput[tl](-0.35,3.5){\large{$y$}}
+			\rput[tr](-0.2,-0.2){\large{$O$}}
+		\end{scriptsize}
+	\end{pspicture*}
+\end{center}
+
+\begin{bprop}{égalité de vecteurs}
+	Soit $\Coord{u}{x_1}{y_1}$ et $\Coord{v}{x_2}{y_2}$ 2 vecteurs. Alors $: \vv{u}=\vv{v} \iff x_{1}=x_{2}$ et $y_{1}=y_{2}$
+\end{bprop}
+
+%\vspace*{-0.4cm}
+\subsection{Opérations sur les vecteurs}
+
+\begin{bprop}
+	Soit $\Coord{u}{x_1}{y_1}$ et $\Coord{v}{x_2}{y_2}$ 2 vecteurs. Alors:
+	\begin{itemProp}
+		\item $\vv{u}+\vv{v}\left(\begin{array}{l}
+			x_{1}+x_{2} \\
+			y_{1}+y_{2}
+		\end{array}\right)$
+		\item $k \vv{u}\left(\begin{array}{l}
+			k\ x_{1} \\
+			k\ y_{1}
+		\end{array}\right)$
+	\end{itemProp}
+\end{bprop}
+
+\begin{bmethodet}{Utiliser les opérations sur les vecteurs}
+	\grasInMet{Enoncé :}\\
+	Soient $\Coord{u}{2}{-7}$ et $\Coord{v}{-3}{4}$. Déterminer les coordonnées du vecteur $\vv{w}=3 \vv{u}-2 \vv{v}$\\
+	\grasInMet{Solution :}\\
+	Les coordonnées de $\vv{w}$ sont $: 3 \times\left(\begin{array}{c}2 \\ -7\end{array}\right)-2 \times\left(\begin{array}{c}-3 \\ 4\end{array}\right)$\\
+	$\Coord{w}{6-(-6)}{-14-8}$\\
+	$\Coord{w}{12}{-22}$
+\end{bmethodet}
+
+\subsection{Calcul des coordonnées d'un vecteur}
+
+\begin{bprop}
+	Dans un repère, soient $\mathrm{A}$ et $\mathrm{B}$ deux points de coordonnées $\mathrm{A}\left(\mathrm{x}_{\mathrm{A}} ; \mathrm{y}_{\mathrm{A}}\right)$ et $\mathrm{B}\left(\mathrm{x}_{\mathrm{B}} ; \mathrm{y}_{\mathrm{B}}\right)$.\\
+	alors $\vv{A B}$ a pour coordonnées $\Coord{AB}{x_B-x_A}{y_B-y_A}$.
+\end{bprop}
+
+\begin{bmethodet}{Coordonnées d'un vecteur}
+	\grasInMet{Enoncé :}\\
+	Soient $A(-1 ;-5) \text { et } \mathrm{B}(2 ; 3)$. Déterminer les coordonnées du vecteur $\vv{A B}$\\
+	\grasInMet{Solution :}\\
+	Les coordonnées de $\vv{A B}$ sont données par $: x_{B}-x_{A}=2-(-1)=3$ et $y_{B}-y_{A}=3-(-5)=8$. Donc $\Coord{AB}{3}{8}$.\\
+	\emph{Pour le vérifier, faire une figure, et vérifier qu'on se déplace bien horizontalement de 3 carreaux vers la droite puis verticalement de 8 carreaux vers le haut afin d'aller du point A au point $B$.}
+\end{bmethodet}
+
+%\vspace*{-0.4cm}
+\section{Colinéarité de vecteurs dans un repère}
+
+\subsection{Critère de colinéarité}
+
+\begin{bprop}
+	Soit $\Coord{u}{x_1}{y_1}$ et $\Coord{v}{x_2}{y_2}$ 2 vecteurs. Alors ces 2 vecteurs sont colinéaires si et seulement si les coordonnées des deux vecteurs sont proportionnelles, soit $x_{1} y_{2}-x_{2} y_{1}=0$
+\end{bprop}
+
+\begin{bmethodet}{Montrer que 2 vecteurs sont colinéaires}
+	\grasInMet{Enoncé :}
+	\begin{enumMet}
+		\item Est-ce que les vecteurs $\Coord{u}{-5}{3}$ et $\Coord{v}{15}{-9}$ sont-ils colinéaires ? Justifier.
+		\item Est-ce que les vecteurs $\Coord{a}{7}{-3}$  et $\Coord{b}{4}{-2}$ sont-ils colinéaires ? Justifier.
+	\end{enumMet}
+	\grasInMet{Solution :}\\
+	\begin{enumMet}
+		\item Puisque $(-5) \times(-9)-3 \times 15=45-45=0$, les vecteurs $\vv{u}$ et $\vv{v}$ sont colinéaires. 
+		\item Puisque $7 \times(-2)-(-3) \times 4=-14+12=-2$, les vecteurs $\vv{a}$ et $\vv{b}$ ne sont pas colinéaires.
+	\end{enumMet}
+\end{bmethodet}
+
+\subsection{Déterminant de deux vecteurs}
+
+\begin{bdefi}
+	Soit $\vv{u}$ et $\vv{v}$ deux vecteurs de coordonnées $\left(\begin{array}{l}x \\ y\end{array}\right)$ et $\left(\begin{array}{l}x' \\ y'\end{array}\right)$ dans un repère \Rij.\\
+	Le nombre $x y'-y x'$ est appelé \grasInDef{déterminant} des vecteurs $\vv{u}$ et $\vv{v}$.\\
+	On note $: \operatorname{det}(\vec{u} ; \vec{v})=\left|\begin{array}{ll}x & x' \\ y & y'\end{array}\right|=x y'-y x'$.
+\end{bdefi}
+
+\begin{bprop}
+	Dire que $\vv{u}$ et $\vv{v}$ sont colinéaires revient à dire que $\operatorname{det}(\vec{u} ; \vec{v})=0$.
+\end{bprop}
+
+\begin{bmethodet}{Vérifier si deux vecteurs sont colinéaires à l'aide du déterminant}
+	\grasInMet{Enoncé :}
+	Dans chaque cas, vérifier si les vecteurs $\vv{u}$ et $\vv{v}$ sont colinéaires.
+	\begin{enumMet}
+		\item $\Coord{u}{-6}{10}$ et $\Coord{v}{9}{-15}$
+		\item $\Coord{u}{4}{9}$ et $\Coord{v}{11}{23}$
+	\end{enumMet}
+	\grasInMet{Solution :}\\
+	\begin{enumMet}
+		\item $\operatorname{det}(\vv{u} ; \vv{v})=\left|\begin{array}{cc}-6 & 9 \\ 10 & -15\end{array}\right|=(-6) \times(-15)-10 \times 9=90-90=0$\\
+		Les vecteurs $\vv{u}$ et $\vv{v}$ sont donc colinéaires.
+		\item $\operatorname{det}(\vv{u} ; \vv{v})=\left|\begin{array}{ll}4 & 11 \\ 9 & 23\end{array}\right|=4 \times 23-9 \times 11=92-99=-7 \neq 0$\\
+		Les vecteurs $\vv{u}$ et $\vv{v}$ ne sont donc pas colinéaires.
+	\end{enumMet}
+\end{bmethodet}
+
+%\vspace*{-0.4cm}
+%\newpage
+\subsection{Application de la colinéarité}
+
+\begin{bmethodet}{Appliquer la colinéarité}
+	\grasInMet{Enoncé :}
+	On considère \Rij un repère du plan. Soit $A(\ -1\ ;\ 1\ ),\ B(\ 3\ ;\ 2\ ),\ C(\ -2\ ;\ -3\ ),\ D(\ 6\ ;\ -1\ ),\ E(\ 5\ ;\ 0\ )$, 5 points du plan.
+	\begin{enumMet}
+		\item Démontrer que les droites (AB) et (CD) sont parallèles.
+		\item Démontrer que les points $\mathrm{E}, \mathrm{B}$ et $\mathrm{D}$ sont alignés.
+	\end{enumMet}
+	\grasInMet{Solution :}\\
+	\begin{enumMet}
+		\item $\vv{A B}=\left(\begin{array}{c}3-(-1) \\ 2-1\end{array}\right)=\left(\begin{array}{l}4 \\ 1\end{array}\right)$ et $\vv{C D}=\left(\begin{array}{c}6-(-2) \\ -1-(-3)\end{array}\right)=\left(\begin{array}{l}8 \\ 2\end{array}\right)$.\\
+		On remarque que $\vv{C D}=2 \vv{A B}$ donc les coordonnées de $\vv{A B}$ et $\vv{C D}$ sont proportionnelles, et on en déduit que les vecteurs $\vv{A B}$ et $\vv{C D}$ sont colinéaires.\\
+		Les droites (AB) et (CD) sont donc parallèles.
+		\item $\vv{E B}=\left(\begin{array}{c}3-5 \\ 2-0\end{array}\right)=\left(\begin{array}{c}-2 \\ 2\end{array}\right)$ et $\vv{E D}=\left(\begin{array}{c}6-5 \\ -1-0\end{array}\right)=\left(\begin{array}{c}1 \\ -1\end{array}\right)$\\
+		$\operatorname{det}(\vv{E B} ; \vv{E D})=\left|\begin{array}{cc}-2 & 1 \\ 2 & -1\end{array}\right|=-2 \times(-1)-2 \times 1=0$\\
+		Les coordonnées de $\vv{E B}$ et $\vv{E D}$ vérifient le critère de colinéarité des vecteurs.
+		On en déduit que les vecteurs $\vv{E B}$ et $\vv{E D}$ sont colinéaires.\\
+		Les points E, B et D sont donc alignés.
+	\end{enumMet}
+\end{bmethodet}
+\end{document}
+

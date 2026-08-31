@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Chapitre 01 - Fonctions de référence - Exercices d'entrainements}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\pagestyle{empty}
+	\graphicspath{{images/}}
+	
+	\vspace*{-2cm}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Sujet A - Contrôle n$\degree$01 - Résolutions d'inéquations
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	\ \\
+	\ \\
+	Résoudre les inéquations suivantes à l'aide d'un tableau de signes :
+	\ \\
+	\ \\
+	\begin{enumMet}
+		\item $$\dfrac{5x-6}{2x-5}\geqslant0\ \ \text{(2 points)}$$
+		\item $$(-2x+9)(-3x-7)<0\ \ \text{(2 points)}$$
+		\item $$\dfrac{(-3x+4)(-9x+5)}{2x-7}\leqslant0\ \ \text{(3 points)}$$
+		\item $$\dfrac{2x-9}{(-4x-8)(3x-7)}\geqslant0\ \ \text{(3 points)}$$
+	\end{enumMet}
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\ \\
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Sujet B - Contrôle n$\degree$01 - Résolutions d'inéquations
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	\ \\
+	\ \\
+	Résoudre les inéquations suivantes à l'aide d'un tableau de signes :
+	\ \\
+	\ \\
+	\begin{enumMet}
+		\item $$\dfrac{3x-6}{2x-3}\leqslant0\ \ \text{(2 points)}$$
+		\item $$(-2x+7)(3x-5)>0\ \ \text{(2 points)}$$
+		\item $$\dfrac{(-3x+2)(-5x-5)}{2x-5}\geqslant0\ \ \text{(3 points)}$$
+		\item $$\dfrac{2x-6}{(-3x-6)(5x-7)}\leqslant0\ \ \text{(3 points)}$$
+	\end{enumMet}
+	
+\end{document}
+

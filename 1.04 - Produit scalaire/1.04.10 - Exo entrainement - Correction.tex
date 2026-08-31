@@ -1,0 +1,524 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+%\usepackage{mathrsfs}
+%\usepackage{tikz}
+%\usepackage{tkz-tab}
+\usepackage{pgf}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}  
+\definecolor{CyanTikz40}{cmyk}{.4,0,0,0}
+\definecolor{CyanTikz20}{cmyk}{.2,0,0,0}
+\tikzstyle{general}=[line width=0.3mm, >=stealth, x=1cm, y=1cm,line cap=round, line join=round]
+\tikzstyle{quadrillage}=[line width=0.3mm, color=CyanTikz40]
+\tikzstyle{quadrillageNIV2}=[line width=0.3mm, color=CyanTikz20]
+\tikzstyle{quadrillage55}=[line width=0.3mm, color=CyanTikz40, xstep=0.5, ystep=0.5]
+\tikzstyle{cote}=[line width=0.3mm, <->]
+\tikzstyle{epais}=[line width=0.5mm, line cap=butt]
+\tikzstyle{tres epais}=[line width=0.8mm, line cap=butt]
+\tikzstyle{axe}=[line width=0.3mm, ->, color=Noir, line cap=rect]
+\definecolor{A1}                {cmyk}{1.00, 0.00, 0.00, 0.50}
+%\definecolor{A2}                {cmyk}{0.60, 0.00, 0.00, 0.10}
+%\definecolor{A3}                {cmyk}{0.30, 0.00, 0.00, 0.05}
+%\definecolor{A4}                {cmyk}{0.10, 0.00, 0.00, 0.00}
+%\definecolor{B1}                {cmyk}{0.00, 1.00, 0.60, 0.40}
+%\definecolor{B2}                {cmyk}{0.00, 0.85, 0.60, 0.15}
+%\definecolor{B3}                {cmyk}{0.00, 0.20, 0.15, 0.05}
+\definecolor{B4}                {cmyk}{0.00, 0.05, 0.05, 0.00}
+%\definecolor{C1}                {cmyk}{0.00, 1.00, 0.00, 0.50}
+%\definecolor{C2}                {cmyk}{0.00, 0.60, 0.00, 0.20}
+%\definecolor{C3}                {cmyk}{0.00, 0.30, 0.00, 0.05}
+%\definecolor{C4}                {cmyk}{0.00, 0.10, 0.00, 0.05}
+%\definecolor{D1}                {cmyk}{0.00, 0.00, 1.00, 0.50}
+%\definecolor{D2}                {cmyk}{0.20, 0.20, 0.80, 0.00}
+%\definecolor{D3}                {cmyk}{0.00, 0.00, 0.20, 0.10}
+%\definecolor{D4}                {cmyk}{0.00, 0.00, 0.20, 0.05}
+%\definecolor{F1}                {cmyk}{0.00, 0.80, 0.50, 0.00}
+%\definecolor{F2}                {cmyk}{0.00, 0.40, 0.30, 0.00}
+%\definecolor{F3}                {cmyk}{0.00, 0.15, 0.10, 0.00}
+%\definecolor{F4}                {cmyk}{0.00, 0.07, 0.05, 0.00}
+%\definecolor{G1}                {cmyk}{1.00, 0.00, 0.50, 0.00}
+%\definecolor{G2}                {cmyk}{0.50, 0.00, 0.20, 0.00}
+%\definecolor{G3}                {cmyk}{0.20, 0.00, 0.10, 0.00}
+%\definecolor{G4}                {cmyk}{0.10, 0.00, 0.05, 0.00}
+%\definecolor{H1}                {cmyk}{0.40, 0.00, 1.00, 0.10}
+%\definecolor{H2}                {cmyk}{0.20, 0.00, 0.50, 0.05}
+%\definecolor{H3}                {cmyk}{0.10, 0.00, 0.20, 0.00}
+%\definecolor{H4}                {cmyk}{0.07, 0.00, 0.15, 0.00}
+%\definecolor{J1}                {cmyk}{0.00, 0.50, 1.00, 0.00}
+%\definecolor{J2}                {cmyk}{0.00, 0.20, 0.50, 0.00}
+\definecolor{J3}                {cmyk}{0.00, 0.10, 0.20, 0.00}
+%\definecolor{J4}                {cmyk}{0.00, 0.07, 0.15, 0.00}
+%\newcommand{\quadrillageSeyes}[2]{\draw[line width=0.3mm, color=A1!10, ystep=0.2, xstep=0.8]
+	
+\newboolean{versionprof}
+\setboolean{versionprof}{true}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Chap. 04 - Produit scalaire - Correction - Exercices facultatifs}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Chap. 04 - Produit scalaire\\
+						Correction - Exercices facultatifs}
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\exercice{} 
+Dans chacun des cas suivants, calculer le produit scalaire $\vv{A B} \cdot \vv{A C}$ à l'aide des informations données.
+\begin{center}
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(1,0.9)(17,4.5)
+		\pspolygon[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1](14.424264068711928,1.)(14.424264068711928,1.4242640687119286)(14.,1.4242640687119286)(14.,1.)
+		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+			\parametricplot{0.0}{0.5235987755982987}{0.6*cos(t)+2.|0.6*sin(t)+1.}
+			\lineto(2.,1.)\closepath}
+		\psline[linewidth=1.7pt](8.,1.)(2.,1.)
+		\psline[linewidth=1.7pt](6.330127018922193,3.5)(2.,1.)
+		\psline[linewidth=1.7pt](6.330127018922193,3.5)(8.,1.)
+		\psline[linewidth=1.7pt](10.,1.)(14.,4.)
+		\psline[linewidth=1.7pt,linestyle=dashed](14.,4.)(14.,1.)
+		\psline[linewidth=1.7pt](16.,1.)(14.,1.)
+		\psline[linewidth=1.7pt](14.,1.)(10.,1.)
+		\psline[linewidth=1.7pt](14.,4.)(16.,1.)
+		\rput[tl](5.08,1.42){\Large{6}}
+		\rput[tl](4.06,2.94){\Large{5}}
+		\rput[tl](12.14,1.4){\Large{3,5}}
+		\rput[tl](15.04,1.4){\Large{1,5}}
+		\rput[tl](2.1,3.5){$\fbox{\Large{1}}$}
+		\rput[tl](9.2,3.5){$\fbox{\Large{2}}$}
+		%\begin{scriptsize}
+			\rput[bl](1.9,1.2){\Large{$A$}}
+			\rput[bl](8.08,1.2){\Large{$B$}}
+			\rput[bl](3,1.){\Large{$\frac{\pi}{6}$}}
+			\rput[bl](6.42,3.66){\Large{$C$}}
+			\rput[bl](9.7,1.2){\Large{$A$}}
+			\rput[bl](13.5,1.14){\Large{$H$}}
+			\rput[bl](16.08,1.2){\Large{$B$}}
+			\rput[bl](14.08,4.1){\Large{$C$}}
+		%\end{scriptsize}
+	\end{pspicture*}
+%	\includegraphics[scale=0.3]{1.04.02-Img01}
+\end{center}
+\begin{corrBox}
+	\begin{enumMet}
+		\item $\vv{A B} \cdot \vv{A C}=AB\times AC \times \cos \left(\widehat{BAC}\right)=6\times5\times\cos\left(\dfrac{\pi}{6}\right)=30\times\dfrac{\sqrt{3}}{2}=15\sqrt{3}$
+		\item $\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A H}=AB\times AH=5\times3,5=17,5$
+	\end{enumMet}
+\end{corrBox}
+
+\exercice{} 
+$A B D$ et $B C D$ sont deux triangles équilatéraux de côté 6. Calculer les produits scalaires suivants.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\begin{multicols}{2}
+		\item $\vv{CD} \cdot \vv{CB}$ 
+		\item $\vv{DA} \cdot \vv{DC}$
+		\item $\vv{D B} \cdot \vv{C B}$
+		\item $\vv{DB} \cdot \vv{AC}$
+		\item $\vv{A B} \cdot \vv{C D}$
+		\item $\vv{CA} \cdot \vv{BC}$
+		\end{multicols}
+	\end{enumMet}
+	\columnbreak
+	\begin{center}
+		\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+		\newrgbcolor{qqzzqq}{0. 0.6 0.}
+		\psset{xunit=0.42cm,yunit=0.42cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(0,0.5)(9.5,6.1)
+			\pspolygon[linewidth=1.5pt,linecolor=qqzzqq](5.,5.)(5.,1.)(8.464101615137755,3.)
+			\pspolygon[linewidth=1.5pt,linecolor=qqzzqq](5.,5.)(1.5358983848622443,3.)(5.,1.)
+			\begin{scriptsize}
+				\rput[bl](5.,5.2){\large{$D$}}
+				\rput[bl](5.,0.52){\large{$B$}}
+				\rput[bl](8.6,2.95){\large{$C$}}
+				\rput[bl](1.,2.95){\large{$A$}}
+			\end{scriptsize}
+		\end{pspicture*}
+	\end{center}
+\end{multicols}
+
+\begin{corrBox}
+	\begin{enumMet}
+		\item $\vv{CD} \cdot \vv{CB}=\vv{CD} \cdot \dfrac{1}{2}\vv{CD}=\dfrac{1}{2}\times CD\times CD=\dfrac{1}{2}\times6\times 6=18$
+		\item $\vv{DA} \cdot \vv{DC}=\vv{DA} \cdot \left(-\dfrac{1}{2}\vv{DA}\right)=-\dfrac{1}{2}\times DC\times DC=-\dfrac{1}{2}\times 6\times =-18$
+		\item $\vv{DB} \cdot \vv{CB}=\vv{DB} \cdot \left(\dfrac{1}{2}\vv{DB}\right)=\dfrac{1}{2}DB\times DB=\dfrac{1}{2}\times6\times6=18$
+		\item $\vv{DB} \cdot \vv{AC}=0$ car $\vv{DB}$ et $\vv{AC}$ sont orthogonaux (les diagonales d'un losange se coupent $\perp$).
+		\item $\vv{A B} \cdot \vv{C D}=\vv{A B} \cdot \vv{BA}=-\vv{A B} \cdot \vv{AB}=-AB\times AB=-6\times6=-36$
+		\item $\vv{CA} \cdot \vv{BC}=\vv{CA} \cdot \left(-\dfrac{1}{2}\vv{CA}\right)=-\dfrac{1}{2}CA\times CA=-\dfrac{1}{2}\times2\sqrt{27}\times2\sqrt{27}=-54$\\
+		La moitié de la longueur $CA$ se calcule à l'aide de Pythagore dans le triangle ADB coupé en 2 par la diagonale du losange.
+	\end{enumMet}
+\end{corrBox}
+
+
+\exercice{}
+Dans chaque cas, calculer $\vv{A B} \cdot \vv{A C}$.
+\begin{center}
+	\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(4,7.5)(17.5,15)
+		\pspolygon[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1](13.42426406871193,12.)(13.42426406871193,12.42426406871193)(13.,12.42426406871193)(13.,12.)
+		\pspolygon[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1](4.924264068711929,8.)(4.924264068711929,8.42426406871193)(4.5,8.42426406871193)(4.5,8.)
+		\psline[linewidth=1.7pt](9.,12.)(5.,12.)
+		\psline[linewidth=1.7pt](5.,12.)(6.5,14.6)
+		\psline[linewidth=1.7pt](6.5,14.6)(9.,12.)
+		\psline[linewidth=1.7pt](11.,12.)(13.,14.4)
+		\psline[linewidth=1.7pt,linestyle=dashed](13.,14.4)(13.,12.)
+		\psline[linewidth=1.7pt](13.,12.)(11.,12.)
+		\psline[linewidth=1.7pt](13.,12.)(16.,12.)
+		\psline[linewidth=1.7pt](16.,12.)(13.,14.4)
+		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+			\parametricplot{0.0}{1.047518004662921}{0.6*cos(t)+5.|0.6*sin(t)+12.}
+			\lineto(5.,12.)\closepath}
+		\psline[linewidth=1.7pt,linestyle=dashed](4.5,8.)(6.,8.)
+		\psline[linewidth=1.7pt](6.,8.)(10.,8.)
+		\psline[linewidth=1.7pt](10.,8.)(4.5,10.36)
+		\psline[linewidth=1.7pt](4.5,10.36)(6.,8.)
+		\psline[linewidth=1.7pt,linestyle=dashed](4.5,10.36)(4.5,8.)
+		\psline[linewidth=1.7pt](17.,8.)(12.,11.)
+		\psline[linewidth=1.7pt](12.,11.)(13.,9.)
+		\psline[linewidth=1.7pt](13.,9.)(17.,8.)
+		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+			\parametricplot{-0.24497866312686414}{2.0344439357957027}{0.6*cos(t)+13.|0.6*sin(t)+9.}
+			\lineto(13.,9.)\closepath}
+		\rput[tl](4,14.8){$\fbox{\Large{1}}$}
+		\rput[tl](10.5,14.8){$\fbox{\Large{2}}$}
+		\rput[tl](8.,11){$\fbox{\Large{3}}$}
+		\rput[tl](15,11){$\fbox{\Large{4}}$}
+		%1ère figure
+		\rput[tl](5.4,13.84){\Large{3}}
+		\rput[tl](6.8,12.6){\Large{4}}
+		\rput[bl](5.64,12.2){\Large{\qqwuqq{$60\degree$}}}
+		\rput[bl](4.54,12.12){\Large{$A$}}
+		\rput[bl](9.08,12.2){\Large{$B$}}
+		\rput[bl](6.6,14.5){\Large{$C$}}
+		%2ème figure
+		\rput[tl](11.8,12.6){\Large{2}}
+		\rput[tl](14.54,12.6){\Large{3,5}}
+		\rput[bl](10.66,12.2){\Large{$A$}}
+		\rput[bl](12.4,12.1){\Large{$H$}}
+		\rput[bl](16.08,12.2){\Large{$B$}}
+		\rput[bl](13.08,14.4){\Large{$C$}}
+		%3ème figure
+		\rput[tl](5.5,9.42){\Large{4}}
+		\rput[tl](8.02,7.9){\Large{7}}
+		\rput[tl](5.18,7.9){\Large{3}}
+		\rput[bl](6.08,8.2){\Large{$A$}}
+		\rput[bl](10.08,8.2){\Large{$B$}}
+		\rput[bl](4.58,10.56){\Large{$C$}}
+		\rput[bl](3.9,8.){\Large{$H$}}
+		%4ème figure
+		\rput[tl](11.62,10.1){\Large{2}}
+		\rput[tl](15.18,8.2){\Large{3}}
+		\rput[bl](13.,8.3){\Large{$A$}}
+		\rput[bl](17.08,8.2){\Large{$B$}}
+		\rput[bl](12.,11.){\Large{$C$}}
+		\rput[bl](12.1,8.4){\Large{\qqwuqq{$\frac{3\pi}{4}$}}}
+	\end{pspicture*}
+	%\includegraphics[scale=0.4]{1.04.02-Img03}
+\end{center}
+
+\begin{corrBox}
+	\begin{enumMet}
+		\item $\vv{A B} \cdot \vv{A C}=AB\times AC \times \cos \left(\widehat{BAC}\right)=4\times3\times\cos\left(60\right)=12\times\dfrac{1}{2}=6$
+		\item $\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A H}=AB\times AH=5,5\times2=11$
+		\item $\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A H}=-AB\times AH=-7\times3=-21$
+		\item $\vv{A B} \cdot \vv{A C}=AB\times AC \times \cos \left(\widehat{BAC}\right)=3\times2\times\cos\left(\dfrac{3\pi}{4}\right)=6\times\dfrac{-\sqrt{2}}{2}=-3\sqrt{2}$
+	\end{enumMet}
+\end{corrBox}
+
+\exercice{}
+\begin{enumMet}
+	\item Pour chaque figure ci-dessous, calculer :
+	\begin{enumMet}
+		\begin{multicols}{2}
+			\item $\|\vv{u}\|$ et $\|\vv{v}\|$ ;
+			\item $\vv{u} \cdot \vv{v}$.
+		\end{multicols}
+	\end{enumMet}
+	\item En déduire la valeur de l'angle géométrique $\alpha$.
+\end{enumMet}
+\begin{center}
+	\newrgbcolor{xfqqff}{0.4980392156862745 0. 1.}
+	\newrgbcolor{ffxfqq}{1. 0.4980392156862745 0.}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\psset{xunit=0.6cm,yunit=0.6cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(1,-0.1)(19,6.1)
+		\multips(0,-2)(0,1.0){18}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(-0.34,0)(25.84,0)}
+		\multips(0,0)(1.0,0){27}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(0,-2.02)(0,15.96)}
+		\psline[linewidth=1.7pt,linecolor=xfqqff]{->}(2.,2.)(6.,2.)
+		\psline[linewidth=1.7pt,linecolor=ffxfqq]{->}(2.,2.)(5.,5.)
+		\psline[linewidth=1.7pt,linecolor=xfqqff]{->}(8.,2.)(10.,0.)
+		\psline[linewidth=1.7pt,linecolor=ffxfqq]{->}(8.,2.)(8.,6.)
+		\psline[linewidth=1.7pt,linecolor=xfqqff]{->}(13.,3.)(12.,1.)
+		\psline[linewidth=1.7pt,linecolor=ffxfqq]{->}(13.,3.)(10.,3.)
+		\psline[linewidth=1.7pt,linecolor=xfqqff]{->}(16.,1.)(18.,3.)
+		\psline[linewidth=1.7pt,linecolor=ffxfqq]{->}(16.,1.)(15.,4.)
+		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+			\parametricplot{0.0}{0.7853981633974483}{0.6*cos(t)+2.|0.6*sin(t)+2.}
+			\lineto(2.,2.)\closepath}
+		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+			\parametricplot{-0.7853981633974483}{1.5707963267948966}{0.6*cos(t)+8.|0.6*sin(t)+2.}
+			\lineto(8.,2.)\closepath}
+		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+			\parametricplot{3.141592653589793}{4.2487413713838835}{0.6*cos(t)+13.|0.6*sin(t)+3.}
+			\lineto(13.,3.)\closepath}
+		\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+			\parametricplot{0.7853981633974483}{1.8925468811915387}{0.6*cos(t)+16.|0.6*sin(t)+1.}
+			\lineto(16.,1.)\closepath}
+		\rput[tl](2.1,5.9){$\fbox{\Large{1}}$}
+		\rput[tl](9.2,5.9){$\fbox{\Large{2}}$}
+		\rput[tl](11.,5.9){$\fbox{\Large{3}}$}
+		\rput[tl](16.,5.9){$\fbox{\Large{4}}$}
+		\begin{scriptsize}
+			\rput[bl](3.98,2.1){\Large{\xfqqff{$\vv{u}$}}}
+			\rput[bl](3.,3.58){\Large{\ffxfqq{$\vv{v}$}}}
+			\rput[bl](9.06,1.08){\Large{\xfqqff{$\vv{u}$}}}
+			\rput[bl](8.2,4.){\Large{\ffxfqq{$\vv{v}$}}}
+			\rput[bl](12.56,1.7){\Large{\xfqqff{$\vv{u}$}}}
+			\rput[bl](11.48,3.2){\Large{\ffxfqq{$\vv{v}$}}}
+			\rput[bl](16.92,1.2){\Large{\xfqqff{$\vv{u}$}}}
+			\rput[bl](15.4,2.48){\Large{\ffxfqq{$\vv{v}$}}}
+			\rput[bl](2.68,2.16){\Large{\qqwuqq{$\alpha$}}}
+			\rput[bl](8.82,2.){\Large{\qqwuqq{$\alpha$}}}
+			\rput[bl](11.9,2.54){\Large{\qqwuqq{$\alpha$}}}
+			\rput[bl](15.9,1.76){\Large{\qqwuqq{$\alpha$}}}
+		\end{scriptsize}
+	\end{pspicture*}
+	%\includegraphics[scale=0.5]{1.04.02-Img02}
+\end{center}
+
+\begin{corrBox}
+	\begin{enumMet}
+		\item \begin{enumMet}
+			\item $\|\vv{u}\|=4$ et $\|\vv{v}\|=\sqrt{3^2+3^2}=\sqrt{18}$ ;
+			\item $\vv{u} \cdot \vv{v}=4\times3=12$.
+			\item $\vv{u} \cdot \vv{v}=\|\vv{u}\|\times\|\vv{v}\|\times \cos(\alpha)$\\
+			$\iff 12=4\times\sqrt{18}\times\cos(\alpha)\iff \cos(\alpha)=\dfrac{12}{4\sqrt{18}}\iff \alpha=45\degree=\dfrac{\pi}{4}$ rad
+		\end{enumMet}
+		\item \begin{enumMet}
+			\item $\|\vv{u}\|=\sqrt{2^2+2^2}=\sqrt{8}$ et $\|\vv{v}\|=4$ ;
+			\item $\vv{u} \cdot \vv{v}=-2\times4=-8$.
+			\item $\vv{u} \cdot \vv{v}=\|\vv{u}\|\times\|\vv{v}\|\times \cos(\alpha)$\\
+			$\iff -8=\sqrt{8}\times4\times\cos(\alpha)\iff \cos(\alpha)=\dfrac{-8}{4\sqrt{8}}\iff \alpha=135\degree=\dfrac{3\pi}{4}$ rad
+		\end{enumMet}
+		\item \begin{enumMet}
+			\item $\|\vv{u}\|=\sqrt{1^2+2^2}=\sqrt{5}$ et $\|\vv{v}\|=3$ ;
+			\item $\vv{u} \cdot \vv{v}=1\times3=3$.
+			\item $\vv{u} \cdot \vv{v}=\|\vv{u}\|\times\|\vv{v}\|\times \cos(\alpha)$\\
+			$\iff 3=\sqrt{5}\times3\times\cos(\alpha)\iff \cos(\alpha)=\dfrac{3}{3\sqrt{5}}\iff \alpha\approx63,43\degree$
+		\end{enumMet}
+		\item \begin{enumMet}
+			\item $\|\vv{u}\|=\sqrt{2^2+2^2}=\sqrt{8}$ et $\|\vv{v}\|=\sqrt{1^2+3^2}=\sqrt{10}$ ;
+			\item $\vv{u} \cdot \vv{v}=2\sqrt{2}\times\sqrt{2}=4$.
+			\item $\vv{u} \cdot \vv{v}=\|\vv{u}\|\times\|\vv{v}\|\times \cos(\alpha)$\\
+			$\iff 4=\sqrt{8}\times\sqrt{10}\times\cos(\alpha)\iff \cos(\alpha)=\dfrac{4}{4\sqrt{5}}\iff \alpha\approx63,43\degree$
+		\end{enumMet}
+	\end{enumMet}
+\end{corrBox}
+
+%\newpage
+
+\exercice{}
+calculer $\vv{u} \cdot \vv{v}$ dans chaque cas.
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $\vv{u}\left(\begin{array}{c}2 \\ -1\end{array}\right)$ et $\vv{v}\left(\begin{array}{l}4 \\ 5\end{array}\right)$.
+		\begin{corrBox}
+			$\vv{u} \cdot \vv{v}=2\times4+(-1)\times5=3$
+		\end{corrBox}
+		\item $\vv{u}\left(\begin{array}{c}\dfrac{1}{2} \\ -3\end{array}\right)$ et $\vv{v}\left(\begin{array}{c}\dfrac{1}{4} \\ \dfrac{1}{3}\end{array}\right)$.
+		\begin{corrBox}
+			$\vv{u} \cdot \vv{v}=\dfrac{1}{2}\times\dfrac{1}{4}+(-3)\times\dfrac{1}{3}=-\dfrac{7}{8}$
+		\end{corrBox}
+		\item $\Coord{u}{3}{2}$ et $\Coord{v}{3}{1}$.
+		\begin{corrBox}
+			$\vv{u} \cdot \vv{v}=3\times3+2\times1=11$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+
+\exercice{}
+$\vv{u}\left(\begin{array}{c}1 \\ -3\end{array}\right)$ et $\vv{v}\left(\begin{array}{c}1 \\ -1\end{array}\right)$ sont deux vecteurs du plan. calculer les produits scalaires suivants.
+%\begin{multicols}{4}
+\begin{enumMet}
+	\item $\vv{u} \cdot \vv{v}$ \quad \corr{$=1\times1+(-3)\times(-1)=4$}
+	\item $\vv{u} \cdot(-4 \vv{v})$ \quad \corr{$=-4 \vv{u} \cdot \vv{v}=-4\times4=-16$}
+	\item $-\vv{u} \cdot(2 \vv{v})$ \quad \corr{$=-2 \vv{u} \cdot \vv{v}=-2\times4=-8$}
+	\item $(\vv{u}+\vv{v}) \cdot(\vv{u}-\vv{v})$ \quad \corr{$=\vv{u}^2 - \vv{v}^2=\|\vv{u}\|^2-\|\vv{v}\|^2=\sqrt{1^2+(-3)^2}^2-\sqrt{1^2+(-1)^2}^2=10-2=8$}
+\end{enumMet}
+%\end{multicols}
+
+\exercice{}
+$A(-2 ; 5), B(4 ; 3)$ et $C(1 ;-6)$ sont trois points du plan.
+\begin{enumMet}
+	\item Determiner les coordonnées des vecteurs $\vv{B A}$ et $\vv{B C}$.
+	\begin{corrBox}
+		$\Coord{BA}{x_A-x_B}{y_A-y_B}=\Coord{BA}{-2-4}{5-3}=\Coord{BA}{-6}{2}$\\
+		$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{1-4}{-6-3}=\Coord{BA}{-3}{-9}$
+	\end{corrBox}
+	\item Calculer $\vv{B A} \cdot \vv{B C}$.
+	\begin{corrBox}
+		$\vv{B A} \cdot \vv{B C}=(-6)\times(-3)+2\times(-9)=18-18=0$
+	\end{corrBox}
+	\item En déduire la nature du triangle $A B C$.
+	\begin{corrBox}
+		Comme $\vv{B A} \cdot \vv{B C}=0$, cela signifie que les vecteurs $\vv{BA}$ et $\vv{BC}$ sont orthogonaux et que donc $\widehat{ABC}=90\degree$.\\
+		ABC est donc un triangle rectangle en B
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{}
+On donne $\mathrm{A}(2 ;-1), \mathrm{B}(0 ; 1)$ et $\mathrm{C}(1 ;-2)$.
+\begin{enumMet}
+	\item Calculer $A B$ et $A C$.
+	\begin{corrBox}
+		$AB=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}=\sqrt{(0-2)^2+(1-(-1))^2}=\sqrt{8}$\\
+		$AC=\sqrt{(x_C-x_A)^2+(y_C-y_A)^2}=\sqrt{(1-2)^2+(-2-(-1))^2}=\sqrt{2}$\\
+	\end{corrBox}
+	\item Calculer $\vv{AB} \cdot \vv{AC}$.
+	\begin{corrBox}
+		$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{0-2}{1-(-1)}=\Coord{AB}{-2}{2}$\\
+		$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{1-2}{-2-(-1)}=\Coord{AC}{-1}{-1}$\\
+		$\vv{AB} \cdot \vv{AC}=-2\times(-1)+2\times(-1)=0$
+	\end{corrBox}
+	\item Calculer une mesure de l'angle $(\vv{AB}, \vv{AC})$.
+	\begin{corrBox}
+		Comme $\vv{AB} \cdot \vv{AC}=0$, les vecteurs $\vv{AB}$ et $\vv{AC}$ sont orthogonaux donc $(\vv{AB}, \vv{AC})=90\degree$
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{}
+Dans un repère orthonormé, on considère les points $A(0 ; 4), B(6 ; 3)$ et $C(-4 ;-2)$.\\
+Calculer $\vv{A B} \cdot \vv{A C}$ de deux façons différentes pour déterminer une mesure en degré de l'angle $\widehat{B A C}$.
+\begin{corrBox}
+	$AB=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}=\sqrt{(6-0)^2+(3-4)^2}=\sqrt{37}$\\
+	$AC=\sqrt{(x_C-x_A)^2+(y_C-y_A)^2}=\sqrt{(-4-0)^2+(-2-4)^2}=\sqrt{52}$\\
+	$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{6-0}{3-4}=\Coord{AB}{6}{-1}$\\
+	$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{-4-0}{-2-4}=\Coord{AC}{-4}{-6}$\\
+	$\vv{AB} \cdot \vv{AC}=6\times(-4)+(-1)\times(-6)=18$\\
+	$\vv{AB} \cdot \vv{AC}=AB\times AC\times \cos(\widehat{ABC})$\\
+	$\iff 18=\sqrt{37}\times\sqrt{52}\times\cos(\widehat{ABC})\iff \cos(\widehat{ABC})=\dfrac{18}{\sqrt{37}\sqrt{52}}\iff \widehat{ABC}\approx65,77\degree$
+\end{corrBox}
+
+\exercice{}
+Dans un repère orthonormé, on donne les points : $M(2;-2)$, $N(-3;1)$ et $P(1;2)$
+\begin{enumMet}
+	\item Calculer $\vv{M N} \cdot \vv{M P}$.
+	\begin{corrBox}
+		$\Coord{MN}{x_N-x_M}{y_N-y_M}=\Coord{MN}{-3-2}{1-(-2)}=\Coord{MN}{-5}{3}$\\
+		$\Coord{MP}{x_P-x_M}{y_P-y_M}=\Coord{MP}{1-2}{2-(-2)}=\Coord{MP}{-1}{4}$\\
+		$\vv{MN} \cdot \vv{MP}=(-5)\times(-1)+3\times4=17$\\
+	\end{corrBox}
+	\item En déduire une valeur exacte de l'angle $\widehat{P M N}$.
+	\begin{corrBox}
+		$MN=\sqrt{(-5)^2+3^2}=\sqrt{34}$\\
+		$MP=\sqrt{(-1)^2+4^2}=\sqrt{17}$\\
+		$\vv{MN} \cdot \vv{MP}=MN\times MP\times \cos(\widehat{PMN})$\\
+		$\iff 17=\sqrt{34}\times\sqrt{17}\times\cos(\widehat{PMN})\iff \cos(\widehat{PMN})=\dfrac{17}{\sqrt{34}\sqrt{17}}\iff \widehat{PMN}\approx63,26\degree$
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{}
+Dans un repère orthonormé, on donne les points $A(1 ; 1), B\left(\dfrac{14}{5} ; \dfrac{17}{5}\right)$ et $C(5 ; 1)$.
+\begin{enumMet}
+	\item Calculer les produits scalaires suivants.
+	\begin{enumMet}
+		%\begin{multicols}{3}
+		\item $\vv{A B} \cdot \vv{A C}$
+		\begin{corrBox}
+			$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{\dfrac{14}{5}-1}{\dfrac{17}{5}-1}=\Coord{AB}{\dfrac{9}{5}}{\dfrac{12}{5}}$\quad$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{5-1}{1-1}=\Coord{AC}{4}{0}$
+			$\vv{A B} \cdot \vv{A C}=-\dfrac{9}{5}\times 4+\dfrac{12}{5}\times 0=\dfrac{36}{5}$
+		\end{corrBox}
+		\item $\vv{C A} \cdot \vv{C B}$
+		\begin{corrBox}
+			$\Coord{CB}{x_B-x_C}{y_B-y_C}=\Coord{CB}{\dfrac{14}{5}-5}{\dfrac{17}{5}-1}=\Coord{CB}{-\dfrac{11}{5}}{\dfrac{12}{5}}$\quad\quad $\vv{CA}=-\vv{AC} \iff \Coord{CA}{-4}{0}$\\
+			$\vv{CA} \cdot \vv{CB}=-\dfrac{11}{5}\times (-4)+\dfrac{12}{5}\times 0=\dfrac{44}{5}$
+		\end{corrBox}
+		\item $\vv{B A} \cdot \vv{B C}$
+		\begin{corrBox}
+			$\vv{BA}=-\vv{AB} \iff \Coord{BA}{-\dfrac{9}{5}}{-\dfrac{12}{5}}$\quad\quad $\vv{BC}=-\vv{CB} \iff \Coord{BC}{\dfrac{11}{5}}{-\dfrac{12}{5}}$\\
+			$\vv{BA} \cdot \vv{BC}=-\dfrac{9}{5}\times \dfrac{11}{5}+\dfrac{12}{5}\times \dfrac{12}{5}=\dfrac{45}{5}$
+		\end{corrBox}
+		%\end{multicols}
+	\end{enumMet}
+	\item Le triangle $A B C$ est-il rectangle ?
+	\begin{corrBox}
+		Le triangle n'est pas rectangle car d'après les produits scalaires, nous n'avons de vecteurs orthogonaux, donc pas d'angles droits.
+	\end{corrBox}
+\end{enumMet}
+
+\exercice{}
+\begin{multicols}{2}
+	On considere les vecteurs $\vv{u}$ et $\vv{v}$ représentés ci-contre.\\
+	On donne $\|\vv{u}\|=2,\|\vv{v}\|=3$ et $\theta=\dfrac{2 \pi}{3}$. Calculer les eléments suivants.
+	\begin{enumMet}
+		\item $\vv{u} \cdot \vv{v}$
+		\item $3 \vv{v} \cdot(\vv{u}-2 \vv{v})$
+		\item $\|\vv{u}+\vv{v}\|^2$
+		%\item $\|2 \vv{u}-\vv{v}\|$
+	\end{enumMet}
+	\columnbreak
+	\begin{center}
+		\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+		\psset{xunit=1.2cm,yunit=1.2cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(0.5,1.7)(4.2,5.2)
+			\psline[linewidth=1.7pt]{->}(2.,2.)(4.,2.)
+			\psline[linewidth=1.7pt]{->}(2.,2.)(1.,5.)
+			\pscustom[linewidth=1.7pt,linecolor=qqwuqq,fillcolor=green,fillstyle=solid,opacity=0.1]{
+				\parametricplot{0.0}{1.892546881191539}{0.6*cos(t)+2.|0.6*sin(t)+2.}
+				\lineto(2.,2.)\closepath}
+			%\begin{scriptsize}
+				\rput[bl](3.,2.1){\Large{$\vv{u}$}}
+				\rput[bl](1.,3.16){\Large{$\vv{v}$}}
+				\rput[bl](2.54,2.48){\Large{\qqwuqq{$\theta$}}}
+			%\end{scriptsize}
+		\end{pspicture*}
+	\end{center}
+\end{multicols}
+\begin{corrBox}
+	\begin{enumMet}
+		\item $\vv{u} \cdot \vv{v}=\|\vv{u}\|\times\|\vv{v}\|\times\cos(\theta)=2\times3\times\cos\left(\dfrac{2\pi}{3}\right)=-3$
+		\item $3 \vv{v} \cdot(\vv{u}-2 \vv{v})=3\vv{v} \cdot \vv{u}-6\vv{v} \cdot \vv{v}=3\vv{u} \cdot \vv{v}-6\|\vv{v}\|^2=3\times(-3)-6\times3^2=-63$
+		\item $\|\vv{u}+\vv{v}\|^2=\|\vv{u}\|^2+2\vv{u} \cdot \vv{v}+\|\vv{v}\|^2=2^2+2\times(-3)+3^2=7$
+		%\item $\|2 \vv{u}-\vv{v}\|$
+	\end{enumMet}
+\end{corrBox}
+
+\end{document}
+

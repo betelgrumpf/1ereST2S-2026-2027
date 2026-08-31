@@ -1,0 +1,207 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\usepackage{mathrsfs}
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$06 - Sujet B - 15/05/2022}}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+\textcolor{red}{Correction - DS n$^{\circ}$06 - Sujet B}\\
+Fonction exponentielle\\
+Application du produit scalaire
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+%\begin{center}\textbf{1h - Calculatrice autorisée - Barème indicatif}\end{center}
+%
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+%
+%\begin{center}
+%%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+%Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+%\end{center}
+%
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\exerciceDS{ - Au golf - ( 2 points )}
+\begin{minipage}[c]{.6\linewidth}
+Sur un green de golf, trois positions de la balle sont repérées en $\mathrm{M},$ N et P sur le schéma ci-contre. Le triangle MNP est tel que MN=8, $\mathrm{MP}=5$ et $\widehat{M}=53^{\circ}$.\\
+Calculer la valeur exacte de NP, puis son arrondi à 0,1 près.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.35\linewidth}
+\begin{center}
+   \includegraphics[scale=0.8]{1.05.DS-IMG-01} 
+\end{center}
+
+\end{minipage}
+\begin{corrBox}
+	D'après le théorème d'Al-Kashi et avec les notations de la figure, on a :\\
+	$NP^2=NM^2+MP^2-2\times NM\times MP \times \cos(\widehat{NMP})$\\
+	$NP^2=64+25-80\cos(53^{\circ})$ d'où\\
+	$NP=\sqrt{89-80\cos(53^{\circ})}\approx6,4$
+\end{corrBox}
+
+\exerciceDS{ - Angles dans un triangle - ( 3 points )}
+Dans un repère orthonormé du plan, on considère les points $\mathrm{A}(-2 ;1), \mathrm{B}(3 ; 4)$ et $\mathrm{C}(2 ; 1)$.\\
+Déterminer les angles du triangle $A B C$ à 0,1 degré près.\\
+\begin{corrBox}
+	On utilise le théorème d'AL-Kashi : Dans un triangle $\mathrm{ABC},$ on a, avec les notations de la figure :
+	$$
+	a^{2}=b^{2}+c^{2}-2 b c \cos \hat{A} \iff \hat{A}=\cos^{-1}\left(\dfrac{b^2+c^2-a^2}{2bc}\right)
+	$$
+	\begin{center}
+		\includegraphics[scale=0.7]{1.04.IMG-03}
+	\end{center}
+	On commence donc par calculer les 3 longueurs:\\
+	$\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{3-(-2)}{4-1}=\Coord{AB}{5}{3} \Longrightarrow AB=\sqrt{5^2+3^2}=\sqrt{34}$\\
+	$\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{2-(-2)}{1-1}=\Coord{AC}{4}{0} \Longrightarrow AC=\sqrt{4^2+0^2}=4$\\
+	$\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{2-3}{1-4}=\Coord{BC}{-1}{-3} \Longrightarrow BC=\sqrt{(-1)^2+(-3)^2}=\sqrt{10}$\\
+	On peut maintenant calculer les angles:\\
+	$\widehat{BAC}=\cos^{-1}\left(\dfrac{AC^2+AB^2-BC^2}{2\times AC\times AB}\right)=\cos^{-1}\left(\dfrac{16+34-10}{2\times \sqrt{16}\times \sqrt{34}}\right)\approx31,0^{^\circ}$\\
+	$\widehat{ABC}=\cos^{-1}\left(\dfrac{BC^2+AB^2-AC^2}{2\times BC\times AB}\right)=\cos^{-1}\left(\dfrac{34+10-16}{2\times \sqrt{34}\times \sqrt{10}}\right)\approx40,6^{^\circ}$\\
+	$\widehat{ACB}=180-\widehat{BAC}-\widehat{ABC}=180-31,0-40.6=92,7^{^\circ}$
+\end{corrBox}
+
+
+\exerciceDS{ - Médiatrice dans un triangle - ( 8 points )}
+On considère le triangle $\mathrm{ABC}$ tel que $\mathrm{A}(-2 ;1), \mathrm{B}(3 ; 4)$ et $\mathrm{C}(2 ; 1)$.
+\begin{enumMet}
+	\item Montrer que les coordonnées du milieu M du segment $[BC]$ sont $M(2,5;2,5)$\\
+	\begin{corrBox}
+		$x_M=\dfrac{x_B+x_C}{2}=\dfrac{3+2}{2}=\dfrac{5}{2}=2,5\quad \quad \quad \quad y_M=\dfrac{y_B+y_C}{2}=\dfrac{4+1}{2}=\dfrac{5}{2}=2,5$
+	\end{corrBox}
+	\item Déterminer une équation de la médiatrice  du segment $[BC]$ dans le triangle $\mathrm{ABC}$ (la médiatrice est la perpendiculaire à $[BC]$ passant par M).\\
+	\begin{corrBox}
+		La médiatrice du segment $[BC]$ est la droite passant par $M$ et perpendiculaire à $(BC)$. Le vecteur $\vv{BC}$ est donc un vecteur normal à la médiatrice du segment $[BC]$.\\
+		Comme $\Coord{BC}{2-3}{1-4}=\Coord{BC}{-1}{-3}$, une équation de la hauteur est de la forme $-x-3y+c=0$.\\
+		Or $M$ appartient à la médiatrice, donc $-x_{M}-3y_{M}+c=0$, donc $-1\times 2,5-3\times2,5+c=0$, donc $-2,5-7,5+c=0$, donc $c=10$.\\
+		Une équation de la médiatrice du segment $[BC]$ est alors $-x-3y+10=0$.
+	\end{corrBox}
+	\item \ding{46} Montrer que les coordonnées du milieu N du segment $[AC]$ sont $N(0;1)$\\
+	\begin{corrBox}
+		$x_N=\dfrac{x_A+x_C}{2}=\dfrac{-2+2}{2}=\dfrac{0}{2}=0\quad \quad \quad \quad y_N=\dfrac{y_A+y_C}{2}=\dfrac{1+1}{2}=\dfrac{2}{2}=1$
+	\end{corrBox}
+	\item Déterminer une équation de la médiatrice  du segment $[AC]$ dans le triangle $\mathrm{ABC}$.\\
+	\begin{corrBox}
+		La médiatrice du segment $[AC]$ est la droite passant par $N$ et perpendiculaire à $(A C)$. Le vecteur $\vv{A C}$ est donc un vecteur normal à la médiatrice du segment $[AC]$.\\
+		Comme $\Coord{AC}{2-(-2)}{1-1}=\Coord{AC}{4}{0}$, une équation de la médiatrice est de la forme $4x+c=0$.\\
+		Or $N$ appartient à la médiatrice, donc $4x_{N}+c=0$, donc $4\times 0+c=0$, donc $c=0$.\\
+		Une équation de la médiatrice du segment $[AC]$ est alors $4x=0$, ce qui équivaut à $x=0$. Il s'agit de l'axe des ordonnées.
+	\end{corrBox}
+	\item Déterminer les coordonnées du point d'intersection $\mathrm{O}$ des deux médiatrices.\\
+	\begin{corrBox}
+		Comme la 2ème médiatrice est l'axe des ordonnées, les 2 droites se coupent en $x=0$.\\
+		On remplace $x$ par $0$ dans la 1ère équation et on trouve $y=\dfrac{10}{3}$.\\
+		Le point O a pour coordonnées $O\left(0;\dfrac{10}{3}\right)$
+	\end{corrBox}
+	\item \ding{46} Montrer que les coordonnées du milieu P du segment $[AB]$ sont $P(0,5;2,5)$\\
+	\begin{corrBox}
+		$x_P=\dfrac{x_A+x_B}{2}=\dfrac{-2+3}{2}=\dfrac{1}{2}=0,5\quad \quad \quad \quad y_P=\dfrac{y_A+y_B}{2}=\dfrac{1+4}{2}=\dfrac{5}{2}=2,5$
+	\end{corrBox}
+	\item Calculer le produit scalaire $\vv{\mathrm{AB}} \cdot \vv{\mathrm{OP}}$. Quel résultat connu retrouve-t-on ?\\
+	\begin{corrBox}
+		$\Coord{OP}{0,5-0}{2,5-(-\dfrac{10}{3})}$, donc $\Coord{OP}{0,5}{-\dfrac{5}{6}}$ et $\Coord{AB}{3-(-2)}{4-1}$, donc $\Coord{AB}{5}{3}$.\\
+		Alors $\vv{A B} \cdot \vv{OP}=5 \times 0,5+3 \times\left(-\dfrac{5}{6}\right)=\dfrac{5}{2}-\dfrac{5}{2}=0$.\\
+		Les vecteurs $\vv{OP}$ et $\vv{AB}$ sont orthogonaux, donc $(OP)$ est la médiatrice du segment $[AB]$. On en déduit que les médiatrices sont concourantes en $O$.
+	\end{corrBox}
+	
+\end{enumMet}
+
+
+\exerciceDS{ - Équations cartésiennes - ( 3 points )}
+Dans chaque cas, déterminer une équation cartésienne de la droite $d$ passant par le point $\mathrm{A}$ et perpendiculaire à la droite (BC).
+\begin{enumMet}
+	\item \ding{46} $\mathrm{A}(3 ; 4)$ et $\Coord{u}{-2}{4}$ un vecteur directeur de $(\mathrm{BC})$.\\
+	\begin{corrBox}
+		Comme $\Coord{u}{-2}{4}$ est un vecteur directeur de la droite $(B C)$, il est un vecteur normal à la droite $d$.\\
+		Une équation cartésienne est de la forme $-2x+4 y+c=0$.\\
+		Or, le point $A$ appartient à la droite $d$, donc $-2x_{A}+4y_{A}+c=0$, donc $-2 \times 3+4 \times 4+c=0$, donc $c=-10$.\\
+		Une équation de la droite $d$ est donc $-2 x+4 y-10=0$ ou encore $-x+2y-5=0$.
+	\end{corrBox}
+	\item $\mathrm{A}(1 ; 2), \mathrm{B}(2 ;-1)$ et $\mathrm{C}(-3 ; 2)$.\\
+	\begin{corrBox}
+		Comme $\Coord{BC}{-5}{3}$  est un vecteur directeur de la droite $(B C)$, il est un vecteur normal à la droite $d$.\\
+		Une équation cartésienne est de la forme $-5x+3y+c=0$.\\
+		Or, le point $A$ appartient à la droite $d$, donc $-5x_{A}+3y_{A}+c=0$, donc $-5\times 1+3 \times 2+c=0$, donc $c=-1$.\\
+		Une équation de la droite $d$ est donc $-5x+3 y-1=0$        
+	\end{corrBox}
+	\item $\mathrm{A}(-4 ; 5)$ et la droite $(\mathrm{BC})$ est parallèle à l'axe des abscisses.\\
+	\begin{corrBox}
+		La droite $(B C)$ étant horizontale, un vecteur directeur de cette droite et un vecteur normal à $d$ est $\Coord{u}{1}{0}$.\\
+		Une équation cartésienne de $d$ est de la forme $x+c=0$.\\
+		Or, le point $A$ appartient à la droite $d$, donc $x_{A}+c=0$, donc $-4+c=0$, donc $c=4$.\\
+		Une équation de la droite $d$ est donc $x+4=0$.        
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ - simplification - ( 4 points )}
+$x$ est un réel quelconque. Simplifier au maximum les expressions suivantes.
+\begin{enumMet}
+	\item $a(x)=\mathrm{e}^{2 x} \times\left(\mathrm{e}^x\right)^2 \times \mathrm{e}^{-3 x}$ \quad \corr{$a(x)=\mathrm{e}^{2 x} \times\mathrm{e}^{2 x} \times \mathrm{e}^{-3 x}=\mathrm{e}^{2x+2x-3x}=\mathrm{e}^{x}$} 
+	\item $b(x)=\dfrac{\mathrm{e}^{x^2}}{\mathrm{e}^x}$\quad \corr{$b(x)=\mathrm{e}^{x^2-x}$}
+	\item $c(x)=\dfrac{\mathrm{e}^{x-1} \times \mathrm{e}^{4 x}}{\mathrm{e}^x}$\quad \corr{$c(x)=\mathrm{e}^{x-1+4x-x} =\mathrm{e}^{4x-1}$}
+	\item \ding{46} $d(x)=\dfrac{\mathrm{e}^{-2 x}}{\mathrm{e}^{-3 x} \times \mathrm{e}^{x+1}}$\quad \corr{$d(x)=\mathrm{e}^{-2 x-(-3x)-(x+1)}=\mathrm{e}^{-1}$}
+\end{enumMet}
+
+\exerciceDS{ - dérivation - ( 4 points )}
+Calculer la dérivée de la fonction $f$ définie sur $\mathbb{R}$.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f(x)=4 \mathrm{e}^x-8 x^2+2$ \quad \corr{$f'(x)=4 \mathrm{e}^x-16x$}
+		\item \ding{46} $f(x)=2x-3 \mathrm{e}^x+1$ \quad \corr{$f'(x)=2-3 \mathrm{e}^x$}
+		\item $f(x)=2\mathrm{e}^x+\mathrm{e}^3$ \quad \corr{$f'(x)=2 \mathrm{e}^x$}
+		\item $f(x)=2x \mathrm{e}^x$ \quad \corr{$f'(x)=2\mathrm{e}^x+2x\mathrm{e}^x=(2+2x)\mathrm{e}^x$}
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS{ - Résolution d'équations et d'inéquations - ( 8 points )}
+Résoudre dans \R.
+%\begin{multicols}{2}
+\begin{enumMet}
+	\item $\mathrm{e}^{4x-9}=\mathrm{e}$ \quad \corr{$\iff 4x-9=1\iff x=2,5 \iff S=\{2,5\}$}
+	\item $\mathrm{e}^{-2x^2}=\dfrac{1}{\mathrm{e}^{-18}}$ \quad \corr{$\iff\mathrm{e}^{-2x^2}=\mathrm{e}^{18} \iff -2x^2=18\iff S=\varnothing$ car $x^2>0$}
+	\item \ding{46} $\mathrm{e}^{3x^2-6x}=1$\quad \corr{$\iff 3x^2-6x=0\iff 3x(x-2)=0 \iff S=\{0;2\}$}
+	\item $6+\mathrm{e}^x=1$ \quad \corr{$\iff \mathrm{e}^x=-5\iff S=\varnothing$ car $\mathrm{e}^x>0$ pour tout $x\in\R$}
+	\item $\mathrm{e}^{x+5}<1$\quad \corr{$\iff x+5<0\iff x<-5 \iff S=]-\infty;-5[$}
+	\item $\mathrm{e}^{-3 x+7} \geqslant 0$\quad \corr{$\iff S=\R$ car $\mathrm{e}^x>0$ pour tout $x\in\R$}
+	\item $-5 \mathrm{e}^{x^2-4}>8$\quad \corr{$\iff \mathrm{e}^{x^2-4}<-\dfrac{8}{5}\iff S=\varnothing$ car $\mathrm{e}^x>0$ pour tout $x\in\R$}
+	\item $\mathrm{e}^{x+5} \leqslant \dfrac{1}{\mathrm{e}^{4 x}}$\\
+	\corr{$\iff \mathrm{e}^{x+5} \leqslant \mathrm{e}^{-4 x}\iff x+5\leqslant-4x\iff x+4x\leqslant-5 \iff x\leqslant-1\iff S=]-\infty;-1[$}
+\end{enumMet}
+%\end{multicols}
+
+
+
+
+\end{document}

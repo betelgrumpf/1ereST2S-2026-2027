@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{1ere-preambule}
+
+\begin{document}
+\graphicspath{{images/}}
+\setcounter{chapter}{2}
+%\chapter{Équations du second degré}
+%\thispagestyle{fancy}
+\fancyhf{}
+\begin{multicols}{2}
+    \includegraphics[scale=0.8]{01-03-01}
+    \includegraphics[scale=0.8]{01-03-02}
+\end{multicols}
+\begin{minipage}[b]{0.5\linewidth}
+    \begin{tikzpicture}
+       \tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $+\infty$}
+       \tkzTabLine{, \text{signe de } a, }
+    \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+    \includegraphics[scale=0.85]{01-03-03}      
+\end{minipage}\\
+\begin{minipage}[b]{0.6\linewidth}
+    \begin{tikzpicture}
+       \tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_0$, $+\infty$}
+       \tkzTabLine{, \text{signe de } a, z, \text{signe de } a, }
+    \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[b]{0.38\linewidth}
+    \includegraphics[scale=0.85]{01-03-04}      
+\end{minipage}\\
+\begin{minipage}[b]{0.67\linewidth}
+    \begin{tikzpicture}
+       \tkzTabInit[lgt = 1.2, espcl = 2.8, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_1$,$x_2$, $+\infty$}
+       \tkzTabLine{, \text{signe de } a, z, \text{signe de } -a,z, \text{signe de } a,}
+    \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[b]{0.31\linewidth}
+    \includegraphics[scale=0.85]{01-03-05}      
+\end{minipage}
+    
+\ \\
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$,$-2-\sqrt{11}$, $-2+\sqrt{11}$, $+\infty$}
+   \tkzTabLine{, +, z,- , z, +, }
+\end{tikzpicture}\\
+    
+
+\includegraphics[scale=0.8]{01-03-06}
+
+
+    
+\end{document}
+

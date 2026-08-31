@@ -1,0 +1,283 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Chapitre 05 - Fonction trigonométriques - Exercices}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Chapitre 05 - Fonction trigonométriques\\
+						Exercices
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\section*{Exercices obligatoires}
+
+%\begin{bexercice}
+%	Exercices: 40 à 43 p 221\\
+%	Exercice: 51 p 221\\
+%	Exercices: 63-64-66-67-68-69-71 p 221
+%\end{bexercice}
+
+\exercice{}
+
+résoudre l'équation donnée dans l'intervalle I.
+
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $\cos (x)=\frac{\sqrt{3}}{2} \quad$ avec $\mathrm{I}=\mathbb{R}$.
+	\item $\sin (x)=-\frac{\sqrt{2}}{2} \quad$ avec $I=\mathbb{R}$.
+	\item $\sin (x)=\frac{\sqrt{3}}{2} \quad$ avec $I=\mathbb{R}$.
+	\item $\cos (x)=\frac{1}{2} \quad$ avec $I=\mathbb{R}$.
+	\item $\cos (x)=-\frac{\sqrt{2}}{2} \quad$ avec $\mathrm{I}=[0 ; 2 \pi[$.
+	\item $\sin (x)=\frac{1}{2} \quad$ avec $\left.\left.\mathrm{I}=\right]-\pi ; \pi\right]$.
+	\item $\cos (x)=0 \quad$ avec $\mathrm{I}=]-\pi ; \pi]$.
+	\item $\cos (x)=-\frac{1}{2} \quad$ avec $\mathrm{I}=\left]-\pi ; \pi\right]$.
+	\item $\sin (x)=0 \quad$ avec $I=]-\pi ; \pi]$.
+	\item $\cos (x)=-\frac{\sqrt{3}}{2} \quad$ avec $\mathrm{I}=[0 ; 4 \pi[$.
+\end{enumMet}
+\end{multicols}
+
+\exercice{ - Cet exercice utilise des notions d'autres chapitres.}
+
+
+\begin{enumMet}
+	\item \begin{enumMet}
+		\item Résoudre dans $\mathbb{R}$ l'équation: $2 X^2-3 X+1=0$
+		\item En déduire les solutions dans $\mathbb{R}$ de l'équation: $2 \cos ^2(x)-3 \cos (x)+1=0$
+	\end{enumMet}
+	\item Résoudre dans $\mathbb{R}$ :
+	\begin{enumMet}
+		\item $\cos ^2(x)+\sqrt{2} \cos (x)+\frac{1}{2}=0$.
+		\item $\sin ^2(x)-\cos ^2(x)=0$.
+	\end{enumMet}
+\end{enumMet}
+
+
+\begin{multicols}{2}
+	\exercice{}
+
+Pour chacune des fonctions définies sur \R proposées, étudier sa parité et démontrer qu'elle est T -périodique.
+\begin{enumMet}
+	\item $f(x)=3+2 \cos (x) ; \quad \mathrm{T}=2 \pi$.
+	\item $g(x)=\sin ^2(x) ; \quad \mathrm{T}=\pi$.
+	\item $h(x)=|\sin (x)| ; \quad \quad \mathrm{T}=\pi$.
+	\item $p(x)=\cos ^2(x)-\sin ^2(x) ; \quad \mathrm{T}=\pi$.
+\end{enumMet}
+
+\exercice{}
+
+Étudier la parité de chacune des fonctions suivantes, définies sur \R.
+\begin{enumMet}
+	\item $f(x)=x \cos (x)$
+	\item $g(x)=x \sin (x)$
+	\item $h(x)=x^2 \cos (x)$
+	\item $p(x)=x \sin ^2(x)$
+\end{enumMet}
+\end{multicols}
+
+%\newpage
+Pour les exercices 5 à 8 , on considère les courbes $C_1$, $C_2, C_3$ et $C_4$ données dans le repère ci-dessous. Associer chaque fonction à sa courbe représentative.
+\begin{center}
+	\includegraphics[scale=0.4]{Exo-Img01}	
+\end{center}
+
+\begin{multicols}{2}
+	
+	\exercice{}
+	
+	$f(x)=\sin (x)$ ; $g(x)=\sin \left(x+\frac{\pi}{2}\right)$ ; $h(x)=\sin (x+\pi)$.
+	
+	\exercice{}
+	
+	$f(x)=\cos (x)$ ; $g(x)=\cos \left(x+\frac{\pi}{2}\right)$ ; $h(x)=\cos (x+\pi)$
+	
+	\exercice{}
+	
+	$f(x)=\sin (\pi-x)$ ; $g(x)=\cos \left(\frac{\pi}{2}-x\right)$ ; $h(x)=\cos (-x)$.
+	
+	\exercice{}
+	
+	$f(x)=\sin \left(\frac{\pi}{2}-x\right)$ ; $g(x)=\cos (\pi-x)$ ; $h(x)=\sin (-x)$.
+	
+\end{multicols}
+
+\exercice{}
+
+On considère la fonction $f$ définie sur $\mathbb{R}$ par :
+
+$$
+f(x)=3-5 \sin \left(\frac{2 x-\pi}{3}\right)
+$$
+
+On donne ci-dessous une partie de sa représentation graphique.
+\begin{center}
+	\includegraphics[scale=0.4]{Exo-Img02}	
+\end{center}
+\begin{enumMet}
+	\item On admet que 3 a exactement deux antécédents par $f$ dans l'intervalle $[0 ; 3 \pi]$.
+	\begin{enumMet}
+		\item À l'aide du graphique, conjecturer les valeurs exactes de ces antécédents.
+		\item Montrer par le calcul que ces valeurs conviennent.
+	\end{enumMet}
+	\item Démontrer que la fonction $f$ est $3 \pi$-périodique.
+	\item En déduire l'ensemble des antécédents de 3 par $f$ dans $\mathbb{R}$.
+\end{enumMet}
+
+
+\begin{multicols}{2}
+
+\exercice{}
+
+Sachant que la fonction $f$ est une fonction paire, recopier et compléter le graphe ci-dessous à main levée $\operatorname{sur}[-2 \pi ; 2 \pi]$.
+\begin{center}
+	\includegraphics[scale=1]{1.03.02-Ex40LLS}
+\end{center}
+
+\columnbreak
+\exercice{}
+
+Sachant que la fonction $g$ est une fonction impaire, recopier et compléter le graphe ci-dessous à main levée $\operatorname{sur}[-\pi ; \pi]$.
+\begin{center}
+	\includegraphics[scale=1]{1.03.02-Ex41LLS}
+\end{center}
+\end{multicols}
+
+\newpage
+
+\begin{multicols}{2}
+\exercice{}
+
+Sachant que la fonction $h$ est une fonction $\pi$-périodique, recopier et complèter le graphe ci-dessous à main levée sur $[-2 \pi ; 2 \pi]$.
+\begin{center}
+	\includegraphics[scale=1]{1.03.02-Ex42LLS}
+\end{center}
+
+\columnbreak
+\exercice{}
+
+Déterminer graphiquement la période de la fonction $f$ dont on fournit la courbe représentative.
+\begin{center}
+	\includegraphics[scale=1]{1.03.02-Ex50LLS}
+\end{center}
+\end{multicols}
+
+\section*{Exercices facultatifs}
+
+\exercice{}
+
+On considère la fonction $f$ définie sur $\mathrm{R}$ par $f(x)=\cos (x)+x^2$.
+\begin{enumMet}
+	\item Montrer que $f$ est une fonction paire.
+	\item Que peut-on en déduire sur la courbe représentative de $f$ ?
+\end{enumMet}
+
+\vspace*{-0.3cm}
+\exercice{}
+
+On considère la fonction $g$ définie sur $\mathbb{R}$ par $g(x)=x+\sin (x)$.
+\begin{enumMet}
+	\item Montrer que $g$ est une fonction impaire.
+	\item Que peut-on en déduire sur la courbe représentative de $g$ ?
+\end{enumMet}
+
+\exercice{}
+
+En exprimant, pour tout réel $x, f(-x)$ à l'aide de $f(x)$, dire si les fonctions définies sur $\mathbb{R}$ ci-dessous sont paires ou impaires.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f: x \mapsto x \times \sin (x)$
+		\item $f: x \mapsto x \times \cos (x)$
+		\item $f: x \mapsto (\sin (x))^2$
+		\item $f: x \mapsto \dfrac{x^2}{2+\cos (x)}$
+	\end{enumMet}
+\end{multicols}
+
+\exercice{}
+
+La fonction $h$ dont la représentation graphique est fournie semble-t-elle paire? impaire? périodique?
+\begin{center}
+	\includegraphics[scale=1]{1.03.02-Ex19LLS}
+\end{center}
+
+\exercice{}
+
+Donner à chaque courbe représentative la fonction qui lui correspond. Justifier la réponse.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f: x \mapsto 2 \sin (x)$
+		\item $g: x \mapsto \cos (2 x)$
+	\end{enumMet}
+\end{multicols}
+\begin{center}
+	\includegraphics[scale=1]{1.03.02-Ex45LLS}
+\end{center}
+
+\exercice{}
+
+Dans chacun des cas suivants, déterminer, s'il existe, un nombre réel $x$ vérifiant les conditions données. On pourra s'aider du cercle trigonométrique.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $\cos (x)=\dfrac{-\sqrt{2}}{2}$
+		\begin{multicols}{2}
+			\begin{enumMet}
+				\item $x \in[0 ; \pi[$
+				\item $x \in\left]-\pi ;-\dfrac{\pi}{2}\right]$
+			\end{enumMet}
+		\end{multicols}
+		\item $\sin (x)=\dfrac{1}{2}$
+		\begin{multicols}{2}
+			\begin{enumMet}
+				\item $x \in\left[\dfrac{\pi}{2} ; \pi \right[$
+				\item $x \in\left[-\dfrac{\pi}{2} ; \dfrac{\pi}{2} \right[$
+			\end{enumMet}
+		\end{multicols}
+		\item $\cos (x)=\dfrac{\sqrt{3}}{2}$
+		\begin{multicols}{2}
+			\begin{enumMet}
+				\item $x \in[\pi ; 2 \pi]$
+				\item $x \in\left[\dfrac{\pi}{2} ; \dfrac{3 \pi}{2}\right]$
+			\end{enumMet}
+		\end{multicols}
+		\item $\cos (x)=3$ avec $x \in[0 ; 2 \pi]$
+	\end{enumMet}
+\end{multicols}
+
+
+
+
+
+\end{document}
+

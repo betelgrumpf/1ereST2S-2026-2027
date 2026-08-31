@@ -1,0 +1,260 @@
+%\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+\documentclass[a4paper,french]{article}
+\usepackage[20pt]{extsizes}
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Chapitre 01 - Fonction du second degré - Exercices}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Chapitre 01 - Fonctions du second degré\\
+						Exercices obligatoires
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+
+\exercice{ - 7 p 96}
+
+Préciser les coefficients des fonctions polynômes du second degré suivantes :
+
+
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $f: x \mapsto-3 x^2+1$
+		\item $f: x \mapsto 4 x-3+8 x^2$
+		\item $f: x \mapsto \sqrt{2} x^2-3 x$
+		\item $f: x \mapsto 5(3-x) x$
+		\item $f: x \mapsto \dfrac{x^2-6 x+5}{3}$
+	\end{enumMet}
+%\end{multicols}
+
+
+
+\exercice{ - 8 p 96}
+
+Les fonctions suivantes sont-elles écrites sous forme canonique ? Si oui, préciser les valeurs de $\alpha$ et de $\beta$.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f: x \mapsto-3 x^2+1$
+		\item $f: x \mapsto-13+(x+5)^2$
+		\item $f: x \mapsto(2 x-6)^2+7$
+		\item $f: x \mapsto 1-8(x-3)^2$
+	\end{enumMet}
+%\end{multicols}
+
+\exercice{ - 9 p 96}
+
+Dans chaque cas, calculer les nombres $\alpha$ et $\beta$ liés à la fonction polynôme du second degré :
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $f: x \mapsto x^2+x-11$
+		\item $f: x \mapsto-x^2+7$
+		\item $f: x \mapsto-4-6 x^2+8 x$
+		\item $f: x \mapsto \dfrac{2}{3} x^2-\dfrac{1}{3} x-1$
+		\item $f: x \mapsto-\dfrac{3}{7} x^2+5 x+\dfrac{4}{3}$
+		\item $f: x \mapsto 8 x^2-\sqrt{2}x$
+	\end{enumMet}
+%\end{multicols}
+
+\exercice{ - 10 p 96}
+
+Associer à chaque fonction polynôme de degré 2 (définie par une égalité) son écriture canonique.
+
+\begin{minipage}[c]{0.45\linewidth}
+Fonction
+\begin{enumMet}
+	\item $f_1(x)=2\left(-5+2 x^2\right)$
+	\item $f_2(x)=(2 x+3)(2 x+9)$
+	\item $f_3(x)=4 x^2-24 x+26$
+	\item $f_4(x)=(2 x-6)^2+10$	
+\end{enumMet}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.45\linewidth}
+	Écriture canonique
+	\begin{enumMet}[label=\alph*)]
+		\item $4(x-3)^2-10$
+		\item $4(x-3)^2+10$
+		\item $4(x+3)^2-9$
+		\item $4 x^2-10$
+	\end{enumMet}
+\end{minipage}
+
+
+
+\exercice{ - 11 p 96}
+
+Donner l'écriture canonique des fonctions polynômes du second degré suivantes:
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f: x \mapsto x^2-4 x$
+		\item $f: x \mapsto x^2+3 x$
+		\item $f: x \mapsto-5 x^2+7 x$
+		\item $f: x \mapsto 3 x^2-2 x+1$
+	\end{enumMet}
+\end{multicols}
+
+\exercice{}
+
+Donner l'écriture canonique des fonctions polynômes du second degré suivantes:
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item \( f(x) = 2x^2 - 8x + 6 \)
+		\item \( g(x) = -3x^2 + 12x - 9 \)
+	\end{enumMet}
+\end{multicols}
+Vérifiez vos résultats en utilisant les formules \( \alpha = -\dfrac{b}{2a} \) et \( \beta = f(\alpha) \).
+
+\exercice{}
+
+Trouvez les coordonnées du sommet et l'équation de l'axe de symétrie pour les fonctions suivantes :
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item \( f(x) = x^2 - 4x + 4 \)
+		\item \( g(x) = -x^2 + 6x - 5 \)
+	\end{enumMet}
+\end{multicols}
+
+
+\exercice{ - 12 p 96}
+
+Donner les variations sur $\mathbb{R}$ de la fonction $f$ définie par $f(x)=8(x-2)^2+11$.
+
+\exercice{ - 13 p 96}
+
+La fonction $f$ polynôme de degré 2 est définie par $x \mapsto 2 x^2-3 x+1$. Donner les variations de $f$ sur $\mathbb{R}$.
+
+\exercice{ - 14 p 96}
+
+Proposer une expression d'une fonction $f$ polynôme de degré 2 telles que ses variations soient celles données dans le tableau ci-dessous:
+
+\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , variations de $f$ / 1.5}{$-\infty$, $3$, $+\infty$}
+	\tkzTabVar{+/ , -/ $-4$, +/ }
+\end{tikzpicture}
+
+\exercice{ - 15 p 96}
+
+Déterminer une expression de la fonction $g$ polynôme du second degré telle que $g(2)=-3$ et dont les variations sont données dans le tableau ci-dessous:
+
+\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , variations de $f$ / 1.5}{$-\infty$, $-2$, $+\infty$}
+	\tkzTabVar{-/ , +/ $6$, -/ }
+\end{tikzpicture}
+
+\exercice{ - 18 p 96}
+
+Parmi les cinq fonctions polynômes du second degré, quelle est la seule qui ne peut pas être associée à une des quatre paraboles $C_1, C_2, C_3$ et $C_4$ ? Justifier.
+
+\begin{minipage}[c]{0.45\linewidth}
+	\begin{enumMet}
+		\item $f_1: x \mapsto(x+1)^2+3$
+		\item $f_2: x \mapsto-(x-1)^2+3$
+		\item $f_3: x \mapsto x^2-2 x+4$
+		\item $f_4: x \mapsto-x^2-2 x+2$
+		\item $f_5: x \mapsto-\dfrac{1}{4} x^2+\dfrac{1}{2} x+\dfrac{11}{4}$
+	\end{enumMet}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.45\linewidth}
+	\includegraphics[scale=1]{IMG-Ex18}
+\end{minipage}
+
+\exercice{}
+
+Une entreprise fabrique des boîtes en carton. Le coût de production \( C(x) \) en euros pour \( x \) boîtes est donné par \( C(x) = 0,5x^2 - 10x + 100 \). Trouvez le nombre de boîtes à produire pour minimiser le coût de production.
+
+%**Solution :**
+%
+%Pour minimiser le coût de production, nous devons trouver le sommet de la parabole représentée par la fonction \( C(x) \). La formule pour trouver l'abscisse du sommet (qui donne le nombre de boîtes à produire) est :
+%
+%\[ x = -\frac{b}{2a} \]
+%
+%Dans notre cas, \( a = 0,5 \) et \( b = -10 \).
+%
+%Calculons \( x \) :
+%
+%\[ x = -\frac{-10}{2 \times 0,5} \]
+%\[ x = \frac{10}{1} \]
+%\[ x = 10 \]
+%
+%Donc, le nombre de boîtes à produire pour minimiser le coût de production est **10 boîtes**.
+%
+%Pour vérifier, calculons le coût minimum en substituant \( x = 10 \) dans l'expression de \( C(x) \) :
+%
+%\[ C(10) = 0,5(10)^2 - 10(10) + 100 \]
+%\[ C(10) = 0,5 \times 100 - 100 + 100 \]
+%\[ C(10) = 50 - 100 + 100 \]
+%\[ C(10) = 50 \]
+%
+%Le coût minimum de production est donc **50 euros**.
+
+\exercice{}
+
+Un jardinier veut construire un parterre de fleurs en forme de parabole. La hauteur \( h(x) \) en mètres du parterre est donnée par \( h(x) = -x^2 + 4x \). Trouvez la largeur maximale du parterre et la hauteur maximale atteinte.
+
+\exercice{ - Optimisation en économie}
+
+Une entreprise produit et vend un produit. Le coût total de production \( C(x) \) en euros pour \( x \) unités est donné par \( C(x) = 0,1x^2 + 50x + 1000 \). Le revenu total \( R(x) \) en euros pour la vente de \( x \) unités est donné par \( R(x) = -0,2x^2 + 150x \). Trouvez le nombre d'unités à produire et vendre pour maximiser le profit, et calculez ce profit maximal.
+
+%**Solution :**
+%1. Le profit \( P(x) \) est donné par la différence entre le revenu total et le coût total :
+%\[ P(x) = R(x) - C(x) \]
+%\[ P(x) = (-0,2x^2 + 150x) - (0,1x^2 + 50x + 1000) \]
+%\[ P(x) = -0,3x^2 + 100x - 1000 \]
+%
+%2. Pour maximiser le profit, nous devons trouver le sommet de la parabole représentée par \( P(x) \). L'abscisse du sommet est donnée par :
+%\[ x = -\frac{b}{2a} \]
+%Ici, \( a = -0,3 \) et \( b = 100 \).
+%
+%3. Calculons \( x \) :
+%\[ x = -\frac{100}{2 \times -0,3} \]
+%\[ x = \frac{100}{0,6} \]
+%\[ x \approx 166,67 \]
+%
+%4. Le nombre d'unités à produire et vendre pour maximiser le profit est donc environ **167 unités**.
+%
+%5. Calculons le profit maximal en substituant \( x = 167 \) dans l'expression de \( P(x) \) :
+%\[ P(167) = -0,3(167)^2 + 100(167) - 1000 \]
+%\[ P(167) \approx -0,3(27889) + 16700 - 1000 \]
+%\[ P(167) \approx -8366,7 + 16700 - 1000 \]
+%\[ P(167) \approx 5333,3 \]
+%
+%Le profit maximal est donc d'environ **5333,3 euros**.
+
+
+
+
+\end{document}
+

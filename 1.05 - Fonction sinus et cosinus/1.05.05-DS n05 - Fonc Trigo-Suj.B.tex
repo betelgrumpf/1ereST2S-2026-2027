@@ -1,0 +1,185 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\def\PiOverFour{0.785398}
+
+\rhead{DS n$^{\circ}$05 Fonctions trigonométriques - Sujet B - 20/02/2025}
+
+\begin{document}
+\graphicspath{{../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+DS n$^{\circ}$05\\ 
+Fonctions trigonométriques - Sujet B
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{50 min - Calculatrice autorisée - Barème indicatif}\\
+\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+%
+%\begin{center}
+%%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+%Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+%\end{center}
+\vspace{-.3cm} 
+\begin{minipage}[c]{0.48\linewidth}
+	\exerciceDS{ - ( 3 points )}
+	Soit $f$ la fonction définie sur \R par::\\
+	$f(x)=\sin^2(x)-\cos(x)$.
+	\begin{enumMet}
+		\item Montrer que la fonction est $2\pi$ périodique.
+		\item Etudier la parité de la fonction f
+		\item Que peut-on en déduire quant à la représentation graphique de la fonction f?
+	\end{enumMet}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.48\linewidth}
+	\exerciceDS{ \ding{46} - ( 3 points )}
+	Soit $g$ la fonction définie sur \R par:\\
+	$g(x)=3\sin(x)\cos(x)$.
+	\begin{enumMet}
+		\item \ding{46} Montrer que la fonction est $\pi$ périodique.
+		\item \ding{46} Etudier la parité de la fonction g
+		\item \ding{46} Que peut-on en déduire quant à la représentation graphique de la fonction g?
+	\end{enumMet}
+\end{minipage}
+
+
+\exerciceDS{ - (4 points)}
+
+\begin{center}
+	\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+	\newrgbcolor{ccqqqq}{0.8 0. 0.}
+	\psset{xunit=2.3cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.5pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-3.46,-2.47)(3.22,2.47)
+		\multips(0,-2)(0,1.0){6}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(-3.4604073728752787,0)(3.2229989668360184,0)}
+		\multips(-3.1415926,0)(0.785398,0){9}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(0,-1.9586193700323817)(0,2.4664095770778145)}
+		\psaxes[xtrigLabels,trigLabelBase=4,dx=\PiOverFour]{->}(0,0)(-3.46,-2.47)(3.22,2.47)
+		\psplot[linewidth=2.pt,linecolor=qqwuqq,plotpoints=200]{-3.4604073728752787}{3.2229989668360184}{2.0*COS(2.0*x-PI/2.0)}
+		\psplot[linewidth=2.pt,linecolor=ccqqqq,plotpoints=200]{-3.4604073728752787}{3.2229989668360184}{-2.0*COS(2.0*x)}
+		\psplot[linewidth=2.pt,linecolor=blue,plotpoints=200]{-3.4604073728752787}{3.2229989668360184}{2.0*SIN(2.0*x+PI/2.0)}
+		\psplot[linewidth=2.pt,linecolor=magenta,plotpoints=200]{-3.4604073728752787}{3.2229989668360184}{2.0*SIN(2.0*x+PI)}
+%		\begin{scriptsize}
+			\rput[bl](-2.45,1.4){\large{\qqwuqq{$C_1$}}}
+			\rput[bl](-3.2,-1.6){\large{\ccqqqq{$C_2$}}}
+			\rput[bl](-3.2,1.4){\large{\blue{$C_3$}}}
+			\rput[bl](-2.45,-1.6){\large{\magenta{$C_4$}}}
+%		\end{scriptsize}
+	\end{pspicture*}
+\end{center}
+Les courbes $C_1$, $C_2$, $C_3$ et $C_4$ ci-dessus sont les courbes représentatives de 4 fonctions. Associer chaque fonction à sa courbe représentative correspondante. Les 4 fonctions sont données ci-dessous:
+\begin{multicols}{2}
+	\begin{itemMet}
+		\item $f(x)=2\sin(2x+\pi)$
+		\item $g(x)=-2\cos(2x)$
+		\item $h(x)=2\cos(2x-\dfrac{\pi}{2})$
+		\item $k(x)=2\sin(2x+\dfrac{\pi}{2})$
+	\end{itemMet}
+\end{multicols}
+
+\exerciceDS{ - (1 point)}
+
+Sachant que la fonction $h$ est une fonction $\pi$-périodique, compléter le graphe ci-dessous à main levée sur $[-2 \pi ; 2 \pi]$.
+\begin{center}
+	\psset{xunit=1.0cm,yunit=1.3cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.7pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-7.42,-1.2208)(7.06,1.4336)
+		\multips(0,-1)(0,1.0){3}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(-7.42,0)(7.06,0)}
+		\multips(-6.28,0)(1.571,0){10}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(0,-1.2208)(0,1.4336)}
+		\psaxes[xtrigLabels,trigLabelBase=2,dx=1.570796]{->}(0,0)(-7.42,-1.2208)(7.06,1.4336)
+		\psplot[linewidth=2.pt,linecolor=blue,plotpoints=100]{-1.571}{1.571}{(-COS(-2.5*x))^(3.0)}
+	\end{pspicture*}
+\end{center}
+
+\newpage
+\exerciceDS{ - (1 point)}
+
+
+Déterminer graphiquement la période de la fonction $f$ dont on fournit la courbe représentative.
+\psset{xunit=2cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.7pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-4.034174757281561,-1.7584)(5.51300970873788,1.8144)
+	\multips(0,-1)(0,1.0){4}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(-4.034174757281561,0)(5.51300970873788,0)}
+	\multips(-3.925,0)(0.7853981633974483,0){13}{\psline[linewidth=0.4pt,linecolor=lightgray]{c-c}(0,-1.7584)(0,1.8144)}
+	%\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=0.785,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-4.034174757281561,-1.7584)(5.51300970873788,1.8144)
+	\psaxes[xtrigLabels,trigLabelBase=4,dx=\PiOverFour]{->}(0,0)(-4.034174757281561,-1.7584)(5.51300970873788,1.8144)
+	\psplot[linewidth=2.pt,linecolor=blue,plotpoints=200]{-4.034174757281561}{5.51300970873788}{-(COS(8.0*x)/5.0+SIN(4.0*x))^(3.0)}
+\end{pspicture*}
+
+\begin{minipage}[c]{0.45\linewidth}
+\exerciceDS{ - (1 point)}
+
+Sachant que la fonction $f$ est une fonction paire, compléter le graphe ci-dessous à main levée $\operatorname{sur}[-\pi ; \pi]$.
+\begin{center}
+	\newrgbcolor{ccqqqq}{0.8 0. 0.}
+	\psset{xunit=1.0cm,yunit=0.6cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.5pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-4.132259716870102,-3.9)(3.73782410760709,3.920852176778383)
+		\multips(0,-3)(0,1.0){7}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(-4.132259716870102,0)(3.73782410760709,0)}
+		\multips(-3.14,0)(1.57,0){6}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(0,-3.9)(0,3.920852176778383)}
+		\psaxes[xtrigLabels,trigLabelBase=2,dx=1.570796]{->}(0,0)(-4.13,-3.9)(3.74,3.92)
+		\psplot[linewidth=2.pt,linecolor=blue,plotpoints=200]{0}{3.14}{-2*COS(3.0*x)+x^2/(3*PI)}
+	\end{pspicture*}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.45\linewidth}
+\exerciceDS{ - (1 point)}
+
+Sachant que la fonction $g$ est une fonction impaire, compléter le graphe ci-dessous à main levée $\operatorname{sur}[-\pi ; \pi]$.
+\begin{center}
+	\newrgbcolor{ccqqqq}{0.8 0. 0.}
+	\psset{xunit=1.0cm,yunit=0.6cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.5pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-4.132259716870102,-3.9)(3.73782410760709,3.920852176778383)
+		\multips(0,-3)(0,1.0){7}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(-4.132259716870102,0)(3.73782410760709,0)}
+		\multips(-3.14,0)(1.57,0){6}{\psline[linewidth=0.4pt,linecolor=gray]{c-c}(0,-3.9)(0,3.920852176778383)}
+		\psaxes[xtrigLabels,trigLabelBase=2,dx=1.570796]{->}(0,0)(-4.13,-3.9)(3.74,3.92)
+		\psplot[linewidth=2.pt,linecolor=blue,plotpoints=200]{-3.14}{0}{-2.0*SIN(x)+2.0*x/PI}
+	\end{pspicture*}
+\end{center}		
+\end{minipage}
+
+\exerciceDS{ - (6 points)}
+
+Résoudre les équations ci-dessous dans l'intervalle I donné.
+\begin{enumMet}
+	\item $\cos (x)=\dfrac{1}{2}$ et $I=\left[-\pi ; \pi\right]$.
+	\item \ding{46} $\sin (x)=\dfrac{\sqrt{2}}{2}$ et $I=\left[-\frac{\pi}{2} ; \frac{\pi}{2}\right]$.
+	\item $\cos (x)=-\dfrac{\sqrt{3}}{2}$ et $I=\left[-\pi ; \pi\right]$.
+	\item $\sin (x)=-\dfrac{\sqrt{2}}{2}$ et $I=\R$.
+	\item $\cos (x)=\dfrac{\sqrt{2}}{2}$ et $I=[\pi ; 3\pi]$.
+	\item $\sin (x)=2$ et $I=\R$.
+\end{enumMet}
+
+
+
+
+\end{document}
+

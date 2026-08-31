@@ -1,0 +1,274 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{Préparation Bac Blanc - 25/01/2026}
+
+\begin{document}
+\graphicspath{{images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+	\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+		Préparation Bac Blanc
+	}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{2h - Calculatrice non autorisée - Barème indicatif}\\
+%\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\\
+%Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+%
+%\begin{center}
+%%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+%Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+%\end{center}
+
+\vspace*{-0.8cm}
+\exerciceDS{ $-$ (06 points)}
+
+Cet exercice est un Questionnaire à Choix Multiples (QCM).\\
+Pour chaque question, 4 réponses sont proposées, dont une seule est exacte.\\
+Une réponse exacte rapporte 1 point. Une réponse inexacte, une absence de réponse ou une réponse multiple ne rapporte ni n'enlève aucun point.
+
+\begin{enumMet}
+	\item Proposition 1 : un article subit une diminution de $20 \%$, puis une hausse de $20 \%$. Son prix final :
+	\begin{multicols}{2}
+		\begin{enumMet}
+		\item a diminué de $4 \%$
+		\item est identique au prix initial
+		\item a diminué de $22 \%$
+		\item a augmenté de 15\%
+	\end{enumMet}
+	\end{multicols}
+	\item \ \\
+	\begin{minipage}[c]{0.66\linewidth}
+			Proposition 2 : on a représenté ci-contre la parabole d'équation $y=x^{2}$. Sur $\mathbb{R}$, l'inéquation $x^{2} \leqslant 5$ est équivalente à :
+		\begin{multicols}{2}
+			\begin{enumMet}
+			\item $-\sqrt{5} \leqslant x \leqslant \sqrt{5}$
+		\item $x \leqslant-\sqrt{5}$ ou $x \geqslant \sqrt{5}$
+		\item $x \geqslant \sqrt{5}$
+		\item $x=\sqrt{5}$ ou $x=-\sqrt{5}$
+		\end{enumMet}
+		\end{multicols}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.32\linewidth}
+		\includegraphics[scale=0.25]{ebe38402-76e9-4b46-a033-b1efc954d7e7-2_345_556_1165_1370}
+	\end{minipage}
+	
+	\item Proposition 3 : L'inéquation $5-4 x \leqslant 3 x-6$ a pour ensemble solution dans $\mathbb{R}$ :
+	\begin{multicols}{2}
+		\begin{enumMet}
+		\item $\left]-\infty ; \dfrac{11}{7}\right]$ 
+		\item $\left.]-\infty ;-\dfrac{11}{7}\right]$
+		\item $\left[\dfrac{11}{7} ;+\infty\right[$
+		\item $\left[1 ;+\infty[\right.$
+	\end{enumMet}
+	\end{multicols}
+	\item Proposition 4 : L'expression affine $\mathrm{A}(x)=-2 x+8$ a pour tableau de signes :
+	\begin{multicols}{2}
+		\begin{enumMet}
+			\item \begin{tikzpicture}
+				\tkzTabInit[lgt = 1.5, espcl = 1.7]{$x$ / 1 , $A(x)$ / 1}{$-\infty$, $4$, $+\infty$}
+				\tkzTabLine{, +, z, -, }
+			\end{tikzpicture}	
+			\item \begin{tikzpicture}
+				\tkzTabInit[lgt = 1.5, espcl = 1.7]{$x$ / 1 , $A(x)$ / 1}{$-\infty$, $4$, $+\infty$}
+				\tkzTabLine{, -, z, +, }
+			\end{tikzpicture}	
+			\item \begin{tikzpicture}
+				\tkzTabInit[lgt = 1.5, espcl = 1.7]{$x$ / 1 , $A(x)$ / 1}{$-\infty$, $-4$, $+\infty$}
+				\tkzTabLine{, +, z, -, }
+			\end{tikzpicture}	
+			\item \begin{tikzpicture}
+				\tkzTabInit[lgt = 1.5, espcl = 1.7]{$x$ / 1 , $A(x)$ / 1}{$-\infty$, $-4$, $+\infty$}
+				\tkzTabLine{, -, z, +, }
+			\end{tikzpicture}	
+		\end{enumMet}
+	\end{multicols}
+	\item Proposition 5 : On considère la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=25 x^{2}-81$. La forme factorisée de $f(x)$ est:
+	\begin{multicols}{2}
+		\begin{enumMet}
+			\item 	$(5 x-9)^{2}$
+			\item $(25 x-81)(25 x+81)$
+			\item $5(x-9)^{2}$
+			\item $(5 x-9)(5 x+9)$
+		\end{enumMet}
+	\end{multicols}
+	\item Proposition 6 : on a représenté ci-dessous une droite $\mathcal{D}$ dans un repère orthonormé.
+%	\begin{center}
+%		\includegraphics[scale=0.35]{ebe38402-76e9-4b46-a033-b1efc954d7e7-3_591_713_319_114}
+%	\end{center}
+	\begin{center}
+		\begin{tikzpicture}%
+			[x=0.7cm,y=0.7cm, %unités
+			xmin=-5,xmax=5,xgrille=1,xgrilles=1, %axe Ox
+			ymin=-3,ymax=4,ygrille=1,ygrilles=1] %axe Oy
+			\GrilleTikz
+			\AxesTikz%
+			
+			\AxexTikz[Police=\small]{-5,-4,...,5}
+			\AxeyTikz[Police=\small]{-3,-2,...,4}
+			\CourbeTikz[line width=1.4pt,ForestGreen,samples=250]%
+			{-2/3*\x+1}{-4.45:5.05} %courbe
+		\end{tikzpicture}
+	\end{center}
+	Une équation de la droite $\mathcal{D}$ est :
+	\begin{multicols}{2}
+		\begin{enumMet}
+			\item $y=-\dfrac{2}{3} x+1$
+			\item $y=\dfrac{2}{3} x+1$
+			\item $2 x-3 y+1=0$
+			\item $y=-\dfrac{3}{2} x+1$
+		\end{enumMet}
+	\end{multicols}
+	
+\end{enumMet}
+
+\exerciceDS{ $-$ (05 points)}
+Un particulier souhaite construire une terrasse rectangulaire et l'entourer d'une barrière sur 3 des côtés, le 4ème côté étant la maison. Par souci d'économie, il récupère du bois et commence par réaliser la barrière avant de faire sa terrasse. Avec le bois qu'il possède, il ne peut faire qu'un maximum de 32 m pour la barrière. On appelle $x$ la longueur du côté de la barrière perpendiculaire au mur de la maison.\\
+\includegraphics[scale=0.2]{ebe38402-76e9-4b46-a033-b1efc954d7e7-4_275_883_724_605}
+
+On appelle $\mathcal{A}$ la fonction qui à un nombre $x$ associe $\mathcal{A}(x)$ l'aire de la terrasse.\\
+La fonction $\mathcal{A}$ est ainsi définie sur l'intervalle [0;16].
+
+\begin{enumMet}
+	\item \begin{enumMet}
+		\item Vérifier que l'aire $\mathcal{A}(x)=-2 x^{2}+32 x$.
+		\item Montrer que la forme canonique de $\mathcal{A}(x)$ est $-2(x-8)^{2}+128$.
+	\end{enumMet}
+	\item Quatre courbes ont été tracées sur le graphique ci-dessous. Identifier celle qui représente la fonction $\mathcal{A}$.
+	\begin{center}
+		\begin{tikzpicture}%
+			[x=0.16cm,y=0.04cm, %unités
+			xmin=0,xmax=100,xgrille=10,xgrilles=5, %axe Ox
+			ymin=0,ymax=150,ygrille=10,ygrilles=10] %axe Oy
+			\GrilleTikz
+			\AxesTikz%
+			\AxexTikz[Police=\small]{0,10,...,100}
+			\AxeyTikz[Police=\small]{0,10,...,150}
+			\CourbeTikz[line width=1.4pt,ForestGreen,samples=250]%
+			{-2*(\x-8)^2+128}{0:16} %courbe
+			\draw (15,120) node[color=ForestGreen] {$C_1$};
+			\CourbeTikz[line width=1.4pt,red,samples=250]%
+			{2*(\x-8)^2+128}{4.8:11.2} %courbe
+			\draw (15,140) node[color=red] {$C_2$};
+			\CourbeTikz[line width=1.4pt,blue,samples=250]%
+			{-1.5*(\x-50)^2+90}{42.25:57.75} %courbe
+			\draw (50,95) node[color=blue] {$C_3$};
+			\CourbeTikz[line width=1.4pt,violet,samples=250]%
+			{2*(\x-80)^2+8}{71.6:88.4} %courbe
+			\draw (80,20) node[color=violet] {$C_4$};
+			
+		\end{tikzpicture}
+	\end{center}
+%	\includegraphics[scale=0.35]{ebe38402-76e9-4b46-a033-b1efc954d7e7-4_906_1056_1491_502}
+	\item Dresser le tableau de variations de la fonction $\mathcal{A}$.
+	\item Pour quelle valeur de $x$ l'aire de la terrasse est-elle maximale ? Donner la valeur de cette aire.
+	\item Pour quelles valeurs de $x$ l'aire de la terrasse est-elle supérieure ou égale à $96 \mathrm{~m}^{2}$ ?
+\end{enumMet}
+
+\exerciceDS{ $-$ (04 points)}
+On considère la fonction $f$ définie sur $[0 ; 5 \pi]$ par $f(x)=2 \sin \left(\dfrac{x+2\pi}{2}\right)$.\\
+La courbe représentative $\left(\mathcal{C}_{f}\right)$ de la fonction $f$ est représentée dans le repère ci-dessous:
+\begin{center}
+	\begin{tikzpicture}[x=1cm,y=1.2cm,xmin=0,xmax={5*pi},xgrille=0.5,xgrilles=0.25,
+		ymin=-2.5,ymax=2.5,ygrille=0.5,ygrilles=0.25]
+		\GrilleTikz \AxesTikz
+		\AxexTikz[Trigo]{{pi/3},{2*pi/3},{pi},{4*pi/3},%
+			{5*pi/3},{2*pi},{7*pi/3},{8*pi/3},{3*pi},{10*pi/3},{11*pi/3},{4*pi},{13*pi/3},{14*pi/3},{5*pi}}
+		\AxeyTikz[Police=\small]{-2,-1,...,2}
+		\CourbeTikz[thick,blue,samples=250]{2*sin(deg((\x+2*pi)/2)}{0:5*pi}
+	\end{tikzpicture}
+\end{center}
+
+\subsection*{Partie A: lectures graphiques}
+Avec la précision permise par le graphique,
+
+\begin{enumMet}
+	\item Déterminer l'encadrement le plus précis possible de $f(x)$.
+	\item Déterminer l'image de $\dfrac{10 \pi}{3}$ par la fonction $f$.
+	\item Déterminer le(s) antécédent(s) de 1 par la fonction $f$.
+\end{enumMet}
+
+\subsection*{Partie B : justifications mathématiques}
+\begin{enumMet}
+	\item Démontrer que, pour tout $x$ de l'intervalle $[0 ; 5 \pi]$, on a $-2 \leqslant f(x) \leqslant 2$.
+	\item \begin{enumMet}
+		\item Déterminer, en expliquant votre démarche, la mesure principale de $\dfrac{8 \pi}{3}$.\\
+		\item En déduire la valeur exacte de $f\left(\dfrac{10 \pi}{3}\right)$.
+	\end{enumMet}
+	\item \begin{enumMet}
+		\item En s'appuyant sur un cercle trigonométrique, résoudre l'équation $\sin (X)=\dfrac{1}{2}$ dans l'intervalle $\left[\pi ; 3 \pi\right]$
+		\item En déduire les solutions de l'équation $f(x)=1$ dans l'intervalle $[0 ; 5 \pi]$.
+	\end{enumMet}
+\end{enumMet}
+
+\newpage
+\exerciceDS{ $-$ (05 points)}
+Dans le plan muni d'un repère orthonormé ( $O ; \vec{\imath}, \vec{\jmath}$ ), on considère les points $A(-1 ; 5), B(-7 ; -3)$ et $C(7 ;-1)$.
+
+Données : $\sqrt{50}=5 \sqrt{2}$ et $\dfrac{1}{\sqrt{2}}=\dfrac{\sqrt{2}}{2}$
+
+\begin{enumMet}
+	\item Tracer le triangle $A B C$ dans le repère donné ci-dessous :
+	
+%	\includegraphics[scale=0.35]{ebe38402-76e9-4b46-a033-b1efc954d7e7-6_1137_1143_794_461}
+	\begin{center}
+		\begin{tikzpicture}%
+			[x=1cm,y=1cm, %unités
+			xmin=-8,xmax=8,xgrille=1,xgrilles=1, %axe Ox
+			ymin=-4,ymax=6,ygrille=1,ygrilles=1] %axe Oy
+			\GrilleTikz
+			\AxesTikz%
+			
+			\AxexTikz[Police=\small]{-8,-7,...,8}
+			\AxeyTikz[Police=\small]{-4,-3,...,6}
+%			\CourbeTikz[line width=1.4pt,ForestGreen,samples=250]%
+%			{-2/3*\x+1}{-4.45:5.05} %courbe
+		\end{tikzpicture}
+	\end{center}
+	\item Calculer le produit scalaire $\vv{B C} \cdot \vv{B A}$.
+	\item \begin{enumMet}
+		\item Exprimer $\vv{B C} \cdot \vv{B A}$ en fonction de l'angle ( $\vv{B C} ; \vv{B A}$ ).
+		\item En déduire la valeur exacte de l'angle orienté ( $\vv{B C} ; \vv{B A}$ ) en radians.
+	\end{enumMet}
+	\item Montrer que le triangle $A B C$ est rectangle, et préciser en quel point.
+	\item \begin{enumMet}
+		\item Calculer les longueurs $A B$ et $A C$.
+		\item En déduire la valeur exacte de l'angle orienté $(\vv{C B} ; \vv{C A})$ en radians.
+	\end{enumMet}
+\end{enumMet}
+
+
+
+\end{document}
+

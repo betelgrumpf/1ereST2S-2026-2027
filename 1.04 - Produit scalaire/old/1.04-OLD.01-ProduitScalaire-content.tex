@@ -1,0 +1,446 @@
+\chapter{Produit scalaire}
+\thispagestyle{fancy}
+
+\section{Définitions et propriété}
+
+\subsection{Norme d'un vecteur}
+
+    \begin{definition}
+        Soit un vecteur $\vv{u}$ et deux points $A$ et $B$ tels que $\vv{u}=\vv{AB}$.\\
+        La norme du vecteur $\vv{u}$, notée $\normeB{u}$ est la distance AB.	
+    \end{definition}
+    
+\subsection{Produit scalaire}
+    \begin{definition}
+        \begin{minipage}[b]{0.65\linewidth}
+            Soit $\vv{u}$ et $\vv{v}$ deux vecteurs du plan.\\
+            On appelle \grasInDef{produit scalaire} de $\vv{u}$ par $\vv{v}$, noté $\vv{u}\cdot \vv{v}$, le nombre réel défini par :\\
+            \begin{itemDef}
+                \item $\vv{u}\cdot \vv{v} =0$, si l'un des deux vecteurs $\vv{u}$ et $\vv{v}$ est nul.
+                \item $\vv{u}\cdot \vv{v} =\normeB{u}\times\normeB{v}\times\cos{(\vv{u};\vv{v})}$
+            \end{itemDef}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.3\linewidth}
+        \begin{center}
+            \newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+            \psset{xunit=1cm,yunit=1cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+            \begin{pspicture*}(1.3,0.8)(8.3,4.6)
+            \psline[linewidth=1.2pt]{->}(2.,2.)(6.,2.)
+            \psline[linewidth=1.2pt]{->}(2.,2.)(4.,4.)
+            \rput[tl](3.7,1.8){\Large $\vv u$}
+            \rput[tl](2.5,3.6){\Large $\vv v$}
+            \pscustom[linewidth=1.2pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
+\parametricplot{0.0}{0.78}{0.68*cos(t)+2.|0.68*sin(t)+2.}
+\lineto(2.,2.)\closepath}
+            \begin{scriptsize}
+            \psdots[dotsize=5pt 0,dotstyle=*](2.,2.)
+            \rput[bl](1.3,2.0){\Large $A$}
+            \psdots[dotsize=5pt 0,dotstyle=*](6.,2.)
+            \rput[bl](6.2,2.0){\Large $B$}
+            \psdots[dotsize=5pt 0,dotstyle=*](4.,4.)
+            \rput[bl](4.2,4.0){\Large $C$}
+            \end{scriptsize}
+            \end{pspicture*}
+        \end{center}
+        \end{minipage}
+    \end{definition}
+    
+    \begin{remarques}
+        \begin{itemRem}
+            \item $\vv{u}\cdot \vv{v}$ se lit $\vv{u}$ scalaire $\vv{v}$
+            \item 	Si $\vv{AB}$ et $\vv{AC}$ sont deux représentants des vecteurs non nuls $\vv{u}$ et $\vv{v}$ alors :\\
+            $\vv{u}\cdot \vv{v} = \vv{AB}\cdot \vv{AC} = \normeB{AB}\times\normeB{AC}\times\cos{(\widehat{BAC})}$
+            \item 	\grasInRem{Attention} : Le produit scalaire de deux vecteurs est un nombre réel. Écrire par exemple $\vv{u}\cdot \vv{v}=\vv{0}$ est une maladresse à éviter !
+        \end{itemRem}
+    \end{remarques}
+    
+    \begin{methodeTitre}{calculer un produit scalaire}
+        \grasInMet{Enoncé :} Calculer : $\vv{AB}\cdot \vv{AC}$ sachant que $AB=5$, $AC=4\sqrt{2}$ et $(\vv{AB},\vv{AC})=\dfrac{\pi}{4}$\\
+        \ \\
+        \grasInMet{Réponse :}\\
+        $\vv{AB}\cdot \vv{AC}= \normeB{AB}\times\normeB{AC}\times\cos{(\vv{AB},\vv{AC})}=5\times 4\sqrt{2} \times \cos{\left(\dfrac{\pi}{4}\right)}=20\sqrt{2}\times\dfrac{\sqrt{2}}{2}=20$
+        
+    \end{methodeTitre}
+    
+    \begin{methodeTitre}{Calculer un produit scalaire à l'aide du cosinus}
+        \grasInMet{Enoncé :} \\
+        Soit un triangle équilatéral ABC de côté $a$. Calculer, en fonction de a, le produit scalaire $\overrightarrow{A B} \cdot \overrightarrow{A C}$.
+        \begin{center}
+            \includegraphics[scale=0.8]{1.04.IMG-01}
+        \end{center}
+
+        \ \\
+        \grasInMet{Réponse :}\\
+        $$
+        \begin{array}{l}
+        \overrightarrow{A B} \cdot \overrightarrow{A C}=\|\overrightarrow{A B}\| \times\|\overrightarrow{A C}\| \times \cos \widehat{B A C} \\
+        =a \times a \times \cos 60^{\circ} \\
+        =a^{2} \times 0,5 \\
+        =\dfrac{a^{2}}{2}
+        \end{array}
+        $$
+        
+    \end{methodeTitre}
+    
+    \subsection{Propriété de symétrie du produit scalaire}
+    
+    \begin{propriete}
+        Pour tout vecteur $\vv{u}$ et $\vv{v}$, on a : $\vv{u}\cdot \vv{v}= \vv{v}\cdot \vv{u}$ 
+    \end{propriete}
+    
+    \begin{demonstration}
+        On suppose que $\vec{u}$ et $\vec{v}$ sont non nuls (démonstration évidente dans la cas contraire).\\
+        $\vec{u} . \vec{v}=\|\vec{u}\| \times\|\vec{v}\| \times \cos (\vec{u} ; \vec{v})$\\
+        $=\|\vec{v}\| \times\|\vec{u}\| \times \cos (\vec{u} ; \vec{v})$\\
+        $=\|\vec{v}\| \times\|\vec{u}\| \times \cos (-(\vec{v} ; \vec{u}))$\\
+        $=\|\vec{v}\| \times\|\vec{u}\| \times \cos (\vec{v} ; \vec{u})$
+        $=\vec{v} \cdot \vec{u}$\\
+    \end{demonstration}
+    
+    \subsection{opérations sur les produits scalaires}
+    
+    \begin{propriete}
+        Pour tout vecteur $\vv{u}$,$\vv{v}$ et $\vv{w}$, on a :
+        \begin{enumDef}
+            \item $\vv{u} \cdot (\vv{v}+\vv{w})=\vv{u} \cdot \vv{v}+\vv{u} \cdot \vv{w}$
+            \item $\vv{u} \cdot (k \vv{v})=k \vv{u} \cdot \vv{v}$, avec $k$ un nombre réel.
+        \end{enumDef}
+    \end{propriete}
+
+    \subsection{Identités remarquables}
+    
+    \begin{propriete}
+        Pour tout vecteur $\vv{u}$ et $\vv{v}$, on a :
+        \begin{enumDef}
+            \item $\left(\vv{u}+\vv{v}\right)^2=\vv{u}^2 +2\vv{u} \cdot \vv{v}+\vv{v}^2$
+            \item $\left(\vv{u}-\vv{v}\right)^2=\vv{u}^2 -2\vv{u} \cdot \vv{v}+\vv{v}^2$
+            \item $\left(\vv{u}+\vv{v}\right)\left(\vv{u}-\vv{v}\right)=\vv{u}^2-\vv{v}^2$
+        \end{enumDef}
+    \end{propriete}
+    
+    \begin{demonstrationTitre}{2ème formule}
+        \begin{align*}
+            (\vec{u}-\vec{v})^{2}& =(\vec{u}-\vec{v})(\vec{u}-\vec{v}) \\
+            &=\vec{u} \cdot \vec{u}-\vec{u} \cdot \vec{v}-\vec{v} \cdot \vec{u}+\vec{v} \cdot \vec{v} \\
+            &=\vec{u}^{2}-2 \vec{u} \cdot \vec{v}+\vec{v}^{2}
+        \end{align*}
+    \end{demonstrationTitre}
+    
+       \section{Produit scalaire et orthogonalité}
+    
+    \subsection{Vecteurs orthogonaux}
+    
+    \begin{propriete}
+        Les vecteurs $\vec{u}$ et $\vec{v}$ sont orthogonaux si et seulement si $\vec{u} \cdot \vec{v}=0$.
+    \end{propriete}
+    
+    \begin{demonstration}
+        Si l'un des vecteurs est nul, la démonstration est évidente.\\
+        Supposons le contraire.\\
+        \begin{align*}
+            \vec{u} \cdot \vec{v}=0 & \Leftrightarrow\|\vec{u}\| \times\|\vec{v}\| \times \cos (\vec{u} ; \vec{v})=0\\
+            &\Leftrightarrow \cos (\vec{u} ; \vec{v})=0\\
+            &\Leftrightarrow \text{Les vecteurs\ }\vec{u}\text{\ et\ }  \vec{v}\text{\  sont orthogonaux.}
+        \end{align*}
+    \end{demonstration}
+    
+    \subsection{Projection orthogonale}
+    
+    \begin{definition}
+        Soit une droite d et un point M du plan.\\
+        Le \grasInDef{projeté orthogonal} du point M sur la droite d est le point d'intersection H de la droite d avec la perpendiculaire à d passant par M.
+        \begin{center}
+            \includegraphics[scale=0.8]{1.04.IMG-04}
+        \end{center}
+    \end{definition}
+    
+    \begin{propriete}
+        Soit $\vec{u}$ et $\vec{v}$ deux vecteurs non nuls du plan tels que $\vec{u}=\overrightarrow{O A}$ et $\vec{v}=\overrightarrow{O B}$.\\
+        H est le projeté orthogonal du point $B$ sur la droite (OA). On a $: \vec{u} . \vec{v}=\overrightarrow{O A} \cdot \overrightarrow{O B}=\overrightarrow{O A} \cdot \overrightarrow{O H}$
+        \begin{center}
+            \includegraphics[scale=0.6]{1.04.IMG-06}
+        \end{center}
+    \end{propriete}
+    
+    \begin{demonstration}
+        $\overrightarrow{O A} \cdot \overrightarrow{O B}=\overrightarrow{O A} \cdot(\overrightarrow{O H}+\overrightarrow{H B})$\\
+$=\overrightarrow{O A} \cdot \overrightarrow{O H}+\overrightarrow{O A} \cdot \overrightarrow{H B}$\\
+$=\overrightarrow{O A} \cdot \overrightarrow{O H}$\\
+\ \\
+En effet, les vecteurs $\overrightarrow{O A}$ et $\overrightarrow{H B}$ sont orthogonaux donc $\overrightarrow{O A} \cdot \overrightarrow{H B}=0 .$
+    \end{demonstration}
+    
+    \begin{methodeTitre}{Calculer un produit scalaire par projection}
+        \grasInMet{Enoncé :}\\
+        Soit un carré ABCD de côté $c$. Calculer, en fonction de $c,$ les produits scalaires:
+        \begin{center}
+            \includegraphics[scale=0.8]{1.04.IMG-07}
+        \end{center}
+        \begin{multicols}{3}
+            \begin{enumMet}
+                \item $\overrightarrow{A B} \cdot \overrightarrow{A C}$
+                \item $\overrightarrow{A B} \cdot \overrightarrow{A D}$
+                \item $\overrightarrow{A D} \cdot \overrightarrow{C B}$
+            \end{enumMet}
+        \end{multicols}
+        
+        \grasInMet{Réponse :}\\
+        \begin{enumMet}
+            \item Par projection, on a :
+$\overrightarrow{A B} \cdot \overrightarrow{A C}=\overrightarrow{A B} \cdot \overrightarrow{A B}=\|\overrightarrow{A B}\|^{2}=c^{2}$
+            \item $\overrightarrow{A B} \cdot \overrightarrow{A D}=0$ car les vecteurs $\overrightarrow{A B}$ et $\overrightarrow{A D}$ sont orthogonaux.
+            \item $\overrightarrow{A D} \cdot \overrightarrow{C B}=\overrightarrow{A D} \cdot \overrightarrow{D A}=-\|\overrightarrow{A D}\|^{2}=-c^{2}$
+        \end{enumMet}
+        
+    \end{methodeTitre}
+    
+%    \subsection{Transformation de l'expression $\protect\vv{MA}\cdot\protect\vv{MB}$}
+%    
+%    \begin{propriete}
+%        L'ensemble des points $\mathrm{M}$ vérifiant l'égalité $\overrightarrow{M A} . \overrightarrow{M B}=0$ est le cercle de diamètre [AB].
+%    \end{propriete}
+%    
+%    \begin{demonstration}
+%        \begin{center}
+%            \includegraphics[scale=0.8]{1.04.IMG-08}
+%        \end{center}
+%        Soit O le milieu du segment [AB]. On a \\
+%        $\vv{MA}\cdot \vv{MB}=0$\\
+%        $\Leftrightarrow(\overrightarrow{M O}+\overrightarrow{O A}) \cdot(\overrightarrow{M O}+\overrightarrow{O B})=0$\\
+%        Comme $\mathrm{O}$ est le milieu de $[\mathrm{AB}],$ on $\mathrm{a}: \overrightarrow{O B}=-\overrightarrow{O A}$ Soit:\\
+%        $(M O+\overrightarrow{O A}) \cdot(\overrightarrow{M O}-\overrightarrow{O A})=0$\\
+%        $\Leftrightarrow \overrightarrow{M O}^{2}-\overrightarrow{O A}^{2}=0 \quad \operatorname{car}(\vec{u}+\vec{v}) \cdot(\vec{u}-\vec{v})=\vec{u}^{2}-\vec{v}^{2}$\\
+%        $\Leftrightarrow M O^{2}-O A^{2}=0$\\
+%        Soit : $M O^{2}=O A^{2}$ soit encore $M O=O A$. M appartient donc au cercle de centre O et de rayon OA, c'est-à-dire le cercle de diamètre [AB].
+%    \end{demonstration}
+%    
+%    \begin{propriete}
+%        Un point M, distinct de A et B, appartient au cercle de diamètre [AB] si et seulement si le triangle ABM est rectangle en M.
+%    \end{propriete}
+%    
+%    \begin{remarque}
+%        Justification: $\overrightarrow{M A} \cdot \overrightarrow{M B}=0$ si et seulement si les vecteurs $\overrightarrow{M A}$ et $\overrightarrow{M B}$ sont orthogonaux.
+%        \begin{center}
+%            \includegraphics[scale=1]{1.04.IMG-09}
+%        \end{center}
+%    \end{remarque}
+    
+    \section{Produit scalaire dans un repère orthonormé}
+    
+    Le plan est muni d'un repère orthonormé \Rij
+    
+    \begin{propriete}
+        Soit $\vec{u}$ et $\vec{v}$ deux vecteurs de coordonnées respectives $\Coord{u}{x}{y}$ et $\Coord{v}{x'}{y'}$. On a: $\vec{u} \cdot \vec{v}=x x^{\prime}+y y^{\prime}$
+    \end{propriete}
+    
+    \begin{demonstration}
+        \begin{align*}
+            \vec{u} \cdot \vec{v}&=(x \vec{\imath}+y \vec{\jmath})\left(x^{\prime} \vec{\imath}+y^{\prime} \vec{\jmath}\right)\\
+            &=x x^{\prime} \vec{\imath} \cdot \vec{\imath}+x y^{\prime} \vec{\imath} \cdot \vec{\jmath}+y x^{\prime} \vec{\jmath} \cdot \vec{\imath}+y y^{\prime} \vec{\jmath} \cdot \vec{\jmath}\\
+            &=x x^{\prime}\|\vec{\imath}\|^{2}+x y^{\prime} \vec{\imath} \cdot \vec{\jmath}+y x^{\prime} \vec{\jmath} \cdot \vec{\imath}+y y^{\prime}\|\vec{j}\|^{2}\\
+            &=x x^{\prime}+y y^{\prime}
+        \end{align*}
+        car $\|\vec{\imath}\|=\|\vec{j}\|=1$, le repère étant normé, et $\vec{\imath} \cdot \vec{\jmath}=\vec{\jmath} \cdot \vec{\imath}=0$, le repère étant orthogonal.
+    \end{demonstration}
+    
+    \begin{methodeTitre}{Calculer un produit scalaire à l'aide des coordonnées}
+        \grasInMet{Enoncé :}\\
+        Soit $\Coord{u}{5}{-4}$ et $\Coord{v}{-3}{7}$ deux vecteurs.\\
+        Calculer $\vec{u} \cdot \vec{v}$
+        \ \\
+        \grasInMet{Réponse :}\\
+        $\vec{u} \cdot \vec{v}=5 \times(-3)+(-4) \times 7=-15-28=-43$
+    \end{methodeTitre}
+
+
+    \begin{methodeTitre}{Déterminer un angle à l'aide du produit scalaire}
+        \grasInMet{Enoncé :}\\
+        Calculer la mesure de l'angle $(\overrightarrow{A B} ; \overrightarrow{C D})$ en lisant les coordonnées des points $\mathrm{A}, \mathrm{B}, \mathrm{C}$ et $\mathrm{D}$ dans le repère.\\
+        \begin{center}
+            \includegraphics[scale=0.8]{1.04.IMG-10}
+        \end{center}
+        \ \\
+        \grasInMet{Réponse :}\\
+        On a :\\
+    $\overrightarrow{A B} \cdot \overrightarrow{C D}=\|\overrightarrow{A B}\| \times\|\overrightarrow{C D}\| \times \cos (\overrightarrow{A B} ; \overrightarrow{C D})$\\
+    $=\sqrt{(4-(-1))^{2}+(2-1)^{2}} \times \sqrt{(4-2)^{2}+(3-(-1))^{2}} \times \cos (\overrightarrow{A B} ; \overrightarrow{C D})$\\
+    $=\sqrt{520} \times \cos (\overrightarrow{A B} ; \overrightarrow{C D})$\\
+    $=2 \sqrt{130} \times \cos (\overrightarrow{A B} ; \overrightarrow{C D})$\\
+    \ \\
+    On a également $: \overrightarrow{A B}(5 ;-1)$ et $\overrightarrow{C D}(-2 ;-4),$ donc $\overrightarrow{A B} \cdot \overrightarrow{C D}=5 \times(-2)+(-1) \times(-4)=-6$\\
+    On a ainsi $: 2 \sqrt{130} \times \cos (\overrightarrow{A B} ; \overrightarrow{C D})=-6$\\
+    Et donc $: \cos (\overrightarrow{A B} ; \overrightarrow{C D})=-\frac{6}{2 \sqrt{130}}=-\frac{3}{\sqrt{130}}$\\
+    Et $:(\overrightarrow{A B} ; \overrightarrow{C D}) \approx 105,3^{\circ}$\\
+    \end{methodeTitre}
+    
+    % \section{Produit scalaire et norme}
+    
+    % \subsection{Propriétés}
+
+    % Soit un vecteur $\vec{u},$ on a :
+    % $\vec{u} \cdot \vec{u}=\|\vec{u}\| \times\|\vec{u}\| \times \cos (\vec{u} ; \vec{u})=\|\vec{u}\|^{2} \times \cos 0=\|\vec{u}\|^{2}$\\
+    % et\\
+    % $\vec{u}\cdot \vec{u}=\vec{u}^{2}$\\
+    % On a ainsi $: \vec{u}^{2}=\vec{u} \cdot \vec{u}=\|\vec{u}\|^{2}$
+    
+    % \begin{propriete}
+    %     Propriété : Soit $\vec{u}$ et $\vec{v}$ deux vecteurs. On a :
+    %     \begin{itemDef}
+    %         \item $\vec{u} \cdot \vec{v}=\dfrac{1}{2}\left(\|\vec{u}\|^{2}+\|\vec{u}\|^{2}-\|\vec{u}-\vec{v}\|^{2}\right)$
+    %         \item $\vec{u} \cdot \vec{v}=\dfrac{1}{2}\left(\|\vec{u}+\vec{v}\|^{2}-\|\vec{u}\|^{2}-\|\vec{v}\|^{2}\right)$
+    %         \item $\vec{u} \cdot \vec{v}=\dfrac{1}{4}\left(\|\vec{u}+\vec{v}\|^{2}-\|\vec{u}-\vec{v}\|^{2}\right)$
+    %     \end{itemDef}
+    % \end{propriete}
+    
+    % \begin{demonstrationTitre}{Démonstration de la première formule}
+    %     \begin{align*}
+    %         \|\vec{u}-\vec{v}\|^{2}&=(\vec{u}-\vec{v})^{2} \\
+    %         &=\vec{u}^{2}-2 \vec{u} \cdot \vec{v}+\vec{v}^{2} \\
+    %         &=\|\vec{u}\|^{2}-2 \vec{u} \cdot \vec{v}+\|\vec{v}\|^{2}
+    %     \end{align*}
+    %     Donc $\vec{u} \cdot \vec{v}=\dfrac{1}{2}\left(\|\vec{u}\|^{2}+\|\vec{u}\|^{2}-\|\vec{u}-\vec{v}\|^{2}\right)$
+    % \end{demonstrationTitre}
+
+    % \begin{propriete}
+    %     Soit $A, B$ et $C$ trois points du plan. On a :
+    %     $\overrightarrow{A B} \cdot \overrightarrow{A C}=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)$
+    % \end{propriete}
+    
+    % \begin{demonstration}
+    %     \begin{align*}
+    %         \overrightarrow{A B} \cdot \overrightarrow{A C}&=\dfrac{1}{2}\left(\|\overrightarrow{A B}\|^{2}+\|\overrightarrow{A C}\|^{2}-\|\overrightarrow{A B}-\overrightarrow{A C}\|^{2}\right) \\
+    %         &=\dfrac{1}{2}\left(A B^{2}+A C^{2}-\|\overrightarrow{C B}\|^{2}\right) \\
+    %         &=\dfrac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)
+    %     \end{align*}
+    % \end{demonstration}
+    
+    % \begin{exemple}
+    %     Si $\mathrm{AB}=6, \mathrm{AC}=5$ et $\mathrm{CB}=4$ alors:
+    %     $$
+    %     \overrightarrow{A B} \cdot \overrightarrow{A C}=\frac{1}{2}\left(A B^{2}+A C^{2}-C B^{2}\right)=\frac{1}{2}\left(6^{2}+5^{2}-4^{2}\right)=\frac{1}{2}(36+25-16)=\frac{45}{2}
+    %     $$
+    % \end{exemple}
+    
+    % \begin{methodeTitre}{Calculer un produit scalaire à l'aide des normes}
+    %     \grasInMet{Enoncé :}\\
+    %     On considère la figure ci-dessous, calculer le produit scalaire $\overrightarrow{C G} \cdot \overrightarrow{C F}$
+    %     \begin{center}
+    %         \includegraphics[scale=0.8]{1.04.IMG-02}
+    %     \end{center}
+    %     \ \\
+    %     \grasInMet{Réponse :}\\
+    %     $\overrightarrow{C G} \cdot \overrightarrow{C F}=\frac{1}{2}\left(C G^{2}+C F^{2}-G F^{2}\right)$\\
+    %     $=\dfrac{1}{2}\left(6^{2}+7^{2}-3^{2}\right)$\\
+    %     $=38$
+    % \end{methodeTitre}
+    
+    % \subsection{Théorème d'Al Kashi}
+    
+    % \begin{theoreme}
+    %     Dans un triangle $\mathrm{ABC},$ on a, avec les notations de la figure :
+    %     $$
+    %     a^{2}=b^{2}+c^{2}-2 b c \cos \hat{A}
+    %     $$
+    %     \begin{center}
+    %         \includegraphics[scale=0.8]{1.04.IMG-03}
+    %     \end{center}
+    % \end{theoreme}
+    
+    % \begin{demonstration}
+    %     $\overrightarrow{A B} \cdot \overrightarrow{A C}=A B \times A C \times \cos \hat{A}=b c \cos \hat{A}$\\
+    %     et\\
+    %     $\overrightarrow{A B} \cdot \overrightarrow{A C}=\frac{1}{2}\left(A B^{2}+A C^{2}-B C^{2}\right)=\frac{1}{2}\left(b^{2}+c^{2}-a^{2}\right)$\\
+    %     Donc $: \frac{1}{2}\left(b^{2}+c^{2}-a^{2}\right)=b c \cos \hat{A}$\\
+    %     Soit $: b^{2}+c^{2}-a^{2}=2 b c \cos \hat{A}$\\
+    %     Soit encore $: a^{2}=b^{2}+c^{2}-2 b c \cos \hat{A}$\\
+    % \end{demonstration}
+    
+    % \begin{methodeTitre}{Calculer un produit scalaire à l'aide des normes}
+    %     \grasInMet{Enoncé :}\\
+    %     On considère la figure ci-dessous, calculer la mesure de l'angle $\widehat{B A C}$ au degré près.
+    %     \begin{center}
+    %         \includegraphics[scale=0.8]{1.04.IMG-03}
+    %     \end{center}
+    %     \ \\
+    %     \grasInMet{Réponse :}\\
+    %     D'après le théorème d'Al Kashi, on a :\\
+    %     $C B^{2}=A B^{2}+A C^{2}-2 \times A B \times A C \times \cos \widehat{B A C}$\\
+    %     $4^{2}=6^{2}+5^{2}-2 \times 6 \times 5 \times \cos \widehat{B A C}$\\
+    %     $16=36+25-60 \cos \widehat{B A C}$\\
+    %     $60 \cos \widehat{B A C}=36+25-16$\\
+    %     $60 \cos \widehat{B A C}=45$\\
+    %     $\cos \widehat{B A C}=\dfrac{45}{60}$\\
+    %     $\cos \widehat{B A C}=\dfrac{3}{4}$\\
+    %     $\widehat{B A C} \approx 41^{\circ}$
+    % \end{methodeTitre}
+    
+    % \section{Vecteur Normal}
+    
+    % \subsection{définition et propriétés}
+    
+    % \begin{definition}
+    %     Un \grasInDef{vecteur normal} à une droite $d$ quelconque du plan est un vecteur non nul et orthogonal à un vecteur directeur de $d$.
+    % \end{definition}
+    
+    % \begin{propriete}
+    %     Deux droites du plan sont perpendiculaires si et seulement si un vecteur normal de l'une est orthogonal à un vecteur normal de l'autre.
+    % \end{propriete}
+    
+    % \begin{demonstration}
+    %     On suppose que $d$ et $d^{\prime}$ sont perpendiculaires. Si $\vec{u}$ est un vecteur directeur de $d$ et $\vec{v}$ de $d^{\prime},$ alors $\vec{u}$ et $\vec{v}$ sont orthogonaux. $\vec{v}$ étant normal à $d$ et $\vec{u}$ à $d^{\prime},$ la propriété est vérifiée.\\
+    %     Réciproquement, si $\vec{u},$ vecteur normal à $d,$ est orthogonal à $\vec{v},$ vecteur normal à $d^{\prime},$ alors $\vec{v}$ est un vecteur directeur de $d$ et $\vec{u}$ de $d^{\prime} .$ Ayant des vecteurs directeurs orthogonaux, d et $d^{\prime}$ sont perpendiculaires.
+    % \end{demonstration}
+    
+    % \begin{methode}
+    %     \grasInMet{Enoncé:}\\
+    %     Soit $d$ une droite de vecteur directeur $\Coord{u}{3}{5}$.
+    %     \begin{enumMet}
+    %         \item Déterminer une condition sur les coordonnées d'un vecteur $\vv{n}$ non nul pour qu'il soit normal à $d$.
+    %         \item Le vecteur $\Coord{v}{-10}{6}$ est-il un vecteur normal à $d$?
+    %     \end{enumMet}
+        
+    %     \grasInMet{Réponse:}\\
+    %     \begin{enumMet}
+    %         \item Si $\Coord{n}{x}{y}$ est un vecteur normal à $d$, alors il est orthogonal à $\vv{u}$.\\
+    %         Donc $\vv{u} \cdot \vv{n}=3 x+5 y=0$ soit $y=-\dfrac{3}{5} x$.\\
+    %         Les coordonnées de $\vv{n}$ sont donc de la forme $\CoordSV{x}{-\dfrac{3}{5}x}$ avec $x \in \R$.
+    %         \item On calcule le produit scalaire $\vv{u}\cdot\vv{v}$\\
+    %         $\vv{u}\cdot\vv{v}=3\times(-10)+5\times6=-30+30=0$\\
+    %         le vecteur $\vv{v}$ est orthogonal au vecteur directeur $\vv{u}$ de la droite $d$, donc $\vv{v}$ est un vecteur normal à $d$. 
+    %     \end{enumMet}
+    % \end{methode}
+    
+    % \subsection{Équations cartésiennes et vecteur normal}
+    
+    % \begin{proprieteTitre}{Rappel : équations cartésiennes}
+    %     Toute droite $D$ admet une équation de la forme $a x+b y+c=0$ avec $(a ; b) \neq(0 ; 0) .$ Un \grasInDef{vecteur directeur} de $D$ est $\Coord{u}{-b}{a}$ \\
+    %     Cette équation est appelée \grasInDef{équation cartésienne} de la droite $D$.
+    % \end{proprieteTitre}
+        
+    % \begin{propriete}
+    %     Soient $a, b$ et $c$ trois réels tels que $a$ et $b$ ne sont pas simultanément nuls.\\
+    %     La droite d'équation cartésienne $a x+b y+c=0$ admet pour \grasInDef{vecteur normal} le vecteur $\Coord{n}{a}{b}$.\\
+    %     \ \\
+    %     Réciproquement, toute droite ayant pour \grasInDef{vecteur normal} le vecteur non nul $\Coord{n}{a}{b}$ admet une équation cartésienne de la forme $a x+b y+c=0$.
+    % \end{propriete}
+        
+    % \begin{exemple}
+    %     La droite d'équation cartésienne $3 x-4 y+5=0$ admet pour vecteur normal le vecteur $\Coord{n}{3}{-4}$  et pour vecteur directeur le vecteur $\Coord{u}{4}{3}$.\\
+    %     On a bien $\vv{n} \cdot \vv{u}=0$
+    % \end{exemple}
+    
+    % \begin{methode}
+    %     \grasInMet{Enoncé:}\\
+    %     Dans un repère orthonormé, déterminer, de deux façons différentes, une équation cartésienne de la droite $d$ passant par le point $\mathrm{A}(5 ;-1)$ et de vecteur normal $\Coord{n}{2}{-3}$.
+        
+    %     \grasInMet{Réponse:}\\
+    %     \begin{enumMet}
+    %         \item 1. On lit sur le vecteur normal que $a=2$ et $b=-3$.
+    %         Donc une équation de $d$ est de la forme $2 x-3 y+c=0$. $\mathrm{A}(5 ;-1) \in d$ donc $2 \times 5-3 \times(-1)+c=0$ et donc $c=-13$.\\
+    %         Ainsi, une équation de la droite $d$ est $2 x-3 y-13=0$.
+    %         \item Soit $\mathrm{M}(x ;y)$ appartenant à $d .$ Alors $\vv{\mathrm{AM}}$ est un vecteur directeur de $d$ et est orthogonal au vecteur $\vv{n}$.\\
+    %         $\vv{\mathrm{AM}} \cdot \vv{n}=0 \iff \CoordSV{x-5}{y+1} \cdot \CoordSV{2}{-3}=0 \iff 2(x-5)-3(y+1)=0 \iff 2 x-3 y-13=0$\\
+    %         Donc une équation de la droite $d$ est $2 x-3 y-13=0$
+    %     \end{enumMet}
+    % \end{methode}
+

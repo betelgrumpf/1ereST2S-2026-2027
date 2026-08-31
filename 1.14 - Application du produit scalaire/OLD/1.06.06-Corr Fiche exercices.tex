@@ -1,0 +1,331 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - Fiche d'exercices - Appl. Produit Scalaire}}
+
+\begin{document}
+\graphicspath{{images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+\textcolor{red}{Correction - Fiche d'exercices}\\
+Application produit scalaire
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+% \begin{center}\textbf{2h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+% %\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+% \begin{center}
+% %On veillera à ENCADRER ses résultats et soigner sa copie.\\
+% Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+% \end{center}
+
+\exerciceDS{}
+$\mathrm{ABC}$ est un triangle tel que :$A B=2, A C=6 \text { et } \widehat{B A C}=60^{\circ} .$\\
+Calculer la valeur exacte de la longueur $B C$.
+
+\begin{corrBox}
+$\vv{AB}\cdot\vv{AC}=AB\times AC\times\cos(\widehat{BAC})=2\times6\times\cos(60)=6$\\
+On a également :\\
+$\vv{AB}\cdot\vv{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)$\\
+Soit : $BC^2=AB^2+AC^2-2\vv{AB}\cdot\vv{AC}$\\
+Donc : $BC^2=2^2+6^2-2\times6=28$\\
+D'ou $BC=\sqrt{28}=2\sqrt{7}$
+\end{corrBox}
+
+\exerciceDS{}
+ABCD est un parallélogramme tel que :$A B=6, A D=4 \text { et } \widehat{D A B}=60^{\circ} .$
+%\begin{multicols}{2}
+\begin{enumMet}
+    \item Construire une figure.\\
+    \begin{corrBox}
+        \newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+        \newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+        \newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+        \psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=1.6pt,arrowsize=3pt 2,arrowinset=0.25}
+        \begin{pspicture*}(-2.28,7)(22.12,12.02)
+        \psline[linewidth=2.pt](3.,8.)(9.,8.)
+        \pscustom[linewidth=2.pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
+        \parametricplot{0.0}{1.0471975511965976}{0.6*cos(t)+3.|0.6*sin(t)+8.}
+        \lineto(3.,8.)\closepath}
+        \psline[linewidth=2.pt](3.,8.)(5.,11.464101615137757)
+        \psline[linewidth=2.pt](5.,11.464101615137757)(11.,11.464101615137757)
+        \psline[linewidth=2.pt](11.,11.464101615137757)(9.,8.)
+        \begin{scriptsize}
+        %\psdots[dotstyle=*,linecolor=ududff](3.,8.)
+        \rput[bl](2.6,7.66){\ududff{$A$}}
+        %\psdots[dotstyle=*,linecolor=xdxdff](9.,8.)
+        \rput[bl](8.94,7.48){\xdxdff{$B$}}
+        \rput[bl](5.98,7.7){$6$}
+        \rput[bl](3.68,8.26){\qqwuqq{$\alpha = 60^{\circ}$}}
+        %\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](5.,11.464101615137757)
+        \rput[bl](4.78,11.72){\darkgray{$D$}}
+        %\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](11.,11.464101615137757)
+        \rput[bl](11.38,11.62){\darkgray{$C$}}
+        \rput[bl](3.56,9.8){$4$}
+        \end{scriptsize}
+        \end{pspicture*}
+    \end{corrBox}
+    \item Calculer la longueur BD.\\
+    \begin{corrBox}
+        $\vv{AB}\cdot\vv{AD}=AB\times AD\times\cos(\widehat{BAD})=6\times4\times\cos(60)=12$\\
+        $\vv{A B} \cdot \vv{A D}=\dfrac{1}{2}\left(A B^{2}+A D^{2}-B D^{2}\right)$\\
+        $12=\dfrac{1}{2}\left(6^{2}+4^{2}-B D^{2}\right)$\\
+        $24=36+16-BD^2$\\
+        $BD^2=28$\\
+        $BD=\sqrt{28}=2\sqrt{7}$
+    \end{corrBox}
+    \item Quelle est la mesure de l'angle $\widehat{A B C}$ ?\\
+    \begin{corrBox}
+        Dans un quadrilatère la somme des angles fait $360^{\circ}$.\\
+        De plus dans un parallélogramme, les côtés opposés sont égaux.\\
+        Donc $\widehat{ABC}=\dfrac{1}{2}(360-2\times60)=120^{\circ}$
+    \end{corrBox}   
+    \item Calculer la longueur AC.\\
+    \begin{corrBox}
+        $\vv{BA}\cdot\vv{BC}=AB\times BC\times\cos(\widehat{ABC})=6\times4\times\cos(120)=-12$\\
+        $\vv{BA} \cdot \vv{BC}=\dfrac{1}{2}\left(BA^{2}+BC^{2}-AC^{2}\right)$\\
+        $-12=\dfrac{1}{2}\left(6^{2}+4^{2}-AC^{2}\right)$\\
+        $-24=36+16-AC^2$\\
+        $AC^2=76$\\
+        $AC=\sqrt{76}$
+    \end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{}
+
+\begin{minipage}[c]{0.55\linewidth}
+Un voilier V approche de la côte. Il est situé à 9 milles du phare A, à 5 milles du phare $B$ et l'angle $\widehat{AVB}$ mesure $60^{\circ} .$
+Calculer la distance AB entre les deux phares. Arrondir au dixième.
+\end{minipage} \hfill
+\begin{minipage}[c]{0.4\linewidth}
+\begin{center}
+    \includegraphics[scale=0.9]{images/1.06.04 - Img01.png}
+\end{center}
+\end{minipage}
+
+\begin{corrBox}
+    $\vv{VA}\cdot\vv{VB}=VA\times VB\times\cos(\widehat{AVB})=9\times5\times\cos(60)=22,5$\\
+    $\vv{VA} \cdot \vv{VB}=\dfrac{1}{2}\left(VA^{2}+VB^{2}-AB^{2}\right)$\\
+    $22,5=\dfrac{1}{2}\left(9^{2}+5^{2}-AB^{2}\right)$\\
+    $45=81+25-AB^2$\\
+    $AB^2=61$\\
+    $AB=\sqrt{61}\approx7,8$
+\end{corrBox}
+
+\exerciceDS{}
+Dans les 2 cas ci dessous, calculer $\vv{A B} \cdot \vv{A C}$.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \ \\
+    \includegraphics[scale=1.2]{images/1.06.04 - Img02.png}\\
+    \begin{corrBox}
+        $\vv{AB}\cdot\vv{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)=\dfrac{1}{2}(4^2+6^2-3^2)=21,5$
+    \end{corrBox}
+    \columnbreak
+    \item \ \\
+    \includegraphics[scale=1.2]{images/1.06.04 - Img03.png}\\
+    \begin{corrBox}
+        $\vv{AB}\cdot\vv{AC}=xx'+yy'=-3\times1,5+(-1)\times(-2,5)=-2$
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+
+\exerciceDS{}
+On considère deux vecteurs $\vv{u}$ et $\vv{v}$ du plan tels que $\|\vv{u}+\vv{v}\|=5$ et $\|\vv{u}-\vv{v}\|=3$. Calculer le produit scalaire $\vv{u} \cdot \vv{v}$.\\
+
+\begin{corrBox}
+    $\vv{u} \cdot \vv{v}=\dfrac{1}{4}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)=\dfrac{1}{4}\times(5^2-3^2)=\dfrac{1}{4}\times16=4$
+\end{corrBox}
+
+\exerciceDS{}
+Dans le plan muni d'un repère orthonormé, on considère les vecteurs
+$\Coord{u}{2}{-3}$ et $\Coord{v}{1}{2}$.
+\begin{enumMet}
+    \item calculer $\vv{u} \cdot \vv{v},\|\vv{u}\|$ et $\|\vv{v}\|$.\\
+    \begin{corrBox}
+        $\vv{u}\cdot\vv{v}=2\times1-3\times2=-4$, $\left\|\vv{u}\right\|=\sqrt{2^2+(-3)^2}=\sqrt{13}$ et $\left\|\vv{v}\right\|=\sqrt{1^2+2^2}=\sqrt{5}$
+    \end{corrBox}
+    \item Calculer de deux façons les nombres : $\|\vv{u}+\vv{v}\|^{2} \text { et }\|\vv{u}-\vv{v}\|^{2}$\\
+    \begin{corrBox}
+        \fbox{$\left\|\vv{u}+\vv{v}\right\|^2$}\\
+        \grasInMet{1ère méthode:}\\
+        On sait que $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}\right)$ donc:\\
+        $\|\vv{u}+\vv{v}\|^{2}=2\vv{u} \cdot \vv{v}+\|\vv{u}\|^{2}+\|\vv{v}\|^{2}=2\times(-4)+13+5=10$\\
+        \grasInMet{2ème méthode:}\\
+        $\Coord{u}{2}{-3}+\Coord{v}{1}{2}=\vv{u}+\vv{v} \CoordSV{3}{-1}$\\
+        $\|\vv{u}+\vv{v}\|^{2}=3^2+(-1)^2=10$\\
+        \ \\
+        \fbox{$\left\|\vv{u}-\vv{v}\right\|^2$}\\
+        \grasInMet{1ère méthode:}\\
+        On sait que $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}\|^{2}+\|\vv{v}\|^{2}-\|\vv{u}-\vv{v}\|^{2}\right)$ donc:\\
+        $\|\vv{u}-\vv{v}\|^{2}=\|\vv{u}\|^{2}+\|\vv{v}\|^{2}-2\vv{u} \cdot \vv{v}=13+5-2\times(-4)=26$\\
+        \grasInMet{2ème méthode:}\\
+        $\Coord{u}{2}{-3}-\Coord{v}{1}{2}=\vv{u}-\vv{v} \CoordSV{1}{-5}$\\
+        $\|\vv{u}-\vv{v}\|^{2}=1^2+(-5)^2=26$
+    \end{corrBox}
+    \item Calculer de deux façons $(\vv{u}+\vv{v}) \cdot(\vv{u}-\vv{v})$.\\
+    \begin{corrBox}
+        \grasInMet{1ère méthode:}\\
+            $(\vv{u}+\vv{v}) \cdot(\vv{u}-\vv{v})=\|\vv{u}\|^{2}-\|\vv{v}\|^{2}=13-5=8$\\
+        \grasInMet{2ème méthode:}\\
+        $\vv{u}+\vv{v} \CoordSV{3}{-1} \cdot \vv{u}-\vv{v} \CoordSV{1}{-5}=3\times1+(-1)\times(-5)=8$
+    \end{corrBox}
+    
+\end{enumMet}
+
+\exerciceDS{}
+Le plan est muni d'un repère orthonormé. Dans chaque cas, calculer $\vv{A B} \cdot \vv{A C}$ puis une mesure (arrondie au degré près) de l'angle $\widehat{B A C}$.
+\begin{enumMet}
+    \item $A(-1 ; 4), B(2 ; 2)$ et $C(1 ; 5)$\\
+    \begin{corrBox}
+        $\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{2-(-1)}{2-4}=\Coord{AB}{3}{-2} \Longrightarrow AB=\sqrt{3^2+(-2)^2}=\sqrt{13}$\\
+        $\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{1-(-1)}{5-4}=\Coord{AC}{2}{1} \Longrightarrow AC=\sqrt{2^2+1^2}=\sqrt{5}$\\
+        $\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{1-2}{5-2}=\Coord{BC}{-1}{3} \Longrightarrow BC=\sqrt{(-1)^2+3^2}=\sqrt{10}$\\
+        $\vv{A B} \cdot \vv{A C}=3\times2+(-2)\times1=4$\\
+        $\vv{A B} \cdot \vv{A C}=AB\times AC\times\cos(\widehat{B A C})$\\
+        $4=\sqrt{13}\times\sqrt{5}\times\cos(\widehat{B A C})$\\
+        $\widehat{B A C}=\cos^{-1}\left(\dfrac{4}{\sqrt{13}\times\sqrt{5}}\right)\approx60^{\circ}$
+    \end{corrBox}
+    \item $A(2 ; 4), B(1 ; 3)$ et $C(4 ; 2)$\\
+    \begin{corrBox}
+        $\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{1-2}{3-4}=\Coord{AB}{-1}{-1} \Longrightarrow AB=\sqrt{(-1)^2+(-1)^2}=\sqrt{2}$\\
+        $\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{4-2}{2-4}=\Coord{AC}{2}{-2} \Longrightarrow AC=\sqrt{2^2+(-2)^2}=\sqrt{8}$\\
+        $\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{4-1}{2-3}=\Coord{BC}{3}{-1} \Longrightarrow BC=\sqrt{3^2+(-1)^2}=\sqrt{10}$\\
+        $\vv{A B} \cdot \vv{A C}=(-1)\times2+(-1)\times(-2)=0$\\
+        donc $\widehat{B A C}=90^{\circ}$
+    \end{corrBox}
+    \item $A(0 ; 4), B(-3 ; 5)$ et $C(6 ; 2)$\\
+    \begin{corrBox}
+        $\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{-3-0}{5-4}=\Coord{AB}{-3}{1} \Longrightarrow AB=\sqrt{(-3)^2+1^2}=\sqrt{10}$\\
+        $\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{6-0}{2-4}=\Coord{AC}{6}{-2} \Longrightarrow AC=\sqrt{6^2+(-2)^2}=\sqrt{40}$\\
+        $\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{6-(-3)}{2-5}=\Coord{BC}{9}{-3} \Longrightarrow BC=\sqrt{9^2+(-3)^2}=\sqrt{90}$\\
+        $\vv{A B} \cdot \vv{A C}=-3\times6+1\times(-2)=-20$\\
+        $\vv{A B} \cdot \vv{A C}=AB\times AC\times\cos(\widehat{B A C})$\\
+        $-20=\sqrt{10}\times\sqrt{40}\times\cos(\widehat{B A C})$\\
+        $-20=20\times\cos(\widehat{B A C})$\\
+        $\widehat{B A C}=\cos^{-1}\left(-1\right)=180^{\circ}$
+    \end{corrBox}
+\end{enumMet}
+
+
+\exerciceDS{}
+Dans un repère orthonormé du plan, on considère les points $A(1 ; 4), B(-3 ;-2)$ et $C(2 ;-5)$.\\
+Déterminer les angles du triangle $A B C$ à 0,1 degré près.\\
+\begin{corrBox}
+    On utilise le théorème d'AL-Kashi : Dans un triangle $\mathrm{ABC},$ on a, avec les notations de la figure :
+    $$
+    a^{2}=b^{2}+c^{2}-2 b c \cos \hat{A} \iff \hat{A}=\cos^{-1}\left(\dfrac{b^2+c^2-a^2}{2bc}\right)
+    $$
+    \begin{center}
+        \includegraphics[scale=0.7]{1.04.IMG-03}
+    \end{center}
+    On commence donc par calculer les 3 longueurs:\\
+    $\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{-3-1}{-2-4}=\Coord{AB}{-4}{-6} \Longrightarrow AB=\sqrt{(-4)^2+(-6)^2}=\sqrt{52}$\\
+    $\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{2-1}{-5-4}=\Coord{AC}{1}{-9} \Longrightarrow AC=\sqrt{1^2+(-9)^2}=\sqrt{82}$\\
+    $\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{2-(-3)}{-5-(-2)}=\Coord{BC}{5}{-3} \Longrightarrow BC=\sqrt{5^2+(-3)^2}=\sqrt{34}$\\
+    On peut maintenant calculer les angles:\\
+    $\widehat{BAC}=\cos^{-1}\left(\dfrac{AC^2+AB^2-BC^2}{2\times AC\times AB}\right)=\cos^{-1}\left(\dfrac{82+52-34}{2\times \sqrt{82}\times \sqrt{52}}\right)\approx40,0^{^\circ}$\\
+    $\widehat{ABC}=\cos^{-1}\left(\dfrac{BC^2+AB^2-AC^2}{2\times BC\times AB}\right)=\cos^{-1}\left(\dfrac{34+52-82}{2\times \sqrt{34}\times \sqrt{52}}\right)\approx87,3^{^\circ}$\\
+    $\widehat{ACB}=180-\widehat{BAC}-\widehat{ABC}=180-40-87,3=52,7^{^\circ}$
+\end{corrBox}
+
+\exerciceDS{}
+$A B C$ est un triangle tel que $A B=4, A C=3$ et $\widehat{B A C}=135^{\circ} . M$ est le milieu du segment $[A C]$ et $P$ est le point déini par $\vv{A P}=\dfrac{3}{4} \vv{A B}$.
+\begin{enumMet}
+    \item En notant que $\vv{M P}=\vv{A P}-\vv{A M}$, calculer $\vv{M P}^2$.\\
+    \begin{corrBox}
+        $\vv{M P}^2=(\vv{A P}-\vv{A M})^2=\vv{A P}^2-2\vv{A P}\cdot\vv{A M}+\vv{A M}^2=\vv{A P}^2-2\times \dfrac{3}{4}\times\dfrac{1}{2}\vv{A B}\cdot\vv{A C}+\vv{A M}^2$\\
+        $\vv{M P}^2=3^2-\dfrac{3}{4}\times3\times4\times\cos(135)+1,5^2=\dfrac{18\sqrt{2}+45}{4}$
+    \end{corrBox}
+    \item En déduire la longueur $M P$.\\
+    \begin{corrBox}
+        $MP^2=\dfrac{18\sqrt{2}+45}{4} \iff MP=\sqrt{\dfrac{18\sqrt{2}+45}{4}}\approx4,2$
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+$A B C D$ est un parallélogramme tel que $A B=3$, $A D=5$ et $A C=6$.
+\begin{enumMet}
+    \item 1. Rappeler la formule exprimant $\vv{u} \cdot \vv{v}$ en fonction de $\|\vv{u}\|,\|\vv{v}\|$ et $\|\vv{u}+\vv{v}\|$.\\
+    Calculer alors le produit scalaire $\vv{A B} \cdot \vv{A D}$.\\
+    \begin{corrBox}
+        On sait que $\vv{u} \cdot \vv{v}=\dfrac{1}{2}\left(\|\vv{u}+\vv{v}\|^{2}-\|\vv{u}\|^{2}-\|\vv{v}\|^{2}\right)$ donc\\
+        $\vv{AB} \cdot \vv{AD}=\dfrac{1}{2}\left(\|\vv{AB}+\vv{AD}\|^{2}-\|\vv{AB}\|^{2}-\|\vv{AD}\|^{2}\right)=\dfrac{1}{2}(6^2-5^2-3^2)=1$
+    \end{corrBox}   
+    \item En déduire une mesure, en degré, de l'angle $\widehat{B A D}$ (on donnera une valeur arrondie au degré près).\\
+    \begin{corrBox}
+        $\vv{AB}\cdot\vv{AD}=AB\times AD\times\cos(\widehat{BAD})$\\
+        $1=3\times5\times\cos(\widehat{BAD})$\\
+        $\widehat{BAD}=\cos^{-1}\left(\dfrac{1}{15}\right)\approx86\degree$
+    \end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+$A B C D$ est un parallélogramme tel que $A B=4$, $A D=6$ et $\widehat{B A D}=40^{\circ}$.\\
+Calculer le produit scalaire $\vv{A B} \cdot \vv{A C}$ (on pourra décomposer le vecteur $\vv{A C}$ ).
+
+\begin{corrBox}
+\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-0.78,-0.54)(11,4.5)
+\pspolygon[linewidth=2.pt,linecolor=red,fillcolor=red,fillstyle=solid,opacity=0.1](1.,1.)(4.06,3.57)(10.06,3.57)(7.,1.)
+\pscustom[linewidth=2.pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
+\parametricplot{0.0}{0.6981317007977319}{0.6*cos(t)+1.|0.6*sin(t)+1.}
+\lineto(1.,1.)\closepath}
+\begin{scriptsize}
+\rput[bl](0.66,1.14){\large{$A$}}
+\rput[bl](6.78,1.2){\large{$D$}}
+\rput[bl](1.7,1.14){\large{\qqwuqq{$\alpha = 40^{\circ}$}}}
+\rput[bl](3.98,3.88){\large{$B$}}
+\rput[bl](9.92,3.74){\large{$C$}}
+\rput[bl](2.78,2.16){\large{\red{AB = 4}}}
+\rput[bl](4.04,1.18){\large{\red{AD = 6}}}
+\end{scriptsize}
+\end{pspicture*}
+
+$\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot (\vv{A D}+\vv{DC})$\\
+$\phantom{\vv{A B} \cdot \vv{A C}}=\vv{A B} \cdot (\vv{A D}+\vv{AB})$\\
+$\phantom{\vv{A B} \cdot \vv{A C}}=\vv{A B} \cdot \vv{A D} + \vv{A B} \cdot \vv{A B}$\\
+$\phantom{\vv{A B} \cdot \vv{A C}}=AB\times AD\times\cos(\widehat{BAD}) + AB\times AB$\\
+$\phantom{\vv{A B} \cdot \vv{A C}}=4\times 6\times\cos(40) + 4\times 4$\\
+$\phantom{\vv{A B} \cdot \vv{A C}}\approx34,4$
+\end{corrBox}
+
+
+
+
+
+\end{document}
+

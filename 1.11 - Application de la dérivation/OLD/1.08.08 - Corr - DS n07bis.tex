@@ -1,0 +1,291 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+%  ------------------------------------------  Modules usuels  --------------------------------------
+%  --------------------------------------------------------------------------------------------------------
+
+\usepackage{amsmath} 	
+\usepackage{amssymb} 
+\usepackage{listings}         
+\usepackage{numprint} 
+\usepackage{pifont}
+
+%  --------------------------------------------------------------------------------------------------------
+% ----------------------  packages pour fontes et caractères spéciaux  ---------------------
+%  --------------------------------------------------------------------------------------------------------
+
+\usepackage{eurosym}   
+\usepackage{amsfonts}   
+\usepackage{amstext}       
+\usepackage{amsfonts}	
+\usepackage{mathrsfs}	 
+
+\usepackage{pstricks,pst-all,pstricks-add,pst-tree,pst-node,pst-3dplot}
+
+%------------------------------------------------------------------------------------------------------
+%  --------------------------  Francisation et gestion des caractères sous mac --------------------------------------------------------------------------------------------------------
+
+\usepackage[francais]{babel}   
+\usepackage[utf8]{inputenc}
+\usepackage[OT1,T1]{fontenc} 
+%  --------------------------------------------------------------------------------------------------------
+% ------------------------------------Packages  de  mise en page ---------------------------
+%--------------------------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr}	% en-têtes et pieds de pages
+\usepackage{amsfonts}
+
+ \usepackage{multicol} % permet l'utilisation du multicolonnage dans le texte. La syntaxe est \begin{multicols}{nb de colonnes}    ......  \end{multicols}
+ 
+\usepackage{calc}            % permet de faire un minimum de calcul sur les arguments des commandes et macros (utilisé dans la def de l'environnement preuve )
+\usepackage{epic}            % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{variations}   % permet d'obtenir de joli tableau de variations
+\usepackage{enumerate}  %permet de faire des listes personnalisées
+\usepackage{arydshln}     %permet d'avoir des lignes en pointillés
+\usepackage{framed}  
+\usepackage{multido} 
+
+
+%  --------------------------------------  MACROS USUELLES  ----------------------------------------
+
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\N}{\mathbb{N}} 
+\newcommand{\D}{\mathbb{D}} 
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\C}{\mathbb{C}} 
+
+%  -------------------------------------  MACROS SPECIFIQUES ------------------------------------
+
+
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+
+\newcounter{numexo}
+
+\setcounter{numexo}{1}
+
+\newcommand{\exercice}[1]{\vskip 0.6cm\noindent\rule[+2pt]{1cm}{0.5pt}\ {\large\bf \ Exercice \thenumexo {  #1 }}\raisedrule[+2pt]{0.5pt}\null\addtocounter{numexo}{1}\par\vskip 0,4cm}
+
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+
+
+
+% ----------------------------------------- FORMAT DE PAGE  -----------------------------------------
+
+\usepackage[left = 1.3cm,
+	 	      right = 1.3cm,
+		      top = 1.7cm,
+		      headsep = 8mm,
+		      bottom = 1.7cm,
+		      headheight = 14.2 pt
+		      ]{geometry}
+
+\setlength{\parindent}{0mm}
+
+
+\everymath{\displaystyle} 
+\renewcommand{\thesection}{\Roman{section}} 
+\author{}
+\title{}
+\date{}
+\pagestyle{fancy}
+
+ 
+\lhead{1ère - spécialité maths} 
+
+
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$7 bis} - 21/05/21}		
+
+
+\fancyfoot[C]{} 
+\fancyfoot[L]{} 
+\fancyfoot[R]{} 
+
+\lstset{language=Python}  
+
+\lstset{frame = single
+framerule = 1pt
+showspaces = false,
+showstringspaces = false,
+numbers=left, numberstyle=\tiny}
+
+% ----------------------------------------- correction  -----------------------------------------
+\usepackage[most,skins,breakable]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{tikz,tkz-tab}
+
+\newcommand{\corr}[1]{\fcolorbox{red}{yellow!30}{#1}}
+
+\newcommand{\bareme}[1]{\tikz\node[circle,draw,inner sep=1pt,outer sep=1pt, color=red]{\textbf{#1}};}
+
+\newtcolorbox{corrBox}{enhanced,boxrule=1pt,nobeforeafter,boxsep=0pt,left=\fboxsep,right=\fboxsep,colback=yellow!30,colframe=red!75!black}
+
+\newlist{enumMet}{enumerate}{2}
+\setlist[enumMet,1]{label=\arabic*), font=\bf\color{blue!75!black}}
+\setlist[enumMet,2]{label=\alph*), font=\bf\color{blue!75!black}}
+
+
+\begin{document}
+\graphicspath{{images/}}
+
+\begin{center}
+
+\fbox{\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm} \textcolor{red}{Correction - DS N$^{\circ}$7 bis - Application de la dérivation}	\rule{0.5cm}{0pt}}}
+\end{center}
+
+
+% \begin{center}\textbf{1h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+% \begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+% \begin{center}
+% %On veillera à ENCADRER ses résultats et soigner sa copie.\\
+% Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+% \end{center}
+% \vspace{.05cm} 
+
+\vspace{-0.3cm}
+\exercice{ - Tableau de variations - ( 10 points )}
+
+Pour chaque fonction, définie et dérivable sur I, Calculer sa dérivée, puis dresser son tableau de variations
+\begin{enumMet}
+    \item $f: x \mapsto -4x^{2}+12 x-5, \mathrm{I}=\mathbb{R}$\quad \quad \bareme{2,5}\\
+    \begin{corrBox}
+        $f'(x)=-8x+12$. $f'$ est une fonction affine avec $a=-8<0$. La fonction est donc décroissante et positive puis négative. Le signe change quand $x=\dfrac{3}{2}$\\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 0.8 , $f'(x)$ / 0.8,$f(x)$ / 1.5}{$-\infty$, $\dfrac{3}{2}$, $+\infty$}
+        \tkzTabLine{, +,z ,-,  }
+        \tkzTabVar{-/  ,+/$4$ , -/ }
+    \end{tikzpicture}\\
+    \end{corrBox}
+    \item $g: x \mapsto x^{3}-5 x^{2}+8 x-1, \mathrm{I}=\mathbb{R}$\quad \quad \bareme{2,5}\\
+    \begin{corrBox}
+        $g'(x)=3x^2-10x+8$. \\
+        $\Delta=4 \iff x_1=\dfrac{4}{3} \text{ et }x_2=2$. De plus, $a=3>0$\\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 0.8 , $f'(x)$ / 0.8,$f(x)$ / 1.5}{$-\infty$, $\dfrac{4}{3}$,$2$, $+\infty$}
+        \tkzTabLine{, +,z ,-,z,+,  }
+        \tkzTabVar{-/  ,+/$\dfrac{85}{27}$ , -/$3$, +/ }
+    \end{tikzpicture}\\
+    \end{corrBox}
+    \item $h: x \mapsto \frac{-2 x-3}{x+3}, I=\mathbb{R} \backslash\{-2\}$.\quad \quad \bareme{2,5}\\
+    \begin{corrBox}
+        $h'(x)=\dfrac{-2(x+3)-1(-2x-3)}{(x+2)^2}=\dfrac{-3}{(x+2)^2}>0$. \\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 0.8 , $f'(x)$ / 0.8,$f(x)$ / 1.5}{$-\infty$, $-3$, $+\infty$}
+        \tkzTabLine{, -,d ,-,  }
+        \tkzTabVar{+/  ,-D+/ , -/ }
+    \end{tikzpicture}\\
+    \end{corrBox}
+    \item \ding{46} $k: x \mapsto -2x^{4}+\frac{5}{3} x^{3}, \mathrm{I}=\mathbb{R}$\quad \quad \bareme{2,5}\\
+    \begin{corrBox}
+        $k'(x)=-8x^3+5x^2=x^2(-8x+5)$. \\
+        $k'$ est du signe de $(-8x+5)$ car $x^2>0$ pour $x\in\R$\\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 0.8 , $f'(x)$ / 0.8,$f(x)$ / 1.5}{$-\infty$, $0$,$\dfrac{5}{8}$, $+\infty$}
+        \tkzTabLine{, +,z ,+,z,-,  }
+        \tkzTabVar{-/  ,R/ , +/$\dfrac{625}{6144}$, -/ }
+        \tkzTabIma{1}{3}{2}{$0$}
+    \end{tikzpicture}\\
+    \end{corrBox}
+\end{enumMet}
+
+\exercice{ - extremums locaux - ( 5 points )}
+On suppose que $f$ et $g$ sont des fonctions définies et dérivables sur un intervalle donné. Déterminer les éventuels extremums locaux des fonctions $f$ et $g$ sur cet intervalle.
+\begin{enumMet}
+    \item $f(x)=-2x(2x^2-24)$\quad \quad \bareme{2,5}\\
+    \begin{corrBox}
+        $f'(x)=-2(2x^2-24)+4x(-2x)=-12x^2+48=-12(x^2-4)=-12(x-2)(x+2)$\\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 0.8 , $f'(x)$ / 0.8,$f(x)$ / 1.5}{$-\infty$, $-2$,$2$, $+\infty$}
+        \tkzTabLine{, -,z ,+,z,-,  }
+        \tkzTabVar{+/  ,-/$-64$ , +/$64$, -/ }
+        \end{tikzpicture}\\
+         Le minimum local sur $\R$ est $-64$ et le maximum local sur $\R$ est $64$
+    \end{corrBox}
+    \item $g(x)=5x-8+\dfrac{5}{x-2}$\quad \quad \bareme{2,5}\\
+    \begin{corrBox}
+        $g'(x)=5-\dfrac{5}{(x-2)^2}=\dfrac{5(x-2)^2-5}{(x-2)^2}=\dfrac{5x^2-20x+15}{(x-2)^2}$\\
+        Le signe de g dépend de celui du numérateur. On étudie le signe du numérateur. \\
+        $5x^2-20x+15=0\iff \Delta=100\iff x_1=\dfrac{2}{3} \text{ et } x_2=2$\\
+        \begin{tikzpicture}
+        \tkzTabInit{$x$ / 0.8 , $f'(x)$ / 0.8,$f(x)$ / 1.5}{$-\infty$, $\dfrac{2}{3}$,$2$, $+\infty$}
+        \tkzTabLine{, +,z ,-,d,+,  }
+        \tkzTabVar{-/  ,+/$-\dfrac{101}{12}$ ,-D+/, -/ }
+        \end{tikzpicture}\\
+        Pas de minimum et pas de maximum.
+    \end{corrBox}
+\end{enumMet}
+
+\exercice{ - Recette et bénéfice - ( 6 points )}
+
+Une entreprise fabrique et vend des trottinettes électriques. On modélise le coût total de fabrication journalier, en centaines d'euros, de $x$ trottinettes ($2\leqslant x\leqslant 14)$ par la fonction notée $C$ telle que :
+$$
+C(x)=\frac{1}{3} x^{3}-7 x^{2}+20 x-60
+$$
+Le nombre $x$ de trottinettes est fonction de leur prix unitaire $P$, qui vérifie  la condition $P=8-\frac{1}{2} x$.
+
+\begin{enumMet}
+    \item \begin{enumMet}
+        \item Déterminer la recette journalière $R(x)$ correspondant à la vente de $x$ trottinettes.\quad \quad \bareme{1}\\
+        \begin{corrBox}
+            $R(x)=x\times P(x)=x\left(8-\dfrac{1}{2}x\right)=8x-\dfrac{1}{2}x^2$
+        \end{corrBox}
+        \item Dresser le tableau de variations de la fonction $R(x)$\quad \quad \bareme{1}\\
+        \begin{corrBox}
+            $R'(x)=-x+8$. $R'$ est une fonction affine avec $a=-1<0$. La fonction est donc décroissante et positive puis négative. Le signe change quand $x=8$\\
+            \begin{tikzpicture}
+                \tkzTabInit{$x$ / 0.8 , $R'(x)$ / 0.8,$R(x)$ / 1.5}{$2$, $8$, $14$}
+                \tkzTabLine{, +,z ,-,  }
+                \tkzTabVar{-/$14$  ,+/$32$ , -/$24$ }
+            \end{tikzpicture}\\
+        \end{corrBox}
+        \item Pour quel nombre de trottinettes vendues quotidiennement réalise-t-on la recette maximale ? Quel est dans ce cas le prix d'une trottinette?\quad \quad \bareme{1}\\
+        \begin{corrBox}
+            On réalise la recette maximale(3 200\EUR{}) pour 8 trottinettes vendues quotidiennement. Dans ce cas le prix d'une trottinette est $P=\left(8-\dfrac{1}{2}\times8\right)\times100=400$\EUR{}
+        \end{corrBox}
+    \end{enumMet}
+    \item \begin{enumMet}
+        \item Exprimer le bénéfice journalier $B(x)$ obtenu pour la vente de $x$ trottinettes.\quad \quad \bareme{1}\\
+        \emph{Rappel : Le bénéfice d'une entreprise se calcule par différence entre la recette et le cout de production.}\\
+        \begin{corrBox}
+            $B(x)=R(x)-C(x)=8x-\dfrac{1}{2}x^2-\left(\frac{1}{3} x^{3}-7 x^{2}+20 x-60\right)=-\dfrac{1}{3} x^{3}+\dfrac{13}{2}x^2-12x+60$
+        \end{corrBox}
+        \item \ding{46} Dresser le tableau de variations de la fonction $B(x)$\quad \quad \bareme{1}\\
+        \begin{corrBox}
+            $B'(x)=-x^2+13x-12$\\
+            $B'(x)=0\iff \Delta=121\iff x_1=1 \text{ et } x_2=12$\\
+            \begin{tikzpicture}
+                \tkzTabInit{$x$ / 0.8 , $B'(x)$ / 0.8,$B(x)$ / 1.5}{$2$, $12$, $14$}
+                \tkzTabLine{,+,z,-,  }
+                \tkzTabVar{-/$59{,}3$,+/$276$ , -/$251{,}3$ }
+            \end{tikzpicture}\\
+        \end{corrBox}
+        \item \ding{46} Pour quel nombre de trottinettes vendues réalise-t-on le bénéfice journalier maximal ? Quel est dans ce cas le prix d'une trottinette électrique?\quad \quad \bareme{1}\\
+        \begin{corrBox}
+            Il faut vendre 12 trottinettes pour réaliser le bénéfice maximal (27600\EUR{}). Dans ce cas le prix d'une trottinette est $P=\left(12-\dfrac{1}{2}\times12\right)\times100=600$\EUR{}
+        \end{corrBox}
+    \end{enumMet}
+    % \item \textbf{Question Bonus}
+    % \begin{enumMet}
+    %     \item Avec la calculatrice, représenter dans un même repère les courbes représentatives des fonctions $C$, $R$ et $B$ sur [2; 14].
+    %     \item Que peut-on dire du bénéfice journalier de cette entre prise lorsque la recette journalière est maximale? Justifier.
+    % \end{enumMet}
+\end{enumMet}
+
+\end{document}
+

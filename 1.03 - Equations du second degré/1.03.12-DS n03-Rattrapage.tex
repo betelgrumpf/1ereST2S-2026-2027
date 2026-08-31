@@ -1,0 +1,90 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{Rattrapage DS n$^{\circ}$03 $-$ 06/02/2026}
+
+\begin{document}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+Rattrapage DS n$^{\circ}$3 \\
+Équations du second degré
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{40 min - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+\vspace{.05cm} 
+
+\exerciceDS{ $-$ Equations $-$ ( 0,5 points )}
+
+Déterminer les racines de la fonction polynôme du second degré.
+%\begin{multicols}{2}
+\begin{enumMet}
+    \item $f(x)=3(x-5)(-x-12)$
+\end{enumMet}
+%\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ $-$ Factorisation $-$ ( 3 points )}
+
+Donner les racines du polynôme du second degré donné, puis le factoriser si cela est possible
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $A(x)=-3x^{2}-10 x-3$
+    \item $B(x)=3x^{2}+4x-4$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ $-$ Inéquations $-$ ( 4,5 points )}
+
+Résoudre les inéquations données.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $4x^2-12x+9\geqslant0$
+    \item $-2x^{2}-3x+5 \leqslant 0$
+    \item $2x^{2}+9 x+4 < 0$
+\end{enumMet}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - Tableau de variations - ( 2 points )}
+Pour la fonction polynôme du second degré ci-dessous, dresser son tableau de variations (les valeurs du tableau de variations doivent être justifiées).
+$$f(x)=-3x^2+12x+15$$
+
+\end{document}
+

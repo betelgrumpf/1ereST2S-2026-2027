@@ -1,0 +1,276 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$04} - 12/01/2022}
+
+\begin{document}
+\graphicspath{{../../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+\textcolor{red}{Correction - DS n$^{\circ}$04 - Produit scalaire}
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{2h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+%\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\vspace{-.3cm} 
+\exerciceDS{ - ( 2 points )}
+On considère 3 points $A, B$ et $C$. Dans chacun des cas suivants, calculer $\vv{A B} \cdot \vv{A C}$ ( on donnera la valeur exacte).
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $A B=4, A C=5$ et $\widehat{A B C}=\dfrac{\pi}{6}$\quad \bareme{0,5}\\
+    \begin{corrBox}
+        $\vv{A B} \cdot \vv{A C}=A B \times A C \times \cos (\widehat{B A C})$\\
+        $\vv{A B} \cdot \vv{AC}=5 \times 4 \times \cos \left(\dfrac{\pi}{6}\right)$\\
+        $\vv{A B} \cdot \vv{AC}=20 \times \dfrac{\sqrt{3}}{2}=10 \sqrt{3}$
+    \end{corrBox}
+    \item $A B=6, A C=6$ et $\widehat{A B C}=\dfrac{\pi}{2}$\quad \bareme{0,5}\\
+    \begin{corrBox}
+        $\vv{A B} \cdot \vv{B C}=6 \times 6 \times \cos \left(\dfrac{\pi}{2}\right)=0$
+    \end{corrBox}
+    \item $A B=3, A C=7$ et $\widehat{A B C}=\dfrac{\pi}{3}$\quad \bareme{0,5}\\
+    \begin{corrBox}
+        $\vv{A B} \cdot \vv{A C}=3 \times 7 \times \cos \left(\dfrac{\pi}{3}\right)$\\
+        $\vv{A B} \cdot \vv{A C}=21 \times \dfrac{1}{2}=\dfrac{21}{2}$
+    \end{corrBox}
+    \item $A B=4, A C=9$ et $\widehat{A B C}=\dfrac{\pi}{4}$\quad \bareme{0,5}\\
+    \begin{corrBox}
+        $\vv{A B} \cdot \vv{A C}=6 \times 9 \times \cos \left(\dfrac{\pi}{4}\right)$\\
+        $\vv{A B} \cdot \vv{A C}=4 \times 9 \times \dfrac{\sqrt{2}}{2}=18 \sqrt{2}$
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+
+
+
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 1,5 points )}
+On considère un carré $A B C D$ de côté 5 cm. Calculer:
+\begin{multicols}{3}
+\begin{enumMet}
+    \item $\vv{A B} \cdot \vv{A C}$\quad \bareme{0,5}
+    \item $\vv{C A} \cdot \vv{C D}$\quad \bareme{0,5}
+    \item $\vv{D C} \cdot \vv{D A}$\quad \bareme{0,5}
+\end{enumMet}
+\end{multicols}
+
+\begin{center}
+    \psset{xunit=0.4cm,yunit=0.4cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+    \begin{pspicture*}(0.3,0)(8,8)
+    \pspolygon[linewidth=1.pt](1.,1.)(6.,1.)(6.,6.)(1.,6.)
+    \psline[linewidth=1.pt](1.,6.)(6.,1.)
+    \psline[linewidth=1.pt](6.,6.)(1.,1.)
+    \begin{scriptsize}
+    \rput[bl](0.2,1.0){\large{$A$}}
+    \rput[bl](6.1,1.0){\large{$B$}}
+    \rput[bl](6.0,6.0){\large{$C$}}
+    \rput[bl](0.8,6.1){\large{$D$}}
+    \rput[bl](2.4,3.1){\large{$O$}}
+    \end{scriptsize}
+    \end{pspicture*}
+\end{center}
+\begin{corrBox}
+    On utilise la projection orthogonale.
+    \begin{enumMet}
+        \item $\vv{A B} \cdot \vv{A C}=\vv{A B} \cdot \vv{A B}=A B \times A B=5 \times 5=25$
+        \item $\vv{C A} \cdot \vv{C D}=\vv{C D} \cdot \vv{C A}=\vv{C D} \cdot \vv{C D}=C D \times C D=5 \times 5=25$
+        \item $\vv{D C} \cdot \vv{D A}=0$ car $\widehat{C D A}=\dfrac{\pi}{2}$
+    \end{enumMet}
+\end{corrBox}
+
+\newpage
+\vspace{-0.3cm}
+\exerciceDS{ - ( 2 points )}
+
+$\mathrm{ABC}$ est un triangle et $\mathrm{H}$ est le pied de la hauteur issue de $\mathrm{A}$. On a $\mathrm{AB}=5, \mathrm{BH}=3$ et $\mathrm{HC}=6$
+\begin{multicols}{2}
+\begin{enumMet}
+    \item Calculer $\vv{B A} \cdot \vv{B C}$\quad \bareme{0,5}\\
+    \begin{corrBox}
+        On utilise la projection orthogonale.\\
+        $\vv{B A} \cdot \vv{B C}=\vv{B C} \cdot \vv{B A}=\vv{B C} \cdot \vv{B H}=B C \times B H=9 \times 3=27$
+    \end{corrBox}
+    \item Calculer AH\quad \bareme{1}\\
+    \begin{corrBox}
+        on utilise le theorème de Pythagore dans le triangle ABH.\\
+        $A B^{2}=A H^{2}+H B^{2}$\\
+        $A H^{2}=A B^{2}-H B^{2}=25-9=16$\\
+        d'où $A H=\sqrt{16}=4$
+    \end{corrBox}
+    \columnbreak
+    \item Calculer $\vv{A C} \cdot \vv{A H}$.\quad \bareme{0,5}\\
+    \begin{corrBox}
+        $\vv{A C} \cdot \vv{A H}=\vv{A H} \cdot \vv{A C}=\vv{A H} \cdot \vv{A H}=A H \times A H=4 \times 4=16$
+    \end{corrBox}
+\end{enumMet}
+
+\begin{center}
+    \includegraphics[scale=0.6]{1.04.06-Img01}
+\end{center}
+\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( \textcolor{red}{1} point )}
+
+Soit un losange $A B C D$ de centre $O$ tel que $A C=4$ et $B D=7$.
+%\begin{multicols}{2}
+\begin{enumMet}
+    \item Calculer $\vv{B C} \cdot \vv{B D}$.\quad \bareme{0,5}\\
+    \begin{corrBox}
+        $\vv{B C} \cdot \vv{B D}=\vv{B D} \cdot \vv{B C}=\vv{B D} \cdot \vv{B O}=BD \times BO=7 \times \dfrac{7}{2}=\dfrac{49}{2}$
+    \end{corrBox}
+    \item Calculer $\vv{D C} \cdot \vv{D O}$.\quad \bareme{0,5}\\
+    \begin{corrBox}
+        $\vv{D C} \cdot \vv{D O}=\vv{D O} \cdot \vv{D C}=\vv{D O} \cdot \vv{D O}=D O \times D O=\dfrac{7}{2} \times \dfrac{7}{2}=\dfrac{49}{4}$
+    \end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( \textcolor{red}{4,5} points )}
+On considère les points $A(-1 ; 2), B(4 ; 3)$ et $C(1 ;-5)$
+\begin{enumMet}
+    \item Calculer les coordonnées des vecteurs $\vv{A B}, \vv{A C}$ et $\vv{B C}$\quad \bareme{3}\\
+    \begin{corrBox}
+        $\Coord{AB}{x_B-x_A}{y_B-y_A}=\Coord{AB}{4-(-1)}{3-2}=\Coord{AB}{5}{1}$\\
+        $\Coord{AC}{x_C-x_A}{y_C-y_A}=\Coord{AC}{1-(-1)}{-5-2}=\Coord{AB}{2}{-7}$\\
+        $\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{1-4}{-5-3}=\Coord{AB}{-3}{-8}$\\
+    \end{corrBox}
+    \item Calculer $\vv{A B} \cdot \vv{A C}, \vv{A B} \cdot \vv{B C}$ et $\vv{A C} \cdot \vv{B C}$\quad \bareme{1,5}\\
+    \begin{corrBox}
+        $\vv{A B} \cdot \vv{A C}=x x^{\prime}+y y^{\prime}=5 \times 2+1 \times(-7)=3$\\
+        $\vv{A B} \cdot \vv{B C}=5 \times(-3)+1 \times(-8)=-23$\\
+        $\vv{A C} \cdot \vv{B C}=2 \times(-3)+(-7) \times(-8)=50$
+    \end{corrBox}
+\end{enumMet}
+
+\newpage
+
+\vspace{-0.3cm}
+\exerciceDS{ - ( 2,5 points )}
+Soit les points $A(2 ; 7), B(6 ; 5)$ et $C(4 ; 1)$.
+%\begin{multicols}{2}
+\begin{enumMet}
+    \item Calculer le produit scalaire $\vv{B A} \cdot \vv{B C}$\quad \bareme{1,5}\\
+    \begin{corrBox}
+        $\Coord{BA}{x_A-x_B}{y_A-y_B}=\Coord{BA}{2-6}{7-5}=\Coord{BA}{-4}{2}$\\
+        $\Coord{BC}{x_C-x_B}{y_C-y_B}=\Coord{BC}{4-6}{1-5}=\Coord{BC}{-2}{-4}$\\
+        $\vv{B A} \cdot \vv{B C}=x x^{\prime}+y y^{\prime}=-4 \times(-2)+2 \times(-4)=0$
+    \end{corrBox}
+    \item Que peut-on en conclure pour le triangle $A B C$ ?\quad \bareme{1}\\
+    \begin{corrBox}
+        $\vv{B A} \cdot \vv{B C}=0$ donc $\widehat{A B C}=\dfrac{\pi}{2}$.\\
+        De plus $B A=B C=\sqrt{4^{2}+2^{2}}=\sqrt{20}$\\
+        donc $A B C$ est un triangle rectangle et isocèle en $B$.
+    \end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{ - ( \textcolor{red}{4} points )}
+
+Dans le repère orthonormé ci-dessous, on donne le triangle $A B C$.\\
+\begin{center}
+    \includegraphics[scale=0.7]{1.04.06-Img02}
+\end{center}
+\begin{enumMet}
+    \item \begin{enumMet}
+        \item calculer $\vv{A B} \cdot \vv{A C}$.\quad \bareme{1,5}\\
+        \begin{corrBox}
+            $\Coord{AB}{7-1}{1-2}=\Coord{AB}{6}{-1}\quad \quad \quad \quad \Coord{AC}{3-1}{5-2}=\Coord{AC}{2}{3}$\\
+            $\vv{A B} \cdot \vv{A C}=x x^{\prime}+y y^{\prime}=6 \times 2+(-1) \times 3=9$
+        \end{corrBox}
+        \item En déduire la mesure, en degré, de l'angle $\widehat{B A C}$. Arrondir au dixième.\quad \bareme{1}\\
+        \begin{corrBox}
+            $\vv{A B} \cdot \vv{A C}=A B \times A C \times \cos (\widehat{BA C})$\\
+            $A B=\sqrt{6^{2}+(-1)^{2}}=\sqrt{37}$\quad \quad \quad \quad $A C=\sqrt{2^{2}+3^{2}}=\sqrt{13}$\\
+            $\cos(\widehat{B A C})=\dfrac{\vv{A B} \cdot \vv{A C}}{AB \times A C}=\dfrac{9}{\sqrt{37} \times \sqrt{13}} \Rightarrow \widehat{B A C} \approx 65,8^{\circ}$
+        \end{corrBox}
+    \end{enumMet}
+    \item \begin{enumMet}
+        \item Dans ce triangle, H est le pied de la hauteur issue du sommet $C$.
+        Déterminer la longueur $\mathrm{CH}$. Arrondir au dixième.\quad \bareme{1}\\
+        \begin{corrBox}
+            On utilise la trigonométrie.\\
+            $\sin (\widehat{B A C})=\dfrac{C H}{A C} \Rightarrow C H=\sin (\widehat{B A C}) \times A C=\sin (65,8) \times \sqrt{13} \approx 3,3$
+        \end{corrBox}
+        \item En déduire une valeur approchée de l'aire du triangle $A B C$.\quad \bareme{0,5}\\
+        \begin{corrBox}
+            $\mathcal{A}_{A B C}=\dfrac{A B \times C H}{2}=\dfrac{\sqrt{37} \times 3,3}{2} \approx 10$
+        \end{corrBox}
+    \end{enumMet}
+\end{enumMet}
+
+\exerciceDS{ - ( \textcolor{red}{1} points )}
+Dans les 2 cas ci dessous, calculer $\vv{A B} \cdot \vv{A C}$.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item \quad \bareme{0,5} \\
+    \includegraphics[scale=1.2]{1.04.06-Img03}
+    \item \quad \bareme{0,5} \\
+    \includegraphics[scale=1.2]{1.04.06-Img04}
+\end{enumMet}
+\end{multicols}
+
+\begin{corrBox}
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $\vv{A B} \cdot \vv{A C}=\vv{A C} \cdot \vv{A B}=\vv{A C} \cdot \vv{A H}$\\
+    $\vv{A B} \cdot \vv{A C}=A C \times A H=3 \times 5=15$
+    \item $\vv{A B} \cdot \vv{A C}=\vv{A C} \cdot \vv{A B}=\vv{A C} \cdot \vv{A H}$\\
+    $\vv{A B} \cdot \vv{A C}=-A C \times A H=-1 \times 2=-2$
+\end{enumMet}
+\end{multicols}
+\end{corrBox}
+
+\exerciceDS{ - ( 2 points )}
+Soient deux vecteurs $\vv{u}$ et $\vv{v}$ tels que $\|\vv{u}\|=2,\|\vv{v}\|=4$ et $(\vv{u} ; \vv{v})=\dfrac{\pi}{3}$.\\
+Calculer $(\vv{u}-3 \vv{v}) \cdot(5 \vv{u}+\vv{v})$.\\
+\begin{corrBox}
+    $\begin{aligned}
+(\vv{u}-3 \vv{v}) \cdot(5 \vv{u}+\vv{v}) &=5 \vv{u}^{2}+\vv{u} \cdot \vv{v}-15 \vv{v} \cdot \vv{u}-3 \vv{v}^{2} \\
+&=5 \vv{u}^{2}-14 \vv{u} \cdot \vv{v}-3 \vv{v}^{2} \\
+&=5\|\vv{u}\|^{2}-14 \vv{u} \cdot \vv{v}-3\|\vv{v}\|^{2} \\
+\vv{u} \cdot \vv{v}=\|\vv{u}\| \times \|\vv{v}\| & \times \cos \left(\dfrac{\pi}{3}\right)=2 \times 4 \times \dfrac{1}{2}=4 \\
+(\vv{u}-3 \vv{v}) \cdot(5 \vv{u}+\vv{v}) &=5 \times 2^2-14 \times 4-3 \times 4^2 \\
+&=-84
+\end{aligned}$
+\end{corrBox}
+
+\end{document}
+

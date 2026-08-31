@@ -1,0 +1,296 @@
+\documentclass[a4paper,12pt]{article}        % énoncé seul
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{1ere-preambule}
+
+\begin{document}
+\pagestyle{empty}
+%\fancyhf{}
+\vspace*{-1.5cm}
+1ère spécialité\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}21/10/2021
+{\begin{center}\Huge{\textcolor{red}{Correction - Contrôle n$^{\circ}$01 - Sujet A}}\end{center}}
+
+\exercice {- enroulement autour du cercle trigo - ( 4 points )}
+
+En utilisant la figure ci-dessous, donner les points du cercle qui correspondent aux réels suivants. On détaillera la décomposition du nombre.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $1313\pi$\\
+    \begin{corrBox}
+        $1313\pi=1312\pi+\pi$\\ 
+        $1313\pi$ correspond au point I'.
+    \end{corrBox}
+    \item $\dfrac{242\pi}{6}$\\
+    \begin{corrBox}
+        $\dfrac{242\pi}{6}=\dfrac{240\pi}{6}+\dfrac{2\pi}{6}=40\pi+\dfrac{\pi}{3}$\\
+        $\dfrac{242\pi}{6}$ correspond au point C.
+    \end{corrBox}
+    \columnbreak
+    \item $\dfrac{-53\pi}{3}$\\
+    \begin{corrBox}
+        $\dfrac{-53\pi}{3}=-\dfrac{51\pi}{3}-\dfrac{2\pi}{3}=-17\pi-\dfrac{2\pi}{3}$\\
+        $\dfrac{-53\pi}{3}=-16\pi-\pi-\dfrac{2\pi}{3}$\\
+        $\dfrac{-53\pi}{3}$ correspond au point C.
+    \end{corrBox}
+    \item $\dfrac{53\pi}{4}$\\
+    \begin{corrBox}
+        $\dfrac{53\pi}{4}=\dfrac{52\pi}{4}+\dfrac{\pi}{4}=13\pi+\dfrac{\pi}{4}$\\
+        $\dfrac{53\pi}{4}=12\pi+\pi+\dfrac{\pi}{4}$\\
+        $\dfrac{53\pi}{4}$ correspond au point H.
+    \end{corrBox}
+    
+\end{enumMet}
+\end{multicols}
+\begin{center}
+\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+\psset{xunit=4.0cm,yunit=4.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-1.1,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-1.98066,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+\pscircle[linewidth=2.pt](0.,0.){4.}
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844387,0.5)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844387,0.5)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844386,-0.5)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844384,-0.5)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865476,0.7071067811865475)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865475,0.7071067811865476)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865477,-0.7071067811865475)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865474,-0.7071067811865477)
+\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,0.8660254037844386)
+\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,0.8660254037844387)
+\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,-0.8660254037844385)
+\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,-0.8660254037844386)
+\begin{scriptsize}
+\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](0.,0.)
+\rput[bl](0.00960106297279085,0.042848354149331562){\Large\black{$O$}}
+\psdots[dotstyle=*,linecolor=ududff](1.,0.)
+\rput[bl](1.027748218996967,0.03743267192752309){\Large\black{$I$}}
+\psdots[dotstyle=*,linecolor=ududff](0.8660254037844387,0.5)
+\rput[bl](0.8761092808657066,0.5265068007775197){\Large\black{$A$}}
+\psdots[dotstyle=*,linecolor=ududff](0.7071067811865476,0.7071067811865475)
+\rput[bl](0.7190546663726156,0.7350105663171459){\Large\black{$B$}}
+\psdots[dotstyle=*,linecolor=ududff](0.5,0.8660254037844386)
+\rput[bl](0.5105511264421327,0.8920653507495917){\Large\black{$C$}}
+\psdots[dotstyle=*,linecolor=ududff](0.,1.)
+\rput[bl](0.00960106297279085,1.0409966118493248){\Large\black{$J$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.5,0.8660254037844387)
+\rput[bl](-0.5427979259339429,0.9028967151932086){\Large\black{$D$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865475,0.7071067811865476)
+\rput[bl](-0.7658857895025951,0.7377184074280502){\Large\black{$E$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844387,0.5)
+\rput[bl](-0.9256482421766014,0.5265068007775197){\Large\black{$F$}}
+\psdots[dotstyle=*,linecolor=ududff](-1.,0.)
+\rput[bl](-1.0994558275842002,0.020140513038427326){\Large\black{$I'$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844386,-0.5)
+\rput[bl](-1.0000187858048398,-0.5597649802551862){\Large\black{$G$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865477,-0.7071067811865475)
+\rput[bl](-0.850548494949918,-0.8072236335711421){\Large\black{$H$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.5,-0.8660254037844385)
+\rput[bl](-0.620921440476689,-0.9859411468908217){\Large\black{$K$}}
+\psdots[dotstyle=*,linecolor=ududff](0.,-1.)
+\rput[bl](0.036679444781944466,-1.1094567257687464){\Large\black{$J'$}}
+\psdots[dotstyle=*,linecolor=ududff](0.5,-0.8660254037844386)
+\rput[bl](0.5376295082512864,-0.9205254646690133){\Large\black{$L$}}
+\psdots[dotstyle=*,linecolor=ududff](0.7071067811865474,-0.7071067811865477)
+\rput[bl](0.7488408863626846,-0.7445157924602379){\Large\black{$M$}}
+\psdots[dotstyle=*,linecolor=ududff](0.8660254037844384,-0.5)
+\rput[bl](0.9004798244939449,-0.51305963446988031){\Large\black{$N$}}
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+\newpage
+
+\exercice {- même point image - ( 4 points )}\\
+Pour chacun des nombres suivants, déterminer deux autres réels ayant le même point image lors de l'enroulement de la droite numérique
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $\dfrac{2\pi}{7}$\\
+    \begin{corrBox}
+        $\dfrac{2\pi}{7}+2\pi=\dfrac{16\pi}{7}$\\
+        $\dfrac{2\pi}{7}-2\pi=-\dfrac{12\pi}{7}$\\
+        $-\dfrac{12\pi}{7}$, $\dfrac{2\pi}{7}$ et $\dfrac{16\pi}{7}$ ont le même point image.
+    \end{corrBox}
+    \item $\dfrac{5\pi}{6}$\\
+    \begin{corrBox}
+        $\dfrac{5\pi}{6}+2\pi=\dfrac{17\pi}{6}$\\
+        $\dfrac{5\pi}{6}-2\pi=-\dfrac{7\pi}{6}$\\
+        $-\dfrac{7\pi}{6}$, $\dfrac{5\pi}{6}$ et $\dfrac{17\pi}{6}$ ont le même point image.
+    \end{corrBox}
+    \item $\dfrac{-2\pi}{3}$\\
+    \begin{corrBox}
+        $\dfrac{-2\pi}{3}+2\pi=\dfrac{4\pi}{3}$\\
+        $\dfrac{-2\pi}{3}-2\pi=-\dfrac{8\pi}{3}$\\
+        $-\dfrac{8\pi}{3}$, $\dfrac{-2\pi}{3}$ et $\dfrac{8\pi}{3}$ ont le même point image.
+    \end{corrBox}
+    \item $\dfrac{2\pi}{4}$\\
+    \begin{corrBox}
+        $\dfrac{2\pi}{4}+2\pi=\dfrac{10\pi}{4}$\\
+        $\dfrac{2\pi}{4}-2\pi=-\dfrac{6\pi}{4}$\\
+        $-\dfrac{6\pi}{4}$, $\dfrac{2\pi}{4}$ et $\dfrac{10\pi}{4}$ ont le même point image.
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+
+\exercice {- convertir en degrés - ( 1 points )}\\
+Pour chacun des angles suivants, convertir l'angle en degré. On arrondira si nécessaire à 1 chiffre après la virgule
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $\dfrac{3\pi}{16}$ rad \quad \corr{$=\dfrac{3\pi}{16}\times\dfrac{180}{\pi}=33,75\degree$}
+    \item $\dfrac{2\pi}{7}$ rad \quad \corr{$=\dfrac{2\pi}{7}\times\dfrac{180}{\pi}\approx51,4\degree$}
+\end{enumMet}
+\end{multicols}
+
+\exercice {- convertir en radians - ( 1 points )}\\
+Pour chacun des angles suivants, convertir l'angle en radian. On donnera la valeur exacte/
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $85\degree$ \quad \corr{$=85\times\dfrac{\pi}{180}=\dfrac{17\pi}{36}$ rad}
+    \item $290\degree$ \quad \corr{$=290\times\dfrac{\pi}{180}=\dfrac{29\pi}{18}$ rad}
+\end{enumMet}
+\end{multicols}
+
+
+\newpage
+\vspace*{-1.5cm}
+1ère spécialité\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}21/10/2021
+{\begin{center}\Huge{\textcolor{red}{Correction - Contrôle n$^{\circ}$01 - Sujet B}}\end{center}}
+
+\setcounter{exo}{1}
+\exercice {- enroulement autour du cercle trigo - ( 4 points )}
+
+En utilisant la figure ci-dessous, donner les points du cercle qui correspondent aux réels suivants. On détaillera la décomposition du nombre.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $1213\pi$\\
+    \begin{corrBox}
+        $1213\pi=1212\pi+\pi$\\ 
+        $1213\pi$ correspond au point I'.
+    \end{corrBox}
+    \item $\dfrac{172\pi}{6}$\\
+    \begin{corrBox}
+        $\dfrac{172\pi}{6}=\dfrac{168\pi}{6}+\dfrac{4\pi}{6}=28\pi+\dfrac{2\pi}{3}$\\
+        $\dfrac{172\pi}{6}$ correspond au point D.
+    \end{corrBox}
+    \columnbreak
+    \item $\dfrac{-43\pi}{3}$\\
+    \begin{corrBox}
+        $\dfrac{-43\pi}{3}=-\dfrac{42\pi}{3}-\dfrac{\pi}{3}=-14\pi-\dfrac{2\pi}{3}$\\
+        $\dfrac{-43\pi}{3}$ correspond au point K.
+    \end{corrBox}
+    \item $\dfrac{63\pi}{4}$\\
+    \begin{corrBox}
+        $\dfrac{63\pi}{4}=\dfrac{60\pi}{4}+\dfrac{3\pi}{4}=15\pi+\dfrac{3\pi}{4}$\\
+        $\dfrac{63\pi}{4}=14\pi+\pi+\dfrac{3\pi}{4}$\\
+        $\dfrac{63\pi}{4}$ correspond au point M.
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+\begin{center}
+\newrgbcolor{ududff}{0.30196078431372547 0.30196078431372547 1.}
+\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
+\psset{xunit=4.0cm,yunit=4.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-1.1,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-1.98066,-1.1550625290940115)(1.1008598498816817,1.2224219662799085)
+\pscircle[linewidth=2.pt](0.,0.){4.}
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844387,0.5)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844387,0.5)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(-0.8660254037844386,-0.5)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=red](0.,0.)(0.8660254037844384,-0.5)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865476,0.7071067811865475)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865475,0.7071067811865476)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(-0.7071067811865477,-0.7071067811865475)
+\psline[linewidth=2.pt,linestyle=dashed,dash=1pt 1pt,linecolor=blue](0.,0.)(0.7071067811865474,-0.7071067811865477)
+\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,0.8660254037844386)
+\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,0.8660254037844387)
+\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(-0.5,-0.8660254037844385)
+\psline[linewidth=2.pt,linestyle=dotted,linecolor=qqwuqq](0.,0.)(0.5,-0.8660254037844386)
+\begin{scriptsize}
+\psdots[dotsize=4pt 0,dotstyle=*,linecolor=darkgray](0.,0.)
+\rput[bl](0.00960106297279085,0.042848354149331562){\Large\black{$O$}}
+\psdots[dotstyle=*,linecolor=ududff](1.,0.)
+\rput[bl](1.027748218996967,0.03743267192752309){\Large\black{$I$}}
+\psdots[dotstyle=*,linecolor=ududff](0.8660254037844387,0.5)
+\rput[bl](0.8761092808657066,0.5265068007775197){\Large\black{$A$}}
+\psdots[dotstyle=*,linecolor=ududff](0.7071067811865476,0.7071067811865475)
+\rput[bl](0.7190546663726156,0.7350105663171459){\Large\black{$B$}}
+\psdots[dotstyle=*,linecolor=ududff](0.5,0.8660254037844386)
+\rput[bl](0.5105511264421327,0.8920653507495917){\Large\black{$C$}}
+\psdots[dotstyle=*,linecolor=ududff](0.,1.)
+\rput[bl](0.00960106297279085,1.0409966118493248){\Large\black{$J$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.5,0.8660254037844387)
+\rput[bl](-0.5427979259339429,0.9028967151932086){\Large\black{$D$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865475,0.7071067811865476)
+\rput[bl](-0.7658857895025951,0.7377184074280502){\Large\black{$E$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844387,0.5)
+\rput[bl](-0.9256482421766014,0.5265068007775197){\Large\black{$F$}}
+\psdots[dotstyle=*,linecolor=ududff](-1.,0.)
+\rput[bl](-1.0994558275842002,0.020140513038427326){\Large\black{$I'$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.8660254037844386,-0.5)
+\rput[bl](-1.0000187858048398,-0.5597649802551862){\Large\black{$G$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.7071067811865477,-0.7071067811865475)
+\rput[bl](-0.850548494949918,-0.8072236335711421){\Large\black{$H$}}
+\psdots[dotstyle=*,linecolor=ududff](-0.5,-0.8660254037844385)
+\rput[bl](-0.620921440476689,-0.9859411468908217){\Large\black{$K$}}
+\psdots[dotstyle=*,linecolor=ududff](0.,-1.)
+\rput[bl](0.036679444781944466,-1.1094567257687464){\Large\black{$J'$}}
+\psdots[dotstyle=*,linecolor=ududff](0.5,-0.8660254037844386)
+\rput[bl](0.5376295082512864,-0.9205254646690133){\Large\black{$L$}}
+\psdots[dotstyle=*,linecolor=ududff](0.7071067811865474,-0.7071067811865477)
+\rput[bl](0.7488408863626846,-0.7445157924602379){\Large\black{$M$}}
+\psdots[dotstyle=*,linecolor=ududff](0.8660254037844384,-0.5)
+\rput[bl](0.9004798244939449,-0.51305963446988031){\Large\black{$N$}}
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+\newpage
+
+\exercice {- même point image - ( 4 points )}\\
+Pour chacun des nombres suivants, déterminer deux autres réels ayant le même point image lors de l'enroulement de la droite numérique
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $\dfrac{3\pi}{7}$\\
+    \begin{corrBox}
+        $\dfrac{3\pi}{7}+2\pi=\dfrac{17\pi}{7}$\\
+        $\dfrac{3\pi}{7}-2\pi=-\dfrac{11\pi}{7}$\\
+        $-\dfrac{11\pi}{7}$, $\dfrac{3\pi}{7}$ et $\dfrac{17\pi}{7}$ ont le même point image.
+    \end{corrBox}
+    \item $\dfrac{7\pi}{6}$\\
+    \begin{corrBox}
+        $\dfrac{7\pi}{6}+2\pi=\dfrac{19\pi}{6}$\\
+        $\dfrac{7\pi}{6}-2\pi=-\dfrac{5\pi}{6}$\\
+        $-\dfrac{5\pi}{6}$, $\dfrac{7\pi}{6}$ et $\dfrac{19\pi}{6}$ ont le même point image.
+    \end{corrBox}
+    \item $\dfrac{-4\pi}{3}$\\
+    \begin{corrBox}
+        $\dfrac{-4\pi}{3}+2\pi=\dfrac{2\pi}{3}$\\
+        $\dfrac{-4\pi}{3}-2\pi=-\dfrac{10\pi}{3}$\\
+        $-\dfrac{10\pi}{3}$, $\dfrac{-4\pi}{3}$ et $\dfrac{2\pi}{3}$ ont le même point image.
+    \end{corrBox}
+    \item $\dfrac{3\pi}{4}$\\
+    \begin{corrBox}
+        $\dfrac{3\pi}{4}+2\pi=\dfrac{11\pi}{4}$\\
+        $\dfrac{3\pi}{4}-2\pi=-\dfrac{5\pi}{4}$\\
+        $-\dfrac{5\pi}{4}$, $\dfrac{3\pi}{4}$ et $\dfrac{11\pi}{4}$ ont le même point image.
+    \end{corrBox}
+\end{enumMet}
+\end{multicols}
+
+\exercice {- convertir en degrés - ( 1 points )}\\
+Pour chacun des angles suivants, convertir l'angle en degré. On arrondira si nécessaire à 1 chiffre après la virgule
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $\dfrac{5\pi}{16}$ rad \quad \corr{$=\dfrac{5\pi}{16}\times\dfrac{180}{\pi}=56,25\degree$}
+    \item $\dfrac{3\pi}{7}$ rad \quad \corr{$=\dfrac{3\pi}{7}\times\dfrac{180}{\pi}\approx77,1\degree$}
+\end{enumMet}
+\end{multicols}
+
+\exercice {- convertir en radians - ( 1 points )}\\
+Pour chacun des angles suivants, convertir l'angle en radian. On donnera la valeur exacte.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $75\degree$ \quad \corr{$=75\times\dfrac{\pi}{180}=\dfrac{5\pi}{12}$ rad}
+    \item $280\degree$ \quad \corr{$=280\times\dfrac{\pi}{180}=\dfrac{14\pi}{9}$ rad}
+\end{enumMet}
+\end{multicols}
+\end{document}

@@ -1,0 +1,192 @@
+\documentclass[12pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\usepackage{mathrsfs}
+\include{../../1ere-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+\setlength{\unitlength}{1mm}
+\vskip 0,4cm\noindent
+\multido{\i=0+1}{#1}{%
+     \noindent
+     \begin{picture}(150,5)
+     \linethickness{0,005mm}
+     \put(-5,0){\dashline{1}(175,5)(5,5)}
+     \end{picture}\vskip 0,001cm
+     }
+\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$06 - Sujet A - 07/04/2022}
+
+\begin{document}
+\graphicspath{{../../images/}}
+
+\begin{center}
+\fbox{
+\begin{minipage}[]{15cm}
+\begin{center}
+\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+DS n$^{\circ}$06 - Sujet A\\
+Application du produit scalaire
+}
+\end{center}
+\end{minipage}
+}
+
+\end{center}
+
+
+\begin{center}\textbf{1h - Calculatrice autorisée - Barème indicatif}\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\begin{center}
+%On veillera à ENCADRER ses résultats et soigner sa copie.\\
+Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+\end{center}
+
+\begin{center}\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}\end{center}
+
+\exerciceDS{ - Produit scalaire et repère - ( 4 points )}
+Soit les vecteurs $\vv{u}\left(\begin{array}{l}2 \\ 1\end{array}\right), \vv{v}\left(\begin{array}{c}-3 \\ -1\end{array}\right)$ et $\vv{w}\left(\begin{array}{l}1 \\ 4\end{array}\right)$\\
+Calculer les produits scalaires suivants.
+\begin{multicols}{2}
+\begin{enumMet}
+    \item $\vv{u} \cdot \vv{v}$
+    \item $\vv{w} \cdot \vv{v}$
+    \item \ding{46} $\vv{u} \cdot(\vv{v}+\vv{w})$
+    \item $(-2 \vv{u}) \cdot \vv{v}+3(\vv{v} \cdot \vv{w})$
+\end{enumMet}
+\end{multicols}
+%\includegraphics[scale=0.3]{01.DM01.Img12}
+
+%\vspace{-0.6cm}
+% \exerciceDS{ - équation cartésienne - ( 4 points )}
+% On considère la droite $d$ d'équation cartésienne $-5 x+3 y-1=0$
+% \begin{enumMet}
+%     \item Donner un vecteur directeur de $d$.
+%     \item En déduire un vecteur normal de $d$.
+%     \item Donner une équation cartésienne de la droite $d^{\prime}$ perpendiculaire à $d$ passant par le point $F(2 ;-2)$.
+%     \item Donner une équation réduite de la droite $d^{\prime}$.
+%     \item Donner le point d'intersection des droites $d$ et $d^{\prime}$.
+% \end{enumMet}
+%\includegraphics[scale=0.28]{01.DM01.Img14}
+
+%\vspace{-0.6cm}
+% \exerciceDS{ - Théorème d'Al Kashi - ( 1 point )}
+
+% On considère les points $M, N$ et $P$ tels que $M N=5,$ $\mathrm{NP}=7$ et $\widehat{\mathrm{MNP}}=61^{\circ}$.\\
+% Déterminer la longueur MP.
+
+\exerciceDS{ - Au golf - ( 2 points )}
+\begin{minipage}[c]{.6\linewidth}
+Sur un green de golf, trois positions de la balle sont repérées en $\mathrm{M},$ N et P sur le schéma ci-contre. Le triangle MNP est tel que MN=8, $\mathrm{MP}=5$ et $\widehat{M}=53^{\circ}$.\\
+Calculer la valeur exacte de NP, puis son arrondi à 0,1 près.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.35\linewidth}
+\begin{center}
+   \includegraphics[scale=0.8]{1.05.DS-IMG-01} 
+\end{center}
+
+\end{minipage}
+
+\exerciceDS{ - \ding{46} - produit scalaire dans un triangle - ( 2 points )}
+
+Soit un triangle $\mathrm{ABC}$ de longueur $\mathrm{AB}=5, \mathrm{AC}=7$ et $\mathrm{BC}=10$
+\begin{enumMet}
+    \item \ding{46} Calculer le produit scalaire $\vv{B A} \cdot \vv{B C}$
+    \item \ding{46} En déduire la mesure de l'angle $\widehat{ABC}$
+\end{enumMet}
+
+% Soit un triangle $\mathrm{ABC}$ de longueur $\mathrm{AB}=4, \mathrm{AC}=6$ et $\mathrm{BC}=9$\\
+% Calculer le produit scalaire $\vv{B A} \cdot \vv{B C}$
+
+
+% \exerciceDS{ - produit scalaire dans un repère - ( 2 points )}
+
+% Soit les points $A(3 ; 3), B(8 ; 6)$ et $C(13 ; 3)$
+% \begin{enumMet}
+%     \item Calculer le produit scalaire $\vv{B A} \cdot \vv{B C}$
+%     \item Que peut-on en conclure pour le triangle ABC?
+% \end{enumMet}
+
+
+
+
+% \exerciceDS{ - équation cartésienne - ( 1 point )}
+
+% Déterminer dans le cas ci-dessous, une équation cartésienne de la droite D qui passe par le point $A$ et qui a pour vecteur normal le vecteur $\vv{n}$\\
+% $A(3 ; 4)$ et $\vv{n}\left(\begin{array}{c}-3 \\ 5\end{array}\right)$
+
+\exerciceDS{ - Angles dans un triangle - ( 3 points )}
+Dans un repère orthonormé du plan, on considère les points $\mathrm{A}(-2 ;3), \mathrm{B}(1 ; 4)$ et $\mathrm{C}(4 ; 1)$.\\
+Déterminer les angles du triangle $A B C$ à 0,1 degré près.\\
+
+\newpage
+
+\exerciceDS{ - Médiatrice dans un triangle - ( 6 points )}
+On considère le triangle $\mathrm{ABC}$ tel que $\mathrm{A}(-2 ;3), \mathrm{B}(1 ; 4)$ et $\mathrm{C}(4 ; 1)$.
+\begin{enumMet}
+    \item Montrer que les coordonnées du milieu M du segment $[BC]$ sont $M(2,5;2,5)$
+    \item Déterminer une équation de la médiatrice  du segment $[BC]$ dans le triangle $\mathrm{ABC}$ (la médiatrice est la perpendiculaire à $[BC]$ passant par M).
+    % La hauteur issue de $A$ est la droite passant par $A$ et perpendiculaire au côté opposé du triangle: $[B C]$.\\
+    % Le vecteur $\vv{B C}$ est donc un vecteur normal à la hauteur issue de $A$.\\
+    % Comme $\Coord{BC}{-2-5}{3-3}$ soit $\Coord{BC}{-7}{0}$, une équation de la hauteur est de la forme $-7 x+c=0$.\\
+    % Or $A$ appartient à la hauteur, donc $-7 x_{A}+c=0$, donc $-7 \times 4+c=0$, donc $c=28$.\\
+    % Une équation de la hauteur issue de $A$ est alors $-7 x+28=0$, ce qui équivaut à $-x+4=0$.
+    \item Montrer que les coordonnées du milieu N du segment $[AC]$ sont $N(1;2)$
+    \item Déterminer une équation de la médiatrice  du segment $[AC]$ dans le triangle $\mathrm{ABC}$.
+    % La hauteur issue de $B$ est la droite passant par $B$ et perpendiculaire au côté opposé du triangle: $[A C]$. Le vecteur $\vv{A C}$ est donc un vecteur normal à la hauteur issue de $B$.\\
+    % Comme $\Coord{AC}{-6}{6}$, une équation de la hauteur est de la forme $-6 x+6 y+c=0$.\\
+    % Or $B$ appartient à la hauteur, donc $-6 x_{B}+$ $6 y_{B}+c=0$, donc $-6 \times 5+6 \times 3+c=0$, donc $-30+18+c=0$, donc $c=12$.\\
+    % Une équation de la hauteur issue de $B$ est alors $-6 x+6 y+12=0$, ce qui équivaut à $-x+y+2=0$.
+    \item Déterminer les coordonnées du point d'intersection $\mathrm{O}$ des deux médiatrices.
+    % On note $H$ le point d'intersection des deux hauteurs. On sait que $H$ existe car les vecteurs directeurs des deux droites, $\Coord{u_A}{0}{1}$ et $\Coord{u_B}{1}{1}$ ne sont pas colinéaires.\\
+    % Afin de trouver les coordonnées de $H$, on résout le système d'équations $\begin{cases}
+    % -x+4=0\\
+    % -x+y+2=0\\
+    % \end{cases}$.
+    % II équivaut à $\left\{\begin{array}{r}x=4 \\ -x+y+2=0\end{array}\right.$, donc $\left\{\begin{array}{r}x=4 \\ -4+y+2=0\end{array}\right.$, donc $\left\{\begin{array}{rl}x=4 \\ -2+y= & 0\end{array}\right.$, donc $\left\{\begin{aligned} x &=4\\ y&= 2 \end{aligned}\right.$.
+    % Les coordonnées de $H$ sont donc $(4 ; 2)$.
+    \item Montrer que les coordonnées du milieu P du segment $[AB]$ sont $P(-0,5;3,5)$
+    \item Calculer le produit scalaire $\vv{\mathrm{AB}} \cdot \vv{\mathrm{OP}}$. Quel résultat connu retrouve-t-on ?
+    % Alors $\Coord{CH}{4-(-2)}{2-3}$, donc $\Coord{CH}{6}{-1}$ et $\Coord{AB}{5-4}{3-(-3)}$, donc $\Coord{AB}{1}{6}$.\\
+    % Alors $\vv{A B} \cdot \vv{C H}=1 \times 6+6 \times(-1)=6-6=0$.\\
+    % Les vecteurs $\vv{A B}$ et $\vv{C H}$ sont orthogonaux, donc $(C H)$ est la hauteur issue de $C$ dans le triangle $A B C$. On en déduit que les hauteurs sont concourantes en $H$.
+\end{enumMet}
+
+% \exerciceDS{}
+% $A B C D$ est un parallélogramme tel que $A B=4$, $A D=6$ et $\widehat{B A D}=40^{\circ}$.\\
+% Calculer le produit scalaire $\vv{A B} \cdot \vv{A C}$ (on pourra décomposer le vecteur $\vv{A C}$ ).
+
+\exerciceDS{ - Équations cartésiennes - ( 3 points )}
+Dans chaque cas, déterminer une équation cartésienne de la droite $d$ passant par le point $\mathrm{A}$ et perpendiculaire à la droite (BC).
+\begin{enumMet}
+    \item \ding{46} $\mathrm{A}(5 ; 4)$ et $\Coord{u}{-2}{4}$ un vecteur directeur de $(\mathrm{BC})$.
+    % Comme $\Coord{u}{-4}{3}$ est un vecteur directeur de la droite $(B C)$, il est un vecteur normal à la droite $d$.\\
+    % Une équation cartésienne est de la forme $-4 x+3 y+c=0$.\\
+    % Or, le point $A$ appartient à la droite $d$, donc $-4 x_{A}+3 y_{A}+c=0$, donc $-4 \times 1+3 \times 4+c=0$, donc $c=-8$.\\
+    % Une équation de la droite $d$ est donc $-4 x+3 y-8=0$.
+    \item $\mathrm{A}(0 ; 2), \mathrm{B}(3 ;-1)$ et $\mathrm{C}(-4 ; 2)$.
+    % Comme $\Coord{BC}{-7}{4}$  est un vecteur directeur de la droite $(B C)$, il est un vecteur normal à la droite $d$.\\
+    % Une équation cartésienne est de la forme $-7 x+4 y+c=0$.\\
+    % Or, le point $A$ appartient à la droite $d$, donc $-7 x_{A}+4 y_{A}+c=0$, donc $-7 \times 0+4 \times 3+c=0$, donc $c=-12$.\\
+    % Une équation de la droite $d$ est donc $-7 x+4 y-12=0$
+    \item $\mathrm{A}(-2 ; 3)$ et la droite $(\mathrm{BC})$ est parallèle à l'axe des abscisses.
+    % La droite $(B C)$ étant verticale, un vecteur directeur de cette droite et un vecteur normal à $d$ est $\Coord{u}{0}{1}$.\\
+    % Une équation cartésienne de $d$ est de la forme $y+c=0$.\\
+    % Or, le point $A$ appartient à la droite $d$, donc $y_{A}+c=0$, donc $7+c=0$, donc $c=-7$.\\
+    % Une équation de la droite $d$ est donc $y-7=0$.
+\end{enumMet}
+
+
+
+
+
+\end{document}

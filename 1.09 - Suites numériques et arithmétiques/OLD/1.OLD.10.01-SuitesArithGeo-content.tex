@@ -1,0 +1,288 @@
+\chapter{Suites arithmétiques et géométriques}
+\thispagestyle{fancy}
+
+\section{Suites arithmétiques}
+
+\subsection{Définition}
+
+\begin{exemple}
+    Considérons une suite numérique $U_n$ où la différence entre un terme et son précédent reste constante et égale à 5.\\
+    Si le premier terme est égal à 3, les premiers termes successifs sont :\\
+    $U_0 = 3$,\\
+    $U_1 = 8$,\\
+    $U_2 = 13$,\\
+    $U_3 = 18$.\\
+    Une telle suite est appelée une suite arithmétique de raison 5 et de premier terme 3.
+    La suite est donc définie par : $U_{n+1}=U_n+5$ et $U_0=3$.
+\end{exemple}
+
+\begin{definition}
+    Une suite $U_n$ est une \grasInDef{suite arithmétique} s'il existe un nombre r tel que pour tout entier $n$, on a : $U_{n+1}=U_n+r$.
+    Le nombre $r$ est appelé \grasInDef{raison} de la suite.
+\end{definition}
+\ \\
+\begin{demonstrationTitre}{Démontrer si une suite est arithmétique}
+    1) La suite $U_n$ définie par : $U_n=7-9n$ est-elle arithmétique ?\\
+    2) La suite $V_n$ définie par : $V_n=n^2+3$ est-elle arithmétique ?\\
+    \\
+    1) $U_{n+1}-U_n=7-9(n+1)-7+9n=7-9n-9-7+9n=-9$.\\
+    La différence entre un terme et son précédent reste constante et égale à –9.\\
+    $U_n$ est une suite arithmétique de raison $–9$.\\
+    
+    2) $V_{n+1}-V_n=(n+1)^2+3-n^2-3=n^2+2n+1+3-n^2-3=2n+1$.\\
+    La différence entre un terme et son précédent ne reste pas constante.\\
+    $V_n$ n'est pas une suite arithmétique.
+\end{demonstrationTitre}
+
+\begin{propriete}
+    $U_n$ est une suite arithmétique de raison $r$ et de premier terme $U_0$.\\
+    Pour tout entier naturel $n$, on a : $U_n=U_0+nr$.
+\end{propriete}
+
+\begin{demonstration}
+    La suite arithmétique $U_n$ de raison $r$ et de premier terme $U_0$ vérifie la relation $U_{n+1}=U_n+r$.\\
+    En calculant les premiers termes :\\
+    $U_1=u_0+r$\\ 
+    $U_2=u_1+r$\\
+    $U_3=u_2+r$\\
+    …\\
+    $U_n=U_{n-1}+r$\\
+    
+    En additionnant membre à membre ces n égalités, on obtient :\\
+    $U_1+U_2+U_3+...+U_n=U_0+U_1+U_2+...+U_{n-1}+n\times r$\\
+    Soit, en retranchant aux deux membres les termes identiques :
+    $U_n=U_0+nr$
+\end{demonstration}
+
+\begin{methodeTitre}{Déterminer la raison et le premier terme d'une suite arithmétique}
+    Considérons la suite arithmétique $U_n$ tel que $U_5=7$ et $U_9=19$.\\
+    1) Déterminer la raison et le premier terme de la suite $U_n$.\\
+    2) Exprimer $U_n$ en fonction de $n$.\\ 
+    \\
+    1) Les termes de la suite sont de la forme $U_n=U_0+nr$\\
+    Ainsi 	$U_5=U_0+5r=7$  et $U_9=U_0+9r=19$.\\
+    En soustrayant membre à membre, on obtient :\\ $U_0+5r-U_0-9r=7-19$\\
+    Soit : $5r-9r=7-19$ donc $r=3$.
+    
+    Comme $U_0+5r=7$, on a : $U_0+5\times 3=7$ et donc : $U_0=-8$.\\
+    \\
+    2) $U_n=U_0+nr$  soit  $U_n=-8+n\times 3$ ou encore $U_n=3n-8$
+\end{methodeTitre}
+
+\subsection{Variation}
+
+\begin{propriete}
+    $U_n$ est une suite arithmétique de raison $r$.
+    \begin{itemDef}
+    	\item Si $r > 0$ alors la suite $U_n$ est croissante.
+    	\item Si $r < 0$ alors la suite $U_n$ est décroissante.
+    \end{itemDef}
+\end{propriete}
+
+\begin{demonstration}
+    $U_{n+1}-U_n=U_n+r-U_n=r$.
+    \begin{itemDem}
+    	\item Si $r > 0$ alors $U_{n+1}-U_n>0$  et la suite $U_n$ est croissante.
+    	\item Si $r < 0$ alors $U_{n+1}-U_n<0$ et la suite $U_n$ est décroissante.
+    \end{itemDem}
+\end{demonstration}
+\begin{exemple}
+    La suite arithmétique $U_n$ définie par $U_n=8-3n$ est décroissante car de raison négative et égale à $-3$.
+\end{exemple}
+
+\subsection{Représentation graphique}
+
+Les points de la représentation graphique d'une suite arithmétique sont alignés.
+
+\begin{exemple}
+    On a représenté ci-dessous la suite de raison $–0,5$ et de premier terme $4$.
+    \begin{center}
+    \includegraphics[scale=1]{01-07-01}
+    \end{center}
+\end{exemple}
+\begin{center}
+    \includegraphics[scale=0.8]{01-07-02.png}
+\end{center}
+
+\section{Suites géométriques}
+
+\subsection{Définition}
+
+\begin{exemple}
+    Considérons une suite numérique $U_n$ où le rapport entre un terme et son précédent reste constant et égale à 2.\\
+    Si le premier terme est égal à 5, les premiers termes successifs sont :\\
+    $U_0 = 5$,\ \ \ 
+    $U_1 = 10$,\ \ \ 
+    $U_2 = 20$,\ \ \ 
+    $U_3 = 40$.\\
+    Une telle suite est appelée une suite géométrique de raison $2$ et de premier terme $5$.\\
+    La suite est donc définie par : $U_{n+1}=2\times U_n$ et $U_0=5$. 
+\end{exemple}
+
+\begin{definition}
+    Une suite $U_n$ est une \grasInDef{suite géométrique} s'il existe un nombre q tel que pour tout entier $n$, on a : $U_{n+1}=q\times U_n$.
+    Le nombre $q$ est appelé \grasInDef{raison} de la suite.
+\end{definition}
+
+\begin{methodeTitre}{Démontrer si une suite est géométrique}
+    La suite $U_n$ définie par : $U_n=3\times 5^n$  est-elle géométrique ?
+    \ \\
+    $\dfrac{U_{n+1}}{U_n} =\dfrac{3\times 5^{n+1}}{3\times 5^n}=\dfrac{5^{n+1}}{5^n} =5^{n+1-n}=5$\\
+    Le rapport entre un terme et son précédent reste constant et égale à $5$.\\
+    $U_n$ est une suite géométrique de raison $5$ et de premier terme $U_0=3\times 5^0=3$.
+\end{methodeTitre}
+
+\begin{exempleTitre}[exemple concret]
+    On place un capital de \EUR{500} sur un compte dont les intérêts annuels s'élèvent à $4\%$.
+    Chaque année, le capital est multiplié par $1,04$.
+    Ce capital suit une progression géométrique de raison $1,04$.\\
+    
+    On a ainsi :\\ 
+    $U_1=1,04\times 500=520$\\		
+    $U_2=1,04\times 520=540,80$\\
+    $U_3=1,04\times 540,80=562,432$\\	
+    De manière générale : $U_{n+1}=1,04\times U_n$ avec $U_0=500$\\ 
+    On peut également exprimer $U_n$ en fonction de $n$ : $U_n= 500\times1,04^n$. 
+\end{exempleTitre}
+
+\begin{propriete}
+    $U_n$ est une suite géométrique de raison $q$ et de premier terme $U_0$.\\
+    Pour tout entier naturel $n$, on a : $U_n= U_0\times q^n$.
+\end{propriete}
+
+\begin{demonstration}
+    La suite géométrique $U_n$ de raison $q$ et de premier terme $U_0$ vérifie la relation
+    $U_{n+1}=q\times U_n$.
+    \begin{itemDem}
+    	\item Si $q$ ou $U_0$ est nul, alors tous les termes de la suite sont nuls. La démonstration est évidente dans ce cas.
+    	\item Dans la suite, on suppose donc que $q$ et $U_0$ sont non nuls. Dans ce cas, tous les termes de la suite sont non nuls.
+    \end{itemDem}
+    En calculant les premiers termes :\\ 
+    $U_1=q\times U_0$\\
+    $U_2=q\times U_1$\\
+    $U_3=q\times U_2$\\
+    …\\
+    $U_n=q\times U_{n-1}$\\
+    \\
+    En multipliant membre à membre ces $n$ égalités, on obtient :
+    $u_1\times U_2\times U_3\times …\times U_n=U_0\times U_1\times U_2\times …\times u_{n-1}\times q^n$.\\
+    Comme les termes de la suite sont non nuls, on peut diviser aux deux membres les facteurs identiques : $U_n=U_0\times q^n$
+\end{demonstration}
+
+\begin{methodeTitre}{Déterminer la raison et le premier terme d'une suite géométrique}
+Considérons la suite géométrique $U_n$ tel que $U_4=8$ et $U_7=512$.\\
+Déterminer la raison et le premier terme de la suite $U_n$.\\
+\\
+\ \\
+Les termes de la suite sont de la forme $U_n=U_0\times q^n$.\\
+Donc : $U_4=U_0\times q^4=8$ et $U_7=U_0\times q^7=512$.\\
+Ainsi : $\dfrac{U_7}{U_4}  = \dfrac{U_0\times q^7}{U_0\times q^4}  =q^3$ et $\dfrac{U_7}{U_4}=\dfrac{512}{8}=64$ donc $q^3=64$.\\
+On utilise la fonction racine troisième de la calculatrice pour trouver le nombre qui élevé au cube donne 64.\\
+Ainsi $q=^3\sqrt{64}=4$\\
+Comme $U_0 \times q^4=8$, on a : $U_0\times 4^4=8$ et donc : $U_0= \dfrac{1}{32}$.
+\end{methodeTitre}
+\subsection{variations}
+
+\begin{propriete}
+    $U_n$ est une suite géométrique de raison $q$ et de premier terme non nul $U_0$.\\
+    Pour $U_0>0$ :
+    \begin{itemDef}
+    	\item Si $q > 1$ alors la suite $U_n$ est croissante.
+    	\item Si $0 < q < 1$ alors la suite $U_n$ est décroissante.
+    \end{itemDef}
+    Pour $U_0<0$ :
+    \begin{itemDef}
+    	\item Si $q > 1$ alors la suite $U_n$ est décroissante.
+    	\item Si $0 < q < 1$ alors la suite $U_n$ est croissante.
+    \end{itemDef}
+\end{propriete}
+
+\begin{demonstrationTitre}{cas où $U_0 > 0$ }
+    $U_{n+1}-U_n=U_0\times q^{n+1}-U_0\times q^n=U_0\times q^n\times (q-1)$.
+    \begin{itemDem}
+    	\item Si $q > 1$ alors $U_{n+1}-U_n>0$ et la suite $U_n$ est croissante.
+    	\item Si $0 < q < 1$ alors $U_{n+1}-U_n<0$ et la suite $U_n$ est décroissante.
+    \end{itemDem}
+\end{demonstrationTitre}
+
+\subsection{Représentation graphique}
+
+\begin{exemple}
+    La suite géométrique $U_n$ définie par $U_n=-4\times2^n$ est décroissante car le premier terme est négatif et la raison est supérieure à 1
+    \begin{center}
+        \includegraphics[scale=1]{01-07-03.png}
+    \end{center}
+    Remarque : Si la raison q est négative alors la suite géométrique n'est pas monotone.
+\end{exemple}
+\begin{center}
+    \includegraphics[scale=0.8]{01-07-04.png}
+\end{center}
+
+\section{Somme des termes consécutifs}
+
+\subsection{Cas d'une suite arithmétique}
+
+\begin{propriete}
+$n$ est un entier naturel non nul alors on a : $1+2+3+...+n= \dfrac{n(n+1)}{2}$
+\end{propriete}
+
+\begin{remarque}
+Il s'agit de la somme des $n$ premiers termes d'une suite arithmétique de raison $1$ et de premier terme $1$
+\end{remarque}
+
+\begin{demonstration}
+    \begin{tabular}{ c c c c c c c c c c c c }			
+         & 1 & + & 2 & + & 3 & + &... & + &n-1 & + & n \\
+       + & n & + & n-1 & + & n-2 & + & ...& + & 2 & + & 1 \\
+       \hline
+         & (n+1) & + & (n+1) & + & (n+1) & + & ... & + & (n+1) & + & (n+1)\\
+    \end{tabular} \\
+    \\
+    Donc : $2\times (1+2+3+...+(n-1)+n)=n(n+1)$\\
+    Et donc : $1+2+3+...+(n-1)+n=\dfrac{n(n+1)}{2}$
+\end{demonstration}
+
+\begin{methodeTitre}{Calculer la somme des termes d'une suite arithmétique}
+    Calculer les sommes $S_1$ et $S_2$ suivantes :\\ 
+    $S_1=1+2+3+...+348$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $S_2=33+36+39+...+267$
+    \\
+    \\
+    $S_1=1+2+3+...+348=\dfrac{348\times 349}{2}=60726$\\
+    \\
+    \\
+    $S_2=33+36+39+...+267=3\times(11+12+13+...+89)$\\
+    $=3\times((1+2+3+...+89)-(1+2+3+...+10))$\\
+    $=3\times \left(\dfrac{89\times 90}{2}-\dfrac{10\times11}{2}\right)=11\ 850$
+\end{methodeTitre}
+
+\subsection{Cas d'une suite géométrique}
+
+\begin{propriete}
+    $n$ est un entier naturel non nul et $q$ un réel différent de 1 alors on a :\\ 
+    $1+q+q^2+q^3+...+q^n= \dfrac{1-q^{n+1}}{1-q}$
+\end{propriete}
+
+\begin{remarque}
+    Il s'agit de la somme des $n+1$ premiers termes d'une suite géométrique de raison $q$ et de premier terme $1$.
+\end{remarque}
+
+\begin{demonstration}
+    $S=1+q+q^2+q^3+...+q^n$\\
+    $q\times S=q+q^2+q^3+q^4+...+q^(n+1)$\\
+    \\
+    Ainsi :\\
+    $S-q\times S=(1+q+q^2+q^3+...+q^n )-(q+q^2+q^3+q^4+...+q^{n+1})$\\
+    $S-q\times S=1-q^(n+1)$\\
+    $S\times (1-q)=1-q^{n+1}$\\
+    $S=\dfrac{1-q^(n+1)}{1-q}$
+\end{demonstration}
+
+\begin{methodeTitre}{Calculer la somme des termes d'une suite arithmétique}
+Calculer la somme $S$ suivante : 
+$S=1+3+3^2+3^3+...+3^{13}$\\
+\\
+$S=1+3+3^2+3^3+...+3^{13}=\dfrac{1-3^{14}}{1-3}=2\  391\  484$
+
+\end{methodeTitre}
+
+
