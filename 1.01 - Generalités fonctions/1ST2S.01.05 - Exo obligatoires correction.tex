@@ -1,0 +1,570 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ST2S-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\rhead{Chapitre 01 - Généralités sur les fonctions - Correction des exercices obligatoires}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Chapitre 01 - Généralités sur les fonctions\\
+						Correction des exercices obligatoires
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 1 p 56 $-$ Parkour + $-$ Hachette technique}
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=2 x+3$.
+	\begin{enumMet}
+		\item Calculer les images de $0$ ; $2$ ;$-1$ par $f$.
+		\begin{corrBox}
+			$f(0)=2\times0+3=3$ \qquad $f(2)=2\times2+3=7$ \qquad $f(-1)=2\times(-1)+3=1$
+			
+			Les images de $0$ ; $2$ et $-1$ par $f$ sont respectivement $\mRouge{3}$ ; $\mRouge{7}$ et $\mRouge{1}$.
+		\end{corrBox}
+		
+		\item Déterminer un antécédent de 3 , puis de 7 par $f$.
+		\begin{corrBox}
+			$f(x)=3 \iff 2x+3=3 \iff 2x=0 \iff x=0$. Un antécédent de $3$ par $f$ est $\mRouge{0}$.
+			
+			$f(x)=7 \iff 2x+3=7 \iff 2x=4 \iff x=2$. Un antécédent de $7$ par $f$ est $\mRouge{2}$.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 2 p 56 $-$ Parkour + $-$ Hachette technique}
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par : $x \mapsto-4x+1$.
+	\begin{enumMet}
+		\item Calculer l'image de 4 par $f$.
+		\begin{corrBox}
+			$f(4)=-4\times4+1=-16+1=-15$. L'image de $4$ par $f$ est $\mRouge{-15}$.
+		\end{corrBox}
+		
+		\item Déterminer le ou les antécédents éventuels de -15 par $f$.
+		\begin{corrBox}
+			$f(x)=-15 \iff -4x+1=-15 \iff -4x=-16 \iff x=\dfrac{-16}{-4}=4$.
+			
+			$-15$ a un seul antécédent par $f$ : $\mRouge{4}$.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 3 p 56 $-$ Parkour + $-$ Hachette technique}
+	
+	La fonction $h$ est définie sur $\mathbb{R}$ par: $x \mapsto x^2-4 x$.
+	\begin{enumMet}
+		\item Calculer les images de -2 et de 3 par $h$.
+		\begin{corrBox}
+			$h(-2)=(-2)^2-4\times(-2)=4+8=12$. L'image de $-2$ par $h$ est $\mRouge{12}$.
+			
+			$h(3)=3^2-4\times3=9-12=-3$. L'image de $3$ par $h$ est $\mRouge{-3}$.
+		\end{corrBox}
+		
+		\item Déterminer le ou les antécédents éventuels de 0 par $h$.
+		\begin{corrBox}
+			$h(x)=0 \iff x^2-4x=0 \iff x(x-4)=0$.
+			
+			Un produit de facteurs est nul si et seulement si l'un au moins des facteurs est nul :
+			\[x=0 \quad\text{ou}\quad x-4=0 \iff x=4\]
+			$0$ a deux antécédents par $h$ : $\mRouge{0}$ et $\mRouge{4}$.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{$-$ Exercice 25 p 50 $-$ Le Livre scolaire }
+	
+	On considère la fonction $g: x \mapsto 3 x+2+\dfrac{1}{x}$ définie sur $\mathbb{R} \backslash\{0\}$.
+	
+	Sans utiliser la calculatrice, calculer $g(1), g(2)$ et $g\left(\frac{1}{2}\right)$.
+	
+	\begin{corrBox}
+		$g(1)=3\times1+2+\dfrac{1}{1}=3+2+1=\mRouge{6}$
+		
+		$g(2)=3\times2+2+\dfrac{1}{2}=6+2+\dfrac{1}{2}=\mRouge{\dfrac{17}{2}}=8{,}5$
+		
+		$g\left(\dfrac{1}{2}\right)=3\times\dfrac{1}{2}+2+\dfrac{1}{\frac{1}{2}}=\dfrac{3}{2}+2+2=\dfrac{3}{2}+\dfrac{8}{2}=\mRouge{\dfrac{11}{2}}=5{,}5$
+	\end{corrBox}
+	
+	%=====================================================
+	\exercice{$-$ Exercice 50 p 52 $-$ Le Livre scolaire }
+	
+	On considère la fonction $f: x \mapsto-2 x+1$ définie sur $\mathbb{R}$.
+	\begin{enumMet}
+		\item Calculer l'image de 3 par $f$.
+		\begin{corrBox}
+			$f(3)=-2\times3+1=-6+1=\mRouge{-5}$
+		\end{corrBox}
+		
+		\item Que vaut $f(-5)$ ?
+		\begin{corrBox}
+			$f(-5)=-2\times(-5)+1=10+1=\mRouge{11}$
+		\end{corrBox}
+		
+		\item Résoudre dans $\mathbb{R}$ l'équation $f(x)=5$.
+		\begin{corrBox}
+			$f(x)=5 \iff -2x+1=5 \iff -2x=4 \iff x=\dfrac{4}{-2}=-2$
+			
+			$\mRouge{S=\{-2\}}$
+		\end{corrBox}
+		
+		\item Donner le (ou les) antécédent(s) de -11 par la fonction $f$.
+		\begin{corrBox}
+			$f(x)=-11 \iff -2x+1=-11 \iff -2x=-12 \iff x=6$
+			
+			$-11$ a un unique antécédent par $f$ : $\mRouge{6}$.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{$-$ Exercice 51 p 52 $-$ Le Livre scolaire }
+	
+	On considère la fonction $g: x \mapsto 3 x+2$ définie sur $\mathbb{R}$.
+	\begin{enumMet}
+		\item Calculer les images de $\dfrac{1}{3}$ et $\dfrac{5}{6}$ par la fonction $g$.
+		\begin{corrBox}
+			$g\left(\dfrac{1}{3}\right)=3\times\dfrac{1}{3}+2=1+2=\mRouge{3}$
+			
+			$g\left(\dfrac{5}{6}\right)=3\times\dfrac{5}{6}+2=\dfrac{15}{6}+2=\dfrac{5}{2}+\dfrac{4}{2}=\mRouge{\dfrac{9}{2}}$
+		\end{corrBox}
+		
+		\item Résoudre dans $\mathbb{R}$ l'inéquation $g(x) \leqslant-4$.
+		\begin{corrBox}
+			$g(x)\leqslant-4 \iff 3x+2\leqslant-4 \iff 3x\leqslant-6 \iff x\leqslant-2$ \quad (on divise par $3>0$, le sens ne change pas).
+			
+			$\mRouge{S=\left]-\infty\,;\,-2\right]}$
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{$-$ Exercice 23 p 50 $-$ Le Livre scolaire }
+	
+	On considère une fonction $f$ définie sur [-6;7] dont la représentation graphique $C_f$ est donnée ci-dessous.
+	\begin{minipage}[c]{0.48\linewidth}
+		\begin{enumMet}
+			\item Déterminer graphiquement $f(2)$.
+			\item Résoudre graphiquement l'équation $f(x)=-1$ sur [-6 ; 7].
+			\item Combien de solutions l'équation $f(x)=0$ admet-elle sur l'intervalle [-6; 7]?
+		\end{enumMet}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.48\linewidth}
+		\includegraphics[scale=1.05]{ExoOblLLS23-img01}
+	\end{minipage}
+	
+	\begin{corrBox}
+		\textbf{1)} Le point de $C_f$ d'abscisse $2$ est sur l'axe des abscisses : $\mRouge{f(2)=0}$.
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{2)} On cherche les abscisses des points d'intersection de $C_f$ avec la droite d'équation $y=-1$.
+		
+		Avec la précision permise par le graphique : $\mRouge{S\approx\{-4{,}8\ ;\ -3\ ;\ 4{,}2\ ;\ 5{,}8\}}$.
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{3)} La courbe $C_f$ coupe l'axe des abscisses en 3 points (abscisses environ $-5{,}2$ ; $-1{,}2$ et $2$).
+		
+		L'équation $f(x)=0$ admet donc $\mRouge{3}$ \textbf{solutions} sur $[-6;7]$.
+	\end{corrBox}
+	
+	\newpage
+	%=====================================================
+	\exercice{$-$ Exercice 27 p 50 $-$ Le Livre scolaire }
+	
+	On considère une fonction $f$ définie sur $[-4 ; 5]$ dont la représentation graphique $C_f$ est donnée ci-dessous.
+	\begin{minipage}[c]{0.62\linewidth}
+		\begin{enumMet}
+			\item Déterminer $f(-2), f(3)$ et $f(5)$.
+			\item Résoudre graphiquement l'équation $f(x)=-2$ sur $[-4 ; 5]$ ?
+			\item Résoudre graphiquement l'équation $f(x)=-1$ sur $[-4;5]$?
+			\item Résoudre graphiquement l'inéquation $f(x)>-2$ sur $[-4 ; 5]$.
+			\item Donner un nombre réel $a$ admettant un unique antécédent par $f$.
+		\end{enumMet}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.38\linewidth}
+		\includegraphics[scale=1.05]{ExoOblLLS27-img02}
+	\end{minipage}
+	
+	\begin{corrBox}
+		\textbf{1)} Par lecture graphique : $\mRouge{f(-2)=-1}$ \quad ; \quad $\mRouge{f(3)=-2}$ \quad ; \quad $\mRouge{f(5)=-1}$.
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{2)} On cherche les abscisses des points de $C_f$ d'ordonnée $-2$ :
+		
+		$\mRouge{S=\{-1\ ;\ 3\}}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{3)} On cherche les abscisses des points de $C_f$ d'ordonnée $-1$ :
+		
+		$\mRouge{S\approx\{-2\ ;\ 4\ ;\ 5\}}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{4)} On cherche les abscisses des points de $C_f$ situés strictement au-dessus de la droite d'équation $y=-2$ :
+		
+		$\mRouge{S=\left[-4\,;\,-1\right[\ \cup\ \left]3\,;\,5\right]}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{5)} Par exemple, $\mRouge{a=2}$ : la droite d'équation $y=2$ ne coupe $C_f$ qu'en un seul point (sur la partie gauche de la courbe).
+		
+		\emph{Autres réponses possibles : $a=3$ (antécédent $-4$) ou $a=-3$ (antécédent $1$, le minimum de $f$).}
+	\end{corrBox}
+	
+	%=====================================================
+	\exercice{$-$ Exercice 28 p 50 $-$ Le Livre scolaire }
+	
+	On considère la fonction $g$ dont la représentation graphique $\mathcal{C}_g$ est donnée ci-dessous.
+	
+	\begin{minipage}[c]{0.62\linewidth}
+		\begin{enumMet}
+			\item Résoudre l'équation $g(x)=1 \operatorname{sur}[-4 ; 5]$.
+			\item Déterminer graphiquement $g(5)$.
+			\item Résoudre l'inéquation $g(x)<-2$ sur [-4; 5].
+			\item Donner un réel qui possède exactement quatre antécédents par la fonction $g$.
+		\end{enumMet}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.38\linewidth}
+		\includegraphics[scale=1.05]{ExoOblLLS28-img03}
+	\end{minipage}
+	
+	\begin{corrBox}
+		\textbf{1)} On cherche les abscisses des points de $\mathcal{C}_g$ d'ordonnée $1$ :
+		
+		$\mRouge{S\approx\{-4\ ;\ -1\ ;\ 4\}}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{2)} Le point de $\mathcal{C}_g$ d'abscisse $5$ a pour ordonnée $2$ : $\mRouge{g(5)=2}$.
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{3)} On cherche les abscisses des points de $\mathcal{C}_g$ situés strictement en dessous de la droite d'équation $y=-2$ :
+		
+		$\mRouge{S\approx\left]1{,}2\,;\,2{,}8\right[}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{4)} Par exemple $\mRouge{0}$ : la droite d'équation $y=0$ (l'axe des abscisses) coupe $\mathcal{C}_g$ en exactement 4 points. $0$ possède donc exactement quatre antécédents par $g$.
+		
+		\emph{Tout réel strictement compris entre le minimum local de gauche (environ $-1{,}5$) et $1$ convient.}
+	\end{corrBox}
+	
+	%=====================================================
+	\exercice{$-$ Exercice 52 p 52 $-$ Le Livre scolaire }
+	
+	On considère une fonction $f$ dont la courbe représentative $C_f$ est donnée dans le repère orthonormé ci-dessous.
+	
+	\begin{minipage}[c]{0.55\linewidth}
+		\begin{enumMet}
+			\item Donner l'ensemble de définition de $f$.
+			\item Résoudre graphiquement les équations et inéquations suivantes.
+			\begin{multicols}{3}
+				\begin{enumMet}
+					\item $f(x)=-2$
+					\item $f(x)=-1$
+					\item $f(x)<-2$
+					\item $f(x)=1$
+					\item $f(x) \geqslant-2$
+				\end{enumMet}
+			\end{multicols}
+		\end{enumMet}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.48\linewidth}
+		\includegraphics[scale=1.05]{ExoOblLLS52-img04}
+	\end{minipage}
+	
+	\begin{corrBox}
+		\textbf{1)} La courbe est tracée pour des abscisses allant de $-3$ à $7$ : $\mRouge{\mathcal{D}_f=[-3\,;\,7]}$.
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{2) a)} $f(x)=-2$ : $\mRouge{S\approx\{-1\ ;\ 4\}}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{2) b)} $f(x)=-1$ : $\mRouge{S\approx\{-2\ ;\ 5\ ;\ 7\}}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{2) c)} $f(x)<-2$ : $\mRouge{S\approx\left]-1\,;\,4\right[}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{2) d)} $f(x)=1$ : $\mRouge{S=\{-3\}}$
+	\end{corrBox}
+	
+	\begin{corrBox}
+		\textbf{2) e)} $f(x)\geqslant-2$ : $\mRouge{S\approx\left[-3\,;\,-1\right]\cup\left[4\,;\,7\right]}$
+	\end{corrBox}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 31 p 62 $-$ Parkour + $-$ Hachette technique}
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=3 x-1$.
+	\begin{enumMet}
+		\item Calculer le taux de variation de $f$ entre 1 et 2 .
+		\begin{corrBox}
+			$f(1)=3\times1-1=2$ et $f(2)=3\times2-1=5$.
+			\[\dfrac{f(2)-f(1)}{2-1}=\dfrac{5-2}{1}=\mRouge{3}\]
+		\end{corrBox}
+		
+		\item Calculer le taux de variation de $f$ entre 5 et 8.
+		\begin{corrBox}
+			$f(5)=3\times5-1=14$ et $f(8)=3\times8-1=23$.
+			\[\dfrac{f(8)-f(5)}{8-5}=\dfrac{23-14}{3}=\dfrac{9}{3}=\mRouge{3}\]
+		\end{corrBox}
+		
+		\item Que remarque-t-on ?
+		\begin{corrBox}
+			Les deux taux de variation sont égaux à $3$, qui est le coefficient directeur de la fonction affine $f$.
+			
+			Pour une fonction affine $x\mapsto mx+p$, le taux de variation est toujours égal à $m$.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 32 p 62 $-$ Parkour + $-$ Hachette technique}
+	
+	Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=x^2$.
+	\begin{enumMet}
+		\item Calculer le taux de variation de $f$ entre 2 et 3.
+		\begin{corrBox}
+			\[\dfrac{f(3)-f(2)}{3-2}=\dfrac{9-4}{1}=\mRouge{5}\]
+		\end{corrBox}
+		
+		\item Calculer le taux de variation de $f$ entre -3 et -1
+		\begin{corrBox}
+			\[\dfrac{f(-1)-f(-3)}{-1-(-3)}=\dfrac{1-9}{2}=\dfrac{-8}{2}=\mRouge{-4}\]
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 33 p 62 $-$ Parkour + $-$ Hachette technique}
+	
+	Soit $f$ une fonction définie par sa représentation graphique dans un repère.
+	
+	Avec la précision permise par le graphique :
+	
+	\begin{enumMet}
+		\item Déterminer le taux de variation de $f$ entre -3 et -1.
+		\begin{corrBox}
+			Par lecture graphique : $f(-3)=0$ et $f(-1)=3$.
+			\[\dfrac{f(-1)-f(-3)}{-1-(-3)}=\dfrac{3-0}{2}=\mRouge{1{,}5}\]
+		\end{corrBox}
+		
+		\item Déterminer le taux de variation de $f$ entre 0 et 2 .
+		\begin{corrBox}
+			Par lecture graphique : $f(0)\approx2{,}4$ et $f(2)=0$.
+			\[\dfrac{f(2)-f(0)}{2-0}\approx\dfrac{0-2{,}4}{2}\approx\mRouge{-1{,}2}\]
+		\end{corrBox}
+	\end{enumMet}
+	
+	\begin{center}
+		\includegraphics[scale=0.4]{ExoOblParkour+33-img06}
+	\end{center}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 34 p 62 $-$ Parkour + $-$ Hachette technique}
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=4 x+3$ et deux réels $x_1$ et $x_2$.
+	\begin{enumMet}
+		\item Calculer le taux de variation de $f$ entre $x_1$ et $x_2$. Simplifier au maximum l'expression.
+		\begin{corrBox}
+			Pour $x_1\neq x_2$ :
+			\[\dfrac{f(x_2)-f(x_1)}{x_2-x_1}=\dfrac{(4x_2+3)-(4x_1+3)}{x_2-x_1}=\dfrac{4x_2+3-4x_1-3}{x_2-x_1}=\dfrac{4(x_2-x_1)}{x_2-x_1}=\mRouge{4}\]
+		\end{corrBox}
+		
+		\item En déduire les variations de $f$ sur $\mathbb{R}$. 
+		\begin{corrBox}
+			Le taux de variation de $f$ entre deux réels quelconques est égal à $4$, qui est toujours positif.
+			
+			Donc $f$ est \textbf{croissante sur $\bm{\mathbb{R}}$}.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 35 p 62 $-$ Parkour + $-$ Hachette technique}
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=x^2$.
+	\begin{enumMet}
+		\item Calculer le taux de variation de $f$ entre 1 et 2 .
+		\begin{corrBox}
+			\[\dfrac{f(2)-f(1)}{2-1}=\dfrac{4-1}{1}=\mRouge{3}\]
+		\end{corrBox}
+		
+		\item On considère deux réels $x_1$ et $x_2$. Calculer le taux de variation de $f$ entre $x_1$ et $x_2$. Simplifier au maximum l'expression.
+		\begin{corrBox}
+			Pour $x_1\neq x_2$, en utilisant l'identité remarquable $a^2-b^2=(a-b)(a+b)$ :
+			\[\dfrac{f(x_2)-f(x_1)}{x_2-x_1}=\dfrac{x_2^2-x_1^2}{x_2-x_1}=\dfrac{(x_2-x_1)(x_2+x_1)}{x_2-x_1}=\mRouge{x_1+x_2}\]
+		\end{corrBox}
+		
+		\item Donner le signe du taux de variation dans le cas où $x_1$ et $x_2$ sont positifs, puis dans le cas où $x_1$ et $x_2$ sont négatifs.
+		\begin{corrBox}
+			Si $x_1$ et $x_2$ sont positifs (et distincts), leur somme $x_1+x_2$ est \textbf{positive}.
+			
+			Si $x_1$ et $x_2$ sont négatifs (et distincts), leur somme $x_1+x_2$ est \textbf{négative}.
+		\end{corrBox}
+		
+		\item En déduire les variations de $f$ sur $\mathbb{R}$.
+		\begin{corrBox}
+			La fonction $f$ est \textbf{décroissante sur $\bm{]-\infty\,;\,0]}$} et \textbf{croissante sur $\bm{[0\,;\,+\infty[}$}.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 37 p 62 $-$ Parkour + $-$ Hachette technique}
+	
+	On donne dans un repère la courbe représentative de la fonction $f$ et deux points A et B.
+	\begin{center}
+		\includegraphics[scale=0.4]{ExoOblParkour+37-img07}
+	\end{center}
+	\begin{enumMet}
+		\item Lire les coordonnées de A et B sur le graphique et en déduire le coefficient directeur de la droite (AB).
+		\begin{corrBox}
+			On lit $A(4\,;\,-1)$ et $B(6\,;\,0)$.
+			\[m=\dfrac{y_B-y_A}{x_B-x_A}=\dfrac{0-(-1)}{6-4}=\mRouge{\dfrac{1}{2}}\]
+		\end{corrBox}
+		
+		\item On admet que la fonction a pour expression :$f(x)=\dfrac{1}{4}(x-2)(x-6)$
+		
+		Déterminer le taux de variation de $f$ entre 4 et 6 .
+		\begin{corrBox}
+			$f(4)=\dfrac{1}{4}\times(4-2)\times(4-6)=\dfrac{1}{4}\times2\times(-2)=-1$ \quad et \quad $f(6)=\dfrac{1}{4}\times4\times0=0$.
+			\[\dfrac{f(6)-f(4)}{6-4}=\dfrac{0-(-1)}{2}=\mRouge{\dfrac{1}{2}}\]
+		\end{corrBox}
+		
+		\item Quel lien existe-t-il entre les résultats précédents?
+		\begin{corrBox}
+			Les deux résultats sont égaux : le taux de variation de $f$ entre $4$ et $6$ est égal au coefficient directeur de la sécante $(AB)$, où $A$ et $B$ sont les points de $C_f$ d'abscisses $4$ et $6$.
+		\end{corrBox}
+	\end{enumMet}
+	
+	\newpage
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 9 p 55 $-$ Calao}
+	
+	On considère la fonction $x \mapsto \dfrac{1}{x}$, et deux réels $x_1$ et $x_2$ distincts non nuls.
+	\begin{enumMet}
+		\item Exprimer le taux de variation entre $x_1$ et $x_2$.
+		\begin{corrBox}
+			\[\dfrac{f(x_2)-f(x_1)}{x_2-x_1}=\dfrac{\dfrac{1}{x_2}-\dfrac{1}{x_1}}{x_2-x_1}\]
+		\end{corrBox}
+		
+		\item Simplifier au mieux le quotient.
+		\begin{corrBox}
+			On réduit le numérateur au même dénominateur : $\dfrac{1}{x_2}-\dfrac{1}{x_1}=\dfrac{x_1-x_2}{x_1x_2}=\dfrac{-(x_2-x_1)}{x_1x_2}$.
+			
+			D'où :
+			\[\dfrac{f(x_2)-f(x_1)}{x_2-x_1}=\dfrac{-(x_2-x_1)}{x_1x_2}\times\dfrac{1}{x_2-x_1}=\mRouge{-\dfrac{1}{x_1x_2}}\]
+		\end{corrBox}
+		
+		\item Étudier son signe suivant le signe de $x_1$ et $x_2$.
+		\begin{corrBox}
+			\textbf{Si $\bm{x_1}$ et $\bm{x_2}$ sont de même signe} (tous deux strictement positifs ou tous deux strictement négatifs) : $x_1x_2>0$, donc $-\dfrac{1}{x_1x_2}<0$. Le taux de variation est \textbf{négatif}.
+			
+			\textbf{Si $\bm{x_1}$ et $\bm{x_2}$ sont de signes contraires} : $x_1x_2<0$, donc $-\dfrac{1}{x_1x_2}>0$. Le taux de variation est \textbf{positif}.
+		\end{corrBox}
+		
+		\item En déduire la monotonie de la fonction inverse, en précisant l'intervalle.
+		\begin{corrBox}
+			Sur chacun des intervalles $]-\infty\,;\,0[$ et $]0\,;\,+\infty[$, deux réels $x_1$ et $x_2$ sont de même signe, donc le taux de variation est négatif.
+			
+			La fonction inverse est \textbf{strictement décroissante sur $\bm{]-\infty\,;\,0[}$} et \textbf{strictement décroissante sur $\bm{]0\,;\,+\infty[}$}.
+			
+			\emph{Attention : elle n'est pas décroissante sur $\mathbb{R}^*$ tout entier, car par exemple $-1<1$ et $f(-1)=-1<f(1)=1$.}
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 10 p 55 $-$ Calao}
+	
+	Soit $f$ définie sur $]-2 ;+\infty\left[\right.$ par $f(x)=\dfrac{-4}{x+2}$ et deux réels distincts $x_1$ et $x_2$ de $]-2 ;+\infty[$.
+	\begin{enumMet}
+		\item Exprimer le taux de variation entre $x_1$ et $x_2$.
+		\begin{corrBox}
+			On calcule d'abord la différence des images :
+			\[f(x_2)-f(x_1)=\dfrac{-4}{x_2+2}+\dfrac{4}{x_1+2}=\dfrac{-4(x_1+2)+4(x_2+2)}{(x_1+2)(x_2+2)}=\dfrac{4x_2-4x_1}{(x_1+2)(x_2+2)}=\dfrac{4(x_2-x_1)}{(x_1+2)(x_2+2)}\]
+			D'où :
+			\[\dfrac{f(x_2)-f(x_1)}{x_2-x_1}=\mRouge{\dfrac{4}{(x_1+2)(x_2+2)}}\]
+		\end{corrBox}
+		
+		\item Conclure sur la monotonie de la fonction $f$.
+		\begin{corrBox}
+			Comme $x_1>-2$ et $x_2>-2$, on a $x_1+2>0$ et $x_2+2>0$, donc $(x_1+2)(x_2+2)>0$.
+			
+			Le taux de variation $\dfrac{4}{(x_1+2)(x_2+2)}$ est donc strictement positif.
+			
+			La fonction $f$ est \textbf{strictement croissante sur $\bm{]-2\,;\,+\infty[}$}.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exercice{ $-$ Exercice 11 p 55 $-$ Calao}	
+	
+	On considère la fonction $f$ représentée par la courbe C.
+	\begin{center}
+		\includegraphics[scale=0.8]{ExoOblCalao11-img08}
+	\end{center}
+	\begin{enumMet}
+		\item \begin{enumMet}
+			\item Lire la pente des sécantes (AB) et (BC).
+			\begin{corrBox}
+				On lit $A(2\,;\,4)$, $B(4\,;\,7)$ et $C(6\,;\,8)$.
+				
+				Pente de $(AB)$ : $m_{AB}=\dfrac{7-4}{4-2}=\mRouge{\dfrac{3}{2}}=1{,}5$
+				
+				Pente de $(BC)$ : $m_{BC}=\dfrac{8-7}{6-4}=\mRouge{\dfrac{1}{2}}=0{,}5$
+			\end{corrBox}
+			
+			\item Déterminer leur équation réduite.
+			\begin{corrBox}
+				\textbf{Droite $\bm{(AB)}$ :} $y=1{,}5x+p$. Elle passe par $A(2\,;\,4)$ : $4=1{,}5\times2+p$, donc $p=1$.
+				
+				$\mRouge{(AB) : y=1{,}5x+1}$
+				
+				\textbf{Droite $\bm{(BC)}$ :} $y=0{,}5x+p$. Elle passe par $B(4\,;\,7)$ : $7=0{,}5\times4+p$, donc $p=5$.
+				
+				$\mRouge{(BC) : y=0{,}5x+5}$
+			\end{corrBox}
+		\end{enumMet}
+		
+		\item La courbe C a pour équation $y=\dfrac{-x^2}{4}+3 x-1$.
+		\begin{enumMet}
+			\item Calculer le taux de variation de $f$ entre 0 et 2 .
+			\begin{corrBox}
+				$f(0)=0+0-1=-1$ \quad et \quad $f(2)=\dfrac{-4}{4}+6-1=-1+6-1=4$.
+				\[\dfrac{f(2)-f(0)}{2-0}=\dfrac{4-(-1)}{2}=\mRouge{\dfrac{5}{2}}=2{,}5\]
+			\end{corrBox}
+			
+			\item Calculer le taux de variation de $f$ entre 3,9 et 4 . On utilisera au mieux la calculatrice.
+			\begin{corrBox}
+				$f(3{,}9)=\dfrac{-3{,}9^2}{4}+3\times3{,}9-1=\dfrac{-15{,}21}{4}+11{,}7-1=-3{,}8025+10{,}7=6{,}8975$
+				
+				$f(4)=\dfrac{-16}{4}+12-1=-4+12-1=7$
+				\[\dfrac{f(4)-f(3{,}9)}{4-3{,}9}=\dfrac{7-6{,}8975}{0{,}1}=\dfrac{0{,}1025}{0{,}1}=\mRouge{1{,}025}\]
+			\end{corrBox}
+		\end{enumMet}
+	\end{enumMet}
+	
+\end{document}

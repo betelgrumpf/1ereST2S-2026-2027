@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\input{../1ST2S-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\rhead{Entraînement DS n$^{\circ}01$ - Généralités sur les fonctions}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+\graphicspath{{images/}}
+
+\begin{center}
+	\fbox{
+		\begin{minipage}[]{15cm}
+			\begin{center}
+				\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+					Sujet d'entraînement - DS n$^{\circ}01$ \\
+					Généralités sur les fonctions et Taux de variation
+				}
+			\end{center}
+		\end{minipage}
+	}
+\end{center}
+
+\begin{center}\textbf{55min - Barème indicatif}\end{center}
+\begin{center}\textbf{Calculatrice non autorisée.\\Les résultats devront être justifiés (à l'aide de calcul ou de propriétés).}\end{center}
+
+\exerciceDS{}
+
+Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=-4x+7$.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item Calculer les images de $-3$ et de $2$ par $f$.
+		\item Déterminer un antécédent de $-5$ par $f$.
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS{}
+
+On considère une fonction $f$ définie sur $[-5;4]$ dont la représentation graphique $C_f$ est donnée ci-dessous.
+\begin{minipage}[c]{0.55\linewidth}
+	Avec la précision permise par le graphique :
+	\begin{enumMet}
+		\item Donner l'image de $-5$.
+		\item Donner un antécédent de $-1$.
+		\item Résoudre graphiquement l'équation $f(x)=2$.
+		\item Résoudre graphiquement l'inéquation $f(x)< 1$.
+	\end{enumMet}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.45\linewidth}
+	\begin{center}
+		\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(-5.5,-3)(5,6)
+			\psgrid[gridcolor=lightgray, subgriddiv=1, gridlabels=0pt](-6,-4)(6,7)
+			\psaxes[mathLabel=false,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-3pt 0,subticks=1,labelFontSize=\footnotesize]{->}(0,0)(-5.5,-3)(5,6)
+			\psplot[linewidth=1.2pt,linecolor=ForestGreen,plotpoints=600]{-5.0}{4.0}{-0.1*(x + 4)*x*(x - 3) + 1}
+			\rput[B](-3.4,2.4){\textcolor{ForestGreen}{$\bm{C_f}$}}
+		\end{pspicture*}
+	\end{center}
+\end{minipage}
+
+\exerciceDS {}
+Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=-3x+2$.
+\begin{enumMet}
+	\item Calculer le taux de variation de $f$ entre $-2$ et $1$.
+	\item Calculer le taux de variation de $f$ entre $2$ et $6$.
+\end{enumMet}
+
+\exerciceDS {}
+
+Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=x^2+4x-1$.
+\begin{enumMet}
+	\item Déterminer le taux de variation de $f$ entre $1$ et $3$.
+	\item Déterminer le taux de variation de $f$ entre $-1$ et $1$.
+\end{enumMet}
+
+\newpage
+
+\exerciceDS{}
+
+Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=-4x+5$ et deux réels $x_1$ et $x_2$.
+\begin{enumMet}
+	\item Calculer le taux de variation de $f$ entre $x_1$ et $x_2$. Simplifier au maximum l'expression.
+	\item En déduire les variations de $f$ sur $\mathbb{R}$.
+\end{enumMet}
+
+\exerciceDS{}
+
+Soit $f$ une fonction définie par sa représentation graphique dans un repère.
+
+Avec la précision permise par le graphique :
+
+\begin{enumMet}
+	\item Déterminer le taux de variation de $f$ entre $-4$ et $-3$.
+	\item Déterminer le taux de variation de $f$ entre $-1$ et $2$.
+	\item Déterminer le taux de variation de $f$ entre $-4$ et $1$. Que remarque-t-on ?
+\end{enumMet}
+
+\begin{center}
+	\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+	\begin{pspicture*}(-5.5,-5)(5.5,4)
+		\psgrid[gridcolor=lightgray, subgriddiv=1, gridlabels=0pt](-6,-6)(6,6)
+		\psaxes[mathLabel=false,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-3pt 0,subticks=1,labelFontSize=\footnotesize]{->}(0,0)(-5.5,-4.9)(5.5,4)
+		\psplot[linewidth=1.2pt,linecolor=ForestGreen,plotpoints=600]{-6}{4}{0.5*(x+4)*(x-1)-1}
+		\rput[B](2.4,0.6){\textcolor{ForestGreen}{$\bm{C_f}$}}
+	\end{pspicture*}
+\end{center}
+
+\end{document}
