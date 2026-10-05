@@ -1,0 +1,390 @@
+\documentclass[11pt,a4paper]{book}
+
+\input{../1ST2S-preambule}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\graphicspath{{./images/}}
+% ===== Styles pgfplots (identiques à ceux du cours) =====
+\pgfplotsset{
+	repere/.style={
+		axis lines=middle,
+		axis line style={-stealth},
+		grid=both,
+		grid style={gray!25},
+		minor tick num=0,
+		tick label style={font=\scriptsize, fill=white, inner sep=1pt},
+		xlabel={}, ylabel={},
+		samples=150,
+		clip=true,
+	},
+	courbe/.style={very thick, smooth},
+}
+
+\markboth{Chap. 1 ~ - ~ Fonctions polynôme de degré 2 - Exercices}{}
+\thispagestyle{fancy}
+
+\begin{center}
+	{\color{red!85!white}\sffamily\Huge\bfseries Fonctions polynôme de degré 2}\\[0.2cm]
+	{\color{red!85!white}\sffamily\Large Fiche d'exercices}
+\end{center}
+
+% =====================================================================
+\section*{\color{green!55!black}Reconnaître une fonction polynôme de degré 2}
+% =====================================================================
+
+\exerciceDS{}
+
+Compléter le tableau suivant.
+
+\begin{center}
+	\setlength{\extrarowheight}{3pt}
+	\setlength{\tabcolsep}{0.3cm}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{$f(x)=\ldots$} & \multicolumn{2}{c|}{Fonction polynôme de degré 2 ?} & \multirow{2}{*}{$a=\ldots$} & \multirow{2}{*}{$b=\ldots$} & \multirow{2}{*}{$c=\ldots$} \\
+		\cline{2-3}
+		& oui & non & & & \\
+		\hline $3x^2-2x+5$ & & & & & \\
+		\hline $-x^2+4$ & & & & & \\
+		\hline $5x-7$ & & & & & \\
+		\hline $x^3+2x^2$ & & & & & \\
+		\hline $(x-2)(3x+1)$ & & & & & \\
+		\hline $7-2x+0,5x^2$ & & & & & \\
+		\hline $(x+1)^2-x^2$ & & & & & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\exerciceDS{}
+
+Pour chacune des fonctions suivantes définies sur \R, dire s'il s'agit d'une fonction polynôme de degré 2. Si oui, donner les valeurs de $a$, $b$ et $c$.
+
+\begin{multicols}{2}
+	\begin{enumerate}[label=\textbf{\alph*)}]
+		\item $f(x)=-2x^2+x-3$
+		\item $g(x)=4x^2$
+		\item $h(x)=1-x^2+6x$
+		\item $k(x)=3x(x-4)$
+		\item $m(x)=(2x-1)(2x+1)-4x^2$
+		\item $p(x)=(x-3)^2$
+	\end{enumerate}
+\end{multicols}
+
+% =====================================================================
+\section*{\color{green!55!black}Éléments caractéristiques d'une parabole (lecture graphique)}
+% =====================================================================
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.5\linewidth}
+	On a représenté ci-contre la fonction $f$ définie sur \R par
+	$$f(x)=x^2-2x-3.$$
+	\begin{enumerate}[label=\textbf{\arabic*)}]
+		\item Déterminer graphiquement les solutions de l'équation $f(x)=0$.
+		\item Déterminer graphiquement les solutions de l'équation $f(x)=-3$.
+		\item En déduire l'équation de l'axe de symétrie de la courbe.
+		\item Calculer l'ordonnée du sommet $S$ de la parabole, puis donner ses coordonnées.
+		\item La fonction $f$ admet-elle un maximum ou un minimum ? Préciser sa valeur.
+	\end{enumerate}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.46\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=7cm, height=8cm,
+				xmin=-2.6, xmax=4.6, ymin=-4.6, ymax=5.6,
+				xtick={-2,...,4}, ytick={-4,...,5}]
+				\addplot[courbe, green!50!black, domain=-2.6:4.6] {x^2-2*x-3};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.5\linewidth}
+	On a représenté ci-contre la fonction $f$ définie sur \R par
+	$$f(x)=-x^2+4x+1.$$
+	\begin{enumerate}[label=\textbf{\arabic*)}]
+		\item Déterminer graphiquement les solutions de l'équation $f(x)=1$.
+		\item Tracer l'axe de symétrie de la courbe et donner son équation.
+		\item Donner les coordonnées du sommet $S$ de la parabole. Justifier par un calcul.
+		\item Déterminer graphiquement les solutions de l'équation $f(x)=-4$.
+		\item Le coefficient $a$ est-il positif ou négatif ? Était-ce prévisible sur le graphique ?
+	\end{enumerate}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.46\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=7cm, height=8cm,
+				xmin=-1.6, xmax=5.6, ymin=-5.6, ymax=6.6,
+				xtick={-1,...,5}, ytick={-5,...,6}]
+				\addplot[courbe, green!50!black, domain=-1.6:5.6] {-x^2+4*x+1};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+% =====================================================================
+\section*{\color{green!55!black}Associer une fonction $x\mapsto ax^2+c$ à sa courbe}
+% =====================================================================
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.40\linewidth}
+	Associer chaque fonction à sa représentation graphique. Justifier.
+	$$
+	\begin{aligned}
+		& f(x)=2x^{2}-1 \\
+		& g(x)=-x^{2}-1 \\
+		& h(x)=\frac{x^{2}}{2}+2 \\
+		& k(x)=-2x^{2}+2
+	\end{aligned}
+	$$
+\end{minipage} \hfill
+\begin{minipage}[c]{0.56\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=8.5cm, height=8.5cm,
+				xmin=-3.6, xmax=3.6, ymin=-5.6, ymax=6.6,
+				xtick={-3,...,3}, ytick={-5,...,6}]
+				\addplot[courbe, red!80!white, line width=1.5pt, domain=-2:2] {-2*x^2+2};
+				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-2:2] {2*x^2-1};
+				\addplot[courbe, green!70!black, line width=1.5pt, domain=-3.6:3.6] {x^2/2+2};
+				\addplot[courbe, orange, line width=1.5pt, domain=-3:3] {-x^2-1};
+				\node[red!80!white, anchor=east] at (axis cs:-1.95,-5.2) {$\mathcal{C}_1$};
+				\node[blue!70!white, anchor=east] at (axis cs:1.7,5) {$\mathcal{C}_2$};
+				\node[green!70!black, anchor=south] at (axis cs:-3,6.5) {$\mathcal{C}_3$};
+				\node[orange, anchor=west] at (axis cs:2.15,-4.6) {$\mathcal{C}_4$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.40\linewidth}
+	\begin{enumerate}[label=\textbf{\arabic*)}]
+		\item Associer chaque fonction à sa représentation graphique. Justifier.
+		$$
+		\begin{aligned}
+			& f(x)=x^{2}-4 \\
+			& g(x)=-\frac{x^{2}}{2}+3 \\
+			& h(x)=3x^{2} \\
+			& k(x)=-3x^{2}
+		\end{aligned}
+		$$
+		\item Pour chacune de ces fonctions, donner l'axe de symétrie et les coordonnées du sommet de sa courbe.
+	\end{enumerate}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.56\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=8.5cm, height=8.5cm,
+				xmin=-4.6, xmax=4.6, ymin=-5.6, ymax=5.6,
+				xtick={-4,...,4}, ytick={-5,...,5}]
+				\addplot[courbe, red!80!white, line width=1.5pt, domain=-4.6:4.6] {-x^2/2+3};
+				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-1.5:1.5] {3*x^2};
+				\addplot[courbe, green!70!black, line width=1.5pt, domain=-3.2:3.2] {x^2-4};
+				\addplot[courbe, orange, line width=1.5pt, domain=-1.5:1.5] {-3*x^2};
+				\node[red!80!white, anchor=south east] at (axis cs:-3.35,-2.3) {$\mathcal{C}_1$};
+				\node[blue!70!white, anchor=east] at (axis cs:-1.3,5) {$\mathcal{C}_2$};
+				\node[green!70!black, anchor=west] at (axis cs:3,4.5) {$\mathcal{C}_3$};
+				\node[orange, anchor=east] at (axis cs:-1.3,-5) {$\mathcal{C}_4$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+% =====================================================================
+\section*{\color{green!55!black}Tableau de variations et sommet}
+% =====================================================================
+
+\exerciceDS{}
+
+On donne ci-dessous le tableau de variations d'une fonction polynôme du second degré $f$ définie sur \R par $f(x)=ax^2+bx+c$.
+
+\begin{center}
+	\begin{tikzpicture}
+		\tikzset{node style/.append style = {fill=none}}
+		\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $-2$, $+\infty$}
+		\tkzTabVar{-/, +/ $5$, -/ }
+	\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\arabic*)}]
+	\item Le coefficient $a$ est-il positif ou négatif ? Justifier.
+	\item Donner les coordonnées du sommet $S$ de la parabole représentant $f$.
+	\item Donner l'équation de l'axe de symétrie de la parabole.
+	\item La fonction $f$ admet-elle un maximum ou un minimum sur \R ? Préciser sa valeur et pour quelle valeur de $x$ il est atteint.
+	\item Comparer, sans calcul, $f(-5)$ et $f(-3)$.
+	\item On sait que $f(0)=1$. En utilisant la symétrie de la parabole, donner la valeur de $f(-4)$.
+\end{enumerate}
+
+\exerciceDS{}
+
+On considère la fonction $f$ définie sur \R par $f(x)=2x^2-8x+3$.
+
+\begin{enumerate}[label=\textbf{\arabic*)}]
+	\item Donner les valeurs de $a$, $b$ et $c$. En déduire le sens de variation de $f$ (d'abord croissante puis décroissante, ou l'inverse).
+	\item Calculer $f(1)$ et $f(3)$.
+	\item En déduire l'équation de l'axe de symétrie de la parabole représentant $f$.
+	\item Calculer les coordonnées du sommet $S$ de la parabole.
+	\item Dresser le tableau de variations de la fonction $f$.
+\end{enumerate}
+
+% =====================================================================
+\section*{\color{green!55!black}Forme factorisée et forme développée}
+% =====================================================================
+
+\exerciceDS{}
+
+Pour chacune des fonctions suivantes définies sur \R :
+\begin{itemize}
+	\item développer l'expression et donner les valeurs de $a$, $b$ et $c$ ;
+	\item donner les racines de la fonction polynôme.
+\end{itemize}
+
+\begin{multicols}{3}
+	\begin{enumerate}[label=\textbf{\alph*)}]
+		\item $f(x)=3(x-2)(x+4)$
+		\item $g(x)=-(x+1)(x-5)$
+		\item $h(x)=2(x-3)^2$
+	\end{enumerate}
+\end{multicols}
+
+\exerciceDS{}
+
+\begin{enumerate}[label=\textbf{\arabic*)}]
+	\item Développer les expressions suivantes :
+	\begin{multicols}{2}
+		\begin{enumerate}[label=\textbf{\alph*)}]
+			\item $f(x)=-2(x+3)(x-1)$
+			\item $g(x)=\dfrac{1}{2}(x-4)(x+2)$
+		\end{enumerate}
+	\end{multicols}
+	\item Donner les solutions des équations $f(x)=0$ et $g(x)=0$.
+	\item Écrire sous forme factorisée la fonction polynôme $p$ de degré 2 dont les racines sont $2$ et $-5$ et dont le coefficient $a$ est égal à $3$. Développer ensuite l'expression obtenue.
+\end{enumerate}
+
+% =====================================================================
+\section*{\color{green!55!black}Associer une forme factorisée à sa courbe}
+% =====================================================================
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.40\linewidth}
+	Associer chaque fonction à sa représentation graphique. Justifier.
+	$$
+	\begin{aligned}
+		& f(x)=(x-2)(x+1) \\
+		& g(x)=-(x-2)(x+1) \\
+		& h(x)=2(x+1)^{2}
+	\end{aligned}
+	$$
+\end{minipage} \hfill
+\begin{minipage}[c]{0.56\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=8cm, height=8.5cm,
+				xmin=-3.6, xmax=3.6, ymin=-6.5, ymax=8.5,
+				xtick={-3,...,3}, ytick={-6,-4,...,8}]
+				\addplot[courbe, red!80!white, line width=1.5pt, domain=-3:1] {2*(x+1)^2};
+				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-2.5:3.5] {-(x-2)*(x+1)};
+				\addplot[courbe, green!70!black, line width=1.5pt, domain=-2.9:3.9] {(x-2)*(x+1)};
+				\node[red!80!white, anchor=east] at (axis cs:-2.9,7) {$\mathcal{C}_1$};
+				\node[blue!70!white, anchor=west] at (axis cs:-2.3,-5.5) {$\mathcal{C}_2$};
+				\node[green!70!black, anchor=west] at (axis cs:3.3,6.5) {$\mathcal{C}_3$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.40\linewidth}
+	On a représenté trois fonctions polynômes du second degré. Parmi les quatre fonctions ci-dessous, une seule ne correspond à aucune courbe.
+	$$
+	\begin{aligned}
+		& f(x)=\frac{1}{2}(x+2)(x-4) \\
+		& g(x)=-(x+2)(x-4) \\
+		& h(x)=-(x-1)^{2} \\
+		& k(x)=(x-2)(x+4)
+	\end{aligned}
+	$$
+	\begin{enumerate}[label=\textbf{\arabic*)}]
+		\item Associer chaque courbe à sa fonction. Justifier.
+		\item Quelle fonction est l'intruse ? Pourquoi ?
+	\end{enumerate}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.56\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=8.5cm, height=9cm,
+				xmin=-3.6, xmax=5.6, ymin=-7, ymax=10.5,
+				xtick={-3,...,5}, ytick={-6,-4,...,10}]
+				\addplot[courbe, red!80!white, line width=1.5pt, domain=-3:5] {-(x+2)*(x-4)};
+				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-1.5:3.5] {-(x-1)^2};
+				\addplot[courbe, green!70!black, line width=1.5pt, domain=-3.6:5.6] {0.5*(x+2)*(x-4)};
+				\node[red!80!white, anchor=south] at (axis cs:1,9.1) {$\mathcal{C}_1$};
+				\node[blue!70!white, anchor=west] at (axis cs:3.4,-5.8) {$\mathcal{C}_2$};
+				\node[green!70!black, anchor=west] at (axis cs:4.8,4.5) {$\mathcal{C}_3$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+% =====================================================================
+\section*{\color{green!55!black}Factoriser connaissant une racine}
+% =====================================================================
+
+\exerciceDS{}
+
+On considère la fonction $f$ définie sur \R par $f(x)=3x^2-3x-6$.
+
+\begin{enumerate}[label=\textbf{\arabic*)}]
+	\item Vérifier que $2$ est une racine de la fonction polynôme $f$.
+	\item En déduire que $f$ peut s'écrire sous la forme $f(x)=3(x-2)(x-x_2)$.
+	\item En choisissant une valeur de $x$ judicieuse, déterminer $x_2$.
+	\item Écrire $f$ sous forme factorisée et vérifier le résultat en développant.
+\end{enumerate}
+
+\exerciceDS{}
+
+On considère la fonction $f$ définie sur \R par $f(x)=-2x^2+2x+12$.
+
+\begin{enumerate}[label=\textbf{\arabic*)}]
+	\item Calculer $f(-1)$, $f(1)$ et $f(3)$. Conjecturer une racine de la fonction polynôme $f$.
+	\item Factoriser $f$.
+	\item En déduire les solutions de l'équation $f(x)=0$.
+\end{enumerate}
+
+% =====================================================================
+\section*{\color{green!55!black}Signe d'une fonction polynôme de degré 2}
+% =====================================================================
+
+\exerciceDS{}
+
+On considère la fonction $f$ définie sur \R par $f(x)=3(x-1)(x+4)$.
+
+\begin{enumerate}[label=\textbf{\arabic*)}]
+	\item Déterminer les racines de la fonction polynôme $f$.
+	\item Dresser le tableau de signes de $f(x)$ sur \R.
+	\item En déduire les solutions de l'inéquation $f(x)\geq 0$, puis celles de l'inéquation $f(x)<0$.
+\end{enumerate}
+
+\exerciceDS{}
+
+Une entreprise fabrique des objets. On admet que son bénéfice, en milliers d'euros, pour la fabrication de $x$ centaines d'objets (avec $x\in[0 ; 10]$), est donné par :
+$$B(x)=-2(x-2)(x-8).$$
+
+\begin{enumerate}[label=\textbf{\arabic*)}]
+	\item Calculer $B(0)$ et $B(5)$. Interpréter ces résultats dans le contexte de l'exercice.
+	\item Déterminer les racines de la fonction polynôme $B$.
+	\item Dresser le tableau de signes de $B(x)$ sur l'intervalle $[0 ; 10]$.
+	\item Pour quelles quantités d'objets fabriqués l'entreprise réalise-t-elle un bénéfice positif ?
+	\item En utilisant la symétrie de la parabole, déterminer la quantité d'objets à fabriquer pour obtenir un bénéfice maximal. Quel est ce bénéfice maximal ?
+\end{enumerate}
+
+\end{document}
