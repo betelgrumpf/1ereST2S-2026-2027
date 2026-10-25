@@ -1,0 +1,216 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\input{../1ST2S-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\rhead{Correction DS n$^{\circ}01$ (remplacement) - Généralités sur les fonctions}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Correction du DS n$^{\circ}01$ - Remplacement \\
+						Généralités sur les fonctions et Taux de variation
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+	%=====================================================
+	\exerciceDS{ $-$ (3 points)}
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=5x+4$.
+	\begin{enumMet}
+		\item Calculer les images de $-1$ et de $4$ par $f$.
+		
+		\begin{corrBox}
+			$f(-1)=5\times(-1)+4=-5+4=-1$ \quad \bareme{1}
+			
+			$f(4)=5\times 4+4=20+4=24$ \quad \bareme{1}
+			
+			L'image de $-1$ par $f$ est $\mRouge{-1}$ et l'image de $4$ par $f$ est $\mRouge{24}$.
+		\end{corrBox}
+		
+		\item Déterminer un antécédent de $-6$ par $f$. \quad \bareme{1}
+		
+		\begin{corrBox}
+			On résout l'équation $f(x)=-6$ :
+			\[5x+4=-6 \iff 5x=-10 \iff x=\dfrac{-10}{5}=-2\]
+			Un antécédent de $-6$ par $f$ est $\mRouge{-2}$. \quad (Vérification : $f(-2)=-10+4=-6$.)
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exerciceDS{ $-$ (4,5 points)}
+	
+	On considère une fonction $f$ définie sur $[-4;4]$ dont la représentation graphique $C_f$ est donnée ci-dessous.
+	
+	\begin{center}
+		\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(-5.5,-3.5)(5.5,5.5)
+			\psgrid[gridcolor=lightgray, subgriddiv=1, gridlabels=0pt](-6,-4)(6,6)
+			\psaxes[mathLabel=false,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-3pt 0,subticks=1,labelFontSize=\footnotesize]{->}(0,0)(-5.5,-3.5)(5,5.5)
+			% droites d'aide à la lecture
+			\psline[linecolor=red,linestyle=dashed](-5.5,1)(5.5,1)
+			\rput[l](4.4,1.3){\textcolor{red}{$y=1$}}
+			\psline[linecolor=blue,linestyle=dashed](4,0)(4,4)
+			\psline[linecolor=blue,linestyle=dashed](0,4)(4,4)
+			\psplot[linewidth=1.2pt,linecolor=ForestGreen,plotpoints=600]{-4.0}{4.0}{0.1*(x + 4)*(x + 1)*(x - 3)}
+			\psdots[dotstyle=*,linecolor=blue](4,4)
+			\psdots[dotstyle=*,linecolor=orange](-4,0)(-1,0)(3,0)
+			\rput[B](2.4,-2.6){\textcolor{ForestGreen}{$\bm{C_f}$}}
+		\end{pspicture*}
+	\end{center}
+	
+	Avec la précision permise par le graphique :
+	\begin{enumMet}
+		\item Donner l'image de $4$. \quad \bareme{1}
+		
+		\begin{corrBox}
+			Le point de $C_f$ d'abscisse $4$ a pour ordonnée $4$.
+			
+			L'image de $4$ par $f$ est $\mRouge{4}$ : $f(4)=4$.
+		\end{corrBox}
+		
+		\item Donner un antécédent de $0$. \quad \bareme{1}
+		
+		\begin{corrBox}
+			On cherche les abscisses des points de $C_f$ d'ordonnée $0$ (intersection avec l'axe des abscisses).
+			
+			Un antécédent de $0$ par $f$ est $\mRouge{-1}$.
+			
+			(Les autres antécédents de $0$ sont $-4$ et $3$ : toute réponse parmi ces trois valeurs est acceptée.)
+		\end{corrBox}
+		
+		\item \ding{46} Résoudre graphiquement l'équation $f(x)=1$. \quad \bareme{1}
+		
+		\begin{corrBox}
+			On cherche les abscisses des points d'intersection de $C_f$ avec la droite d'équation $y=1$.
+			
+			$\mRouge{S\approx\left\{-3{,}3\ ;\ -2\ ;\ 3{,}3\right\}}$
+		\end{corrBox}
+		
+		\item Résoudre graphiquement l'inéquation $f(x)\geqslant 0$. \quad \bareme{1,5}
+		
+		\begin{corrBox}
+			On cherche les abscisses des points de $C_f$ situés sur ou au-dessus de l'axe des abscisses.
+			
+			$\mRouge{S=\left[-4\,;\,-1\right]\ \cup\ \left[3\,;\,4\right]}$
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exerciceDS { $-$ (4 points)}
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=4x-7$.
+	\begin{enumMet}
+		\item Calculer le taux de variation de $f$ entre $-3$ et $1$.
+		
+		\begin{corrBox}
+			$f(-3)=4\times(-3)-7=-12-7=-19$ \quad \bareme{0,5} \quad et \quad $f(1)=4\times 1-7=4-7=-3$ \quad \bareme{0,5}
+			\[\dfrac{f(1)-f(-3)}{1-(-3)}=\dfrac{-3-(-19)}{4}=\dfrac{16}{4}=4\]
+			Le taux de variation de $f$ entre $-3$ et $1$ est $\mRouge{4}$. \quad \bareme{1}
+		\end{corrBox}
+		
+		\item \ding{46} Calculer le taux de variation de $f$ entre $0$ et $3$.
+		
+		\begin{corrBox}
+			$f(0)=4\times 0-7=-7$ \quad \bareme{0,5} \quad et \quad $f(3)=4\times 3-7=12-7=5$ \quad \bareme{0,5}
+			\[\dfrac{f(3)-f(0)}{3-0}=\dfrac{5-(-7)}{3}=\dfrac{12}{3}=4\]
+			Le taux de variation de $f$ entre $0$ et $3$ est $\mRouge{4}$. \quad \bareme{1}
+			
+			\emph{Remarque : $f$ est une fonction affine de coefficient directeur $4$, son taux de variation est donc toujours égal à $4$.}
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exerciceDS { $-$ (3 points)}
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=x^2-4x+2$.
+	
+	Déterminer le taux de variation de $f$ entre $-2$ et $3$.
+	
+	\begin{corrBox}
+		$f(-2)=(-2)^2-4\times (-2)+2=4+8+2=14$ \quad \bareme{1}
+		
+		$f(3)=3^2-4\times 3+2=9-12+2=-1$ \quad \bareme{1}
+		\[\dfrac{f(3)-f(-2)}{3-(-2)}=\dfrac{-1-14}{5}=\dfrac{-15}{5}=-3\]
+		Le taux de variation de $f$ entre $-2$ et $3$ est $\mRouge{-3}$. \quad \bareme{1}
+	\end{corrBox}
+	
+	\newpage
+	
+	%=====================================================
+	\exerciceDS{ $-$ (3 points)}
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=-6x+1$ et deux réels $x_1$ et $x_2$.
+	\begin{enumMet}
+		\item Calculer le taux de variation de $f$ entre $x_1$ et $x_2$. Simplifier au maximum l'expression. \quad \bareme{2}
+		
+		\begin{corrBox}
+			Soient $x_1$ et $x_2$ deux réels distincts.
+			\[\dfrac{f(x_2)-f(x_1)}{x_2-x_1}=\dfrac{(-6x_2+1)-(-6x_1+1)}{x_2-x_1}=\dfrac{-6x_2+1+6x_1-1}{x_2-x_1}=\dfrac{-6(x_2-x_1)}{x_2-x_1}=-6\]
+			Le taux de variation de $f$ entre $x_1$ et $x_2$ est égal à $\mRouge{-6}$.
+		\end{corrBox}
+		
+		\item En déduire les variations de $f$ sur $\mathbb{R}$.  \quad \bareme{1}
+		
+		\begin{corrBox}
+			Le taux de variation de $f$ entre deux réels quelconques est égal à $-6$, qui est strictement négatif.
+			
+			Donc $f$ est \mRougeWB{\textbf{strictement décroissante sur $\mathbb{R}$}}.
+		\end{corrBox}
+	\end{enumMet}
+	
+	%=====================================================
+	\exerciceDS{ $-$ (3 points)}
+	
+	Soit $f$ une fonction définie par sa représentation graphique dans un repère.
+	
+	\begin{center}
+		\psset{xunit=0.7cm,yunit=0.7cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(-4.5,-6.5)(5.5,5.5)
+			\psgrid[gridcolor=lightgray, subgriddiv=1, gridlabels=0pt](-5,-7)(6,6)
+			\psaxes[mathLabel=false,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-3pt 0,subticks=1,labelFontSize=\footnotesize]{->}(0,0)(-4.5,-6.5)(5.5,5.5)
+			\psplot[linewidth=1.2pt,linecolor=ForestGreen,plotpoints=600]{-3}{5}{-(x+1)*(x-3)}
+			% lectures graphiques
+			\psline[linecolor=red,linestyle=dashed](-2,0)(-2,-5)(0,-5)
+			\psdots[dotstyle=*,linecolor=red](-2,-5)
+			\psdots[dotstyle=*,linecolor=violet](0,3)
+			\psdots[dotstyle=*,linecolor=blue](3,0)
+			\rput[B](3.6,-2){\textcolor{ForestGreen}{$\bm{C_f}$}}
+		\end{pspicture*}
+	\end{center}
+	
+	Avec la précision permise par le graphique :
+	
+	\begin{enumMet}
+		\item \ding{46} Déterminer le taux de variation de $f$ entre $-2$ et $0$.
+		
+		\begin{corrBox}
+			Par lecture graphique : $f(-2)=-5$ \quad \bareme{0,5} et $f(0)=3$. \quad \bareme{0,5}
+			\[\dfrac{f(0)-f(-2)}{0-(-2)}=\dfrac{3-(-5)}{2}=\dfrac{8}{2}=4\]
+			Le taux de variation de $f$ entre $-2$ et $0$ est $\mRouge{4}$. \quad \bareme{0,5}
+		\end{corrBox}
+		
+		\item Déterminer le taux de variation de $f$ entre $0$ et $3$.
+		
+		\begin{corrBox}
+			Par lecture graphique : $f(0)=3$ \quad \bareme{0,5} et $f(3)=0$. \quad \bareme{0,5}
+			\[\dfrac{f(3)-f(0)}{3-0}=\dfrac{0-3}{3}=\dfrac{-3}{3}=-1\]
+			Le taux de variation de $f$ entre $0$ et $3$ est $\mRouge{-1}$. \quad \bareme{0,5}
+		\end{corrBox}
+	\end{enumMet}
+	
+\end{document}
