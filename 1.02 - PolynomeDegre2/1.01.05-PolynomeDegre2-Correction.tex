@@ -22,7 +22,7 @@
 	courbe/.style={very thick, smooth},
 }
 
-\markboth{Chap. 1 ~ - ~ Fonctions polynôme de degré 2 - Correction}{}
+\markboth{Chap. 2 ~ - ~ Fonctions polynôme de degré 2 - Correction}{}
 \thispagestyle{fancy}
 
 \begin{center}
@@ -463,360 +463,360 @@ On considère la fonction $f$ définie sur \R par $f(x)=2x^2-8x+3$.
 	\end{center}
 \end{corrBox}
 
-% =====================================================================
-\section*{\color{green!55!black}Forme factorisée et forme développée}
-% =====================================================================
-
-\exerciceDS{}
-
-Pour chacune des fonctions suivantes définies sur \R :
-\begin{itemize}
-	\item développer l'expression et donner les valeurs de $a$, $b$ et $c$ ;
-	\item donner les racines de la fonction polynôme.
-\end{itemize}
-
-\begin{multicols}{3}
-	\begin{enumerate}[label=\textbf{\alph*)}]
-		\item $f(x)=3(x-2)(x+4)$
-		\item $g(x)=-(x+1)(x-5)$
-		\item $h(x)=2(x-3)^2$
-	\end{enumerate}
-\end{multicols}
-
-\medskip
-\noindent\textbf{\color{red!75!black}Correction :}
-
-\smallskip
-\begin{corrBox}
-	\textbf{a)} $f(x)=3(x-2)(x+4)=3\left(x^2+4x-2x-8\right)=3\left(x^2+2x-8\right)=3x^2+6x-24$.\\
-	$a=3$, $b=6$, $c=-24$. Les racines de $f$ sont $x_1=2$ et $x_2=-4$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{b)} $g(x)=-(x+1)(x-5)=-\left(x^2-5x+x-5\right)=-\left(x^2-4x-5\right)=-x^2+4x+5$.\\
-	$a=-1$, $b=4$, $c=5$. Les racines de $g$ sont $x_1=-1$ et $x_2=5$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{c)} $h(x)=2(x-3)^2=2(x-3)(x-3)=2\left(x^2-6x+9\right)=2x^2-12x+18$.\\
-	$a=2$, $b=-12$, $c=18$. $h$ possède une racine double : $x_1=x_2=3$.
-\end{corrBox}
-
-\exerciceDS{}
-
-\begin{enumerate}[label=\textbf{\arabic*)}]
-	\item Développer les expressions suivantes :
-	\begin{multicols}{2}
-		\begin{enumerate}[label=\textbf{\alph*)}]
-			\item $f(x)=-2(x+3)(x-1)$
-			\item $g(x)=\dfrac{1}{2}(x-4)(x+2)$
-		\end{enumerate}
-	\end{multicols}
-	\item Donner les solutions des équations $f(x)=0$ et $g(x)=0$.
-	\item Écrire sous forme factorisée la fonction polynôme $p$ de degré 2 dont les racines sont $2$ et $-5$ et dont le coefficient $a$ est égal à $3$. Développer ensuite l'expression obtenue.
-\end{enumerate}
-
-\medskip
-\noindent\textbf{\color{red!75!black}Correction :}
-
-\smallskip
-\begin{corrBox}
-	\textbf{1) a)} $f(x)=-2(x+3)(x-1)=-2\left(x^2-x+3x-3\right)=-2\left(x^2+2x-3\right)=-2x^2-4x+6$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{1) b)} $g(x)=\dfrac12(x-4)(x+2)=\dfrac12\left(x^2+2x-4x-8\right)=\dfrac12\left(x^2-2x-8\right)=\dfrac12x^2-x-4$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{2)} D'après les formes factorisées :\\
-	$f(x)=0 \iff x=-3$ ou $x=1$ \qquad et \qquad $g(x)=0 \iff x=4$ ou $x=-2$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{3)} $p(x)=a(x-x_1)(x-x_2)=3(x-2)(x-(-5))=3(x-2)(x+5)$.\\
-	En développant : $p(x)=3\left(x^2+5x-2x-10\right)=3\left(x^2+3x-10\right)=3x^2+9x-30$.
-\end{corrBox}
-
-% =====================================================================
-\section*{\color{green!55!black}Associer une forme factorisée à sa courbe}
-% =====================================================================
-
-\exerciceDS{}
-
-\begin{minipage}[c]{0.40\linewidth}
-	Associer chaque fonction à sa représentation graphique. Justifier.
-	$$
-	\begin{aligned}
-		& f(x)=(x-2)(x+1) \\
-		& g(x)=-(x-2)(x+1) \\
-		& h(x)=2(x+1)^{2}
-	\end{aligned}
-	$$
-\end{minipage} \hfill
-\begin{minipage}[c]{0.56\linewidth}
-	\begin{center}
-		\begin{tikzpicture}
-			\begin{axis}[repere, width=8cm, height=8.5cm,
-				xmin=-3.6, xmax=3.6, ymin=-6.5, ymax=8.5,
-				xtick={-3,...,3}, ytick={-6,-4,...,8}]
-				\addplot[courbe, red!80!white, line width=1.5pt, domain=-3:1] {2*(x+1)^2};
-				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-2.5:3.5] {-(x-2)*(x+1)};
-				\addplot[courbe, green!70!black, line width=1.5pt, domain=-2.9:3.9] {(x-2)*(x+1)};
-				\node[red!80!white, anchor=east] at (axis cs:-2.9,7) {$\mathcal{C}_1$};
-				\node[blue!70!white, anchor=west] at (axis cs:-2.3,-5.5) {$\mathcal{C}_2$};
-				\node[green!70!black, anchor=west] at (axis cs:3.3,6.5) {$\mathcal{C}_3$};
-			\end{axis}
-		\end{tikzpicture}
-	\end{center}
-\end{minipage}
-
-\medskip
-\noindent\textbf{\color{red!75!black}Correction :}
-
-\smallskip
-\begin{corrBox}
-	\begin{itemize}
-		\item $h(x)=2(x+1)^2=2(x+1)(x+1)$ possède une racine double égale à $-1$ : sa courbe ne coupe l'axe des abscisses qu'en un seul point, d'abscisse $-1$.\\
-		C'est le cas de $\mathcal{C}_1$ : $\mathcal{C}_1$ représente $h$.
-		\item $f$ et $g$ ont les mêmes racines $2$ et $-1$ : elles correspondent à $\mathcal{C}_2$ et $\mathcal{C}_3$, qui passent par les points d'abscisses $-1$ et $2$.\\
-		$\mathcal{C}_3$ est tournée vers le haut ($a>0$) : $\mathcal{C}_3$ représente $f$ ($a=1$).\\
-		$\mathcal{C}_2$ est tournée vers le bas ($a<0$) : $\mathcal{C}_2$ représente $g$ ($a=-1$).
-	\end{itemize}
-\end{corrBox}
-
-\exerciceDS{}
-
-\begin{minipage}[c]{0.40\linewidth}
-	On a représenté trois fonctions polynômes du second degré. Parmi les quatre fonctions ci-dessous, une seule ne correspond à aucune courbe.
-	$$
-	\begin{aligned}
-		& f(x)=\frac{1}{2}(x+2)(x-4) \\
-		& g(x)=-(x+2)(x-4) \\
-		& h(x)=-(x-1)^{2} \\
-		& k(x)=(x-2)(x+4)
-	\end{aligned}
-	$$
-	\begin{enumerate}[label=\textbf{\arabic*)}]
-		\item Associer chaque courbe à sa fonction. Justifier.
-		\item Quelle fonction est l'intruse ? Pourquoi ?
-	\end{enumerate}
-\end{minipage} \hfill
-\begin{minipage}[c]{0.56\linewidth}
-	\begin{center}
-		\begin{tikzpicture}
-			\begin{axis}[repere, width=8.5cm, height=9cm,
-				xmin=-3.6, xmax=5.6, ymin=-7, ymax=10.5,
-				xtick={-3,...,5}, ytick={-6,-4,...,10}]
-				\addplot[courbe, red!80!white, line width=1.5pt, domain=-3:5] {-(x+2)*(x-4)};
-				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-1.5:3.5] {-(x-1)^2};
-				\addplot[courbe, green!70!black, line width=1.5pt, domain=-3.6:5.6] {0.5*(x+2)*(x-4)};
-				\node[red!80!white, anchor=south] at (axis cs:1,9.1) {$\mathcal{C}_1$};
-				\node[blue!70!white, anchor=west] at (axis cs:3.4,-5.8) {$\mathcal{C}_2$};
-				\node[green!70!black, anchor=west] at (axis cs:4.8,4.5) {$\mathcal{C}_3$};
-			\end{axis}
-		\end{tikzpicture}
-	\end{center}
-\end{minipage}
-
-\medskip
-\noindent\textbf{\color{red!75!black}Correction :}
-
-\smallskip
-\begin{corrBox}
-	\textbf{1)}
-	\begin{itemize}
-		\item $\mathcal{C}_2$ ne touche l'axe des abscisses qu'en $1$ (racine double) et est tournée vers le bas : elle représente $h(x)=-(x-1)^2$.
-		\item $\mathcal{C}_1$ et $\mathcal{C}_3$ passent par les points d'abscisses $-2$ et $4$ : elles correspondent à $f$ et $g$, de racines $-2$ et $4$.\\
-		$\mathcal{C}_3$ est tournée vers le haut : elle représente $f$ ($a=\frac12>0$).\\
-		$\mathcal{C}_1$ est tournée vers le bas : elle représente $g$ ($a=-1<0$).
-	\end{itemize}
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{2)} L'intruse est $k(x)=(x-2)(x+4)$ : ses racines sont $2$ et $-4$. Aucune des courbes ne coupe l'axe des abscisses en $-4$ (ni en $2$).
-\end{corrBox}
-
-% =====================================================================
-\section*{\color{green!55!black}Factoriser connaissant une racine}
-% =====================================================================
-
-\exerciceDS{}
-
-On considère la fonction $f$ définie sur \R par $f(x)=3x^2-3x-6$.
-
-\begin{enumerate}[label=\textbf{\arabic*)}]
-	\item Vérifier que $2$ est une racine de la fonction polynôme $f$.
-	\item En déduire que $f$ peut s'écrire sous la forme $f(x)=3(x-2)(x-x_2)$.
-	\item En choisissant une valeur de $x$ judicieuse, déterminer $x_2$.
-	\item Écrire $f$ sous forme factorisée et vérifier le résultat en développant.
-\end{enumerate}
-
-\medskip
-\noindent\textbf{\color{red!75!black}Correction :}
-
-\smallskip
-\begin{corrBox}
-	\textbf{1)} $f(2)=3\times2^2-3\times2-6=12-6-6=0$. Donc $2$ est une racine de $f$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{2)} $f(x)=3x^2-3x-6$, donc $a=3$. Comme $2$ est une racine, la forme factorisée s'écrit $f(x)=3(x-2)(x-x_2)$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{3)} On cherche $x_2$ tel que $3x^2-3x-6=3(x-2)(x-x_2)$.\\
-	Pour $x=0$ : $-6=3\times(-2)\times(-x_2)$, soit $-6=6x_2$, donc $x_2=-1$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{4)} $f(x)=3(x-2)(x-(-1))=3(x-2)(x+1)$.\\
-	Vérification : $3(x-2)(x+1)=3\left(x^2+x-2x-2\right)=3\left(x^2-x-2\right)=3x^2-3x-6$. \checkmark
-\end{corrBox}
-
-\exerciceDS{}
-
-On considère la fonction $f$ définie sur \R par $f(x)=-2x^2+2x+12$.
-
-\begin{enumerate}[label=\textbf{\arabic*)}]
-	\item Calculer $f(-1)$, $f(1)$ et $f(3)$. Conjecturer une racine de la fonction polynôme $f$.
-	\item Factoriser $f$.
-	\item En déduire les solutions de l'équation $f(x)=0$.
-\end{enumerate}
-
-\medskip
-\noindent\textbf{\color{red!75!black}Correction :}
-
-\smallskip
-\begin{corrBox}
-	\textbf{1)} $f(-1)=-2\times(-1)^2+2\times(-1)+12=-2-2+12=8$.\\
-	$f(1)=-2\times1^2+2\times1+12=-2+2+12=12$.\\
-	$f(3)=-2\times3^2+2\times3+12=-18+6+12=0$.\\
-	On conjecture (et on vient de vérifier) que $3$ est une racine de $f$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{2)} $a=-2$ et $3$ est une racine, donc $f(x)=-2(x-3)(x-x_2)$.\\
-	Pour $x=0$ : $12=-2\times(-3)\times(-x_2)$, soit $12=-6x_2$, donc $x_2=-2$.\\
-	Ainsi $f(x)=-2(x-3)(x+2)$.\\
-	Vérification : $-2(x-3)(x+2)=-2\left(x^2+2x-3x-6\right)=-2\left(x^2-x-6\right)=-2x^2+2x+12$. \checkmark
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{3)} Les solutions de l'équation $f(x)=0$ sont les racines de $f$ : $x=3$ et $x=-2$.
-\end{corrBox}
-
-% =====================================================================
-\section*{\color{green!55!black}Signe d'une fonction polynôme de degré 2}
-% =====================================================================
-
-\exerciceDS{}
-
-On considère la fonction $f$ définie sur \R par $f(x)=3(x-1)(x+4)$.
-
-\begin{enumerate}[label=\textbf{\arabic*)}]
-	\item Déterminer les racines de la fonction polynôme $f$.
-	\item Dresser le tableau de signes de $f(x)$ sur \R.
-	\item En déduire les solutions de l'inéquation $f(x)\geq 0$, puis celles de l'inéquation $f(x)<0$.
-\end{enumerate}
-
-\medskip
-\noindent\textbf{\color{red!75!black}Correction :}
-
-\smallskip
-\begin{corrBox}
-	\textbf{1)} $x-1=0 \iff x=1$ \quad et \quad $x+4=0 \iff x=-4$.\\
-	Les racines de $f$ sont $1$ et $-4$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{2)}
-	\begin{center}
-		\begin{tikzpicture}
-			\tkzTabInit[lgt=4,espcl=2.5]
-			{$x$ /0.8, $3$ /0.8, $x+4$ /0.8, $x-1$ /0.8, $3(x-1)(x+4)$ /0.8}
-			{$-\infty$, $-4$, $1$, $+\infty$}
-			\tkzTabLine{, +, t, +, t, +, }
-			\tkzTabLine{, -, z, +, t, +, }
-			\tkzTabLine{, -, t, -, z, +, }
-			\tkzTabLine{, +, z, -, z, +, }
-		\end{tikzpicture}
-	\end{center}
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{3)} $f(x)\geq0 \iff x\in\,]-\infty ; -4]\cup[1 ; +\infty[$.\\
-	$f(x)<0 \iff x\in\,]-4 ; 1[$.
-\end{corrBox}
-
-\exerciceDS{}
-
-Une entreprise fabrique des objets. On admet que son bénéfice, en milliers d'euros, pour la fabrication de $x$ centaines d'objets (avec $x\in[0 ; 10]$), est donné par :
-$$B(x)=-2(x-2)(x-8).$$
-
-\begin{enumerate}[label=\textbf{\arabic*)}]
-	\item Calculer $B(0)$ et $B(5)$. Interpréter ces résultats dans le contexte de l'exercice.
-	\item Déterminer les racines de la fonction polynôme $B$.
-	\item Dresser le tableau de signes de $B(x)$ sur l'intervalle $[0 ; 10]$.
-	\item Pour quelles quantités d'objets fabriqués l'entreprise réalise-t-elle un bénéfice positif ?
-	\item En utilisant la symétrie de la parabole, déterminer la quantité d'objets à fabriquer pour obtenir un bénéfice maximal. Quel est ce bénéfice maximal ?
-\end{enumerate}
-
-\medskip
-\noindent\textbf{\color{red!75!black}Correction :}
-
-\smallskip
-\begin{corrBox}
-	\textbf{1)} $B(0)=-2\times(0-2)\times(0-8)=-2\times(-2)\times(-8)=-32$.\\
-	Sans fabriquer d'objets, l'entreprise réalise une perte de $32\,000$~\euro.\\[0.1cm]
-	$B(5)=-2\times(5-2)\times(5-8)=-2\times3\times(-3)=18$.\\
-	Pour $500$ objets fabriqués, le bénéfice est de $18\,000$~\euro.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{2)} $x-2=0 \iff x=2$ \quad et \quad $x-8=0 \iff x=8$. Les racines de $B$ sont $2$ et $8$.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{3)}
-	\begin{center}
-		\begin{tikzpicture}
-			\tkzTabInit[lgt=4,espcl=2.5]
-			{$x$ /0.8, $-2$ /0.8, $x-2$ /0.8, $x-8$ /0.8, $B(x)$ /0.8}
-			{$0$, $2$, $8$, $10$}
-			\tkzTabLine{, -, t, -, t, -, }
-			\tkzTabLine{, -, z, +, t, +, }
-			\tkzTabLine{, -, t, -, z, +, }
-			\tkzTabLine{, -, z, +, z, -, }
-		\end{tikzpicture}
-	\end{center}
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{4)} $B(x)\geq0 \iff x\in[2 ; 8]$.\\
-	L'entreprise réalise un bénéfice positif pour une fabrication comprise entre $200$ et $800$ objets.
-\end{corrBox}
-
-\medskip
-\begin{corrBox}
-	\textbf{5)} $a=-2<0$ : la parabole est tournée vers le bas, donc $B$ admet un maximum atteint au sommet.\\
-	L'axe de symétrie passe par le milieu des racines : $(2+8):2=5$.\\
-	Le bénéfice est donc maximal pour $500$ objets fabriqués, et il vaut $B(5)=18$, soit $18\,000$~\euro.
-\end{corrBox}
+%% =====================================================================
+%\section*{\color{green!55!black}Forme factorisée et forme développée}
+%% =====================================================================
+%
+%\exerciceDS{}
+%
+%Pour chacune des fonctions suivantes définies sur \R :
+%\begin{itemize}
+%	\item développer l'expression et donner les valeurs de $a$, $b$ et $c$ ;
+%	\item donner les racines de la fonction polynôme.
+%\end{itemize}
+%
+%\begin{multicols}{3}
+%	\begin{enumerate}[label=\textbf{\alph*)}]
+%		\item $f(x)=3(x-2)(x+4)$
+%		\item $g(x)=-(x+1)(x-5)$
+%		\item $h(x)=2(x-3)^2$
+%	\end{enumerate}
+%\end{multicols}
+%
+%\medskip
+%\noindent\textbf{\color{red!75!black}Correction :}
+%
+%\smallskip
+%\begin{corrBox}
+%	\textbf{a)} $f(x)=3(x-2)(x+4)=3\left(x^2+4x-2x-8\right)=3\left(x^2+2x-8\right)=3x^2+6x-24$.\\
+%	$a=3$, $b=6$, $c=-24$. Les racines de $f$ sont $x_1=2$ et $x_2=-4$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{b)} $g(x)=-(x+1)(x-5)=-\left(x^2-5x+x-5\right)=-\left(x^2-4x-5\right)=-x^2+4x+5$.\\
+%	$a=-1$, $b=4$, $c=5$. Les racines de $g$ sont $x_1=-1$ et $x_2=5$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{c)} $h(x)=2(x-3)^2=2(x-3)(x-3)=2\left(x^2-6x+9\right)=2x^2-12x+18$.\\
+%	$a=2$, $b=-12$, $c=18$. $h$ possède une racine double : $x_1=x_2=3$.
+%\end{corrBox}
+%
+%\exerciceDS{}
+%
+%\begin{enumerate}[label=\textbf{\arabic*)}]
+%	\item Développer les expressions suivantes :
+%	\begin{multicols}{2}
+%		\begin{enumerate}[label=\textbf{\alph*)}]
+%			\item $f(x)=-2(x+3)(x-1)$
+%			\item $g(x)=\dfrac{1}{2}(x-4)(x+2)$
+%		\end{enumerate}
+%	\end{multicols}
+%	\item Donner les solutions des équations $f(x)=0$ et $g(x)=0$.
+%	\item Écrire sous forme factorisée la fonction polynôme $p$ de degré 2 dont les racines sont $2$ et $-5$ et dont le coefficient $a$ est égal à $3$. Développer ensuite l'expression obtenue.
+%\end{enumerate}
+%
+%\medskip
+%\noindent\textbf{\color{red!75!black}Correction :}
+%
+%\smallskip
+%\begin{corrBox}
+%	\textbf{1) a)} $f(x)=-2(x+3)(x-1)=-2\left(x^2-x+3x-3\right)=-2\left(x^2+2x-3\right)=-2x^2-4x+6$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{1) b)} $g(x)=\dfrac12(x-4)(x+2)=\dfrac12\left(x^2+2x-4x-8\right)=\dfrac12\left(x^2-2x-8\right)=\dfrac12x^2-x-4$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{2)} D'après les formes factorisées :\\
+%	$f(x)=0 \iff x=-3$ ou $x=1$ \qquad et \qquad $g(x)=0 \iff x=4$ ou $x=-2$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{3)} $p(x)=a(x-x_1)(x-x_2)=3(x-2)(x-(-5))=3(x-2)(x+5)$.\\
+%	En développant : $p(x)=3\left(x^2+5x-2x-10\right)=3\left(x^2+3x-10\right)=3x^2+9x-30$.
+%\end{corrBox}
+%
+%% =====================================================================
+%\section*{\color{green!55!black}Associer une forme factorisée à sa courbe}
+%% =====================================================================
+%
+%\exerciceDS{}
+%
+%\begin{minipage}[c]{0.40\linewidth}
+%	Associer chaque fonction à sa représentation graphique. Justifier.
+%	$$
+%	\begin{aligned}
+%		& f(x)=(x-2)(x+1) \\
+%		& g(x)=-(x-2)(x+1) \\
+%		& h(x)=2(x+1)^{2}
+%	\end{aligned}
+%	$$
+%\end{minipage} \hfill
+%\begin{minipage}[c]{0.56\linewidth}
+%	\begin{center}
+%		\begin{tikzpicture}
+%			\begin{axis}[repere, width=8cm, height=8.5cm,
+%				xmin=-3.6, xmax=3.6, ymin=-6.5, ymax=8.5,
+%				xtick={-3,...,3}, ytick={-6,-4,...,8}]
+%				\addplot[courbe, red!80!white, line width=1.5pt, domain=-3:1] {2*(x+1)^2};
+%				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-2.5:3.5] {-(x-2)*(x+1)};
+%				\addplot[courbe, green!70!black, line width=1.5pt, domain=-2.9:3.9] {(x-2)*(x+1)};
+%				\node[red!80!white, anchor=east] at (axis cs:-2.9,7) {$\mathcal{C}_1$};
+%				\node[blue!70!white, anchor=west] at (axis cs:-2.3,-5.5) {$\mathcal{C}_2$};
+%				\node[green!70!black, anchor=west] at (axis cs:3.3,6.5) {$\mathcal{C}_3$};
+%			\end{axis}
+%		\end{tikzpicture}
+%	\end{center}
+%\end{minipage}
+%
+%\medskip
+%\noindent\textbf{\color{red!75!black}Correction :}
+%
+%\smallskip
+%\begin{corrBox}
+%	\begin{itemize}
+%		\item $h(x)=2(x+1)^2=2(x+1)(x+1)$ possède une racine double égale à $-1$ : sa courbe ne coupe l'axe des abscisses qu'en un seul point, d'abscisse $-1$.\\
+%		C'est le cas de $\mathcal{C}_1$ : $\mathcal{C}_1$ représente $h$.
+%		\item $f$ et $g$ ont les mêmes racines $2$ et $-1$ : elles correspondent à $\mathcal{C}_2$ et $\mathcal{C}_3$, qui passent par les points d'abscisses $-1$ et $2$.\\
+%		$\mathcal{C}_3$ est tournée vers le haut ($a>0$) : $\mathcal{C}_3$ représente $f$ ($a=1$).\\
+%		$\mathcal{C}_2$ est tournée vers le bas ($a<0$) : $\mathcal{C}_2$ représente $g$ ($a=-1$).
+%	\end{itemize}
+%\end{corrBox}
+%
+%\exerciceDS{}
+%
+%\begin{minipage}[c]{0.40\linewidth}
+%	On a représenté trois fonctions polynômes du second degré. Parmi les quatre fonctions ci-dessous, une seule ne correspond à aucune courbe.
+%	$$
+%	\begin{aligned}
+%		& f(x)=\frac{1}{2}(x+2)(x-4) \\
+%		& g(x)=-(x+2)(x-4) \\
+%		& h(x)=-(x-1)^{2} \\
+%		& k(x)=(x-2)(x+4)
+%	\end{aligned}
+%	$$
+%	\begin{enumerate}[label=\textbf{\arabic*)}]
+%		\item Associer chaque courbe à sa fonction. Justifier.
+%		\item Quelle fonction est l'intruse ? Pourquoi ?
+%	\end{enumerate}
+%\end{minipage} \hfill
+%\begin{minipage}[c]{0.56\linewidth}
+%	\begin{center}
+%		\begin{tikzpicture}
+%			\begin{axis}[repere, width=8.5cm, height=9cm,
+%				xmin=-3.6, xmax=5.6, ymin=-7, ymax=10.5,
+%				xtick={-3,...,5}, ytick={-6,-4,...,10}]
+%				\addplot[courbe, red!80!white, line width=1.5pt, domain=-3:5] {-(x+2)*(x-4)};
+%				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-1.5:3.5] {-(x-1)^2};
+%				\addplot[courbe, green!70!black, line width=1.5pt, domain=-3.6:5.6] {0.5*(x+2)*(x-4)};
+%				\node[red!80!white, anchor=south] at (axis cs:1,9.1) {$\mathcal{C}_1$};
+%				\node[blue!70!white, anchor=west] at (axis cs:3.4,-5.8) {$\mathcal{C}_2$};
+%				\node[green!70!black, anchor=west] at (axis cs:4.8,4.5) {$\mathcal{C}_3$};
+%			\end{axis}
+%		\end{tikzpicture}
+%	\end{center}
+%\end{minipage}
+%
+%\medskip
+%\noindent\textbf{\color{red!75!black}Correction :}
+%
+%\smallskip
+%\begin{corrBox}
+%	\textbf{1)}
+%	\begin{itemize}
+%		\item $\mathcal{C}_2$ ne touche l'axe des abscisses qu'en $1$ (racine double) et est tournée vers le bas : elle représente $h(x)=-(x-1)^2$.
+%		\item $\mathcal{C}_1$ et $\mathcal{C}_3$ passent par les points d'abscisses $-2$ et $4$ : elles correspondent à $f$ et $g$, de racines $-2$ et $4$.\\
+%		$\mathcal{C}_3$ est tournée vers le haut : elle représente $f$ ($a=\frac12>0$).\\
+%		$\mathcal{C}_1$ est tournée vers le bas : elle représente $g$ ($a=-1<0$).
+%	\end{itemize}
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{2)} L'intruse est $k(x)=(x-2)(x+4)$ : ses racines sont $2$ et $-4$. Aucune des courbes ne coupe l'axe des abscisses en $-4$ (ni en $2$).
+%\end{corrBox}
+%
+%% =====================================================================
+%\section*{\color{green!55!black}Factoriser connaissant une racine}
+%% =====================================================================
+%
+%\exerciceDS{}
+%
+%On considère la fonction $f$ définie sur \R par $f(x)=3x^2-3x-6$.
+%
+%\begin{enumerate}[label=\textbf{\arabic*)}]
+%	\item Vérifier que $2$ est une racine de la fonction polynôme $f$.
+%	\item En déduire que $f$ peut s'écrire sous la forme $f(x)=3(x-2)(x-x_2)$.
+%	\item En choisissant une valeur de $x$ judicieuse, déterminer $x_2$.
+%	\item Écrire $f$ sous forme factorisée et vérifier le résultat en développant.
+%\end{enumerate}
+%
+%\medskip
+%\noindent\textbf{\color{red!75!black}Correction :}
+%
+%\smallskip
+%\begin{corrBox}
+%	\textbf{1)} $f(2)=3\times2^2-3\times2-6=12-6-6=0$. Donc $2$ est une racine de $f$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{2)} $f(x)=3x^2-3x-6$, donc $a=3$. Comme $2$ est une racine, la forme factorisée s'écrit $f(x)=3(x-2)(x-x_2)$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{3)} On cherche $x_2$ tel que $3x^2-3x-6=3(x-2)(x-x_2)$.\\
+%	Pour $x=0$ : $-6=3\times(-2)\times(-x_2)$, soit $-6=6x_2$, donc $x_2=-1$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{4)} $f(x)=3(x-2)(x-(-1))=3(x-2)(x+1)$.\\
+%	Vérification : $3(x-2)(x+1)=3\left(x^2+x-2x-2\right)=3\left(x^2-x-2\right)=3x^2-3x-6$. \checkmark
+%\end{corrBox}
+%
+%\exerciceDS{}
+%
+%On considère la fonction $f$ définie sur \R par $f(x)=-2x^2+2x+12$.
+%
+%\begin{enumerate}[label=\textbf{\arabic*)}]
+%	\item Calculer $f(-1)$, $f(1)$ et $f(3)$. Conjecturer une racine de la fonction polynôme $f$.
+%	\item Factoriser $f$.
+%	\item En déduire les solutions de l'équation $f(x)=0$.
+%\end{enumerate}
+%
+%\medskip
+%\noindent\textbf{\color{red!75!black}Correction :}
+%
+%\smallskip
+%\begin{corrBox}
+%	\textbf{1)} $f(-1)=-2\times(-1)^2+2\times(-1)+12=-2-2+12=8$.\\
+%	$f(1)=-2\times1^2+2\times1+12=-2+2+12=12$.\\
+%	$f(3)=-2\times3^2+2\times3+12=-18+6+12=0$.\\
+%	On conjecture (et on vient de vérifier) que $3$ est une racine de $f$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{2)} $a=-2$ et $3$ est une racine, donc $f(x)=-2(x-3)(x-x_2)$.\\
+%	Pour $x=0$ : $12=-2\times(-3)\times(-x_2)$, soit $12=-6x_2$, donc $x_2=-2$.\\
+%	Ainsi $f(x)=-2(x-3)(x+2)$.\\
+%	Vérification : $-2(x-3)(x+2)=-2\left(x^2+2x-3x-6\right)=-2\left(x^2-x-6\right)=-2x^2+2x+12$. \checkmark
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{3)} Les solutions de l'équation $f(x)=0$ sont les racines de $f$ : $x=3$ et $x=-2$.
+%\end{corrBox}
+%
+%% =====================================================================
+%\section*{\color{green!55!black}Signe d'une fonction polynôme de degré 2}
+%% =====================================================================
+%
+%\exerciceDS{}
+%
+%On considère la fonction $f$ définie sur \R par $f(x)=3(x-1)(x+4)$.
+%
+%\begin{enumerate}[label=\textbf{\arabic*)}]
+%	\item Déterminer les racines de la fonction polynôme $f$.
+%	\item Dresser le tableau de signes de $f(x)$ sur \R.
+%	\item En déduire les solutions de l'inéquation $f(x)\geq 0$, puis celles de l'inéquation $f(x)<0$.
+%\end{enumerate}
+%
+%\medskip
+%\noindent\textbf{\color{red!75!black}Correction :}
+%
+%\smallskip
+%\begin{corrBox}
+%	\textbf{1)} $x-1=0 \iff x=1$ \quad et \quad $x+4=0 \iff x=-4$.\\
+%	Les racines de $f$ sont $1$ et $-4$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{2)}
+%	\begin{center}
+%		\begin{tikzpicture}
+%			\tkzTabInit[lgt=4,espcl=2.5]
+%			{$x$ /0.8, $3$ /0.8, $x+4$ /0.8, $x-1$ /0.8, $3(x-1)(x+4)$ /0.8}
+%			{$-\infty$, $-4$, $1$, $+\infty$}
+%			\tkzTabLine{, +, t, +, t, +, }
+%			\tkzTabLine{, -, z, +, t, +, }
+%			\tkzTabLine{, -, t, -, z, +, }
+%			\tkzTabLine{, +, z, -, z, +, }
+%		\end{tikzpicture}
+%	\end{center}
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{3)} $f(x)\geq0 \iff x\in\,]-\infty ; -4]\cup[1 ; +\infty[$.\\
+%	$f(x)<0 \iff x\in\,]-4 ; 1[$.
+%\end{corrBox}
+%
+%\exerciceDS{}
+%
+%Une entreprise fabrique des objets. On admet que son bénéfice, en milliers d'euros, pour la fabrication de $x$ centaines d'objets (avec $x\in[0 ; 10]$), est donné par :
+%$$B(x)=-2(x-2)(x-8).$$
+%
+%\begin{enumerate}[label=\textbf{\arabic*)}]
+%	\item Calculer $B(0)$ et $B(5)$. Interpréter ces résultats dans le contexte de l'exercice.
+%	\item Déterminer les racines de la fonction polynôme $B$.
+%	\item Dresser le tableau de signes de $B(x)$ sur l'intervalle $[0 ; 10]$.
+%	\item Pour quelles quantités d'objets fabriqués l'entreprise réalise-t-elle un bénéfice positif ?
+%	\item En utilisant la symétrie de la parabole, déterminer la quantité d'objets à fabriquer pour obtenir un bénéfice maximal. Quel est ce bénéfice maximal ?
+%\end{enumerate}
+%
+%\medskip
+%\noindent\textbf{\color{red!75!black}Correction :}
+%
+%\smallskip
+%\begin{corrBox}
+%	\textbf{1)} $B(0)=-2\times(0-2)\times(0-8)=-2\times(-2)\times(-8)=-32$.\\
+%	Sans fabriquer d'objets, l'entreprise réalise une perte de $32\,000$~\euro.\\[0.1cm]
+%	$B(5)=-2\times(5-2)\times(5-8)=-2\times3\times(-3)=18$.\\
+%	Pour $500$ objets fabriqués, le bénéfice est de $18\,000$~\euro.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{2)} $x-2=0 \iff x=2$ \quad et \quad $x-8=0 \iff x=8$. Les racines de $B$ sont $2$ et $8$.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{3)}
+%	\begin{center}
+%		\begin{tikzpicture}
+%			\tkzTabInit[lgt=4,espcl=2.5]
+%			{$x$ /0.8, $-2$ /0.8, $x-2$ /0.8, $x-8$ /0.8, $B(x)$ /0.8}
+%			{$0$, $2$, $8$, $10$}
+%			\tkzTabLine{, -, t, -, t, -, }
+%			\tkzTabLine{, -, z, +, t, +, }
+%			\tkzTabLine{, -, t, -, z, +, }
+%			\tkzTabLine{, -, z, +, z, -, }
+%		\end{tikzpicture}
+%	\end{center}
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{4)} $B(x)\geq0 \iff x\in[2 ; 8]$.\\
+%	L'entreprise réalise un bénéfice positif pour une fabrication comprise entre $200$ et $800$ objets.
+%\end{corrBox}
+%
+%\medskip
+%\begin{corrBox}
+%	\textbf{5)} $a=-2<0$ : la parabole est tournée vers le bas, donc $B$ admet un maximum atteint au sommet.\\
+%	L'axe de symétrie passe par le milieu des racines : $(2+8):2=5$.\\
+%	Le bénéfice est donc maximal pour $500$ objets fabriqués, et il vaut $B(5)=18$, soit $18\,000$~\euro.
+%\end{corrBox}
 \end{document}
