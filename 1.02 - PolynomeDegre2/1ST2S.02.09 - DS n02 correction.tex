@@ -1,0 +1,346 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\input{../1ST2S-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\pgfplotsset{compat=1.18}
+
+\rhead{\textcolor{red}{Correction DS n$^{\circ}02$ $-$ Fonctions polynôme de degré 2 $-$ 12/11/2026}}
+
+\begin{document}
+	\graphicspath{{images/}}
+
+	% ===== Styles pgfplots (identiques à ceux du cours) =====
+	\pgfplotsset{
+		repere/.style={
+			axis lines=middle,
+			axis line style={-stealth},
+			grid=both,
+			grid style={gray!25},
+			minor tick num=0,
+			tick label style={font=\scriptsize, fill=white, inner sep=1pt},
+			xlabel={}, ylabel={},
+			samples=150,
+			clip=true,
+		},
+		courbe/.style={very thick, smooth},
+	}
+
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Correction du DS n$^{\circ}02$ \\
+						Fonctions polynôme de degré 2
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+	\begin{center}\textit{Questions \ding{46} : 4 points au total. Les élèves avec un tiers-temps sont notés sur 16 points (note ramenée sur 20).}\end{center}
+
+	%=====================================================
+	\exerciceDS{ $-$ (3 points)}
+
+	Compléter le tableau suivant. Lorsque la fonction n'est pas une fonction polynôme de degré 2, ne pas remplir les cases $a$, $b$ et $c$.
+
+	\begin{corrBox}
+		\begin{center}
+			\setlength{\extrarowheight}{4pt}
+			\setlength{\tabcolsep}{0.3cm}
+			\begin{tabular}{|c|c|c|c|c|c|c|}
+				\hline
+				\multirow{2}{*}{$f(x)=\ldots$} & \multicolumn{2}{c|}{Degré 2 ?} & \multirow{2}{*}{$a$} & \multirow{2}{*}{$b$} & \multirow{2}{*}{$c$} & \multirow{2}{*}{Barème} \\
+				\cline{2-3}
+				& oui & non & & & & \\
+				\hline $5x^2-3x+1$ & $\times$ & & $5$ & $-3$ & $1$ & \bareme{0,5} \\
+				\hline $8-3x$ & & $\times$ & & & & \bareme{0,5} \\
+				\hline $-x^2+6x$ & $\times$ & & $-1$ & $6$ & $0$ & \bareme{0,5} \\
+				\hline $2x^3-x^2$ & & $\times$ & & & & \bareme{0,5} \\
+				\hline $(x+3)(2x-1)$ & $\times$ & & $2$ & $5$ & $-3$ & \bareme{0,5} \\
+				\hline $(x-1)^2-x^2$ & & $\times$ & & & & \bareme{0,5} \\
+				\hline
+			\end{tabular}
+		\end{center}
+
+		\textbf{Détails :}
+		\begin{itemize}
+			\item $8-3x$ est une fonction affine (degré 1) ; $2x^3-x^2$ contient un terme en $x^3$ (degré 3).
+			\item $(x+3)(2x-1)=2x^2-x+6x-3=\mRouge{2x^2+5x-3}$.
+			\item $(x-1)^2-x^2=x^2-2x+1-x^2=\mRouge{-2x+1}$ : les termes en $x^2$ s'annulent, c'est une fonction affine.
+		\end{itemize}
+
+%		\emph{Barème : pour une ligne \og oui \fg{}, le $0{,}5$ point n'est accordé que si les trois coefficients sont corrects (accorder $0{,}25$ si une seule erreur de coefficient). Pour les deux dernières lignes, le développement doit apparaître (sur la copie ou dans le tableau).}
+	\end{corrBox}
+
+%	\newpage
+
+	%=====================================================
+	\exerciceDS{ $-$ (4 points)}
+
+	On a représenté la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=x^2-4x+3$.
+
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=7cm, height=8cm,
+				xmin=-1.6, xmax=5.6, ymin=-2.6, ymax=8.6,
+				xtick={-1,...,5}, ytick={-2,...,8}]
+				\addplot[courbe, green!50!black, domain=-1.6:5.6] {x^2-4*x+3};
+				% droite y = 3
+				\addplot[red, dashed, thick, domain=-1.6:5.6] {3};
+				\node[red, anchor=south east] at (axis cs:5.5,3) {$y=3$};
+				\addplot[only marks, mark=*, red] coordinates {(0,3) (4,3)};
+				% racines
+				\addplot[only marks, mark=*, blue] coordinates {(1,0) (3,0)};
+				% axe de symétrie
+				\draw[orange, thick, dashed] (axis cs:2,-2.6) -- (axis cs:2,8.6);
+				\node[orange, anchor=west] at (axis cs:2,7.6) {$x=2$};
+				% sommet
+				\addplot[only marks, mark=*, violet] coordinates {(2,-1)};
+				\node[violet, anchor=north west] at (axis cs:2,-1) {$S$};
+				\node[green!50!black, anchor=west] at (axis cs:4.3,6.5) {$\mathcal{C}_f$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+
+	\begin{enumMet}
+		\item Résoudre graphiquement l'équation $f(x)=3$.
+
+		\begin{corrBox}
+			On cherche les abscisses des points d'intersection de $\mathcal{C}_f$ avec la droite d'équation $y=3$.
+
+			$\mRouge{S=\{0\,;\,4\}}$ \quad \bareme{1} \quad \emph{($0{,}5$ par solution)}
+		\end{corrBox}
+
+		\item En déduire l'équation de l'axe de symétrie de la parabole.
+
+		\begin{corrBox}
+			Les points d'abscisses $0$ et $4$ ont la même ordonnée, ils sont symétriques par rapport à l'axe de symétrie. Son équation est donc
+			\[x=\dfrac{0+4}{2}=2 \qquad \text{soit} \qquad \mRouge{x=2}. \quad \bareme{0,5}\]
+		\end{corrBox}
+
+		\item Calculer les coordonnées du sommet $S$ de la parabole.
+
+		\begin{corrBox}
+			Le sommet est sur l'axe de symétrie, donc son abscisse est $2$.
+
+			$f(2)=2^2-4\times 2+3=4-8+3=-1$ \quad \bareme{0,5}
+
+			Donc $\mRouge{S(2\,;\,-1)}$. \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item Résoudre graphiquement l'équation $f(x)=0$.
+
+		\begin{corrBox}
+			On cherche les abscisses des points d'intersection de $\mathcal{C}_f$ avec l'axe des abscisses.
+
+			$\mRouge{S=\{1\,;\,3\}}$ \quad \bareme{0,5}
+
+%			\emph{(On peut vérifier : $1$ et $3$ sont bien symétriques par rapport à $x=2$.)}
+		\end{corrBox}
+
+		\item \ding{46} La fonction $f$ admet-elle un maximum ou un minimum ? Préciser sa valeur et pour quelle valeur de $x$ il est atteint. Ce résultat est-il cohérent avec le signe du coefficient $a$ ?
+
+		\begin{corrBox}
+			La parabole est \og tournée vers le haut \fg{} : $f$ admet un \mRougeWB{\textbf{minimum}} égal à $\mRouge{-1}$, atteint pour $\mRouge{x=2}$. \quad \bareme{0,5}
+
+			Ici $a=1>0$, et lorsque $a>0$ la fonction est d'abord décroissante puis croissante : le sommet correspond bien à un minimum. C'est cohérent. \quad \bareme{0,5}
+		\end{corrBox}
+	\end{enumMet}
+
+%	\newpage
+
+	%=====================================================
+	\exerciceDS{ $-$ (4 points)}
+
+	\begin{minipage}[c]{0.42\linewidth}
+		On considère les quatre fonctions définies sur $\mathbb{R}$ par :
+		$$
+		\begin{aligned}
+			& f(x)=x^{2}-3 \\
+			& g(x)=-2x^{2}+4 \\
+			& h(x)=3x^{2}+1 \\
+			& k(x)=-\frac{x^{2}}{2}-1
+		\end{aligned}
+		$$
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.54\linewidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[repere, width=7.5cm, height=7.5cm,
+					xmin=-3.6, xmax=3.6, ymin=-5.6, ymax=6.6,
+					xtick={-3,...,3}, ytick={-5,...,6}]
+					\addplot[courbe, red!80!white, line width=1.5pt, domain=-3:3] {-x^2/2-1};
+					\addplot[courbe, blue!70!white, line width=1.5pt, domain=-3:3] {x^2-3};
+					\addplot[courbe, green!70!black, line width=1.5pt, domain=-2.15:2.15] {-2*x^2+4};
+					\addplot[courbe, orange, line width=1.5pt, domain=-1.35:1.35] {3*x^2+1};
+					\addplot[only marks, mark=*, black] coordinates {(0,-3) (0,4) (0,1) (0,-1)};
+					\addplot[only marks, mark=x, mark size=4pt, violet, thick] coordinates {(2,-5)};
+					\node[violet, anchor=west] at (axis cs:2.1,-5) {$A$};
+					\node[red!80!white, anchor=west] at (axis cs:2.6,-3.3) {$\mathcal{C}_1$};
+					\node[blue!70!white, anchor=west] at (axis cs:2.9,4.8) {$\mathcal{C}_2$};
+					\node[green!70!black, anchor=east] at (axis cs:-2.15,-4.8) {$\mathcal{C}_3$};
+					\node[orange, anchor=east] at (axis cs:-1.3,5.6) {$\mathcal{C}_4$};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+
+	\begin{enumMet}
+		\item Associer chaque fonction à sa représentation graphique. Justifier.
+
+		\begin{corrBox}
+			Pour une fonction $x\mapsto ax^2+c$ : si $a>0$ la parabole est tournée vers le haut, si $a<0$ elle est tournée vers le bas, et son sommet a pour coordonnées $(0\,;\,c)$.
+			\begin{itemize}
+				\item $f(x)=x^2-3$ : $a=1>0$ (vers le haut), sommet $(0\,;\,-3)$ $\Rightarrow$ $f$ est représentée par $\mRouge{\mathcal{C}_2}$. \quad \bareme{0,5}
+				\item $g(x)=-2x^2+4$ : $a=-2<0$ (vers le bas), sommet $(0\,;\,4)$ $\Rightarrow$ $g$ est représentée par $\mRouge{\mathcal{C}_3}$. \quad \bareme{0,5}
+				\item $h(x)=3x^2+1$ : $a=3>0$ (vers le haut), sommet $(0\,;\,1)$ $\Rightarrow$ $h$ est représentée par $\mRouge{\mathcal{C}_4}$. \quad \bareme{0,5}
+				\item $k(x)=-\dfrac{x^2}{2}-1$ : $a=-\dfrac{1}{2}<0$ (vers le bas), sommet $(0\,;\,-1)$ $\Rightarrow$ $k$ est représentée par $\mRouge{\mathcal{C}_1}$. \quad \bareme{0,5}
+			\end{itemize}
+			\emph{Barème : $0{,}5$ par association correctement justifiée (signe de $a$ et/ou valeur de $c$) ; $0{,}25$ si l'association est juste mais sans justification.}
+		\end{corrBox}
+
+		\item \ding{46} Donner les coordonnées du sommet de la parabole représentant $h$, puis celles du sommet de la parabole représentant $k$.
+
+		\begin{corrBox}
+			Le sommet de la parabole représentant $x\mapsto ax^2+c$ est le point de coordonnées $(0\,;\,c)$.
+
+			Sommet de la parabole de $h$ : $\mRouge{(0\,;\,1)}$ \quad \bareme{0,5} \qquad Sommet de la parabole de $k$ : $\mRouge{(0\,;\,-1)}$ \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item Le point $A(2\,;\,-5)$ appartient-il à la courbe représentative de la fonction $g$ ? Justifier par un calcul.
+
+		\begin{corrBox}
+			$g(2)=-2\times 2^2+4=-2\times 4+4=-8+4=-4$ \quad \bareme{0,5}
+
+			Or $-4\neq -5$, donc le point $A$ \mRougeWB{\textbf{n'appartient pas}} à la courbe de $g$. \quad \bareme{0,5}
+
+%			\emph{(Erreur fréquente : $-2\times 2^2=(-4)^2=16$. Le carré ne porte que sur $2$.)}
+		\end{corrBox}
+	\end{enumMet}
+
+%	\newpage
+
+	%=====================================================
+	\exerciceDS{ $-$ (4,5 points)}
+
+	On donne ci-dessous le tableau de variations d'une fonction polynôme du second degré $f$ définie sur $\mathbb{R}$ par $f(x)=ax^2+bx+c$.
+
+	\begin{center}
+		\begin{tikzpicture}
+			\tikzset{node style/.append style = {fill=none}}
+			\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 0.8 , $f(x)$ / 1.3}{$-\infty$, $1$, $+\infty$}
+			\tkzTabVar{+/, -/ $-3$, +/ }
+		\end{tikzpicture}
+	\end{center}
+
+	\begin{enumMet}
+		\item Le coefficient $a$ est-il positif ou négatif ? Justifier.
+
+		\begin{corrBox}
+			La fonction $f$ est d'abord décroissante puis croissante, donc $\mRouge{a>0}$. \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item Donner les coordonnées du sommet $S$ de la parabole représentant $f$, ainsi que l'équation de son axe de symétrie.
+
+		\begin{corrBox}
+			Le sommet correspond au changement de variation : $\mRouge{S(1\,;\,-3)}$. \quad \bareme{0,5}
+
+			L'axe de symétrie passe par le sommet : son équation est $\mRouge{x=1}$. \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item La fonction $f$ admet-elle un maximum ou un minimum sur $\mathbb{R}$ ? Préciser sa valeur et pour quelle valeur de $x$ il est atteint.
+
+		\begin{corrBox}
+			$f$ admet un \mRougeWB{\textbf{minimum}} égal à $\mRouge{-3}$, atteint pour $\mRouge{x=1}$. \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item Comparer, sans calcul, $f(3)$ et $f(5)$. Justifier.
+
+		\begin{corrBox}
+			$3$ et $5$ appartiennent à l'intervalle $[1\,;\,+\infty[$ sur lequel $f$ est croissante. \quad \bareme{0,5}
+
+			Comme $3<5$, on en déduit $\mRouge{f(3)<f(5)}$. \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item \ding{46} On sait que $f(-1)=5$. En utilisant la symétrie de la parabole, donner la valeur de $f(3)$.
+
+		\begin{corrBox}
+			$\dfrac{-1+3}{2}=\dfrac{2}{2}=1$ : les nombres $-1$ et $3$ sont symétriques par rapport à l'axe d'équation $x=1$. \quad \bareme{0,5}
+
+			Ils ont donc la même image : $\mRouge{f(3)=f(-1)=5}$. \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item Combien de solutions l'équation $f(x)=0$ admet-elle ? Justifier à l'aide du tableau.
+
+		\begin{corrBox}
+			Le minimum de $f$ vaut $-3$, qui est strictement négatif : la parabole \og tournée vers le haut \fg{} passe sous l'axe des abscisses. Elle coupe donc cet axe une fois avant $x=1$ (où $f$ décroît) et une fois après $x=1$ (où $f$ croît).
+
+			L'équation $f(x)=0$ admet $\mRouge{2}$ solutions. \quad \bareme{0,5}
+
+%			\emph{(Accepter toute justification cohérente, par exemple à l'aide d'un schéma de la parabole ou de $f(-1)=f(3)=5>0$.)}
+		\end{corrBox}
+	\end{enumMet}
+
+	%=====================================================
+	\exerciceDS{ $-$ (4,5 points)}
+
+	On considère la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=-x^2+6x-5$.
+
+	\begin{enumMet}
+		\item Donner les valeurs de $a$, $b$ et $c$. En déduire si $f$ est d'abord croissante puis décroissante, ou l'inverse.
+
+		\begin{corrBox}
+			$\mRouge{a=-1}$, $\mRouge{b=6}$ et $\mRouge{c=-5}$. \quad \bareme{0,5}
+
+			Comme $a=-1<0$, la fonction $f$ est \mRougeWB{\textbf{d'abord croissante puis décroissante}}. \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item Calculer $f(1)$ et $f(5)$.
+
+		\begin{corrBox}
+			$f(1)=-1^2+6\times 1-5=-1+6-5=\mRouge{0}$ \quad \bareme{0,5}
+
+			$f(5)=-5^2+6\times 5-5=-25+30-5=\mRouge{0}$ \quad \bareme{0,5}
+
+%			\emph{(Attention : $-5^2=-25$ et non $25$.)}
+		\end{corrBox}
+
+		\item En déduire l'équation de l'axe de symétrie de la parabole représentant $f$.
+
+		\begin{corrBox}
+			$1$ et $5$ ont la même image, ils sont donc symétriques par rapport à l'axe de symétrie :
+			\[x=\dfrac{1+5}{2}=\dfrac{6}{2}=3 \qquad \text{soit} \qquad \mRouge{x=3}. \quad \bareme{0,5}\]
+		\end{corrBox}
+
+		\item Calculer les coordonnées du sommet $S$ de la parabole.
+
+		\begin{corrBox}
+			Le sommet appartient à l'axe de symétrie, donc son abscisse est $3$.
+
+			$f(3)=-3^2+6\times 3-5=-9+18-5=4$ \quad \bareme{0,5}
+
+			Donc $\mRouge{S(3\,;\,4)}$. \quad \bareme{0,5}
+		\end{corrBox}
+
+		\item \ding{46} Dresser le tableau de variations de la fonction $f$.
+
+		\begin{corrBox}
+			\begin{center}
+				\begin{tikzpicture}
+					\tikzset{node style/.append style = {fill=none}}
+					\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 0.8 , $f(x)$ / 1.5}{$-\infty$, $3$, $+\infty$}
+					\tkzTabVar{-/, +/ $4$, -/ }
+				\end{tikzpicture}
+			\end{center}
+			\emph{Barème : $0{,}5$ pour les flèches (sens de variation cohérent avec $a<0$), $0{,}5$ pour les valeurs $3$ et $4$ correctement placées.} \quad \bareme{1}
+		\end{corrBox}
+	\end{enumMet}
+
+\end{document}

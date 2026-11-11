@@ -1,0 +1,448 @@
+\documentclass[11pt,a4paper]{book}
+
+\input{../1ST2S-preambule}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\graphicspath{{./images/}}
+% ===== Styles pgfplots (identiques à ceux du cours) =====
+\pgfplotsset{
+	repere/.style={
+		axis lines=middle,
+		axis line style={-stealth},
+		grid=both,
+		grid style={gray!25},
+		minor tick num=0,
+		tick label style={font=\scriptsize, fill=white, inner sep=1pt},
+		xlabel={}, ylabel={},
+		samples=150,
+		clip=true,
+	},
+	courbe/.style={very thick, smooth},
+}
+
+\markboth{Chap. 2 ~ $-$ ~ Fonctions polynôme de degré 2 $-$ Correction des exercices (bis)}{}
+\thispagestyle{fancy}
+
+\begin{center}
+	{\color{red!85!white}\sffamily\Huge\bfseries Fonctions polynôme de degré 2}\\[0.2cm]
+	{\color{red!85!white}\sffamily\Large Correction de la fiche d'exercices n$^{\text{o}}$2}
+\end{center}
+
+% =====================================================================
+\section*{\color{green!55!black}Reconnaître une fonction polynôme de degré 2}
+% =====================================================================
+
+\exerciceDS{}
+
+Compléter le tableau suivant.
+
+\begin{corrBox}
+	\begin{center}
+		\setlength{\extrarowheight}{3pt}
+		\setlength{\tabcolsep}{0.3cm}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{$f(x)=\ldots$} & \multicolumn{2}{c|}{Fonction polynôme de degré 2 ?} & \multirow{2}{*}{$a=\ldots$} & \multirow{2}{*}{$b=\ldots$} & \multirow{2}{*}{$c=\ldots$} \\
+			\cline{2-3}
+			& oui & non & & & \\
+			\hline $4x^2+x-6$ & $\times$ & & $4$ & $1$ & $-6$ \\
+			\hline $-3x^2+5$ & $\times$ & & $-3$ & $0$ & $5$ \\
+			\hline $2x+9$ & & $\times$ & & & \\
+			\hline $x^3-x$ & & $\times$ & & & \\
+			\hline $(x+4)(2x-3)$ & $\times$ & & $2$ & $5$ & $-12$ \\
+			\hline $3+x-2x^2$ & $\times$ & & $-2$ & $1$ & $3$ \\
+			\hline $(x-3)^2-x^2$ & & $\times$ & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\textbf{Détails :}
+	\begin{itemize}
+		\item $2x+9$ est une fonction affine (degré 1) ; $x^3-x$ contient un terme en $x^3$ (degré 3).
+		\item $(x+4)(2x-3)=2x^2-3x+8x-12=\mRouge{2x^2+5x-12}$.
+		\item $3+x-2x^2=\mRouge{-2x^2+x+3}$ : attention à l'ordre des termes, $a$ est le coefficient de $x^2$.
+		\item $(x-3)^2-x^2=x^2-6x+9-x^2=\mRouge{-6x+9}$ : les termes en $x^2$ s'annulent, c'est une fonction affine.
+	\end{itemize}
+\end{corrBox}
+
+\exerciceDS{}
+
+Pour chacune des fonctions suivantes définies sur \R, dire s'il s'agit d'une fonction polynôme de degré 2. Si oui, donner les valeurs de $a$, $b$ et $c$.
+
+\begin{corrBox}
+	\begin{enumerate}[label=\textbf{\alph*)}]
+		\item $f(x)=3x^2-x+2$ : oui, avec $\mRouge{a=3}$, $\mRouge{b=-1}$ et $\mRouge{c=2}$.
+		\item $g(x)=-5x^2$ : oui, avec $\mRouge{a=-5}$, $\mRouge{b=0}$ et $\mRouge{c=0}$.
+		\item $h(x)=4-x+2x^2=2x^2-x+4$ : oui, avec $\mRouge{a=2}$, $\mRouge{b=-1}$ et $\mRouge{c=4}$.
+		\item $k(x)=2x(x+3)=2x^2+6x$ : oui, avec $\mRouge{a=2}$, $\mRouge{b=6}$ et $\mRouge{c=0}$.
+		\item $m(x)=(3x+1)(3x-1)-9x^2=9x^2-3x+3x-1-9x^2=-1$ : \mRougeWB{\textbf{non}}, $m$ est une fonction constante.
+		\item $p(x)=(x+2)^2=x^2+4x+4$ : oui, avec $\mRouge{a=1}$, $\mRouge{b=4}$ et $\mRouge{c=4}$.
+	\end{enumerate}
+\end{corrBox}
+
+\newpage
+
+% =====================================================================
+\section*{\color{green!55!black}Éléments caractéristiques d'une parabole (lecture graphique)}
+% =====================================================================
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.5\linewidth}
+	On a représenté ci-contre la fonction $f$ définie sur \R par
+	$$f(x)=x^2+2x-3.$$
+	\emph{En bleu : solutions de $f(x)=0$ ; en rouge : solutions de $f(x)=-3$ ; en orange : axe de symétrie.}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.46\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=7cm, height=8cm,
+				xmin=-4.6, xmax=2.6, ymin=-4.6, ymax=5.6,
+				xtick={-4,...,2}, ytick={-4,...,5}]
+				\addplot[courbe, green!50!black, domain=-4.6:2.6] {x^2+2*x-3};
+				\addplot[red, dashed, thick, domain=-4.6:2.6] {-3};
+				\node[red, anchor=south west] at (axis cs:0.6,-3) {$y=-3$};
+				\addplot[only marks, mark=*, red] coordinates {(-2,-3) (0,-3)};
+				\addplot[only marks, mark=*, blue] coordinates {(-3,0) (1,0)};
+				\draw[orange, thick, dashed] (axis cs:-1,-4.6) -- (axis cs:-1,5.6);
+				\node[orange, anchor=west] at (axis cs:-1,4.8) {$x=-1$};
+				\addplot[only marks, mark=*, violet] coordinates {(-1,-4)};
+				\node[violet, anchor=north west] at (axis cs:-1,-4) {$S$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\begin{enumMet}
+	\item Déterminer graphiquement les solutions de l'équation $f(x)=0$.
+
+	\begin{corrBox}
+		On lit les abscisses des points d'intersection de la courbe avec l'axe des abscisses : $\mRouge{S=\{-3\,;\,1\}}$.
+	\end{corrBox}
+
+	\item Déterminer graphiquement les solutions de l'équation $f(x)=-3$.
+
+	\begin{corrBox}
+		On lit les abscisses des points d'intersection de la courbe avec la droite d'équation $y=-3$ : $\mRouge{S=\{-2\,;\,0\}}$.
+	\end{corrBox}
+
+	\item En déduire l'équation de l'axe de symétrie de la courbe.
+
+	\begin{corrBox}
+		$-2$ et $0$ ont la même image, ils sont donc symétriques par rapport à l'axe de symétrie :
+		\[x=\dfrac{-2+0}{2}=-1 \qquad \text{soit} \qquad \mRouge{x=-1}.\]
+		\emph{(On retrouve le même résultat avec les racines : $\dfrac{-3+1}{2}=-1$.)}
+	\end{corrBox}
+
+	\item Calculer l'ordonnée du sommet $S$ de la parabole, puis donner ses coordonnées.
+
+	\begin{corrBox}
+		Le sommet est sur l'axe de symétrie, son abscisse est donc $-1$.
+
+		$f(-1)=(-1)^2+2\times(-1)-3=1-2-3=-4$. \qquad Donc $\mRouge{S(-1\,;\,-4)}$.
+	\end{corrBox}
+
+	\item La fonction $f$ admet-elle un maximum ou un minimum ? Préciser sa valeur.
+
+	\begin{corrBox}
+		La parabole est tournée vers le haut ($a=1>0$) : $f$ admet un \mRougeWB{\textbf{minimum}} égal à $\mRouge{-4}$, atteint pour $x=-1$.
+	\end{corrBox}
+\end{enumMet}
+
+\newpage
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.5\linewidth}
+	On a représenté ci-contre la fonction $f$ définie sur \R par
+	$$f(x)=-x^2+2x+2.$$
+	\emph{En bleu : solutions de $f(x)=2$ ; en rouge : solutions de $f(x)=-6$ ; en orange : axe de symétrie.}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.46\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=7cm, height=8cm,
+				xmin=-2.6, xmax=4.6, ymin=-6.6, ymax=4.6,
+				xtick={-2,...,4}, ytick={-6,...,4}]
+				\addplot[courbe, green!50!black, domain=-2.6:4.6] {-x^2+2*x+2};
+				\addplot[blue, dashed, thick, domain=-2.6:4.6] {2};
+				\node[blue, anchor=south west] at (axis cs:2.6,2) {$y=2$};
+				\addplot[only marks, mark=*, blue] coordinates {(0,2) (2,2)};
+				\addplot[red, dashed, thick, domain=-2.6:4.6] {-6};
+				\node[red, anchor=south] at (axis cs:1,-6) {$y=-6$};
+				\addplot[only marks, mark=*, red] coordinates {(-2,-6) (4,-6)};
+				\draw[orange, thick, dashed] (axis cs:1,-6.6) -- (axis cs:1,4.6);
+				\node[orange, anchor=west] at (axis cs:1,-3.5) {$x=1$};
+				\addplot[only marks, mark=*, violet] coordinates {(1,3)};
+				\node[violet, anchor=south west] at (axis cs:1,3) {$S$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\begin{enumMet}
+	\item Déterminer graphiquement les solutions de l'équation $f(x)=2$.
+
+	\begin{corrBox}
+		On lit les abscisses des points d'intersection de la courbe avec la droite d'équation $y=2$ : $\mRouge{S=\{0\,;\,2\}}$.
+	\end{corrBox}
+
+	\item Tracer l'axe de symétrie de la courbe et donner son équation.
+
+	\begin{corrBox}
+		$0$ et $2$ ont la même image, donc l'axe de symétrie a pour équation $x=\dfrac{0+2}{2}=1$, soit $\mRouge{x=1}$ (tracé en orange).
+	\end{corrBox}
+
+	\item Donner les coordonnées du sommet $S$ de la parabole. Justifier par un calcul.
+
+	\begin{corrBox}
+		Le sommet est sur l'axe de symétrie, son abscisse est donc $1$.
+
+		$f(1)=-1^2+2\times 1+2=-1+2+2=3$. \qquad Donc $\mRouge{S(1\,;\,3)}$.
+	\end{corrBox}
+
+	\item Déterminer graphiquement les solutions de l'équation $f(x)=-6$.
+
+	\begin{corrBox}
+		On lit les abscisses des points d'intersection de la courbe avec la droite d'équation $y=-6$ : $\mRouge{S=\{-2\,;\,4\}}$.
+
+		\emph{(Vérification : $-2$ et $4$ sont bien symétriques par rapport à $x=1$ car $\dfrac{-2+4}{2}=1$.)}
+	\end{corrBox}
+
+	\item Le coefficient $a$ est-il positif ou négatif ? Était-ce prévisible sur le graphique ?
+
+	\begin{corrBox}
+		$a=-1$, donc $\mRouge{a<0}$. C'était prévisible : la parabole est \og tournée vers le bas \fg{} (la fonction est d'abord croissante puis décroissante).
+	\end{corrBox}
+\end{enumMet}
+
+\newpage
+
+% =====================================================================
+\section*{\color{green!55!black}Associer une fonction $x\mapsto ax^2+c$ à sa courbe}
+% =====================================================================
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.40\linewidth}
+	Associer chaque fonction à sa représentation graphique. Justifier.
+	$$
+	\begin{aligned}
+		& f(x)=3x^{2}-2 \\
+		& g(x)=-x^{2}+3 \\
+		& h(x)=\frac{x^{2}}{2}+1 \\
+		& k(x)=-2x^{2}-1
+	\end{aligned}
+	$$
+\end{minipage} \hfill
+\begin{minipage}[c]{0.56\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=7.5cm, height=7.5cm,
+				xmin=-3.6, xmax=3.6, ymin=-5.6, ymax=6.6,
+				xtick={-3,...,3}, ytick={-5,...,6}]
+				\addplot[courbe, red!80!white, line width=1.5pt, domain=-2.9:2.9] {-x^2+3};
+				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-1.5:1.5] {-2*x^2-1};
+				\addplot[courbe, green!70!black, line width=1.5pt, domain=-1.65:1.65] {3*x^2-2};
+				\addplot[courbe, orange, line width=1.5pt, domain=-3.3:3.3] {x^2/2+1};
+				\addplot[only marks, mark=*, black] coordinates {(0,3) (0,-1) (0,-2) (0,1)};
+				\node[red!80!white, anchor=west] at (axis cs:2.6,-3.6) {$\mathcal{C}_1$};
+				\node[blue!70!white, anchor=west] at (axis cs:1.5,-5.2) {$\mathcal{C}_2$};
+				\node[green!70!black, anchor=east] at (axis cs:-1.6,5.8) {$\mathcal{C}_3$};
+				\node[orange, anchor=west] at (axis cs:2.6,3) {$\mathcal{C}_4$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\begin{corrBox}
+	Pour une fonction $x\mapsto ax^2+c$ : si $a>0$ la parabole est tournée vers le haut, si $a<0$ elle est tournée vers le bas, et son sommet a pour coordonnées $(0\,;\,c)$.
+	\begin{itemize}
+		\item $f(x)=3x^2-2$ : $a=3>0$ (vers le haut), sommet $(0\,;\,-2)$ $\Rightarrow$ $f$ est représentée par $\mRouge{\mathcal{C}_3}$.
+		\item $g(x)=-x^2+3$ : $a=-1<0$ (vers le bas), sommet $(0\,;\,3)$ $\Rightarrow$ $g$ est représentée par $\mRouge{\mathcal{C}_1}$.
+		\item $h(x)=\dfrac{x^2}{2}+1$ : $a=\dfrac{1}{2}>0$ (vers le haut), sommet $(0\,;\,1)$ $\Rightarrow$ $h$ est représentée par $\mRouge{\mathcal{C}_4}$.
+		\item $k(x)=-2x^2-1$ : $a=-2<0$ (vers le bas), sommet $(0\,;\,-1)$ $\Rightarrow$ $k$ est représentée par $\mRouge{\mathcal{C}_2}$.
+	\end{itemize}
+\end{corrBox}
+
+\newpage
+
+\exerciceDS{}
+
+\begin{minipage}[c]{0.40\linewidth}
+	$$
+	\begin{aligned}
+		& f(x)=\frac{x^{2}}{2}-3 \\
+		& g(x)=-x^{2}+5 \\
+		& h(x)=2x^{2} \\
+		& k(x)=-2x^{2}
+	\end{aligned}
+	$$
+\end{minipage} \hfill
+\begin{minipage}[c]{0.56\linewidth}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[repere, width=7.5cm, height=7.5cm,
+				xmin=-4.6, xmax=4.6, ymin=-5.6, ymax=5.6,
+				xtick={-4,...,4}, ytick={-5,...,5}]
+				\addplot[courbe, red!80!white, line width=1.5pt, domain=-1.65:1.65] {2*x^2};
+				\addplot[courbe, blue!70!white, line width=1.5pt, domain=-3.25:3.25] {-x^2+5};
+				\addplot[courbe, green!70!black, line width=1.5pt, domain=-1.65:1.65] {-2*x^2};
+				\addplot[courbe, orange, line width=1.5pt, domain=-4.1:4.1] {x^2/2-3};
+				\addplot[only marks, mark=*, black] coordinates {(0,0) (0,5) (0,-3)};
+				\node[red!80!white, anchor=east] at (axis cs:-1.6,5) {$\mathcal{C}_1$};
+				\node[blue!70!white, anchor=east] at (axis cs:-3.2,-4.3) {$\mathcal{C}_2$};
+				\node[green!70!black, anchor=west] at (axis cs:1.6,-5) {$\mathcal{C}_3$};
+				\node[orange, anchor=west] at (axis cs:3.9,1.2) {$\mathcal{C}_4$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\begin{enumMet}
+	\item Associer chaque fonction à sa représentation graphique. Justifier.
+
+	\begin{corrBox}
+		\begin{itemize}
+			\item $f(x)=\dfrac{x^2}{2}-3$ : $a=\dfrac{1}{2}>0$ (vers le haut), sommet $(0\,;\,-3)$ $\Rightarrow$ $f$ est représentée par $\mRouge{\mathcal{C}_4}$.
+			\item $g(x)=-x^2+5$ : $a=-1<0$ (vers le bas), sommet $(0\,;\,5)$ $\Rightarrow$ $g$ est représentée par $\mRouge{\mathcal{C}_2}$.
+			\item $h(x)=2x^2$ : $a=2>0$ (vers le haut), sommet $(0\,;\,0)$ $\Rightarrow$ $h$ est représentée par $\mRouge{\mathcal{C}_1}$.
+			\item $k(x)=-2x^2$ : $a=-2<0$ (vers le bas), sommet $(0\,;\,0)$ $\Rightarrow$ $k$ est représentée par $\mRouge{\mathcal{C}_3}$.
+		\end{itemize}
+		\emph{Remarque : $h$ et $k$ ont le même sommet, c'est le signe de $a$ qui permet de les distinguer.}
+	\end{corrBox}
+
+	\item Pour chacune de ces fonctions, donner l'axe de symétrie et les coordonnées du sommet de sa courbe.
+
+	\begin{corrBox}
+		Pour une fonction $x\mapsto ax^2+c$, l'axe de symétrie est l'axe des ordonnées, d'équation $\mRouge{x=0}$, pour les quatre courbes.
+
+		\begin{center}
+			\setlength{\extrarowheight}{3pt}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				Fonction & $f$ & $g$ & $h$ & $k$ \\
+				\hline
+				Axe de symétrie & $x=0$ & $x=0$ & $x=0$ & $x=0$ \\
+				\hline
+				Sommet & $\mRouge{(0\,;\,-3)}$ & $\mRouge{(0\,;\,5)}$ & $\mRouge{(0\,;\,0)}$ & $\mRouge{(0\,;\,0)}$ \\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{corrBox}
+\end{enumMet}
+
+\newpage
+
+% =====================================================================
+\section*{\color{green!55!black}Tableau de variations et sommet}
+% =====================================================================
+
+\exerciceDS{}
+
+On donne ci-dessous le tableau de variations d'une fonction polynôme du second degré $f$ définie sur \R par $f(x)=ax^2+bx+c$.
+
+\begin{center}
+	\begin{tikzpicture}
+		\tikzset{node style/.append style = {fill=none}}
+		\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $3$, $+\infty$}
+		\tkzTabVar{+/, -/ $-4$, +/ }
+	\end{tikzpicture}
+\end{center}
+
+\begin{enumMet}
+	\item Le coefficient $a$ est-il positif ou négatif ? Justifier.
+
+	\begin{corrBox}
+		$f$ est d'abord décroissante puis croissante, donc $\mRouge{a>0}$.
+	\end{corrBox}
+
+	\item Donner les coordonnées du sommet $S$ de la parabole représentant $f$.
+
+	\begin{corrBox}
+		Le sommet correspond au changement de variation : $\mRouge{S(3\,;\,-4)}$.
+	\end{corrBox}
+
+	\item Donner l'équation de l'axe de symétrie de la parabole.
+
+	\begin{corrBox}
+		L'axe de symétrie passe par le sommet : $\mRouge{x=3}$.
+	\end{corrBox}
+
+	\item La fonction $f$ admet-elle un maximum ou un minimum sur \R ? Préciser sa valeur et pour quelle valeur de $x$ il est atteint.
+
+	\begin{corrBox}
+		$f$ admet un \mRougeWB{\textbf{minimum}} égal à $\mRouge{-4}$, atteint pour $\mRouge{x=3}$.
+	\end{corrBox}
+
+	\item Comparer, sans calcul, $f(5)$ et $f(7)$.
+
+	\begin{corrBox}
+		$5$ et $7$ appartiennent à l'intervalle $[3\,;\,+\infty[$ sur lequel $f$ est croissante. Comme $5<7$, on a $\mRouge{f(5)<f(7)}$.
+	\end{corrBox}
+
+	\item On sait que $f(0)=5$. En utilisant la symétrie de la parabole, donner la valeur de $f(6)$.
+
+	\begin{corrBox}
+		$\dfrac{0+6}{2}=3$ : les nombres $0$ et $6$ sont symétriques par rapport à l'axe d'équation $x=3$.
+
+		Ils ont donc la même image : $\mRouge{f(6)=f(0)=5}$.
+	\end{corrBox}
+\end{enumMet}
+
+\newpage
+
+\exerciceDS{}
+
+On considère la fonction $f$ définie sur \R par $f(x)=-3x^2+12x-7$.
+
+\begin{enumMet}
+	\item Donner les valeurs de $a$, $b$ et $c$. En déduire le sens de variation de $f$ (d'abord croissante puis décroissante, ou l'inverse).
+
+	\begin{corrBox}
+		$\mRouge{a=-3}$, $\mRouge{b=12}$ et $\mRouge{c=-7}$.
+
+		Comme $a=-3<0$, la fonction $f$ est \mRougeWB{\textbf{d'abord croissante puis décroissante}}.
+	\end{corrBox}
+
+	\item Calculer $f(1)$ et $f(3)$.
+
+	\begin{corrBox}
+		$f(1)=-3\times 1^2+12\times 1-7=-3+12-7=\mRouge{2}$
+
+		$f(3)=-3\times 3^2+12\times 3-7=-27+36-7=\mRouge{2}$
+
+		\emph{(Attention : $-3\times 3^2=-3\times 9=-27$ ; le carré ne porte que sur $3$.)}
+	\end{corrBox}
+
+	\item En déduire l'équation de l'axe de symétrie de la parabole représentant $f$.
+
+	\begin{corrBox}
+		$1$ et $3$ ont la même image, ils sont donc symétriques par rapport à l'axe de symétrie :
+		\[x=\dfrac{1+3}{2}=2 \qquad \text{soit} \qquad \mRouge{x=2}.\]
+	\end{corrBox}
+
+	\item Calculer les coordonnées du sommet $S$ de la parabole.
+
+	\begin{corrBox}
+		Le sommet appartient à l'axe de symétrie, donc son abscisse est $2$.
+
+		$f(2)=-3\times 2^2+12\times 2-7=-12+24-7=5$. \qquad Donc $\mRouge{S(2\,;\,5)}$.
+	\end{corrBox}
+
+	\item Dresser le tableau de variations de la fonction $f$.
+
+	\begin{corrBox}
+		\begin{center}
+			\begin{tikzpicture}
+				\tikzset{node style/.append style = {fill=none}}
+				\tkzTabInit[lgt = 1.6, espcl = 2.4, deltacl = 0.5]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $2$, $+\infty$}
+				\tkzTabVar{-/, +/ $5$, -/ }
+			\end{tikzpicture}
+		\end{center}
+	\end{corrBox}
+\end{enumMet}
+
+\end{document}
